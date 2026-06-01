@@ -1,0 +1,115 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\pagestyle{empty}
+\setcounter{section}{1}
+\setcounter{cdft}{1}
+\setcounter{cex}{3}
+
+\section{Proportion}
+
+\vspace{-2mm}
+\begin{ex}
+Dans le mot FRACTION, $5$ lettres sur les $8$ sont des consonnes.
+On dit que la proportion (ou la fréquence) de consonnes du mot FRACTION est $\frac{5}{8}$.
+
+\vspace{-3mm}
+\begin{center}
+$\frac{5}{8} = 5 \div 8 = 0,625 = \frac{62,5}{100}$
+\end{center} 
+
+\noindent donc cette fréquence peut aussi s'exprimer par le nombre décimal $0,625$ ou par le pourcentage $62,5 \%$.
+\end{ex}
+
+\begin{dft}
+\begin{enumerate}
+\item[•] Lorsque le numérateur et le dénominateur sont des entiers, on parle de fraction.
+\item[•] L'ensemble des nombres qui peuvent s'écrire $\dfrac{a}{b}$ où $a$ est un nombre relatif et $b$ un nombre relatif non nul est appelé l'ensemble des nombres rationnels.
+\end{enumerate}
+\end{dft}
+
+\begin{ex}
+\begin{enumerate}
+\item[•] $\frac{4}{5}$ est une fraction. $4$ est le numérateur et $5$ est le dénominateur.
+\item[•] $\frac{6,5}{8}$ n'est pas une fraction, c'est une écriture fractionnaire.
+\end{enumerate}
+\end{ex}
+
+\begin{rmq}
+Les nombres décimaux et les nombres relatifs sont des nombres rationnels. Par exemple, $-2,35 = \frac{-235}{100}$
+\end{rmq}
+
+\begin{regle}[Différents sens de l'écriture fractionnaire]
+La fraction $\dfrac{7}{5}$ se lit \og sept cinquièmes \fg{}. Cette fraction est égale :
+\begin{enumerate}
+\item[•] à $7$ fois un cinquième car $\frac{7}{5} = 7 \times \frac{1}{5} = \frac{1}{5} \times 7$
+\item[•] au quotient de $7$ par $5$ car $\frac{7}{5} = 7 \div 5$
+\item[•] au nombre qui multiplié par $5$ donne $7$ car $7 = 5 \times \frac{7}{5} = \frac{7}{5} \times 5$
+\item[•] au nombre $1 + \frac{2}{5}$
+\end{enumerate}
+\end{regle}
+
+\medskip
+On peut aussi représenter cette fraction de plusieurs façon, par exemple:
+
+\noindent \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(3.,2.) rectangle (7.5,6.);
+\draw [line width=1.6pt] (5.18,4.02) circle (1.8201098867925534cm);
+\draw [line width=1.2pt] (7.,4.)-- (5.18,4.02);
+\draw [line width=1.2pt] (5.18,4.02)-- (5.767189238011339,5.738460372547006);
+\draw [line width=1.2pt] (3.7215252327692143,5.117446058978674)-- (5.18,4.02);
+\draw [line width=1.2pt] (5.18,4.02)-- (3.68,2.98);
+\draw [line width=1.2pt] (5.18,4.02)-- (5.7,2.28);
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=1.241539285032363:2.4965180680191064,variable=\t]({1.*1.8160113582383595*cos(\t r)+0.*1.8160113582383595*sin(\t r)},{0.*1.8160113582383595*cos(\t r)+1.*1.8160113582383595*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=2.4965180680191064:3.7478303177768257,variable=\t]({1.*1.8252497086746013*cos(\t r)+0.*1.8252497086746013*sin(\t r)},{0.*1.8252497086746013*cos(\t r)+1.*1.8252497086746013*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=3.7478303177768257:5.002790922933131,variable=\t]({1.*1.8252671037412573*cos(\t r)+0.*1.8252671037412573*sin(\t r)},{0.*1.8252671037412573*cos(\t r)+1.*1.8252671037412573*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=5.002790922933131:6.272196738496853,variable=\t]({1.*1.8160396471443017*cos(\t r)+0.*1.8160396471443017*sin(\t r)},{0.*1.8160396471443017*cos(\t r)+1.*1.8160396471443017*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=-0.010988568682733124:1.241539285032363,variable=\t]({1.*1.8201098867925534*cos(\t r)+0.*1.8201098867925534*sin(\t r)},{0.*1.8201098867925534*cos(\t r)+1.*1.8201098867925534*sin(\t r)}) -- cycle ;
+\end{tikzpicture}\hspace{0.5cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(3.,2.) rectangle (7.5,6.);
+\draw [line width=1.6pt] (5.18,4.02) circle (1.8201098867925534cm);
+\draw [line width=1.2pt] (7.,4.)-- (5.18,4.02);
+\draw [line width=1.2pt] (5.18,4.02)-- (5.767189238011339,5.738460372547006);
+\draw [line width=1.2pt] (3.7215252327692143,5.117446058978674)-- (5.18,4.02);
+\draw [line width=1.2pt] (5.18,4.02)-- (3.68,2.98);
+\draw [line width=1.2pt] (5.18,4.02)-- (5.7,2.28);
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=1.241539285032363:2.4965180680191064,variable=\t]({1.*1.8160113582383595*cos(\t r)+0.*1.8160113582383595*sin(\t r)},{0.*1.8160113582383595*cos(\t r)+1.*1.8160113582383595*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.2]  (0,0) --  plot[domain=2.4965180680191064:3.7478303177768257,variable=\t]({1.*1.8252497086746013*cos(\t r)+0.*1.8252497086746013*sin(\t r)},{0.*1.8252497086746013*cos(\t r)+1.*1.8252497086746013*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.0]  (0,0) --  plot[domain=3.7478303177768257:5.002790922933131,variable=\t]({1.*1.8252671037412573*cos(\t r)+0.*1.8252671037412573*sin(\t r)},{0.*1.8252671037412573*cos(\t r)+1.*1.8252671037412573*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.0]  (0,0) --  plot[domain=5.002790922933131:6.272196738496853,variable=\t]({1.*1.8160396471443017*cos(\t r)+0.*1.8160396471443017*sin(\t r)},{0.*1.8160396471443017*cos(\t r)+1.*1.8160396471443017*sin(\t r)}) -- cycle ;
+\draw [shift={(5.18,4.02)},line width=1.2pt,color=black,fill=blue,fill opacity=0.0]  (0,0) --  plot[domain=-0.010988568682733124:1.241539285032363,variable=\t]({1.*1.8201098867925534*cos(\t r)+0.*1.8201098867925534*sin(\t r)},{0.*1.8201098867925534*cos(\t r)+1.*1.8201098867925534*sin(\t r)}) -- cycle ;
+\end{tikzpicture}
+ 
+\vspace{-2cm}
+\begin{flushright}
+\begin{tikzpicture}[x=3.5cm]  
+\draw[thick,->] (0,0) -- (2.4,0);
+\foreach \x in {0,1,2,}
+\draw[shift={(\x,0)},color=black] (0pt,6pt) -- (0pt,-6pt) node [below] {\x};
+\foreach \x in {0.2,0.4,0.6,0.8,1.2,1.4,1.6,1.8,2.2}	
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\begin{scriptsize}
+\draw [color=blue] (1.4,0)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.4,-0.8) node {\large{$\dfrac{7}{5}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+
+
+\begin{rmq}
+Lorsque le dénominateur est égal à $10$, $100$, $1000$, \dots on dit que c'est une fraction décimale, par exemple $\frac{93}{100}$ ou $\frac{6}{10}$
+\end{rmq}
+
+\begin{meth}[Prendre une fraction d'un quantité]
+Pour prendre une fraction d'une quantité, on multiplie la fraction par cette quantité.
+
+\medskip
+\noindent Calculer les $\dfrac{2}{5}$ de $400$, c'est calculer :
+\begin{enumerate}
+\item[•]$\dfrac{2}{5} \times 400 = \dfrac{400}{5} \times 2 = 80 \times 2 = 160$
+\item[•]$\dfrac{2}{5} \times 400 = \dfrac{2 \times 400}{5} = \dfrac{800}{5} = 160$
+\item[•]$\dfrac{2}{5} \times 400 = 0,4 \times 400 = 160$
+\end{enumerate}
+\end{meth}
+\end{document}

@@ -1,0 +1,494 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+%%% Figures
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+%%%Affichage
+\newcommand{\ds}{\displaystyle}
+\usepackage{eurosym}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+%\TeacherModeOff
+\TeacherModeOn
+
+\begin{document}
+%\tableofcontents
+\setcounter{chapter}{4}
+\chapter{Variables aléatoires}
+\section{Introduction et rappels}
+\subsection{Exp\'erience al\'eatoire}
+
+\begin{defn}
+Une exp\'erience dont on connaît les issues (les r\'esultats) est appel\'ee exp\'erience al\'eatoire si on ne peut pas pr\'evoir ni calculer l'issue qui sera r\'ealis\'ee.
+
+L'ensemble des r\'esultats possibles d'une exp\'erience al\'eatoire (aussi appel\'es \'eventualit\'es) est appel\'e \gap*{univers} de l'exp\'erience noté $\Omega$.  Le nombre de ses \'el\'ements est appel\'e cardinal de $\Omega$  et se note $ Card(\Omega)$. On le note souvent $ \#\Omega$ ou encore $\vert \Omega \vert$.
+\end{defn}
+
+\begin{exemple}
+jeu de Pile ou Face, nombre obtenu suite au lancer d'un d\'e, nombre tir\'e au sort dans une loterie, couleur de la prochaine voiture qui passera dans la rue, vingt et uni\`eme mot d'un livre choisi au hasard...
+\end{exemple}
+
+\subsection{Loi de probabilité et modélisation}
+\begin{defn}
+D\'efinir une loi de probabilit\'e sur un univers $\Omega=\{x_1,x_2,\ldots,x_n\}$ c'est associer à chaque \'eventualit\'e $x_i$ un nombre $p_i$ positif ou nul, appel\'e \gap*{probabilit\'e de l'\'eventualit\'e} $x_i$, tel que $p_1 + p_2 + \cdots + p_n=1$.
+\end{defn}
+
+\begin{rem}
+Mod\'eliser une exp\'erience al\'eatoire d'univers $\Omega$ c'est choisir une loi de probabilit\'e sur $\Omega$ qui repr\'esente le \og mieux possible \fg{} la situation.
+\end{rem}
+
+\begin{minipage}{11cm}
+\begin{exemple}
+On consid\`ere la roue de loterie suivante. L'exp\'erience consiste à faire tourner la roue et à noter le nombre sur lequel elle s'arr\^ete. D\'efinir une loi de probabilit\'e permettant de mod\'eliser l'exp\'erience.
+\end{exemple}
+
+
+L'univers est $\Omega=\{1;2;3;4;5;6\}$
+
+On associe à l'\'eventualit\'e 1 la probabilit\'e $p_1=\dfrac{45}{360}=\dfrac{1}{8}$. On fait de m\^eme pour les autres \'eventualit\'es. On obtient le tableau suivant : \\
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+\'eventualit\'e & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+Probabilit\'e & $\dfrac{1}{8}$ & $\dfrac{1}{4}$ & $\dfrac{1}{8}$ & $\dfrac{1}{12}$ & $\dfrac{1}{3}$ & $\dfrac{1}{12}$ \\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{6cm}
+
+\begin{center}
+\vspace*{-2cm}\hspace*{3cm}\includegraphics[scale=1.1]{CoursProbasFigures.1}
+\end{center}
+\end{minipage}
+
+
+\section{Variables al\'eatoires}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$ muni d'une loi de probabilit\'e $P$.
+\subsection{D\'efinitions}
+\begin{defn}
+Une variable al\'eatoire $X$ sur $\Omega$ est \gap*{une fonction de $\Omega$ dans $\R$}. $X$ associe donc à toute \'eventualit\'e de $\Omega$ un unique r\'eel.
+\end{defn}
+
+\begin{rem} On utilise les variables al\'eatoires quand on s'int\'eresse plus à un nombre associ\'e au r\'esultat de l'exp\'erience (par exemple un gain...) qu'au r\'esultat lui-m\^eme.
+\end{rem}
+
+\begin{exemple}
+On lance trois fois une pièce de monnaie et on s'int\'eresse au côt\'e sur lequel elle tombe.
+On appelle $X$ la variable aléatoire qui à chaque éventualité associe le nombre de fois où pile apparaît. Déterminer l'univers $\Omega$ de cette expérience puis décrire $X$.
+\end{exemple}
+
+
+En notant $P$ et $F$ les r\'esultats possibles d'un lancer, on obtient : 
+\[\Omega = \{PPP,PPF,PFP,PFF,FPP,FPF,FFP,FFF\}\]
+
+$X$ est la fonction d\'efinie sur $\Omega$ par :
+\begin{align*}
+X(PPP)&=0 & X(PPF)&=1 & X(PFP)&=1 & X(PFF)&=2\\
+X(FPP)&=1 & X(FPF)&=2 & X(FFP)&=2 & X(FFF)&=3
+\end{align*}
+
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$ et soit $x\in\R$. L'\'ev\`enement form\'e des \'eventualit\'es $\omega_i$ de $\Omega$ telles que $X(\omega_i)=x$ se note $(X=x)$.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer l'ensemble $(X=2)$.
+\end{exemple}
+
+
+Avec les notations pr\'ec\'edentes, on a : $(X=2)=\{PFF,FPF,FFP\}$
+
+\subsection{Loi de probabilit\'e d'une variable al\'eatoire}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$. On appelle $\Omega'=\{x_1,x_2,\ldots,x_n\}$ l'ensemble des valeurs prises par $X$. On peut d\'efinir sur $\Omega'$ une loi de probabilit\'e en associant à chaque valeur $x_i$ la probabilit\'e de l'\'ev\`enement $(X=x_i)$. Cette loi est appel\'ee loi de probabilit\'e de la variable al\'eatoire $X$.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer la loi de probabilit\'e de $X$.
+\end{exemple}
+
+
+La loi de probabilit\'e $P$ sur $\Omega$ est une loi \'equir\'epartie. On a donc :
+\begin{align*}
+P(X=0)&=P(\{PPP\})=\dfrac{1}{8} & P(X=1)&=P(\{PPF,PFP,FPP)\}=\dfrac{3}{8} \\
+P(X=2)&=P(\{PFF,FPF,FFP)\}=\dfrac{3}{8} & P(X=3)&=P(\{FFF\})=\dfrac{1}{8}
+\end{align*}
+
+On peut aussi r\'esumer ceci sous forme de tableau :
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|} \hline
+$x_i$ & 0 & 1 & 2 & 3 \\ \hline
+$P(X=x_i)$ & $\dfrac{1}{8}$ & $\dfrac{3}{8}$ & $\dfrac{3}{8}$ & $\dfrac{1}{8}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Param\`etres d'une variable al\'eatoire}
+\begin{defn}
+\gap*{L'esp\'erance} d'une variable al\'eatoire est liée à l'esp\'erance de sa loi de probabilit\'e.
+
+Si $X$ prend les valeurs $x_1,x_2,\ldots x_n$ et si on pose $p_i=P(X=x_i)$, on a :
+
+$$E(X)=p_1x_1+p_2x_2+\cdots+p_nx_n$$
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer l'esp\'erance de la variable aléatoire $X$.
+\end{exemple}
+
+$$E(X)=\dfrac{1}{8}\times0 + \dfrac{3}{8}\times1 + \dfrac{3}{8}\times2 + \dfrac{1}{8}\times3 = \dfrac{12}{8} = \dfrac{3}{2}$$
+
+\begin{defn}
+La \gap*{variance} et \gap*{l'écart-type} d'une variable aléatoire sont liés à la variance et l'écart-type de sa loi de probabilité.
+Si $X$ prend les valeurs $x_1,x_2,\ldots x_n$ et si on pose $p_i=P(X=x_i)$, on a :
+
+$$V(X)=p_1(x_1-E(X))^2+p_2(x_2-E(X))^2+\cdots+p_n(x_n-E(X))^2$$
+$$ \sigma(X)=\sqrt{V(X)}$$
+\end{defn}
+
+\begin{prop}
+On a une formule plus pratique pour déterminer la variance,
+$$V(X)=E(X^2)-E(X)^2$$
+Avec $$E(X^2)=p_1x^2_1+p_2x^2_2+\cdots+p_nx^2_n$$
+\end{prop}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer la variance et l'\'ecart-type de $X$.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$]  Variance \textit{(à l'aide de la définition)} : $$V(X) = \dfrac{1}{8}\times\left( 0-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 1-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 2-\dfrac{3}{2} \right)^2 + \dfrac{1}{8}\times\left( 3-\dfrac{3}{2} \right)^2 = \dfrac{1}{8}\times\dfrac{9}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{1}{8}\times\dfrac{9}{4} = \dfrac{24}{32} = \dfrac{3}{4}$$
+
+\item[$\bullet$]  Variance \textit{(à l'aide de la propriété)} : $$E(X^2) =\dfrac{1}{8}\times 0^2 + \dfrac{3}{8}\times1^2 + \dfrac{3}{8}\times2^2 + \dfrac{1}{8}\times3^2 = 3$$
+Donc $$V(X)=E(X^2)-E(X)^2=3-(\dfrac{3}{2})^2=\dfrac{3}{4}$$
+
+\item[$\bullet$]  \'ecart-type : $$\sigma(X) = \sqrt{V(X)} = \sqrt{\dfrac{3}{4}} = \dfrac{\sqrt{3}}{2} \simeq 0,87$$
+\end{itemize}
+
+\subsubsection{Interprétation des paramètres d'une variable aléatoire}
+\begin{rem}
+\begin{itemize}
+\item[$\bullet$]Si l'on \gap*{répète} l'expérience aléatoire \gap*{un grand nombre} de fois et que l'on fait la \gap*{moyenne} des résultats obtenus pour $X$, alors cette moyenne se rapprochera de \gap*{l'espérance} de $X$.
+
+\item[$\bullet$]l'écart-type est une quantité positive qui indique la \gap*{dispersion} autour de la moyenne. Plus l'écart-type est \gap*{grand}, plus les valeurs de $X$ lors des expérience aléatoire seront \gap*{éloignées} de l'espérance de $X$, a contrario, plus l'écart-type est \gap*{proche} de 0, plus les valeurs de $X$ lors des expérience aléatoire seront \gap*{proches} de l'espérance de $X$.
+\end{itemize}
+\end{rem}
+
+\newpage
+\section{Exercices}
+\begin{exocor}
+
+Une expérience aléatoire consiste à lancer un dé à six faces et regarder le résultat obtenu. L'univers associé à cette expérience est l'ensemble de toutes les issues possibles : Ici $\Omega=\{1 ; 2 ; 3 ; 4;5 ; 6\}$
+
+On considère le jeu suivant :
+\begin{itemize}
+\item Si le résultat est pair, on gagne $2$ \euro;
+\item Si le résultat est 1 , on gagne $3$ \euro;
+\item Si le résultat est 3 ou 5 , on perd $6$ \euro.
+\end{itemize}
+On note $X$ la variable aléatoire représentant le gain ou la perte en euro du joueur.
+
+\begin{enumerate}
+\item Quelle sont les valeurs possibles pour $X$ ? On notera les possibles valeurs $x_1; x_2,\cdots$ etc.
+\item Donner la loi de probabilité de $X$ à l'aide d'un tableau.
+\item Déterminer l'espérance de $X$, notée $\mathbb{E}(X)$.
+\item Le jeu est-il équitable? 
+
+
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Pour financer leur voyage scolaire, des élèves ont organisé une tombola et vendu 400 billets. Le nombre de billets gagnants est résumé dans le tableau ci-dessous :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline Gains en euros & 100 & 50 & 20 & 10 \\
+\hline Nombre de billets & 1 & 2 & 5 & 10 \\
+\hline
+\end{tabular}
+\end{center}
+
+Les autres billets sont perdants.
+Loïc achète un billet, on note $p$ le prix d'un billet. On note G la variable aléatoire qui, au choix d’un billet, associe le gain correspondant.
+\begin{enumerate}
+\item Dresser la loi de probabilité de G.
+\item Calculer l’espérance $\mathbb{E}(G)$. Interpréter le résultat.
+\item Quel est le prix minimum d’un billet de tombola que les élèves ont dû fixer pour ne pas perdre de l’argent ?
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On note $X$ la variable aléatoire qui, à chaque jour, associe le nombre de véhicules neufs vendus par un concessionnaire. Sa loi de probabilité est donnée par le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline$x_{i}$ & 0 & 1 & 2 & 3 \\
+\hline$\mathbb{P}\left(X=x_{i}\right)$ & 0,45 & 0,3 & 0,15 & $\ldots \ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Donner la probabilité $\mathbb{P}(X=1)$. Interpréter ce résultat.
+\item Quelle est la probabilité que le concessionnaire vende trois véhicules dans la journée?
+\item Calculer $\mathbb{P}(X \geqslant 1)$. Interpréter ce résultat.
+\item Combien de véhicules par jour vend en moyenne le concessionnaire?
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Une entreprise fabrique des brioches de poids standard 700 g.
+Si une brioche pèse entre 700 g et 720 g, elle est vendue au prix de 3 \euro. Sinon, elle est vendue dans des magasins à prix cassés à  2 \euro  si elle pèse plus de 720 g et à 1,50 \euro si elle pèse moins de 700 g.
+
+On sait que :
+
+\begin{itemize}
+\item 80\% des brioches ont une masse comprise entre 700 et 720g;
+\item 15\% des brioches ont une masse inférieure à 700g;
+\item 5\% des brioches ont une masse supérieure à 720g.
+\end{itemize}
+
+On note $X$ la variable aléatoire qui, à chaque brioche tirée au hasard, associe son prix de vente.
+
+\begin{enumerate}
+\item Quelles sont les valeurs prises par $X$ ?
+\item Déterminer la loi de probabilité de $X$.
+\item Calculer $\mathbb{E}(X)$ et interpréter le résultat.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Une entreprise fabrique des téléphones portables.
+Pendant la période de garantie, le fabriquant doit effectuer les réparations à ses frais. Une étude sur les téléphones vendus permet d'affirmer que :
+\begin{itemize}
+\item 10\% des téléphones auront uniquement un problème de batterie;
+\item 5\% des téléphones auront uniquement un problème d'écran;
+\item 2\% des téléphones auront un problème de batterie et un problème d'écran;
+\item 3\% seront jugés non réparables.
+\end{itemize}
+
+Dans les autres cas, le client n'utilisera pas la garantie de son téléphone.
+Les coûts pour l'entreprise sont de 20 \euro pour un problème de batterie, 40 \euro pour un problème d'écran et 100 \euro si le téléphone ne peut être réparé et s'il doit être remplacé.
+
+On note $X$ la variable aléatoire qui, à chaque téléphone vendu, associe son coût de réparation.
+
+\begin{enumerate}
+\item Déterminer la loi de probabilité de $X$ en complétant le tableau suivant :
+\item \begin{enumerate}
+		\item Interpréter à l'aide d'une phrase l'événement: $\{X>0\}$. 
+		\item Calculer sa probabilité.
+	   \end{enumerate}
+\item Calculer $\mathbb{E}(X)$. Que représente cette valeur pour l'entreprise?
+\item Un téléphone vendu 250 \euro a un coût de fabrication de 200 \euro . Quel est le bénéfice espéré pour l'entreprise, par téléphone vendu, après ses éventuels frais de garantie ?
+\end{enumerate}
+\end{exocor}
+%
+%\begin{exocor}[D'après sujet bac Nouvelle Calédonie 2017]
+%\begin{center}
+%\emph{Dans cet exercice, les résultats seront arrondis au millième.}
+%\end{center}
+%
+%
+%Une agence de voyage propose des itinéraires touristiques pour lesquels chaque client effectue un aller et un retour en utilisant soit un bateau, soit un train touristique. Le choix du mode de transport peut changer entre l'aller et le retour.À l'aller, le bateau est choisi dans 65\% des cas. Lorsque le bateau est choisi à l'aller, il l'est également pour le retour 9 fois sur 10. Lorsque le train a été choisi à l'aller, le bateau est préféré pour le retour dans 70\% des cas.
+%
+%On interroge au hasard un client. On considère les évènements suivants :
+%
+%\begin{itemize}
+%\item $A$ : \og le client choisit de faire l'aller en bateau \fg{} ;
+%\item $R$ : \og le client choisit de faire le retour en bateau \fg.
+%\end{itemize}
+%
+%
+%On rappelle que si $E$ est un évènement, $\mathbb{P}(E)$ désigne la probabilité de l'évènement $E$ et on note $\overline{E}$ l'évènement contraire de $E$.
+% 
+% 
+%\begin{enumerate}
+%\item Traduire cette situation par un arbre pondéré.
+%\item On choisit au hasard un client de l'agence.
+%	\begin{enumerate}
+%		\item Calculer la probabilité que le client fasse l'aller-retour en bateau.
+%		\item Montrer que la probabilité que le client utilise les deux moyens de transport est égale à 0,31.
+%	\end{enumerate}
+%\item On choisit au hasard 20 clients de cette agence. On note $X$ la variable aléatoire qui compte le nombre de clients qui utilisent les deux moyens de transport.
+%	
+%On admet que le nombre de clients est assez grand pour que l'on puisse considérer que $X$ suit une loi binomiale.
+%	\begin{enumerate}
+%		\item Préciser les paramètres de cette loi binomiale.
+%		\item Déterminer la probabilité qu'exactement 12 clients utilisent les deux moyens de transport différents.
+%		\item Déterminer la probabilité qu'il y ait au moins 2 clients qui utilisent les deux moyens de transport différents.
+%	\end{enumerate}
+%\item Le coût d'un trajet aller ou d'un trajet retour est de 1560\euro en bateau ; il est de 1200\euro en train. 
+%	
+%On note $Y$ la variable aléatoire qui associe, à un client pris au hasard, le coût en euro de son trajet aller-retour.
+%	\begin{enumerate}
+%		\item Déterminer la loi de probabilité de $Y$.
+%		\item Calculer l'espérance mathématique de $Y$. Interpréter le résultat.
+%	\end{enumerate}
+%\end{enumerate}
+%\end{exocor}
+%
+%\begin{exocor}[D'après sujet bac Liban 2013]
+%Un propriétaire d'une salle louant des terrains de squash s'interroge sur le taux d'occupation de ses terrains. Sachant que la location d'un terrain dure une heure, il a classé les heures en deux catégories : les heures pleines (soir et week-end) et les heures creuses (le reste de la semaine). Dans le cadre de cette répartition, 70\,\% des heures sont creuses. Une étude statistique sur une semaine lui a permis de s'apercevoir que :
+%
+%\begin{itemize}
+%\item lorsque l'heure est creuse, 20\,\% des terrains sont occupés ; 
+%\item lorsque l'heure est pleine, 90\,\% des terrains sont occupés.
+%\end{itemize}
+%
+%On choisit un terrain de la salle au hasard. On notera les évènements : 
+%
+%\begin{itemize}
+%\item $C$ : \og l'heure est creuse \fg 
+%\item $T$ : \og le terrain est occupé \fg 
+%\end{itemize}
+%
+%\begin{enumerate}
+%\item Représenter cette situation par un arbre de probabilités. 
+%\item Déterminer la probabilité que le terrain soit occupé et que l'heure soit creuse. 
+%\item Déterminer la probabilité que le terrain soit occupé. 
+%\item Montrer que la probabilité que l'heure soit pleine, sachant que le terrain est occupé, est égale à $\dfrac{27}{41}$.
+%
+%Dans le but d'inciter ses clients à venir hors des heures de grande fréquentation, le propriétaire a instauré, pour la location d'un terrain, des tarifs différenciés :
+% 
+%\begin{itemize}
+%\item  10 \euro pour une heure pleine, 
+%\item  6 \euro pour une heure creuse.
+%\end{itemize}
+%  
+%\hspace*{-0,7cm} On note $X$ la variable aléatoire qui prend pour valeur la recette en euros obtenue grâce à la location d'un terrain de la salle, choisi au hasard. Ainsi, $X$ prend 3 valeurs :
+%
+% 
+%\begin{itemize}
+%\item  10 lorsque le terrain est occupé et loué en heure pleine, 
+%\item  6 lorsque le terrain est occupé et loué en heure creuse, 
+%\item  0 lorsque le terrain n'est pas occupé.
+%\end{itemize}
+%
+%\item Construire le tableau décrivant la loi de probabilité de $X$. 
+%\item Déterminer l'espérance de $X$. 
+%\item La salle comporte 10 terrains et est ouverte 70 heures par semaine. Calculer la recette hebdomadaire moyenne de la salle. 
+%\end{enumerate}
+%\end{exocor}
+
+\newpage
+\section{Corrigés}
+\begin{corrige}
+\begin{enumerate}
+\item Les valeurs possibles pour $X$ sont $x_1=2$; $x_2=3$ et $x_3=-6$
+\item 
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|c|c|c|c|}
+\hline $x_i$ & 2 & 3 & -6 \\
+\hline $\mathbb{P}(X=x_i)$ & $\dfrac{3}{6}$ & $\dfrac{1}{6}$ & $\dfrac{2}{6}$ \\
+\hline
+\end{tabular}
+\item $\mathbb{E}(X)=2 \times \dfrac{3}{6} + 3 \times \dfrac{3}{6} + (-6) \times \dfrac{2}{6}=\dfrac{3}{6}$
+\item Le jeu n'est pas équitable car l'espérance du gain n'est pas nulle.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item 
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline $x_i$ & $100-p$ & $50-p$ & $20-p$ & $10-p$ & $0-p$ \\
+\hline $\mathbb{P}(G=x_i)$ & $\dfrac{1}{400}$ & $\dfrac{2}{400}$ & $\dfrac{5}{400}$ & $\dfrac{10}{400}$ & $\dfrac{382}{400}$ \\
+\hline
+\end{tabular}
+\item $$\mathbb{E}(G)=(100-p) \times \dfrac{1}{400} + (50-p) \times \dfrac{2}{400} + (20-p) \times \dfrac{5}{400} + (10-p) \times \dfrac{10}{400} +(0-p) \times \dfrac{382}{400} $$
+$$\mathbb{E}(G)=\dfrac{100+ 50\times 2 + 20 \times 5 +10 \times 10 + 0 \times 382}{400} -p$$
+$$\mathbb{E}(G)=1-p$$
+
+La personne qui achète un billet peut donc espérer en moyenne gagner \emph{ou perdre} $1$ \euro moins le prix du billet. 
+
+
+\item Les élèves gagnent de l'argent si le gain est négatif, autrement dit il faut que $p$ soit supérieur à $1$ \euro.
+
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $\mathbb{P}(X=1)=0,3$
+\item La probabilité que le concessionnaire vende trois véhicules dans la journée est de $1-0,45-0,3-0,15=0,1$
+\item $\mathbb{P}(X \geq 1)= 1-\mathbb{P}(X < 1) = 1-0,45=0,55$
+\item $\mathbb{E}(X)=0 \times 0,45 + 1 \times 0,3 + 2 \times 0,15 + 3 \times 0,1=0,3+0,3+0,1=0,9$
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+\begin{enumerate}
+\item $X$ peut prendre les valeurs $3;2;$ et $1,5$.
+\item
+\begin{tabular}{|c|c|c|c|}
+\hline$x_{i}$ & 3 & 2 & 1,5  \\
+\hline$\mathbb{P}\left(X=x_{i}\right)$ & 0,8 & 0,15 & 0,05 \\
+\hline
+\end{tabular}
+
+\item $$\mathbb{E}(X)=3 \times 0,8 + 2 \times 0,15 + 1,5 \times 0,05=2,4+0,3+0,225=2,925$$ L'entreprise peut donc espérer vendre une brioche à 2,925 \euro en moyenne.
+\end{enumerate}
+\end{corrige}
+
+\newpage
+\begin{corrige}
+\begin{enumerate}
+\item
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline$x_{i}$ & 0 & 20 & 40 & 60 & 100  \\
+\hline$\mathbb{P}\left(X=x_{i}\right)$ & 0,8 & 0,1 & 0,05 & 0,02 & 0,03 \\
+\hline
+\end{tabular}
+\item \begin{enumerate}
+		\item Le téléphone vendu doit être réparé.
+		\item $\mathbb{P}(X>0)=0,2$
+	   \end{enumerate}
+\item $\mathbb{E}(X)=2+2+1,2+3=8,2$ Cette valeur représente le coût moyen des frais de garantie par téléphone vendu.
+\item Le bénéfice espéré pour l'entreprise par téléphone est $250-200-8,2=41,8$ \euro .
+\end{enumerate}
+\end{corrige}
+
+
+\end{document}

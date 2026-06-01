@@ -1,0 +1,296 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+\tableofcontents
+
+\chapter{Continuité}
+\section{Fonction continue en un point, sur un intervalle}
+
+\begin{defn}
+ Soit $f$ une fonction définie sur un intervalle  $I$ et $a$ un nombre réel de $I$.
+\begin{itemize}
+ \item[$\bullet$] La fonction $f$ est dite \emph{continue en $a$} si elle admet en $a$ une limite égale à $f(a)$, c'est  à dire si $\lim_{x\rightarrow a}f(x)=f(a)$.
+\item[$\bullet$] $f$ est dite \emph{continue sur $I$} si elle est continue en tout réel $a\in I$.
+\end{itemize}
+\end{defn}
+
+\begin{exemple}
+ Ci-dessous la fonction $f$, définie par $f(x)=(x+2)(x-1)(x+3)$ sur $\mathbb{R}$, est continue sur $]-\infty;+\infty[$ alors que la fonction $g$ définie sur $]-\infty;-1]$ par $g(x)=f(x)$ et sur $]-1;+\infty[$ par $g(x)=f(x)-1$ n'est pas continue en $-1$.
+%% Graphique manquant
+\end{exemple}
+
+
+\begin{prop}
+ Si $f$ est une fonction définie sur un intervalle $I$ et dérivable en un réel $a\in I$, alors $f$ est continue en $a$. En particulier, si $f$ est dérivable sur $I$, alors $f$ est continue sur $I$.
+\end{prop}
+
+\begin{rem}
+ La réciproque n'est pas vraie comme le montre le contre exemple de la fonction racine carré en 0.
+\end{rem}
+
+
+\begin{prop}[continuité des fonctions de référence]
+\begin{itemize}
+ \item[$\bullet$] $x\mapsto \exp(x)$, les fonctions polynômes et la fonction valeur absolue sont continues sur $]-\infty;+\infty[$ ;
+\item[$\bullet$] $x\mapsto \sqrt{x}$ est continue sur $[0;+\infty[$ (alors qu'elle n'est dérivable que sur $]0;+\infty[)$ ;
+\item[$\bullet$] la fonction inverse est continue sur $]-\infty;0[$ et sur $]0;+\infty[$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+ \'A l'exception du cas de la fonction racine carré et de la valeur absolue, la dérivabilité de chacune des fonctions suffit pour assurer la continuité.\\
+Pour ce qui concerne la fonction racine carré, elle est dérivable donc continue sur $]0;+\infty[$. En outre $\sqrt{0}=0$ et pour tout $x$ réel tel que $0<x<1$, on sait que $0\leq\sqrt{x}\leq x$. Donc de $\lim_{x\rightarrow 0}x=0$ on déduit $\lim_{x\rightarrow 0}\sqrt{x}=0$ d'où la continuité en 0. Démonstration analogue pour la fonction valeur absolue.
+\end{demo}
+
+\section{Fonction dérivable $ \Longrightarrow $ fonction continue }
+
+\begin{prop}
+Soit $f$ une fonction dérivable en $a$ alors $f$ est continue en $a$.
+\end{prop}
+
+\begin{demo}
+Soit $f$ une fonction dérivable en $a$, alors le nombre $f'(a)$ existe, par suite $\limite{a} (x-a)f'(a)= 0$  nécéssairement.
+
+D'autre part $f'(a)= \limite{a} \dfrac{f(x)-f(a)}{x-a}$
+
+D'où
+ $$\limite{a} (x-a)f'(a) = \limite{a} (x-a)  \limite{a} \dfrac{f(x)-f(a)}{x-a} =  \limite{a} (x-a) \dfrac{f(x)-f(a)}{x-a} = \limite{a} f(x)-f(a)$$
+ 
+Donc $\limite{a} f(x)-f(a)=\limite{a} (x-a)f'(a)  =0$.
+ 
+
+
+\end{demo}
+
+\section{Théorème des valeurs intermédiaires}
+
+\subsection{Théorème des valeurs intermédiaires}
+
+\begin{thm}[Théorème des valeurs intermédiaires, admis]
+ Soit $f$ une fonction continue sur un intervalle $I$ et soit $[a;b]$ un intervalle inclus dans $I$. Alors, pour tout réel $k$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c$ de l'intervalle $[a;b]$ tel que $f(x)=k$, c'est  à dire que $f$ prend au moins une fois toutes les valeurs intermédiaires entre $f(a)$ et $f(b)$.
+\end{thm}
+
+
+
+\begin{rem}
+ Avec les hypothèses précédentes, si O est compris entre $f(a)$ et $f(b)$, alors il existe \emph{au moins} un réel $c$ tel que $f(c)=0$. \\
+
+ $f(a)$ n'est pas nécessairement inférieur à $f(b)$.
+\end{rem}
+
+
+\begin{prop}
+ Soit $f$ une fonction continue \emph{strictement monotone} sur un intervalle $[a;b]$.Alors, pour tout $k$ compris entre $f(a)$ et $f(b)$, il existe \emph{un unique} réel $c\in[a;b]$ tel que $f(c)=k$.
+\end{prop}
+
+\begin{demo}[cas où $f$ est strictement croissante]
+ Le théorème des valeurs intermédiaires permet d'affirmer qu'il existe au moins un réel $c$ de $[a;b]$ tel que $f(c)=k$.\par
+Si $c'$ est un autre réel de $[a;b]$ tel que $c'<c$, $f$ strictement croissante implique que $f(c')<f(c)$ donc $f(c')\neq k$.\\
+De même, si $c'$ est un autre réel de $[a;b]$ tel que $c'>c$, $f$ strictement croissante implique $f(c')>f(c)$ donc $f(c')\neq k$.
+\end{demo}
+
+\begin{rem}{Cas particulier de l'équation $f(x)=0$}
+ Si $f$ est une fonction continue et strictement monotone sur $[a;b]$ telle que $f(a)\times f(b)<0$, alors l'équation $f(x)=0$ admet une unique solution sur $[a;b]$.
+\end{rem}
+
+\subsection{Généralisation à des intervalles quelconques}
+
+\begin{prop}
+Le théorème des valeurs intermédiaires admet les généralisations suivantes :
+
+\begin{itemize}
+\item[$\bullet$] Si $I=[a;+\infty[$ et $\lim_{x\rightarrow +\infty}f(x)=+\infty$ alors pour tout réel $k\geq f(a)$, l'équation $f(x)=k$ admet une solution dans l'intervalle $[a;+\infty[$.
+\item[$\bullet$] Si $I=[a;b[$ et $\lim_{x\rightarrow b}f(x)=l$ alors pour tout réel $k$ compris entre $f(a)$ et $l$ l'équation $f(x)=k$ admet une solution dans $[a;b[$.
+\item[$\bullet$] Si $I=[-\infty;b[$, $\lim_{x\rightarrow -\infty}f(x)=l$ et $\lim_{x\rightarrow b}f(x)=-\infty$ alors pour tout réel $k<l$, l'équation $f(x)=k$ admet une solution dans l'intervalle $]-\infty;b[$.
+\end{itemize}
+\end{prop}
+
+\begin{center}
+\begin{tabular}{ccc}
+ \begin{minipage}{6cm}
+  \begin{tabular}{|c|ccccc|}
+   \hline
+  $x$ & $a$ & & $c$ & & $+\infty$ \\
+   \hline
+   &  & &  & & $+\infty$ \\
+
+  & & & & $\nearrow$ &  \\
+
+  $f$ & & & $k$ &  & \\
+
+  & & $\nearrow$ & & & \\
+
+  & $f(a)$ & & & & \\
+\hline
+  \end{tabular}
+ \end{minipage}
+&
+ \begin{minipage}{6cm}
+  \begin{tabular}{|c|ccccc|}
+   \hline
+  $x$ & $a$ & & $c$ & & $b$ \\
+   \hline
+   &  & &  &  & $l$ \\
+
+  & & & & $\nearrow$ &   \\
+
+  $f$ & & & $k$ &  & \\
+
+  & & $\nearrow$ & & &  \\
+
+  & $f(a)$ & & & &  \\
+\hline
+  \end{tabular}
+ \end{minipage}
+&
+ \begin{minipage}{6cm}
+  \begin{tabular}{|c|ccccc|}
+   \hline
+  $x$ & $-\infty$ & & $c$ & & $b$ \\
+   \hline
+   & $l$ & &  & &  \\
+
+  & & $\searrow$ & & &   \\
+
+  $f$ & & & $k$ &  &  \\
+
+  & &  & & $\searrow$ &  \\
+
+  & & & &   & $-\infty$  \\
+\hline
+  \end{tabular}
+ \end{minipage}
+\end{tabular}
+\end{center}
+
+\section{Application de la continuité de fonction}
+\subsection{Convergence de suite et continuité de fonction}
+\begin{thm}[Image d’une suite convergente par une fonction continue] 
+Si $f$ est une fonction continue en $l$, limite d’une suite $\suite[u]$, alors la suite $(f(u_n))$ est définie à partir d'un certain rang et  converge vers $f(l)$.
+
+\end{thm}
+
+\begin{demo}
+On sait que $f$ est continue en $l$, c'est à dire que, pour toute précision demandé $\epsilon >0$ il existe $\eta_{\epsilon}>0$ tel que pour tout nombre $x$ $\eta_{\epsilon}$-proche de $l$ on a le nombre $f(x)$ qui est $\epsilon$-proche de $f(l)$.\\
+
+D'autre part, $u_n$ converge vers $l$, autrement dit pour n'importe qu'elle précision demandé $\epsilon'>0$ il existe un rang $N_{\epsilon'}$ à partir du quel $u_n$ est $\epsilon'$-proche de $l$.\\
+
+Posons $\epsilon'=\eta_{\epsilon}$, ainsi par définition de $\epsilon'$ on a pour tout $n\se  N_{\epsilon'}$ $u_n$ est $\eta_{\epsilon}$-proche de $l$. Par définition de $\eta_{\epsilon}$ on sait alors que  $f(u_n)$ est $\epsilon$-proche de $f(l)$, et ceux  pour tout $n\se  N_{\epsilon'}$.\\
+
+D'où la convergence de la suite $f(u_n)$ vers $f(l)$.
+\end{demo}
+
+\begin{prop}
+Soient $I \subset \mathbb{R}$ un intervalle, $f : I \longrightarrow I$ une fonction continue et $\suite[u]$ une suite définie par récurrence par $u_0 \in I $ et $u_{n+1}=f(u_n)$ pour tout $n \in \mathbb{N}*$ et convergeant $l \in I$.\\
+
+Alors $l$ est un point fixe de $f$, c'est à dire que $f(l)=l$.
+
+\end{prop}
+
+\begin{demo}
+La convergence de $\suite[u]$ vers $l$ implique deux choses : la première est que la suite $(u_{n+1})_{n\in \mathbb{N}}$ converge aussi vers $l$,
+ et la seconde est que $(f(u_n))_{n\in \mathbb{N}}$ converge vers $f(l)$ d'après le théorème précédent, par continuité de $f$ en $l$.
+ 
+  Or $u_{n+1} = f(u_n)$, et on en déduit par unicité de la limite que $l = f(l)$.
+\end{demo}
+
+
+
+\end{document}

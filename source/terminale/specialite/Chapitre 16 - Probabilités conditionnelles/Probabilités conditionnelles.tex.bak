@@ -1,0 +1,252 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[french,lined,boxed]{algorithm2e}	% pour les algorithmes
+%\ configuration package algorithm
+\SetKw{Retour}{Afficher}
+\SetKwBlock{Traitement}{Début traitement}{Fin traitement.}
+\SetKw{Afficher}{Afficher}
+\usepackage{listings}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\cro}[1]{ \ds [#1]}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pst-tree}
+\usepackage{pifont}
+%\usepackage[cp1252]{inputenc}
+
+
+%\newcommand{\binom}[2]{C_{#2}^{#1}}
+\newcommand{\C}[2]{C_{#1}^{#2}}
+\newcommand{\V}{\overrightarrow}
+\newcommand{\Rep}{(O;\V{i};\V{j})}
+%\newcommand{\Int}[2]{[\, #1 ; #2 \,]}
+%\newcommand{\Reel}{\mathfrak{Re}} 
+%\newcommand{\Ima}{\mathfrak{Im}} 
+%\renewcommand{\Abs}[1]{\left \lvert#1\right \rvert}
+\newcommand{\Cnp}{\begin{pmatrix} n\\p \end{pmatrix}}
+%\newcommand{\C}[2]{\begin{pmatrix} #1\\#2 \end{pmatrix}}
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\dx}{dx}
+
+\begin{document}
+\tableofcontents
+
+\chapter{Probabilités conditionnelles}
+\section{Notion de probabilité conditionnelle}
+
+
+\begin{defn}
+Pour tout événement $A$ non impossible et tout événement $B$, on appelle \emph{probabilité conditionnelle de $B$ sachant $A$} et notée $P_A(B)$ le nombre $$P_A(B)=\frac{P(A\cap B)}{P(A}$$
+\end{defn}
+
+\begin{exemple}
+Lors d'un sondage, 50\% personnes des interrogées déclarent pratiquer un sport régulièrement et 75\% des
+personnes interrogées déclarent aller au cinéma régulièrement. De plus, 40\% des personnes déclarent faire du sport et aller au cinéma régulièrement. On interroge à nouveau une de ces personnes au hasard et on considère les événements \og{}la personne interrogée pratique un sport régulièrement\fg{} et \og{}la personne interrogée va au cinéma régulièrement\fg{} que l'on notent $S$ et $C$ respectivement.
+On cherche à calculer la probabilité que la personne pratique un sport régulièrement sachant qu'elle va régulièrement au cinéma.
+
+On a $P(C)=0,75$ et $P(S\cap C)=0,4$. Donc $P_C(S)=\frac{P(S\cap C)}{P(C)}=\frac{0,4}{0,75}\approx 0,53$.
+\end{exemple}
+
+
+\begin{prop}
+Soient $A$ et $B$ deux événements non impossibles d'un univers donné. La connaissance de la probabilité d'un événement $B$ et de la probabilité conditionnelle d'un événements $A$ sachant $B$ permet de retrouver la probabilité $P(A\cap B)$ de l'intersection de $A$ et $B$ avec la formule $$P(A\cap B)=P(A)P_A(B)$$.
+\end{prop}
+
+
+\begin{prop}
+Pour tous les événements $A$ et $B$ tels que $P(A)\neq 0$ :
+\begin{itemize}
+\item[$\bullet$] $P_A(A)=1$ ;
+\item[$\bullet$] $P_A(\bar{B})=1-P_A(B)$ ;
+\item[$\bullet$] Si $A$ et $B$ sont des événements incompatibles (c'est à dire ne pouvant pas se réaliser simultanément ou encore tels que $A\cap B=\emptyset$) alors $P_A(B)=0$.
+\end{itemize}
+\end{prop}
+
+\section{Arbre pondérés}
+
+%\begin{center}
+%\includegraphics[scale=1]{ProbabilitesConditionnellesCoursArbre.png}
+%\end{center}
+
+\begin{defn}
+Le schéma ci-dessus est appelé \emph{arbre pondéré} ou \emph{arbre à probabilités}. Il comporte 4 \emph{chemins} : $A\cap B$, $A\cap \bar{B}$, $\bar{A}\cap B$ et $\bar{A}\cap \bar{B}$. Un \emph{noeud} est un point d'où partent plusieurs branches.
+\end{defn}
+
+
+
+\begin{prop}
+Dans un \emph{arbre pondéré} ou \emph{arbre à probabilités} comme ci-dessus,
+\begin{itemize}
+\item[$\bullet$] La somme des probabilités portées sur les branches issues d'un même noeud est égale à 1 (par exemple, $P_A(B)+P_A(\bar{B})=1$) ;
+\item[$\bullet$] la probabilité d'un chemin est le produit des probabilités portées par ses branches (par exemple, $P(A\cap B)=P(A) \times P_A(B)$) ;
+\end{itemize}
+\end{prop}
+
+
+\section{Partitions et formule des probabilités totale}
+
+\begin{defn}
+ Soient $A_1$, $A_2$, ..., $A_n$ pour $n\geq 1$ des parties non vides d'un ensemble $E$. On dit que $A_1$, $A_2$, ..., $A_n$ forment \emph{une partition} de $E$ si les deux conditions suivantes sont vérfiées 
+\begin{itemize}
+ \item[$\bullet$] $A_1\cup A_2\cup ... \cup A_n=E$ ;
+\item[$\bullet$] pour tout $i\in \{1;2;...;n\}$ et tout $j\in\{1;2;...;n\}$ avec $i\neq j$, on a $A_i\cap A_j=\emptyset$.
+\end{itemize}
+\end{defn}
+
+%\begin{center}
+ %\includegraphics[width=5cm]{probabilitescoursTSimgpartition.png}
+%\end{center}
+
+
+\begin{thm}[Formule des probabilités totales]
+ Si $A_1$, $A_2$, ..., $A_n$ forment une partition d'un univers $E$, alors pour tout événement $A$ de l'univers $E$ :
+$$P(B)=P(B\cap A_1)+P(B\cap A_2)+...+P(B\cap A_n)$$
+ou encore
+$$P(B)=P(A_1)P_{A_1}(B)+P(A_2)P_{A_2}(B)+...+P(A_n)P_{A_n}(B)$$
+En particulier, pour tout événement $B$,
+$$P(B)=P(A)P_{A}(B)+P(\bar{A})P_{\bar{A}}(B)$$
+\end{thm}
+
+\begin{defn}
+Sur l'arbre pondéré du paragraphe précédent, la probabilité d'un événement est la somme des probabilités des chemins qui le compose (par exemple, $P(B)=P(A\cap B)+P(\bar{A}\cap B)$).
+\end{defn}
+
+
+
+\section{Indépendance d'événements}
+
+\begin{defn}
+On dit que deux événements $A$ et $B$ sont \emph{indépendants} lorsque $$P(A\cap B)=P(A)P(B)$$
+\end{defn}
+\begin{rem}
+Si $P(A)\neq 0$ alors deux événements $A$ et $B$ sont indépendants si et seulement si $P_A(B)=P(B)$ si et seulement si $P_B(A)=P(A)$ avec $P(B)\neq 0$, ce qui signifie que la probabilité que l'un des deux événements se réalise ne dépend pas de la probabilité que l'autre se réalise.
+\end{rem} 
+
+\begin{exemple}
+On tire au hasard une carte d'un jeu de 32 cartes. On appelle $A$ l'événement \og{}on tire un as\fg{}, $T$ l'événement \og{}on tire un  trèfle\fg{} et $N$ l'événement \og{}on tire une carte noire\fg{}. On a $P(A)=\frac{4}{32}=\frac{1}{8}$, $P(T)=\frac{8}{32}=\frac{1}{8}$ et $P(N)=\frac{16}{32}=\frac{1}{2}$.
+
+ D'une part $A\cap T$ est l'événement \og{}on tire l'as de trèfle\fg{} et $P(A)P(T)=\frac{1}{8}\times \frac{1}{4}=\frac{1}{32}$ qui est bien égal à $P(A\cap T)$ ce qui montre que $A$ et $T$ sont indépendants. 
+ 
+ D'autre part, $T\cap N$ est l'événement \og{}on tire un trèfle et une carte noire\fg{} dont la probabilité est $\frac{1}{4}$ mais on a $P(T)P(N)=\frac{1}{4}\frac{1}{2}=\frac{1}{8}\neq P(T\cap N)$ ce qui confirme que les événements $T$ et $N$ ne sont évidemment pas indépendants.
+ 
+\end{exemple}
+
+
+
+\begin{prop}
+Si $A$ et $B$ sont deux événements indépendants, alors $\bar{A}$ et $B$ sont aussi indépendants.
+\end{prop}
+
+\begin{demo}[Preuve]
+Si $A$ et $B$ sont indépendants dans un univers $E$ alors $P(A\cap B)=P(A)P(B)$. $\bar{A}$ et $B$ sont indépendants si et seulement si $P(\bar{A}\cap B)=P(\bar{A})P(B)$. Or $P(B)=P(\bar{A}\cap B)+P(A\cap B)$ d'après la formule des probabilités totales. D'où $P(\bar{A}\cap B)=P(B)-P(A\cap B)=P(B)-P(A)P(B)$ par indépendance de $A$ et $B$. Donc $P(\bar{A}\cap B)=(1-P(A))P(B)=P(\bar{A})P(B)$. D'où l'indépendance de $\bar{A}$ et $B$.
+\end{demo}
+
+
+\end{document}

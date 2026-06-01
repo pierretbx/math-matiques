@@ -1,0 +1,321 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8x]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage[frenchb]{babel}
+\usepackage[francais,bloc,nowatermark]{automultiplechoice}    
+% [nowatermark] pour enlever le texte "PROJET" et le pied de page
+\usepackage{multicol}
+\usepackage{tkz-tab}
+\usepackage{fancyhdr,amssymb,amsmath}
+\usepackage{eurosym}
+%\DeclareGraphicsRule{.7}{mps}{*}{}
+
+%===================
+\begin{document}
+%===================
+
+%%% On répartie les quesitons dans différents groupes.
+% ---------------------------------
+%%% Questions groupe : "catégorie1"
+%----------------------------------
+\element{categorie1}{
+  \begin{question}{Derive1}    
+Une expérience aléatoire consiste à lancer un dé à six faces et regarder le résultat obtenu. L'univers associé à cette expérience est l'ensemble de toutes les issues possibles : Ici $\Omega=\{1 ; 2 ; 3 ; 4;5 ; 6\}$
+
+On considère le jeu suivant :
+\begin{itemize}
+\item Si le résultat est pair, on gagne $2$ \euro;
+\item Si le résultat est 1 , on gagne $3$ \euro;
+\item Si le résultat est 3 ou 5 , on perd $6$ \euro.
+\end{itemize}
+On note $X$ la variable aléatoire représentant le gain ou la perte en euro du joueur.
+
+\begin{enumerate}
+\item Quelle sont les valeurs possibles pour $X$ ? On notera les possibles valeurs $x_1; x_2,\cdots$ etc.
+\item Donner la loi de probabilité de $X$ à l'aide d'un tableau.
+\item Déterminer l'espérance de $X$, notée $E(X)$.
+\item Le jeu est-il équitable? 
+
+\end{enumerate}
+   
+   \AMCOpen{lines=9,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points     
+  \end{question}
+}
+
+%
+\element{categorie1}{
+  \begin{question}{Derive2}  
+% Question ouverte  
+Des plats cuisinés d'un certain type sont fabriqués en grande quantités. Parmi les 5000 plats préparés, on prélève l'un d'entre eux au hasard pour vérifier s'il est conforme ($C$ désignera un tel évènement); lors du dernier contrôle, 4850 plats étaient conformes.
+
+\begin{enumerate}
+\item Déterminer la probabilité de l'évènement $C$.
+\item Justifier que l'expérience aléatoire est une épreuve de Bernoulli.
+\item Donner deux exemples d'expériences aléatoires qui ne sont pas des épreuves de Bernoulli.
+\end{enumerate}
+
+   \AMCOpen{lines=4,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+\element{categorie1}{
+  \begin{question}{Derive3}  
+% Question ouverte  
+Au goûter d'un centre de vacances, Céline prend un gâteau fourré puis une brique de jus de fruits. Dans un premier sac, il y a 12 gâteaux à l'orange et 36 gâteaux à la fraise. Dans un second sac, il y a 24 briques de jus de pommes et 24 briques de jus de raisin.
+
+On notera $O$ le choix d'un gâteau à l'orange, $F$ le choix d'un gâteau à la fraise, $P$ le choix d'une brique au jus de pomme et $R$ le choix d'une brique de jus de raisin.
+
+\begin{enumerate}
+\item Construire un arbre pondéré illustrant cette situation puis déterminer l'ensemble des issues possibles.
+
+\item Calculer la probabilité de l'évènement $A$ : " Céline a pris un gâteau à l'orange et un jus de pomme ".
+\end{enumerate}
+   \AMCOpen{lines=13,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+\element{categorie1}{
+  \begin{question}{Tableau}  
+% Question ouverte  
+Soit le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+& \textbf{Groupe A} & \textbf{Groupe B} \\
+\hline
+\textbf{Femme} & 20 & 40 \\
+\hline
+\textbf{Homme} & 30 & 10 \\
+\hline
+\end{tabular}
+\end{center}
+
+On note $F$ l'événement "être une femme" et $A$ l'événement "appartenir au groupe A".
+
+\begin{enumerate}
+\item Calculer les fréquences marginales $f(F)$, $f(A)$, $f(\overline{F})$ et $f(\overline{A})$.
+\item Calculer les fréquences conditionnelles $f_F(A)$ et $f_{\bar{A}}(F)$.
+\end{enumerate}
+   \AMCOpen{lines=5,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+\element{categorie1}{
+  \begin{question}{variation1}  
+% Question ouverte  
+Dans une entreprise, 70\% des employés ont un contrat à durée indéterminée (CDI) et 30\% ont un contrat à durée déterminée (CDD). Parmi les employés en CDI, 80\% ont une mutuelle d'entreprise, tandis que parmi les employés en CDD, seulement 30\% ont une mutuelle d'entreprise.
+
+On choisit au hasard un employé de cette entreprise. Compléter le tableau au fil des question.
+
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|}
+\hline $\cap$ & $M$ & $\overline{M}$ & Total \\
+\hline $CDI$ & $\cdots$ & $\cdots $ & 0,7 \\
+\hline $\overline{CDI}$ &$ \cdots$ & $\cdots $& 0,3 \\
+\hline Total & $\cdots$ & $\cdots$ & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Déterminer $\mathbb{P}_{CDI}(M)$, $\mathbb{P}_{\overline{CDI}}(M)$.
+\item Calculer la probabilité que cet employé ait un CDI et une mutuelle d'entreprise, c'est-à-dire $\mathbb{P}(CDI \cap M)$.
+\item Calculer la probabilité que cet employé ait un CDD et une mutuelle d'entreprise.
+\item En déduire la probabilité que cet employé ait une mutuelle d'entreprise.
+\item Calculer $\mathbb{P}(\overline{CDI} \cap \bar{M})$, $P_M(CDI)$, $P_M(\overline{CDI})$, $P_{\bar{M}}(CDI)$.
+\end{enumerate}
+   \AMCOpen{lines=10,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+\element{categorie2}{
+  \begin{question}{variation2}  
+% Question ouverte  
+Soit $f$ une fonction définie sur $\mathbb{R}$ telle que $f(x)=-2x^3-4x+5$. Déterminer les variations de $f$ sur $\mathbb{R}$ à l'aide de la fonction dérivé et d'un tableau récapitulatif.
+   \AMCOpen{lines=8,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+\element{categorie3}{
+  \begin{question}{tangente1}  
+% Question ouverte  
+On rappelle que l'équation réduite de la tangente au point d'abscisse $a$ d'une fonction $f$ est donnée par $\Gamma_{a,f}: y=f'(a)(x-a)+f(a)$ 
+Soit $h$ une fonction définie sur $\mathbb{R}$ telle que $h(x)=x^2-x+5$. Déterminer l'équation réduite de $\Gamma_{-2,h}$. 
+   \AMCOpen{lines=3,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+\element{categorie3}{
+  \begin{question}{tangente2}  
+% Question ouverte  
+On rappelle que l'équation réduite de la tangente au point d'abscisse $a$ d'une fonction $f$ est donnée par $\Gamma_{a,f}: y=f'(a)(x-a)+f(a)$ 
+Soit $h$ une fonction définie sur $\mathbb{R}$ telle que $h(x)=x^3-x+5$. Déterminer l'équation réduite de $\Gamma_{-1,h}$. 
+   \AMCOpen{lines=3,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+
+\element{categorie3}{
+  \begin{question}{tangente3}  
+% Question ouverte  
+
+\textit{(On rappelle que l'équation réduite de la tangente au point d'abscisse $a$ d'une fonction $f$ est donnée par $\Gamma_{a,f}: y=f'(a)(x-a)+f(a)$)} \\
+Soit $h$ une fonction définie sur $\mathbb{R}$ telle que $h(x)=x^3-2x-6$. Déterminer l'équation réduite de $\Gamma_{-2,h}$. 
+   \AMCOpen{lines=3,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+\element{categorie4}{
+  \begin{question}{libre1}  
+% Question ouverte  
+Représenter graphiquement une fonction $f$ de votre choix sur l'intervalle $[-3;5]$, tracer la tangente au point d'abscisse $2$ de la courbe $\mathcal{C}_f$ et indiquer le signe ou la valeur de $f'(2)$.
+   \AMCOpen{lines=12,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+\element{categorie4}{
+  \begin{question}{libre2}  
+% Question ouverte  
+Soit $i$ une fonction dont le tableau de signe de $i'$ à été représenté sur $[-3;10]$. 
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $f'(x)$ / 1}{$-3$, $6$, $8$, $10$}
+   \tkzTabLine{, -, z, +, z, -, }
+\end{tikzpicture}
+\end{center}
+Représenter graphiquement une fonction qui pourrait correspondre à $i$ sur l'intervalle $[-3;10]$.
+
+
+   \AMCOpen{lines=12,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+%-------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fin des questions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% fabrication des copies%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\exemplaire{1}{    
+
+%%% debut de l'entête des copies :    
+	%%% première ligne
+
+	\begin{minipage}{1\linewidth}
+	  \centering\large\bf DS de Mathématiques facultatif de 1STMG sur les statistiques et les probabilités
+	\end{minipage}
+
+	%%% codage des numéros d'étudiants sur 3 chiffres par les candidats et encadré d'écriture manuelle des noms.
+%	\vspace*{3mm}
+	{
+	%\setlength{\parindent}{0pt}\AMCcode{etu}{2}\hspace*{\fill}
+	\begin{minipage}[b]{12cm}
+	% \hspace*{5mm}
+  	%  Codez votre numéro ci contre chiffre par chiffre, puis complétez l'encadré.
+    % \vspace{3ex}
+
+	 \hfill\champnom{
+	 \centering
+	 \fbox{
+	 \begin{minipage}{1\linewidth}
+		\vspace*{3mm}
+		NOM - Prénom - Classe :
+		\vspace*{3mm}
+	 \end{minipage}
+	    }	
+	   }
+	\hfill\vspace{1ex}
+% texte de présentation 
+\begin{center}\em
+
+Durée : 55 minutes.
+
+  Aucun document n'est autorisé. La calculatrice est autorisée.
+%  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
+%  présenter une ou plusieurs bonnes réponses. Les autres ont une unique bonne réponse.
+%  Les réponses fausses ou incohérentes retirent des points. Pour éviter les erreurs machines, il est nécessaire de \textbf{noircir vos cases}.
+
+\end{center}
+
+	\end{minipage}\hspace*{\fill}
+	}
+
+\vspace{4ex}
+
+%%% Fin de l'entête
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Composition des QCM
+%%% On mélange des questions par groupe
+% On efface le {tout} précédent
+\cleargroup{tout}
+
+% On mélange par "catégorie", et on prélève aléatoirement [n] questions 
+% du lot {categorie-k} vers la copie complète {tout}
+% puis on restitue la copie.
+% Si on met [0], toutes les questions sont prises.
+\melangegroupe{categorie1}\copygroup[0]{categorie1}{tout}
+%\melangegroupe{categorie2}\copygroup[0]{categorie2}{tout}
+%\melangegroupe{categorie3}\copygroup[0]{categorie3}{tout}
+%\melangegroupe{categorie4}\copygroup[0]{categorie4}{tout}
+
+\restituegroupe{tout}
+
+% Saut d'une page si le sujet comporte un nombre impair de pages.
+% Ainsi il est possible d'imprimer les sujets en recto-verso.
+
+\AMCcleardoublepage    
+
+%%% Fin de la création des questionnaires
+
+}
+% Fin de exemplaires{k}{ 
+
+\end{document}
+

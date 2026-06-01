@@ -1,0 +1,203 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+ \setcounter{chapter}{10}
+\chapter{Fonctions affines, équations de droites et systèmes}
+
+\textit{C'est au XVIIème siècle que le mathématicien René Descartes affiche dans  l'ouvrage "La géométrie" (1637), son intension d'unir algèbre et géométrie. Il propose de réduire les problèmes de géométrie à des calculs qui se traduise bien souvent par des équations algébriques.}
+
+
+\section{Définir et représenter une fonction affine}
+
+\begin{defn}
+Soit $m \in \mathbb{R}$ et $p \in \mathbb{R}$. La fonction $f$ qui à tout réel $x$ lui associe $mx+p$, s'appelle une \underline{fonction affine}. Sa représentation graphique est une droite $\Delta$.
+
+Si $p=0$, $f$ est la \underline{fonction linéaire} de coefficient $m$, définie pour tout réel $x$ par $f(x)=mx$. $\Delta$ passe par l'origine du repère.
+
+Si $m=0$, $f$ est une \underline{fonction constante}, définie pour tout réel $x$ par $f(x)=p$. $\Delta$ est parallèle à l'axe des abscisses.
+\end{defn}
+
+\begin{rem}
+Si $f$ est définie sur $\mathbb{R}$ par $f(x)=mx+p$, les coordonnées $x$ et $y$ de tout point de la droite $\Delta$ sont liées par la relation $y=mx+p$, si bien que $\Delta= \{ (x;y)  \vert x \in \mathbb{R}, \; y=mx+p \} $ 
+\end{rem}
+
+On dit que la droite $\Delta$  a pour \underline{équation réduite} $y=mx+p$. $m$ est appelé \underline{ coefficient directeur} de $\Delta$ (ou \underline{pente} de $\Delta$ si le repère est orthornormé), $p$ est appelé \underline{ordonnée à l'origine} de $\Delta$.
+
+\section{Proportionnalité des accroissements}
+
+
+\begin{prop}
+Soit $f$ une fonction affine défini sur $\mathbb{R}$. Quels que soient les réels $a$ et $b$ distincts, $\frac{f(b)-f(a)}{b-a} = m$. Le nombre $\frac{f(b)-f(a)}{b-a}$ s'appelle taux d'accroissement de $f$ entre $a$ et $b$.
+\end{prop}
+
+
+\section{Sens de variation d'une fonction affine}
+
+\begin{prop}
+Soit $f$ la fonction affine définie sur $\mathbb{R}$ par $f(x)=mx+p$ où $m$ et $p$ sont deux réels fixés.
+
+\begin{itemize}
+\item Si \underline{$m>0$} alors la fonction $f$ est \underline{strictement croissante} sur $\mathbb{R}$.
+\item Si \underline{$m<0$} alors la fonction $f$ est \underline{strictement décroissante} sur $\mathbb{R}.$.
+\item Si \underline{$m=0$} alors la fonction $f$ est \underline{constante} sur $\mathbb{R}$.
+\end{itemize}
+\end{prop}
+
+
+
+\section{Vecteur directeur d'une droite}
+
+\begin{defn}
+On appelle \underline{vecteur directeur} d'une droite $\Delta$ tout vecteur $\overrightarrow{u}$ non nul tel qu'il existe deux points $A$ et $B$ de $\Delta$ vérifiant $\overrightarrow{u}=\overrightarrow{AB}$  
+\end{defn}
+
+Par conséquent, une droite possède une infinité de vecteurs directeurs mais qui ont tous la même direction, ainsi ils sont tous colinéaires entre eux.
+
+\begin{prop}
+La droite $\Delta$ passant par $A$ et de vecteur directeur $\overrightarrow{u}$ non nul est l'ensemble des points $M$ tel que $\overrightarrow{AM}$ et  $\overrightarrow{u}$ sont colinéaires.
+\end{prop}
+
+\section{Équation cartésienne et équation réduite d'une droite}
+
+\begin{prop}
+Soit $\Delta$ une droite quelconque du plan, les coordonnées $(x;y)$ de tout point de $\Delta$ sont liées par une relation de la forme $ax+by+c=0$, où $a$ \underline{et} $b$ ne peuvent pas être tous les deux nuls. 
+\end{prop}
+
+\begin{prop}
+Soit $a,b$ et $c$ trois réels tels que $(a;b)\neq (0;0)$. L'ensemble $\Delta$ des points de coordonnées $(x;y)$ vérifiant $ax+by+c=0$ est une droite dont un vecteur directeur est $\overrightarrow{u} \left( \begin{array}{c}
+-b \\
+a \\
+\end{array} \right). \\ 
+$
+\end{prop}
+
+\newpage
+
+\subsection{Établir la forme générale d'une équation de droite à l'aide du déterminant}
+ 
+Soit un point du plan $A=(x_A,y_A)$ , un vecteur $\overrightarrow{u}\left( \begin{array}{c}
+x_u\\
+y_u \\
+\end{array} \right) $, $\Delta$ la droite passant par $A$ dirigée par $\overrightarrow{u}$. 
+
+On pose $M=(x,y)$ et l'on souhaite déterminer une équation en fonction de $x$ et $y$ pour traduire le fait que $M \in \Delta$. 
+
+On a $\overrightarrow{AM} \left( \begin{array}{c}
+x-x_A \\
+y-y_A \\
+\end{array} \right)  
+$ ainsi $M \in \Delta$ \underline{si et seulement si} $\overrightarrow{AM}$ et $\overrightarrow{u}$ sont colinéaires.
+
+Autrement dit, $M \in \Delta$ si et seulement si $det(\overrightarrow{AM},\overrightarrow{u})=0$, ce qui équivaut à l'équation suivante:
+ $$y_u(x-x_A) -x_u(y-y_A)=0$$
+ou encore, 
+$$y_u x - x_u y + x_u y_A - x_A y_u = 0 .$$
+ 
+\begin{defn}
+L'équation $ax+by+c=0$ est appelée \underline{une équation cartésienne de la droite $\Delta$}
+\vspace{3mm}
+\end{defn}
+
+Certaines droites peuvent représenter des fonctions affines. Si une droite $\Delta$ a pour équation $(E): ax+by+c=0$, avec $b \neq 0$, alors $\Delta$ n'est pas parallèle à l'axe des ordonnées. L'équation $(E)$ équivaut à $y=- \frac{a}{b} x - \frac{c}{b}$ on retrouve alors \underline{l'équation réduite}  $y=mx+p$ en posant $m=-\frac{a}{b}$ et $p=-\frac{c}{b}$.\\
+
+La droite $\Delta$ représente graphiquement alors la fonction $f(x)=mx+p$, $m$ est appelé le \underline{ le coefficient directeur} ou \underline{pente} de la droite $\Delta$.
+
+\begin{prop}
+Soit $\Delta$ une droite d'équation réduite $y=mx+p$. Un vecteur directeur de $\Delta$ est $\overrightarrow{u} \left( \begin{array}{c}
+1 \\
+m \\
+\end{array} \right). \\ 
+$
+\end{prop}
+
+\subsection*{Le cas des droites parallèles à l'axe des ordonnées}
+\begin{prop}
+Une droite $\Delta$ du plan est parrallèle à l'axe des ordonnées si et seulement s'il existe $k \in \mathbb{R}$ tel que $x-k=0$ (ou encore $x=k$) est une équation cartésienne de $\Delta$. 
+\end{prop}
+
+\section{Droites parallèles}
+\begin{prop}
+Soient deux droites $\Delta$ et $\Delta^{'}$ dont une équation cartésienne respective des deux droites sont $(E)\; ax+by+c=0$ et $(E')\; a'x+b'y+c'=0$. \\
+
+Alors $\Delta$ et $\Delta^{'}$ sont parallèles si l'une des conditions suivantes est vérifiée.
+
+\begin{itemize}
+\item Un vecteur directeur de $\Delta$ est colinéaire à un vecteur directeur de $\Delta^{'}$.
+\item Leurs coefficients directeurs sont égaux
+\item $ab'-ba'=0$
+\end{itemize}
+
+\end{prop}
+
+\section{Système et intersection}
+
+On se donne $a,b,c,a',b',c' \in \mathbb{R}$ des nombres réels.
+
+\begin{defn}
+On appelle \underline{système} de deux équations linéaire à deux inconnues la donnée simultanée de deux équations du premier degré à deux inconnues: 
+
+$$
+\left \{
+\begin{array}{rcl}
+ax+by&=&c \\
+a'x+b'y&=&c'
+\end{array}
+\right. 
+$$
+
+Un couple $(x;y)$ est dit \underline{solution} du système s'il vérifie \underline{à la fois les deux égalités du système}.
+
+\end{defn}
+
+Soient deux droites $\Delta$ et $\Delta^{'}$ dont une équation cartésienne respective des deux droites sont $(E)\; ax+by-c=0$ et $(E')\; a'x+b'y-c'=0$. Ainsi on a $(a;b) \neq (0;0)$ et $(a',b') \neq (0;0)$.
+
+Alors le système: 
+
+$$
+\left \{
+\begin{array}{rcl}
+ax+by&=&c \\
+a'x+b'y&=&c'
+\end{array}
+\right. 
+$$ 
+
+Permet d'étudier l'intersection des deux droites  $\Delta$ et $\Delta^{'}$. 
+Effectivement on sait que l'équation de la ligne 1 (notée $(1)$) équivaut à $(E)\; ax+by-c=0$. Donc si un couple $(x;y)$ vérifie l'équation $(1)$ alors c'est un point de $\Delta$. De même l'équation de la ligne 2 (notée $(2)$) équivaut à  $(E')\; a'x+b'y-c'=0$. Donc si un couple $(x;y)$ vérifie l'équation $(2)$ alors c'est un point de $\Delta^{'}$. \\
+
+Donc si un couple $(x;y)$ est solution du système alors c'est un point de $\Delta$ \underline{et} de $\Delta^{'}$.
+
+On pourra cependant distinguer deux cas.
+
+\subsection*{Le cas où $ ab'-b'a \neq 0$}
+$\Delta$ et $\Delta^{'}$ sont sécantes et le système a une \underline{unique} solution.
+\subsection*{Le cas où $ ab'-b'a = 0$}
+\subsubsection*{Soit $\Delta$ et $\Delta^{'}$ sont strictement parallèles}
+Alors le système n'a \underline{aucune} solution.
+\subsubsection*{Soit $\Delta$ et $\Delta^{'}$ sont confondus}
+Alors le système a une \underline{infinité} de solution.
+
+\begin{prop}
+Le système admet une \underline{unique solution}  si et seulement si $ab'-a'b \neq 0$.
+\end{prop}
+
+\end{document}

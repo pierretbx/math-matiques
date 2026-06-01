@@ -1,0 +1,148 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{ALGORITHMIQUE ET PROGRAMMATION - Travaux pratiques 2}
+\addcontentsline{toc}{section}{ALGORITHMIQUE ET PROGRAMMATION - Travaux pratiques 2}
+
+\subsection*{J'utilise et je reproduis un programme}
+\addcontentsline{toc}{section}{J'utilise et je reproduis un programme}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{8.9cm}
+Voici un programme de calcul 
+
+\begin{center}
+\begin{minipage}{5cm}
+\begin{edupython}
+Choisir un nombre
+Prendre l oppose de ce nombre
+Ajouter 25
+Multiplier par -3
+\end{edupython}
+\end{minipage}
+\end{center}
+
+\begin{dinglist}{111}
+\item Reproduis ce programme sur scratch
+\item Quel nombre obtient-on si on choisit $20$ au départ ?
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{0.8cm}
+\end{dinglist}
+\ding{226} \textit{Appelle le professeur pour la vérification}
+\end{minipage}
+\hspace{1.5cm}
+\begin{minipage}{7cm}
+\begin{scratch}[scale=0.8]
+\blockinit{quand \greenflag est cliqué} 
+\blocksensing{demander \ovalnum{Choisir un nombre} et attendre}
+\blockvariable{mettre \selectmenu{nombre choisi au départ} à \ovalsensing{réponse}}
+\blockvariable{mettre \selectmenu{résultat} à \ovaloperator{\ovalnum{0}-\ovalvariable{nombre choisi au départ}}}
+\blockvariable{mettre \selectmenu{résultat} à \ovaloperator{\ovalvariable{résultat}+\ovalnum{25}}}
+\blockvariable{mettre \selectmenu{résultat} à \ovaloperator{\ovalvariable{résultat} * \ovalnum{-3}}}
+\blocklook{dire \ovalvariable{résultat} pendant \ovalnum{6} secondes}
+\end{scratch}
+\end{minipage}
+
+
+\subsection*{Je réalise un programme en mettant dans l'ordre}
+\addcontentsline{toc}{section}{Je réalise un programme en mettant dans l'ordre}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{8.3cm}
+Voici un programme de calcul 
+
+\begin{center}
+\begin{minipage}{7.5cm}
+\begin{edupython}
+Choisir un nombre
+Prendre la moitie du nombre
+Ajouter le triple du nombre choisi au depart
+Multiplier par (-4)
+\end{edupython}
+\end{minipage}
+\end{center}
+
+\begin{dinglist}{111}
+\item Remettre les différents blocs dans le bon ordre pour écrire le script correspondant au programme de calculs ci dessus.
+
+\ding{226} \textit{Appelle le professeur pour la vérification}
+%\item Quel nombre obtient-on si on choisit $25$ au départ ?
+\end{dinglist}
+\end{minipage}
+\hspace{0.4cm}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.65]{../40.Image/Info_TP_2.png}
+\end{minipage}
+
+\subsection*{Je complète un programme}
+\addcontentsline{toc}{section}{Je complète un programme}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{10.5cm}
+Voici un programme de calcul 
+
+\begin{center}
+\begin{minipage}{7.5cm}
+\begin{edupython}
+Choisir un nombre
+Multiplier par (-4)
+Soustraire (-5)
+Ajouter le triple du nombre choisi au depart
+\end{edupython}
+\end{minipage}
+\end{center}
+
+\begin{dinglist}{111}
+\item Reproduis ce programme sur scratch
+\item \textbf{Complète} le programme pour qu'il corresponde au programme de calculs ci-dessus, en utilisant \textbf{des opérateurs }?
+
+\ding{226} \textit{Test ton programme et appelle le professeur pour la vérification}
+\end{dinglist}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{6cm}
+\begin{scratch}[scale=0.8]
+\blockinit{quand \greenflag est cliqué} 
+\blocksensing{demander \ovalnum{Choisir un nombre} et attendre}
+\blockvariable{mettre \selectmenu{nombre choisi au départ} à \ovalsensing{réponse}}
+\blockvariable{mettre \selectmenu{résultat} à \ovalnum{}}
+\blockvariable{mettre \selectmenu{résultat} à \ovalnum{}}
+\blockvariable{mettre \selectmenu{résultat} à \ovalnum{}}
+\blocklook{dire \ovalvariable{résultat} pendant \ovalnum{6} secondes}
+\end{scratch}
+\end{minipage}
+
+\subsection*{J'écris un programme de A à Z}
+\addcontentsline{toc}{section}{J'écris un programme de A à Z}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{7.8cm}
+Voici un programme de calcul 
+
+\medskip
+\begin{center}
+\begin{minipage}{7.4cm}
+\begin{edupython}
+Choisir un nombre
+Prendre le quadruple du nombre au depart
+Prendre l oppose du resultat obtenu
+Multiplier par (-2)
+Ajouter le triple du nombre choisi au depart
+\end{edupython}
+\end{minipage}
+\end{center}
+
+\end{minipage}
+\hspace{0.1cm}
+\begin{minipage}{8.9cm}
+\begin{dinglist}{111}
+\item Écrire un script sur Scratch permettant de programmer le programme de calcul ci-dessus.
+\item Quel nombre obtient-on si on choisit $25$ au départ ?
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{0.8cm}
+\end{dinglist}
+\ding{226} \textit{Appelle le professeur pour la dernière vérification !}
+\end{minipage}
+\end{document}

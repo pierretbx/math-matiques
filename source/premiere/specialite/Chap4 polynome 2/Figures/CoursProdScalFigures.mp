@@ -1,0 +1,188 @@
+input latexmp;
+input repere;
+
+repere(0,7,1cm,-1,5,1cm);
+pair A,B,C,D,C',D',E;
+A=_c(1,0);B=_c(4,0);
+C=_c(2.5,2);D=_c(6,4);
+C'=projetex(C);
+D'=projetex(D);
+E-C'=D-C;
+draw droite(A,B);
+drawarrow A--B withpen pencircle scaled 2;
+drawarrow C--D withpen pencircle scaled 2;
+drawarrow C'--E;
+draw projectionx.bot(C,textext("$C'$")) dashed evenly;
+draw projectionx.bot(D,textext("$D'$")) dashed evenly;
+marque_p:="croix";
+nomme.bot(A);
+marque_p:="";
+nomme.bot(B);
+nomme.llft(C);nomme.urt(D);
+nomme.urt(E);
+fin;
+
+repere(0,7,1cm,-1,5,1cm);
+pair A,B,C,D,C',D',E;
+A=_c(1,0);B=_c(4,0);
+C=_c(5,2);D=_c(2,3.5);
+C'=projetex(C);
+D'=projetex(D);
+E-C'=D-C;
+draw droite(A,B);
+drawarrow A--B withpen pencircle scaled 2;
+drawarrow C--D withpen pencircle scaled 2;
+drawarrow C'--E;
+draw projectionx.bot(C,textext("$C'$")) dashed evenly;
+draw projectionx.bot(D,textext("$D'$")) dashed evenly;
+marque_p:="croix";
+nomme.bot(A);
+marque_p:="";
+nomme.bot(B);
+nomme.lrt(C);nomme.ulft(D);
+nomme.ulft(E);
+fin;
+
+for i=1 upto 2:
+repere(-0.5,2.5,1cm,-1.2,2,1cm);
+pair O,A,B,H;
+O=_c(0,0);
+A=_c(1.5,-0.75);
+B=_c(2,1.5);
+H=_c(1,-0.5);
+if i=1: drawoptions(withcolor blue) fi;
+draw axes(0,0);
+drawarrow O--A withpen pencircle scaled 1;
+drawarrow O--B withpen pencircle scaled 1;
+draw H--B dashed evenly;
+marque_p:="";
+nomme.llft(O);
+nomme.lrt(A);
+nomme.urt(B);
+nomme.llft(H);
+fin;
+endfor
+
+numeric u;
+
+vardef projortho(expr _c,_a,_b) =
+   pair _h;
+   _h-_a=whatever*(_b-_a);
+   _h-_c=whatever*(_b-_a) rotated 90;
+   _h
+enddef;
+
+def angledroit(expr _b,_a,_c,_taille) =
+   pair _bb,_cc,_hh;
+   _bb:=_a+unitvector(_b-_a)*_taille;
+   _cc:=_a+unitvector(_c-_a)*_taille;
+   _hh:=_bb+_cc-_a;
+   draw _bb--_hh--_cc
+enddef;
+
+beginfig(5)
+  pair O,A,B,H;
+  O:=(0,0);
+  A:=(4cm,0);
+  B:=(2.5cm,2cm);
+  H:=projortho(B,O,A);
+  angledroit(B,H,A,0.3cm);
+  drawarrow H--A;
+  drawarrow O--B;
+  draw B--H dashed evenly;
+  drawarrow O--H;
+  label.llft(textext("$O$"),(0,0));
+  dotlabel.llft(textext("$O$"),(0,0));
+  label.lrt(textext("$A$"),A);
+  label.urt(textext("$B$"),B);
+  label.bot(textext("$H$"),H);
+  label.bot(textext("$\overrightarrow{u}$"),(3.2cm,0));
+  label.ulft(textext("$\overrightarrow{v}$"),(1.25cm,1cm));
+endfig;
+
+beginfig(6)
+  pair O,A,B,H;
+  O:=(0,0);
+  A:=(2.5cm,0);
+  B:=(-1cm,2cm);
+  H:=projortho(B,O,A);
+  angledroit(B,H,A,0.3cm);
+  drawarrow H--A;
+  drawarrow O--B;
+  draw B--H dashed evenly;
+  drawarrow O--H;
+  label.bot(textext("$O$"),(0,0));
+  dotlabel.bot(textext("$O$"),(0,0));
+  label.lrt(textext("$A$"),A);
+  label.ulft(textext("$B$"),B);
+  label.bot(textext("$H$"),H);
+  label.bot(textext("$\overrightarrow{u}$"),(1.3cm,0));
+  label.urt(textext("$\overrightarrow{v}$"),(-0.5cm,1cm));
+endfig;
+
+beginfig(7)
+  pair O,A,B;
+  u:=0.7cm;
+  O:=(0,0);
+  A:=(4*u,0);
+  B:=(2.5*u,2*u);
+  drawarrow O--B;
+  drawarrow O--A;
+  dotlabel.llft(textext("$O$"),(0,0));
+  label.lrt(textext("$A$"),A);
+  label.urt(textext("$B$"),B);
+  label.bot(textext("$\overrightarrow{u}$"),(2*u,0));
+  label.ulft(textext("$\overrightarrow{v}$"),(1.25*u,1*u));
+endfig;
+
+beginfig(8)
+  pair O,A,B,C;
+  u:=0.7cm;
+  O:=(0,0);
+  B:=(-2*u,0);
+  C:=(2*u,0);
+  A:=(0,sqrt(5)*u);
+  draw A--B--C--cycle;
+  label.bot("4",O);
+  label.ulft("3",(A+B)/2);
+  dotlabel.top(textext("$O$"),O);
+  label.top(textext("$A$"),A);
+  label.llft(textext("$B$"),B);
+  label.lrt(textext("$C$"),C);
+endfig;
+
+beginfig(9)
+  pair O,A,B,C;
+  u:=1.5cm;
+  O:=(0,0);
+  A:=(0,u);
+  B:=A rotated 120;
+  C:=A rotated 240;
+  draw A--B--C-- cycle;
+  draw A..B..C.. cycle;
+  dotlabel.top (textext("$O$"),O);
+  label.top(textext("$A$"),A);
+  label.llft(textext("$B$"),B);
+  label.lrt(textext("$C$"),C);
+  defaultfont := "rsfs10";
+  label.urt("C",A rotated -60);
+endfig;
+
+beginfig(10)
+  u:=1.7cm;
+  pair O,A,B;
+  O:=(0,0);
+  A:=(u,0);
+  B:=A rotated 60;
+  drawarrow O--B;
+  drawarrow O--A;
+  draw A--B;
+  dotlabel.llft(textext("$O$"),(0,0));
+  label.lrt(textext("$A$"),A);
+  label.urt(textext("$B$"),B);
+  label.bot(textext("$\overrightarrow{u}$"),A/2);
+  label.ulft(textext("$\overrightarrow{v}$"),B/2);
+endfig;
+
+
+end

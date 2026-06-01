@@ -1,0 +1,150 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\pagestyle{empty}
+\newpage
+\section*{Pyramide et cône}
+\addcontentsline{toc}{section}{Pyramide et cône}
+
+\noindent \textit{L'usage de la calculatrice est \textbf{autorisée}.} \hfill \textit{Durée : 55 minutes}
+
+\medskip
+Un restaurateur, spécialiste dans la vente à emporter, cherche quel sera le meilleur emballage pour ses cornets de frites. Il a deux modèles à sa disposition :
+
+\begin{minipage}{3cm}
+\begin{center}
+\includegraphics[scale=0.2]{../40.Image/DS5 - 1.png}
+\end{center}
+\end{minipage}
+\begin{minipage}{10cm}
+Le modèle de gauche est une pyramide régulière
+à base carrée de hauteur $24$cm et de largeur de
+base $14$cm. (modèle P)
+
+Le modèle de droite est un cône de révolution de
+hauteur $24$cm et de rayon de base $8$cm.
+(modèle C)
+\end{minipage}
+\begin{minipage}{3cm}
+\begin{center}
+\includegraphics[scale=0.2]{../40.Image/DS5 - 2.png}
+\end{center}
+\end{minipage}
+
+\paragraph{Exercice 1}: \hfill \textbf{5 points}
+
+\vspace{-5mm}
+\noindent\begin{minipage}{12cm}
+Le restaurateur souhaite réaliser lui-même ses cornets afin de diminuer le coût.
+Il commence par le patron du cône de révolution.
+
+\medskip
+Sachant que la génératrice du cône de révolution a une longueur de $25,3$cm environ, réalise un patron à l échelle $\dfrac{1}{2}$ de ce cône.
+
+\medskip
+Écrire tous les calculs nécessaires.
+\end{minipage}
+\begin{minipage}{4cm}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\newcommand{\radiusx}{2}
+\newcommand{\radiusy}{.5}
+\newcommand{\height}{5}
+\coordinate (a) at (-{\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+\coordinate (b) at ({\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+\draw[fill=blue!15] (a)--(0,\height)--(b)--cycle;
+\fill[blue!30] circle (\radiusx{} and \radiusy);
+\begin{scope}
+\clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,-2*\radiusy)$);
+\draw circle (\radiusx{} and \radiusy);
+\end{scope}
+\begin{scope}
+\clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,2*\radiusy)$);
+\draw[dashed] circle (\radiusx{} and \radiusy);
+\end{scope}
+\draw[dashed] (0,\height)|-(\radiusx,0) node[right, pos=.25]{} node[above,pos=.75]{};
+\draw (0,.15)-|(.15,0);
+\begin{scriptsize}
+\draw [fill=black] (0,0) circle (1.0pt);
+\draw[color=black] (-0.5,0) node {\large{$O$}};
+\draw [fill=black] (2,0) circle (1.0pt);
+\draw[color=black] (2.5,0) node {\large{$M$}};
+\draw [fill=black] (0,5) circle (1.0pt);
+\draw[color=black] (0.5,5) node {\large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-4mm}
+\textbf{Aide : }Pour calculer la mesure de l'angle du développement d'un cône, \\on utilise la formule : $\widehat{a}=\dfrac{360 \times R}{g}$ où $R$ est le rayon du disque de base et $g$ la longueur de la génératrice du cône.
+
+\paragraph{Exercice 2}: \hfill \textbf{11 points \quad( Q1:2 / Q2:2 / Q3:2 / Q4:3 / Q5:2)}
+
+\medskip
+Se souvenant que la construction d'un cône de révolution est moins aisée, le restaurateur préfère étudier plus spécialement le cornet pyramidal.
+
+\begin{enumerate}
+\item Représenter en perspective la pyramide régulière.
+
+Pour cela, on appelle : $ABCD$ sa base ; $S$ son sommet; $O$ le centre de sa base ; $I$ le milieu de l'arête $[BC]$
+
+\vspace{3mm}
+\item  Il commence à réaliser un patron de la pyramide en modèle réduis, \\mais ne sait plus comment le terminer.\\
+Recopier le début de patron sur votre feuille puis compléter le patron \\de la pyramide sans oublier de mettre le nom de tous les points
+
+\vspace{-2.3cm}
+\begin{flushright}
+\includegraphics[scale=0.4]{../40.Image/DS5 - 3.png}
+\end{flushright}
+
+\vspace{-5mm}
+\item Quelle est la nature du triangle $OIS$ ? Justifier
+\item  \textbf{Démontrer} que la longueur $SI$ mesure $25$cm. (on admettra que $OI = 7$cm)
+\item  Pour connaître le coût de fabrication de son cornet, le restaurateur a besoin de connaître l aire de carton nécessaire à sa fabrication. Aide le à la déterminer.
+\end{enumerate}
+
+\paragraph{Exercice 3}: \hfill \textbf{4 points}
+
+Pour se faire de la publicité, il affiche fièrement dans son restaurant sa participation au record du monde du plus grand cornet de frites datant du 22 septembre 2013.
+
+\noindent \begin{minipage}{9cm}
+\begin{doc}[Article de presse]
+Le $22$ septembre $2013$, à Hazebrouck, $3 000$ éplucheurs
+bénévoles pensent chiper aux Belges le record du plus
+gros cornet de frites du monde.
+
+Des milliers de personnes ont rempli
+un cornet de $7,5$ mètres de haut
+
+Vers $19$h, le compteur de la balance s'arrête et annonce
+le poids du cornet à $6 225$ kilos. 
+
+Le record de $1985$ est battu, largement, les Belges avaient réalisé un cornet de presque
+cinq tonnes de frites. 
+
+\end{doc}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}{7.3cm}
+\begin{doc}[Formules et données]
+
+$\bullet$ $1$m$^3$ de pommes de terre pèse $622,5$kg
+
+$\bullet$ $\text{Aire de la base} = \dfrac{3 \times \text{Volume} }{\text{Hauteur}} $
+
+$\bullet$ $\text{Coté de la base} = \sqrt{\text{Aire de la base}}$
+
+\end{doc}
+
+\medskip
+\begin{doc}[Le cornet]
+Le cornet est assimilable à une pyramide régulière à base carrée.
+\end{doc}
+\end{minipage}
+
+Déterminer la longueur du côté du carré de base du cornet.
+
+\textit{Laisser apparent toute trace de recherche même non abouti}
+
+
+\end{document}

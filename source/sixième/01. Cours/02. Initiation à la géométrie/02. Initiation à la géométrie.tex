@@ -1,0 +1,139 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{1}
+\chapter{Initiation à la géométrie}
+
+\section{Notion de point}
+
+\begin{defn}
+Un point est un objet géométrique. C'est l'intersection de deux lignes. On le nomme par une lettre majuscule.
+\end{defn}
+
+\begin{ex}
+Représenter un point $M$.
+
+\noindent\grandscarreaux{\linewidth}{1.8cm}
+\end{ex}
+
+\begin{defn}
+Deux points sont \dotfill s'ils occupent le même emplacement. 
+
+\medskip \noindent Deux points sont \dotfill s'ils n'occupent pas le même emplacement.
+\end{defn}
+
+\begin{ex}
+Représenter la situation suivante :
+\begin{enumerate}
+\item[•] les points $A$ et $B$ sont confondus ;
+\item[•] les points $C$ et $D$ sont distincts.
+\end{enumerate}
+
+\medskip\noindent\grandscarreaux{\linewidth}{2cm}
+\end{ex}
+
+\section{Droite, demi-droite et segment}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.28}
+\begin{tabular}{|c|p{6.1cm}|c|}
+\hline
+Notation & \centering{Signification} & \hspace{2.1cm}Figure\hspace{2.1cm} \\\hline
+$[AB]$ & Lire : « segment $AB$ » \hspace{3cm}\textcolor{white}{.} C'est le segment d'extrémités $A$ et $B$. &\\\hline
+$(AB)$ & Lire « droite $AB$ » \hspace{3.5cm}\textcolor{white}{.} C'est la droite qui passe par les points $A$ et $B$. &\\\hline
+$[AB)$ & Lire « demi-droite $AB$ ». \hspace{3.cm}\textcolor{white}{.} C'est la demi-droite d'origine $A$ passant par le point $B$. &\\\hline
+$A \in(d)$ & Le point $A$ appartient à la droite $(d)$. & \\
+& &\\[-4pt]\hline
+$B \notin(D)$ & Le point $B$ n'appartient pas à la droite $(d)$. & \\
+& &\\[-4pt]\hline
+\end{tabular}
+\end{center}
+
+\begin{defn}
+Une droite est un objet géométrique formé de points.
+
+\noindent Une droite est illimitée.
+\end{defn}
+
+\begin{rems}
+\item[•] Deux droites qui se coupent ont un seul \dotfill \medskip
+\item[•] Des points alignés sont des points qui appartiennent à \dotfill
+\end{rems}
+
+\begin{ex}
+
+\noindent \begin{minipage}{0.38\linewidth}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.82cm,y=0.82cm]
+\clip(2.,1.) rectangle (9.,7.);
+\draw [line width=2.pt,domain=2.:9.] plot(\x,{(--1.--3.*\x)/5.});
+\begin{scriptsize}
+\draw [color=blue] (3.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.127272727272728,2.4036363636363642) node {\Large{$A$}};
+\draw [color=blue] (8.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (8.12727272727273,5.403636363636364) node {\Large{$B$}};
+\draw [color=blue] (5.,6.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.127272727272729,6.403636363636364) node {\Large{$C$}};
+\draw [color=blue] (4.839839572192513,3.103903743315508)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.963636363636366,3.5127272727272736) node {\Large{$D$}};
+\draw[color=black] (7,4) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.56\linewidth}
+\grandscarreaux{\linewidth}{3.6cm}
+\end{minipage}
+\end{ex}
+
+\section{Longueur et milieu d'un segment}
+
+\begin{defn}
+La longueur du segment [AB] est notée \dotfill
+\end{defn}
+
+\begin{ex}
+\noindent \begin{minipage}{0.52\linewidth}
+Quelle est la longueur du segment [AB] ?
+
+\grandscarreaux{\linewidth}{1.8cm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.42\linewidth}
+\begin{tikzpicture}[scale=0.9]
+\draw [line width=1.pt] (0,0.5)--(3.6,0.5);
+\draw[color=blue] (0.3,1) node {\Large{$A$}};
+\draw [color=blue] (0,0.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.9,1) node {\Large{$B$}};
+\draw [color=blue] (3.6,0.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\tkzRule[width=6,height=1,angle=0]{0,0}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}
+
+\begin{defn}
+Le milieu d'un segment est un point qui appartient au segment et qui est à égal distance de ses extrémités.
+\end{defn}
+
+\begin{ex}
+\noindent \begin{minipage}{0.52\linewidth}
+
+\grandscarreaux{\linewidth}{2.3cm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.42\linewidth}
+\begin{tikzpicture}[scale=0.85]
+\draw [line width=1.pt] (0,0.5)--(5,0.5);
+\draw[color=blue] (0.3,1) node {\Large{$A$}};
+\draw [color=blue] (0,0.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=red] (2.8,1) node {\Large{$C$}};
+\draw [color=red] (2.5,0.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.3,1) node {\Large{$B$}};
+\draw [color=blue] (5,0.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\tkzRule[width=6,height=1,angle=0]{0,0}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}
+
+\end{document}

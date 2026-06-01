@@ -1,0 +1,82 @@
+prologue :=2;
+input latexmp;
+input repere;
+
+%%% Droites
+
+beginfig(1);
+repere(-2,4.5,2cm,-5,5,1cm);
+path C_f;
+path C_g;
+path C_h;
+vardef f(expr x)=x enddef;
+vardef g(expr x)=(-0.5)*x-2 enddef;
+vardef h(expr x)=2*x-3 enddef;
+C_f= courbefonc(f)(-2,4);
+C_g= courbefonc(g)(-2,4);
+C_h= courbefonc(h)(-1,4);
+draw axey(0.5,1);
+draw axex(1,1);
+label.top("$x$", (4.2,0));
+label.rt("$y$", (0.1,4.5));
+draw C_f withpen pencircle scaled 0.8 withcolor pourpre dashed evenly;
+label.top("$\Delta$", (2.2,-3));
+label.top("$\Delta^{'}$", (0.8,1)) withcolor pourpre;
+label.rt("$\Delta^{''}$", (2.1,1)) withcolor marine;
+draw C_g withpen pencircle scaled 2 dashed withdots;
+draw C_h withpen pencircle scaled 0.9 withcolor marine;
+%label("$y=-x^2+4x+3$", (4,7.1));
+draw quadrillage(1,1) dashed evenly;
+%drawoptions(withcolor red);
+%marquepointcourbe(C_f,2);
+%draw projetex((2,7))--(2,7)--projetey((2,7));
+%label.lft("$(0,b)$", (0,1.2));
+endfig;
+
+
+%%% Stat
+
+beginfig(2);
+repere(-2,16,0.45cm,-0.1,0.25,15cm); 
+setrepere(0,16,0,0.25);
+draw axex(1,1);
+draw axey(0.1,0.1);
+picture diag; batons_diampoints:=0;
+diag:=diagrammepoisson(6); 
+draw diag withcolor 0.9(1,0.5,0) withpen pencircle scaled 4;
+endfig;
+
+beginfig(3);
+repere.larg(-2,10,8cm,-0.1,0.5,6cm); 
+setrepere(0,10,0,0.5);
+draw axex(1,1);
+draw axey(0.05,0.05);
+draw diagrammegeometrique(0.4) withpen pencircle scaled 1 withcolor 0.9blue;
+endfig;
+
+
+beginfig(4);
+repere(-2,16,0.45cm,-0.1,0.25,15cm); 
+setrepere(0,16,0,0.25); 
+draw axex(1,1);
+draw axey(0.1,0.1);
+picture diag;
+batons_diampoints:=0; 
+diag:=diagrammebinomiale(15,0.6);
+draw diag withcolor 0.5green withpen pencircle scaled 4;
+endfig;
+
+beginfig(5);
+repere(-0.5,5,1cm,-0.5,5,1cm); gradxpart:=false; flecheaxe:=false;
+draw axey(1,1);
+draw axex(0,0);
+draw axexpart.bot(1,"A",2,"B",3,"C",4,"D"); 
+path diag; 
+diag:=diagrammebarres((1,2),(2,4),(3,2),(4,1)); 
+fill diag withcolor 0.5(0,1,1);
+draw diag withpen pencircle scaled 1 withcolor 0.1blue;
+endfig;
+
+
+fin;
+end.

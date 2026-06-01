@@ -1,0 +1,137 @@
+\documentclass[9pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\lstset{
+    language=Python,
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\centering\textbf{Feuille d’exercices d’entraînement - Algorithmique Python : Affectation et condition \texttt{if}}\\
+\vspace{0.5cm}
+
+\noindent\textbf{Nom :} \underline{\hspace{5cm}} \hfill \textbf{Prénom :} \underline{\hspace{5cm}} \\
+\textbf{Classe :} \underline{\hspace{5cm}}\\
+\vspace{1cm}
+
+\section*{Exercice 1 — Lecture de programme}
+
+\noindent Que va afficher le programme suivant après exécution ? Justifie ta réponse.
+
+\begin{lstlisting}
+temperature = 5
+
+if temperature > 0:
+    print("Au-dessus de zero")
+else:
+    print("En dessous de zero")
+\end{lstlisting}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{3cm}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\noindent Et si on remplace la première ligne par \texttt{temperature = 0} ? Que se passe-t-il ?
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{3cm}
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\section*{Exercice 2 — Écriture de programme simple}
+
+\noindent Écris un programme qui :
+\begin{itemize}
+    \item demande à l’utilisateur son âge ;
+    \item affiche "\texttt{Majeur}" si l’âge est supérieur ou égal à 18 ;
+    \item sinon affiche "\texttt{Mineur}".
+\end{itemize}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{5cm}
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\section*{Exercice 3 — Conditions imbriquées}
+
+\noindent Que va afficher le programme suivant ? Justifie.
+
+\begin{lstlisting}
+score = 17
+
+if score >= 10:
+    print("Admis")
+    if score >= 16:
+        print("Mention tres bien")
+    else:
+        print("Sans mention")
+else:
+    print("Refuse")
+\end{lstlisting}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{4cm}
+\end{tcolorbox}
+
+\vspace{1cm}
+
+\section*{Exercice 4 — Paires et impaires}
+
+\noindent Écris un programme qui :
+\begin{itemize}
+    \item crée deux variables \texttt{a} et \texttt{b} avec les valeurs de ton choix ;
+    \item calcule leur somme ;
+    \item affiche "\texttt{La somme est paire}" si la somme est paire, sinon affiche "\texttt{La somme est impaire}".
+\end{itemize}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{5cm}
+\end{tcolorbox}
+
+\vspace{0.3cm}
+\textbf{Rappel :} Pour savoir si un nombre est pair, on utilise : \\
+\texttt{if nombre \% 2 == 0:}
+
+\vspace{1cm}
+
+\newpage
+\section*{Exercice 5 — Bonus (réflexion)}
+
+\noindent Que va-t-il se passer avec ce programme ? Explique le résultat.
+
+\begin{lstlisting}
+x = 5
+y = 10
+
+if x + y > 10:
+    print("Grande somme")
+if x + y > 15:
+    print("Tres grande somme")
+else:
+    print("Somme moyenne")
+\end{lstlisting}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{4cm}
+\end{tcolorbox}
+
+\end{document}

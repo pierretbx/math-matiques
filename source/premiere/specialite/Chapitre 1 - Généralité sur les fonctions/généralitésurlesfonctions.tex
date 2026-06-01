@@ -1,0 +1,352 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+
+
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Généralités sur les fonctions}
+\section{Définition d'une fonction}
+\begin{defn}
+Une fonction $f$ est un objet mathématique qui est définie sur un ensemble de nombre de départ (appelé ensemble de définition) $D_f$ à valeurs dans un ensemble de nombre d'arrivé $F$. Elle associe à chaque élément de $E$ une valeur (appelé image) qui appartient à $F$. On note parfois la fonction $f$  comme ceci:  
+$$f : E \longrightarrow F $$
+$$ x \mapsto f(x)$$
+\end{defn}
+\section{Opérations sur les fonctions}
+\subsection{Égalité de deux fonctions}
+\begin{defn}
+Soient $u$ et $v$ deux fonctions. On dit que $u$ et $v$ sont égales et on note $u=v$ si :
+\begin{itemize}
+\item $u$ et $v$ ont le même ensemble de définition $D$.
+\item Pour tout $x\in D$, $u(x)=v(x)$.
+\end{itemize}
+\end{defn}
+
+\begin{exemple}
+Les fonctions $u$ et $v$ sont-elles égales ?
+\begin{enumerate}
+\item $u$ et $v$ sont définies par $u(x)=3-\dfrac{2}{x+1}$ et $v(x)=\dfrac{3x+1}{x+1}$
+\item $u$ et $v$ sont définies par $u(x)=x$ et $v(x)=\dfrac{x^{2}}{x}$
+\end{enumerate}
+\end{exemple}
+
+
+\begin{enumerate}
+\item $u$ et $v$ ont le même ensemble de définition : $\R \backslash \{ -1\}$
+
+Pour tout $x\in \R \backslash \{ -1\}$, \[u(x)=3-\dfrac{2}{x+1}=\dfrac{3(x+1)-2}{x+1}=\dfrac{3x+1}{x+1}=v(x)\]
+
+donc $u=v$.
+\item $u$ est définie sur $\R$ et $v$ est définie sur $\R^{*}$ donc $u\neq v$.
+\end{enumerate}
+
+%
+\subsection{Opérations sur les fonctions}
+\begin{defn}
+Soient $u$ et $v$ deux fonctions définies sur $D$ et $\lambda$ un réel.
+\begin{itemize}
+\item On définit les fonctions $u+v$, $uv$, $\lambda u$, $u+\lambda$ de la façon suivante :
+\[\begin{array}{l}
+(u+v)(x)=u(x)+v(x) \\
+(\lambda u)(x)=\lambda \times u(x)
+\end{array}
+\hspace{3em}
+\begin{array}{l}
+(uv)(x)=u(x)\times v(x) \\
+(u+\lambda)(x)=u(x)+\lambda
+\end{array}\]
+\item Si, pour tout $x \in D$, $v(x)\neq 0$ alors on peut définir la fonction $\dfrac{u}{v}$ par :
+\[\left(\dfrac{u}{v}\right)(x)=\dfrac{u(x)}{v(x)}\]
+
+\end{itemize}
+\end{defn}
+
+\begin{exemple}
+Soit $u$ et $v$ les fonctions définies sur $\R$ par $u(x)=x^{2}$ et $v(x)=x+3$. Déterminer $u+v$, $uv$, $2u$, $u+2$ et $\dfrac{u}{v}$.
+\end{exemple}
+
+
+\begin{itemize}
+\item Pour tout réel $x$, $(u+v)(x)=x^{2}+x+3$ ; $(uv)(x)=x^{2}(x+3)=x^{3}+3x^{2}$ ; $(2u)(x)=2x^{2}$ et $(u+2)(x)=x^{2}+2$
+\item Pour tout réel $x \neq -3$, $\left(\dfrac{u}{v}\right)(x)=\dfrac{x^{2}}{x+3}$
+\end{itemize}
+
+%
+\subsection{Composition de fonctions}
+\begin{defn}
+Soit $u$ une fonction définie sur $D_{u}$ et $v$ une fonction définie sur $D_{v}$ et telle que pour tout $x\in D_{v}$, $v(x)\in D_{u}$.\\
+
+Autrement dit on a:
+
+\begin{minipage}[c]{0.5\linewidth}
+\begin{center}
+$$v : D_v \longrightarrow F_v (\subset D_u) $$
+$$ x \mapsto v(x)$$
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.5\linewidth}
+\begin{center}
+$$u : D_u \longrightarrow \mathbb{R} $$
+$$ x \mapsto u(x)$$
+\end{center}
+\end{minipage}\\
+
+
+On appelle fonction composée de $v$ par $u$ la fonction notée $u\circ v$ et définie sur $D_{v}$ par :\\
+
+\hspace*{4.5cm}Pour tout $x\in D_{v}$, $u\circ v(x)=u(v(x))$
+
+
+%\vspace{3ex}
+
+\[\shorthandoff{;:!?} \xymatrix @!0 @R=0.8cm @C=2cm{
+D_v \ar@{->}[r] & D_u \ar@{->}[r] & \R \\
+x \ar@{|->}[r]^-v \ar@{|->}'[d]+D '[rrd]+D^-{u\circ v} [rr]& v(x) \ar@{|->}[r]^-u & u(v(x)) \\
+& &
+ }\]
+\end{defn}
+\vspace{1ex}
+
+\begin{rem} Il faut faire attention à l'ordre des fonctions. $u\circ v$ et $v \circ u$ sont en général des fonctions différentes.
+Il se peut qu'elles aient des ensembles de définition différents voire que l'une existe mais pas l'autre.
+\end{rem}
+
+\begin{exemple}
+Soit $f$ la fonction définie sur $[0;+\infty[$ par $f(x)=\sqrt{x}-1$ et $g$ la fonction définie sur $\R$ par $g(x)=x^{2}+3$. Définir $g \circ f$ et $f \circ g$. Sont-elles égales ?
+\end{exemple}
+
+
+\begin{itemize}
+\item $g \circ f$ est définie sur $[0;+\infty[$ par $g \circ f(x)=g(f(x))=(\sqrt{x}-1)^{2}+3=x-2\sqrt{x}+4$
+\item $f \circ g$ est définie sur $\R$ par $f \circ g(x)=f(g(x))=\sqrt{x^{2}+3}-1$
+\item $g \circ f$ et $f \circ g$ ne sont pas égales car elles n'ont pas le même ensemble de définition.
+On peut ausi remarquer que $g \circ f(0) \neq f \circ g(0)$
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sens de variation}
+\subsection{Sens de variation de la fonction $u+\lambda$}
+\begin{prop}
+Soit $u$ une fonction défine sur un intervalle $I$ et $\lambda$ un réel.
+
+Si $u$ est monotone sur $I$ alors $u$ et $u+\lambda$ ont même sens de variation sur $I$.
+\end{prop}
+
+
+\begin{demo}
+Cas où $u$ est croissante
+
+Soient $a$ et $b$ deux réels de $I$.
+\begin{align*}
+ a \ie b &\Longrightarrow u(a) \ie u(b) \text{ car $u$ est croissante sur $I$.}\\
+  &\Longleftrightarrow u(a)+\lambda \ie u(b)+\lambda
+\end{align*}
+
+La fonction $u+\lambda$ est croissante sur $I$.
+
+%\vspace{-\baselineskip}
+\end{demo}
+%
+\subsection{Sens de variation de la fonction $\lambda u$}
+\begin{prop}
+Soit $u$ une fonction défine et monotone sur un intervalle $I$ et $\lambda$ un réel.
+\begin{itemize}
+\item Si $\lambda >0$ alors les fonctions $u$ et $\lambda u$ ont même sens de variation sur $I$.
+\item Si $\lambda <0$ alors les fonctions $u$ et $\lambda u$ ont des sens de variation contraires sur $I$.
+\end{itemize}
+\end{prop}
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{demo}
+Cas où $u$ est croissante
+
+Soient $a$ et $b$ deux réels de $I$.
+Si $a \ie b$ alors $u(a) \ie u(b)$ car $u$ est croissante sur $I$.
+\begin{itemize}
+\item Si $\lambda >0$ alors $\lambda u(a) \ie \lambda u(b)$ donc $\lambda u$ est croissante sur $I$.
+\item Si $\lambda <0$ alors $\lambda u(a) \se \lambda u(b)$ donc $\lambda u$ est décroissante sur $I$.
+\end{itemize}
+\end{demo}
+%
+\subsection{Sens de variation de la fonction $u\circ v$}
+\begin{prop}
+Soit $u$ une fonction définie et monotone sur un intervalle $J$. Soit $v$ une fonction définie et monotone sur un intervalle $I$ et telle que pour tout $x\in I$, $v(x)\in J$.
+\begin{itemize}
+\item Si $u$ et $v$ ont même sens de variation alors $u\circ v$ est croissante sur $I$.
+\item Si $u$ et $v$ ont des sens de variation contraires alors $u\circ v$ est décroissante sur $I$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\underline{Cas où $v$ est croissante sur $I$.}\\
+
+Soient $a$ et $b$ deux réels de $I$.
+Si $a \ie b$ alors $v(a) \in J$, $v(b) \in J$ et $v(a) \ie v(b)$ car $v$ est croissante sur $I$.
+\begin{itemize}
+\item Si $u$ est croissante sur $J$ alors $u(v(a)) \ie u(v(b))$ donc $u\circ v(a) \ie u\circ v(b)$ donc $u\circ v$ est croissante sur $I$.
+\item Si $u$ est décroissante sur $J$ alors $u(v(a)) \se u(v(b))$ donc $u\circ v(a) \se u\circ v(b)$ donc $u\circ v$ est décroissante sur $I$.
+\end{itemize}
+
+\underline{Cas où $v$ est décroissante sur $I$.} \\
+
+Soient $a$ et $b$ deux réels de $I$.
+Si $a \ie b$ alors $v(a) \in J$, $v(b) \in J$ et $v(a) \se v(b)$ car $v$ est décroissante sur $I$.
+\begin{itemize}
+\item Si $u$ est croissante sur $J$ alors $u(v(a)) \se u(v(b))$ donc $u\circ v(a) \se u\circ v(b)$ donc $u\circ v$ est décroissante sur $I$.
+\item Si $u$ est décroissante sur $J$ alors $u(v(a)) \ie u(v(b))$ donc $u\circ v(a) \ie u\circ v(b)$ donc $u\circ v$ est croissante sur $I$.
+\end{itemize}
+
+\end{demo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\section{Représentations graphiques}
+
+\subsection{Définition d'une courbe}
+\begin{defn}
+La courbe représentative de la fonction $f$, notée $C_f$,  est l’ensemble des points de coordonnées $(x ; f(x))$, avec $x$ qui prend \emph{(une par une)} toutes les valeurs de l'ensemble $D_f$. \\
+ 
+Autrement dit, $$ C_f= \{ (x ; f(x))\; /  \; x\in D_f \} $$
+\end{defn}
+
+\subsection{Représentation graphique d'une fonction $x \mapsto u(x+a)+b$}
+\begin{prop}
+Soit $u$ une fonction et $v$ la fonction définie par $v(x)=u(x+a)+b$.
+
+Dans un repère $\oij$, on appelle $\calc_{u}$ et $\calc_{v}$ les courbes représentatives des fonctions $u$ et $v$.
+
+$\calc_{v}$ est l'image de $\calc_{u}$ par la translation de vecteur $-a\vect{i}+b\vect{j}$, autrement dit le vecteur de coordonnées $\cp{-a}{b}$.
+\end{prop}
+\begin{center}
+\includegraphics{Figures/FiguresFonctionsCours.1}
+\end{center}
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{demo}
+Soient $M(x;y)$ et $M'(x-a;y+b)$.
+
+\[M'\in \calc_{v} \Leftrightarrow y+b=v(x-a) \Leftrightarrow y+b=u(x-a+a)+b \Leftrightarrow y=u(x) \Leftrightarrow M \in \calc_{v}\]
+\end{demo}
+
+
+\subsection{Représentation graphique d'une fonction $\lambda u$}
+\begin{prop}
+Soit $u$ une fonction et $v$ la fonction $\lambda u$
+Dans un repère $\oij$, on appelle $\calc_{u}$ et $\calc_{v}$ les courbes représentatives des fonctions $u$ et $v$.
+Si $M$ est le point de $\calc_{u}$ d'abscisse $x$ alors on obtient le point d'abscisse $x$ de $\calc_{v}$ en multipliant l'ordonnée de $M$ par $\lambda$.
+\end{prop}
+
+\begin{minipage}[c]{0.3\linewidth}
+\begin{center}
+\includegraphics[scale=0.9]{Figures/FiguresFonctionsCours.2}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\linewidth}
+\begin{center}
+\includegraphics[scale=0.9]{Figures/FiguresFonctionsCours.3}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.3\linewidth}
+\begin{center}
+\includegraphics[scale=0.9]{Figures/FiguresFonctionsCours.4}
+\end{center}
+\end{minipage}
+\end{document}

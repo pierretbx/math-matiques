@@ -1,0 +1,416 @@
+verbatimtex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+etex;
+
+input courbes.mp;
+
+%============================================================================
+vardef fx(expr t) =
+t
+enddef;
+vardef fy(expr t) =
+                1/(t-1) +1
+enddef;
+%=============================================================================
+%============================================================================
+vardef gx(expr t) =
+t
+enddef;
+vardef gy(expr t) =
+                1/(1-t) +0.5
+enddef;
+%=============================================================================
+
+beginfig(1);
+path p,q;
+repere(0,0,-1,4,-1,5,1cm,1cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+p = f_courbe(1.1,4,100);
+q = g_courbe(-1,0.9,100);
+z0 = r_point(2,fy(2));
+z1 = r_point(0,fy(2));
+z2 = r_point(0,fy(2));
+z3 = r_point(2,0);
+z4 = r_point(2,5);
+z5 = r_point(0,fy(1.5));
+z6 = r_point(1.7,fy(1.7));
+z66 = r_point(1.5,fy(1.5));
+z7 = r_point(1,0);
+z77 = r_point(1.5,0);
+z8 = r_point(1/3,0);
+z88 = r_point(0.7,0);
+z9 = r_point(1/3,gy(1/3));
+z99 = r_point(0.5,gy(0.5));
+z999 = r_point(0.7,gy(0.7));
+z10 = r_point(1/3,5);
+
+draw z3--z4 dashed evenly;
+draw z8--z10 dashed evenly;
+draw rx_droite(1);
+draw r_droitedir(0,fy(2),0);
+
+label.llft(btex $a$ etex, z7);
+label.bot(btex $x$ etex, z3);
+label.bot(btex $x$ etex, z8);
+label.llft(btex $M$ etex, z2);
+label.ulft(btex $f(x)$ etex, z2);
+label.top(btex $C_{f}$ etex, r_point(3,1));
+
+draw p;draw q;
+
+pickup pencircle scaled 1.5pt;
+drawarrow z1--z5;
+drawarrow z0...z6...z66;
+drawarrow z3--z77;
+drawarrow z8--z88;
+drawarrow z9...z99...z999;
+
+%r_labelxy;
+r_fin;
+endfig;
+
+
+%============================================================================
+vardef fx(expr t) =
+t
+enddef;
+vardef fy(expr t) =
+                exp(t)
+enddef;
+%=============================================================================
+
+
+
+beginfig(2);
+path p; 
+repere(0,0,-1,4,-1,5,0.8cm,0.8cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+p = f_courbe(-1,4,100);
+z0 = r_point(1,fy(1));
+z1 = r_point(0,fy(1));
+z2 = r_point(0,fy(1.5));
+z3 = r_point(1,0);
+z4 = r_point(1.5,0);
+z5 = r_point(1.5,fy(1.5));
+z6 = r_point(1,5);
+
+
+
+draw z3--z6 dashed evenly;
+draw r_droitedir(0,fy(1),0);
+
+label.bot(btex $x$ etex, z3);
+label.llft(btex $M$ etex, z1);
+label.ulft(btex $f(x)$ etex, z1);
+label.top(btex $C_{f}$ etex, r_point(-0.5,1));
+
+draw p;
+
+pickup pencircle scaled 1.5pt;
+drawarrow z1--z2;
+drawarrow z0...z5;
+drawarrow z3--z4;
+
+
+%r_labelxy;
+r_fin;
+endfig;
+
+
+
+%============================================================================
+vardef fx(expr t) =
+t
+enddef;
+vardef fy(expr t) =
+                -exp(t)
+enddef;
+%=============================================================================
+
+
+
+beginfig(3);   
+path p; 
+repere(0,0,-1,4,-5,1,1cm,1cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+p = f_courbe(-1,4,100);
+z0 = r_point(1,fy(1));
+z1 = r_point(0,fy(1));
+z2 = r_point(0,fy(1.5));
+z3 = r_point(1,0);
+z4 = r_point(1.5,0);
+z5 = r_point(1.5,fy(1.5));
+z6 = r_point(1,-5);
+
+
+draw z3--z6 dashed evenly;
+draw r_droitedir(0,fy(1),0);
+
+label.top(btex $x$ etex, z3);
+label.ulft(btex $M$ etex, z1);
+label.llft(btex $f(x)$ etex, z1);
+label.top(btex $C_{f}$ etex, r_point(-0.5,1));
+
+draw p;
+
+pickup pencircle scaled 1.5pt;
+drawarrow z1--z2;
+drawarrow z0...z5;
+drawarrow z3--z4;
+
+
+%r_labelxy;
+r_fin;
+endfig;
+
+%============================================================================
+vardef fx(expr t) =
+t
+enddef;
+vardef fy(expr t) =
+                1/(t-1) +1
+enddef;
+%=============================================================================
+                
+beginfig(4);   
+path p,q; 
+repere(0,0,-1,4,-1,5,1cm,1cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+p = f_courbe(1.1,4,100);
+z0 = r_point(2,fy(2));
+z1 = r_point(0,fy(2));
+z2 = r_point(0,fy(2));
+z3 = r_point(2,0);
+z4 = r_point(2,5);
+z5 = r_point(0,fy(1.5));
+z6 = r_point(1.7,fy(1.7));
+z66 = r_point(1.5,fy(1.5));
+z7 = r_point(1,0);
+z77 = r_point(1.5,0);
+
+
+draw z3--z4 dashed evenly;
+draw rx_droite(1);
+draw r_droitedir(0,fy(2),0);
+
+label.llft(btex $a$ etex, z7);
+label.bot(btex $x$ etex, z3);
+label.llft(btex $M$ etex, z2);
+label.ulft(btex $f(x)$ etex, z2);
+label.top(btex $C_{f}$ etex, r_point(3,1));
+
+draw p;
+
+pickup pencircle scaled 1.5pt;
+drawarrow z1--z5;
+drawarrow z0...z6...z66;
+drawarrow z3--z77;
+
+%r_labelxy;
+r_fin;
+endfig;
+
+
+           
+%============================================================================
+vardef gx(expr t) =
+t
+enddef;
+vardef gy(expr t) =
+                1/(1-t) +0.5
+enddef;
+%=============================================================================
+
+beginfig(5);   
+path q; 
+repere(0,0,-1,4,-1,5,1cm,1cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+q = g_courbe(-1,0.9,100);
+
+z2 = r_point(0,gy(1/3));
+z5 = r_point(0,gy(0.7));
+z7 = r_point(1,0);
+z8 = r_point(1/3,0);
+z88 = r_point(0.7,0);
+z9 = r_point(1/3,gy(1/3));
+z99 = r_point(0.5,gy(0.5));
+z999 = r_point(0.7,gy(0.7));
+z10 = r_point(1/3,5);
+
+draw z8--z10 dashed evenly;
+draw rx_droite(1);
+draw r_droitedir(0,gy(1/3),0);
+
+label.llft(btex $a$ etex, z7);
+label.bot(btex $x$ etex, z8);
+label.llft(btex $M$ etex, z2);
+label.ulft(btex $f(x)$ etex, z2);
+label.top(btex $C_{f}$ etex, r_point(-0.5,0.5));
+
+draw q;
+
+pickup pencircle scaled 1.5pt;
+drawarrow z2--z5;
+drawarrow z8--z88;
+drawarrow z9...z99...z999;
+
+%r_labelxy;
+r_fin;
+endfig;
+
+
+%============================================================================
+vardef fx(expr t) =
+t
+enddef;
+vardef fy(expr t) =
+                (1/t) +1
+enddef;
+%=============================================================================
+
+beginfig(6);   
+path p;
+numeric _a;
+repere(0,0,-1,4,-1,5,1cm,1cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+p = f_courbe(0.1,4,100);
+
+z0 = r_point(1.5,0);
+z1 = r_point(1.5,1);
+_a = 2-(fy(1.5));
+z2 = r_point(1.5,fy(1.5));
+z3 = r_point(0,fy(1.5));
+z4 = r_point(0,1);
+z5 = r_point(0,_a);
+z6 = r_point(2,0);
+z7 = r_point(2,fy(2));
+
+draw z0--z2 dashed evenly;
+draw r_droitedir(0,1,0);
+draw r_droitedir(0,fy(1.5),0) dashed evenly;
+draw r_droitedir(0,_a,0) dashed evenly;
+
+label.bot(btex $x$ etex, z0);
+%dotlabel.llft(btex $P$ etex, z1);
+%dotlabel.top(btex $M$ etex, z2);
+%label.top(btex $l+\alpha$ etex, z3-r_point(0.5,0));
+label.top(btex $\ell$ etex, z4-r_point(0.5,0));
+%label.top(btex $l-\alpha$ etex, z5-r_point(0.5,0));
+label.top(btex $C_{f}$ etex, r_point(0.8,fy(0.8)+0.4));
+
+draw p;
+
+pickup pencircle scaled 1.5pt;
+drawarrow z0--z6;
+drawarrow z2--z7;
+
+%r_labelxy;
+r_fin;
+endfig;
+
+
+
+%============================================================================
+vardef fx(expr t) =
+t
+enddef;
+vardef fy(expr t) =
+               t+1+2/(t+2)
+enddef;
+%=============================================================================
+%============================================================================
+vardef gx(expr t) =
+t
+enddef;
+vardef gy(expr t) =
+                t+1
+enddef;
+%=============================================================================
+
+beginfig(7);
+path p,q;
+numeric _a;
+repere(0,0,-2,5,-1,6,0.8cm,0.8cm);
+%quad_x(1);
+%quad_y(1);
+r_axes;
+r_origine;
+%r_unites;
+p = f_courbe(-1.9,5,100);
+q = g_courbe(-2,5,100);
+
+z0 = r_point(3,0);
+z2 = r_point(3,fy(3));
+z1 = r_point(3,gy(3));
+z3 = r_point(0,fy(3));
+z4 = r_point(0,gy(3));
+
+draw z0--z2 dashed evenly;
+draw z1--z4 dashed evenly;
+draw z2--z3 dashed evenly;
+
+
+
+label.bot(btex $x$ etex, z0);
+dotlabel.lrt(btex $P$ etex, z1);
+dotlabel.top(btex $M$ etex, z2);
+label(btex $f(x)$ etex, z3-r_point(0.5,0));
+label(btex $ax+b$ etex, z4-r_point(0.5,0));
+label.top(btex $C_{f}$ etex, r_point(-0.5,1.2));
+
+draw p;draw q;
+
+%r_labelxy;
+r_fin;
+endfig;
+
+
+
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

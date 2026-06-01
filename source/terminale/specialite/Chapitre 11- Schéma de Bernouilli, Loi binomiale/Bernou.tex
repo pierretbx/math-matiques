@@ -1,0 +1,277 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\usepackage{tkz-tab}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[all]{xy}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{hyperref}
+%  \usepackage[frenchb]{babel}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[latin1]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\usepackage{yhmath} 
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%\newcommand{\imath}{\overrightarrow{i}}
+%\newcommand{\jmath}{\overrightarrow{j}}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+\begin{document}
+\tableofcontents
+
+\chapter{Schéma de Bernouilli, Loi binomiale}
+
+
+\section{Loi de Bernoulli}
+
+
+\begin{defn}
+Soit $p$ un nombre réel tel que $p\in[0;1]$. Soit $X$ une variable aléatoire. On dit que $X$ suit une loi de Bernoulli de paramètre $p$ si :
+\begin{itemize}
+ \item[$\bullet$] $X$ prend pour seules valeurs 1 (\og{}succès\fg{}) et 0 (\og{}échec\fg{}) ;
+\item[$\bullet$] $P(X=1)=p$ et $P(X=0)=1-p$.
+\end{itemize}
+\end{defn}
+
+
+\begin{prop}
+ Soit $X$ une variable aléatoire qui suit la loi de Bernoulli de paramètre $p$.
+\begin{itemize}
+ \item[$\bullet$] $E(X)=p$ ;
+\item[$\bullet$] $V(X)=p(1-p)$.
+\end{itemize}
+\end{prop}
+
+
+\begin{demo}
+ D'une part, $E(X)=0\times P(X=0)+1\times P(X=1)=0\times (1-p)+1\times p = p$. \par
+\noindent En outre, $V(X)=P(X=0)\times (0-E(X))^2+P(X=1)\times (1-E(X))^2=(1-p)p^2+p(1-p)^2=p(1-p)(p+1-p)=p(1-p)$
+\end{demo}
+
+
+\section{Schéma de Bernoulli}
+
+
+\begin{defn}
+Deux expériences sont dites indépendantes si le résultat de l'une n'influence pas le résultat de l'autre.
+\end{defn}
+
+
+\begin{exemple}
+il y a indépendance lorsqu'on lance deux fois de suite une pièce de monnaie.
+\end{exemple}
+
+
+\begin{defn}
+La répétition d'une expérience aléatoire suivant une loi de Bernoulli de paramètre $p$, ceci $n$ fois de manière indépendante, constitue \emph{un schéma de Bernoulli} de paramètres $n$ et $p$.
+\end{defn}
+
+
+\begin{prop}
+Dans un schéma de Bernoulli, la probabilité d'une liste de résultats est le produit des probabilités de chaque résultat
+\end{prop}
+
+
+\begin{exemple}[de savoir faire]
+\begin{itemize}
+\item[$\bullet$] Construire un arbre représentant un schéma de Bernoulli de paramètres donnés\\
+On contrôle la qualité d'un produit sur une chaîne de production. On prélève 3 produits au hasard. On suppose que les prélèvements sont indépendants. Statistiquement, chaque produit a une probabilité $p=0,05$ d'être défectueux.\\
+On a donc un schéma de Bernoulli de paramètres $p=0,05$ et $n=3$.\\
+
+%\begin{center}
+ %\includegraphics[width=6cm]{arbre.png}
+%\end{center}
+\item[$\bullet$] Calculer la probabilité d'un événement représenté par un chemin sur un arbre pondéré\\
+
+Sur l'arbre ci-dessus représentant un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$, la probabilité d'avoir les deux premières expériences qui donnent un succès et la dernière qui donne un échec est $P(SS\bar{S})=0,05^2\times 0,95\approx 0,002$\\
+
+soit 0,2 \% de chances d'avoir deux produits défectueux sur les trois prélevés.
+\end{itemize}
+\end{exemple}
+
+
+\section{Loi binomiale}
+
+
+
+\begin{defn}[Définition et propriété]
+Soient $n$ et $k$ deux entiers naturels avec $k\leq n$. On note $\binom{n}{k}$ (on dit \og{}$k$ sous $n$\fg{}) le nombre de manières d'obtenir $k$ succès et $n-k$ échecs pour $n$ répétitions indépendantes de la même expérience de Bernoulli. 
+\end{defn}
+
+
+\begin{exemple}{Exemple}
+%\begin{center}
+ %\includegraphics[width=8cm]{arbre.png}
+%\end{center}
+
+\noindent $\binom{3}{3}=1$ : il y a une seule manière d'obtenir 3 succès lors de la répétition de 3 épreuves identiques indépendantes.\\
+$\binom{3}{2}=3$ : il y a trois manières d'obtenir 2 succès et un échec lors de la répétition de 3 épreuves identiques indépendantes ($SSE$ ; $SES$ ; $ESS$).
+\end{exemple}
+
+\begin{defn}
+On considère une épreuve de Bernoulli de paramètre $p\in [0;1]$. On répète $n$ fois ($n\geq 1$) cette expérience indépendamment et on note $X$ la variable aléatoire qui compte le nombre de succés. On dit alors que la variable aléatoire $X$ suit une loi \emph{binomiale} de paramètres $n$ et $p$ et on note $X\sim \mathcal{B}(n;p)$.
+\end{defn}
+
+
+\begin{prop}
+ Si $X$ est une variable aléatoire qui suit une loi binomiale de paramètres $n$ et $p$, alors la probabilité d'obtenir $k$ succès avec $k\in\{0;1;2;...;n\}$ est $P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$.
+\end{prop}
+
+\begin{demo}
+Il y a $\binom{n}{k}$ manières d'obtenir $k$ succès dans $n$ répétitions d'expériences identiques et indépendantes. La probabilité de chacune de ces événements qui sont évidemment incompatibles est $p^k(1-p)^{n-k}$ d'où le résultat.
+\end{demo} 
+
+
+\begin{exemple}[de savoir faire]
+Calculer la probabilité de $P(X=k)$ où $X$ suit une loi binomiale à partir d'un arbre pondéré.\\
+On considère le problème précédent de test des produits d'une chaîne de production. Les prélèvements étant supposés indépendants les uns des autres, l'expérience constitue un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$. La variable aléatoire $X$ qui compte le nombre de succès suit la loi binomiale de paramètres $n=3$ et $p=0,05$.\\
+On a $P(X=2)=P(SS\bar{S}\cap S\bar{S}S\cap \bar{S}SS)$\\
+ car trois chemins permettent d'obtenir deux succès c'est à dire deux objets défectueux.\\
+D'où $P(X=2)=P(SS\bar{S})+P(S\bar{S}S)+P(\bar{S}SS)$\\
+donc $P(X=2)=0,05^2\times 0,95+0,95\times 0,05\times 0,95+0,95\times 0,05^2=3\times 0,05^2\times 0,95=0,007$\\
+soit une probabilité très faible de 0,007 d'avoir deux produits défectueux.
+\end{exemple}
+
+\begin{rem}[Calcul pratique de $P(X=k)$ et $P(X\leq k)$]
+Soit $X$ une variable aléatoire de paramètres $n$ et $p$. Pour $k$ allant de 0 à $n$, pour calculer $P(X=k)$ ou $P(X\leq k)$, on utilise une calculatrice :
+\begin{itemize}
+\item[$\bullet$] Sur Texas instrument : aller dans le menu \fbox{2nd}\fbox{distrib}, choisir \fbox{binomFdp} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $P(X=k)$ et choisir \fbox{binomFRép} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $P(X\leq k)$.
+\item[$\bullet$] Sur Casio : aller dans le menu \fbox{STAT} puis \fbox{DIST} puis \fbox{BINM}. Sélectionner alors \fbox{Bpd} puis \fbox{Var} pour variable, puis entrer alors $k$  dans la ligne \og{}x\fg{}, $n$ dans la ligne \og{}numtrial\fg{} et $p$ dans la ligne \og{}p\fg{} puis aller sur \og{}execute\fg{} pour valider et calculer ainsi $P(X=k)$. Pour le calcul de  $P(X\leq k)$, on utilisera \fbox{Bcd} au lieu de \fbox{Bpd}.
+\end{itemize}
+\end{rem}
+
+
+\section{Coefficients binomiaux}
+
+
+\begin{prop}[Triangle de Pascal]
+ Le triangle de Pascal, du nom de Blaise Pascal, mathématicien français du XVII\up{e} siècle qui le\og{}redécouvra\fg{} en Occident (car il était connu avant en Orient et au Moyen-Orient) est une disposition permettant de visualiser et de calculer les coefficients binomiaux et qui s'appuie sur la formule précédente.
+\begin{center}
+ \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+  $\binom{0}{0}=1$ & & & & &\\
+\hline
+$\binom{1}{0}=1$ & $\binom{1}{1}=1$ & & & &\\
+\hline
+$\binom{2}{0}=1$ & $\binom{2}{1}=2$ & 1 & & &\\
+\hline
+$\binom{3}{0}=1$ & $\binom{3}{1}=3$ & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+ 
+\end{center} 
+
+Explication de la construction : le nombre de la ligne $n$ et de la colonne $k$ est le coefficient binomial $\binom{n-1}{k-1}$. Il est obtenu en ajoutant le nombre situé au dessus (ligne $n-1$ et colonne $k$) au nombre de la colonne et de la ligne précédente (ligne $n-1$ et colonne $k-1$).\\
+Par exemple, $\binom{3}{1}=3$ est la somme de $\binom{2}{1}=2$ et de $\binom{2}{0}=1$.
+\begin{center}
+ \begin{tabular}{|c|c|c|c|c|c|}
+\hline
+  1 & & & & &\\
+\hline
+1 & 1 & & & &\\
+\hline
+1 & 2 & 1 & & &\\
+\hline
+1 & 3 & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+\end{center}
+\end{prop}
+
+\end{document}

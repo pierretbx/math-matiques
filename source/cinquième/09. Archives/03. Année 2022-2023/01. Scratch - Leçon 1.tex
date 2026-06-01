@@ -1,0 +1,124 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{SCRATCH - Instructions à connaître}
+\addcontentsline{toc}{section}{SCRATCH - Instructions à connaître}
+
+\setscratch{scale=0.9}
+\noindent\begin{minipage}[t]{5cm}
+\begin{center}
+\boxed{\text{\Large{Mouvement}}}
+\end{center}
+\begin{dinglist}{111}
+\item \begin{scratch}\blockmove{avancer de \ovalnum{15}}\end{scratch}
+\item \begin{scratch}\blockmove{tourner de \turnright{} de \ovalnum{45} degrés}\end{scratch}
+\item \begin{scratch}\blockmove{tourner de \turnleft{} de \ovalnum{30} degrés}\end{scratch}
+\item \begin{scratch}\blockmove{s'orienter à \ovalnum{90}}\end{scratch}
+\item \begin{scratch}\blockmove{aller à x: \ovalnum{0} y: \ovalnum{0}}\end{scratch}
+\end{dinglist}
+\end{minipage}
+\hspace{1mm}
+\begin{minipage}[t]{5.5cm}
+\begin{center}
+\boxed{\text{\Large{Apparence}}}
+\end{center}
+\begin{dinglist}{111}
+\item \begin{scratch}\blocklook{dire \ovalnum{Hello !} pendant \ovalnum{2} secondes}\end{scratch}
+\item \begin{scratch}\blocklook{dire \ovalnum{Hello !}}\end{scratch}
+\item \begin{scratch}\blocklook{penser à \ovalnum{Hmm..} pendant \ovalnum{2} secondes}\end{scratch}
+\item \begin{scratch}\blocklook{penser à \ovalnum{Hmm..}}\end{scratch}
+\item \begin{scratch}\blocklook{ajouter \ovalnum{10} à la taille}\end{scratch}
+\item \begin{scratch}\blocklook{mettre à \ovalnum{100} $\%$ de la taille initiale}\end{scratch}
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}[t]{5cm}
+\begin{center}
+\boxed{\text{\Large{Stylo}}}
+\end{center}
+\begin{dinglist}{111}
+\item \begin{scratch}\blockpen{effacer tout}\end{scratch}
+\item \begin{scratch}\blockpen{stylo en position d'écriture}\end{scratch}
+\item \begin{scratch}\blockpen{relever le stylo}\end{scratch}
+\item \begin{scratch}\blockpen{mettre la couleur \ovalsensing{} pour le stylo}\end{scratch}
+\item \begin{scratch}\blockpen{ajouter \ovalnum{1} à la taille du stylo}\end{scratch}
+\item \begin{scratch}\blockpen{choisir la taille \ovalnum{1} pour le stylo}\end{scratch}
+\end{dinglist}
+\end{minipage}
+
+\vspace{5mm}
+\noindent \begin{minipage}[t]{5cm}
+\begin{center}
+\boxed{\text{\Large{Contrôle}}}
+\end{center}
+\begin{dinglist}{111}
+\item \begin{scratch}\blockcontrol{attendre \ovalnum{1} secondes} \end{scratch}
+\item \begin{scratch} \blockrepeat{répéter \ovalnum{4} fois}
+{\blockspace}\end{scratch}
+\item \begin{scratch} \blockif{si \booloperator{~~~~~~} alors}
+{\blockspace}\end{scratch}
+\item \begin{scratch} \blockifelse{si \boolsensing{~~~~~~} alors}
+{\blockspace}
+{\blockspace}\end{scratch}
+\item \begin{scratch} \blockrepeat{répéter jusqu'à \boollist{~~~~~~}}
+{\blockspace}\end{scratch}
+\end{dinglist}
+\end{minipage}
+\hspace{1mm}
+\begin{minipage}[t]{5.5cm}
+\begin{center}
+\boxed{\text{\Large{Opérateur}}}
+\end{center}
+\begin{dinglist}{111}
+\item \ovaloperator{\ovalnum{}~+~\ovalnum{}}
+\item \ovaloperator{\ovalnum{}~-~\ovalnum{}}
+\item \ovaloperator{\ovalnum{}~*~\ovalnum{}}
+\item \ovaloperator{\ovalnum{}~/~\ovalnum{}}
+\item \ovaloperator{nombre aléatoire entre \ovalnum{1} et \ovalnum{20}}
+\item \booloperator{\ovalnum{}~<~\ovalnum{}}
+\item \booloperator{\ovalnum{}~>~\ovalnum{}}
+\item \booloperator{\ovalnum{}~=~\ovalnum{}}
+\item \booloperator{\booloperator{~~~~~~}~ et \booloperator{~~~~~~}}
+\item \booloperator{\booloperator{~~~~~~} ou \booloperator{~~~~~~}}
+\item \ovaloperator{regroupe \ovalnum{coucou} \ovalnum{les quatrièmes}}
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}[t]{5.5cm}
+\begin{center}
+\boxed{\text{\Large{Données}}}
+\end{center}
+\begin{dinglist}{111}
+\item \ovalnum{Créer une variable}
+\item \ovalvariable{ma variable}
+\item \begin{scratch} \blockvariable{mettre \selectmenu{ma_variable} à \ovalnum{0}} \end{scratch}
+\item \begin{scratch} \blockvariable{ajouter à \selectmenu{ma_variable} \ovalnum{1}} \end{scratch}
+\item \begin{scratch} \blockvariable{montrer la variable \selectmenu{ma_variable}} \end{scratch}
+\item \begin{scratch} \blockvariable{cacher la variable \selectmenu{ma_variable}} \end{scratch}
+\end{dinglist}
+\end{minipage}
+
+\vspace{-1.5cm} %\vspace{-3.8cm}scratch3
+\hspace{4.7cm}\begin{minipage}[t]{5.5cm}
+\begin{center}
+\boxed{\text{\Large{Capteurs}}}
+\end{center}
+\begin{dinglist}{111}
+\item \begin{scratch} \blocksensing{demander \ovalnum{Quelle valeur} et attendre} \end{scratch}
+\item \ovalsensing{réponse}
+\item \boolsensing{touche \selectmenu{espace} pressé ?}
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}[t]{5cm}
+\begin{center}
+\boxed{\text{\Large{Evénements}}}
+\end{center}
+\begin{dinglist}{111}
+\item \begin{scratch}\blockinit{quand \greenflag est cliqué} \end{scratch}
+\item \begin{scratch} \blockinit{Quand \selectmenu{espace} est pressé} \end{scratch}
+\end{dinglist}
+\end{minipage}
+
+
+\end{document}

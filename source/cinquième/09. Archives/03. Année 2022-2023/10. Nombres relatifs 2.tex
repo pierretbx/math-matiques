@@ -1,0 +1,180 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.98, 0.4, 0.0}
+\newpage
+\setcounter{chapter}{9}
+\chapter{Nombres relatifs 2}
+
+\section{Somme de deux nombres relatifs}
+
+\vspace{-3mm}
+\subsection{Cas de deux nombres relatifs de même signe}
+
+\begin{prop}
+\begin{enumerate}
+\item on additionne les distances à zéro
+\item on donne au résultat le signe commun aux deux nombres.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+\noindent \renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+$(- 4) + (- 2) = ( - 6)$ &
+$(+3) + (+7) = (+10)$&
+$(+7,8) + (+8,7)= (+ 16,5)$ &
+$(-11,2) + (- 6,4) = (-17,6)$\\
+\end{tabularx}
+\end{ex}
+
+\vspace{-3mm}
+\subsection{Cas de deux nombres relatifs de signes contraires}
+
+\begin{prop}
+\begin{enumerate}
+\item on soustrait les distances à zéro
+\item on donne au résultat le signe du nombre qui a la plus grande distance à zéro.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+\noindent \renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+$(+ 3) + (-7) = (- 4)$ &
+$(-5) + (+3) = (- 2)$&
+$(+7,8) + (- 4,5) = (+3,3)$ &
+$4 + (- 8) = (- 4)$ \\
+\end{tabularx}
+\end{ex}
+
+\begin{rmq}
+La somme de deux nombres relatifs opposés est égale à zéro
+\end{rmq}
+
+\begin{ex}
+\noindent \renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+$(+3,4) + (- 3,4) = 0$&
+$(- 7) + (+ 7) = 0$\\
+\end{tabularx}
+\end{ex}
+
+\vspace{-3mm}
+\subsection{Somme de plusieurs termes}
+
+\begin{prop}
+Pour calculer la somme de plusieurs termes, on peut :
+\begin{enumerate}
+\item soit calculer dans l'ordre de lecture, de gauche à droite
+\item soit modifier l'ordre et les regrouper par signe.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+\vspace{-6mm}
+\begin{minipage}{7cm}
+\begin{eqnarray*}
+A &=& (- 3,5) + (+6) + (- 8)\\ 
+A &=& (- 3,5) + (- 8) + (+ 6)\\
+A &=& (- 11,5) + (+6)\\
+A &=& (- 5,5)
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{eqnarray*}
+B &=& (- 2,3) + (+ 4,3) + (- 9) + (+ 2,3) + (+3,8) + (- 5,7) \\
+&&\text{Il y a deux opposés : } (- 2,3) \text{ et } (+ 2,3)\\
+&=& (+ 4,3) + (+ 3,8) + (- 9) + (- 5,7)\\
+&=& (+8,1) + (- 14,7)\\
+&=& (- 6,6)
+\end{eqnarray*}
+\end{minipage}
+\end{ex}
+
+\vspace{-6mm}
+\section{Soustraction}
+
+\begin{prop}
+Pour soustraire un nombre relatif, on ajoute son opposé.
+\end{prop}
+
+\begin{ex}
+\noindent \renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+$(-5) - (+ 20) = (-5) + (-20) = (- 25)$ &
+$(+7) - (-4) = (+7) + (+4) = (+11)$\\
+$(+15) - (+18) = (+15) + (- 18) = (- 3)$ &
+$(- 8) - (- 5) = (- 8) + (+ 5) = (- 3)$\\
+\end{tabularx}
+\end{ex}
+
+\vspace{-3mm}
+\section{Simplification d'écriture}
+
+\subsection{Règles de simplification}
+
+\begin{prop}
+Pour écrire plus simplement une suite d'additions et de soustractions de nombres relatifs :
+\begin{enumerate}
+\item On transforme les soustractions en additions.
+\item On supprime les signes + des additions et les parenthèses autour des nombres.
+\item On supprime le signe + devant un nombre si il est en début de calcul.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+\noindent \renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+$(-5) + (+3) = - 5 + 3 = -2$ &
+$(+ 4) + (-2) = 4 - 2 = 2$ \\
+$(- 7) - (+ 2) = (- 7) + (- 2) =-7 - 2 = -9$ &
+$(- 5) - (- 4) = (- 5) + ( 4) = -5 + 4 = -1$\\
+\end{tabularx}
+\end{ex}
+
+\begin{rmq}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{|*{3}{>{ \centering \arraybackslash }X|}}
+\rowcolor{lightgray!50} Écriture simplifiée & Signification & Résultat \\\hline
+ $6+9$ & $(+6) + (+9)$ & $ (+15) = 15$ \\\hline
+ $7-13$ & $(+7) + (-13)$ & $ (-6) = -6$ \\\hline
+ $-6,5+10$ & $(-6,5) + (+10)$ & $ (+3,5) =3,5$ \\\hline
+ $-4,2-5,8$ & $(-4,2) + (-5,8)$ & $ (-10) = -10$ \\\hline
+\end{tabularx}
+\end{rmq}
+
+\subsection{Somme algébrique}
+
+\begin{dft}
+Une somme algébrique est une suite d'additions et de soustractions.
+\end{dft}
+
+\begin{ex}
+\noindent \begin{minipage}{8cm}
+\begin{eqnarray*}
+A &=& (-7) +(+5) - (-9 ) + (+2) - (+6) \\
+&=& (-7) + (+5) + (+9) + (+2) + (-6) \\
+&&\text{On transforme les soustractions en additions.}\\
+&=& -7 + 5 + 9 + 2 - 6 \\
+&&\text{On simplifie l'écriture.}\\
+&=& - 7 - 6 + 5 + 9 + 2\\
+&=& - 13 + 16\\
+&=& 3
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{eqnarray*}
+B &=& - 4,5 + 6 + 4,5 - 3 + 4 - 2 \\
+&& \text{l'écriture est déjà simplifiée ;}\\
+&& \text{on regarde s'il y a des opposés :}\\
+&=& 6 - 3 + 4 - 2\\
+&& \text{on regroupe les nombres positifs entre eux} \\
+&& \text{et les nombres négatifs entre eux}\\
+&=& 6 + 4 - 3 - 2\\
+&=& 10 - 5\\
+&=& 5
+\end{eqnarray*}
+\end{minipage}
+\end{ex}
+
+\end{document}

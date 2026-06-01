@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 19 - Algorithme et programmation\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Écrire un algorithme qui demande un nombre et affiche son triple augmenté de $7$.\end{exercice}\begin{exercice}{2}{5}Un programme effectue : choisir un nombre, ajouter $4$, multiplier par $2$. Tester avec $3$ puis écrire l'expression en fonction de $x$.\end{exercice}\begin{exercice}{3}{5}Dans Scratch, un lutin répète $4$ fois : avancer de $80$, tourner de $90^\circ$. Quelle figure trace-t-il ?\end{exercice}\begin{exercice}{4}{6}On veut tracer un triangle équilatéral. Proposer les blocs de déplacement et de rotation à répéter.\end{exercice}\end{document}

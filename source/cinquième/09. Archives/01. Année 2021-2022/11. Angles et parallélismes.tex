@@ -1,0 +1,259 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\setcounter{chapter}{10}
+\chapter{Angles et parallélismes}
+
+\section{Angles adjacents}
+
+\vspace{-5mm}
+\noindent\begin{minipage}{10cm}
+\begin{dft}
+Deux angles sont adjacents lorsque :
+\begin{enumerate}
+\item[•] Ils ont le même sommet
+\item[•] Ils ont un côté commun
+\item[•]Ils sont situés de part et d'autre du côté commun
+\end{enumerate}
+\end{dft}
+\end{minipage}
+
+\begin{ex}
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+
+\vspace{-7.2cm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\clip(0.,0.5) rectangle (6.,6.);
+\draw [line width=1.2pt] (1.,5.)-- (5.,1.);
+\draw [line width=1.2pt] (5.,1.)-- (0.,3.);
+\draw [line width=1.2pt] (5.,1.)-- (6.,6.);
+\begin{scriptsize}
+\draw [color=blue] (5.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.38,0.71) node {\large{$B$}};
+\draw [color=blue] (2.0068965517241377,2.197241379310345)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.72,1.81) node {\large{$E$}};
+\draw [color=blue] (2.56,3.44)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.9,3.97) node {\large{$F$}};
+\draw [color=blue] (5.575384615384616,3.876923076923077)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.1,4.45) node {\large{$G$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+\end{ex}
+
+\vspace{1cm}
+
+\section{Angles complémentaires et supplémentaires}
+
+\begin{dft}
+\begin{enumerate}
+\item[•] Deux angles sont complémentaires lorsque la somme de leurs mesures est égale à $90$\degre .
+\item[•] Deux angles sont supplémentaires lorsque la somme de leurs mesures est égale à $18$\degre .
+\end{enumerate}
+\end{dft}
+
+\begin{ex}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(0.,0.4) rectangle (6.,6.);
+\draw [line width=1.2pt] (1.,6.)-- (5.,1.);
+\draw [line width=1.2pt] (5.,1.)-- (0.,1.);
+\draw [line width=1.2pt] (5.,1.)-- (5.,6.);
+\begin{scriptsize}
+\draw [color=blue] (5.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.38,0.71) node {\large{$A$}};
+\draw [color=blue] (2.037931034482759,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.76,0.61) node {\large{$O$}};
+\draw [color=blue] (3.1248780487804875,3.34390243902439)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.46,3.87) node {\large{$J$}};
+\draw [color=blue] (5.,4.28)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.52,4.85) node {\large{$I$}};
+\end{scriptsize}
+\end{tikzpicture} 
+\hspace{20mm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\clip(-4.,0.) rectangle (6.,5.);
+\draw [line width=1.2pt] (-2.,5.)-- (1.,1.);
+\draw [line width=1.2pt] (1.,1.)-- (-4.,1.);
+\draw [line width=1.2pt] (1.,1.)-- (6.,1.);
+\begin{scriptsize}
+\draw [color=blue] (1.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.38,0.71) node {\large{$E$}};
+\draw [color=blue] (-1.9620689655172412,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-2.24,0.61) node {\large{$I$}};
+\draw [color=blue] (-0.40634146341463406,2.875121951219512)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-0.06,3.41) node {\large{$D$}};
+\draw [color=blue] (4.28,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.8,1.57) node {\large{$A$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{ex}
+
+\begin{prop}
+Les angles aigus d'un triangle rectangle sont complémentaires.
+\end{prop}
+
+\begin{ex}
+
+\begin{minipage}{4.8cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-1.8,-0.8) rectangle (4.8,3.8);
+%\draw [shift={(-1.,2.8)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (-90.:0.6) arc (-90.:-29.248826336546973:0.6) -- cycle;
+\draw[line width=0.8pt,color=red,fill=red,fill opacity=0.1] (-0.5757359312880715,0.) -- (-0.5757359312880714,0.42426406871192845) -- (-1.,0.42426406871192845) -- (-1.,0.) -- cycle; 
+\draw [line width=1.2pt] (-1.,0.)-- (4.,0.);
+\draw [line width=1.2pt] (4.,0.)-- (-1.,2.8);
+\draw [line width=1.2pt] (-1.,2.8)-- (-1.,0.);
+\begin{scriptsize}
+\draw [color=blue] (-1.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-1.46,-0.27) node {\large{$I$}};
+\draw [color=blue] (4.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.32,-0.23) node {\large{$K$}};
+\draw [color=blue] (-1.,2.8)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-0.7,3.29) node {\large{$J$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{12cm}
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{minipage}
+\end{ex}
+
+\section{Angles opposés par le sommet}
+
+\begin{dft}
+Deux angles sont opposés par le sommet lorsque :
+\begin{enumerate}
+\item[•] Ils ont le même sommet
+\item[•] Leurs côtés sont dans le prolongement l'un de l'autre
+\end{enumerate}
+\end{dft}
+
+\begin{ex}
+Deux droites sécantes définissent deux angles opposés par le sommet.
+
+\begin{flushright}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=1.0cm]
+\clip(1.,2.) rectangle (6.,4.);
+\draw [line width=1.2pt] (1.,4.)-- (6.,2.);
+\draw [line width=1.2pt] (1.,2.)-- (6.,4.);
+\end{tikzpicture}
+\end{center}
+\end{flushright}
+
+Les angles bleus sont deux angles opposés par le sommet.
+Les angles rouges sont deux autres angles opposés par le sommet.
+\end{ex}
+
+\begin{prop}
+Deux angles opposés par le sommet ont la même mesure.
+\end{prop}
+
+\section{Angles alternes internes et angles correspondants}
+
+\subsection{Angles alternes internes}
+
+\begin{dft}
+Deux droites $(d)$ et $(d')$ coupées par une droite sécante $(D)$ définissent deux paires d'angles alternes internes.
+\end{dft}
+
+\begin{ex}
+
+\vspace{-0.8cm}
+\begin{minipage}{8cm}
+Sur cette figure, les angles bleus sont alternes internes ainsi que les angles rouges.
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.6cm,y=1.0cm,scale = 0.7]
+\clip(-1.,0.) rectangle (6.5,6.);
+\draw [line width=1.2pt] (-0.48,1.4)-- (6.,2.);
+\draw [line width=1.2pt] (-0.2,4.52)-- (6.,4.);
+\draw [line width=1.2pt] (1.14,5.82)-- (5.12,-0.08);
+\begin{scriptsize}
+\draw[color=black] (1.26,1.15) node {\large{$(d')$}};
+\draw[color=black] (4.42,4.67) node {\large{$(d)$}};
+\draw[color=black] (2.34,3.23) node {\large{$(D)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}
+
+\vspace{-1.3cm}
+\subsection{Angles correspondants}
+
+\begin{dft}
+Deux droites $(d)$ et $(d')$ coupées par une droite sécante $(D)$ définissent quatre paires d'angles correspondants.
+\end{dft}
+
+\begin{ex}
+
+\vspace{-0.5cm}
+\begin{minipage}{8cm}
+Sur la figure ci-contre, les angles bleus sont correspondants ainsi que les angles rouges, les
+angles en verts et les angles en noirs.
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.6cm,y=1.0cm,scale = 0.7]
+\clip(-1.,0.) rectangle (6.5,6.);
+\draw [line width=1.2pt] (-0.48,1.4)-- (6.,2.);
+\draw [line width=1.2pt] (-0.2,4.52)-- (6.,4.);
+\draw [line width=1.2pt] (1.14,5.82)-- (5.12,-0.08);
+\begin{scriptsize}
+\draw[color=black] (1.26,1.15) node {\large{$(d')$}};
+\draw[color=black] (4.42,4.67) node {\large{$(d)$}};
+\draw[color=black] (2.34,3.23) node {\large{$(D)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}
+
+\section{Droites parallèles et angles}
+
+\subsection{Propriétés directes}
+
+\begin{prop}
+Si deux droites sont parallèles et sont coupées par une sécante commune, alors elles
+forment des angles alternes internes de même mesure.
+\end{prop}
+
+\begin{prop}
+Si deux droites sont parallèles et sont coupées par une sécante commune, alors elles
+forment des angles correspondants de même mesure.
+\end{prop}
+
+
+\begin{ex}
+Sur cette figure, les droites $(d)$ et $(d')$ sont parallèles. La droite $(D)$ est une sécante commune.
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=1.0cm]
+\clip(-1.,0.) rectangle (6.5,6.);
+\draw [line width=1.2pt] (-1.,1.)-- (6.,3.);
+\draw [line width=1.2pt] (-1.,3.)-- (6.,5.);
+\draw [line width=1.2pt] (1.14,5.82)-- (5.12,-0.08);
+\begin{scriptsize}
+\draw[color=black] (1.26,1.1) node {\large{$(d')$}};
+\draw[color=black] (4.42,4.2) node {\large{$(d)$}};
+\draw[color=black] (2.34,3) node {\large{$(D)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Sur la figure ci-dessus, les angles bleus sont tous de la même mesure, ainsi que les angles rouges.
+\end{ex}
+
+\subsection{Propriétés réciproques}
+
+\begin{prop}Si deux droites coupées par une sécante forment deux angles alternes internes de même
+mesure, alors ces droites sont parallèles.
+\end{prop}
+
+\begin{prop}Si deux droites coupées par une sécante forment deux angles correspondants de même
+mesure, alors ces droites sont parallèles.
+\end{prop}
+
+\end{document}

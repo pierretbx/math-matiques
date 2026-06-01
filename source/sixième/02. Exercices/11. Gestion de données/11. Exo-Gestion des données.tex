@@ -1,0 +1,168 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+
+\newpage
+\section*{Gestion des données}
+\addcontentsline{toc}{section}{Gestion des données}
+
+\subsection*{Tableaux}
+\addcontentsline{toc}{subsection}{Tableaux}
+
+\begin{ex}
+La distance de freinage est la distance parcourue entre l'instant où le frein est actionné et l'arrêt du véhicule. Voici les valeurs pour une voiture en bon état sur une route sèche.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{4cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer1!20}{Vitesse en km/h} & $30$ & $80$ & $90$ &  $110$ &  $130$ \\\hline
+\cellcolor{exer1!20}{Distance de freinage en m} & $4,4$ & $12,3$ & $39,9$ &  $59,5$ &  $83,2$ \\\hline
+\end{tabularx}
+\end{center}
+
+\begin{enumerate}
+\item Sur route sèche, quelle est la distance de freinage à $110$km/h ?
+\item Sur route sèche, quelle vitesse correspond à une distance de freinage supérieure à $70$m ?
+
+\medskip
+On suppose que sur route mouillée la distance de freinage est doublée.
+\item Sur route mouillée, quelle est la distance de freinage à $50$km/h ?
+\item Sur route mouillée, quelles vitesses correspondent à une distance de freinage supérieure à $70$m ? 
+
+Que remarques-tu ?
+\end{enumerate}
+\end{ex}
+
+\subsection*{Représentations graphiques et interprétation}
+\addcontentsline{toc}{subsection}{Représentations graphiques et interprétation}
+
+\begin{ex}
+Le graphique représente les températures relevées toutes les heures, pendant une journée, par la station météo de Morestel.
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=1.2cm,scale=1]
+\begin{axis}[x=0.5cm,y=1.2cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-0.5,xmax=24.5,ymin=17.5,ymax=24.5,
+xtick={0,2,4,6,8,10,12,14,16,18,20,22,24},ytick={18,19,20,21,22,23,24},
+ylabel={Température (en \degre C)},
+xlabel={Heures},
+x tick label style={
+		/pgf/number format/1000 sep=},
+x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},]
+\clip(0,18) rectangle (24.5,24.5);
+\draw [line width=1.2pt] (0,21.5) -- (2,21.3) -- (4,19) -- (6,18.5) -- (8,18.7) -- (9,19) -- (10,20) -- (12,23) -- (13,23.8) -- (14,24) -- (15,23.2) -- (16,23) -- (18,23) -- (21,21.5) -- (23,21) -- (24,20.7) ;
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item Quelle était la température à $10$h ? à $21$h ?
+\item A quelles heures a-t-il fait $19$\degre$C$ ?
+\item Quelle est la température relevée la plus élevée ? La plus basse ?
+\item Quelle est l'intervalle de temps dans lequel la température a augmenté ?
+\item Sachant que Morestel est située au centre de la France, détermine en quelles saisons ces températures ont pu être relevées.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Un collège compte $240$ élèves de $4$ème. Les élèves sont, soit demi-pensionnaires (D.P), soit externes. Chacun de ces élèves étudie une $2$ème langue au choix : anglais, allemand ou espagnol.
+\begin{enumerate}
+\item Complète le tableau
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{|p{2cm}|*{4}{>{\centering \arraybackslash}X|}}
+\cline{2-5}
+\multicolumn{1}{c|}{} & \cellcolor{exer1!20}{Anglais} & \cellcolor{exer1!20}{Allemand} & \cellcolor{exer1!20}{Espagnol} & \cellcolor{exer1!20}{Total} \\\hline
+\cellcolor{exer1!20}{D.P.} &  & $40$ & $60$ &  $130$  \\\hline
+\cellcolor{exer1!20}{Externe} &  &  &  &  \\\hline
+\cellcolor{exer1!20}{Total} & $66$ & $72$ &  &   \\\hline
+\end{tabularx}
+\end{center}
+\item Combien d'élèves étudient l'anglais en LV2 ?
+\item Combien de demi-pensionnaire ont espagnol en LV2 ?
+\item Combien d'externes ont allemand en LV2 ?
+\item Combien d'élèves sont externes ?
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Dans un collège, on a demandé aux 200 élèves de sixième s'ils possédaient un animal de compagnie et si oui, lequel. Voici les résultats de l'enquête.
+
+\noindent \begin{minipage}{7cm}
+\begin{center}
+\begin{tikzpicture}[scale=2]
+
+\newcounter{a}
+\newcounter{b}
+\foreach \p/\t/\r in {25/Chien/blue!50, 37/Aucun/red!50, 13/Chat/violet!50, 19/Oiseaux/pink!100, 2/Rat/gray!50, 4/Autre/brown!50}
+  {
+    \setcounter{a}{\value{b}}
+    \addtocounter{b}{\p}
+    \slice{\thea/100*360}
+          {\theb/100*360}
+          {\large{\textbf{}}}{\large{\textbf{\textcolor{\r}{\t}}}}{\r}
+  }
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{9.5cm}
+\begin{enumerate}
+\item Combien d'élèves possèdent un chien ?
+\item Répondre par Vrai ou Faux. Justifie chaque réponse.
+\begin{enumerate}
+\item[•] Les élèves qui ont un rat sont plus nombreux que ceux qui ont un chat.
+\item[•] Un quart des élèves ont un oiseau.
+\item[•] Moins des trois quarts des élèves ont un animal de compagnie.
+\item[•] Les élèves qui ont un chat sont moitié moins nombreux que ceux qui ont un chien.
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Complète le tableau suivant à l'aide du diagramme circulaire ci-dessus.
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{|p{4cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer2!20}{Animal de compagnie} & Chien & Chat & Oiseau &  Rat & Autre & Aucun & Total  \\\hline
+\cellcolor{exer2!20}{Nombre d'élèves} &  &  &  & $5$ & $10$ & & $200$ \\\hline
+\end{tabularx}
+\end{center}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Une course a été organisée pour les élèves de 3$^e$ ($40$ garçons et $50$ filles) d'un collège. Les résultats sont donnés dans le tableau suivant.
+
+\textbf{Résultats des garçons}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{3cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer2!20}{Temps de parcours} & De $10$ à $15$ min & De $15$ à $20$ min & De $20$ à $25$ min & De $25$ à $30$ min & De $30$ à $35$ min  \\\hline
+\cellcolor{exer2!20}{Effectif} & $7$ & $10$ & $6$ & $9$ & $8$ \\\hline
+\end{tabularx}
+\end{center}
+
+\textbf{Résultats des filles}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{3cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer2!20}{Temps de parcours} & De $10$ à $15$ min & De $15$ à $20$ min & De $20$ à $25$ min & De $25$ à $30$ min & De $30$ à $35$ min  \\\hline
+\cellcolor{exer2!20}{Effectif} & $10$ & $14$ & $9$ & $8$ & $9$ \\\hline
+\end{tabularx}
+\end{center}
+
+\begin{enumerate}
+\item Sur un papier millimétré, trace le diagramme en barres ($2$cm pour $5$min en abscisse et $1$cm pour deux élèves en ordonnée) qui représente les résultats contenus dans les deux tableaux précédents.
+\item Est-il vrai que la moitié des élèves ont mis moins de $20$ minutes ? Justifie.
+\item Entre le groupe des garçons et celui des filles, lequel te paraît le plus homogène ? Justifie.
+\end{enumerate}
+\end{ex}
+\end{document}

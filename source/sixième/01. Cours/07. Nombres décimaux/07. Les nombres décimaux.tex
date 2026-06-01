@@ -1,0 +1,355 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{6}
+\chapter{Les nombres décimaux}
+
+\section{Sous-multiples de l'unité}
+
+\subsection{Les dixièmes}
+
+\begin{defn}
+Quand on coupe une unité en $10$ parties égales, on obtient des dixièmes. Un dixième se note $\dfrac{1}{10}$. 
+
+\noindent Dans l'unité, il y a $10$ dixièmes donc : $1=\dfrac{10}{10}$.
+\end{defn}
+
+\begin{ex}
+
+Représenter ci-dessous la fraction suivante $\dfrac{3}{10}$ :
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=0.3cm]
+\clip(0.5,1.5) rectangle (11.5,4.5);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+
+\noindent Le dessin ci-dessous représente quel nombre ?
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=0.3cm]
+\clip(0.5,1.5) rectangle (11.5,4.5);
+\fill [fill=lightgray] (1,4) --( 11,4)--(11,2)--(1,2);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=0.3cm]
+\clip(0.5,1.5) rectangle (11.5,4.5);
+\fill [fill=lightgray] (1,4) --( 11,4)--(11,2)--(1,2);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=0.3cm]
+\clip(0.5,1.5) rectangle (11.5,4.5);
+\fill [fill=lightgray] (1,4) --( 9,4)--(9,2)--(1,2);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{ex}
+
+\subsection{Les centièmes}
+
+\begin{defn}
+Quand on coupe une unité en $100$ parties égales, on obtient des centièmes. Un centième se note : $\dfrac{1}{100}$. 
+
+\noindent Dans l'unité, il y a $100$ centièmes donc : $1=\dfrac{100}{100}$
+\end{defn}
+
+\begin{ex}
+Représenter ci-dessous la fraction suivante $\dfrac{27}{100}$ :
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.3cm]
+\clip(1,2) rectangle (11,4);
+\draw [line width=2.pt] (1.,4.)-- (11.,4.);
+\draw [line width=2.pt] (11.,2.)-- (1.,2.);
+\draw [line width=2.pt] (1.,2.)-- (1.,4.);
+\draw [line width=2.pt] (2.,4.)-- (2.,2.);
+\draw [line width=2.pt] (3.,4.)-- (3.,2.);
+\draw [line width=2.pt] (4.,4.)-- (4.,2.);
+\draw [line width=2.pt] (5.,4.)-- (5.,2.);
+\draw [line width=2.pt] (6.,4.)-- (6.,2.);
+\draw [line width=2.pt] (7.,4.)-- (7.,2.);
+\draw [line width=2.pt] (8.,4.)-- (8.,2.);
+\draw [line width=2.pt] (9.,4.)-- (9.,2.);
+\draw [line width=2.pt] (10.,4.)-- (10.,2.);
+\draw [line width=2.pt] (11.,4.)-- (11.,2.);
+\end{tikzpicture}
+\end{center}
+\end{ex}
+
+\section{Les millièmes}
+
+
+\begin{defn}
+Quand on coupe une unité en $1 000$ parties égales, on obtient des millièmes. Un millième se note : $\dfrac{1}{1000}$. 
+
+\noindent Dans l'unité, il y a $1 000$ millièmes donc : $1=\dfrac{1000}{1000}$
+\end{defn}
+
+\begin{ex}
+Déterminer l'écriture décimale du nombre suivant : $\dfrac{14531}{1000}$
+
+\medskip \noindent \noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{ex}
+
+\section{Décomposition et nom des chiffres}
+
+\begin{defn}
+Un nombre pouvant s'écrire sous la forme d'une fraction décimale (dont le numérateur est un nombre entier et le dénominateur est $1$, $10$, $100$, $1000$ \dots) est un nombre décimal.
+
+\noindent Il peut aussi se noter en utilisant une virgule, c'est son écriture décimale qui est composée d'une partie entière et d'une partie décimale.
+\end{defn}
+
+\begin{ex}
+On considère le nombre décimal $\np{1 345,824}$.
+\begin{enumerate}
+\item Écris ce nombre en toutes lettres.
+\item Donne une décomposition de ce nombre.
+\item Donne le nom de chaque chiffre.
+\end{enumerate} 
+\medskip \noindent\grandscarreaux{\linewidth}{5.8cm}
+\end{ex}
+
+\section{Repérage sur une demi-droite graduée}
+
+\begin{ex}
+
+\begin{center}
+\begin{tikzpicture}[x=4cm]  
+    % Axes
+    \draw[thick,->] (0,0) -- (3.5,0);
+    \foreach \x in {0,1,2,3}
+	\draw[shift={(\x,0)},color=black] (0pt,6pt) -- (0pt,-6pt) node [below] {\x};
+	\foreach \x in {0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.1,1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,
+	2.1,2.2,2.3,2.4,2.5,2.6,2.7,2.8,2.9,3.1,3.2,3.3,3.4}	
+	\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+	\draw[shift={(1.3,0)},color=red] (0pt,6pt) -- (0pt,-6pt) node[color=red] [below] {\large{$A$}};
+	\draw[shift={(2.7,0)},color=red] (0pt,6pt) -- (0pt,-6pt) node[color=red] [below] {\large{$B$}};
+	\draw[shift={(0.8,0)},color=red] (0pt,6pt) -- (0pt,-6pt) node[color=red] [below] {\large{$C$}};
+\end{tikzpicture}
+\end{center}
+
+Quelles sont les abscisses des points $A$, $B$ et $C$ ?
+
+\medskip \noindent \noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{ex} 
+
+\section{Comparaison et rangement}
+
+\begin{prop}
+Pour comparer deux nombres décimaux écrits sous forme décimale :
+\begin{enumerate}
+\item[•] On compare les parties entières ;
+\item[•] Si les parties entières sont égales alors on compare les chiffres des dixièmes ;
+\item[•] Si les chiffres des dixièmes sont égaux alors on compare les chiffres des centièmes ;
+\item[•] et ainsi de suite jusqu'à ce que les deux nombres aient des chiffres différents.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+Compare les nombres $81,357$ et $81,36$.
+
+\medskip \noindent \noindent\grandscarreaux{\linewidth}{4.2cm}
+\end{ex}
+
+
+\end{document}

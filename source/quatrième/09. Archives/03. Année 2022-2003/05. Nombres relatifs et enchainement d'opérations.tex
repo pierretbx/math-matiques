@@ -1,0 +1,101 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.98, 0.4, 0.0}
+\newpage
+\setcounter{chapter}{4}
+\chapter{Nombres relatifs et enchainement d'opérations}
+
+\section{Rappel des priorités}
+
+\vspace{-2mm}
+\begin{prop}
+Les règles de priorités se limitent à : (Dans l'ordre des priorités)
+\begin{enumerate}
+	\item Les calculs entre parenthèses ou crochets. S'il y a des parenthèses emboîtées, les plus emboîtées sont prioritaires.
+	\item Les multiplications et les divisions en allant de gauche à droite.
+	\item Les additions et soustractions en allant de gauche à droite.
+\end{enumerate}
+\end{prop}
+
+\begin{meth}[Calculer avec des parenthèses]
+Calculons $A = 7 + 2 \times (5 + 7) - 5$.
+ 
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{meth}
+
+\begin{rmq}
+
+\vspace{-4mm}\hspace{3cm} Les règles sont les mêmes avec les nombres relatifs.
+\end{rmq}
+
+\begin{ex}
+Calculons les expressions \quad $A = 13 + (-7) \times (-2)$ \quad et \quad $B = (-8 + 5) \times (-2) + 9$
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{ex}
+
+\vspace{-3mm}
+\section{Écrire en une seule expression}
+
+\vspace{-2mm}
+\begin{meth}[Avec un programme de calcul]
+
+\noindent \begin{minipage}{7cm}
+
+\begin{center}
+\textbf{Écriture en langage naturel}
+\end{center}
+\begin{center}
+\arrayrulecolor{black}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|p{5cm}|}
+\hline
+$\bullet$ Choisis un nombre\\
+$\bullet$ Ajoute $3$\\
+$\bullet$ Multiplie par $-9$\\
+$\bullet$ Soustraire $5$ \\\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{8.2cm}
+
+\begin{center}
+\textbf{Écriture en langage mathématiques}
+\end{center}
+\begin{minipage}{4cm}
+\arrayrulecolor{black}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|p{3cm}|}
+\hline
+$\bullet$ $7$ \\
+$\bullet$ $7+3$ \\
+$\bullet$ $(7+3) \times (-9)$ \\
+$\bullet$ $(7+3) \times (-9) -5$ \\\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{4cm}
+\arrayrulecolor{black}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{|p{3cm}|}
+\hline
+$\bullet$ $7$ \\
+$\bullet$ $7+3$ \\
+$\bullet$ $-9 \times (7+3)$ \\
+$\bullet$ $-9 \times (7+3) -5$ \\\hline
+\end{tabular}
+\end{minipage}
+\end{minipage}
+
+\end{meth}
+
+\begin{meth}[Avec un énoncé rédigé]
+J'ai $15$ pièces de $50$ centimes et 13 pièces d'un euro. Je donne $8$\euro~ à un copain. Combien me reste-t-il ?
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+
+\noindent $5$ dictionnaires identiques pèsent $17$kg. Combien pèseraient $20$ dictionnaires ?
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{meth}
+\end{document}

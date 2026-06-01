@@ -1,0 +1,72 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{6}
+\chapter{Expressions algébriques}
+
+\section{Les polynômes (Complètement hors programme)}
+
+\begin{defn}
+Les monômes sont des expressions algébriques formées du produit d'un coefficient $a$ réel par une puissance (entière) d'une indéterminée $x$: $ax^n$. 
+\end{defn}
+
+\medskip
+\noindent Exemples de monômes : \quad $4x^0=4$, \quad $-3x^1=-3X$, \quad $\pi x^2$, \quad $12,5x^7$ \quad et \quad $0x=0$ 
+
+\medskip
+\noindent L'exposant de $x$ est appelé le \textbf{degré} du monôme. 
+
+\medskip
+\noindent Par exemple :  \quad $-3x$ est de degré $1$, \quad $\pi x^2$ est de degré $2$, \quad $12,5x^7$ est de degré $7$, \quad $4$ est de degré $0$.
+
+\begin{memento}
+\begin{enumerate}
+\item[•] On dit qu'un polynôme est \textbf{réduit} lorsque tout ses monômes sont de degrés distincts. 
+\item[•] Un polynôme réduit est dit \textbf{ordonné} lorsque ses monômes sont rangés suivant les puissances décroissantes de l'indéterminée $x$. 
+\end{enumerate}
+\end{memento}
+
+\section{Développer une expression polynomiale}
+
+\subsection{Développer, réduire et ordonner.}
+
+\noindent $x^2(3x-1)$ n'est, a priori, pas un polynôme puisque ce n'est pas une somme de monômes. Mais distribuons $x^2$:
+
+\begin{center}
+$ x^2(3x-1) \quad = \quad x^2\times 3x-x^2\times 1 \quad = \quad x^2\times 3x^1-x^2 \quad = \quad 3x^{2+1}-x^2 \quad = \quad 3x^3-x^2$
+\end{center}
+
+\noindent Ainsi $x^2(3x-1)=3x^3-x^2$ est bien un polynôme de degré 3.
+
+\begin{defn}
+Deux polynômes sont dits égaux lorsqu'ils ont la même expression développée, réduite et ordonnée.
+\end{defn}
+
+\subsection{La boîte à outil pour développer.}
+
+\begin{prop}
+Les lettres $a$, $b$, $c$, $d$ désignent des nombres, des expressions algébriques, des fonctions numériques etc.
+\begin{enumerate}
+\item Distributivité de la multiplication sur l'addition: $a(b+c)= ab+ac$
+\item Double distributivité: $(a+b)(c+d)= ac+ad+bc+bd$
+\item Identités remarquables:
+
+\vspace{-3mm}
+\begin{center}
+$\bullet (a+b)^2= a^2+2ab+b^2$ \hspace{1.5cm} $\bullet (a-b)^2= a^2-2ab+b^2$ \hspace{1.5cm} $\bullet (a-b)(a+b)=a^2-b^2$
+\end{center}
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+Développons, réduisons et ordonnons l'expression $(x+3)^2 + (x-3)(2x-6)$ :
+
+\begin{eqnarray*}
+(x-3)^2 + (x+3)(2x-6)&=& x^2-2\times x \times 3 + 3^2 + x \times 2x + x \times (-6) + 3 \times 2x + 3 \times (-6)\\
+&=& x^2-6x+9+2x^2 -6x +6x-18\\
+&=& 3x^2 -6x -9 
+\end{eqnarray*}
+\end{ex}
+\end{document}

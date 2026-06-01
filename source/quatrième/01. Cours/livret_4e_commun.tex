@@ -1,0 +1,65 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\livretTitre}{Livret de mathématiques - Quatrième}
+\newcommand{\modeLivret}{\ifavecexercices Leçons et exercices\else Leçons\fi}
+
+\newcommand{\chapitre}[4]{%
+  \setcounter{chapter}{#1-1}%
+  \includepdf[
+    pages=-,
+    pagecommand={},
+    addtotoc={1,chapter,1,{#2},ch:#1}
+  ]{#3}%
+  \ifavecexercices
+    \IfFileExists{#4}{%
+      \includepdf[
+        pages=-,
+        pagecommand={},
+        addtotoc={1,section,2,{Exercices},ex:#1}
+      ]{#4}%
+    }{}%
+  \fi
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{4cm}
+  {\Huge\bfseries \livretTitre\par}
+  \vspace{1.5cm}
+  {\Large \modeLivret\par}
+  \vfill
+  {\large Année de quatrième\par}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\chapitre{01}{Chapitre 1 - Produit de nombres relatifs}{livret_assets/ch01_cours.pdf}{livret_assets/ch01_exercices.pdf}
+\chapitre{02}{Chapitre 2 - Proportionnalité}{livret_assets/ch02_cours.pdf}{livret_assets/ch02_exercices.pdf}
+\chapitre{03}{Chapitre 3 - Quotient de nombres relatifs}{livret_assets/ch03_cours.pdf}{livret_assets/ch03_exercices.pdf}
+\chapitre{04}{Chapitre 4 - Egalité de Pythagore}{livret_assets/ch04_cours.pdf}{livret_assets/ch04_exercices.pdf}
+\chapitre{05}{Chapitre 5 - Nombres relatifs et enchainement d'opérations}{livret_assets/ch05_cours.pdf}{livret_assets/ch05_exercices.pdf}
+\chapitre{06}{Chapitre 6 - Calcul littéral 1}{livret_assets/ch06_cours.pdf}{livret_assets/ch06_exercices.pdf}
+\chapitre{07}{Chapitre 7 - Pyramides et cônes 1}{livret_assets/ch07_cours.pdf}{livret_assets/ch07_exercices.pdf}
+\chapitre{08}{Chapitre 8 - Puissances de dix}{livret_assets/ch08_cours.pdf}{livret_assets/ch08_exercices.pdf}
+\chapitre{09}{Chapitre 9 - Triangles semblables}{livret_assets/ch09_cours.pdf}{livret_assets/ch09_exercices.pdf}
+\chapitre{10}{Chapitre 10 - Statistiques}{livret_assets/ch10_cours.pdf}{livret_assets/ch10_exercices.pdf}
+\chapitre{11}{Chapitre 11 - Calcul littéral 2}{livret_assets/ch11_cours.pdf}{livret_assets/ch11_exercices.pdf}
+\chapitre{12}{Chapitre 12 - Grandeurs composées}{livret_assets/ch12_cours.pdf}{livret_assets/ch12_exercices.pdf}
+\chapitre{13}{Chapitre 13 - Pyramides et cônes 2}{livret_assets/ch13_cours.pdf}{livret_assets/ch13_exercices.pdf}
+\chapitre{14}{Chapitre 14 - Multiplication et division de fractions}{livret_assets/ch14_cours.pdf}{livret_assets/ch14_exercices.pdf}
+\chapitre{15}{Chapitre 15 - Agrandissement et réduction}{livret_assets/ch15_cours.pdf}{livret_assets/ch15_exercices.pdf}
+\chapitre{16}{Chapitre 16 - Divisibilité et nombres premiers}{livret_assets/ch16_cours.pdf}{livret_assets/ch16_exercices.pdf}
+\chapitre{17}{Chapitre 17 - Les équations}{livret_assets/ch17_cours.pdf}{livret_assets/ch17_exercices.pdf}
+\chapitre{18}{Chapitre 18 - Les probabilités}{livret_assets/ch18_cours.pdf}{livret_assets/ch18_exercices.pdf}
+\chapitre{19}{Chapitre 19 - Les translations}{livret_assets/ch19_cours.pdf}{livret_assets/ch19_exercices.pdf}
+
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 20 - Parallèlogrammes particuliers\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Compléter les définitions de rectangle, losange et carré.\end{exercice}\begin{exercice}{2}{5}Un parallélogramme possède un angle droit. Que peut-on conclure ? Justifier.\end{exercice}\begin{exercice}{3}{5}Un parallélogramme possède deux côtés consécutifs de même longueur. Que peut-on conclure ? Justifier.\end{exercice}\begin{exercice}{4}{6}Construire un carré $ABCD$ de côté $5$ cm, tracer ses diagonales et donner deux propriétés de ces diagonales.\carreaux{5}\end{exercice}\end{document}

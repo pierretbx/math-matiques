@@ -1,0 +1,69 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -10 -11 58 51 
+%%HiResBoundingBox: -9.976 -10.9445 57.76086 50.6407 
+%%Creator: MetaPost 0.993
+%%CreationDate: 2008.06.07:1535
+%%Pages: 1
+%%DocumentResources: procset mpost-minimal
+%%+ font CMSY10 CMMI10
+%%DocumentSuppliedResources: procset mpost-minimal
+%%DocumentNeededResources: font CMSY10 CMMI10
+%%IncludeResource: font CMSY10
+%%IncludeResource: font CMMI10
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset mpost-minimal
+/bd{bind def}bind def/fshow {exch findfont exch scalefont setfont show}bd
+/fcp{findfont dup length dict begin{1 index/FID ne{def}{pop pop}ifelse}forall}bd
+/fmc{FontMatrix dup length array copy dup dup}bd/fmd{/FontMatrix exch def}bd
+/Amul{4 -1 roll exch mul 1000 div}bd/ExtendFont{fmc 0 get Amul 0 exch put fmd}bd
+/SlantFont{fmc 2 get dup 0 eq{pop 1}if Amul FontMatrix 0 get mul 2 exch put fmd}bd
+%%EndResource
+%%EndProlog
+%%BeginSetup
+ /cmsy10 /CMSY10 def
+ /cmmi10 /CMMI10 def
+%%EndSetup
+%%Page: 1 1
+ 0 0 0 setrgbcolor 0 0.5 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 0 0 moveto
+24.09444 41.73291 lineto stroke
+newpath 23.57237 37.76707 moveto
+24.09444 41.73291 lineto
+20.92097 39.29784 lineto
+23.09442 40.00082 lineto
+ closepath
+gsave fill grestore stroke
+newpath 0 0 moveto
+48.18887 0 lineto stroke
+newpath 44.49335 -1.53078 moveto
+48.18887 0 lineto
+44.49335 1.53078 lineto
+46.18886 0 lineto
+ closepath
+gsave fill grestore stroke
+newpath 48.18887 0 moveto
+24.09444 41.73291 lineto stroke
+-9.976 -8.90779 moveto
+(O) cmmi10 9.96265 fshow
+ 0 3 dtransform truncate idtransform setlinewidth pop
+newpath 0 0 moveto 0 0 rlineto stroke
+50.28886 -8.90779 moveto
+(A) cmmi10 9.96265 fshow
+26.19443 43.8329 moveto
+(B) cmmi10 9.96265 fshow
+19.11298 -6.655 moveto
+(\000) cmsy10 9.96265 fshow
+19.11317 -6.655 moveto
+(!) cmsy10 9.96265 fshow
+21.24278 -10.9445 moveto
+(u) cmmi10 9.96265 fshow
+-0.01567 27.25595 moveto
+(\000) cmsy10 9.96265 fshow
+-0.01547 27.25595 moveto
+(!) cmsy10 9.96265 fshow
+2.37253 22.96645 moveto
+(v) cmmi10 9.96265 fshow
+showpage
+%%EOF

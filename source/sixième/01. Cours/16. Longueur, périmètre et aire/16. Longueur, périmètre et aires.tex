@@ -1,0 +1,298 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{15}
+\chapter{Longueur, périmètre et aire}
+
+\section{Longueur}
+
+\begin{defn}
+La mesure d'un segment s'appelle sa longueur.
+
+\noindent L'unité de longueur est le mètre.
+\end{defn}
+
+\begin{meth}[\href{https://www.youtube.com/watch?v=drCAik_P1fE}{Utilisation d'un tableau de conversion}]
+
+Convertir $362$m en hectomètre, $25,7$hm en mètre et $1$km en mètres.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{lightgray!50} kilomètre & hectomètre & décamètre & mètre & décimètre & centimètre & millimètre\\\hline
+\rowcolor{lightgray!50} km & hm & dam & m & dm & cm & mm\\\hline
+ & & & & & & \\\hline
+ & & & & & & \\\hline
+ & & & & & & \\\hline
+\end{tabularx}
+\end{center}
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{meth}
+
+\section{Périmètre}
+
+\begin{defn}
+Le périmètre d'une figure est la longueur que l'on parcourt lorsqu'on fait le tour de la figure.
+\end{defn}
+
+\begin{ex}
+\begin{flushright}
+\includegraphics[scale=0.25]{17. Longueur, périmètre et aire 1.png}\hspace{3cm}
+\end{flushright}
+
+\vspace{-1.5cm}
+\noindent Le périmètre de cette figure est $16$ unités de longueur.
+
+\end{ex}
+
+\subsection{Périmètres des figures usuelles}
+
+\begin{prop}[périmètre du carré]
+On considère un carré de coté $c$.
+\begin{center}
+Périmètre = $4 \times$ longueur du côté \quad \quad \quad \quad  $\mathcal{P} = 4 \times c$
+\end{center}
+\end{prop}
+
+\begin{ex}
+Le périmètre d'un carré de côté $3$cm est :
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+%\noindent$P = 4 \times 3 = 12$cm.
+\end{ex}
+
+\begin{prop}[périmètre d'un rectangle]
+On considère un rectangle de longueur $L$ et de largeur $l$.
+\begin{center}
+Périmètre = $2 \times$ (Longueur $+$ largeur) \quad \quad \quad \quad $\mathcal{P} = 2 \times( L + l )$
+\end{center}
+\end{prop}
+
+\begin{ex}
+Le périmètre d'un rectangle de longueur $7$cm et de largeur $5$cm est :
+
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+%\begin{eqnarray*}
+%P &=& 2 \times (7 + 5) \\
+%P &=& 2 \times 12 \\
+%P &=& 24 cm
+%\end{eqnarray*}
+\end{ex}
+
+\noindent \begin{minipage}{11cm}
+\begin{prop}[périmètre d'un triangle]
+Le périmètre d'un triangle est égal à la somme des longueurs des trois côtés. (\textbf{exprimées dans la même unité}).
+$$\mathcal{P} = AB + BC + CA$$
+\end{prop}
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,2.2) rectangle (5.5,6.);
+\draw [line width=1.2pt,domain=0.5:5.5] plot(\x,{(--10.724--2.2*\x)/3.9});
+\draw [line width=1.2pt,domain=0.5:5.5] plot(\x,{(--4.4352-2.66*\x)/-1.54});
+\draw [line width=1.2pt,domain=0.5:4.5] plot(\x,{(-8.1732--0.46*\x)/-2.36});
+\begin{scriptsize}
+\draw [color=blue] (0.94,3.28)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.74,3.89) node {\large{$A$}};
+\draw [color=blue] (4.84,5.48)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.16,5.77) node {\large{$B$}};
+\draw [color=blue] (3.3,2.82)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.64,2.37) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{prop}[périmètre d'un cercle]
+Le périmètre (ou longueur ou circonférence) d'un cercle de rayon $R$ et de diamètre $D$ est égal à :
+$$\mathcal{P} = 2 \times R \times \pi \hspace{2cm} \mathcal{P} = \pi \times D$$
+\end{prop}
+
+\begin{rem}
+Le nombre $\pi$ se prononce \og pi \fg{}. Son écriture est infinie.
+
+\noindent Les premières décimales sont:
+$$\pi \approx 3,1415926535 8979323846 2643383279 5028841971 6939937510 5820974944 5923078164 0628620899 8628034825...$$
+
+\noindent Dans la pratique, on prend: $\pi \approx 3,14$.
+\end{rem}
+
+\begin{ex}
+\begin{enumerate}
+\item Calculons la longueur d'un cercle de rayon $3$cm.
+
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\item Calculons la longueur d'un demi-cercle de diamètre $4$cm.
+
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{enumerate} 
+\end{ex}
+
+\section{Aire}
+
+\begin{defn}
+La surface d'une figure est la partie qui se trouve à l'intérieur de la figure.
+\noindent L'aire est la mesure de la surface .
+\end{defn}
+
+\medskip
+\noindent La surface du carré peut être représentée par un nombre. Ce nombre s'appelle l'aire du carré.
+
+\begin{minipage}{3cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.9,2.4) rectangle (2.1,4.1);
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (1.,4.) -- (1.,3.) -- (2.,3.) -- (2.,4.) -- cycle;
+\draw [line width=2.pt,color=blue] (1.,4.)-- (1.,3.);
+\draw [line width=2.pt,color=blue] (1.,3.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (2.,4.);
+\draw [line width=2.pt,color=blue] (2.,4.)-- (1.,4.);
+\begin{scriptsize}
+\draw[color=blue] (1.5,2.7) node {\large{$1 cm$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{12cm}
+L'aire du carré ci-dessus (de côté de longueur $1$cm) est égale à $1$cm$^2$ (cm$^2$ se lit  \og centimètre carré \fg{}).
+\end{minipage}
+
+\begin{ex}
+\begin{minipage}{4cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.9,2.9) rectangle (3.1,4.1);
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (1.,4.) -- (1.,3.) -- (2.,3.) -- (2.,4.) -- cycle;
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (2.,4.) -- (2.,3.) -- (3.,3.) -- (3.,4.) -- cycle;
+\draw [line width=2.pt,color=blue] (1.,4.)-- (1.,3.);
+\draw [line width=2.pt,color=blue] (1.,3.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (2.,4.);
+\draw [line width=2.pt,color=blue] (2.,4.)-- (1.,4.);
+\draw [line width=2.pt,color=blue] (2.,4.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (3.,3.);
+\draw [line width=2.pt,color=blue] (3.,3.)-- (3.,4.);
+\draw [line width=2.pt,color=blue] (3.,4.)-- (2.,4.);
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.9,1.9) rectangle (4.1,4.1);
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (1.,4.) -- (1.,3.) -- (2.,3.) -- (2.,4.) -- cycle;
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (2.,4.) -- (2.,3.) -- (3.,3.) -- (3.,4.) -- cycle;
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (3.,4.) -- (3.,3.) -- (4.,3.) -- (4.,4.) -- cycle;
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (1.,3.) -- (1.,2.) -- (2.,2.) -- (2.,3.) -- cycle;
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (2.,3.) -- (2.,2.) -- (3.,2.) -- (3.,3.) -- cycle;
+\fill[line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (3.,3.) -- (3.,2.) -- (4.,3.) -- cycle;
+\draw [line width=2.pt,color=blue] (1.,4.)-- (1.,3.);
+\draw [line width=2.pt,color=blue] (1.,3.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (2.,4.);
+\draw [line width=2.pt,color=blue] (2.,4.)-- (1.,4.);
+\draw [line width=2.pt,color=blue] (2.,4.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (3.,3.);
+\draw [line width=2.pt,color=blue] (3.,3.)-- (3.,4.);
+\draw [line width=2.pt,color=blue] (3.,4.)-- (2.,4.);
+\draw [line width=2.pt,color=blue] (3.,4.)-- (3.,3.);
+\draw [line width=2.pt,color=blue] (3.,3.)-- (4.,3.);
+\draw [line width=2.pt,color=blue] (4.,3.)-- (4.,4.);
+\draw [line width=2.pt,color=blue] (4.,4.)-- (3.,4.);
+\draw [line width=2.pt,color=blue] (1.,3.)-- (1.,2.);
+\draw [line width=2.pt,color=blue] (1.,2.)-- (2.,2.);
+\draw [line width=2.pt,color=blue] (2.,2.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (1.,3.);
+\draw [line width=2.pt,color=blue] (2.,3.)-- (2.,2.);
+\draw [line width=2.pt,color=blue] (2.,2.)-- (3.,2.);
+\draw [line width=2.pt,color=blue] (3.,2.)-- (3.,3.);
+\draw [line width=2.pt,color=blue] (3.,3.)-- (2.,3.);
+\draw [line width=2.pt,color=blue] (3.,3.)-- (3.,2.);
+\draw [line width=2.pt,color=blue] (3.,2.)-- (4.,3.);
+\draw [line width=2.pt,color=blue] (4.,3.)-- (3.,3.);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{12cm}
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{minipage}
+\end{ex}
+
+\begin{meth}[Utilisation d'un tableau de conversion]
+
+Convertir $28$m$^2$ en centimètre carré et $4,32$dm$^2$ en mètre carré. Attention, pour chaque unité, il y a deux colonnes. 
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{|*{14}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{lightgray!50} \multicolumn{2}{|c|}{km$^2$} & \multicolumn{2}{|c|}{hm$^2$} & \multicolumn{2}{|c|}{dam$^2$} & \multicolumn{2}{|c|}{m$^2$} & \multicolumn{2}{|c|}{dm$^2$} & \multicolumn{2}{|c|}{cm$^2$} & \multicolumn{2}{|c|}{mm$^2$}\\\hline
+\rowcolor{lightgray!50} \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{ha} & \multicolumn{2}{|c|}{a} & \multicolumn{2}{|c|}{ca} & \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{} & \multicolumn{2}{|c|}{}\\\hline
+ & & & & & & & & & & & & & \\\hline
+ & & & & & & & & & & & & & \\\hline
+\end{tabularx}
+\end{center}
+
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{meth}
+
+\begin{rem}
+En agriculture, on utilise les unités agraires : l'hectare (ha), l'are (a) et le centiare (ca), pour calculer des superficies.
+\end{rem}
+
+\begin{ex}
+Convertir :
+
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{\linewidth}{m{1.7cm}*{1}{>{\arraybackslash}X}m{0.5cm}m{2cm}*{1}{>{\arraybackslash}X}}
+$3257$ m$^2 = $ & \dotfill dam$^2$&&
+$1 000$ mm$^2 = $ & \dotfill dm$^2$\\
+$9$ km$^2 = $ & \dotfill m$^2$&&
+$3$ m$^2 = $ & \dotfill dm$^2$\\
+$2 050$ dm$^2 = $ & \dotfill hm$^2$&&
+$80$ mm$^2 = $ & \dotfill cm$^2$\\
+$8$ hm$^2 = $ & \dotfill km$^2$&&
+$0,1$ m$^2 = $ & \dotfill dm$^2$\\
+$710$ dm$^2 = $ & \dotfill m$^2$&&
+$36$ m$^2 = $ & \dotfill km$^2$\\
+\end{tabularx}
+\end{ex}
+
+\subsection{Formules d'aires}
+
+\begin{prop}
+\includegraphics[scale=0.4]{17. Longueur, périmètre et aire 2.png}
+\end{prop}
+
+\begin{ex}
+Calculons l'aire des figures suivantes :
+
+\noindent\grandscarreaux{\linewidth}{4.8cm}
+
+\vspace{-5.7cm}
+\begin{flushright}
+\includegraphics[scale=0.3]{17. Longueur, périmètre et aire 3.png}
+\end{flushright}
+\end{ex}
+
+\vspace{2.5cm}
+\begin{prop}[Aire d'un disque]
+L'aire d'un disque de rayon $R$ est égal à :
+$$\mathcal{A} = \pi \times R^2$$
+\end{prop}
+
+\begin{ex}
+\begin{enumerate}
+\item Calculer l'aire d'un disque de rayon $4$cm. Prendre $\pi \approx 3,14$.
+
+\noindent\grandscarreaux{\linewidth}{2.2cm}
+\item Calculer l'aire d'un demi disque de diamètre $3$cm.
+
+\noindent\grandscarreaux{\linewidth}{2.2cm}
+\end{enumerate}
+\end{ex}
+\end{document}

@@ -1,0 +1,103 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.81, 0.09, 0.13}
+\newpage
+\setcounter{chapter}{15}
+\chapter{Probabilités}
+
+%\noindent Qu'est ce que le hasard en mathématiques ?
+
+%\noindent\grandscarreaux{\linewidth}{0.8cm}
+
+\vspace{-3mm}
+\section{Situations liées au hasard}
+
+\vspace{-4mm}
+\begin{dft}
+Une expérience aléatoire est une expérience qui vérifie trois conditions :
+\begin{enumerate}
+\item On connaît tous les résultats possibles ;
+\item Le résultat n'est pas prévisible ;
+\item On peut reproduire plusieurs fois l'expérience dans les mêmes conditions.
+\end{enumerate} 
+\end{dft}
+
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Lancer une \href{https://fr.piliapp.com/random/coin/}{pièce de monnaie} et noter le côté visible est une expérience aléatoire car les $3$ conditions sont vérifiées.
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Lancer un \href{https://fr.piliapp.com/random/dice/}{dé à $6$ faces} et noter le nombre inscrit sur la face du dessus est également une expérience aléatoire
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Piocher une boule sans regarder, dans une urne contenant $2$ boules blanches, $3$ boules rouges et $5$ boules bleues est encore une expérience aléatoire.
+\end{ex}
+
+\vspace{-3mm}
+\section{Vocabulaire}
+
+\vspace{-4mm}
+\begin{dft}
+\begin{enumerate}
+\item[•] Une issue est un résultat possible ;
+\item[•] Un évènement est un ensemble d'issues.
+\end{enumerate} 
+\end{dft}
+
+\begin{rmq}
+\vspace{-4.5mm}\hspace{2.8cm} Quand un évènement est composé d'une seule issue, on parle d'événement
+élémentaire.
+\end{rmq}
+
+\setcounter{cex}{0}
+\vspace{-1mm}
+\begin{ex}
+
+\vspace{-4.5mm}\hspace{2.8cm} Les issues sont Pile ; Face
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Les issues sont $1$ ; $2$ ; $3$ ; $4$ ; $5$ ; $6$.
+
+\noindent \og Obtenir un nombre pair \fg{}  est un évènement composé des issues $2$ ; $4$ et $6$.
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Les issues sont Boule Blanche, Boule Noire et Boule Grise.
+
+\noindent \og Piocher une boule non blanche \fg{} est un évènement composé des issues Boule Bleues et Boule Rouges.
+\end{ex}
+
+\vspace{-4mm}
+\section{Probabilité}
+
+\vspace{-3mm}
+\begin{dft}
+La probabilité permet d'estimer la chance qu'a un événement de se produire.
+\end{dft}
+
+\setcounter{cex}{0}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Si la pièce n'est pas truquée, on a autant de chances d'obtenir Pile et Face. ($1$ chance sur $2$)
+\end{ex}
+
+\vspace{-1mm}
+\begin{rmq}
+\vspace{-4.5mm}\hspace{2.8cm} Le résultat d'un calcul de probabilité est théorique et peut ne pas correspondre à la réalité d'une expérience puisqu'en jouant $10$ fois à pile ou face, par exemple, il est rare d'obtenir $5$ fois \og pile \fg{} et $5$ fois \og face \fg{}.
+\end{rmq}
+
+\vspace{-1mm}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} Si le dé est équilibré, on a autant de chances d'obtenir un nombre pair qu'un nombre impair. ($3$ chances sur $6$, soit $1$ chance sur $2$)
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+\vspace{-4.5mm}\hspace{2.8cm} On a plus de chances de piocher une boule rouges qu'une boule blanche. ($2$ chances sur $10$ au lieu de $3$ chances sur $10$). On a autant de chances de piocher une boule qui est soit blanche, soit rouge que de piocher une boule bleue. ($5$ chance sur $10$)
+\end{ex}
+\end{document}

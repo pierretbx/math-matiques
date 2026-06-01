@@ -1,0 +1,497 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{multicol}
+\usepackage{stmaryrd}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\newcommand{\bsyc}{\left\{\begin{array}{rcl}} % systï¿½e serrï¿½sur le ï¿½al
+\newcommand{\esyc}{\end{array}\right.}
+\usepackage{picins,picinpar}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pstricks-add}
+\usepackage{pst-eps,pst-fill,pst-node,pst-math}
+\usepackage{indentfirst}
+%\usepackage[colorlinks=true]{hyperref}
+%\usepackage{color}
+\newcommand{\ofr}[2]{\dfrac{#1}{#2}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+  \usepackage{tkz-tab}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\newcommand{\I}{i}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\usepackage[bottom]{footmisc}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%\usepackage{preambule}
+%%
+\newcommand{\R}{\mathbb {R}}
+\newcommand{\bbr}{\mathbb {R}}
+\newcommand{\bbc}{\mathbb {C}}
+\newcommand{\bbz}{\mathbb {Z}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+%\newcommand{\imath}{i}
+\newcommand{\tm}{\times}
+\newcommand{\ab}[1]{\vert #1 \vert}
+\newcommand{\nov}[1]{\Vert \overrightarrow{#1} \Vert}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\ud}[1]{\dfrac{#1}{2}}
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+\newcommand{\calr}{\mathscr{R}}
+\newcommand{\cali}{\mathscr{I}}
+\newcommand{\RR}{\calr }
+\newcommand{\CR}{\calc}
+\newcommand{\IR}{\cali }
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+%\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+%\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cacheg}[1]{#1}
+\newcommand{\cacheb}[1]{#1}
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+
+\newenvironment{arrayl}[1][rcl]%
+	{\setlength{\arraycolsep}{1.5pt}
+	 $\begin{array}[t]{#1}}%
+	{\end{array}$}%
+%\newcommand{\coordpp}[3]{\begin{pmatrix}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+\newcommand{\un}{\suite}
+\newcommand{\eit}{e^{it}}
+\newcommand{\eimt}{e^{imt}}
+\newcommand{\vn}{\suite[v]}
+%\newcommand{\pa}[1]{(#1)}
+\newcommand{\cro}[1]{[#1]}
+\newcommand{\abs}[1]{\vert #1 \vert}
+
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\Rep}{(O;\ve{i};\ve{j})}
+\newcommand{\C}[2]{C_{#1}^{#2}}
+\newcommand{\dx}{dx}
+
+\begin{document}
+\tableofcontents
+
+\chapter{Les graphes}
+\section{Premi\`eres notions}
+
+De très nombreux problèmes pratiques peuvent être ainsi schématisés à l'aide d'un graphe ; en simplifiant la représentation, on peut ainsi trouver plus rapidement la solution (ou en voir
+l'impossibilité !). Pour certains problèmes, comme ceux que nous venons de voir, les arêtes n'ont pas d'orientation. Pour d'autres, il est indispensable d'avoir une orientation sur le graphe : le plan d'une ville comme graphe non orienté satisfera le piéton, tandis que ce même graphe orienté par les sens de circulation sera bien plus apprécié de l'automobiliste.
+
+Une question importante est celle du choix du graphe associé à une situation donnée (il peut
+y en avoir plusieurs) ; comment choisir les sommets et les arêtes ? Comme on vient de le voir
+dans le problème des segments, ce n'est pas toujours évident. Dans des paragraphes ultérieurs, on étudiera des questions de compatibilité, il faudra décider si les arêtes correspondent aux couples de points compatibles ou incompatibles, et si les arêtes sont orientées ou non.
+
+Nous allons formaliser les notions qui précèdent.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{defn}[Graphe, sommets, arêtes, sommets adjacents] Un graphe $G$ (non orienté) est constitué d'un ensemble $S$ de points appelés \emph{sommets}, et d'un ensemble $A$ d'\emph{arêtes}, tels qu'à chaque arête sont associés deux sommets, appelés ses \emph{extrémités}.\\
+Deux sommets qui sont les extrémités d'une arête sont dits \emph{adjacents}. \end{defn}
+
+
+Les deux extrémités peuvent être distinctes ou confondues ; dans ce dernier cas, l'arête s'appelle une \emph{boucle}. Deux arêtes peuvent aussi avoir les mêmes extrémités (on dit alors qu'elles sont \emph{parallèles}). Cependant, la très grande majorité des problèmes que nous rencontrerons, où des graphes non orientés seront en jeu, concerne des graphes \emph{simples}, c'est-à-dire sans boucles ni arêtes parallèles. Les termes \emph{simples} et \emph{parallèles} ne sont pas à retenir.
+
+
+\begin{exemple}  On considère le graphe $G_1$, de la figure \ref{lexemple}.
+Le sommet $s_4$ est un sommet isolé, l'arête $a$ est une boucle, $b$ et $c$ sont des arêtes ayant mêmes extrémités, les sommets $s_1$ et $s_2$ sont adjacents, ainsi que $s_1$ et $s_3$,
+puisqu'ils sont reliés par une arête.\\
+
+\centering
+%\label{lexemple}\caption{Le graphe $G_1$}
+\psset{xunit=1cm , yunit=1cm}
+\begin{pspicture*}(-0.7,-0.7)(5.2,3.7)
+\def\xmin{-0.5} \def\xmax{5} \def\ymin{-0.5} \def\ymax{3.5}
+
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\begin{psmatrix}[mnode=circle]
+$s_1$ &  & $s_2$ \\
+$s_3$ &  & $s_4$
+\end{psmatrix}
+\psset{shortput=nab}
+\nccircle[angleA=0]{1,1}{0.5cm}^{$a$}
+\ncarc[arcangle=15]{1,1}{1,3}^{$b$}
+\ncarc[arcangle=15]{1,3}{1,1}^{$c$}
+\ncline{1,1}{2,1}^{$d$}
+\ncline{1,3}{2,1}^{$e$}
+\end{pspicture*}
+
+\end{exemple}
+
+
+\begin{rem}
+ La position des sommets et la longueur ou l'allure des arêtes n'ont aucune importance. 
+\end{rem}
+
+
+
+\begin{exo}
+Parmi les sept graphes donnés dans la figure, déterminer ceux qui sont identiques.
+%\begin{figure}[!t]
+\centering
+%\caption{Sept graphes}\label{septgraphes}
+\psset{xunit=1.15cm , yunit=1.15cm}
+\begin{pspicture*}(-1.2,-1.2)(12.7,4.7)
+\def\xmin{-1} \def\xmax{12.5} \def\ymin{-1} \def\ymax{4.5}
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psline{o-o}(1.0000,0.0000)(2.0000,2.0000)
+\psline{o-o}(1.0000,0.0000)(1.0000,4.0000)
+\psline{o-o}(1.0000,0.0000)(0.0000,2.0000)
+\psline{o-o}(2.0000,2.0000)(1.0000,4.0000)
+\psline{o-o}(2.0000,2.0000)(0.0000,2.0000)
+\psline{o-o}(1.0000,4.0000)(0.0000,2.0000)
+\psline{o-o}(3.0000,1.0000)(5.0000,1.0000)
+\psline{o-o}(3.0000,1.0000)(4.0000,2.0000)
+\psline{o-o}(3.0000,1.0000)(4.0000,4.0000)
+\psline{o-o}(5.0000,1.0000)(4.0000,2.0000)
+\psline{o-o}(5.0000,1.0000)(4.0000,4.0000)
+\psline{o-o}(4.0000,2.0000)(4.0000,4.0000)
+\psline{o-o}(6.0000,2.0000)(8.0000,1.0000)
+\psline{o-o}(8.0000,1.0000)(9.0000,3.0000)
+\psline{o-o}(9.0000,3.0000)(7.0000,4.0000)
+\psline{o-o}(7.0000,4.0000)(6.0000,3.0000)
+\psline{o-o}(6.0000,3.0000)(6.0000,2.0000)
+\psline{o-o}(10.0000,0.0000)(12.0000,3.0000)
+\psline{o-o}(10.0000,0.0000)(11.0000,4.0000)
+\psline{o-o}(12.0000,0.0000)(10.0000,3.0000)
+\psline{o-o}(12.0000,0.0000)(11.0000,4.0000)
+\psline{o-o}(12.0000,3.0000)(10.0000,3.0000)
+\rput(1,-0.5){$G_1$}
+\rput(4,-0.5){$G_2$}
+\rput(7.5,-0.5){$G_3$}
+\rput(11,-0.5){$G_4$}
+\end{pspicture*}
+
+\medskip
+
+\psset{xunit=1.15cm , yunit=1.15cm}
+\begin{pspicture*}(-1.2,-1.2)(12.7,4.7)
+\def\xmin{-1} \def\xmax{12.5} \def\ymin{-1} \def\ymax{4.5}
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\psline{o-o}(1.0000,1.0000)(3.0000,1.0000)
+\psline{o-o}(1.0000,1.0000)(2.0000,2.0000)
+\psline{o-o}(1.0000,1.0000)(1.0000,4.0000)
+\psline{o-o}(3.0000,1.0000)(2.0000,2.0000)
+\psline{o-o}(3.0000,1.0000)(3.0000,4.0000)
+\psline{o-o}(2.0000,2.0000)(2.0000,3.0000)
+\psline{o-o}(2.0000,3.0000)(3.0000,4.0000)
+\psline{o-o}(2.0000,3.0000)(1.0000,4.0000)
+\psline{o-o}(3.0000,4.0000)(1.0000,4.0000)
+\psline{o-o}(5.0000,1.0000)(6.0000,0.0000)
+\psline{o-o}(5.0000,1.0000)(7.0000,3.0000)
+\psline{o-o}(5.0000,1.0000)(5.0000,3.0000)
+\psline{o-o}(6.0000,0.0000)(7.0000,1.0000)
+\psline{o-o}(6.0000,0.0000)(6.0000,4.0000)
+\psline{o-o}(7.0000,1.0000)(7.0000,3.0000)
+\psline{o-o}(7.0000,1.0000)(5.0000,3.0000)
+\psline{o-o}(7.0000,3.0000)(6.0000,4.0000)
+\psline{o-o}(6.0000,4.0000)(5.0000,3.0000)
+\psline{o-o}(10.0000,0.0000)(11.0000,1.0000)
+\psline{o-o}(10.0000,0.0000)(10.0000,4.0000)
+\psline{o-o}(10.0000,0.0000)(9.0000,1.0000)
+\psline{o-o}(11.0000,1.0000)(11.0000,3.0000)
+\psline{o-o}(11.0000,1.0000)(9.0000,1.0000)
+\psline{o-o}(11.0000,3.0000)(10.0000,4.0000)
+\psline{o-o}(11.0000,3.0000)(9.0000,3.0000)
+\psline{o-o}(10.0000,4.0000)(9.0000,3.0000)
+\psline{o-o}(9.0000,3.0000)(9.0000,1.0000)
+\rput(2,-0.5){$G_5$}
+\rput(6,-0.5){$G_6$}
+\rput(10,-0.5){$G_7$}
+\end{pspicture*}
+%\end{figure}
+\end{exo}
+
+
+
+\begin{rem} C'est un problème très difficile en général, dès que le nombre de sommets est assez
+grand.
+\end{rem}
+
+Une première manière d'évaluer la complication d'un graphe est de compter le nombre de ses
+sommets :
+
+\begin{defn}[Ordre d'un graphe] L'\emph{ordre} d'un graphe est le nombre de ses sommets.\end{defn}
+
+\begin{defn}[Degré d'un sommet, parité d'un sommet] On appelle \emph{degré d'un sommet} le nombre d'arêtes dont ce sommet est une extrémité (les boucles étant comptées deux fois). Un sommet est \emph{pair} (respectivement \emph{impair}) si son degré est un nombre pair (respectivement impair). \end{defn}
+
+\begin{exemple} Dans la figure, $s_1$ est de degré 5, $s_2$ de degré 3, $s_4$ de degré 0. \end{exemple}
+
+
+On prouve facilement le théorème suivant :
+
+\begin{thm} La somme des degrés de tous les sommets d'un graphe est égale à deux fois le nombre d'arêtes de ce graphe ; c'est donc un nombre pair. \end{thm}
+
+\begin{demo} Lorsque on additionne les degrés des sommets, chaque arête est comptée deux fois, une fois pour chaque extrémité. \end{demo}
+
+\begin{prop} Dans un graphe le nombre de sommets impairs est toujours pair. \end{prop}
+
+\begin{demo} En effet, sinon, la somme des degrés des sommets serait impaire. \end{demo}
+
+\begin{exo} À l'aide de ce théorème ou de cette propriété, montrer que certains des problèmes donnés en introduction n'ont pas de solution. \end{exo}
+
+%\sautpage
+
+\section{Graphes complets}
+
+\begin{defn}[Graphe complet] Un graphe (simple) est dit \emph{complet} si tous ses sommets sont \emph{adjacents}, c'est-à-dire si toutes les arêtes possibles existent. On appelera $K_n$ le graphe complet à $n$ sommet (il n'y en a qu'un). \end{defn}
+
+\begin{exo*}
+Parmi les graphes de la figure , lesquels sont complets ?
+\end{exo*}
+
+\begin{exo*}
+Quel est le degré de chacun des sommets d'un graphe complet d'ordre $n$ ?
+\end{exo*}
+
+\section{Sous-graphes}
+
+\begin{defn}[Sous-graphe, sous-graphe engendré par des sommets]
+Soit $G$ un graphe, le graphe $G'$ est \underline{un} \emph{sous-graphe} de $G$, si :
+\begin{itemize}
+	\item l'ensemble des sommets de $G'$ est inclu dans celui des sommets de $G$ ;
+	\item l'ensemble des arêtes de $G'$ est inclu dans celui des arêtes de $G$.
+\end{itemize}
+Si, de plus, les arêtes de $G'$ sont exactement \emph{\underline{toutes}} les arêtes de $G$ joignant les sommets de $G'$, on dit que $G'$ est \emph{\underline{le} sous-graphe de $G$ engendré par $s_1, s_2, \dots , s_n$}.
+\end{defn}
+
+\begin{exemple} Considérons le graphe $G$ dont les sommets sont les villes françaises possédant une gare et dont les arêtes sont les voies ferrées reliant ces villes (on excluera les gares où ne passent plus de voies).
+\begin{itemize}
+	\item Le graphe $G'$ dont les sommets sont les villes d'un même département possédant une gare et dont les arêtes sont les voies ferrées reliant ces villes est le sous-graphe de $G$ engendré par ces villes.
+	\item Le graphe $G''$ dont les sommets sont les villes où passe un TGV et dont les arêtes sont des voies ferrées TGV est un simple sous-graphe de $G$ car il existe des voies normales reliant, par exemple, Marseille à Lyon, qui ne sont pas dans ce sous-graphe.
+\end{itemize}
+\end{exemple}
+
+\begin{exemple}
+La figure présente deux sous graphes du graphe $G_1$.
+
+
+
+\begin{multicols}{2}
+
+\begin{center}
+\psset{xunit=1cm , yunit=1cm}
+\begin{pspicture*}(-0.7,-0.7)(5.2,3.7)
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\begin{psmatrix}[mnode=circle]
+$s_1$ &  & $s_2$ \\
+$s_3$ &  &
+\end{psmatrix}
+\psset{shortput=nab}
+\nccircle[angleA=0]{1,1}{0.5cm}^{$a$}
+\ncarc[arcangle=15]{1,3}{1,1}^{$c$}
+\end{pspicture*}
+
+$G_2$ un sous-graphe de $G_1$
+
+\end{center}
+
+\begin{center}
+\psset{xunit=1cm , yunit=1cm}
+\begin{pspicture*}(-0.7,-0.7)(5.2,3.7)
+\def\xmin{-0.5} \def\xmax{5} \def\ymin{-0.5} \def\ymax{3.5}
+\psset{linecolor=black, linewidth=.5pt, arrowsize=2pt 4}
+\begin{psmatrix}[mnode=circle]
+$s_1$ &  & $s_2$ \\
+$s_3$ &  &
+\end{psmatrix}
+\psset{shortput=nab}
+\nccircle[angleA=0]{1,1}{0.5cm}^{$a$}
+\ncarc[arcangle=15]{1,1}{1,3}^{$b$}
+\ncarc[arcangle=15]{1,3}{1,1}^{$c$}
+\ncline{1,1}{2,1}^{$d$}
+\ncline{1,3}{2,1}^{$e$}
+\end{pspicture*}
+$G_3$ le sous-graphe de $G_1$ \\ engendré par $s_1, s_2, s_3$
+\end{center}
+\end{multicols}
+
+\end{exemple}
+
+\begin{exo*}
+Dessiner les graphes suivants :\\
+\vspace{-1em}\begin{multicols}{2}\begin{itemize}
+	\item $G_4$ le sous-graphe de $G_1$ engendré par $s_1, s_2$ ;
+	\item $G_5$ le sous-graphe de $G_1$ engendré par $s_1, s_3, s_4$ ;
+	\item $G_6$ le sous-graphe de $G_1$ engendré par $s_1, s_4$ ;
+	\item $G_7$ le sous-graphe de $G_1$ engendré par $s_2$ et $s_4$.
+\end{itemize}\end{multicols}
+\end{exo*}
+
+Enfin on a :
+
+\begin{defn}[Sous-graphe stable] On dit qu'un sous-ensemble de l'ensemble des sommets est \emph{stable} s'il ne contient pas de paire de sommets adjacents.
+On peut aussi parler de sous-graphe stable : cela revient au même, puisque si un ensemble de
+sommets est stable, le graphe engendré, par définition, n'a pas d'arête. \end{defn}
+
+\begin{exemple} Dans l'exercice ci-dessus, le sous-graphe $G_7$ est stable. \end{exemple}
+
+Ce terme de \og stable \fg{} peut paraître arbitraire. Il est en fait naturel si l'on considère ce qu'on appelle un \og graphe d'incompatibilité \fg{} : dans un groupe d'individus, on peut définir un graphe en reliant par une arête les individus qui ne peuvent se supporter. Si l'on veut choisir un sous-groupe de personnes qui travaillent ensemble, il est préférable de choisir un sous-ensemble stable ! On verra en particulier beaucoup d'applications de cette notion dans le paragraphe sur les colorations.
+
+\section{Chaînes et connexité}
+
+Dans bien des problèmes de graphes, il est naturel de considérer ce que l'on peut appeler, de façon informelle, des \og parcours \fg{} ou \og chemins \fg. Le mot utilisé en théorie des graphes est \emph{chaîne}.
+
+La notion intuitive de chaîne, ou plus tard de chaîne orientée, se comprend bien sur un dessin, il est moins facile d'en donner une définition effective.
+
+\begin{defn}[Chaîne, longueur d'une chaîne, cycle]
+Une \emph{chaîne} dans un graphe $G$ est une suite finie : $s_0; a_1; s_1; a_2; s_2; a_3; s_3; \dots a_n; s_n$ débutant et finissant par un sommet, alternant sommets et arêtes de telle manière que chaque arête soit encadrée par ses sommets extrémités. \\
+La \emph{longueur} de la chaîne est égale au nombre d'arêtes qui la constituent ; la chaîne est \emph{fermée} si $s_0 = s_n$, si de plus toutes ses arêtes sont distinctes on dit alors que c'est un \emph{cycle}.
+\end{defn}
+
+\begin{rem} Quand il n'y a pas d'ambiguïté (pas d'arêtes multiples), on peut définir une chaîne
+par seulement la suite de ses sommets ou par seulement la suite de ses arêtes. \end{rem}
+
+Enfin on a :
+
+\begin{defn}[Graphe connexe] Un graphe est \emph{connexe} si deux sommets quelconques sont reliés par une chaîne. \end{defn}
+
+\begin{defn}[Distance entre deux sommets] Soit $G$ un graphe connexe, $s$ et $s'$, deux sommets quelconques de $G$. Le graphe étant connexe, il existe au moins une chaîne reliant $s$ et $s'$. On appelle \emph{distance entre $s$ et $s'$} la plus petite des longueurs des chaînes reliant $s$ à $s'$. \end{defn}
+
+\begin{rem} Lorsque le graphe n'est pas connexe, il existe au moins deux sommets qui ne sont pas reliés par une chaîne. On dit parfois que la distance entre ces sommets est infinie.
+\end{rem}
+
+\begin{defn}[Diamètre d'un graphe] On appelle \emph{diamètre} d'un graphe connexe, la plus grande distance entre ses sommets. \end{defn}
+
+\begin{rem} Lorsque le graphe n'est pas connexe, on dit parfois que son diamètre est infini.
+\end{rem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Graphes orientés}
+
+Il existe de nombreux domaines où les graphes sont orientés. Par exemple : plan de ville, avec les
+sens interdits ; parcours en montagne, où il est utile d'indiquer le sens de montée ! Circuit électrique
+en courant continu, où il faut orienter les arêtes pour décider du signe de l'intensité : ce n'est pas
+la même chose de faire passer 10 ampères de A vers B ou de B vers A ; graphe d'ordonnancement,
+où les arêtes relient une tâche à une autre qui doit la suivre : on ne peut faire la peinture avant le
+plâtre.
+
+\begin{defn}
+On appelle graphe orienté un graphe où chaque arête est orientée, c'est-à-dire
+qu'elle va de l'une des ses extrémités, appelée \emph{origine} ou \emph{extrémité initiale} à l'autre, appelée
+\emph{extrémité terminale}.
+\end{defn}
+
+
+
+Dans un graphe orienté, chaque arête orientée possède un début et une fin.
+Toutes les notions que nous avons définies pour un graphe ont un équivalent pour un graphe
+orienté. Nous nous contenterons de rajouter le mot \og orienté \fg{} pour préciser ; le contexte rendra
+évidente l'interprétation à donner.
+
+En particulier, une chaîne orientée est une suite d'arêtes telle que l'extrémité finale de chacune
+soit l'extrémité initiale de la suivante. On prendra garde au fait que l'on peut définir et utiliser
+des chaînes (non orientées) sur un graphe orienté. Par exemple, sur un plan de ville où toutes les
+rues sont en sens unique, un parcours de voiture correspond à une chaîne orientée, un parcours de
+piéton correspond à une chaîne (non orientée).
+
+\end{document}

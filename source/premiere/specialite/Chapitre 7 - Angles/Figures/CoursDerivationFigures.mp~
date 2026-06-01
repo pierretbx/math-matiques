@@ -1,0 +1,39 @@
+verbatimtex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+etex;
+
+input repere;
+
+vardef f(expr x)= 0.5*((x-1)**2)+0.5 enddef;
+
+repere(-1.5,4,1cm,-1,4,1cm);
+ path Cf; picture p;
+ Cf:=courbefonc(f,-1,4,40);
+ p:=tangente(Cf,1.5);
+ draw axes.llft(0,0);
+ draw Cf;
+ draw p;
+ pair A,B,C;
+ A:=_c(1.5,f(1.5));
+ B:=_c(3.5,f(3.5));
+ C:=_c(2.5,f(2.5));
+ draw droite(A,B) dashed evenly;
+ draw droite(A,C) dashed evenly;
+ draw B withpen pencircle scaled 2bp;
+ draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,btex $a$ etex,btex $f(a)$ etex) dashed evenly;
+ draw projectionaxes(B,btex $a+h$ etex,btex $f(a+h)$ etex) dashed evenly;
+fin;
+
+
+
+repere(-5,4.9,0.6cm,-3,2.9,0.6cm);
+ path p;
+ p:= _c(-5,-2).._c(-4,0).._c(-3,1){right}.._c(-1,-1){right}.._c(0,1).._c(1,2){right}.._c(2,1).._c(4,0);
+ draw axes.llft(1,0);
+ draw p;
+fin;
+
+end

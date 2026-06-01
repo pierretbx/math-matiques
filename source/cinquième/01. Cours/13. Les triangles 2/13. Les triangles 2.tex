@@ -1,0 +1,284 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{12}
+\chapter{Les triangles 2}
+
+\section{Somme des angles d'un triangle}
+
+\noindent \begin{minipage}{11.2cm}
+Découper un triangle quelconque et réaliser le pliage ci contre de façon à ramener les sommets du triangle pour former un rectangle.
+
+\medskip
+\noindent Que constatez vous ?
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{minipage}
+\hspace{1mm}
+\begin{minipage}{6cm}
+\begin{center}
+\includegraphics[scale=0.5]{13.Triangles_2_1.png}
+\end{center}
+\end{minipage}
+
+\vspace{-0.5mm}
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+
+\begin{prop}
+La somme des mesures des angles d'un triangle est égale à $180$\degre .
+\end{prop}
+
+\begin{ex}
+$ABC$ est un triangle tel que $\widehat{ABC}= 80$\degre et $\widehat{BAC}= 40$\degre. Calculer $\widehat{BCA}$.
+
+\medskip\medskip
+\noindent \textbf{On sait que :} \hspace{6.7mm}$\bullet$ \dotfill \medskip \medskip%$ABC$ est un triangle.
+
+\hspace{2cm} $\bullet$ \dotfill \medskip \medskip%$\widehat{ABC}= 80$\degre.
+
+\hspace{2cm} $\bullet$ \dotfill \medskip %$\widehat{BAC}= 40$\degre.
+
+
+\medskip
+\noindent \textbf{Propriété :} \dotfill \medskip \medskip
+
+\dotfill \medskip%La somme des mesures des angles d'un triangle est égale à $180$\degre .
+
+\medskip
+\noindent \textbf{Conclusion :} 
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+
+%\vspace{-10mm} 
+%\begin{eqnarray*}
+%\widehat{ABC} + \widehat{BAC} + \widehat{BCA} &=& 180\\
+%80 + 40 + \widehat{BCA} &=& 180 \\
+%\widehat{BCA} &=& 180 - 80 -60 \quad = \quad 60
+%\end{eqnarray*} 
+%La mesure de l'angle $\widehat{BCA}$ est de $60$\degre .
+\end{ex}
+
+\section{Triangles particuliers}
+
+\subsection{Triangle isocèle}
+
+\begin{prop}
+Dans un triangle isocèle, les deux angles à la base ont la même mesure.
+\end{prop}
+
+\begin{ex}
+$ABC$ est un triangle isocèle en $A$ tel que $\widehat{C} = 80$\degre . Calculons $\widehat{A}$ et $\widehat{B}$.
+
+\medskip
+\noindent \begin{minipage}{12cm}
+
+\medskip
+\noindent \textbf{On sait que :} \hspace{6.7mm}$\bullet$ \dotfill \medskip \medskip%$ABC$ est isocèle en $A$
+
+\hspace{2.5cm} $\bullet$ \dotfill \medskip %$\widehat{C}= 80$\degre.
+
+\medskip
+\noindent \textbf{Propriété :} \dotfill \medskip \medskip
+
+\dotfill \medskip%Dans un triangle isocèle, les deux angles à la base ont la même mesure. 
+
+\medskip
+\noindent \textbf{Conclusion :} 
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{1.6cm}%$\widehat{B}$ et $\widehat{C}$ ont la même mesure. Donc : $$\widehat{B} = \widehat{C} = 80$$
+%La mesure de l'angle $\widehat{B}$ est de $80$\degre .
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{4cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale= 0.7]
+\clip(-1.8,-0.8) rectangle (4.8,4.);
+\draw [shift={(3.,3.)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (-143.13010235415598:0.6) arc (-143.13010235415598:-71.56505117707799:0.6) -- cycle;
+\draw [line width=1.2pt] (-1.,0.)-- (4.,0.);
+\draw [line width=1.2pt] (1.46,0.1) -- (1.46,-0.1);
+\draw [line width=1.2pt] (1.54,0.1) -- (1.54,-0.1);
+\draw [line width=1.2pt] (4.,0.)-- (3.,3.);
+\draw [line width=1.2pt] (3.,3.)-- (-1.,0.);
+\draw [line width=1.2pt] (1.092,1.444) -- (0.972,1.604);
+\draw [line width=1.2pt] (1.028,1.396) -- (0.908,1.556);
+\begin{scriptsize}
+\draw [color=blue] (-1.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-1.46,-0.27) node {\large{$A$}};
+\draw [color=blue] (4.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.32,-0.23) node {\large{$B$}};
+\draw [color=blue] (3.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.3,3.49) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage} 
+
+\vspace{-0.5mm}
+\noindent\grandscarreaux{\linewidth}{4cm}
+%\medskip
+%\noindent On sait que $\widehat{A} + \widehat{B} + \widehat{C} = 180$\degre
+%\begin{eqnarray*}
+%\widehat{A} + \widehat{B} + \widehat{C} &=& 180\\
+%\widehat{A} + 80 + 80 &=& 180 \\
+%\widehat{A} + 160 &=& 180 \\
+%\widehat{A} &=& 180 - 160 \\
+%&=&20
+%\end{eqnarray*}
+%La mesure de l'angle $\widehat{A}$ est de $20$\degre .
+\end{ex}
+
+\begin{ex}
+Le triangle $HPK$ est un triangle isocèle en $P$ tel que : $\widehat{P}= 70$\degre. Calculons $\widehat{H}$ et $\widehat{K}$.
+
+%\vspace{-11mm}
+\medskip
+
+\noindent \begin{minipage}{12cm}
+
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+%\vspace{5mm}
+%On sait que $\widehat{H} + \widehat{K} + \widehat{P} = 180$\degre
+%\begin{eqnarray*}
+%\widehat{H} + \widehat{K} + \widehat{P} &=& 180\\
+%\widehat{H} + \widehat{K} + 70 &=& 180 \\
+%\widehat{H} + \widehat{K} &=& 180 - 70 \\
+%&=&110
+%\end{eqnarray*} 
+\end{minipage}
+\begin{minipage}{4cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(-0.8,-0.8) rectangle (4.8,6);
+\draw [shift={(2.,5.)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (-111.80140948635182:0.6) arc (-111.80140948635182:-68.19859051364821:0.6) -- cycle;
+\draw [line width=1.2pt] (2.,5.)-- (0.,0.);
+\draw [line width=1.2pt] (1.1077032961426903,2.5) -- (0.9220079579656385,2.574278135270821);
+\draw [line width=1.2pt] (1.0779920420343616,2.425721864729179) -- (0.8922967038573097,2.5);
+\draw [line width=1.2pt] (0.,0.)-- (4.,0.);
+\draw [line width=1.2pt] (4.,0.)-- (2.,5.);
+\draw [line width=1.2pt] (2.9220079579656386,2.425721864729179) -- (3.1077032961426903,2.5);
+\draw [line width=1.2pt] (2.8922967038573097,2.5) -- (3.0779920420343614,2.574278135270821);
+\begin{scriptsize}
+\draw [color=blue] (2.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.,5.67) node {\large{$P$}};
+\draw [color=blue] (0.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-0.52,-0.31) node {\large{$K$}};
+\draw [color=blue] (4.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.4,-0.15) node {\large{$H$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage} 
+
+\medskip
+\noindent \textbf{On sait que :} \hspace{6.7mm}$\bullet$ \dotfill \medskip %$HPK$ est isocèle en $P$
+
+\medskip
+\noindent \textbf{Propriété :} \dotfill \medskip \medskip%Dans un triangle isocèle, les deux angles à la base ont la même mesure. 
+
+\dotfill 
+
+\medskip
+\noindent \textbf{Conclusion :} 
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{4cm}%$\widehat{H}$ et $\widehat{K}$ ont la même mesure. Donc : $$\widehat{H} = \widehat{K} = \dfrac{110}{2} = 55$$
+%La mesure des angles $\widehat{H}$ et $\widehat{K}$ est de $55$\degre .
+\end{ex}
+
+\subsection{Triangle équilatéral}
+
+\vspace{-10mm}
+\noindent \begin{minipage}{11cm}
+
+\vspace{5mm}
+\begin{prop}
+Dans un triangle équilatéral, les trois angles sont tous égaux à $60$\degre
+\end{prop}
+\end{minipage}
+\hspace{10mm}
+\begin{minipage}{4cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-1.8,-0.8) rectangle (4.8,5.2);
+\draw [shift={(1.48,4.3)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (-119.97394866023606:0.6) arc (-119.97394866023606:-59.62771364235506:0.6) -- cycle;
+\draw [shift={(-1.,0.)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (0.:0.6) arc (0.:60.02605133976395:0.6) -- cycle;
+\draw [shift={(4.,0.)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (120.37228635764494:0.6) arc (120.37228635764494:180.:0.6) -- cycle;
+\draw [line width=1.2pt] (-1.,0.)-- (4.,0.);
+\draw [line width=1.2pt] (1.46,0.1) -- (1.46,-0.1);
+\draw [line width=1.2pt] (1.54,0.1) -- (1.54,-0.1);
+\draw [line width=1.2pt] (4.,0.)-- (1.48,4.3);
+\draw [line width=1.2pt] (2.673948827084454,2.064928015442917) -- (2.846500493874763,2.1660513178409593);
+\draw [line width=1.2pt] (2.633499506125237,2.1339486821590405) -- (2.8060511729155464,2.235071984557083);
+\draw [line width=1.2pt] (1.48,4.3)-- (-1.,0.);
+\draw [line width=1.2pt] (0.34660951280711516,2.1346894879566505) -- (0.17335898179026119,2.234610724450091);
+\draw [line width=1.2pt] (0.3066410182097388,2.065389275549909) -- (0.13339048719288485,2.16531051204335);
+\begin{scriptsize}
+\draw [color=blue] (-1.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-1.46,-0.27) node {\large{$L$}};
+\draw [color=blue] (4.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.32,-0.23) node {\large{$C$}};
+\draw [color=blue] (1.48,4.3)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.78,4.79) node {\large{$A$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{-5mm}
+\subsection{Triangle rectangle}
+
+\begin{prop}
+Dans un triangle rectangle, la somme des mesures des deux angles aigus est égale à $90$\degre
+\end{prop}
+
+\begin{ex}
+$IJK$ est un triangle rectangle en $I$ tel que $\widehat{J} = 48$\degre . Calculons $\widehat{K}$.
+
+\medskip
+\noindent \begin{minipage}{12cm}
+
+\medskip
+\noindent \textbf{On sait que :} \hspace{6.7mm}$\bullet$ \dotfill \medskip \medskip%$IJK$ est rectangle en $I$
+
+\hspace{2.5cm}$\bullet$ \dotfill \medskip 
+
+\medskip
+\noindent \textbf{Propriété :} \dotfill \medskip \medskip%Dans un triangle rectangle, la somme des mesures des deux angles aigus est égale à $90$\degre
+
+\dotfill \medskip
+
+\medskip
+\noindent \textbf{Conclusion :}
+
+%\vspace{-10mm} 
+%\begin{eqnarray*}
+%\widehat{J} + \widehat{K} &=& 90 \\
+%48 + \widehat{K} &=& 90 \\
+%\widehat{K} &=& 90 -48 \quad = \quad 42
+%\end{eqnarray*} 
+%La mesure de l'angle $\widehat{K}$ est de $42$\degre .
+\end{minipage}
+\begin{minipage}{4cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-1.8,-0.8) rectangle (4.8,3.8);
+\draw [shift={(-1.,2.8)},line width=0.8pt,color=red,fill=red,fill opacity=0.1] (0,0) -- (-90.:0.6) arc (-90.:-29.248826336546973:0.6) -- cycle;
+\draw[line width=0.8pt,color=red,fill=red,fill opacity=0.1] (-0.5757359312880715,0.) -- (-0.5757359312880714,0.42426406871192845) -- (-1.,0.42426406871192845) -- (-1.,0.) -- cycle; 
+\draw [line width=1.2pt] (-1.,0.)-- (4.,0.);
+\draw [line width=1.2pt] (4.,0.)-- (-1.,2.8);
+\draw [line width=1.2pt] (-1.,2.8)-- (-1.,0.);
+\begin{scriptsize}
+\draw [color=blue] (-1.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-1.46,-0.27) node {\large{$I$}};
+\draw [color=blue] (4.,0.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.32,-0.23) node {\large{$K$}};
+\draw [color=blue] (-1.,2.8)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-0.7,3.29) node {\large{$J$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage} 
+
+\noindent\grandscarreaux{\linewidth}{4.8cm}
+\end{ex}
+
+\end{document}

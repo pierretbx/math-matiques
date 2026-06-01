@@ -1,0 +1,208 @@
+input latexmp;
+input repere;
+
+
+\beginfig(1);
+vardef f(expr x)=e**x enddef;
+vardef g(expr x)=ln(x) enddef;
+
+
+repere(-5,5,1cm,-3,6,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-5,1.8,100);
+ %Cg:=courbefonc(g,0.05,4.8,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+ %draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(1,f(1));
+ B:=_c(0,0);
+ C:=_c(0,1);
+ D:=_c(1,2);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(4.75,-0.2);
+ Y:=_c(-0.2,5.75);
+ label.lft("K", E) ;
+ label.lft(btex $ C_{y} $ etex, F) ;
+  label.ulft(btex $a>0$ etex, G) ;
+ % label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.lft(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,LaTeX("$\displaystyle 1 \over a$"),LaTeX("$e$")) dashed evenly;
+ %drawoptions (withcolor red) ;
+ % draw droite(A,B);
+  %draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ 
+endfig;
+
+\beginfig(2);
+vardef f(expr x)=e**(-x) enddef;
+vardef g(expr x)=ln(x) enddef;
+
+
+repere(-5,5,1cm,-3,6,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-1.8,5,100);
+ %Cg:=courbefonc(g,0.05,4.8,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+ %draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(-1,f(-1));
+ B:=_c(0,0);
+ C:=_c(0,1);
+ D:=_c(1,2);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(4.75,-0.2);
+ Y:=_c(-0.2,5.75);
+ label.lft("K", E) ;
+ label.lft(btex $ a<0$ etex, F) ;
+  label.ulft(btex $C_y$ etex, G) ;
+ % label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.lft(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,LaTeX("$\displaystyle 1 \over a$"),LaTeX("$e$")) dashed evenly;
+ %drawoptions (withcolor red) ;
+ % draw droite(A,B);
+  %draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ 
+endfig;
+
+\beginfig(3);
+vardef f(expr x)=e**x enddef;
+vardef g(expr x)=ln(x) enddef;
+
+
+repere(-5,5,1cm,-3,6,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-5,1.8,100);
+ %Cg:=courbefonc(g,0.05,4.8,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+ %draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(1,f(1));
+ B:=_c(0,0);
+ C:=_c(0,1);
+ D:=_c(1,2);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(4.75,-0.2);
+ Y:=_c(-0.2,5.75);
+ label.lft(btex $ \alpha +$  $\displaystyle  {b}\over{a}$ etex, E) ;
+ label.lft(btex $ C_{y} $ etex, F) ;
+  label.ulft(btex $a>0$ etex, G) ;
+ % label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.lft(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,LaTeX("$\displaystyle 1 \over a$"),LaTeX("$e$")) dashed evenly;
+ %drawoptions (withcolor red) ;
+ % draw droite(A,B);
+  %draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ 
+endfig;
+
+\beginfig(4);
+vardef f(expr x)=e**(-x) enddef;
+vardef g(expr x)=ln(x) enddef;
+
+
+repere(-5,5,1cm,-3,6,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-1.8,5,100);
+ %Cg:=courbefonc(g,0.05,4.8,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+ %draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(-1,f(-1));
+ B:=_c(0,0);
+ C:=_c(0,1);
+ D:=_c(1,2);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(4.75,-0.2);
+ Y:=_c(-0.2,5.75);
+ label.lft(btex$ \alpha +$  $\displaystyle {b}\over{a}$ etex , E) ;
+ label.lft(btex $ a<0$ etex, F) ;
+  label.ulft(btex $C_y$ etex, G) ;
+ % label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.lft(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,LaTeX("$\displaystyle 1 \over a$"),LaTeX("$e$")) dashed evenly;
+ %drawoptions (withcolor red) ;
+ % draw droite(A,B);
+  %draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ 
+endfig;
+
+
+
+
+
+
+
+
+end

@@ -1,0 +1,131 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{3}
+\chapter{Statistiques}
+
+\begin{ex}
+   Voici les notes obtenues à un contrôle dans une classe de $30$ élèves : (\textbf{Série A :}) \\ $2-3-3-4-5-6-6-7-7-7-8-8-8-8-8-9-9-9-9-9-9-10-10-11-11-11-13-13-15-16$ \\     
+   On peut représenter cette série par un tableau d'effectifs :\\
+
+\vspace{-3mm}
+\begin{center}
+   \renewcommand{\arraystretch}{1.5}   
+   \begin{tabular}{|c|*{16}{C{0.4}|}c|}
+      \hline       
+      \cellcolor{gray!20}{Note} & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ & $13$ & $14$ & $15$ & $16$ & \cellcolor{gray!20}{Total} \\
+      \hline
+      \cellcolor{gray!20}{Effectifs} & $0$ & $1$ & $2$ & $1$ & $1$ & $2$ & $3$ & $5$ & $6$ & $2$ & $3$ & $0$ & $2$ & $0$ & $1$ & $1$ & $30$ \\ 
+      \hline
+      %Fréq. en \% & $0$ & $3$ & $7$ & $3$ & $3$ & $7$ & $10$ & $17$ & $20$ & $7$ & $10$ & $0$ & $7$ & $0$ & $3$ & $3$ & $0$ & $0$ & $0$ \\ 
+      %\hline
+   \end{tabular}
+\end{center}
+\end{ex}
+
+\vspace{-4mm}
+\section{Moyenne pondéré (rappel de 4$^e$)}
+
+\begin{defn}
+
+\begin{minipage}{9cm}
+Soit une série statistique, dont les $p$ valeurs sont données par $x_1$, $x_2$, \dots, $x_p$ d'effectifs associés $n_1$, $n_2$, \dots, $n_p$.
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{center}
+   \renewcommand{\arraystretch}{1.5}   
+   \begin{tabular}{|c|*{4}{C{0.4}|}c|}
+      \hline       
+      \cellcolor{dftcolor!20}{Valeurs} & $x_1$ & $x_2$ & $\dots$ & $x_p$ & \cellcolor{dftcolor!20}{Total} \\
+      \hline
+      \cellcolor{dftcolor!20}{Effectifs} & $n_1$ & $n_2$ & $\dots$ & $n_p$ & $N$ \\ 
+      \hline
+      %Fréq. en \% & $0$ & $3$ & $7$ & $3$ & $3$ & $7$ & $10$ & $17$ & $20$ & $7$ & $10$ & $0$ & $7$ & $0$ & $3$ & $3$ & $0$ & $0$ & $0$ \\ 
+      %\hline
+   \end{tabular}
+\end{center}
+\end{minipage}
+   
+\noindent La \textbf{moyenne pondérée} de cette série est le nombre noté $\overline{x}$ qui vaut   $$\overline{x}=\dfrac{n_1x_1+n_2x_2+...+n_px_p}{n_1+n_2+...+n_p} = \dfrac{n_1x_1+n_2x_2+...+n_px_p}{N}$$
+\end{defn}
+\medskip
+
+\begin{ex}
+Dans la \textbf{série A}, la moyenne du contrôle est égale à \quad $\overline{x} =\dfrac{2\times1+3\times2+\dots+16\times1}{1+2+\dots +1} =\dfrac{254}{30} \approx 8,47$
+\end{ex}
+
+\vspace{-5mm}
+\section{Médiane}
+
+\vspace{-2mm}
+\begin{defn}
+   Soit une série statistique ordonnée dont les $n$ valeurs sont $x_1\leqslant x_2 \leqslant x_3 \leqslant \dots \leqslant x_n$.
+   
+\noindent Une \textbf{médiane} est un nombre $Me$ qui permet de diviser cette série en deux sous-groupes de même effectif.
+   \begin{enumerate}
+      \item[•] Si $n$ est \textbf{impair}, $M$ est la valeur de cette série qui est située au milieu.%, à savoir la valeur dont le rang est $\dfrac{n+1}{2}$, notée $x_{\frac{n+1}{2}}$.
+      \item[•] Si $n$ est \textbf{pair}, $M$ est le centre de l'intervalle médian, qui est l'intervalle formé par les deux nombres situés \og au milieu \fg{} de la série.%, à savoir $x_{\frac{n}{2}}$ et $x_{\frac{n}{2}+1}$.
+   \end{enumerate}
+\end{defn}
+\medskip
+
+\begin{ex}
+   \begin{enumerate}
+      \item Une médiane de la série \og $2-5-6-8-9-9-10$ \fg{} ?
+      
+      \noindent\grandscarreaux{\linewidth}{1.4cm} 
+      \item Une médiane de la série \og $2-5-6-8-9-9$ \fg{} ?
+      
+      \noindent\grandscarreaux{\linewidth}{1.4cm} 
+      \item Une médiane de la série \og $2-5-6-6-9-10$ \fg{} ?
+      
+      \noindent\grandscarreaux{\linewidth}{1.4cm} 
+   \end{enumerate}
+\end{ex}
+
+\begin{ex}
+Déterminons la médiane de la séries de l'\textbf{Exemple 3} :
+
+\noindent\grandscarreaux{\linewidth}{4cm} 
+\end{ex}
+
+\section{Quartiles}
+
+\begin{defn}
+   Soit une série statistique, on appelle \textbf{quartiles} de la série un triplet de réels $(~Q_1~;~Q_2~;~Q_3~)$ qui sépare la série en quatre groupes de même effectif.
+\end{defn}
+\medskip
+
+\begin{rem}
+Par définition, si $X$ est une série statistique, $Q_2 =Me(X)$.
+\end{rem}
+
+\begin{ex}
+Déterminons les quartiles des séries de l'\textbf{Exemple 3} :
+
+\noindent\grandscarreaux{\linewidth}{4cm} 
+\end{ex}
+
+
+\begin{ex}
+Pour la \textbf{série A}, on peut calculer que $Q_1=7$, $Me=8,5$ et $Q_3=10$.  
+\end{ex}
+
+\section{Caractéristiques de dispersion}
+
+\begin{defn}
+On appelle \textbf{étendue} d'une série discrète $X$ le réel défini par $e(X)=\max(X)-\min(X)$.
+\end{defn}
+\medskip
+
+Il s'agit de la première mesure de la dispersion d'une série statistique. Son principal mérite a longtemps été d'exister, et de fournir une information sur la dispersion très simple à obtenir.
+
+\begin{ex}
+Déterminons l'étendue des séries de l'\textbf{Exemple 3} :
+
+\noindent\grandscarreaux{\linewidth}{2cm} 
+\end{ex}
+
+\end{document}

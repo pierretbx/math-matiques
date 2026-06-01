@@ -1,0 +1,101 @@
+verbatimtex
+%&latex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+etex;
+
+input repere;
+
+%beginfig(1)
+vardef v(expr x)= (x**3)/40-3*(x**2)/10+7*x/10+27/5 enddef;
+
+repere(-4,17,0.4cm,-2,10,0.4cm);
+ path C_u,C_v;
+ C_v:=courbefonc(v,-0.5,11,40);
+ numeric a,b;
+ a:=5; b:=3;
+ pair vect;
+ vect:=_c(a,-b);
+ C_u:=C_v shifted vect;
+ draw axes(0,0);
+ draw C_u;
+ draw C_v;
+ pair A,B;
+ A:=_c(9.5,v(9.5));
+ B:=A shifted vect;
+ draw projectionaxes(A,btex $x$ etex,btex $v(x)$ etex,6) dashed evenly;
+ draw projectionaxes(B,btex $x+a$ etex,btex $u(x+a)$ etex,6) dashed evenly;
+ drawarrow B--A;
+ draw vecteur.lft(_c(-0.5,v(9.5)-b),_c(0,b),btex $b$ etex);
+ draw vecteur.bot(_c(9.5,-0.5),_c(a,0),btex $a$ etex);
+ nomme.ulft(C_v,10.5);
+ nomme.ulft(C_u,10.5+a);
+fin;
+
+end
+%
+%beginfig(2)
+vardef f(expr x)= x**2 enddef;
+
+repere(-1.5,1.5,1.5cm,-0.5,2.5,1.5cm);
+ path C_f,C_g;
+ C_f:=courbe(f,-1.5,1.5,40);
+ C_g:=C_f yscaled 2;
+ draw axes(0,0);
+% origine;
+ pair A,B;
+ A:=_c(1,f(1));
+ B:=A yscaled 2;
+ projetepoint(B);
+ draw A--(0,ypart A) dashed evenly;
+ draw Cf withpen pencircle scaled 1.5bp;
+ draw Cg;
+ label.bot(btex $x$ etex,(_Ux,0));
+ label.lft(btex $u(x)$ etex,(0,ypart A));
+ label.lft(btex $2u(x)$ etex,(0,ypart B));
+ cadrer
+endfig;
+%
+beginfig(3)
+ vardef f(expr x)= x**2 enddef;
+ repere(-1.5,1.5,1.5cm,-0.5,2.5,1.5cm);
+ path Cf,Ch;
+ Cf:=courbe(f,-1.5,1.5,40);
+ Ch:=Cf yscaled 0.5;
+ axes;
+ origine;
+ pair A,B;
+ A:=pointc(1.2,f(1.2));
+ B:=A yscaled 0.5;
+ projetepoint(A);
+ draw B--(0,ypart B) dashed evenly;
+ draw Cf withpen pencircle scaled 1.5bp;
+ draw Ch;
+ label.bot(btex $x$ etex,(xpart A,0));
+ label.lft(btex $u(x)$ etex,(0,ypart A));
+ label.lft(btex $\displaystyle u(x)\over2$ etex,(0,ypart B));
+ cadrer
+endfig;
+%
+beginfig(4)
+ vardef f(expr x)= x**2 enddef;
+ repere(-1.5,1.5,1.5cm,-2,2.5,1.5cm);
+ path Cf,Ci;
+ Cf:=courbe(f,-1.5,1.5,40);
+ Ci:=Cf yscaled -0.75;
+ axes;
+ origine;
+ pair A,B;
+ A:=pointc(1.2,f(1.2));
+ B:=A yscaled -0.75;
+ projetepoint(A);
+ projetepoint(B);
+ draw Cf withpen pencircle scaled 1.5bp;
+ draw Ci;
+ label.lrt(btex $x$ etex,(xpart A,0));
+ label.lft(btex $u(x)$ etex,(0,ypart A));
+ label.lft(btex $\displaystyle -{3\over4}u(x)$ etex,(0,ypart B));
+ cadrer
+endfig;
+end

@@ -1,0 +1,262 @@
+\documentclass[12pt,a4paper,french]{book}
+\usepackage[french]{babel}
+\usepackage{teach}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+\TeacherModeOff
+%\TeacherModeOn
+
+\begin{document}
+
+\tableofcontents
+
+\chapter{Généralités sur les fonctions}
+
+\section{Premières notions}
+
+\subsection{Définitions}
+
+\begin{defns}
+\begin{itemize}
+ \item \textbf{Notion de fonction :} Une \gap*{fonction} est un procédé qui, à un élément \( x \) d’un ensemble de départ, associe un \gap*{unique} élément \( y \) d’un ensemble d’arrivée. On notera \( f : x \mapsto y \) ou \( f : x \mapsto f(x) \). On dit que \( y \) est l’\gap*{image} de \( x \) par la fonction $f$. On dit que \( x \) est un \gap*{antécédent} de \( y \) par la fonction $f$.\\
+  
+ Si \( x \) et \( y \) sont des nombres, on dit que \( f \) est une fonction numérique. Ce sera le cas de la plupart des fonctions que nous verrons.
+    
+    \item \textbf{ Ensemble de définition :}. L’ensemble des réels \( x \) possédant une image par une fonction numérique \( f \) est appelé l’ensemble de définition de la fonction \( f \). On le note souvent \( D_f \).
+\end{itemize}
+\end{defns}
+
+
+\subsection{Représentation graphique}
+
+\begin{defn}[Représentation graphique]
+Les fonctions sont la plupart du temps définies soit par une \gap*{expression algébrique}, soit par une \gap*{courbe}.\\
+
+\textbf{Représentation graphique :}. Dans un plan muni d’un \gap*{repère}, la représentation graphique de la fonction \( f \) est l’ensemble des points \( M \) de coordonnées \( (x ; y) \) du plan tels que :
+\begin{itemize}
+    \item L’abscisse \( x \) de \( M \) décrit l’ensemble de définition \( D_f \) ;
+    \item L’ordonnée \( y \) est l’image de \( x \) par \( f : y = f(x) \).
+\end{itemize}
+    
+On note souvent \( C_f \) la représentation graphique de \( f \). On dit que \( C_f \) a pour équation \( y = f(x) \).
+\end{defn}
+
+\begin{rem}
+
+L’équation permet de déterminer si un point \( A(x_A ; y_A) \) appartient ou pas à cette courbe. En effet, un point appartient à la courbe si et seulement si ses coordonnées vérifient l’équation de la courbe. On a alors :
+\[ A \in C_f \iff y_A = f(x_A) \]
+
+Dans la pratique, pour les fonctions numériques définies par une expression algébrique, pour esquisser une représentation graphique, on utilise souvent un tableau de valeurs.
+
+\end{rem}
+
+\subsection{Résolutions graphiques d’équations ou d’inéquations}
+
+\subsubsection{Résolution graphique d’équations}
+
+\textbf{Résolutions d’équations de la forme \( f(x) = k \)}. Résoudre l’équation \( f(x) = k \), c’est déterminer \gap*{tous les antécédents éventuels} d’un élément \( k \) de l’ensemble d’arrivée, c’est-à-dire chercher tous les \( x \) de l’ensemble de départ tels que \( f(x) = k \). Une telle recherche peut se faire graphiquement à partir de la représentation graphique de la fonction \( f \).
+
+ \begin{exemple}
+ \vspace{3mm}
+ Soit \( f \) la fonction définie sur \( \mathbb{R} \) par \( f(x) = 2x^2 - 9x + 10 \). On recherche les solutions de l’équation \( f(x) = 3 \).
+
+\begin{center}
+\includegraphics{C:/Users/Pierre/Desktop/1STMG - Chapitre 1 - Généralité sur les fonctions/Exemple.PNG}
+\end{center}
+
+On cherche les points de la courbe ayant pour ordonnée 3. Pour cela, on peut tracer la droite d’équation \( y = 3 \) et chercher les points d’intersection de cette droite avec la courbe de \( f \). On obtient ici deux points \( M_1(1 ; 3) \) et \( M_2\left(\frac{7}{2} ; 3\right) \). Les solutions sont leurs abscisses : 1 et \( \frac{7}{2} \).
+
+On écrit : « Les solutions de l’équation \( f(x) = 3 \) sont \( x = 1 \) ou \( x = \frac{7}{2} \) car les points de la courbe de \( f \) d’ordonnée 3 ont pour abscisses 1 et \( \frac{7}{2} \) ».
+ \end{exemple}
+ 
+ \newpage
+ 
+\subsubsection{Résolution graphique d’inéquations}
+
+\textbf{Résolutions d’inéquations de la forme \( f(x) \leq k \)}. Ces inéquations peuvent se résoudre graphiquement. On procède de la façon suivante :
+\begin{itemize}
+    \item On trace soigneusement \( C_f \) dans un repère (orthogonal) ;
+    \item On trace la droite d’équation \( y = k \) ;
+    \item On recherche les points de la courbe situés sous la droite ;
+    \item L’ensemble des solutions est constitué des abscisses de ces points.
+\end{itemize}
+
+\begin{exemple}
+\vspace{3mm}
+ Sur l’exemple précédent, si l’on doit résoudre \( f(x) \leq 3 \), après avoir tracé \( y = 3 \), on constate que les points de la courbe situés sous cette droite ont leurs abscisses comprises entre 0 et \( \frac{5}{2} \).
+
+Donc \( f(x) \leq 3 \iff x \in \left[0; \frac{5}{2}\right] \).
+
+\end{exemple}
+
+
+\begin{rem}
+\begin{itemize}
+    \item On résout de la même manière les équations du type \( f(x) \geq k \). On retient alors les abscisses des points situés au-dessus de la droite d’équation \( y = k \). Dans l’exemple \( f(x) \geq 3 \iff x \in \left]-\infty; 0\right] \cup \left[\frac{5}{2}; +\infty\right[ \).
+    \item De même pour les inéquations strictes \( f(x) > k \) ou \( f(x) < k \). On exclura alors les abscisses des points d’intersection de la courbe et de la droite. Dans l’exemple \( f(x) < 3 \iff x \in \left]0; \frac{5}{2}\right[ \).
+\end{itemize}
+\end{rem}
+
+\newpage
+\section{Fonctions affines – Équations réduites de droites}
+
+\begin{defn}[Fonction affine]
+Soit \( m \) et \( p \) deux réels. Une fonction \gap*{affine} \( f \) est une fonction qui à tout réel \( x \) associe \( f(x) = mx + p \).
+\end{defn}
+
+\begin{rem}
+\begin{itemize}
+    \item Lorsque \( p = 0 \), la fonction \( f \) définie sur \( \mathbb{R} \) par \( f(x) = mx \) est une fonction affine dite linéaire ;
+    \item Lorsque \( m = 0 \), la fonction \( f \) définie sur \( \mathbb{R} \) par \( f(x) = p \) est une fonction affine dite constante.
+\end{itemize}
+\end{rem}
+
+\begin{prop}
+Soit \( f \) la fonction affine définie sur \( \mathbb{R} \) par \( f(x) = mx + p \). La représentation graphique de \( f \) est une \gap*{droite} \( D \) qui coupe l’axe des ordonnées en \( (0 ; p) \). \( m \) est appelé coefficient directeur de la droite \( D \). \( p \) est appelé \gap*{ordonnée à l’origine} de la droite \( D \). On dit que la droite \( D \) a pour équation \( y = mx + p \).
+\end{prop}
+
+\begin{rem}
+\begin{itemize}
+    \item La représentation graphique d’une fonction \gap*{linéaire} est une droite qui passe par l’origine du repère ;
+    \item La représentation graphique d’une fonction \gap*{constante} est une droite parallèle à l’axe des abscisses ;
+    \item Pour tracer une droite, on peut déterminer les coordonnées de deux de ses points, les plus éloignés possibles pour plus de précision dans le tracé.
+\end{itemize}
+\end{rem}
+
+\begin{prop}
+Soit \( f \) la fonction affine définie sur \( \mathbb{R} \) par \( f(x) = mx + p \). Pour tous réels \( x_1 \) et \( x_2 \) tels que \( x_1 \neq x_2 \), alors \( m = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \) et \( p = f(x_1) - mx_1 \).
+
+Soit \( D \) une droite non parallèle à l’axe des ordonnées. Alors cette droite admet une unique équation de la forme \( y = mx + p \) dite équation réduite de la droite, et si \( A(x_A ; y_A) \) et \( B(x_B ; y_B) \) sont deux points distincts de la droite, alors \( m = \frac{y_B - y_A}{x_B - x_A} \) et \( p = y_A - mx_A \).
+\end{prop}
+
+\newpage
+
+\section{Taux de variation}
+
+\subsection{Définition}
+
+\begin{defn}[Taux de variation]
+Soit \( f \) une fonction (numérique) définie sur un intervalle \( I \), et soit \( a \) et \( b \) deux nombres distincts appartenant à \( I \). Le \gap*{taux de variation} de \( f \) entre \( a \) et \( b \) est le nombre réel
+\[
+\tau(a, b) = \frac{f(b) - f(a)}{b - a}
+\]
+
+\end{defn}
+
+\begin{rem}
+\begin{itemize}
+    \item \( \tau \) se lit « tau » ;
+    \item On le nomme parfois \gap*{taux d’accroissement} ;
+    \item On parle aussi bien de taux de variation de \( f \) entre \( a \) et \( b \) que de taux de variation de \( f \) sur l’intervalle \( [a ; b] \).
+\end{itemize}
+\end{rem}
+
+\subsection{Interprétation géométrique}
+
+\begin{rem}[Interprétation géométrique]
+Le taux de variation est aussi \gap*{le coefficient directeur}, appelé parfois \gap*{pente}, de la droite passant par les points \( A(a ; f(a)) \) et \( B(b ; f(b)) \).
+\end{rem}
+
+\section{Monotonie et signe du taux de variation}
+
+\subsection{Monotonie – Sens de variation}
+
+\begin{defn}[Monotonie]
+Soit \( f \) une fonction définie sur un intervalle \( I \). On dit que \( f \) est :
+\begin{itemize}
+    \item \textbf{\gap*{Strictement croissante}} sur \( I \) si, pour tous réels \( a \) et \( b \) de \( I \), on a : Si \( a < b \) alors \( f(a) < f(b) \).
+    \item \textbf{\gap*{Strictement décroissante}} sur \( I \) si, pour tous réels \( a \) et \( b \) de \( I \), on a : Si \( a < b \) alors \( f(a) > f(b) \).
+    \item \textbf{\gap*{Constante}} sur \( I \) si, pour tous réels \( a \) et \( b \) de \( I \), on a : \( f(a) = f(b) \).
+\end{itemize}
+\end{defn}
+
+\begin{rem}
+\begin{itemize}
+\item Lorsque \( f \) est croissante, \( a \) et \( b \) et \( f(a) \) et \( f(b) \) sont dans le même ordre; on dit de \( f \) qu’elle \gap*{ conserve} l’ordre. \item Lorsque \( f \) est décroissante, \( a \) et \( b \) et \( f(a) \) et \( f(b) \) sont dans un ordre inverse; on dit de \( f \) qu’elle \gap*{inverse} l’ordre.
+\end{itemize}
+\end{rem}
+
+\begin{defn}[(Monotonie sur un intervalle)]
+Si \( f \) ne change pas de sens de variation sur \( I \), c’est-à-dire si elle y reste strictement croissante ou décroissante, on dit que \( f \) est monotone.
+\end{defn}
+
+\subsection{Taux de variation et sens de variation}
+
+\begin{prop}
+Soit \( f \) une fonction définie sur un intervalle \( I \). Si, pour tous nombres distincts \( a \) et \( b \) appartenant à \( I \), on a :
+\begin{itemize}
+    \item \( \tau(a, b) > 0 \), alors \( f \) est strictement \gap*{croissante} sur \( I \) ;
+    \item \( \tau(a, b) < 0 \), alors \( f \) est strictement \gap*{décroissante} sur \( I \) ;
+    \item \( \tau(a, b) = 0 \), alors \( f \) est constante sur \( I \).
+\end{itemize}
+\end{prop}
+
+\newpage
+
+\section{Exercices}
+
+\begin{exocor}[Premières notions]
+\begin{enumerate}
+    \item Définissez ce qu'est une fonction et donnez un exemple de fonction numérique.
+    \item Déterminez l'ensemble de définition de la fonction \( f(x) = \frac{1}{x-2} \).
+    \item Si \( f(x) = x^2 + 3x + 2 \), calculez l'image de \( x = -1 \).
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}[Représentation graphique]
+\begin{enumerate}
+    \item Tracez la représentation graphique de la fonction \( f(x) = x^2 - 4 \).
+    \item Vérifiez si le point \( A(2,0) \) appartient à la courbe représentative de \( f(x) = x^2 - 4 \).
+    \item Utilisez un tableau de valeurs pour esquisser la courbe de \( f(x) = 3x + 1 \) sur l'intervalle \( [-2, 2] \).
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}[Résolution graphique d’équations]
+\begin{enumerate}
+    \item Résolvez graphiquement l'équation \( f(x) = 0 \) pour la fonction \( f(x) = x^2 - 4x + 3 \).
+    \item Trouvez les solutions de l'équation \( 2x + 1 = 5 \) en utilisant la méthode graphique.
+    \item Pour la fonction \( f(x) = x^2 - 2x - 3 \), trouvez les valeurs de \( x \) pour lesquelles \( f(x) = 0 \).
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}[Résolution graphique d’inéquations]
+\begin{enumerate}
+    \item Résolvez graphiquement l'inéquation \( x^2 - 4x + 3 \leq 0 \).
+    \item Déterminez les valeurs de \( x \) pour lesquelles \( 2x + 1 \leq 3 \).
+    \item Résolvez graphiquement l'inéquation \( x^2 - 2x - 3 > 0 \).
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}[Fonctions affines]
+\begin{enumerate}
+    \item Déterminez l'équation de la droite passant par les points \( (0, 2) \) et \( (2, 6) \).
+    \item Tracez la représentation graphique de la fonction affine \( f(x) = 3x + 2 \).
+    \item Pour la fonction affine \( f(x) = -2x + 5 \), trouvez les coordonnées des points d'intersection avec les axes.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}[Taux de variation]
+\begin{enumerate}
+    \item Calculez le taux de variation de la fonction \( f(x) = 2x + 3 \) entre \( x = 1 \) et \( x = 4 \).
+    \item Déterminez le taux de variation de la fonction \( f(x) = x^2 \) entre \( x = 2 \) et \( x = 5 \).
+    \item Pour la fonction \( f(x) = 3x - 7 \), trouvez le taux de variation entre \( x = 0 \) et \( x = 2 \).
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}[Monotonie et taux de variation]
+\begin{enumerate}
+    \item Déterminez si la fonction \( f(x) = x^3 - 3x + 2 \) est croissante ou décroissante sur l'intervalle \( [0, 2] \).
+    \item Calculez le taux de variation de la fonction \( f(x) = -x^2 + 4x - 3 \) sur l'intervalle \( [1, 3] \).
+    \item Pour la fonction \( f(x) = x^2 - 2x + 1 \), déterminez les intervalles où elle est croissante et où elle est décroissante.
+\end{enumerate}
+\end{exocor}
+
+
+\end{document}

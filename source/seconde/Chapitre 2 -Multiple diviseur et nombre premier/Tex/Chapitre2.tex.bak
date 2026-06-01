@@ -1,0 +1,120 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\chapter{Multiple, diviseur et nombre premier}
+
+\textit{Depuis plus d'un siècle, la technologie nous permet de communiquer entre nous sans se rencontrer directement. Mais elle s'accompagne d'un défaut majeur, la sécurité.
+\\
+ Comment éviter que mon message soit reçu par quelqu'un d'autre que par son destinataire? \\
+On a créé pour cela une matière à part entière, la cryptographie, qui a pour but de conserver une information\\ 
+\vspace{2mm} confidentielle, au coeur de cette matière se trouvent les nombres premiers, qui sont indispensables.\\
+En particulier on peut citer Alan Turing, un mathématicien britannique héros de guerre, qui a aidé à décrypter énigma, une machine principalement utilisée par les Allemands pour communiquer, plusieurs centaines de milliers de victimes ont pu être épargnées grâce aux messages interceptés et décryptés.}  
+
+
+\section{Multiple et diviseur}
+\subsection{Ensemble et appartenance}
+\begin{defn}
+On notera $\mathbb{N}:=\{0;1;2;3;...\}$, cet ensemble sera dit l'ensemble des entiers naturels.
+
+On notera $\mathbb{Z}:=\{...;-3;-2;-1;0;1;2;3;...\}$, cet ensemble sera dit l'ensemble des entiers relatifs.
+
+Si l'on note $\mathbb{N}^{*}$ ou $\mathbb{Z}^{*}$ cela signifie que l'on regarde l'ensemble sans l'élément $0$.
+
+On dit qu'un élément $a$ appartient à un ensemble $E$ s'il fait parti des éléments qui constituent $E$, on notera $a\in E$. 
+\end{defn}
+
+
+\underline{Exemple}: $2\in \mathbb{N}$, ce qui se traduit en français par: deux appartient à l'ensemble des entiers naturels.
+
+
+\subsection{Multiple et diviseur}
+
+\underline{Exemple de multiple}: $8=4 \times 2$ est un multiple de $4$, $3$ est un diviseur de $99=3 \times 33$.
+
+\begin{defn}
+Soit $a,b\in \mathbb{N}$ on dit que $b$ est un multiple de $a$ s'il existe un élément $q\in \mathbb{N}$ tel que $b=aq$.
+
+On dit que $a$ est un diviseur de $b$ s'il existe un élément $q\in \mathbb{N}$ tel que $b=aq$
+\end{defn}
+
+
+\begin{defn}
+Pour chaque élément de $\mathbb{N}$, on peut dire s'il est pair ou impair, on dira qu'un élément $a$ est pair s'il existe un élément $q_a \in \mathbb{N}$ tel que $a=2q_{a}$, on dira que $a$ est impair s'il n'est pas pair.\\
+
+Autrement dit, on dit qu'un nombre est pair si c'est un multiple de 2.
+\end{defn}
+
+
+\underline{Exemple}: 13230232 est pair, 23427865 est impair.
+
+(Astuce, un nombre est pair si et seulement si il se termine par 0,2,4,6,8) 
+
+
+\begin{prop}
+Si $a$ est impair si et seulement si il existe un élément $q_{a} \in \mathbb{N}$ tel que $a=2q_{a}+1$
+\end{prop}
+\begin{thm}
+Soit $a \in \mathbb{N}$ et $b,c$ deux multiples de $a$ alors $b+c$ est un multiple de $a$.
+\end{thm}
+\begin{demo}
+On a $b=aq_b$ et $c=aq_c$ donc $b+c=aq_b+aq_c$ ou encore $b+c=a(q_b+q_c)$ ce qui équivaut à dire que $b+c$ est un multiple de $a$.
+\end{demo}
+\begin{thm}
+Le carré d'un nombre impair est impair.
+\end{thm}
+\begin{demo}
+Soit $a$ un nombre impair, par la propriété 1 on a $a=2q_{a}+1$ mais alors $a^2=(2q_{a}+1)^2$. 
+
+On développe et l'on a $a^2=4q_{a}^2+ 4q_{a}+1$ et on factorise les deux premiers termes du second membre par $2$ pour aboutir à l'expression suivante $a^2=2( 2q_{a}^2+2q_{a} )+1$ qui équivaut à dire que $a^2$ est impair d'après la propriété 1.
+\end{demo}
+
+\section{Nombre premier}
+
+
+
+
+\begin{defn}
+Un nombre est dit premier s'il possède \underline{uniquement} deux diviseurs différents, qui sont nécessairement 1 et lui même.
+Attention, d'après notre définition 1 n'est pas premier.
+\end{defn}
+
+\underline{Exemple de nombre}: 3 est premier, 7 et 11 sont premiers, 2 est premier, et c'est le seul nombre premier pair, ce qui est remarquable. 57 lui en revanche n'est pas premier car il est divisible par 3.
+
+Une application très commode des nombres premiers est de réduire de manière irréductible une fraction, il est très important de savoir réduire une fraction sous sa forme irréductible, les nombres premiers serviront notamment pour montrer que certain nombres sont irrationnels dans le courant de l'année.\\
+
+
+\underline{Application}: On se propose de réduire ( sous forme irréductible ) $\frac{ 337 500}{11 250}$, pour cela on décompose le numérateur et le dénominateur en produits de nombres premiers.
+
+$337 500=2^2 \times 3^3 \times 5^5$, 
+
+
+$11 250=2^1 \times 3^2 \times 5^4$
+
+Par les règles de calcul sur les puissances on conclut que $\frac{337 500}{11 250}=30$. \\
+
+
+\underline{Exemple de décomposition}: $66=3 \times 33 = 3 \times 3 \times 11 = 3^2 \times 11$ 
+
+\begin{thm}[fondamental de l'arithmétique, admis]
+Pour tout nombre $a \in \mathbb{N}$ ($\geq 2$) s'écrit comme produit de nombres premiers.
+\end{thm}
+
+\end{document}

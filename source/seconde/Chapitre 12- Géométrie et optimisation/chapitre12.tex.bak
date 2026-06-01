@@ -1,0 +1,103 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+\chapter{Géométrie et optimisation}
+
+\section{Projeté orthogonal d'un point sur une droite}
+
+\begin{defn}
+Soit A un point du plan et $\Delta$ une droite.
+Le \underline{projeté orthogonal} du point A sur la droite $\Delta$  est le point d'intersection de la droite $\Delta$ et de la perpendiculaire à $\Delta$ passant par A, noté H.
+\end{defn}
+
+\begin{prop}
+Le projeté orthogonal du point A sur la droite $\Delta$ est le point de $\Delta$ le plus proche de A : cela signifie que, pour tout point M de $\Delta$ distinct de H, on a AM $>$ AH.
+\end{prop}
+
+Autrement dit, la distance entre A et un point de $\Delta$ est minimal lorsque ce point est H.
+
+\begin{demo}
+Soit M un point de $\Delta$ distinct de H. Comme AHM est un triangle rectangle, on a d'après le théorème de Pythagore.
+$$AM^2=AH^2+HM^2$$ Puisque M est distinct de H on a nécessairement $HM^2>0$, donc en ajoutant $AH^2$ de part et d'autre de l'inégalité on obtient l'inégalité suivante,
+$$AH^2+HM^2 > AH^2$$ mais d'après notre première égalité le premier membre de l'inégalité est égal à $AM^2$, d'où la dernière inégalité qui conclut la preuve,
+$$AM^2>AH^2$$
+ce qui est équivalent encore à 
+$$AM>AH$$
+\end{demo}
+
+
+\begin{defn}
+La longueur AH s'appelle la \underline{distance} du point A à la droite $\Delta$.
+\vspace{4mm}
+\end{defn}
+
+\section{Trigonométrie}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-1.2997560756662618,-0.8688016433538822) rectangle (7.487174934667167,3.9296864630703707);
+\draw [shift={(-0.12228148239489928,-0.145589277575063)},line width=1pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (0.12455584620725263:0.20594369555468975) arc (0.12455584620725263:25.481334490023716:0.20594369555468975) -- cycle;
+\draw[line width=1pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (5.987723236966333,0.013317869151515865) -- (5.842099397398288,0.013001295587237477) -- (5.842415970962566,-0.13262254398080772) -- (5.988039810530611,-0.13230597041652933) -- cycle; 
+\draw [line width=1pt] (-0.12228148239489928,-0.145589277575063)-- (5.988039810530611,-0.13230597041652933);
+\draw [line width=1pt] (-0.12228148239489928,-0.145589277575063)-- (5.981744707757667,2.7634413051377784);
+\draw [line width=1pt] (5.981744707757667,2.7634413051377784)-- (5.988039810530611,-0.13230597041652933);
+\begin{scriptsize}
+\draw [fill=ududff] (-0.12228148239489928,-0.145589277575063) circle (1.5pt);
+\draw[color=ududff] (-0.08468827189359232,0.006459062753545894) node {$A$};
+\draw [fill=ududff] (5.988039810530611,-0.13230597041652933) circle (1.5pt);
+\draw[color=ududff] (6.145569065784339,0.013323852605368863) node {$B$};
+\draw [fill=xdxdff] (5.981744707757667,2.7634413051377784) circle (1.5pt);
+\draw[color=xdxdff] (6.038704275932517,2.9102651700746605) node {$C$};
+\draw[color=qqwuqq] (0.3615230684749022,-0.02100009665374597) node {$\alpha$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\begin{thm}
+Soit $ABC$ un triangle rectangle en $B$ et $\widehat{CAB}=\alpha$ alors on a $\cos(\alpha)^2+\sin(\alpha)^2=1$
+\end{thm}
+
+\begin{demo}
+Soit $ABC$ un triangle rectangle en $B$ et $\widehat{CAB}=\alpha$  on sait que $\cos(\alpha)=\frac{AB}{AC}$ et $\sin(\alpha)=\frac{BC}{AC}$ donc $$\cos(\alpha)^2+\sin(\alpha)^2= \frac{AB^2 + BC^2}{AC^2}.$$ 
+Or le théorème de Pythagore affirme que $AB^2 + BC^2=AC^2$, par suite $$\cos(\alpha)^2+\sin(\alpha)^2=\frac{AC^2}{AC^2}=1.$$
+\end{demo}
+
+\section{Problème d'optimisation géométrique}
+
+Dans de nombreux problèmes, on cherche à rendre minimale ou maximale une grandeur géométrique (longueur, aire, volume...) : ce sont des problèmes d'\underline{optimisation} de grandeurs.
+
+
+\begin{prop}
+A, B et C sont trois points du plan.\\
+Les trois propositions suivantes sont équivalentes: 
+\begin{itemize}
+\item C appartient au segment $[AB]$
+\item La somme des distances AC+CB est minimale.
+\item AB=AC+CB
+\end{itemize}
+\end{prop}
+
+
+
+
+\end{document}

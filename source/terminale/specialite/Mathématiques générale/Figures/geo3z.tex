@@ -1,0 +1,509 @@
+verbatimtex%&latex 
+\documentclass[12pt]{article} 
+\usepackage{mathrsfs} 
+\newcommand{\PR}{\mathscr{P}}
+\newcommand{\DR}{\mathscr{D}}
+\begin{document} 
+etex 
+
+input latexmp;
+input repere;
+
+
+%imput mathrsfs; 
+%input newcourbes; 
+%input couleur;
+angle_radius=8pt;
+ 
+def mark_rt_angle(expr a, b, c) =
+  draw ((0,1)--(1,1)--(1,0))
+       zscaled (angle_radius*unitvector(a-b)) shifted b;
+enddef;
+
+beginfig(1);
+repere(-5,7,1cm,-3,6,1cm); 
+ numeric u;
+ pair t,r,zz,ZZ;
+ transform T,S;
+ u= 1cm;
+ t=(2u,3u); r=(0u,2u);
+ T = identity shifted t;
+ S = identity shifted r;
+
+ %les droites perpendiculaires en I
+ z0=(0u,0u);
+ z1 = z0 transformed T;
+ zz:= 0.25*z1;
+ ZZ:= 0.25*z2;
+ z2 = z0 transformed S;
+ draw z0--z1 withcolor rouge;
+ draw z0--z2;
+ drawarrow z0--zz withcolor rouge;
+ drawarrow z0--ZZ ;
+ label.bot(btex $I$ etex, z0) ;
+ label.lft(btex $\overrightarrow{u}$ etex, 0.5*(z0+ZZ));
+ label.rt(btex $\overrightarrow{v}$ etex, 0.5*(z0+zz)) withcolor rouge;
+
+
+
+
+
+% %marquage de l'angle droit
+ z3=0.1[z0,z1];z4=0.1[z0,z2];
+ z5=z3 shifted z4-z0;
+ draw z3--z5;
+ draw z4--z5;
+
+% %droites d et delta
+ pair zzz, ZZZ;
+ z6=(0u,-1u);
+ z7 = z6 transformed T;
+ zzz:=zz shifted (0,-1u);
+ drawarrow z6--zzz withcolor rouge;
+ label.rt(btex $\overrightarrow{v}$ etex, 0.5*(z6+zzz)) withcolor rouge;
+ draw z7--z6 withcolor rouge;
+ label.bot(btex $\Delta$ etex, z7) withcolor rouge;
+z8=(-1u,-1u);
+z9= z8 transformed S;
+ZZZ:=ZZ shifted(-u,-u);
+drawarrow z8--ZZZ;
+label.lft(btex $\overrightarrow{u}$ etex, 0.5*(z8+ZZZ));
+label.lft(btex $\mathscr{D}$ etex, z9);
+draw z9--z8;
+endfig;
+
+beginfig(2);
+
+repere(-5,7,1cm,-3,6,1cm); 
+%droite orthogonale a un plan
+numeric u;
+pair t,r;
+transform T,S;
+path p[];
+
+u= 1cm;
+t=(4u,0u); r=(1u,2u);
+T = identity shifted t;
+S = identity shifted r;
+
+% %plan P
+ z0=(0u,0u);
+ z1 = z0 transformed T;
+ z2 = z0 transformed S;
+ z3 = z0 transformed T transformed S;
+ path p;
+ p:=z0--z1--z3--z2--cycle;
+ fill p withcolor gris;
+ draw z0--z2 withcolor 0.5bleu+0.1rouge;
+ draw z2--z3 withcolor 0.5bleu+0.1rouge;
+pickup pencircle scaled 1pt;
+draw z0--z1 withcolor 0.5bleu+0.1rouge;
+draw z1--z3 withcolor 0.5bleu+0.1rouge;
+pickup pencircle scaled 0.5pt;
+label.urt(btex $\mathscr{P}$ etex, z0+(0.1u,0u)) withcolor noir;
+
+% %droites secantes
+ z4 = (0.8u,1u); z5 =(4u,1.5u);
+ draw z4--z5 withcolor noir; 
+ z6 = (1u,1.6u);z7=(3.6u,0.4u);
+ draw z6--z7 withcolor noir; 
+ label.rt(btex $d_1$ etex, z5) withcolor noir;
+ label.rt(btex $d_2$ etex, z7) withcolor noir;
+ p1 = z4--z5;p2 = z6--z7;
+
+% %droite orthogonale
+ z8 = p1 intersectionpoint p2;
+ z9 = z8 shifted (0u,2u);
+ label.rt(btex $\mathscr{D}$ etex, z9);
+ draw z8--z9;
+z10 = z8 shifted (0u,-2u);
+p3 = z9--z10;p4 = z0--z1;
+z11 = p3 intersectionpoint p4;
+draw z8--z11 dashed evenly;
+draw z11--z10;
+
+% %vecteurs
+pair Z,ZZ,ZZZ;
+Z:=0.5[z8,z4];
+ZZ:=0.5[z8,z7];
+ZZZ:=z8 shifted(0u,1u);
+drawarrow z8--Z withcolor bleu;
+ drawarrow z8--ZZ withcolor bleu;
+ drawarrow z8--ZZZ withcolor rouge;
+ label.lft(btex $\overrightarrow{u}$ etex, ZZZ);
+ label.top(btex $\overrightarrow{v_1}$ etex, ZZ) withcolor noir;
+ label.top(btex $\overrightarrow{v_2}$ etex,Z) withcolor noir;
+
+
+
+
+
+% %marquage des angles droits
+ z12=0.1[z8,z7];z13=0.1[z8,z9];
+ z14= z13 shifted z12-z8;
+ draw z12--z14;
+ draw z13--z14;
+
+ z15=0.2[z8,z4];z16=0.1[z8,z9];
+ z17= z16 shifted z15-z8;
+ draw z15--z17;
+ draw z16--z17;
+endfig;
+
+beginfig(3);
+ %vecteur normal a un plan
+ repere(-5,7,1cm,-3,6,1cm); 
+ numeric u;
+ pair t,r;
+ transform T,S;
+ path p[];
+
+ u= 1cm;
+ t=(4u,0u); r=(1u,2u);
+ T = identity shifted t;
+ S = identity shifted r;
+
+ %plan P
+ z0=(0u,0u);
+ z1 = z0 transformed T;
+ z2 = z0 transformed S;
+ z3 = z0 transformed T transformed S;
+ path p;
+ p:=z0--z1--z3--z2--cycle;
+ fill p withcolor gris;
+ draw z0--z2 withcolor noir;
+ draw z2--z3 withcolor noir;
+ pickup pencircle scaled 1.5pt;
+ draw z0--z1 withcolor noir;
+ draw z1--z3 withcolor noir;
+ pickup pencircle scaled 0.5pt;
+ label.urt(btex $\PR$ etex, z0+(0.1u,0u)) withcolor noir;
+
+% %droites secantes
+ z4 = (0.8u,1u); z5 =(4u,1.5u);
+ draw z4--z5 withcolor noir; 
+ z6 = (1u,1.6u);z7=(3.6u,0.4u);
+ draw z6--z7 withcolor noir; 
+ %label.rt(btex $d_1$ etex, z5) withcolor rouge;
+ %label.rt(btex $d_2$ etex, z7) withcolor rouge;
+p1 = z4--z5;p2 = z6--z7;
+
+% %droite orthogonale
+z8 = p1 intersectionpoint p2;
+z9 = z8 shifted (0u,2u);
+dotlabel.bot(btex  etex, z8);
+label.urt(btex $A$ etex, z8) withcolor noir;
+
+label.rt(btex $\DR$ etex, z9) ;
+ draw z8--z9  ;
+z10 = z8 shifted (0u,-2u);
+p3 = z9--z10;p4 = z0--z1;
+z11 = p3 intersectionpoint p4;
+draw z8--z11 dashed evenly  ;
+draw z11--z10  ;
+
+% %vecteurs
+pair Z,ZZ,ZZZ;
+Z:=0.5[z8,z4];
+ZZ:=0.5[z8,z7];
+ZZZ:=z8 shifted(0u,1.5u);
+drawarrow z8--Z withcolor noir ;
+drawarrow z8--ZZ withcolor noir ;
+drawarrow z8--ZZZ withcolor rouge ;
+label.lft(btex $\overrightarrow{n}$ etex, ZZZ) ;
+label.urt(btex $M_1$ etex, ZZ) withcolor noir;
+label.ulft(btex $M_2$ etex,Z) withcolor noir;
+
+
+
+
+
+% %marquage des angles droits
+z12=0.1[z8,z7];z13=0.1[z8,z9];
+z14= z13 shifted z12-z8;
+draw z12--z14;
+draw z13--z14;
+
+z15=0.2[z8,z4];
+z16=0.1[z8,z9];
+z17= z16 shifted z15-z8;
+draw z15--z17;
+draw z16--z17;
+endfig;
+
+beginfig(4);
+
+ repere(-5,7,1cm,-3,6,1cm);
+ %distance d'un point à un plan
+numeric u;
+pair t,r;
+transform T,S;
+path p[];
+
+u= 1cm;
+t=(4u,0u); r=(1u,2u);
+T = identity shifted t;
+S = identity shifted r;
+
+%%plan P
+z0=(0u,0u);
+z1 = z0 transformed T;
+z2 = z0 transformed S;
+ z3 = z0 transformed T transformed S;
+ path p;
+ p:=z0--z1--z3--z2--cycle;
+ fill p withcolor gris;
+ draw z0--z2 withcolor noir;
+ draw z2--z3 withcolor noir;
+ pickup pencircle scaled 1pt;
+ draw z0--z1 withcolor noir;
+ draw z1--z3 withcolor noir;
+ pickup pencircle scaled 0.5pt;
+ label.urt(btex $\PR$ etex, z0+(0.1u,0u)) withcolor noir;
+
+ %droites secantes
+ z4 = (0.8u,1u); z5 =(4u,1.5u);
+ %draw z4--z5 withcolor noir; 
+ z6 = (1u,1.6u);z7=(3.6u,0.4u);
+ %draw z6--z7 withcolor rouge; 
+%label.rt(btex $d_1$ etex, z5) withcolor bleu_m;
+%label.rt(btex $d_2$ etex, z7) withcolor bleu_m;
+ p1 = z4--z5;p2 = z6--z7;
+
+% %droite orthogonale
+ z8 = p1 intersectionpoint p2;
+ z9 = z8 shifted (0u,2u);
+ dotlabel.bot(btex  etex, z8);
+ label.bot(btex $H$ etex, z8) withcolor noir;
+
+ dotlabel.top(btex  etex, z9);
+ label.top(btex $M$ etex, z9) withcolor noir;
+ draw z8--z9 withcolor noir;
+ z10 = z8 shifted (0u,-2u);
+ p3 = z9--z10;p4 = z0--z1;
+ z11 = p3 intersectionpoint p4;
+ %draw z8--z11 dashed evenly  withcolor bleu_f;
+ %draw z11--z10  withcolor bleu_f;
+
+% %vecteurs
+ pair Z,ZZ,ZZZ;
+ Z:=z8 shifted(0u,0.75u);
+ ZZ:=0.85[z8,z7];
+ ZZZ:=z8 shifted(0u,1.5u);
+ %drawarrow z8--Z withcolor bleu_m ;
+ drawarrow z8--ZZ withcolor noir;
+ drawarrow z8--ZZZ withcolor rouge ;
+ label.lft(btex $\overrightarrow{n}$ etex, Z shifted (0,0.35u)) withcolor noir;
+ label.urt(btex $A$ etex, ZZ) withcolor noir;
+ %label.ulft(btex $M_2$ etex,Z) withcolor bleu_m;
+
+
+ draw ZZ--z9;
+
+
+% %marquage des angles droits
+ z12=0.1[z8,z7];z13=0.1[z8,z9];
+ z14= z13 shifted z12-z8;
+ draw z12--z14;
+ draw z13--z14;
+endfig;
+
+beginfig(5);
+ repere(-5,7,1cm,-8,6,1cm); 
+%droites orthogonales a deux plans paralleles
+ 
+ numeric u;
+ pair t,r;
+ transform T,S;
+
+ u= 1cm;
+ t=(4u,0u); r=(1u,2u);
+ T = identity shifted t;
+ S = identity shifted r;
+ path p[];
+
+ %premier plan
+ z0=(0u,0u);
+ z1 = z0 transformed T;
+ z2 = z0 transformed S;
+ z3 = z0 transformed T transformed S;
+ path p;
+ p:=z0--z1--z3--z2--cycle;
+ fill p withcolor gris;
+ draw z0--z2withcolor noir;
+ draw z2--z3 withcolor noir;
+ pickup pencircle scaled 1pt;
+ draw z0--z1 withcolor noir;
+ draw z1--z3 withcolor noir;
+ pickup pencircle scaled 0.5pt;
+ label.urt(btex $\PR_1$ etex, z0+(0.1u,0u)) withcolor noir;
+
+ %deuxieme plan 
+ z10=(0u,-2.5u);
+ z11 = z10 transformed T;
+ z12 = z10 transformed S;
+ z13 = z10 transformed T transformed S;
+ path pp;
+ pp:=z10--z11--z13--z12--cycle;
+ fill pp withcolor gris;
+ draw z10--z12 withcolor noir;
+ draw z12--z13 withcolor noir;
+ pickup pencircle scaled 1pt;
+ draw z10--z11 withcolor noir;
+ draw z11--z13 withcolor noir;
+ pickup pencircle scaled 0.5pt;
+ label.urt(btex $\PR_2$ etex, z10+(0.1u,0u)) withcolor noir;
+
+ %premiere droite
+ pair Z,ZZ;
+ z20 = (2u,1u);z26 = z20 shifted (0u,-2.5u);
+ z21 = z20 shifted (0u,2u);
+ Z= z20 shifted (0u,1.5u);
+ ZZ=z20 shifted(0u,-1.15u);
+ z22 = z20 shifted (0u,-4.5u);
+
+ p1 = z21--z22;
+ p2 = z0--z1;
+ p3 = z10--z11;
+ z24 = p1 intersectionpoint p2;
+ z25 = p1 intersectionpoint p3;
+ drawarrow z20--Z  withcolor rouge;
+ label.rt(btex $\overrightarrow{n_1}$ etex, Z);
+ drawarrow z26--ZZ withcolor rouge;
+ label.rt(btex $\overrightarrow{n_2}$ etex, ZZ shifted(0,-0.15u));
+
+ draw z21--z20;draw z20--z24 dashed evenly;draw z24--z26;draw z26--z25 dashed evenly; draw z25--z22;
+
+ %deuxieme droite
+ z30 = (3u,1.5u);z36 = z30 shifted (0u,-2.5u);
+ z31 = z30 shifted (0u,2u);
+ z32 = z30 shifted (0u,-4.5u);
+
+p11 = z31--z32;
+p12 = z0--z1;
+p13 = z10--z11;
+z34 = p11 intersectionpoint p12;
+z35 = p11 intersectionpoint p13;
+% %draw z31--z30;draw z30--z34 dashed evenly;draw z34--z36;draw %z36--z35 
+% %dashed evenly; draw z35--z32;
+
+% marquage des angles droits
+z40=0.1[z20,z30];z41=0.1[z20,z21];
+z42 = z41 shifted z40-z20;
+draw z42--z40 withcolor noir;
+draw z42--z41 withcolor noir;
+
+z50=0.1[z30,z20];z51=0.1[z30,z31];
+z52 = z51 shifted z50-z30;
+% %draw z52--z50;
+% %draw z52--z51;
+
+z60=0.1[z26,z36];z61=0.1[z26,z24];
+z62 = z61 shifted z60-z26;
+draw z62--z60 withcolor noir;
+draw z62--z61 withcolor noir;
+
+z70=0.1[z36,z26];z71=0.2[z36,z34];
+z72 = z71 shifted z70-z36;
+% %draw z72--z70;
+% %draw z72--z71;
+
+draw z20--z30;
+draw z26--z36;
+drawarrow z20--Z  withcolor rouge;
+drawarrow z26--ZZ withcolor rouge;
+endfig;
+
+beginfig(6);
+repere(-5,7,1cm,-8,6,1cm); ;
+ %intersection de deux plans perpendiculaires
+ numeric u;
+ pair t,r;
+ transform T,S;
+ path p[],q[];
+
+ u= 1cm;
+ t=(6u,0u); r=(1u,2u);
+ T = identity shifted t;
+ S = identity shifted r;
+
+ %Tracé de P
+ z0=(0u,0u);
+ z1 = z0 transformed T;
+ z2 = z0 transformed S;
+ z3 = z0 transformed T transformed S;
+ path p;
+ p:=z0--z1--z3--z2--cycle;
+ fill p withcolor gris;
+ draw z0--z2 withcolor noir;
+ pickup pencircle scaled 0.7pt;
+ draw z0--z1 withcolor noir;
+ draw z1--z3 withcolor noir;
+ pickup pencircle scaled 0.5pt;
+ label.urt(btex $\PR_1$ etex, z0+(0.1u,0u)) withcolor noir;
+
+ %%Tracé de Q
+ z5 = 0.5[z0,z1];
+ z6 = z5 transformed S;
+ z7 = z5 shifted (0u,-2.5u);
+ z8 = z7 transformed S;
+ z5 = 0.5[z9,z7];
+ z10= z9 transformed S;
+path pp;
+pp:=z9--z10--z8--z7--cycle;
+ fill pp withcolor 0.9white;
+ draw z0--z1 withcolor noir withpen pencircle scaled 1.5pt;
+ draw z5--z6 ; 
+ draw z9--z7withpen pencircle scaled 1bp withcolor 0.4white;
+ draw z9--z10withpen pencircle scaled 1bp withcolor 0.4white;
+ draw z10--z6withpen pencircle scaled 1bp withcolor 0.4white;
+ draw z6--z3 withcolor noir;
+ draw z7--z8 withpen pencircle scaled 1.2bp withcolor 0.4white;
+ p1 = z2--z6;
+ q1= z5--z9;
+ z11 = p1 intersectionpoint q1;
+ draw z11--z6 dashed evenly withcolor noir;
+ draw z2--z11 withcolor noir;
+ p2 = z6--z8;
+ q2= z5--z1;
+ z12 = p2 intersectionpoint q2;
+ draw z12--z6 dashed evenly  withcolor 0.4white;
+ draw z8--z12 withpen pencircle scaled 1bp withcolor 0.4white;
+label.urt(btex $\PR_2$ etex, z7shifted (0u,1.3u)) withcolor noir;
+
+ %%nom de la droite d'intersection
+ %%label.rt(btex $d$ etex, 0.6[z5,z6]);
+ %%droites orthogonales
+ z13=0.5[z5,z6];
+z14 = z13 shifted (0u,2u);
+ z15 = z13 shifted (0u,-2u);
+ p3 = z0--z1;
+ q3 = z13--z15;
+ z16 = p3 intersectionpoint q3;
+ drawarrow z13--z14 withcolor rouge;
+ label.lrt(btex $\overrightarrow{n_1}$ etex, z14) withcolor noir;
+ %%draw z13--z16 dashed evenly;
+ %%draw z16--z15;
+ %%marquage de l'angle droit
+ z20=0.2[z13,z6];z21=0.2[z13,z14];
+ z22 = z21 shifted z20-z13;
+ %%draw z22--z20;
+ %%draw z22--z21;
+ z17 = z13 shifted 0.8(z1-z5);
+ z18 = z13 shifted 0.8(z0-z5);
+ p4 = z13--z18;
+ z19 = q1 intersectionpoint p4;
+ drawarrow z19--z18  withcolor violet;
+ draw z19--z13 dashed evenly withcolor violet;
+label.urt(btex $\overrightarrow{n_2}$ etex, z18) withcolor noir;
+ %%draw z13--z17;
+ %%marquage de l'angle droit
+ z30=0.1[z13,z18];z31=0.1[z13,z14];
+ z32 = z31 shifted z30-z13;
+ draw z32--z30;
+draw z32--z31;
+ endfig;
+
+
+
+end

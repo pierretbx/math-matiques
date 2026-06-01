@@ -1,0 +1,279 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{14}
+\chapter{Espace : Pavé droit et volumes}
+
+\section{Le parallélépipède rectangle et le cube}
+
+\subsection{Pavé droit}
+
+\begin{defn}
+Un parallélépipède rectangle (ou pavé droit) est un solide dont les $6$ faces sont des rectangles.
+\end{defn}
+
+\vspace{2mm}
+\begin{minipage}{6cm}
+Le pavé droit possède donc :
+\begin{enumerate}
+\item[•] $6$ faces
+\item[•] $8$ sommets
+\item[•] $12$ arêtes
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{8cm}
+\includegraphics[scale=0.8]{16. Espace - pavé droit et volumes 1.png}
+\end{minipage}
+
+\begin{prop}
+Un pavé droit est défini par les longueurs de $3$ arêtes ayant un sommet commun .
+\end{prop}
+
+\begin{ex}
+
+\vspace{-3mm}
+\begin{minipage}{7.5cm}
+Un pavé droit de dimensions $12$cm, $7$cm et $5$cm.
+\end{minipage}
+\begin{minipage}{8.5cm}
+\includegraphics[scale=0.5]{16. Espace - pavé droit et volumes 2.png}
+\end{minipage}
+\end{ex}
+
+\vspace{-8mm}
+\subsection{Le cube}
+
+\vspace{-1.5cm}
+\begin{minipage}{11cm}
+\begin{defn}
+Un cube est un pavé droit particulier : toutes ses faces sont des carrés.
+\end{defn}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}  
+\begin{tikzpicture}[general,scale=0.6]
+%\clip(-0.54,0.23) rectangle (9.08,7.29);
+\draw[fill=white!15] (1,1.5)-- (5,1)-- (5,5)--(1,5.5)--cycle;
+\draw[fill=white!15] (1,5.5)--(3,6.5)--(7,6)--(5,5);
+\draw[fill=white!15] (7,6)--(7,2)--(5,1)--(5,5);
+\draw [dashed] (7,2)--(3,2.5);
+\draw [dashed] (3,2.5)-- (1,1.5);
+\draw [dashed] (3,2.5)-- (3,6.5);
+\draw (1,5.5)--(5,5)--(7,6);
+% \begin{scriptsize}
+\draw(1,1.5) node[below] {$A$};
+\draw(5,1) node[below] {$B$};
+\draw(7,2) node[right] {$C$};
+\draw(3,2.5) node[above left] {$D$};
+\draw (1,5.5) node[left] {$E$};
+\draw(5,5) node[above] {$F$};
+\draw(7,6) node[right] {$G$};
+\draw(3,6.5) node[above] {$H$};
+%\draw (3,1.25) node[below] {$I$};
+%\draw  (3,1.25) node{$\bullet$};
+% \end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-10mm}
+\section{Représentations en perspective}
+
+La perspective utilisée en mathématiques s'appelle la perspective cavalière.
+
+\noindent Elle permet de représenter dans le plan (une feuille) un objet de l'espace (un solide).
+
+\begin{meth}[La perspective cavalière]
+Dans le dessin en perspective d'un pavé droit, les règles de la perspective cavalière sont les suivantes :
+
+\begin{minipage}{8.5cm}
+\begin{enumerate}
+\item[•]Les faces avant et arrière sont des rectangles ; \\elles gardent leurs dimensions.
+\item[•]Les autres faces sont représentées par des \\parallélogrammes.
+\item[•]Les arêtes parallèles sur le solide restent parallèles sur le dessin.
+\item[•]Les arêtes cachées sont représentées en pointillés.
+\item[•]Les arêtes fuyantes sont réduites.
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\includegraphics[scale=0.3]{16. Espace - pavé droit et volumes 3.png}
+\end{minipage}
+\end{meth}
+
+\section{Patrons}
+
+\begin{defn}
+Le patron d'un solide est un dessin, qui permet, après découpage et pliage, de fabriquer ce solide.( sans que deux faces se superposent)
+Le patron d’un solide est donc « la mise à plat » de ce solide.
+\end{defn}
+
+\begin{ex}
+Fabriquons le patron du parallélépipède ci-dessous :
+
+\begin{center}
+\includegraphics[scale=0.45]{16. Espace - pavé droit et volumes 4.png}
+\end{center}
+\end{ex}
+
+\begin{ex}[Patrons d'un cube]
+\begin{center}
+\includegraphics[scale=0.95]{16. Espace - pavé droit et volumes 5.png}
+\end{center}
+\end{ex}
+
+\section{Autres solides}
+
+\begin{defn}
+Un polygone est une figure qui a plusieurs côtés.
+\end{defn}
+
+\begin{defn}
+Un polyèdre est un solide dont toutes les faces sont des polygones.
+\end{defn}
+
+
+\subsection{Prismes droits}
+
+\begin{defn}
+Un prisme droit est un solide qui a :
+\begin{enumerate}
+\item[•] Deux faces parallèles , qui sont des polygones superposables, appelées bases.
+\item[•] Les autres faces sont des rectangles : on les appelle les faces latérales.
+\end{enumerate}
+\end{defn}
+
+\begin{ex}[Prisme droit à base triangulaire]
+\medskip
+\begin{minipage}{8cm}
+\begin{center}
+Représentation en perspective cavalière
+\includegraphics[scale=1]{16. Espace - pavé droit et volumes 6.1.png}
+\end{center}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+Patron d'un prisme droit
+\includegraphics[scale=1]{16. Espace - pavé droit et volumes 6.2.png}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\subsection{Pyramide régulière}
+
+\begin{defn}
+Une pyramide régulière est un polyèdre dont la base est un polygone régulier ( triangle équilatéral, carré $\dots$) et les autres faces sont des triangles isocèles superposables.
+\end{defn}
+
+\begin{ex}[Pyramide régulière à base carrée]
+\medskip
+\begin{minipage}{8cm}
+\begin{center}
+Représentation en perspective cavalière
+
+\begin{tikzpicture}[scale=0.6,x=3cm,y=1.8cm]
+\tikzstyle{conefill} = [fill=gray!20,fill opacity=0.4] %couleur de fond
+   
+%coordonnées des sommets
+\draw(0,2,0)node[above](S){S};
+\draw(1,0,0)node[right](A){A};
+\draw(-1,0,0)node[left](B){B};
+\draw(0,0,1)node[below](C){C};
+\draw(0,0,-1)node[above right](D){D};
+   
+%remplir les faces
+\fill[conefill] (1,0,0)--(0,0,1)--(1,0,0)--(0,0,-1)--cycle; %base
+\fill[conefill] (0,2,0)--(-1,0,0)--(0,0,-1); %arrière gauche
+\fill[conefill] (0,2,0)--(-1,0,0)--(0,0,1); %avant gauche
+\fill[conefill] (0,2,0)--(0,0,1)--(1,0,0); %avant droit
+\fill[conefill] (0,2,0)--(1,0,0)--(0,0,-1); %arrière droit
+
+%tracer les arêtes
+\draw (A.west)--(C.north)--(B.east);
+\draw[dashed] (B.east)--(D.south west)--(A.west);
+\draw (S.south)--(A.west);
+\draw (S.south)--(B.east);
+\draw (S.south)--(C);
+\draw[dashed] (S.south)--(D.south west);
+   
+\draw [dashed] (S)--node[right]{} (0,0,0);
+\draw[dashed] (A)--(B);
+\draw[dashed] (C.north)--(D.south west);  
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{center}
+Patron d'une pyramide régulière à base carrée
+\includegraphics[scale=1]{16. Espace - pavé droit et volumes 7.2.png}
+\end{center}
+\end{minipage}
+\end{ex}
+
+
+\newpage
+\subsection{Cylindre, cône, boule}
+
+Ce sont des solides qui ne sont pas des polyèdres.
+
+\medskip
+\begin{minipage}{5cm}
+\begin{center}
+La boule : \\\medskip
+\begin{tikzpicture}[scale=1]
+\shade[ball color = gray!20, opacity = 0.4] (0,0) circle (2cm);
+\draw (0,0) circle (2cm);
+\draw (-2,0) arc (180:360:2 and 0.6);
+\draw[dashed] (2,0) arc (0:180:2 and 0.6);
+\fill[fill=black] (0,0) circle (1pt);
+\draw[dashed] (0,0 ) -- node[above]{\large{$r$}} (2,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{5.5cm}
+\begin{center}
+Le cylindre de révolution : \\\medskip
+\begin{tikzpicture}[x=1cm,y=0.8cm,z={(0cm,-0.3cm)},scale=1]
+\tikzstyle{conefill} = [fill=gray!20,fill opacity=0.4] %couleur de fond
+%base inférieure
+\filldraw[conefill] (-1,0,0) .. controls (-1,0,0.555) and (-0.555,0,1) .. (0,0,1) .. controls (0.555,0,1) and (1,0,0.555) .. (1,0,0);
+\fill[conefill](-1,0,0) .. controls (-1,0,-0.555) and (-0.555,0,-1) .. (0,0,-1) .. controls (0.555,0,-1) and (1,0,-0.555) .. (1,0,0);
+\draw[dashed] (-1,0,0) .. controls (-1,0,-0.555) and (-0.555,0,-1) .. (0,0,-1) .. controls (0.555,0,-1) and (1,0,-0.555) .. (1,0,0);
+%remplir la  face arrière
+\fill[conefill] (-1,0,0) .. controls (-1,0,-0.555) and (-0.555,0,-1) .. (0,0,-1) .. controls (0.555,0,-1) and (1,0,-0.555) .. (1,0,0)--(1,4,0).. controls (1,4,-0.555) and (0.555,4,-1)..(0,4,-1)..controls (-0.555,4,-1) and (-1,4,-0.555)..(-1,4,0);   
+%base supérieure
+\filldraw[conefill] (-1,4,0) .. controls (-1,4,0.555) and (-0.555,4,1) .. (0,4,1) .. controls (0.555,4,1) and (1,4,0.555) .. (1,4,0);
+\filldraw[conefill] (-1,4,0) .. controls (-1,4,-0.555) and (-0.555,4,-1) .. (0,4,-1) .. controls (0.555,4,-1) and (1,4,-0.555) .. (1,4,0);
+%rayon et diamètre inférieurs
+\draw[conefill] (-1,0,0)--(-1,4,0);
+\draw[conefill] (1,0,0)--(1,4,0);
+%remplir la  face avant   
+\fill[conefill] (-1,0,0) .. controls (-1,0,0.555) and (-0.555,0,1) .. (0,0,1) .. controls (0.555,0,1) and (1,0,0.555) .. (1,0,0)--(1,4,0).. controls (1,4,0.555) and (0.555,4,1)..(0,4,1)..controls (-0.555,4,1) and (-1,4,0.555)..(-1,4,0);
+\draw[dashed] (0,0,0)--node[below]{\large{$r$}}(1,0,0);
+\draw[dashed] (0,0,0)--node[right]{\large{$h$}}(0,4,0);   
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{5.5cm}
+\begin{center}
+Le cône de révolution :\\\medskip
+\begin{tikzpicture}[x=1.5cm,y=1.3cm,z={(0cm,-0.3cm)},scale=1]
+ \tikzstyle{conefill} = [fill=gray!20,fill opacity=0.4] %couleur de fond
+%base inférieure
+\filldraw[conefill] (-1,0,0) .. controls (-1,0,0.555) and (-0.555,0,1) .. (0,0,1) .. controls (0.555,0,1) and (1,0,0.555) .. (1,0,0);
+\fill[conefill](-1,0,0) .. controls (-1,0,-0.555) and (-0.555,0,-1) .. (0,0,-1) .. controls (0.555,0,-1) and (1,0,-0.555) .. (1,0,0);
+\draw[dashed] (-1,0,0) .. controls (-1,0,-0.555) and (-0.555,0,-1) .. (0,0,-1) .. controls (0.555,0,-1) and (1,0,-0.555) .. (1,0,0);
+%remplir les faces latérales
+\filldraw[conefill] (-1,0,0) .. controls (-1,0,0.555) and (-0.555,0,1) .. (0,0,1) .. controls (0.555,0,1) and (1,0,0.555) .. (1,0,0)--(0,3,0)--cycle;
+\fill[conefill](-1,0,0) .. controls (-1,0,-0.555) and (-0.555,0,-1) .. (0,0,-1) .. controls (0.555,0,-1) and (1,0,-0.555) .. (1,0,0)--(0,3,0)--cycle;
+%diametre et hauteur
+\draw[dashed] (0,0,0)--node[below]{\large{$r$}} (1,0,0);
+\draw[dashed] (0,0,0)--node[right]{\large{$h$}}(0,3,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\end{document}

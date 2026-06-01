@@ -1,0 +1,441 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{Les triangles}
+\addcontentsline{toc}{section}{Les triangles}
+
+\subsection*{Inégalités triangulaires}
+\addcontentsline{toc}{subsection}{Inégalités triangulaires}
+
+\begin{exer1}
+Peut-on construire le triangle $COR$ avec $CO=5$cm ; $OR=6$cm et $RC=4$cm ?
+\end{exer1}
+
+\begin{exer1}
+Écris les trois inégalités triangulaires.
+\begin{enumerate}[font=\color{exer1}]
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item Dans le triangle $RST$ &
+\item Dans le triangle $AEC$ \\
+\end{tabularx}
+\end{enumerate}
+
+\vspace{-15mm}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm,scale=0.7]
+\clip(0.5,3) rectangle (13,11);
+\draw [line width=1.2pt] (2.,5.)-- (5.02,9.46);
+\draw [line width=1.2pt] (5.02,9.46)-- (9.,4.);
+\draw [line width=1.2pt] (2.,5.)-- (9.,4.);
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (1.2,5.37) node {\large{$R$}};
+\draw [color=black] (5.02,9.46)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.7,9.9) node {\large{$S$}};
+\draw [color=black] (9.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.9,4.37) node {\large{$T$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+&
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm,scale=0.7]
+\clip(0.5,3) rectangle (13,11);
+\draw [line width=1.2pt] (2.,5.)-- (5.02,9.46);
+\draw [line width=1.2pt] (5.02,9.46)-- (9.,4.);
+\draw [line width=1.2pt] (2.,5.)-- (9.,4.);
+\draw [line width=1.2pt] (5.02,9.46)-- (5.5,4.5);
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (1.2,5.37) node {\large{$B$}};
+\draw [color=black] (5.02,9.46)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.7,9.9) node {\large{$A$}};
+\draw [color=black] (9.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.9,4.37) node {\large{$C$}};
+\draw [color=black] (5.5,4.5)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.5,3.6) node {\large{$E$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+\\
+\end{tabularx}
+\end{exer1}
+
+\vspace{-3mm}
+\begin{exer1}
+Dans chaque cas, indique si les points $A$, $B$ et $C$ sont alignés. Justifie.
+
+\begin{enumerate}[font=\color{exer1}]
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item $AB = 14$cm, $BC=7$cm et $AC=9$cm &
+\item $AB = 5.5$m, $BC=4$m et $AC=9.5$m \\
+\item $AB = 4.5$cm, $BC=91$cm et $AC=46$cm &\\
+\end{tabularx}
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+Indique si chacun des triangles est constructible.
+
+\begin{enumerate}[font=\color{exer1}]
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item $GH = 14$cm, $GI=7$cm et $HI=9$cm &
+\item $SN = 5.01$cm, $SV=4.9$cm et $NV=1.1$mm \\
+\end{tabularx}
+\end{enumerate}
+\end{exer1}
+
+\begin{exer3}
+Un triangle a deux cotés dont les mesures sont $2$cm et $3$cm.
+\begin{enumerate}[font=\color{exer3}]
+\item Donne une longueur possible du troisième coté
+\item Il y a plusieurs possibilités pour la longueur de ce troisième coté mais Ninon affirme que toutes ces longueurs sont comprises entre deux nombres. Quels sont-ils ?
+\end{enumerate}
+\end{exer3}
+
+\subsection*{Construction d'un triangle}
+\addcontentsline{toc}{subsection}{Construction d'un triangle}
+
+\begin{exer1}
+Pour chaque question, dessine une figure à main levée puis une autre en vraie grandeur.
+\begin{enumerate}[font=\color{exer1}]
+\item Construis un triangle $ABC$ tel que : $AB= 5,5$cm ; $AC= 4$cm et $BC=2$ cm.
+\item Construis un triangle $DEF$ tel que : $DE= 3$cm ; $DF= 7$cm et $EF= 5$ cm.
+\item Construis un triangle $GHI$ tel que : $HI = 5,8$cm ; $IG= 3,3$cm et $GH= 4,6$cm.
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+
+\medskip
+\begin{enumerate}[font=\color{exer1}]
+\item Trace un segment $[AB]$ tel que $AB=10$cm.
+\item Trace le cercle de centre $A$ et de rayon $7$cm et le cercle de centre $B$ et de rayon $12$cm.
+\item Combien y a-t-il d'emplacements différents pour un point $C$ tel que le triangle $ABC$ ait pour dimensions : $AB= 10$cm, $AC=7$cm et $BC= 12$cm ? Justifie.
+\item Reprends les questions précédentes avec $AB=20$cm. Que remarques-tu ?
+\item Quelle longueur peut-on donner au segment $[AB]$ pour qu'une telle construction reste possible ?
+\end{enumerate}
+\end{exer1}
+
+\begin{exer2}
+$NOR$ et $SUD$ sont deux triangles isocèles respectivement en $N$ et en $S$, de même périmètre $10,5$cm.
+
+\noindent De plus, on sait que $NO=2,5$cm et $UD=2,5$cm.
+
+\begin{enumerate}[font=\color{exer2}]
+\item Trace un schéma représentant la situation.
+\item Est-il possible de tracé ces triangles en vraie grandeur ? Justifie.
+\item Trace les triangles possibles en vraie grandeur
+\end{enumerate}
+\end{exer2}
+
+\newpage
+\subsection*{Triangles particuliers}
+\addcontentsline{toc}{subsection}{Triangles particuliers}
+
+\begin{exer1}
+
+\vspace{-5mm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\clip(-3.,1.3) rectangle (10.,5.3);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (7.689339398899502,4.217700039357383) -- (8.031639359542119,3.9670394382568848) -- (8.282299960642616,4.3093393988995015) -- (7.94,4.56) -- cycle; 
+\draw [line width=1.2pt] (3.,5.)-- (2.,2.);
+\draw [line width=1.2pt] (2.6201665510863985,3.544271887242357) -- (2.4304298914762956,3.607517440445725);
+\draw [line width=1.2pt] (2.5948683298050517,3.468377223398316) -- (2.405131670194949,3.531622776601684);
+\draw [line width=1.2pt] (2.5695701085237044,3.392482559554275) -- (2.3798334489136015,3.4557281127576434);
+\draw [line width=1.2pt] (5.,3.)-- (2.,2.);
+\draw [line width=1.2pt] (3.6075174404457244,2.4304298914762956) -- (3.5442718872423575,2.6201665510863985);
+\draw [line width=1.2pt] (3.5316227766016834,2.405131670194949) -- (3.4683772233983166,2.5948683298050517);
+\draw [line width=1.2pt] (3.4557281127576425,2.3798334489136015) -- (3.3924825595542756,2.5695701085237044);
+\draw [line width=1.2pt] (3.,5.)-- (5.,3.);
+\draw [line width=1.2pt] (-2.6,2.44)-- (0.18,1.62);
+\draw [line width=1.2pt] (-1.2200744774407992,2.137231081801383) -- (-1.276657158957616,1.9454019908053442);
+\draw [line width=1.2pt] (-1.143342841042384,2.1145980091946557) -- (-1.199925522559201,1.9227689181986172);
+\draw [line width=1.2pt] (0.18,1.62)-- (-0.49985916889675985,4.437550622520741);
+\draw [line width=1.2pt] (-0.24775718664326518,2.966435016966094) -- (-0.0533369798974104,3.0133475228563054);
+\draw [line width=1.2pt] (-0.26652218899934954,3.0442030996644363) -- (-0.07210198225349472,3.0911156055546476);
+\draw [line width=1.2pt] (-0.49985916889675985,4.437550622520741)-- (-2.6,2.44);
+\draw [line width=1.2pt] (-1.4520275048126956,3.3938845237532647) -- (-1.5898650300417336,3.538801108859092);
+\draw [line width=1.2pt] (-1.5099941388550264,3.3387495136616496) -- (-1.6478316640840642,3.4836660987674772);
+\draw [line width=1.2pt] (6.08,2.02)-- (7.94,4.56);
+\draw [line width=1.2pt] (6.08,2.02)-- (9.51142979696883,3.409267943951958);
+\draw [line width=1.2pt] (7.94,4.56)-- (9.51142979696883,3.409267943951958);
+\begin{scriptsize}
+\draw [color=blue] (3.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.58,5.13) node {\large{$D$}};
+\draw [color=blue] (2.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.8,2.61) node {\large{$E$}};
+\draw [color=blue] (5.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.72,2.69) node {\large{$F$}};
+\draw [color=blue] (-2.6,2.44)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-2.46,2.89) node {\large{$G$}};
+\draw [color=blue] (0.18,1.62)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.32,2.07) node {\large{$H$}};
+\draw [color=blue] (-0.49985916889675985,4.437550622520741)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-0.36,4.89) node {\large{$I$}};
+\draw [color=blue] (6.08,2.02)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.02,2.55) node {\large{$J$}};
+\draw [color=blue] (7.94,4.56)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (8.08,5.01) node {\large{$L$}};
+\draw [color=blue] (9.51142979696883,3.409267943951958)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (9.66,3.85) node {\large{$K$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[font=\color{exer1}]
+\item Quelle est la nature du triangle $GHI$ ? Du triangle $DEF$ ? Du triangle $JKL$ ? Justifie tes réponses.
+\item Dans le triangle $DEF$, comment s'appelle le point $E$ ? Comment s'appelle le côté $[FD]$ ?
+\item Dans le triangle $JKL$, comment s'appelle le côté $[JK]$ ?
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{9cm}
+\begin{enumerate}[font=\color{exer1}]
+\item Nomme les triangles rectangles tracés sur la figure.\medskip
+\item Précise, pour chacun, son hypoténuse.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{7cm}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\clip(-2.5,0.5) rectangle (7.,4.5);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.7646606378341791,3.646990956751269) -- (2.1176696810829103,3.411651594585448) -- (2.353009043248731,3.764660637834179) -- (2.,4.) -- cycle; 
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (2.4242640687119286,1.) -- (2.4242640687119286,1.4242640687119286) -- (2.,1.4242640687119286) -- (2.,1.) -- cycle; 
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (0.23533936216582083,1.3530090432487312) -- (-0.11766968108291045,1.588348405414552) -- (-0.3530090432487312,1.2353393621658209) -- (0.,1.) -- cycle; 
+\draw [line width=1.2pt] (2.,4.)-- (-1.9984615384615387,2.332307692307692);
+\draw [line width=1.2pt] (0.,1.)-- (6.5,1.);
+\draw [line width=1.2pt] (0.,1.)-- (-1.9984615384615387,2.332307692307692);
+\draw [line width=1.2pt] (2.,4.)-- (6.5,1.);
+\draw [line width=1.2pt] (0.,1.)-- (2.,4.);
+\draw [line width=1.2pt] (2.,4.)-- (2.,1.);
+\draw [line width=1.2pt] (2.,1.)-- (0.,1.);
+\begin{scriptsize}
+\draw [color=blue] (2.,4.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.36,4.3) node {\large{$B$}};
+\draw [color=blue] (0.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.2,0.7) node {\large{$E$}};
+\draw [color=blue] (2.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.22,0.7) node {\large{$D$}};
+\draw [color=blue] (-1.9984615384615387,2.332307692307692)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-1.76,2.97) node {\large{$A$}};
+\draw [color=blue] (6.5,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.16,0.7) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\end{exer1}
+
+\vspace{-1mm}
+\begin{exer1}
+
+\medskip
+\begin{enumerate}[font=\color{exer1}]
+\item Construis un triangle isocèle $XYZ$ de sommet principal $Z$ tel que : $XZ=3,5$cm et $XY=6$cm.
+\item Construis un triangle $TRS$ rectangle en $S$ tel que : $TS=7,2$cm et $SR=8,5$cm.
+\item Construis un triangle $GLU$ rectangle en $L$ tel que : $LG=8$cm et $GU=10$cm.
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+
+\vspace{-10mm}
+\noindent \begin{minipage}{9cm}
+
+\vspace{5mm}
+Observe attentivement le codage de la figure ci-contre.\medskip
+
+Déduis-en une méthode pour construire un hexagone régulier de 4 cm de côté puis effectue la construction sur ton cahier.
+\end{minipage}
+\hspace{20mm}
+\begin{minipage}{6cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.5,0.5) rectangle (4.5,5.);
+\draw [line width=1.2pt] (2.,2.7320508075688785)-- (3.,4.464101615137755);
+\draw [line width=1.2pt] (2.3933974596215557,3.61343519520194) -- (2.5666025403784443,3.51343519520194);
+\draw [line width=1.2pt] (2.4333974596215557,3.6827172275046944) -- (2.6066025403784443,3.582717227504695);
+\draw [line width=1.2pt] (2.,2.7320508075688785)-- (4.,2.7320508075688776);
+\draw [line width=1.2pt] (2.96,2.832050807568878) -- (2.96,2.632050807568878);
+\draw [line width=1.2pt] (3.04,2.832050807568878) -- (3.04,2.632050807568878);
+\draw [line width=1.2pt] (2.,2.7320508075688785)-- (3.,1.);
+\draw [line width=1.2pt] (2.5666025403784443,1.9506664199358164) -- (2.3933974596215557,1.8506664199358165);
+\draw [line width=1.2pt] (2.6066025403784443,1.8813843876330618) -- (2.4333974596215557,1.7813843876330617);
+\draw [line width=1.2pt] (2.,2.7320508075688785)-- (1.,1.);
+\draw [line width=1.2pt] (1.6066025403784443,1.8506664199358165) -- (1.4333974596215557,1.9506664199358164);
+\draw [line width=1.2pt] (1.5666025403784443,1.7813843876330617) -- (1.3933974596215557,1.8813843876330618);
+\draw [line width=1.2pt] (2.,2.7320508075688785)-- (0.,2.732050807568879);
+\draw [line width=1.2pt] (1.04,2.6320508075688793) -- (1.04,2.8320508075688795);
+\draw [line width=1.2pt] (0.96,2.6320508075688793) -- (0.96,2.8320508075688795);
+\draw [line width=1.2pt] (2.,2.7320508075688785)-- (1.,4.464101615137755);
+\draw [line width=1.2pt] (1.4333974596215557,3.51343519520194) -- (1.6066025403784443,3.61343519520194);
+\draw [line width=1.2pt] (1.3933974596215557,3.582717227504695) -- (1.5666025403784443,3.6827172275046944);
+\draw [line width=1.2pt] (0.,2.732050807568879)-- (1.,1.);
+\draw [line width=1.2pt] (0.5666025403784437,1.950666419935817) -- (0.3933974596215563,1.850666419935817);
+\draw [line width=1.2pt] (0.6066025403784437,1.8813843876330623) -- (0.43339745962155635,1.7813843876330624);
+\draw [line width=1.2pt] (1.,1.)-- (3.,1.);
+\draw [line width=1.2pt] (1.96,1.1) -- (1.96,0.9);
+\draw [line width=1.2pt] (2.04,1.1) -- (2.04,0.9);
+\draw [line width=1.2pt] (3.,1.)-- (4.,2.7320508075688776);
+\draw [line width=1.2pt] (3.3933974596215557,1.8813843876330618) -- (3.5666025403784443,1.7813843876330617);
+\draw [line width=1.2pt] (3.4333974596215557,1.9506664199358164) -- (3.6066025403784443,1.8506664199358165);
+\draw [line width=1.2pt] (4.,2.7320508075688776)-- (3.,4.464101615137755);
+\draw [line width=1.2pt] (3.4333974596215557,3.513435195201939) -- (3.6066025403784443,3.6134351952019386);
+\draw [line width=1.2pt] (3.3933974596215557,3.5827172275046935) -- (3.5666025403784443,3.6827172275046935);
+\draw [line width=1.2pt] (3.,4.464101615137755)-- (1.,4.464101615137755);
+\draw [line width=1.2pt] (2.04,4.364101615137755) -- (2.04,4.564101615137755);
+\draw [line width=1.2pt] (1.96,4.364101615137755) -- (1.96,4.564101615137755);
+\draw [line width=1.2pt] (1.,4.464101615137755)-- (0.,2.732050807568879);
+\draw [line width=1.2pt] (0.6066025403784437,3.582717227504695) -- (0.43339745962155635,3.6827172275046944);
+\draw [line width=1.2pt] (0.5666025403784437,3.51343519520194) -- (0.3933974596215563,3.61343519520194);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{exer1}
+
+\vspace{-1.3cm}
+\subsection*{Les médiatrices et les hauteurs}
+\addcontentsline{toc}{subsection}{Les médiatrices et les hauteurs}
+
+\begin{exer1}
+Construis la médiatrice de chaque segment en utilisant le quadrillage
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.45]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (0.5,1.5) grid (15,8.5);
+\clip(0.5,1.5) rectangle (15,8.5);
+\draw [line width=1.2pt] (1.,6.)-- (7.,6.);
+\draw [line width=1.2pt] (1.,2.)-- (3.,4.);
+\draw [line width=1.2pt] (9.,8.)-- (11.,2.);
+\draw [line width=1.2pt] (14.,7.)-- (14.,3.);
+\begin{scriptsize}
+\draw [color=blue] (1.,6.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (0.78,6.69) node {\large{$A$}};
+\draw [color=blue] (7.,6.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (7.24,6.63) node {\large{$B$}};
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (0.64,2.53) node {\large{$C$}};
+\draw [color=blue] (3.,4.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (3.12,4.69) node {\large{$D$}};
+\draw [color=blue] (9.,8.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (8.5,7.57) node {\large{$E$}};
+\draw [color=blue] (11.,2.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (11.42,2.59) node {\large{$F$}};
+\draw [color=blue] (14.,7.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (14.5,7.53) node {\large{$G$}};
+\draw [color=blue] (14.,3.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (14.48,3.49) node {\large{$H$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{exer1}
+
+\begin{exer1}
+Construis la médiatrice de chaque segment en utilisant la règle et le compas.
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.45]
+\clip(0.5,1.5) rectangle (18.5,8.5);
+\draw [line width=1.2pt] (1.,6.)-- (8.,4.);
+\draw [line width=1.2pt] (1.,2.)-- (4.,2.);
+\draw [line width=1.2pt] (9.,8.)-- (13.,2.);
+\draw [line width=1.2pt] (14.,6.)-- (18.,5.);
+\begin{scriptsize}
+\draw [color=blue] (1.,6.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (0.78,6.69) node {\large{$A$}};
+\draw [color=blue] (8.,4.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (8.24,4.63) node {\large{$B$}};
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (0.64,2.53) node {\large{$C$}};
+\draw [color=blue] (4.,2.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (4.12,2.69) node {\large{$D$}};
+\draw [color=blue] (9.,8.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (8.5,7.57) node {\large{$E$}};
+\draw [color=blue] (13.,2.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (13.42,2.59) node {\large{$F$}};
+\draw [color=blue] (14.,6.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (14.5,6.53) node {\large{$G$}};
+\draw [color=blue] (18.,5.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (17.92,5.83) node {\large{$H$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{exer1}
+
+\begin{exer1}
+Tracer les médiatrices du triangles $RST$à l'aide du compas.
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm,scale=1]
+\clip(0.5,3) rectangle (13,11);
+\draw [line width=1.2pt] (2.,5.)-- (5.02,9.46);
+\draw [line width=1.2pt] (5.02,9.46)-- (9.,4.);
+\draw [line width=1.2pt] (2.,5.)-- (9.,4.);
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (1.2,5.37) node {\large{$R$}};
+\draw [color=black] (5.02,9.46)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.7,9.9) node {\large{$S$}};
+\draw [color=black] (9.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.9,4.37) node {\large{$T$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{exer1}
+
+\begin{exer1}
+Pour chaque triangles, dites si la droite $(d)$ est une médiatrices, une hauteur ou ni l'un ni l'autre.
+
+\includegraphics[scale=0.7]{../40.Image/Exo-Triangle_1.png}
+\end{exer1}
+
+\begin{exer1}
+Trace les hauteurs des triangles suivants
+
+\includegraphics[scale=1.1]{../40.Image/Exo-Triangle_2.png}
+\end{exer1}
+
+\begin{exer2}
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.5,0.5) rectangle (10.5,4.5);
+\draw [line width=1.2pt] (1.,1.)-- (3.,4.);
+\draw [line width=1.2pt] (10.,1.)-- (1.,1.);
+\draw [line width=1.2pt,domain=0.5:10.5] plot(\x,{(-38.--7.*\x)/3.});
+\draw [line width=1.2pt] (3.,4.)-- (6.5,2.5);
+\draw [line width=1.2pt] (4.7526261286571945,3.357671274944973) -- (4.67384226894136,3.1738422689413612);
+\draw [line width=1.2pt] (4.826157731058639,3.3261577310586397) -- (4.747373871342805,3.1423287250550285);
+\draw [line width=1.2pt] (6.5,2.5)-- (10.,1.);
+\draw [line width=1.2pt] (8.252626128657196,1.8576712749449726) -- (8.173842268941362,1.673842268941361);
+\draw [line width=1.2pt] (8.32615773105864,1.8261577310586397) -- (8.247373871342806,1.642328725055028);
+\begin{scriptsize}
+\draw [color=blue] (1.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.78,1.75) node {\large{$N$}};
+\draw [color=blue] (3.,4.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.5,4.33) node {\large{$C$}};
+\draw [color=blue] (10.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (9.8,1.85) node {\large{$I$}};
+\draw [color=blue] (6.5,2.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.28,3.33) node {\large{$H$}};
+\draw [color=blue] (5.857142857142857,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.44,1.71) node {\large{$E$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}[font=\color{exer2}]
+\item Que peut-on dire de la droite $(HE)$ pour le segment $[CI]$ ? Justifie.
+\item Que peut-on dire des longueurs $CE$ et $EI$ ? Justifie.
+\item Quelle est la nature du triangle $CEI$ ? Justifie.
+\item Trace la hauteur du triangle $CIN$ issue de $N$. Elle coupe la droite $(CI)$ en $S$.
+\item Que peut-on dire des droites $(NS)$ et $(HE)$ ?
+\end{enumerate}
+\end{exer2}
+
+\end{document}

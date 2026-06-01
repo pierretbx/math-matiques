@@ -1,0 +1,18 @@
+.DS_Store
+**/.DS_Store
+
+# LaTeX temporary files
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+# Loaded from CDN on the site
+assets/MathJax-2.7.3/
+
+# Office temporary lock files
+~$*
+**/~$*

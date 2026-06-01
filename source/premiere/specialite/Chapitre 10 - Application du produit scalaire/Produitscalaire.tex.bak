@@ -1,0 +1,738 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+\tableofcontents
+
+\chapter{Produit scalaire}
+%\begin{minipage}{9cm}
+Dans tout le chapitre, $\vect{u}$ et $\vect{v}$ d\'esignent deux vecteurs du plan.% et $O$, $A$ et $B$ sont trois points tels que $\vect{OA}=\vect{u}$ et $\vect{OB}=\vect{v}$.
+
+Une unit\'e de longueur est fix\'ee.
+% \end{minipage}
+% \begin{minipage}{5cm}
+% \begin{center}
+% \includegraphics{ProdScal2.3}
+% \end{center}
+% \end{minipage}
+
+\section{D\'efinition}
+\begin{defn}
+On appelle produit scalaire de $\vect{u}$ et $\vect{v}$ le nombre r\'eel not\'e $\vect{u}.\vect{v}$ et d\'efini par :
+\[\vect{u}.\vect{v}=
+\begin{cases}
+ \Vert\vect{u}\Vert\times\Vert\vect{v}\Vert\times \cos\left(\vect{u};\vect{v}\right)&\text{si }\vect{u}\neq\vect{0}\text{ et }\vect{v}\neq\vect{0}\\
+ 0&\text{si }\vect{u}=\vect{0}\text{ ou }\vect{v}=\vect{0}
+\end{cases}
+\]
+Le produit scalaire d'un vecteur $\vect{u}$ par lui-m\^eme ($\vect{u}.\vect{u}$) est appel\'e carr\'e scalaire de $\vect{u}$ et se note $\vect{u}^{2}$.
+\end{defn}
+
+Remarque : Le produit scalaire est donc une op\'eration dont les arguments sont des vecteurs et dont le r\'esultat est r\'eel.
+
+\begin{minipage}{11cm}
+\begin{exemple}
+Sur la figure ci-contre, le triangle $OAB$ est \'equilat\'eral et $OA=2$. Calculer $\vect{u}.\vect{v}$.
+\end{exemple}
+
+
+On a $\Vert\vect{u}\Vert=2$,  $\Vert\vect{v}\Vert=2$ et $\left(\vect{u};\vect{v}\right)=\dfrac{\pi}{3}$
+
+Ainsi $\vect{u}.\vect{v}=2\times2\times \cos\left( \dfrac{\pi}{3} \right)=2\times2\times \dfrac{1}{2}=2$
+
+\end{minipage}
+\hfill
+\begin{minipage}{3.5cm}
+\begin{center}
+\includegraphics{CoursProdScalFigures.10}
+\end{center}
+\end{minipage}
+
+\section{Autres expressions du produit scalaire}
+\subsection{Cas des vecteurs colin\'eaires}
+\begin{prop}
+\begin{itemize}
+\item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de m\^eme sens alors
+\[\vect{u}.\vect{v}=\left\|\vect{u}\right\|\times \left\|\vect{v}\right\|\]
+\item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de sens contraires alors \[\vect{u}.\vect{v}=-\Vert\vect{u}\Vert\times \Vert\vect{v}\Vert\]
+\end{itemize}
+\end{prop}
+
+%\newpage
+\begin{demo}
+\begin{itemize}
+\item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de m\^eme sens alors $\left(\vect{u};\vect{v}\right)=0$
+
+Ainsi, $\vect{u}.\vect{v}=\left\|\vect{u}\right\|\times \left\|\vect{v}\right\|\times \cos0 = \left\|\vect{u}\right\| \times \left\|\vect{v}\right\|$
+
+\item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de sens contraires, alors $\left(\vect{u};\vect{v}\right)=\pi$
+
+Ainsi, $\vect{u}.\vect{v}=\left\|\vect{u}\right\|\times \left\|\vect{v}\right\|\times \cos\pi = -\left\|\vect{u}\right\| \times \left\|\vect{v}\right\|$
+\end{itemize}
+\end{demo}
+
+Cons\'equences :
+\begin{itemize}
+ \item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de m\^eme sens alors $\vect{u}.\vect{v}>0$ et si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et sens contraires alors $\vect{u}.\vect{v}<0$
+ \item Quel que soit le vecteur $\vect{u}$, $\vect{u}^{2}=\Vert\vect{u}\Vert^{2}$
+\end{itemize}
+
+%
+\subsection{Avec des projet\'es orthogonaux}
+% \begin{definition}
+% On consid\`ere un vecteur $\vect{u}$ et une droite $d$. Si $A$ et $B$ sont deux points tels que $\vect{u}=\vect{AB}$ et $A'$ et $B'$ sont les projet\'es orthogonaux de $A$ et $B$ sur $d$ alors le vecteur $\vect{u'}=\vect{A'B'}$ ne d\'epend pas de $A$ et $B$ et est appel\'e projet\'e orthogonal de $\vect{u}$ sur $d$.
+% \end{definition}
+
+\begin{prop}
+Soient $A$, $B$, $C$ et $D$ quatre points du plan.
+
+Si $C'$ et $D'$ sont les projet\'e orthogonaux de $C$ et $D$ sur $(AB)$ alors $\vect{AB}.\vect{CD}=\vect{AB}.\vect{C'D'}$
+\end{prop}
+\begin{center}
+\includegraphics{CoursProdScalFigures.1}
+\hfill
+\includegraphics{CoursProdScalFigures.2}
+\end{center}
+
+\begin{demo}
+Soit $E$ le point  tel que $\vect{C'E}=\vect{CD}$.
+
+On a alors $\vect{AB}.\vect{CD}=\vect{AB}.\vect{C'E}=AB\times C'E\times \cos(\vect{AB};\vect{C'E})$.
+\begin{itemize}
+ \item Si l'angle $(\vect{AB};\vect{C'E})$ est droit alors $\cos(\vect{AB};\vect{C'E})=\cos(\vect{AB};\vect{CD})=0$ donc $\vect{AB}.\vect{CD}=\vect{AB}.\vect{C'D'}=0$.
+ \item Si l'angle $(\vect{AB};\vect{C'E})$ est aigu alors $\vect{AB}$ et $\vect{C'D'}$ sont colin\'eaires et de m\^eme sens et $\cos(\vect{AB};\vect{C'E})=\dfrac{C'D'}{C'E}$
+ 
+ Ainsi $\vect{AB}.\vect{CD}=AB\times C'E\times \dfrac{C'D'}{C'E}=AB\times C'D'=\vect{AB}.\vect{C'D'}$.
+ \item Si l'angle $(\vect{AB};\vect{C'E})$ est obtus alors $\vect{AB}$ et $\vect{C'D'}$ sont colin\'eaires et de sens contraires et $\cos(\vect{AB};\vect{C'E})=-\dfrac{C'D'}{C'E}$
+ 
+ Ainsi $\vect{AB}.\vect{CD}=-AB\times C'E\times \dfrac{C'D'}{C'E}=-AB\times C'D'=\vect{AB}.\vect{C'D'}$.
+\end{itemize}
+\end{demo}
+
+\begin{minipage}{10cm}
+\begin{exemple}
+$ABC$ est un triangle isoc\`ele en $A$ tel que $AB=3$ et $BC=4$. $O$ est le milieu du segment $[BC]$. Calculer $\vect{BA}.\vect{BC}$ et $\vect{CA}.\vect{BC}$.
+\end{exemple}
+
+Le projet\'e orthogonal de $A$ sur $(BC)$ est $O$ donc
+
+$\vect{BA}.\vect{BC}=\vect{BO}.\vect{BC}=BO\times BC=2\times3=6$
+
+Le projet\'e orthogonal de $A$ sur $(BC)$ est $O$ donc
+
+$\vect{CA}.\vect{BC}=\vect{CO}.\vect{BC}=-CO\times BC=-2\times3=-6$
+
+
+\end{minipage}
+\hfill
+\begin{minipage}{4.5cm}
+\begin{flushright}
+\includegraphics{CoursProdScalFigures.8}
+\end{flushright}
+\end{minipage}
+
+\subsection{Dans un rep\`ere}
+\begin{prop}
+Soit $\oij$  un rep\`ere orthonormal du plan.
+
+Si $\vect{u}\cp{x}{y}$ et $\vect{v}\cp{x'}{y'}$ alors $\vect{u}.\vect{v}=xx'+yy'$.
+\end{prop}
+
+\begin{demo}
+Soit $A$ le point tel que $\vect{OA}=\vect{u}$ et $B$ le point tel que $\vect{OB}=\vect{v}$.
+\begin{enumerate}
+ \item Cas des vecteurs colin\'eaires.
+ 
+ Il existe $k$ tel que $\vect{OB}=k\vect{OA}$. Ainsi $\vect{OB}\cp{kx}{ky}$.
+ 
+   \begin{itemize}
+    \item Si $\vect{OA}$ et $\vect{OB}$ sont colin\'eaires et de m\^eme sens alors $k>0$ et $OB=kOA$.
+
+    On a alors $\vect{OA}.\vect{OB}=OA\times OB=k\times OA\times OA=kOA^2$.
+    \item Si $\vect{OA}$ et $\vect{OB}$ sont colin\'eaires et de m\^eme sens contraire alors $k<0$ et $OB=-kOA$.
+
+    On a alors $\vect{OA}.\vect{OB}=-OA\times OB=k\times OA\times OA=kOA^2$.
+   \end{itemize}
+  Ainsi $\vect{OA}.\vect{OB}=k(x^2+y^2)=kxx+kyy=xx'+yy'$
+ \item Cas des vecteurs quelconques.
+ 
+ \begin{minipage}{9cm}
+ Soit $H$ le projet\'e orthogonal de $B$ sur $(OA)$.
+ 
+ On a alors, d'apr\`es ce qui pr\'ec\`ede, \[\vect{OA}.\vect{OB}=\vect{OA}.\vect{OH}=xx_H+yy_H\]
+ 
+ En appliquant le th\'eor\`eme de Pythagore dans les triangles $OBH$ et $ABH$ rectangles en $H$, on obtient :
+ \[BH^2=OB^2-OH^2=AB^2-AH^2\]
+ \end{minipage}
+ \hfill
+ \begin{minipage}{3.5cm}
+  \begin{center}
+  % \ifthenelse{\value{version}=1}%
+              \includegraphics{CoursProdScalFigures.4}%
+    %          {\ifthenelse{\value{version}=0}%
+               %           \includegraphics{CoursProdScalFigures.4}%
+                      %    {}}
+  \end{center}
+ \end{minipage}
+
+ ce qui nous donne :
+ \[x'^2+y'^2-x_H^2-y_H^2=(x-x')^2+(y-y')^2-(x-x_H)^2-(y-y_H)^2\]
+ puis, en simplifiant :
+ \[0=-2xx'-2yy'+2xx_H+2yy_H\]
+ soit :
+ \[xx_H+yy_H=xx'+yy'\]
+ On en d\'eduit donc : $\vect{OA}.\vect{OB}=xx'+yy'$.
+\end{enumerate}
+\end{demo}
+
+\begin{exemple}
+Dans un rep\`ere orthonormal $\oij$, $\vect{u}\cp{6}{3}$, $\vect{v}\cp{3}{-1}$ et $\vect{w}\cp{-2}{2}$
+
+Calculer $\vect{u}.\vect{v}$, $\vect{u}.\vect{w}$ et $\vect{v}.\vect{w}$.
+\end{exemple}
+
+
+$\vect{u}.\vect{v}= 6\times3+3\times(-1)=18-3=15$
+
+$\vect{u}.\vect{w}=6\times(-2)+3\times2=-12+6=-6$
+
+$\vect{v}.\vect{w}=3\times(-2)+(-1)\times2=-6-2=-8$
+
+
+
+\section{R\`egles de calcul}
+\begin{prop}
+Quels que soient $\vect{u}$ et $\vect{v}$ :
+
+\vspace{0.05cm}
+\begin{itemize}
+\begin{minipage}[c]{11cm}
+\item $\vect{0}.\vect{v}=\vect{u}.\vect{0}=0$
+\vspace{0.2cm}
+\item $\vect{u}.\vect{v}=\vect{v}.\vect{u}$ \hfill (On dit que le produit scalaire est sym\'etrique)
+\vspace{0.2cm}
+\end{minipage}
+
+\begin{minipage}{9cm}
+\item $\vect{u}.(\vect{v}+\vect{w})=\vect{u}.\vect{v}+\vect{u}.\vect{w}$ et $\vect{u}.(k\vect{v})=k\times (\vect{u}.\vect{v})$
+
+\vspace{0.2cm}
+\item $(\vect{u}+\vect{v}).\vect{w}=\vect{u}.\vect{w}+\vect{v}.\vect{w}$ et $(k\vect{u}).\vect{v}=k\times (\vect{u}.\vect{v})$
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[c]{4cm}
+(On dit que le produit scalaire est bilin\'eaire)
+\end{minipage}
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\begin{itemize}
+\item Le premier r\'esultat est une cons\'equence directe de la d\'efinition.
+\item Le deuxi\`eme r\'esultat est aussi une cons\'equence de la d\'efinition ($\cos(\vect{u};\vect{v})=\cos(\vect{v};\vect{u})$).
+\item On se place dans un rep\`ere orthonormal du plan et on pose $\vect{u}\cp{x}{y}$, $\vect{v}\cp{x'}{y'}$ et $\vect{w}\cp{x''}{y''}$
+
+Les coordonn\'ees de $\vect{v}+\vect{w}$ sont $\cp{x'+x''}{y'+y''}$.
+
+On a ainsi, $\vect{u}.(\vect{v}+\vect{w})=x(x'+x'')+y(y'+y'')=xx'+xx''+yy'+yy''$.
+
+De plus $\vect{u}.\vect{v}+\vect{u}.\vect{w}=xx'+yy'+xx''+yy''$.
+
+Conclusion : $\vect{u}.(\vect{v}+\vect{w})=\vect{u}.\vect{v}+\vect{u}.\vect{w}$
+
+Les coordonn\'ees de $k\vect{v}$ sont $\cp{kx'}{ky'}$.
+
+On a ainsi $\vect{u}.(k\vect{v}) = x(kx')  + y(ky') = kxx'  + kyy'$.
+
+De plus $k\times (\vect{u}.\vect{v})=k(xx'+yy')=kxx'+kyy'$
+
+Conclusion $\vect{u}.(k\vect{v})=k\times (\vect{u}.\vect{v})$
+
+\item Le quatri\`eme r\'esultat se d\'emontre en utilisant les deux pr\'ec\'edents.
+\end{itemize}
+\end{demo}
+
+\begin{exemple}
+$\vect{u}$ et $\vect{v}$ sont deux vecteurs, simplifier $\left(\vect{u}+\vect{v}\right)^{2}$, $\left(\vect{u}-\vect{v}\right)^{2}$ et $\left(\vect{u}+\vect{v}\right).\left(\vect{u}-\vect{v}\right)$.
+\end{exemple}
+
+
+\begin{align*}
+\begin{split}
+\left(\vect{u}+\vect{v}\right)^{2}&=\left(\vect{u}+\vect{v}\right).\left(\vect{u}+\vect{v}\right)=\left(\vect{u}+\vect{v}\right).\vect{u}+\left(\vect{u}+\vect{v}\right).\vect{v}\\
+&=\vect{u}^2 + \vect{v}.\vect{u} + \vect{v}.\vect{u} + \vect{v}^2 = \vect{u}^2 +  2\vect{u}.\vect{v} + \vect{v}^2
+\end{split}\\
+%\end{align*}
+%\begin{multline*}
+\begin{split}
+\left(\vect{u}-\vect{v}\right)^{2}&=\left(\vect{u}-\vect{v}\right).\left(\vect{u}-\vect{v}\right)=\left(\vect{u}-\vect{v}\right).\vect{u}-\left(\vect{u}-\vect{v}\right).\vect{v}\\
+&=\vect{u}^2 - \vect{v}.\vect{u} - \vect{v}.\vect{u} + \vect{v}^2 = \vect{u}^2 -  2\vect{u}.\vect{v} + \vect{v}^2
+\end{split}\\
+%\end{multline*}
+\left(\vect{u}+\vect{v}\right).\left(\vect{u}-\vect{v}\right)&=\vect{u}^2 - \vect{u}.\vect{v} + \vect{v}.\vect{u} - \vect{v}^2 = \vect{u}^2 - \vect{v}^2
+\end{align*}
+
+
+%%
+%%
+
+\section{Vecteurs orthogonaux}
+\subsection{D\'efinition}
+\begin{defn}
+Les vecteurs $\vect{u}$ et $\vect{v}$ sont orthogonaux si :
+\[\vect{u}=\vect{0} \; \text{ou} \; \vect{v}=\vect{0} \; \text{ou} \; (OA)\bot(OB)\]
+\end{defn}
+
+\subsection{Propri\'et\'e}
+\begin{prop}
+Les vecteurs $\vect{u}$ et $\vect{v}$ sont orthogonaux si et seulement si $\vect{u}.\vect{v}=0$.
+\end{prop}
+
+\begin{demo}
+\vspace{-1em}
+\begin{align*}
+ \vect{u}.\vect{v}=0 & \Leftrightarrow \left\|\vect{u}\right\| \times \left\|\vect{v}\right\| \times \cos(\vect{u};\vect{v})=0\\
+ & \Leftrightarrow \left\|\vect{u}\right\|=0 \text{ ou } \left\|\vect{v}\right\|=0 \text{ ou } \cos(\vect{u};\vect{v})=0\\
+ & \Leftrightarrow \vect{u}=\vect{0} \text{ ou } \vect{v}=\vect{0} \text{ ou } (\vect{u};\vect{v})=\dfrac{\pi}{2}+k\times 2\pi\\
+ & \Leftrightarrow \vect{u}\text{ et } \vect{v} \text{ sont orthogonaux}
+\end{align*}
+
+%\vspace{+1em}
+\end{demo}
+
+\begin{exemple}
+Dans un rep\`ere orthonormal $\oij$, on donne $\vect{u}\cp{6}{4}$, $\vect{v}\cp{6}{-9}$.
+
+D\'emontrer que $\vect{u}$ et $\vect{v}$ sont orthogonaux.
+\end{exemple}
+
+
+$\vect{u}.\vect{v}= 6\times6  + 4\times(-9)  = 36 - 36 =  0$.
+Les vecteurs $\vect{u}$ et $\vect{v}$ sont donc orthogonaux.
+
+
+
+
+
+%%%%%%%%%%%         Ancienne version
+
+%%
+%%
+% \begin{minipage}{9cm}
+% Dans tout le chapitre, $\vect{u}$ et $\vect{v}$ d\'esignent deux vecteurs du plan et $O$, $A$ et $B$ sont trois points tels que $\vect{OA}=\vect{u}$ et $\vect{OB}=\vect{v}$.
+% 
+% Une unit\'e de longueur est fix\'ee.
+%  \end{minipage}
+%  \begin{minipage}{5cm}
+%  \begin{center}
+%  \includegraphics{ProdScal2.3}
+%  \end{center}
+%  \end{minipage}
+%  
+% \section{D\'efinition}
+% \label{defps}
+% \begin{definition}
+% On appelle produit scalaire de $\vect{u}$ et $\vect{v}$ le nombre r\'eel not\'e $\vect{u}.\vect{v}$ et d\'efini par :
+% \[\vect{u}.\vect{v}=\dfrac{1}{2}\left(\Vert\vect{u}\Vert^{2}+\Vert\vect{v}\Vert^{2}-\Vert\vect{v}-\vect{u}\Vert^{2}\right)\]
+% Le produit scalaire d'un vecteur $\vect{u}$ par lui-m\^eme ($\vect{u}.\vect{u}$) est appel\'e carr\'e scalaire de $\vect{u}$ et se note $\vect{u}^{2}$. On a donc $\vect{u}^{2}=\Vert\vect{u}\Vert^{2}$
+% \end{definition}
+% Remarques :
+% \begin{itemize}
+% \item Le produit scalaire est donc une op\'eration dont les arguments sont des vecteurs et dont le r\'esultat est r\'eel.
+% \item Si un des vecteurs est nul alors le produit scalaire est nul.
+% \end{itemize}
+% 
+% 
+% \begin{minipage}{11cm}
+% \begin{ex}
+% Sur la figure ci-contre, le triangle $OAB$ est \'equilat\'eral et $OA=2$. Calculer $\vect{u}.\vect{v}$.
+% \end{ex}
+% 
+% 
+% On a $\Vert\vect{u}\Vert=2$,  $\Vert\vect{v}\Vert=2$ et $\Vert\vect{v}-\vect{u}\Vert=\Vert\vect{OB}-\vect{OA}\Vert=\Vert\vect{AB}\Vert=2$
+% 
+% Ainsi $\vect{u}.\vect{v}=\dfrac{1}{2}\times(2^2+2^2-2^2)=2$
+% 
+% \end{minipage}
+% \hfill
+% \begin{minipage}{3.5cm}
+% \begin{center}
+% \includegraphics{ProdScal2.6}
+% \end{center}
+% \end{minipage}
+% %%
+% %%
+% \section{Autres expressions du produit scalaire}
+% \subsection{Cas des vecteurs colin\'eaires}
+% \begin{prop}
+% \begin{itemize}
+% \item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de m\^eme sens alors
+% \[\vect{u}.\vect{v}=\left\|\vect{u}\right\|\times \left\|\vect{v}\right\|=OA\times OB\]
+% \item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de sens contraires alors \[\vect{u}.\vect{v}=-\Vert\vect{u}\Vert\times \Vert\vect{v}\Vert=-OA\times OB\]
+% \end{itemize}
+% \end{prop}
+% 
+% %\newpage
+% \begin{demo}
+% Lorsque $\vect{u}$ et $\vect{v}$ sont colin\'eaires, on peut exprimer $\left\|\vect{v}-\vect{u}\right\|$ en fonction de $\left\|\vect{v}\right\|$ et $\left\|\vect{u}\right\|$.
+% \begin{itemize}
+% \item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de m\^eme sens alors $\left\|\vect{v}-\vect{u}\right\|^2=\left( \left\|\vect{v}\right\|-\left\|\vect{u}\right\| \right)^2$.
+% 
+% On a ainsi,
+% %\begin{align}
+% \[\vect{u}.\vect{v}=\dfrac{1}{2}\left(\left\|\vect{u}\right\|^{2}+\left\|\vect{v}\right\|^{2}-\left\|\vect{u}\right\|^2+2\left\|\vect{u}\right\|\left\|\vect{v}\right\|-\left\|\vect{u}\right\|^{2}\right)=\left\|\vect{u}\right\|\times \left\|\vect{v}\right\|\]
+% %\end{align}
+% \item Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de sens contraires, % alors
+%  $\left\|\vect{v}-\vect{u}\right\|^2=\left( \left\|\vect{v}\right\|+\left\|\vect{u}\right\| \right)^2$.
+% 
+% On a ainsi,
+% %\begin{align}
+% \[\vect{u}.\vect{v}=\dfrac{1}{2}\left(\left\|\vect{u}\right\|^{2}+\left\|\vect{v}\right\|^{2}-\left\|\vect{u}\right\|^2-2\left\|\vect{u}\right\|\left\|\vect{v}\right\|-\left\|\vect{u}\right\|^{2}\right)=-\left\|\vect{u}\right\|\times \left\|\vect{v}\right\|\]
+% \end{itemize}
+% \end{demo}
+% 
+% Cons\'equences : Si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et de m\^eme sens alors $\vect{u}.\vect{v}>0$ et si $\vect{u}$ et $\vect{v}$ sont colin\'eaires et sens contraires alors $\vect{u}.\vect{v}<0$
+% %
+% \subsection{Avec un projet\'e orthogonal}
+% \begin{prop}
+% Si $H$ est le projet\'e orthogonal de $B$ sur $(OA)$ alors $\vect{u}.\vect{v}=\vect{OA}.\vect{OH}$.
+% \end{prop}
+% \begin{center}
+% \includegraphics{ProdScal2.1}
+% \hspace{2cm}
+% \includegraphics{ProdScal2.2}
+% \end{center}
+% 
+% \begin{dem}
+% Les triangles $OBH$ et $ABH$ sont rectangles en $H$. On a donc, d'apr\`es le th\'eor\`eme de Pythagore, $OB^2=OH^2+HB^2$ et $AB^2=AH^2+HB^2$.
+% Ainsi :
+% \begin{align*}
+% \vect{u}.\vect{v} &= \dfrac{1}{2}\left( OA^2+OB^2-AB^2 \right) = \dfrac{1}{2}\left( OA^2+OH^2+HB^2-AH^2-HB^2 \right)\\
+%  &= \dfrac{1}{2}\left(OA^2+OH^2-AH^2\right) = \dfrac{1}{2}\left(\left\|\vect{OA}\right\|^2 +  \left\|\vect{OB}\right\|^2 - \left\|\vect{OH}-\vect{OA}\right\|^2\right)\\
+% &= \vect{OA}.\vect{OH}
+% \end{align*}
+% 
+% \end{dem}
+% 
+% \begin{minipage}{10cm}
+% \begin{ex}
+% $ABC$ est un triangle isoc\`ele en $A$ tel que $AB=3$ et $BC=4$. $O$ est le milieu du segment $[BC]$. Calculer $\vect{BA}.\vect{BC}$ et $\vect{CA}.\vect{BC}$.
+% \end{ex}
+% 
+% Le projet\'e orthogonal de $A$ sur $(BC)$ est $O$ donc
+% 
+% $\vect{BA}.\vect{BC}=\vect{BO}.\vect{BC}=BO\times BC=2\times3=6$
+% 
+% Le projet\'e orthogonal de $A$ sur $(BC)$ est $O$ donc
+% 
+% $\vect{CA}.\vect{BC}=\vect{CO}.\vect{BC}=-CO\times BC=-2\times3=-6$
+% 
+% 
+% \end{minipage}
+% \hfill
+% \begin{minipage}{4.5cm}
+% \begin{flushright}
+% \includegraphics{ProdScal2.4}
+% \end{flushright}
+% \end{minipage}
+% %
+% \subsection{Avec la fonction cosinus}
+% \begin{prop}
+% Quels que soient les points $O$, $A$ et $B$,
+% \[\vect{OA}.\vect{OB}=OA\times OB\times \cos\left(\widehat{AOB}\right)\]
+% \end{prop}
+% 
+% \begin{dem}
+% Soit $H$ le projet\'e orthogonal de $B$ sur $(OA)$. D'apr\`es la propri\'et\'e pr\'ec\'edente, $\vect{OA}.\vect{OB}=\vect{OA}.\vect{OH}$.
+% \begin{itemize}
+% \item Si $\widehat{AOB}$ est un angle droit alors $\vect{OH}=\vect{0}$ donc $\vect{OA}.\vect{OB}=0$. De plus le cosinus d'un angle droit \'etant nul, on a bien $\vect{OA}.\vect{OB}=OA\times OB\times \cos(\widehat{AOB})$.
+% \item Si $\widehat{AOB}$ est un angle aigu alors $OA$ et $OH$ sont colin\'eaires et de m\^eme sens donc $\vect{OA}.\vect{OB}=OA\times OH$.
+% 
+% De plus, $OH=OB\cos( \widehat{HOB} )=OB\cos( \widehat{AOB} )$
+% 
+% donc $\vect{OA}.\vect{OB}=OA\times OB\times \cos(\widehat{AOB})$
+% 
+% \item Si $\widehat{AOB}$ est un angle obtus alors $OA$ et $OH$ sont colin\'eaires et de sens contraires donc $\vect{OA}.\vect{OB}=-OA\times OH$.
+% 
+% De plus, $OH=OB\cos( \widehat{HOB})$ et $\widehat{HOB}$ et $\widehat{AOB}$ sont suppl\'ementaires donc $\cos( \widehat{HOB})=-\cos( \widehat{AOB})$
+% 
+% Ainsi $\vect{OA}.\vect{OB}=-OA\times OB\times -\cos(\widehat{AOB})=OA\times OB\times \cos(\widehat{AOB})$
+% \end{itemize}
+% 
+% \end{dem}
+% 
+% \begin{minipage}{10cm}
+% \begin{ex}
+% $ABC$ est un triangle \'equilat\'eral inscrit dans un cercle $\calc$ de centre $O$ et de rayon 3. Calculer $\vect{OB}.\vect{OC}$.
+% \end{ex}
+% 
+% 
+% $\vect{OB}.\vect{OC}=OB\times OC\times \cos\left( \vect{OB},\vect{OC}\right)=3\times3\times\cos(120\text{\degres})=-\dfrac{9}{2}$
+% 
+% \end{minipage}
+% \hfill
+% \begin{minipage}{4cm}
+% \begin{flushright}
+% \includegraphics{ProdScal2.5}
+% \end{flushright}
+% \end{minipage}
+% %
+% \subsection{Dans un rep\`ere}
+% \begin{prop}
+% Soit $\oij$  un rep\`ere orthonormal du plan.
+% 
+% Si $\vect{u}\cp{x}{y}$ et $\vect{v}\cp{x'}{y'}$ alors $\vect{u}.\vect{v}=xx'+yy'$.
+% \end{prop}
+% 
+% \begin{dem}
+% Si $\oij$ est un rep\`ere orthonormal alors $\left\|\vect{u}\right\|^2=x^2+y^2$, $\left\|\vect{v}\right\|^2=x'^2+y'^2$ et $\left\|\vect{v}-\vect{u}\right\|^2=(x'-x)^2+(y'-y)^2$.
+% 
+% On a alors :
+% \begin{align*}
+% \vect{u}.\vect{v}&=\dfrac{1}{2}(x^2+y^2+x'^2+y'^2-((x'-x)^2+(y'-y)^2))\\
+% &=\dfrac{1}{2}(x^2+y^2+x'^2+y'^2-x'^2+2xx'-x^2-y'^2+2yy'-y^2)\\
+% &=\dfrac{1}{2}(2xx'+2yy')=xx'+yy'
+% \end{align*}
+% \end{dem}
+% 
+% \begin{ex}
+% Dans un rep\`ere orthonormal $\oij$, $\vect{u}\cp{6}{3}$, $\vect{v}\cp{3}{-1}$ et $\vect{w}\cp{-2}{2}$
+% 
+% Calculer $\vect{u}.\vect{v}$, $\vect{u}.\vect{w}$ et $\vect{v}.\vect{w}$.
+% \end{ex}
+% 
+% 
+% $\vect{u}.\vect{v}= 6\times3+3\times(-1)=18-3=15$
+% 
+% $\vect{u}.\vect{w}=6\times(-2)+3\times2=-12+6=-6$
+% 
+% $\vect{v}.\vect{w}=3\times(-2)+(-1)\times2=-6-2=-8$
+% 
+% %%
+% %%
+% \section{R\`egles de calcul}
+% \begin{prop}
+% Quels que soient $\vect{u}$ et $\vect{v}$ :
+% 
+% \begin{itemize}
+% \begin{minipage}[c]{11cm}
+% \item $\vect{0}.\vect{v}=\vect{u}.\vect{0}=0$
+% \vspace{0.2cm}
+% \item $\vect{u}.\vect{v}=\vect{v}.\vect{u}$ (On dit que le produit scalaire est sym\'etrique)
+% \vspace{0.2cm}
+% \end{minipage}
+% 
+% \begin{minipage}{9cm}
+% \item $\vect{u}.(\vect{v}+\vect{w})=\vect{u}.\vect{v}+\vect{u}.\vect{w}$ et $\vect{u}.(k\vect{v})=k\times (\vect{u}.\vect{v})$
+% 
+% %\vspace{-0.3cm}
+% \item $(\vect{u}+\vect{v}).\vect{w}=\vect{u}.\vect{w}+\vect{v}.\vect{w}$ et $(k\vect{u}).\vect{v}=k\times (\vect{u}.\vect{v})$
+% \end{minipage}
+% \hspace{0.5cm}
+% \begin{minipage}[c]{4cm}
+% (On dit que le produit scalaire est bilin\'eaire)
+% \end{minipage}
+% \end{itemize}
+% \end{prop}
+% 
+% \begin{dem}
+% \begin{itemize}
+% \item Le premier r\'esultat est une cons\'equence directe de la d\'efinition (vu au paragraphe \ref{defps}).
+% \item Le deuxi\`eme r\'esultat est aussi une cons\'equence de la d\'efinition ($\left\|\vect{v}-\vect{u}\right\|=\left\|\vect{u}-\vect{v}\right\|$).
+% \item On se place dans un rep\`ere orthonormal du plan et on pose $\vect{u}\cp{x}{y}$, $\vect{v}\cp{x'}{y'}$ et $\vect{w}\cp{x''}{y''}$
+% 
+% Les coordonn\'ees de $\vect{v}+\vect{w}$ sont $\cp{x'+x''}{y'+y''}$.
+% 
+% On a ainsi, $\vect{u}.(\vect{v}+\vect{w})=x(x'+x'')+y(y'+y'')=xx'+xx''+yy'+yy''$.
+% 
+% De plus $\vect{u}.\vect{v}+\vect{u}.\vect{w}=xx'+yy'+xx''+yy''$.
+% 
+% Conclusion : $\vect{u}.(\vect{v}+\vect{w})=\vect{u}.\vect{v}+\vect{u}.\vect{w}$
+% 
+% Les coordonn\'ees de $k\vect{v}$ sont $\cp{kx'}{ky'}$.
+% 
+% On a ainsi $\vect{u}.(k\vect{v}) = x(kx')  + y(ky') = kxx'  + kyy'$.
+% 
+% De plus $k\times (\vect{u}.\vect{v})=k(xx'+yy')=kxx'+kyy'$
+% 
+% Conclusion $\vect{u}.(k\vect{v})=k\times (\vect{u}.\vect{v})$
+% 
+% \item Le quatri\`eme r\'esultat se d\'emontre en utilisant les deux pr\'ec\'edents.
+% 
+% \end{itemize}
+% \end{dem}
+% 
+% \begin{ex}
+% $\vect{u}$ et $\vect{v}$ sont deux vecteurs, simplifier $\left(\vect{u}+\vect{v}\right)^{2}$, $\left(\vect{u}-\vect{v}\right)^{2}$ et $\left(\vect{u}+\vect{v}\right).\left(\vect{u}-\vect{v}\right)$.
+% \end{ex}
+% 
+% 
+% \begin{align*}
+% \begin{split}
+% \left(\vect{u}+\vect{v}\right)^{2}&=\left(\vect{u}+\vect{v}\right).\left(\vect{u}+\vect{v}\right)=\left(\vect{u}+\vect{v}\right).\vect{u}+\left(\vect{u}+\vect{v}\right).\vect{v}\\
+% &=\vect{u}^2 + \vect{v}.\vect{u} + \vect{v}.\vect{u} + \vect{v}^2 = \vect{u}^2 +  2\vect{u}.\vect{v} + \vect{v}^2
+% \end{split}\\
+% %\end{align*}
+% %\begin{multline*}
+% \begin{split}
+% \left(\vect{u}-\vect{v}\right)^{2}&=\left(\vect{u}-\vect{v}\right).\left(\vect{u}-\vect{v}\right)=\left(\vect{u}-\vect{v}\right).\vect{u}-\left(\vect{u}-\vect{v}\right).\vect{v}\\
+% &=\vect{u}^2 - \vect{v}.\vect{u} - \vect{v}.\vect{u} + \vect{v}^2 = \vect{u}^2 -  2\vect{u}.\vect{v} + \vect{v}^2
+% \end{split}\\
+% %\end{multline*}
+% \left(\vect{u}+\vect{v}\right).\left(\vect{u}-\vect{v}\right)&=\vect{u}^2 - \vect{u}.\vect{v} + \vect{v}.\vect{u} - \vect{v}^2 = \vect{u}^2 - \vect{v}^2
+% \end{align*}
+% 
+% 
+% %%
+% %%
+% \section{Vecteurs orthogonaux}
+% \subsection{D\'efinition}
+% \begin{definition}
+% Les vecteurs $\vect{u}$ et $\vect{v}$ sont orthogonaux si :
+% \[\vect{u}=\vect{0} \; \text{ou} \; \vect{v}=\vect{0} \; \text{ou} \; (OA)\bot(OB)\]
+% \end{definition}
+% 
+% \subsection{Propri\'et\'e}
+% \begin{prop}
+% Les vecteurs $\vect{u}$ et $\vect{v}$ sont orthogonaux si et seulement si $\vect{u}.\vect{v}=0$.
+% \end{prop}
+% 
+% \begin{dem}
+% Avec $\vect{OA}=\vect{u}$ et $\vect{OB}=\vect{v}$, on a : $\vect{u}.\vect{v}=\dfrac{1}{2}(OA^2 + OB^2 - AB^2)$.
+% 
+% \begin{itemize}
+% \item Supposons que $\vect{u}$ et $\vect{v}$ sont orthogonaux.
+% 
+% Soit un des deux vecteurs est nul auquel cas $\vect{u}.\vect{v}=0$
+% 
+% Soit le triangle $OAB$ et rectangle en $O$  et  donc d'apr\`es le th\'eor\`eme de Pythagore, $OA^2 + OB^2 = AB^2$  et ainsi, $\vect{u}.\vect{v}=0$.
+% 
+% \item Supposons $\vect{u}.\vect{v}=0$.
+% 
+% Soit un des deux vecteurs est nul et donc $\vect{u}$ et $\vect{v}$ sont orthogonaux.
+% 
+% Soit $OA^2 + OB^2 = AB^2$ et d'apr\`es la r\'eciproque du th\'eor\`eme de Pythagore, $OAB$ est rectangle en $O$ donc $\vect{u}$ et $\vect{v}$ sont orthogonaux.
+% \end{itemize}
+% 
+% \end{dem}
+% 
+% \begin{ex}
+% Dans un rep\`ere orthonormal $\oij$, on donne $\vect{u}\cp{6}{4}$, $\vect{v}\cp{6}{-9}$.
+% 
+% D\'emontrer que $\vect{u}$ et $\vect{v}$ sont orthogonaux.
+% \end{ex}
+% 
+% 
+% $\vect{u}.\vect{v}= 6\times6  + 4\times(-9)  = 36 - 36 =  0$.
+% Les vecteurs $\vect{u}$ et $\vect{v}$ sont donc orthogonaux.
+% 
+% 
+
+\end{document}

@@ -1,0 +1,579 @@
+%A compiler en XELATEX sinon pas d'arbre de proba
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{color}
+\usepackage[table]{xcolor} 
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{eurosym}
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{tkz-tab}
+\usepackage{cellspace}
+\usepackage{diagbox}
+%%% Figures
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+%\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+%%%Affichage
+\newcommand{\ds}{\displaystyle}
+\renewcommand{\arraystretch}{1.5} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+%\TeacherModeOff
+\TeacherModeOn
+%%% Macro
+\newcommand{\V}{\overrightarrow}
+\newcommand{\Rep}{(O;\V{i};\V{j})}
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\begin{document}
+\setcounter{chapter}{8}
+\chapter{Fonction inverse}
+\vspace*{-1cm}
+%La fonction inverse est particulière, on la retrouve géométriquement dans l'application du théorème de Thalès.\\
+%La fonction inverse trouve son utilité dans la construction de nombre fractionnaire, à tout nombre réel strictement positif $x$ on peut placer géométriquement $\dfrac{1}{x}$ à l'aide du Théorème de Thalès ce qui correspond à un changement d'échelle.
+%
+%Autrement dit: "\textit{Si un nombre $x$ \textbf{non nul} devient l'unité et que l'écart est respecté de manière proportionnelle alors que devient $1$ ?}" Il deviendra en réalité exactement $\dfrac{1}{x}$.
+
+\section{Étude de la fonction inverse}
+
+
+\begin{defn}
+On appelle fonction inverse la fonction définie pour tout nombre réel appartenant à $]-\infty ; 0[ \cup ] 0 ;+\infty[$ \emph{(aussi notée $\mathbb{R}^*$)} par $f(x)=\dfrac{1}{x}$.
+\end{defn}
+
+
+\begin{exemple}[Tableau de valeurs]
+\begin{center}
+\renewcommand{\arraystretch}{2.3}
+\begin{tabular}	{|Sl||Sl|Sl|Sl|Sl|Sl|Sl|Sl|Sl|Sl|Sl|}
+\hline  $x$ & -4 & -3 & -2 & -1 & $-\dfrac{1}{2}$ & 0 & $\dfrac{1}{2}$ & 1 & 2 & 4 \\
+\hline $\dfrac{1}{x}$ & $-\dfrac{1}{4}$ & - $\dfrac{1}{3}$ & - $\dfrac{1}{2}$ & $-1$ & -$2$ & $\times$ & $2$ & $1$ & $\dfrac{1}{2}$ & $\dfrac{1}{4}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{exemple}
+
+\begin{rem}
+La fonction inverse est une \gap*{involution} sur $\mathbb{R}^*$, autrement dit, l'inverse de l'inverse d'un nombre non nul est lui-même.
+\end{rem} 
+
+\section{Variations, représentation graphique et signe}
+
+\subsection{Variations}
+
+%%%%% V1 - Avec Dérivation+preuve%%%%
+\begin{prop}
+La fonction inverse est dérivable sur $]-\infty ; 0[$ et sur $] 0 ;+\infty[$ et sa dérivée est $-\dfrac{1}{x^2}$
+\end{prop}
+ 
+\begin{demo}
+On a pour tout réel $a$ non nul et tout réel $h \neq 0$ tel que $a+h \neq 0$, 
+$$\dfrac{f(a+h)-f(a)}{h}=\dfrac{\dfrac{1}{a+h}-\dfrac{1}{a}}{h}=\dfrac{\dfrac{a-(a+h)}{a(a+h)}}{h}=\dfrac{\dfrac{-h}{a(a+h)}}{h}=-\dfrac{1}{a(a+h)}$$
+
+Par suite en faisant tendre $h$ vers $0$, on obtient $$f'(a):=\lim_{h\mapsto0} \dfrac{f(a+h)-f(a)}{h}=-\dfrac{1}{a^2}$$
+\end{demo}
+
+\begin{prop}
+\begin{enumerate}
+\item La fonction inverse est \gap*{strictement décroissante} sur $\mathbb{R}_+^*$ car sa dérivée est \gap*{strictement négative} sur $\mathbb{R}_+^*$.
+
+\item La fonction inverse est \gap*{strictement décroissante} sur $\mathbb{R}_-^*$ car sa dérivée est \gap*{strictement négative} sur $\mathbb{R}_-^*$.
+\end{enumerate}
+\end{prop}
+
+\begin{attention}
+Il est \textbf{faux} de dire que la fonction inverse est strictement décroissante sur $\mathbb{R}^*$. Le contre-exemple suivant suffit à comprendre pourquoi. 
+$$-2<2 \;\; \textrm{et pourtant,} \;\; -\dfrac{1}{2} < \dfrac{1}{2}$$ 
+\end{attention}
+
+%%%%%%%%%%%%%%%%%
+
+%%%%% V2 - Sans Dérivation+preuve%%%%
+%\begin{prop}
+%La fonction inverse est \gap*{strictement décroissante} sur $\mathbb{R}^*_-$ et  \gap*{strictement décroissante} sur $\mathbb{R}^*_+$.
+%\end{prop}
+%
+%\begin{attention}
+%Il est \textbf{faux} de dire que la fonction inverse est strictement décroissante sur $\mathbb{R}^*$. Le contre-exemple suivant suffit à comprendre pourquoi. 
+%$$-2<2 \;\; \textrm{et pourtant,} \;\; -\dfrac{1}{2} < \dfrac{1}{2}$$ 
+%\end{attention}
+%
+%\begin{demo}
+%
+%\underline{Preuve de la stricte décroissance sur $\mathbb{R}^*_-$ de la fonction inverse:}
+%
+%Soit $a<b < 0$ alors $\frac{1}{a} - \frac{1}{b} = \frac{b-a}{ab} $ , ici $ab > 0$ car $a<b<0$ et $0<b-a$ car $a<b$. Donc $\frac{1}{a} - \frac{1}{b} >0$. 
+%$$\textrm{D'où} \;\; \dfrac{1}{a}>\dfrac{1}{b}$$
+%
+%\underline{Preuve de la stricte décroissance sur $\mathbb{R}^*_+$ de la fonction inverse:}
+%
+%Soit $0<a<b$ alors $\frac{1}{a} - \frac{1}{b} = \frac{b-a}{ab} $ , ici $ab > 0$ car $0<a<b$ et $0<b-a$ car $a<b$. Donc $\frac{1}{a} - \frac{1}{b} >0$. 
+%$$\textrm{D'où} \;\; \dfrac{1}{a}>\dfrac{1}{b}$$
+%\end{demo}
+%%%
+\subsection{Représentation graphique}
+
+\begin{prop}
+La représentation graphique de la fonction inverse est appelée \gap*{hyperbole}, ceci est dû à sa forme aux bords de son domaine de définition.
+\end{prop}
+
+
+\vspace*{-6cm}
+\begin{center}
+\hspace*{8.5cm}\includegraphics[scale=0.85]{inverse.1}
+\end{center}
+
+\vspace*{5.7cm}
+\begin{rem}
+La courbe de la fonction inverse possède \gap*{un centre de symétrie}, à savoir l'origine du repère. On dit aussi que la fonction est \gap*{impaire}, autrement dit  $f(-x)=-f(x)$.
+\end{rem}
+
+\begin{defn}
+Une \gap*{asymptote} est une droite dont une courbe s'approche de plus en plus, sans jamais l'atteindre.
+\vspace*{5mm}
+\end{defn}
+
+
+\begin{rem}[Comportement aux bornes de son ensemble de définition]
+
+La représentation graphique admet deux \gap*{asymptotes}: l'axe des ordonnées et l'axe des abscisses. 
+
+\begin{itemize}
+\item Lorsque $x$ devient de plus en plus proche de $0$,  $\dfrac{1}{x}$ devient en valeur absolue très grand et tend vers $+\infty$. Autrement dit, la courbe se rapproche de l'axe des ordonnées sans jamais la rencontrer, on dit que c'est une \gap*{asymptote verticale}  à la courbe $\mathcal{C}_f$.
+\item Lorsque $x$ devient de plus en plus grand en valeur absolue, $\dfrac{1}{x}$ tend alors vers $0$. Autrement dit, la courbe se rapproche de l'axe des abscisses sans jamais la rencontrer, on dit que c'est une \gap*{ asymptote horizontale} à la courbe $\mathcal{C}_f$.
+\end{itemize}
+\end{rem}
+
+\subsection{Signe}
+
+\begin{prop}
+La fonction inverse \gap*{conserve le signe}, elle est donc \gap*{strictement négative} sur $\mathbb{R}_-^*$ et \gap*{strictement positive} sur $\mathbb{R}_+^*$.
+\end{prop}
+
+\section{Application à l'étude de fonctions}
+
+%\begin{exemple}[Étude d'une fonction somme d'une fonction polynomiale et de la fonction inverse]
+%
+%On considère la fonction $f$ définie sur $] 0 ;+\infty[$ par $ f(x)=2 x+1+\dfrac{8}{x}$.
+%
+%On a $f^{\prime}(x)=2-\dfrac{8}{x^2}$. Comme pour tout réel $x$ non nul, $x^{2}>0$, $ f^{\prime}(x)$ est du signe de $2x^2-8$ qui est une fonction polynôme du second degré. Par ailleurs, on constate que $f'(x)=2(x^2-4)=2(x+2)(x-2)$. De plus $a>0$ d'où le tableau récapitulatif suivant : \\
+%\begin{center}
+%\begin{tikzpicture}
+%     \tkzTabInit[lgt=3,espcl=3]
+%       {$x$ / 1 , Signe de $f'(x)$ / 1, Variation de  $f$ / 2 }
+%       {$0$, 2 , $+\infty$}
+%       \tkzTabLine
+%     		{ d , - , 0 , + , }
+%       \tkzTabVar
+%     		{ D+/ , -/$f(2)=9$ , +/$0$}
+%\end{tikzpicture}
+%\end{center}
+%\end{exemple}
+
+\begin{memento}
+Une application de la fonction inverse pour une entreprise est l'étude des coûts moyens de production. Si l'on note $C_T(q)$ le \textbf{coût total de production} en fonction du nombre d'objet vendu noté $q$. Alors par définition on a le \textbf{coût moyen de production}
+$$C_m(q):= \dfrac{C_T(q)}{q}$$ 
+Le but pour une entreprise est de \gap*{minimiser} cette quantité on fonction de $q$. Cependant attention, $q$ n'est pas un nombre réel quelconque mais un \gap*{nombre strictement positif} \textit{(entier ou non en fonction de l'objet de la production)} qui ne doit pas dépasser la capacité de production maximale $q_{max}$ de l'entreprise. 
+\end{memento}
+
+\newpage
+\section{Exercices}
+%%%%Edupuy
+
+\begin{exocor}
+Résoudre les équations et inéquations suivantes :
+\begin{multicols}{3}
+\begin{enumerate}
+\item $2+\dfrac{1}{x}=3$
+\item $\dfrac{2}{x}=6$
+\item $1+\dfrac{1}{x} \geq 2 $
+\item $-6+\dfrac{2}{x}=\dfrac{1}{x}+2$
+\item $1+\dfrac{1}{x} > 2 $
+\item $1+\dfrac{1}{x} < 1+ 10^{-3}  $
+\end{enumerate}
+\end{multicols}
+\end{exocor}
+
+\begin{exocor}
+Sachant que $1<x\leq 3$ encadrer les quantités suivantes :
+\begin{multicols}{4}
+\begin{enumerate}
+\item $\dfrac{1}{x}$
+\item $\dfrac{2}{x}$
+\item $1+\dfrac{1}{x} $
+\item $-6+\dfrac{2}{x}$
+\end{enumerate}
+\end{multicols}
+\end{exocor}
+
+\begin{exocor}
+Soit $x \neq -2$ un nombre réel. 
+\begin{enumerate}
+\item Pour quelles valeurs de $x$ le réel $A=1- \dfrac{2}{x+2}$ admet-il un inverse ?
+\item Donner l'expression en fonction de $x$ de l'inverse de $A$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On note  $f$ la fonction inverse :
+\begin{enumerate}
+	\item Quel est l'ensemble de définition de la fonction $f$ ?
+	\item Calculer l'image par $f$ de chacun des réels suivants : $(- 0,25)$ ; $10^{-3}$ ; $\left(-\dfrac{3}{4}\right)$  et $1$.
+	\item Déterminer le réel dont l'image par $f$ est $(-10)$, puis celui dont l'image par $f$ est $0,01$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+Calculer les dérivées des fonctions suivantes sur $\mathbb{R}^*$.
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item $f(x)= x+\dfrac{1}{x}$
+\item $g(x)=\dfrac{2}{x}$
+\item $h(x)=-x^2-\dfrac{2}{x}$
+\item $i(t)=3t-2+\dfrac{1}{t}$
+\item $j(x)=2x+\dfrac{3}{x}$
+\item $k(x)=7x^2-2x+6+\dfrac{4}{x}$
+\item $l(x)=x^2 + \dfrac{1}{x}$
+\item $m(x)=3x^2-5x+2+\dfrac{1}{x}$
+\item $n(x)=-2x^3+4x^2+1+\dfrac{1}{x}$
+\end{enumerate}
+\end{multicols}
+\end{exocor}
+
+\begin{exocor}
+Étudier le sens de variations des fonctions suivantes, définies sur $\mathbb{R}^*$.
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(x)=3+\dfrac{1}{x}$
+\item $g(x)=2-\dfrac{1}{x}$
+\end{enumerate}
+\end{multicols}
+\end{exocor}
+
+
+\begin{exocor}
+Soit $f$ la fonction définie sur $\mathbb{R}^*$ par : $f(x)=x+\dfrac{1}{x}$
+
+\begin{enumerate}
+\item Calculer $f'(x)$.
+\item Montrer que pour tout réel $x$ non nul : $f'(x)=\dfrac{(x-1)(x+1)}{x^2}$.
+\item Après avoir étudié le signe de $f'(x)$, dresser le tableau de variations de $f$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $f$ la fonction définie sur $\mathbb{R}^*$ par : $f(x)=4x+1+\dfrac{9}{x}$
+
+\begin{enumerate}
+\item Calculer $f'(x)$.
+\item Montrer que pour tout réel $x$ non nul : $f'(x)=\dfrac{(2x-3)(2x+3)}{x^2}$.
+\item Après avoir étudié le signe de $f'(x)$, dresser le tableau de variations de $f$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $g$ la fonction définie sur $\mathbb{R}^*$ par : $g(x)=x+10-\dfrac{1}{x}$
+
+\begin{enumerate}
+\item Calculer $g'(x)$.
+\item Montrer que pour tout réel $x$ non nul : $g'(x)=\dfrac{x^2+1}{x^2}$.
+\item Après avoir étudié le signe de $g'(x)$, dresser le tableau de variations de $g$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $h$ la fonction définie sur $\mathbb{R}^*$ par : $h(x)=\dfrac{3}{2}x^2-7x-\dfrac{4}{x}$
+
+\begin{enumerate}
+\item Calculer $h'(x)$.
+\item Montrer que pour tout réel $x$ non nul : $h'(x)=\dfrac{(x-2)(x-1)(3x+2)}{x^2}$.
+\item Après avoir étudié le signe de $h'(x)$, dresser le tableau de variations de $h$.
+\end{enumerate}
+\end{exocor}
+
+\vfill
+
+\begin{exocor}
+Soit $f$ la fonction définie sur l'intervalle $[40 ; 160]$ par : 
+$f(x) = x-100+ \dfrac{6 400}{x}$.\\
+
+La courbe ci-dessous est la représentation graphique de f dans un repère.\\
+  %%% representation graph
+\hspace*{2cm}\includegraphics[scale=1]{inverse.2}\\
+
+\begin{enumerate}
+\item Calculer la dérivée $f'$ de $f$ et montrer qu'elle peut s'écrire : $f'(x) = \dfrac{x^2 - 6 400}{x^2}$.
+\item Étudier le signe de $f'(x)$ sur l'intervalle $[40 ; 160]$.
+\item En déduire le tableau des variations de $f$ sur l'intervalle $[40 ; 160]$.
+\item Le coût, exprimé en euros, de $x$ repas préparés par service dans un restaurant, peut s'écrire, pour $x\in[40; 160]$:
+$$C(x) = x^2-100x +6 400$$
+\begin{enumerate}
+\item Recopier et compléter le tableau:
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Nombre de repas & 40 & 50 & 100 \\ 
+\hline 
+Coût de $x$ repas & • & • & • \\ 
+\hline 
+ Coût moyen d'un repas & • & • & • \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\item Écrire le coût moyen d'un repas en fonction du nombre $x$ de repas préparés. On notera ce coût moyen unitaire $C_m(x)$.
+\item  Déduire de la question 3,le nombre de repas que ce restaurant doit servir pour que le coût moyen d'un repas soit minimal.
+\item Trouver, à l'aide du graphique, à quel intervalle doit appartenir $x$ pour que le coût moyen unitaire soit inférieur ou égal à $90$ euros.
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+\newpage
+\section{Corrigés}
+
+\begin{corrige}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $x=1$
+\item $x=\dfrac{1}{3}$
+\item $x \leq 1$
+\item $x=\dfrac{1}{8}$
+\item $x<1$
+\item $x>10^3$
+\end{enumerate}
+\end{multicols}
+\end{corrige}
+
+\begin{corrige}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $1 > \dfrac{1}{x} \geq \dfrac{1}{3}$
+\item $2 > \dfrac{2}{x} \geq \dfrac{2}{3}$
+\item $2 >1+\dfrac{1}{x} \geq \dfrac{4}{3} $
+\item $-4 >-6+\dfrac{2}{x} \geq \dfrac{-16}{3}$
+\end{enumerate}
+\end{multicols}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $A$ n'admet pas d'inverse si et seulement si $A=0$. 
+$$A=0 \Longleftrightarrow 1-\dfrac{2}{x+2} =0 \Longleftrightarrow 1=\dfrac{2}{x+2} \Longleftrightarrow 2=x+2 \Longleftrightarrow x=0$$
+Autrement dit $A$ n'admet pas d'inverse si $x=0$. 
+\item Supposons que $x \neq -2$ et $x\neq 0$ alors 
+$$A=1-\dfrac{2}{x+2}=\dfrac{x}{x+2}$$
+Donc 
+$$\dfrac{1}{A}=\dfrac{1}{\frac{x}{x+2}}=\dfrac{x+2}{x}$$
+
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item L'ensemble de définition de $f$ est  $\mathbb{R}^*$.
+\item $f(-0,25)=-4$ ; $f(10^{-3})=10^3$ ; $(-\dfrac{3}{4})$ ; $f(1)=1$.
+\item $f(-0,1)=-10$ et $f(100)=0,01$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $f'(x)= 1-\dfrac{1}{x^2}$
+\item $g'(x)=-\dfrac{2}{x^2}$
+\item $h'(x)=-2x+\dfrac{2}{x^2}$
+\item $i'(t)=3-\dfrac{1}{t^2}$
+\item $j'(x)=2-\dfrac{3}{x^2}$
+\item $k'(x)=14x-2-\dfrac{4}{x^2}$
+\item $l'(x)=2x-\dfrac{1}{x^2}$
+\item $m'(x)=6x-5-\dfrac{1}{x^2}$
+\item $n'(x)=-6x^2+8x-\dfrac{1}{x^2}$
+\end{enumerate}
+\end{multicols}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item On sait que $f'(x)=-\dfrac{1}{x^2}$ qui est strictement négative sur $\mathbb{R}^*$ donc $f$ est strictement décroissante sur chacun des intervalles de $\mathbb{R}^*$.
+
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=3]
+       {$x$ / 1 , Signe de $f'(x)$ / 1, Variation de  $f$ / 2 }
+       {$-\infty$,  0 , $+\infty$}
+       \tkzTabLine
+     		{  , - , d , - , }
+       \tkzTabVar
+     		{ +/ , -D+/$ $/ $ $ , -/  }
+\end{tikzpicture}
+\end{center}
+
+\item  On sait que $f'(x)=\dfrac{1}{x^2}$ qui est strictement positive sur $\mathbb{R}^*$ donc $f$ est strictement croissante sur chacun des intervalles de $\mathbb{R}^*$.
+
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=3]
+       {$x$ / 1 , Signe de $f'(x)$ / 1, Variation de  $f$ / 2 }
+       {$-\infty$,  0 , $+\infty$}
+       \tkzTabLine
+     		{  , + , d , + , }
+       \tkzTabVar
+     		{ -/ , +D-/$ $/ $ $ , +/  }
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+\begin{enumerate}
+
+\item $f'(x)=1-\dfrac{1}{x^2}$
+\item D'une part on sait que $f'(x)=1-\dfrac{1}{x^2}=\dfrac{x^2-1}{x^2}$, d'autre part $(x-1)(x+1)=x^2-1^2= x^2-1$ d'où $f'(x)=\dfrac{(x-1)(x+1)}{x^2}$.
+\item Tableau récapitulatif d'étude de la fonction $f$,
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=3]
+       {$x$ / 1 , Signe de $f'(x)$ / 1, Variation de  $f$ / 2 }
+       {$-\infty$, -1 ,  0 , 1,  $+\infty$}
+       \tkzTabLine
+     		{ ,+,z,-,d,-,z,+, }
+       \tkzTabVar
+     		{ -/ , +/ $-2$, -D+ / / ,-/ $2$, +/   }
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+
+\item $f'(x)=4-\dfrac{9}{x^2}$
+\item D'une part on sait que $f'(x)=4-\dfrac{9}{x^2}=\dfrac{4x^2-9}{x^2}$, d'autre part $(2x-3)(2x+3)=(2x)^2-3^2= 4x^2-9$ d'où $f'(x)=\dfrac{(2x-3)(2x+3)}{x^2}$.
+\item Tableau récapitulatif d'étude de la fonction $f$,
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=3]
+       {$x$ / 1 , Signe de $f'(x)$ / 1, Variation de  $f$ / 2 }
+       {$-\infty$, $-\dfrac{3}{2}$ ,  0 , $\dfrac{3}{2}$,  $+\infty$}
+       \tkzTabLine
+     		{ ,+,z,-,d,-,z,+, }
+       \tkzTabVar
+     		{ -/ , +/ $-11$, -D+ / / ,-/ $13$, +/   }
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+
+\item $g'(x)=1+\dfrac{1}{x^2}$
+\item D'une part on sait que $g'(x)=1+\dfrac{1}{x^2}=\dfrac{x^2+1}{x^2}$.
+\item On sait que $x^2$ et $x^2+1$ sont des quantités strictement positive sur $\mathbb{R}^*$ donc on en déduit le tableau récapitulatif d'étude de la fonction $g$,
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=3]
+       {$x$ / 1 , Signe de $g'(x)$ / 1, Variation de  $g$ / 2 }
+       {$-\infty$,  0 ,  $+\infty$}
+       \tkzTabLine
+     		{ ,+,d,+, }
+       \tkzTabVar
+     		{ -/ , +D- / /, +/   }
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+
+\item $h'(x)=3x-7+\dfrac{4}{x^2}$
+\item D'une part on sait que $h'(x)=3x-7+\dfrac{4}{x^2}=\dfrac{3x^3 -7x^2 +4}{x^2}$. D'autre part, 
+
+$$(x-2)(x-1)(3x+2)=(x^2-3x+2)(3x+2)=3x^3+2x^2-9x^2-6x+6x+4=3x^3 -7x^2 +4$$
+ 
+\item De la forme factorisée, on en déduit le tableau récapitulatif d'étude de la fonction $h$,
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=2]
+       {$x$ / 1 , Signe de $h'(x)$ / 1, Variation de  $h$ / 2 }
+       {$-\infty$, -$\dfrac{2}{3}$ , 0 , 1, 2,  $+\infty$}
+       \tkzTabLine
+     		{ , -, z, +, d, +, z,-,z,+, }
+       \tkzTabVar
+     		{ +/ , -/ $\frac{34}{3}$ , +D- / /, +/ ${-9,5}$ , -/ $-10$, +/  }
+\end{tikzpicture}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+\newpage
+
+\begin{corrige}
+\begin{enumerate}
+\item $f'(x)=1- \dfrac{6400}{x^2}$
+\item $$f'(x)=1- \dfrac{6400}{x^2}= \dfrac{x^2-6400}{x^2}=\dfrac{(x-80)(x+80)}{x^2}$$ 
+Par suite on déduit que $f'(x)$ est du même signe que $(x-80)(x+80)$.
+\item Tableau récapitulatif de la fonction $f$ 
+\begin{center}
+\begin{tikzpicture}
+     \tkzTabInit[lgt=3,espcl=3]
+       {$x$ / 1 , Signe de $f'(x)$ / 1, Variation de  $f$ / 2 }
+       {$40$ , $80$,  $160$}
+       \tkzTabLine
+     		{ ,-, z, +, }
+       \tkzTabVar
+     		{ +/ $100$, -/ $60$, +/ $100$}
+\end{tikzpicture}
+\end{center}
+\item 
+\begin{enumerate}
+\item Tableau à compléter 
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Nombre de repas & 40 & 50 & 100 \\ 
+\hline 
+Coût de $x$ repas & 4 000 & 3 900 & 6 400 \\ 
+\hline 
+ Coût moyen d'un repas & 100 & 78 & 64 \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\item $C_m(x)=\dfrac{C(x)}{x}$
+\item Pour que le coût d'un repas soit minimal il faut servir 80 repas. 
+\item A l'aide du graphique on trouve que le nombre de repas $x$ doit appartenir à l'intervalle $[44;146]$.
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\end{document}

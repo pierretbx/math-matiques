@@ -1,0 +1,1152 @@
+<!DOCTYPE html 
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <meta HTTP-EQUIV="Content-Type" CONTENT="text/html;CHARSET=iso-8859-1"/>
+    <meta NAME="GENERATOR" Content="tex2html"/>
+    
+    <title>Source : index.tex</title>
+    <link rel="stylesheet" type="text/css" href="/syracuse/css/20031116/sources.css"/>
+    <link rel="shortcut icon" href="/syracuse/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+
+<div id="haut">
+    <img src="/syracuse/images/20031116/sources.jpg" alt="Les sources de Syracuse" width="300" height="40"/>
+    <span class="fichier">index.tex</span>
+    <div id="navigation"><a href="javascript:history.back()">Retour</a><a href="/syracuse/texpng/cprl/christophe/docs/doc2/index.tex?format=plain">Texte non formaté</a></div>
+</div>
+
+<table width="100%"  cellpadding="0" cellspacing="0" border="0">
+
+<tr><td>
+<pre><span id="source">
+<FONT COLOR=#0000FF>\documentclass</FONT>[12pt]<FONT COLOR=#00008B>{</FONT>article<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\usepackage</FONT>[frenchb]<FONT COLOR=#00008B>{</FONT>babel<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\usepackage</FONT>[latin1]<FONT COLOR=#00008B>{</FONT>inputenc<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\usepackage</FONT>[dvips,a4paper,margin=1.5cm,nohead]<FONT COLOR=#00008B>{</FONT>geometry<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\usepackage</FONT>[dvips]<FONT COLOR=#00008B>{</FONT>graphicx<FONT COLOR=#00008B>}</FONT>
+\title<FONT COLOR=#00008B>{</FONT>Documentation sur le fichier geometriesyr15.mp<FONT COLOR=#00008B>}</FONT>
+\author<FONT COLOR=#00008B>{</FONT>Christophe Poulain<FONT COLOR=#00008B>}</FONT>
+\date<FONT COLOR=#00008B>{</FONT>Version 1.0<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\usepackage</FONT><FONT COLOR=#00008B>{</FONT>multicol,fancybox,color<FONT COLOR=#00008B>}</FONT>
+\input christ5.tex
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>document<FONT COLOR=#00008B>}</FONT>
+\maketitle
+\parindent0pt
+\hrulefill
+\tableofcontents
+\hrulefill
+\parindent12pt
+\newpage
+Cette nouvelle version qui marque le passage de geometriesyr13.mp &agrave; geometriesyr15.mp apporte de nouvelles fonctions et surtout une modification majeure qui justifie, &agrave; elle seule, l'abandon de la version 14.
+\\Si les nouvelles fonctions seront d&eacute;taill&eacute;es par la suite, un mot sur la modification majeure : <FONT COLOR=#00008B>{</FONT><FONT COLOR=#0000FF><FONT COLOR=#0000FF><B>\bf</B></FONT></FONT> le dessin &agrave; main lev&eacute;e<FONT COLOR=#00008B>}</FONT> dont voici de suite un exemple.
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.1<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+C'&eacute;tait une id&eacute;e qui me trottait dans la t&ecirc;te depuis pas mal de temps. Mais comment faire du dessin &agrave; main lev&eacute;e avec un ordinateur ? Sans forc&eacute;ment rentrer dans les d&eacute;tails, j'ai utilis&eacute; des courbes de Beziers pour donner un aspect \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>main lev&eacute;e\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT> au dessin obtenu. Plusieurs contraintes et nouvelles id&eacute;es sont venues me forcer &agrave; reprendre tr&egrave;s souvent le code jusqu'&agrave; obtenir ce que je souhaitais. J'attends bien entendu les remarques &eacute;ventuelles des futurs utilisateurs.
+<FONT COLOR=#FF6633>\section</FONT><FONT COLOR=#00008B>{</FONT>D&eacute;tails du fichier<FONT COLOR=#00008B>}</FONT>
+Ce fichier fait appel aux fichiers :
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT><FONT COLOR=#00008B>{</FONT>\sc constantes.mp<FONT COLOR=#00008B>}</FONT> qui, comme son nom l'indique, contient les diff&eacute;rents param&egrave;tres n&eacute;cessaires aux trac&eacute;s (couleurs, unit&eacute;s de longueur,\ldots).\\Les constantes disponibles sont <FONT COLOR=#669933>$</FONT>\pi<FONT COLOR=#669933>$</FONT>, <FONT COLOR=#669933>$</FONT>e<FONT COLOR=#669933>$</FONT>, <FONT COLOR=#669933>$</FONT>c<FONT COLOR=#669933>$</FONT> la conversion d'un radian en degr&eacute;s.\\Les couleurs disponibles sont rouge, bleu, vert, kaki, blanc, noir, orange, violet, rose, ciel, orangevif, jaune et gris. Elles s'utilisent avec ces noms francis&eacute;s.
+<FONT COLOR=#0000FF>\item</FONT><FONT COLOR=#00008B>{</FONT>\sc papiers2.mp<FONT COLOR=#00008B>}</FONT> qui permet de produire\footnote<FONT COLOR=#00008B>{</FONT>Voir la page \pageref<FONT COLOR=#00008B>{</FONT>papiers<FONT COLOR=#00008B>}</FONT> pour conna&icirc;tre les commandes disponibles.<FONT COLOR=#00008B>}</FONT> diff&eacute;rents types de papiers (millim&eacute;tr&eacute;, <FONT COLOR=#669933>$</FONT>5\times5<FONT COLOR=#669933>$</FONT>, isom&eacute;trique, \ldots)
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+et &agrave; plusieurs fichiers de base de MetaPost.
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Environnement g&eacute;n&eacute;ral de la figure.<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT> La macro \verb+figure(xa,xb,ya,yb)+ va limiter tout le sch&eacute;ma &agrave; l'int&eacute;rieur d'un cadre dont le sommet inf&eacute;rieur gauche a pour coordonn&eacute;es <FONT COLOR=#669933>$</FONT>(x_a,y_a)<FONT COLOR=#669933>$</FONT> et le sommet sup&eacute;rieur droit <FONT COLOR=#669933>$</FONT>(x_b,y_b)<FONT COLOR=#669933>$</FONT>. A noter que cette macro a une indentation automatique : plusieurs figures avec pour extension .1, .2, \ldots peuvent &ecirc;tre cr&eacute;ees les unes &agrave; la suite des autres.
+\\Avec cette macro, le code du sch&eacute;ma devra se conclure par \verb+fin;+.
+\\Cette macro permet un <FONT COLOR=#00008B>{</FONT>\em trac&eacute; classique<FONT COLOR=#00008B>}</FONT> des figures contrairement &agrave; la macro suivante.
+<FONT COLOR=#0000FF>\item</FONT> La macro \verb+figuremainlevee(xa,xb,ya,yb)+, tout comme la pr&eacute;c&eacute;dente, va limiter tout le sch&eacute;ma &agrave; l'int&eacute;rieur d'un cadre dont le sommet inf&eacute;rieur gauche a pour coordonn&eacute;es <FONT COLOR=#669933>$</FONT>(x_a,y_a)<FONT COLOR=#669933>$</FONT> et le sommet sup&eacute;rieur droit <FONT COLOR=#669933>$</FONT>(x_b,y_b)<FONT COLOR=#669933>$</FONT>.
+\\Avec cette macro, le code du sch&eacute;ma devra se conclure par \verb+finmainlevee;+ ; MetaPost repassant alors imm&eacute;diatement en mode \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>classique\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>. Cela permet de m&eacute;langer les diff&eacute;rents types de figures au sein d'un m&ecirc;me fichier.
+\\Cette macro permet un <FONT COLOR=#00008B>{</FONT><FONT COLOR=#0000FF><FONT COLOR=#0000FF><B>\bf</B></FONT></FONT>\em trac&eacute; &agrave; mainlev&eacute;e<FONT COLOR=#00008B>}</FONT>.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+J'ai choisi cette possibilit&eacute; pour obtenir des codes qui ne changent pas en fonction du trac&eacute; voulu : seuls changent les macros qui cadrent la figure elle-m&ecirc;me. Avec le \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>m&ecirc;me code\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>, on peut obtenir deux figures diff&eacute;rents d'aspects mais pr&eacute;sentant les m&ecirc;mes caract&eacute;ristiques.
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>7cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,5cm,5cm);
+...
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>7cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figuremainlevee(0,0,5cm,5cm);
+...
+finmainlevee;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>7cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.2<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule
+\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>7cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.3<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Affichage.<FONT COLOR=#00008B>}</FONT>
+Pour l'affichage des points, on dispose d'un param&egrave;tre \verb+marque_p+ qui peut  prendre les valeurs suivantes :
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[rien] : dans ce cas, aucun pointage (valeur par d&eacute;faut) ;
+<FONT COLOR=#0000FF>\item</FONT>[plein] : dans ce cas, on pointe avec un disque noir ;
+<FONT COLOR=#0000FF>\item</FONT>[creux] : dans ce cas, on pointe avec un cercle ;
+<FONT COLOR=#0000FF>\item</FONT>[croix] : dans ce cas, on pointe avec une croix.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+Une fois ce choix fait, on peut rep&eacute;rer un point de deux fa&ccedil;ons :
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[pointe(A,B,C,\ldots)] permet de rep&eacute;rer les points avec le type de marquage choisi sans les nommer,
+<FONT COLOR=#0000FF>\item</FONT>[nomme.pos(A)] permet de rep&eacute;rer le point <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT> avec le type de marquage choisi en le nommant &agrave; la position <FONT COLOR=#00008B>{</FONT>\em pos<FONT COLOR=#00008B>}</FONT>\footnote<FONT COLOR=#00008B>{</FONT>Ce sont les positions classiques de MetaPost : llft,lft,ulft,top,urt,rt,lrt,bot<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+On trouvera &eacute;galement les macros francis&eacute;es \verb+trace+ et \verb+remplis+ pour remplacer respectivement \verb+draw+ et \verb+fill+.
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics[scale=1.25]<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.4<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics[scale=1.25]<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.5<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,7u,6u);
+pair A,B,C,D;
+path cc,cd;
+A=u*(1,1);
+B=u*(6,1);
+cc=cercledia(A,B);
+cd=arccercle(B,A,iso(A,B));
+C=pointarc(cc,30);
+D=pointarc(cc,120);
+remplis (C--arccercle(C,D,iso(A,B))--cycle)
+ withcolor jaune;
+trace A--B;
+trace cd;
+trace A--C--D;
+trace codeperp(A,C,B,5);
+marque_p:="plein";
+nomme.llft(A);
+pointe(D);
+marque_p:="creux";
+nomme.lrt(B);
+marque_p:="croix";
+nomme.urt(C);
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Diff&eacute;rents types de codage.<FONT COLOR=#00008B>}</FONT>
+Voici la liste des codages disponibles, ils sont tous &agrave; utiliser avec la commande \verb+trace+ :
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[Angle droit] : \verb+codeperp(A,B,C,5)+ produit un angle droit en <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT> avec pour \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>&eacute;paisseur\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT> 5.
+<FONT COLOR=#0000FF>\item</FONT>[longueurs &eacute;gales] : \verb+codesegments(A,B,C,D,n)+ code les segments <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT> et <FONT COLOR=#669933>$</FONT>[CD]<FONT COLOR=#669933>$</FONT> avec le codage d'ordre <FONT COLOR=#669933>$</FONT>n<FONT COLOR=#669933>$</FONT> : 1, 2, 3 pour autant de traits, 4 pour la croix et 5 pour le cercle.
+<FONT COLOR=#0000FF>\item</FONT>[Codage d'un angle] : \verb+codeangle.pos(A,B,C,2,5mm,btex nom etex)+ produit un codage de l'an\-gle <FONT COLOR=#669933>$</FONT>\widehat<FONT COLOR=#00008B>{</FONT>ABC<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT> donn&eacute; dans le sens direct par 2 arcs de cercles dont le premier est situ&eacute; &agrave; <FONT COLOR=#669933>$</FONT>5\,mm<FONT COLOR=#669933>$</FONT> du sommet <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT> et dont le nom est plac&eacute; dans la position pos par rapport au \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>milieu\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT> des arcs de cercles.
+<FONT COLOR=#0000FF>\item</FONT>[Marquage d'un angle form&eacute; par 3 points] : \verb+marqueangle(A,B,C,2)+ produit un co\-da\-ge de l'an\-gle <FONT COLOR=#669933>$</FONT>\widehat<FONT COLOR=#00008B>{</FONT>ABC<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT> donn&eacute; dans le sens direct par 1 arc de cercle et 2 tirets sur cet arc. Le rayon de l'arc de cercle cr&eacute;e (par cette macro et les deux suivantes) est donn&eacute; par \verb+marque_a+ valant 20 par d&eacute;faut.
+<FONT COLOR=#0000FF>\item</FONT>[Marquage d'un angle form&eacute; par deux demi-droites] : \verb+Marqueangle(aa,bb,2)+ produit un codage de l'angle form&eacute; par les demi-droites <FONT COLOR=#669933>$</FONT>[aa)<FONT COLOR=#669933>$</FONT> et <FONT COLOR=#669933>$</FONT>[bb)<FONT COLOR=#669933>$</FONT> donn&eacute; dans le sens direct par 1 arc de cercle et 2 tirets sur cet arc.
+\\Cette macro est apparue n&eacute;cessaire pour le codage des angles form&eacute;s par une bissectrice, dans le cadre d'une figure &agrave; main lev&eacute;e. La bissectrice &eacute;tant construite de mani&egrave;re \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>al&eacute;atoire\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT> &agrave; chaque appel de la macro, il faudra la d&eacute;clarer avant utilisation.
+<FONT COLOR=#0000FF>\item</FONT>[Coloriage d'un angle form&eacute; par 3 points] : \verb+coloreangle(A,B,C)+ permet de construire un chemin ferm&eacute; qui devient donc coloriable.
+<FONT COLOR=#0000FF>\item</FONT>[Codage de 2 droites parall&egrave;les] : \verb+marque_para(d1,d2,0.75)+ indique par deux fl&egrave;ches coup&eacute;s par le symbole parall&egrave;le au milieu, que les droites <FONT COLOR=#669933>$</FONT>(d_1)<FONT COLOR=#669933>$</FONT> et <FONT COLOR=#669933>$</FONT>(d_2)<FONT COLOR=#669933>$</FONT> le sont ; 0.75 repr&eacute;sentant la position de la fl&egrave;che sur la premi&egrave;re droite.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.6<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.7<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,8u,8u);
+pair A,B,C,I,H;
+trace triangleqcq(A,B,C);
+I=milieu(A,B);
+H=projection(C,A,B);
+trace segment(C,H);
+trace codesegments(B,I,I,A,2);
+trace codeperp(C,H,B,8);
+trace codeangle.ulft(C,B,A,1,btex 45\degres etex);
+trace marqueangle(A,C,B,2);
+trace Marqueangle(demidroite(A,B),demidroite(A,C),0);
+nomme.llft(A);
+nomme.lrt(B);
+nomme.ulft(C);
+marque_p:="plein";
+pointe(I);
+marque_p:="non";
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Points.<FONT COLOR=#00008B>}</FONT>
+Quelques macros pour d&eacute;finir des points particuliers simplement :
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[iso(A,B,C,\ldots)] construit l'isobarycentre des points <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT>, <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT>, <FONT COLOR=#669933>$</FONT>C<FONT COLOR=#669933>$</FONT>, \ldots (uniquement dans le cas classique du trac&eacute;) ;
+<FONT COLOR=#0000FF>\item</FONT>[milieu(A,B)] construit le milieu du segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT>. Dans le trac&eacute; &agrave; \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>main lev&eacute;e\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>, il y a un d&eacute;calage al&eacute;atoire &agrave; chaque appel de cette macro. Il faut donc d&eacute;finir le point pr&eacute;cis&eacute;ment si on veut le r&eacute;utiliser par la suite. (Voir exemple ci-dessus).
+<FONT COLOR=#0000FF>\item</FONT>[projection(M,A,B)] construit le projet&eacute; orthogonal de <FONT COLOR=#669933>$</FONT>M<FONT COLOR=#669933>$</FONT> sur la droite <FONT COLOR=#669933>$</FONT>(AB)<FONT COLOR=#669933>$</FONT>. Ici aussi, lors d'un trac&eacute; &agrave; main lev&eacute;e, il y a un d&eacute;calage al&eacute;atoire &agrave; chaque appel.
+<FONT COLOR=#0000FF>\item</FONT>[CentreCercleC(A,B,C)] construit le centre du cercle circonscrit au triangle <FONT COLOR=#669933>$</FONT>ABC<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[Orthocentre(A,B,C)] construit l'orthocentre du triangle <FONT COLOR=#669933>$</FONT>ABC<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[CentreCercleI(A,B,C)] construit le centre du cercle inscrit au triangle <FONT COLOR=#669933>$</FONT>ABC<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics[scale=0.65]<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.8<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics[scale=0.65]<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.9<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,12u,12u);
+pair A,B,C,O,H,G,I;
+A=u*(1,1);
+B=u*(11,1);
+C=u*(5,8);
+trace triangle(A,B,C);
+O=CentreCercleC(A,B,C);
+H=Orthocentre(A,B,C);
+G=iso(A,B,C);
+I=CentreCercleI(A,B,C);
+marque_p:="plein";
+nomme.top(G);
+nomme.llft(H);
+nomme.top(O);
+nomme.top(I);
+trace cercles(A,B,C);
+trace C--projection(C,A,B) dashed evenly;
+trace B--projection(B,A,C) dashed evenly;
+trace codeperp(B,projection(B,A,C),C,5);
+trace codeperp(C,projection(C,A,B),B,5);
+trace cercles(I,projection(I,A,B));
+marque_p:="non";
+nomme.llft(A);
+nomme.lrt(B);
+nomme.top(C);
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Cercles.<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[cercledia(A,B)] construit le cercle de diam&egrave;tre <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[cercles(<FONT COLOR=#00008B>{</FONT>\em expression<FONT COLOR=#00008B>}</FONT>)] peut construire trois types de cercles :
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[cercles(A,2cm)] construis le cercle de centre <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT> et de rayon <FONT COLOR=#669933>$</FONT>2\,cm<FONT COLOR=#669933>$</FONT>;
+<FONT COLOR=#0000FF>\item</FONT>[cercles(F,G)] construis le cercle de centre <FONT COLOR=#669933>$</FONT>F<FONT COLOR=#669933>$</FONT> et passant par <FONT COLOR=#669933>$</FONT>G<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[cercles(A,G,D)] construis le cercle circonscrit au triangle <FONT COLOR=#669933>$</FONT>AGD<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[pointarc(cc,45)] d&eacute;termine le point du cercle \verb+cc+ qui a pour angle par rapport &agrave; l'horizontale 45°.
+<FONT COLOR=#0000FF>\item</FONT>[arccercle(A,B,0)] construit l'arc de cercle de centre <FONT COLOR=#669933>$</FONT>O<FONT COLOR=#669933>$</FONT> et allant de <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT> &agrave; <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT> dans le sens direct; <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT> et <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT> &eacute;tant sur un m&ecirc;me cercle. A noter que quel que soit le type de trac&eacute; choisi, le dessin sera le m&ecirc;me.
+<FONT COLOR=#0000FF>\item</FONT>[Arc de cercle intervenant dans une construction] (pour le report de longueur par exemple) : \verb+coupdecompas(A,B,10)+ permet de construire un arc de cercle de centre <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT>, passant par <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT>, commen&ccedil;ant 10\degres avant l'angle du vecteur <FONT COLOR=#669933>$</FONT>\vecteur<FONT COLOR=#00008B>{</FONT>AB<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT> (en respectant les conventions de Metapost) et s'arr&ecirc;tant 10\degres apr&egrave;s cet angle.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.10<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.11<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(-3u,-u,8u,10u);
+pair A,B,C,D,E,O;
+O=u*(3.5,3.5);
+A=u*(1,1);
+path cc,cd;
+cc=cercles(O,A);
+trace cc withcolor orange;
+B=pointarc(cc,45);
+trace cercledia(A,B) withcolor rouge;
+trace cercles(B,1cm) withcolor jaune;
+cd=cercles(A,B);
+C=pointarc(cd,75);
+D=pointarc(cd,120);
+E=CentreCercleC(D,O,C);
+trace arccercle(C,D,E) withcolor violet;
+trace D--E--C dashed evenly;
+marque_p:="plein";
+nomme.lrt(E);
+nomme.top(A);
+nomme.top(B);
+nomme.top(C);
+nomme.top(D);
+nomme.top(O);
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Droites.<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[segment(A,B)] construit le segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[droite(A,B)] construit la droite <FONT COLOR=#669933>$</FONT>(AB)<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[demidroite(A,B)] construit la demi-droite <FONT COLOR=#669933>$</FONT>[AB)<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[bissectrice(A,B,C)] construit la bissectrice de l'angle <FONT COLOR=#669933>$</FONT>\widehat<FONT COLOR=#00008B>{</FONT>ABC<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT> donn&eacute; dans le sens direct. Dans le cas d'un dessin &agrave; main lev&eacute;e, une rotation al&eacute;atoire de la bissectrice est envisag&eacute;e. Il convient donc de la d&eacute;finir avant une r&eacute;utilisation ult&eacute;rieure.
+<FONT COLOR=#0000FF>\item</FONT>[mediatrice(A,B)] construit la m&eacute;diatrice du segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT>. Dans le cas d'une figure &agrave; main lev&eacute;e, comme le milieu est construit de mani&egrave;re \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>al&eacute;atoire\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT> &agrave; chaque appel, il peut ne pas y avoir correspondance : la m&eacute;diatrice ne passe pas forc&eacute;ment par le milieu pr&eacute;c&eacute;demment cr&eacute;e. Dans ce cas, il vaut mieux passer par la macro suivante en ayant eu soin de d&eacute;clarer le milieu du segment avant.
+<FONT COLOR=#0000FF>\item</FONT>[perpendiculaire(A,B,I)] construit la perpendiculaire &agrave; la droite <FONT COLOR=#669933>$</FONT>(AB)<FONT COLOR=#669933>$</FONT> passant par <FONT COLOR=#669933>$</FONT>I<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[parallele(A,B,I)] construit la parall&egrave;le &agrave; la droite <FONT COLOR=#669933>$</FONT>(AB)<FONT COLOR=#669933>$</FONT> passant par <FONT COLOR=#669933>$</FONT>I<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[triangleqcq(A,B,C)] construit un triangle <FONT COLOR=#669933>$</FONT>ABC<FONT COLOR=#669933>$</FONT> (avec d&eacute;finition des points <FONT COLOR=#669933>$</FONT>A<FONT COLOR=#669933>$</FONT>, <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT>, <FONT COLOR=#669933>$</FONT>C<FONT COLOR=#669933>$</FONT> et appel ult&eacute;rieur possible de ces points) qui est \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>vraiment\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT> quelconque au sens qu'il ne poss&egrave;de aucune propri&eacute;t&eacute; particuli&egrave;re.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+\par
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics[scale=0.75]<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.12<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+\hfill\vrule\hfill
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT><FONT COLOR=#00008B>{</FONT>8cm<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics[scale=0.75]<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.13<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>minipage<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,8u,8u);
+pair A,B,C,D;
+A=u*(1,1);
+B=u*(7,4);
+C=u*(4,6);
+trace droite(A,B);
+trace parallele(A,B,C);
+trace mediatrice(A,B);
+D=u*(2,5);
+trace perpendiculaire(A,B,D);
+nomme.top(A);
+nomme.top(B);
+nomme.top(C);
+nomme.top(D);
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Transformations.<FONT COLOR=#00008B>}</FONT>
+Dans ce qui suit, <FONT COLOR=#00008B>{</FONT>\em objet<FONT COLOR=#00008B>}</FONT> repr&eacute;sente un objet connu de MetaPost (un point, un chemin, une figure,\ldots)
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[rotation(<FONT COLOR=#00008B>{</FONT>\em objet<FONT COLOR=#00008B>}</FONT>,O,60)] construit l'image de l'objet par la rotation de centre <FONT COLOR=#669933>$</FONT>O<FONT COLOR=#669933>$</FONT> et d'angle 60° dans le sens direct.
+<FONT COLOR=#0000FF>\item</FONT>[Symetrie(<FONT COLOR=#00008B>{</FONT>\em expression<FONT COLOR=#00008B>}</FONT>)] permet de construire 2 types d'image par sym&eacute;trie:
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[symetrie(<FONT COLOR=#00008B>{</FONT>\em objet<FONT COLOR=#00008B>}</FONT>,B)] image de l'objet par la sym&eacute;trie centrale de centre <FONT COLOR=#669933>$</FONT>B<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[symetrie(<FONT COLOR=#00008B>{</FONT>\em objet<FONT COLOR=#00008B>}</FONT>,B,C)] image de l'objet par la sym&eacute;trie axiale d'axe <FONT COLOR=#669933>$</FONT>(BC)<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.14<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,20u,10u);
+pair A,B,C,D,O;
+A=u*(1,1);
+B=u*(6,5);
+O=u*(5,5);
+C=u*(7,4);
+path ima;
+pair W[];
+W1=u*(1,4);
+ima=u*(1,4)--u*(2,6)..u*(3,7)..u*(2.5,5)..cycle;
+remplis ima withcolor violet;
+trace rotation(ima,O,-60);
+trace symetrie(ima,C);
+trace symetrie(ima,A,B);
+trace arccercle(rotation(W1,O,-60),W1,O)
+ dashed evenly;
+trace W1--O--rotation(W1,O,-60) dashed evenly;
+trace W1--symetrie(W1,C) dashed evenly;
+trace W1--symetrie(W1,A,B) dashed evenly;
+trace droite(A,B);
+marque_p:="croix";
+nomme.top(A);
+nomme.top(B);
+nomme.bot(O);
+nomme.top(C);
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Sucres<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[hachurage(chemin, angle, ecart, type de hachures)] permet d'hachurer <FONT COLOR=#00008B>{</FONT>\em un chemin<FONT COLOR=#00008B>}</FONT> <FONT COLOR=#00008B>{</FONT><FONT COLOR=#0000FF><FONT COLOR=#0000FF><B>\bf</B></FONT></FONT> ferm&eacute;<FONT COLOR=#00008B>}</FONT> avec des hachures faisant un <FONT COLOR=#00008B>{</FONT>\em angle<FONT COLOR=#00008B>}</FONT> par rapport &agrave; l'horizontale, hachures espac&eacute;es d'un <FONT COLOR=#00008B>{</FONT>\em ecart<FONT COLOR=#00008B>}</FONT> et avec un certain style de tra&ccedil;age : 0 correspond &agrave; un trait continu, 1 un trait pointill&eacute;, 2 un trait d'axe.
+<FONT COLOR=#0000FF>\item</FONT>[cotation(A,B,2mm,3mm,btex nom etex)] trace une fl&egrave;che de cotation pour le segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT> situ&eacute;e &agrave; 2mm au dessus du segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT> et une c&ocirc;te <FONT COLOR=#00008B>{</FONT>\em nom<FONT COLOR=#00008B>}</FONT> situ&eacute;e &agrave; 3mm au dessus de la fl&egrave;che de cotation. On peut bien s&ucirc;r plac&eacute; la fl&egrave;che et la c&ocirc;te de mani&egrave;re \og<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>n&eacute;gative\fg<FONT COLOR=#00008B>{</FONT><FONT COLOR=#00008B>}</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[appelation(A,B,2mm,btex nom etex)] permet de nommer la longueur du segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT> avec <FONT COLOR=#00008B>{</FONT>\em nom<FONT COLOR=#00008B>}</FONT> situ&eacute; &agrave; <FONT COLOR=#669933>$</FONT>2\,mm<FONT COLOR=#669933>$</FONT> au dessus du segment <FONT COLOR=#669933>$</FONT>[AB]<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[cotationmil(A,B,2mm,20,btex nom etex)] m&ecirc;me chose que cotation sauf que la c&ocirc;te est plac&eacute;e au milieu de la fl&egrave;che; pour cela, on a laiss&eacute; un ecart de 2Opt autour du milieu de la fl&egrave;che.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>\includegraphics<FONT COLOR=#00008B>{</FONT>docgeometriesyr15.15<FONT COLOR=#00008B>}</FONT><FONT COLOR=#669933>$</FONT><FONT COLOR=#669933>$</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+figure(0,0,15u,15u);
+pair A,B,C,M,N,R;
+A=u*(7,7);
+B=u*(13,7);
+path cc,cd,ce;
+cc=cercles(A,B);
+cd=cercles(B,A);
+M=cc intersectionpoint cd;
+N=symetrie(M,A,B);
+R=pointarc(cd,180);
+trace B--R;
+ce=arccercle(M,N,A)--reverse(arccercle(M,N,B))--cycle;
+trace hachurage(ce,60,0.3,1);
+trace cc;
+trace cd;
+marque_p:="plein";
+pointe(R,M,N,B);
+trace cotation(M,B,0,2mm,btex rayon etex);
+trace cotationmil(N,B,0,30,btex rayon etex);
+trace appelation(R,B,2mm,btex rayon etex);
+fin;
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+\newpage
+<FONT COLOR=#FF6633>\section</FONT><FONT COLOR=#00008B>{</FONT>Documentation sur papiers2.mp<FONT COLOR=#00008B>}</FONT>\label<FONT COLOR=#00008B>{</FONT>papiers<FONT COLOR=#00008B>}</FONT>
+Ce fichier, qui doit &ecirc;tre utilis&eacute; avec geometriesyr15.mp, permet de construire diff&eacute;rents types de papiers (millim&eacute;tr&eacute;, <FONT COLOR=#669933>$</FONT>5\times5<FONT COLOR=#669933>$</FONT>, isom&eacute;trique,\ldots)
+\\Le papier demand&eacute; sert en fait de fond d'&eacute;cran pour le fichier image : en effet, le papier s'inscrira compl&egrave;tement dans le cadre cr&eacute;e &agrave; l'occasion de l'utilisation de la commande \verb+figure(xa,ya,xb,yb)+.
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Types de papier<FONT COLOR=#00008B>}</FONT>
+Ils s'obtiennent tous avec la commande \verb+trace+ (ou \verb+draw+).
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[papier millim&eacute;tr&eacute;] : \verb+papiermillimetre+ ;
+<FONT COLOR=#0000FF>\item</FONT>[papier <FONT COLOR=#669933>$</FONT>5\times5<FONT COLOR=#669933>$</FONT>] : \verb+grille(0.5)+ (d'autres utilisations sont possibles, papier <FONT COLOR=#669933>$</FONT>10\times10<FONT COLOR=#669933>$</FONT> par exemple) ;
+<FONT COLOR=#0000FF>\item</FONT>[papier cahier (grand carreaux)] : \verb+papiercahier+ ;
+<FONT COLOR=#0000FF>\item</FONT>[papier point&eacute;] : \verb+papierpointe+ ;
+<FONT COLOR=#0000FF>\item</FONT>[papier triangulaire] : \verb+papiertriangle+ ;
+<FONT COLOR=#0000FF>\item</FONT>[papier isom&eacute;trique] : \verb+papierisometrique+ ;
+<FONT COLOR=#0000FF>\item</FONT>[papier isom&eacute;trique point&eacute;] : \verb+papierisometriquepointe+ ;
+<FONT COLOR=#0000FF>\item</FONT>[pavage hexagonal] : \verb+papierhexagonal+.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>description<FONT COLOR=#00008B>}</FONT>
+Tous ces papiers g&eacute;n&egrave;rent des unit&eacute;s horizontales, verticales ou plus originales pour les papiers triangulaires et hexagonaux. Cela nous sera utile pour certaines macros.
+<FONT COLOR=#FF6633>\subsection</FONT><FONT COLOR=#00008B>{</FONT>Autres fonctions<FONT COLOR=#00008B>}</FONT>
+Ce qui suit est valable essentiellement pour les papiers millim&eacute;tr&eacute;s et les grilles.
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] On peut ais&eacute;ment d&eacute;finir une origine par \verb+origine((xO,yO));+ qui va plac&eacute; l'origine d'un rep&egrave;re au point de coordonn&eacute;es <FONT COLOR=#669933>$</FONT>(x_O;y_O)<FONT COLOR=#669933>$</FONT> dans les unit&eacute;s du papier choisi. Par d&eacute;faut, l'origine est plac&eacute; dans le coin en bas &agrave; gauche du sch&eacute;ma.
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] Une fois ceci fait, on peut red&eacute;finir les unit&eacute;s suivants les axes par \verb+unites(ux,uy)+ o&ugrave; <FONT COLOR=#669933>$</FONT>u_x<FONT COLOR=#669933>$</FONT> et <FONT COLOR=#669933>$</FONT>u_y<FONT COLOR=#669933>$</FONT> sont les unit&eacute;s choisies par l'utilisateur.
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] \verb+placepoint(xA,yA)+ va placer, dans le rep&egrave;re choisi par l'utilisateur (origine et unit&eacute;s) le point de coordonn&eacute;es <FONT COLOR=#669933>$</FONT>(x_A,y_A)<FONT COLOR=#669933>$</FONT>.
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] \verb+trace axes+ permet de tracer les axes des abscisses et des ordonn&eacute;es choisis par l'utilisateur.
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] Pour la graduation des axes, on dispose d'un marqueur \verb+marque_axe+ qui permet de choisir une graduation minimale (rep&egrave;re des unit&eacute;s seules) en le positionnant par \verb+marque_axe:=''simple''+ (valeur par d&eacute;faut) ou une graduation compl&egrave;te (rep&egrave;re de tous les multi\-ples des unit&eacute;s) par \verb+marque_axe:=''complete''+. On utilise les graduations par \verb+graduantx+ et<FONT COLOR=#669933>$</FONT>\backslash<FONT COLOR=#669933>$</FONT>ou \verb+graduanty+.
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] Pour le papier triangulaire, on dispose de \verb+placepointtri(a,b)+ qui place le point dans le rep&egrave;re du papier triangulaire.
+<FONT COLOR=#0000FF>\item</FONT>[<FONT COLOR=#669933>$</FONT>\bullet<FONT COLOR=#669933>$</FONT>] Pour le papier hexagonal, on dispose de \verb+reperehexa(col,lign)+ qui rep&egrave;re l'hexagone situ&eacute; dans la colonne \verb+col+ et &agrave; la ligne \verb+lign+. On dispose &eacute;galement de \verb+Centrehexa(col,lign)+ qui permet d'inscrire ou dessiner au centre de l'hexagone  situ&eacute; dans la colonne \verb+col+ et &agrave; la ligne \verb+lign+.
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>itemize<FONT COLOR=#00008B>}</FONT>
+\newpage
+\appendix
+<FONT COLOR=#FF6633>\section</FONT><FONT COLOR=#00008B>{</FONT>Fichier geometriesyr15.mp<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\begin</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#FF0000>%%===============================================</FONT>
+<FONT COLOR=#FF0000>%% GEOMETRIESYR.MP</FONT>
+<FONT COLOR=#FF0000>%% christophe.poulain@melusine.eu.org</FONT>
+<FONT COLOR=#FF0000>%% Cr&eacute;ation : 19 F&eacute;vrier 2003</FONT>
+<FONT COLOR=#FF0000>%% Derni&egrave;re modification : 26 Ao&ucirc;t 2004</FONT>
+<FONT COLOR=#FF0000>%%===============================================</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Appel fichier</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+input constantes;
+input papiers2;
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% La figure (d&eacute;but et fin) JMS/CP</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+path feuillet;
+numeric _tfig,_nfig;
+pair coinbg,coinbd,coinhd,coinhg;
+_nfig:=0;
+
+string typetrace;
+typetrace="normal";
+
+def feuille(expr xa,ya,xb,yb) =
+  feuillet := (xa,ya)--(xa,yb)--(xb,yb)--(xb,ya)--cycle;
+  coinbg := (xa,ya);
+  coinbd := (xb,ya);
+  coinhd := (xb,yb);
+  coinhg := (xa,yb);
+  z.so=coinbg;
+  z.ne=coinhd;
+  extra_endfig := "clip currentpicture to feuillet;" & extra_endfig;
+enddef;
+def figure(expr xa,ya,xb,yb) =
+  _nfig:=_nfig+1;
+    beginfig(_nfig);
+    feuille(xa,ya,xb,yb);
+    _tfig:= if (xb-xa)&gt;(yb-ya): xb-xa else: yb-ya fi;
+  enddef;
+
+def figuremainlevee(expr xa,ya,xb,yb) =
+  _nfig:=_nfig+1;
+  typetrace:="mainlevee";
+  beginfig(_nfig);
+    feuille(xa,ya,xb,yb);
+    _tfig:= if (xb-xa)&gt;(yb-ya): xb-xa else: yb-ya fi;
+enddef;
+
+def fin =
+  endfig;
+enddef;
+
+def finmainlevee=
+endfig;
+typetrace:="normal";
+enddef;
+
+<FONT COLOR=#FF0000>%%-----------------------------------------------</FONT>
+<FONT COLOR=#FF0000>%% Les marques (JMS)</FONT>
+<FONT COLOR=#FF0000>%%-----------------------------------------------</FONT>
+string marque_p;
+marque_p := "non";
+marque_r := 20;
+marque_a := 20;
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Les tables</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+numeric _tn;
+_tn:=0;
+pair _t[];
+<FONT COLOR=#FF0000>%%-----------------------------------------------</FONT>
+<FONT COLOR=#FF0000>%% Proc&eacute;dures d'affichage</FONT>
+<FONT COLOR=#FF0000>%%-----------------------------------------------</FONT>
+def MarquePoint(expr p)=
+  <FONT COLOR=#FF0000>%JMS</FONT>
+  if marque_p = "plein":
+    fill fullcircle scaled (marque_r/5) shifted p;
+  elseif marque_p = "creux":
+    fill fullcircle scaled (marque_r/5) shifted p withcolor white;
+    draw fullcircle scaled (marque_r/5) shifted p;
+  <FONT COLOR=#FF0000>%fin JMS</FONT>
+  elseif marque_p = "croix":
+    draw (p shifted (-u/10,u/10))--(p shifted (u/10,-u/10));
+    draw (p shifted (-u/10,-u/10))--(p shifted (u/10,u/10));
+  fi
+enddef;
+<FONT COLOR=#FF0000>%JMS</FONT>
+vardef pointe(text t) =
+  for p_ = t: if pair p_: MarquePoint(p_); fi endfor;
+enddef;
+vardef nomme@#(suffix p)=
+  MarquePoint(p);
+  label.@#(str p,p);
+enddef;
+def trace expr o =
+    if path o: draw o else: draw o fi
+enddef;
+def remplis expr o =
+    if path o: fill o else: fill o fi
+enddef;
+vardef triangle(expr aa,bb,cc)=
+  if typetrace="mainlevee":
+    save <FONT COLOR=#669933>$</FONT>;
+    picture <FONT COLOR=#669933>$</FONT>;
+    <FONT COLOR=#669933>$</FONT>=image(
+      trace aa<FONT COLOR=#00008B>{</FONT>dir(angle(bb-aa)+5)<FONT COLOR=#00008B>}</FONT>..bb<FONT COLOR=#00008B>{</FONT>dir(angle(bb-aa)+5)<FONT COLOR=#00008B>}</FONT>;
+      trace cc<FONT COLOR=#00008B>{</FONT>dir(angle(bb-cc)+5)<FONT COLOR=#00008B>}</FONT>..bb<FONT COLOR=#00008B>{</FONT>dir(angle(bb-cc)+5)<FONT COLOR=#00008B>}</FONT>;
+      trace aa<FONT COLOR=#00008B>{</FONT>dir(angle(cc-aa)+5)<FONT COLOR=#00008B>}</FONT>..cc<FONT COLOR=#00008B>{</FONT>dir(angle(cc-aa)+5)<FONT COLOR=#00008B>}</FONT>;
+      );
+  else:
+    save <FONT COLOR=#669933>$</FONT>;
+    path <FONT COLOR=#669933>$</FONT>;
+    <FONT COLOR=#669933>$</FONT>=aa--bb--cc--cycle;
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+<FONT COLOR=#FF0000>%fin JMS</FONT>
+vardef bary(expr a,b,c,d)=
+  save <FONT COLOR=#669933>$</FONT>;
+  pair <FONT COLOR=#669933>$</FONT>;
+  numeric t[];
+  t1=uniformdeviate(1);
+  t2=uniformdeviate(1);
+  t3=uniformdeviate(1);
+  t4=uniformdeviate(1);
+  <FONT COLOR=#669933>$</FONT>=(1/(t1+t2+t3+t4))*(t1*a+t2*b+t3*c+t4*d);
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+vardef triangleqcq(text t)=
+  save <FONT COLOR=#669933>$</FONT>;
+  pair pointchoisi[];
+  pointchoisi1:=bary(coinbg,1/4[coinbg,coinbd],iso(coinbg,iso(coinhg,coinhd)),
+iso(coinhg,coinbg));
+  pointchoisi2:=bary(coinbd,3/4[coinbg,coinbd],iso(coinbd,iso(coinhg,coinhd)),
+iso(coinhd,coinbd));
+  test:=uniformdeviate(1);
+  choix:=43+uniformdeviate(4);
+  ecart:=abs(45-choix);
+  relation:=60-(ecart/2)+uniformdeviate(ecart);
+  if test&lt;0.5 :
+    pointchoisi3:=droite(pointchoisi1,rotation(pointchoisi2,pointchoisi1,choix))
+intersectionpoint droite(pointchoisi2,rotation(pointchoisi1,pointchoisi2,
+-relation));
+  else :
+    pointchoisi3:=droite(pointchoisi2,rotation(pointchoisi1,pointchoisi2,-choix))
+intersectionpoint droite(pointchoisi1,rotation(pointchoisi2,pointchoisi1,
+relation));
+  fi
+  j:=1;
+  for p_=t:
+    p_=pointchoisi[j];
+    j:=j+1;
+  endfor;
+  if typetrace="mainlevee":
+    picture <FONT COLOR=#669933>$</FONT>;
+  else:
+    path <FONT COLOR=#669933>$</FONT>;
+  fi;
+  <FONT COLOR=#669933>$</FONT>=polygone(pointchoisi1,pointchoisi2,pointchoisi3);
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef polygone(text t)=
+  pair aaa[];
+  j:=0;
+  for p_=t: if pair p_:
+      j:=j+1;
+      aaa[j]=p_;
+    fi;
+  endfor;
+  aaa[j+1]:=aaa[1];
+  if typetrace="mainlevee":
+    save <FONT COLOR=#669933>$</FONT>;
+    picture <FONT COLOR=#669933>$</FONT>;
+    <FONT COLOR=#669933>$</FONT>=image(
+      for k=1 upto j:
+        trace segment(aaa[k],aaa[k+1]);
+      endfor;
+      );
+  else:
+    save <FONT COLOR=#669933>$</FONT>;
+    path <FONT COLOR=#669933>$</FONT>;
+    <FONT COLOR=#669933>$</FONT>=aaa1--
+    for k=2 upto j:
+      aaa[k]--
+    endfor
+    cycle;
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef chemin(text t)=
+  pair aaa[];
+  j:=0;
+  for p_=t: if pair p_:
+      j:=j+1;
+      aaa[j]=p_;
+    fi;
+  endfor;
+  if typetrace="mainlevee":
+    save <FONT COLOR=#669933>$</FONT>;
+    picture <FONT COLOR=#669933>$</FONT>;
+    <FONT COLOR=#669933>$</FONT>=image(
+      for k=1 upto (j-1):
+        trace segment(aaa[k],aaa[k+1]);
+      endfor;
+      );
+  else:
+    save <FONT COLOR=#669933>$</FONT>;
+    path <FONT COLOR=#669933>$</FONT>;
+    <FONT COLOR=#669933>$</FONT>=aaa1
+    for k=2 upto j:
+      --aaa[k]
+    endfor;
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Proc&eacute;dures de codage</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>%Codage de l'angle droit de sommet B</FONT>
+vardef codeperp(expr aa,bb,cc,m)=<FONT COLOR=#FF0000>%normalement m=5</FONT>
+  (bb+m*unitvector(aa-bb))--(bb+m*unitvector(aa-bb)+m*unitvector(cc-bb))
+--(bb+m*unitvector(cc-bb))
+enddef;
+
+<FONT COLOR=#FF0000>%Codage d'un milieu</FONT>
+vardef codemil(expr AA,BB, n) =<FONT COLOR=#FF0000>%extr&ecirc;mit&eacute;s-angle de codage</FONT>
+  save <FONT COLOR=#669933>$</FONT>,a,b,c,d;
+  path <FONT COLOR=#669933>$</FONT>;
+  pair a,b,c,d;
+  a=1/2[AA,BB];
+  b=(a+2*unitvector(BB-AA))-(a-2*unitvector(BB-AA));
+  c=b rotated n shifted a;
+  d=2[c,a];
+  <FONT COLOR=#669933>$</FONT>=c--d;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+<FONT COLOR=#FF0000>%Codage de deux segments &eacute;gaux</FONT>
+vardef codesegments(expr AA,BB,CC,DD,n)=<FONT COLOR=#FF0000>%extr&eacute;mit&eacute;s des segments(4)-type de codage</FONT>
+  save <FONT COLOR=#669933>$</FONT>,v,w;
+  picture <FONT COLOR=#669933>$</FONT>;
+  <FONT COLOR=#669933>$</FONT>=image(
+    if n=5 :
+      draw fullcircle scaled 0.1cm shifted (1/2[AA,BB]);
+      draw fullcircle scaled 0.1cm shifted (1/2[CC,DD]);
+    elseif n=4 :
+      pair v,w;
+      v=1/2[AA,BB];
+      w=1/2[CC,DD];
+      draw codemil(AA,BB,60);
+      draw codemil(AA,BB,120);
+      draw codemil(CC,DD,60);
+      draw codemil(CC,DD,120);
+    elseif n=3 :
+      draw codemil(AA,BB,60);
+      draw codemil(AA,BB,60) shifted (2*unitvector(AA-BB));
+      draw codemil(AA,BB,60) shifted (2*unitvector(BB-AA));
+      draw codemil(CC,DD,60);
+      draw codemil(CC,DD,60) shifted (2*unitvector(CC-DD));
+      draw codemil(CC,DD,60) shifted (2*unitvector(DD-CC));
+    elseif n=2 :
+      draw codemil(AA,BB,60) shifted unitvector(AA-BB);
+      draw codemil(AA,BB,60) shifted unitvector(BB-AA);
+      draw codemil(CC,DD,60) shifted unitvector(CC-DD);
+      draw codemil(CC,DD,60) shifted unitvector(DD-CC);
+    elseif n=1 :
+      draw codemil(AA,BB,60);
+      draw codemil(CC,DD,60);
+    fi;
+    );
+    <FONT COLOR=#669933>$</FONT>
+enddef;
+<FONT COLOR=#FF0000>%Codage de l'angle abc non orient&eacute; (mais donn&eacute; dans le sens direct)</FONT>
+\<FONT COLOR=#FF0000>% n fois avec des mesures diff&eacute;rentes</FONT>
+vardef codeangle@#(expr aa,bb,cc,nb,nom)=
+  save s,p,<FONT COLOR=#669933>$</FONT>;
+  path p;
+  picture <FONT COLOR=#669933>$</FONT>;
+  <FONT COLOR=#669933>$</FONT>=image(
+    trace marqueangle(aa,bb,cc,nb);
+    label.@#(nom,w);
+    );
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef Marqueangle(expr aa,bb,mark)=<FONT COLOR=#FF0000>%codage d'un angle form&eacute; par les</FONT>
+<FONT COLOR=#FF0000>% demi-droites aa et bb dans le sens direct avec la marque mark</FONT>
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  path conf,rr;
+  pair w,tangent;
+  numeric t,tt;
+  conf=fullcircle scaled (2*marque_a) shifted (aa intersectionpoint bb);
+  numeric te;
+  te=angle((conf intersectionpoint aa)-(aa intersectionpoint bb));
+  rr=(conf intersectionpoint aa)<FONT COLOR=#00008B>{</FONT>dir(90+angle((conf intersectionpoint aa)-
+(aa intersectionpoint bb)))<FONT COLOR=#00008B>}</FONT>..(conf intersectionpoint bb);
+  t=length rr/2;
+  w=point(t) of rr;
+  tangent=unitvector(direction t of rr);
+  <FONT COLOR=#669933>$</FONT>=image(
+    trace rr;
+    if mark=1:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+    elseif mark=2:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted tangent;
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(-tangent);
+    elseif mark=3:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(1.5*tangent);
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(-1.5*tangent);
+    elseif mark=4:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,45);
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,-45);
+    fi;
+    );
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef marqueangle(expr aa,bb,cc,mark)=<FONT COLOR=#FF0000>%codage d'un angle de sommet bb</FONT>
+<FONT COLOR=#FF0000>% dans le sens direct par la marque mark.</FONT>
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  path conf,rr;
+  pair w,tangent;
+  numeric t;
+  if typetrace="mainlevee":
+    conf=fullcircle scaled (2*marque_a) shifted bb;
+    rr=(conf intersectionpoint demidroite(bb,aa))<FONT COLOR=#00008B>{</FONT>dir(90+angle(aa-bb))<FONT COLOR=#00008B>}</FONT>..
+(conf intersectionpoint demidroite(bb,cc));
+    w=rr intersectionpoint droite(bb,CentreCercleI(aa,bb,cc));
+    t=length rr/2;
+    tangent=unitvector(direction t of rr);
+    <FONT COLOR=#669933>$</FONT>=image(
+      trace rr;
+      if mark=1:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+      elseif mark=2:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted tangent;
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(-tangent);
+      elseif mark=3:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(1.5*tangent);
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(-1.5*tangent);
+      elseif mark=4:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,45);
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,-45);
+      fi;
+      );
+  else:
+    rr=arccercle(bb+marque_a*unitvector(aa-bb),bb+marque_a*unitvector(cc-bb),bb);
+    w=rr intersectionpoint droite(bb,CentreCercleI(aa,bb,cc));
+    t=length rr/2;
+    tangent=unitvector(direction t of rr);
+    <FONT COLOR=#669933>$</FONT>=image(
+      trace rr;
+      if mark=1:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+      elseif mark=2:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted tangent;
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(-tangent);
+      elseif mark=3:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(1.5*tangent);
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90)
+ shifted(-1.5*tangent);
+      elseif mark=4:
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,45);
+        trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,-45);
+      fi;
+      );
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef coloreangle(expr aa,bb,cc)=arccercle(bb+marque_a*unitvector(aa-bb),
+bb+marque_a*unitvector(cc-bb),bb)--bb--cycle
+enddef;
+
+vardef marque_para(expr dd,ee,pa)=
+  save im;
+  picture im;
+  pair kk,ll,mn,mo;
+  kk=point(pa*length dd) of dd;
+  ll=projection(kk,point(0.25*length ee) of ee,point(0.5*length ee) of ee);
+  mn=iso(kk,ll);
+  mo=(mn--kk) intersectionpoint cercles(mn,3mm);
+  im=image(
+    drawarrow mo--kk;
+    drawarrow symetrie(mo,mn)--ll;
+    label(btex <FONT COLOR=#669933>$</FONT>//<FONT COLOR=#669933>$</FONT> etex,mn);
+    );
+  im
+enddef;
+
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Points</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>%JMS</FONT>
+vardef iso(text t) =
+  save s,n; numeric n; pair s; s := (0,0) ; n := 0;
+  for p_ = t: s := s + p_; n := n + 1 ; endfor;
+  if n&gt;0: (1/n)*s fi
+enddef;
+
+vardef milieu(expr AA,BB)=
+  save <FONT COLOR=#669933>$</FONT>;
+  pair <FONT COLOR=#669933>$</FONT>;
+  if typetrace="mainlevee":
+    <FONT COLOR=#669933>$</FONT>=point((length segment(AA,BB))*(1/2+(-1+uniformdeviate(2))/10)) of
+ segment(AA,BB)
+  else:
+    <FONT COLOR=#669933>$</FONT>=iso(AA,BB)
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+<FONT COLOR=#FF0000>% -- projection de m sur (a,b)</FONT>
+vardef projection(expr m,a,b) =
+    save h; pair h;
+    h - m = whatever * (b-a) rotated 90;
+    h = whatever [a,b];
+    if typetrace="mainlevee":
+      h:=h shifted((-2+uniformdeviate(4))*unitvector(a-b))
+    fi;
+    h
+enddef;
+<FONT COLOR=#FF0000>% -- centre du cercle circonscrit</FONT>
+vardef CentreCercleC(expr a, b ,c) =
+    save o; pair o;
+    o - .5[a,b] = whatever * (b-a) rotated 90;
+    o - .5[b,c] = whatever * (c-b) rotated 90;
+    o
+enddef;
+<FONT COLOR=#FF0000>% -- orthocentre</FONT>
+vardef Orthocentre(expr a, b, c) =
+  save h; pair h;
+  h - a = whatever * (c-b) rotated 90;
+  h - b = whatever * (a-c) rotated 90;
+  h
+enddef;
+<FONT COLOR=#FF0000>%fin JMS</FONT>
+vardef CentreCercleI(expr aa,bb,cc)=
+  save <FONT COLOR=#669933>$</FONT>,a,c;
+  pair <FONT COLOR=#669933>$</FONT>;
+  numeric a,c;
+  a=(angle(aa-cc)-angle(bb-cc))/2;
+  c=(angle(cc-bb)-angle(aa-bb))/2;
+  (<FONT COLOR=#669933>$</FONT>-cc) rotated a shifted cc=whatever[aa,cc];
+  (<FONT COLOR=#669933>$</FONT>-bb) rotated c shifted bb=whatever[bb,cc];
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Cercles</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>%Cercle connaissant le centre A et le rayon q</FONT>
+vardef cercle(expr aa, q)=fullcircle scaled (2*q) shifted aa
+enddef;
+<FONT COLOR=#FF0000>%Cercle de centre A et passant par B</FONT>
+vardef cerclepoint(expr aa,bb)=fullcircle scaled (2*abs(aa-bb)) shifted aa
+enddef;
+<FONT COLOR=#FF0000>%Cercle connaissant le diam&egrave;tre [AB]</FONT>
+vardef cercledia(expr aa,bb)=cercles(iso(aa,bb),bb)
+  <FONT COLOR=#FF0000>%fullcircle scaled (2*abs(1/2[aa,bb]-bb)) shifted (1/2[aa,bb])</FONT>
+enddef;
+<FONT COLOR=#FF0000>%Cercles complets</FONT>
+vardef cercles(text t)=
+  save <FONT COLOR=#669933>$</FONT>;
+  save n;
+  n:=0;
+  for p_=t:
+    if pair p_:
+      n:=n+1;
+      _t[n]:=p_;
+    fi
+    if numeric p_:
+      rayon:=p_;
+    fi;
+  endfor;
+  if typetrace="mainlevee":
+    path <FONT COLOR=#669933>$</FONT>;
+    path dep;
+    pair ct;
+    if n=1 : dep=fullcircle scaled (2*rayon) shifted _t[1];
+      ct=_t[1];
+    elseif n=2 : dep=fullcircle scaled (2*abs(_t[1]-_t[2])) shifted _t[1];
+      ct=_t[1];
+    elseif n=3 :
+      dep=fullcircle scaled (2*abs(CentreCercleC(_t[1],_t[2],_t[3])-_t[1]))
+ shifted CentreCercleC(_t[1],_t[2],_t[3]);
+      ct=CentreCercleC(_t[1],_t[2],_t[3]);
+    fi
+    path ess;
+    ess=pointarc(dep,0)<FONT COLOR=#00008B>{</FONT>dir(80+uniformdeviate(20))<FONT COLOR=#00008B>}</FONT>..
+pointarc(dep,90)<FONT COLOR=#00008B>{</FONT>dir(170+uniformdeviate(20))<FONT COLOR=#00008B>}</FONT>
+..pointarc(dep,90)<FONT COLOR=#00008B>{</FONT>dir(185+uniformdeviate(10))<FONT COLOR=#00008B>}</FONT>..
+pointarc(dep,180)<FONT COLOR=#00008B>{</FONT>dir(-90+uniformdeviate(10))<FONT COLOR=#00008B>}</FONT>
+..pointarc(dep,180)<FONT COLOR=#00008B>{</FONT>dir(-95+uniformdeviate(10))<FONT COLOR=#00008B>}</FONT>..
+pointarc(dep,270)<FONT COLOR=#00008B>{</FONT>dir(-10+uniformdeviate(10))<FONT COLOR=#00008B>}</FONT>
+..pointarc(dep,270)<FONT COLOR=#00008B>{</FONT>dir(uniformdeviate(10))<FONT COLOR=#00008B>}</FONT>..
+pointarc(dep,360)<FONT COLOR=#00008B>{</FONT>dir(80+uniformdeviate(10))<FONT COLOR=#00008B>}</FONT>;
+    <FONT COLOR=#669933>$</FONT>=ess;
+  else:
+    path <FONT COLOR=#669933>$</FONT>;
+    if n=1 : <FONT COLOR=#669933>$</FONT>=fullcircle scaled (2*rayon) shifted _t[1];
+    elseif n=2 : <FONT COLOR=#669933>$</FONT>=fullcircle scaled (2*abs(_t[1]-_t[2])) shifted _t[1];
+    elseif n=3 : <FONT COLOR=#669933>$</FONT>=cercles(CentreCercleC(_t[1],_t[2],_t[3]),_t[1]);
+    fi
+  fi
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+<FONT COLOR=#FF0000>%Point particulier sur le cercle</FONT>
+vardef pointarc(expr cercla,angle)=
+  point(arctime((angle/360)*arclength cercla) of cercla) of cercla
+enddef;
+<FONT COLOR=#FF0000>%Arc de cercle AB de centre 0(dans le sens direct) : les points A et B</FONT>
+<FONT COLOR=#FF0000>% doivent &ecirc;tre sur le cercle.</FONT>
+vardef arccercle(expr aa,bb,oo)=
+  path tempo;
+  path arc;
+  tempo=fullcircle scaled (2*abs(aa-oo)) shifted oo;
+  if (angle(aa-oo)=0) or (angle(aa-oo)&gt;0) :
+    if (angle(bb-oo)=0) or (angle(bb-oo)&gt;0):
+      if (angle(aa-oo)&lt;angle(bb-oo)):
+        arc=subpath(angle(aa-oo)*(length tempo)/360,
+angle(bb-oo)*(length tempo)/360) of tempo;
+      else:
+        arc=subpath(angle(aa-oo)*(length tempo)/360,
+(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+      fi;
+    elseif (angle(bb-oo)&lt;0):
+      arc=subpath(angle(aa-oo)*(length tempo)/360,
+(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+    fi;
+  elseif (angle(aa-oo)&lt;0):
+    if (angle(bb-oo)=0) or (angle(bb-oo)&gt;0):
+      arc=subpath(length tempo+angle(aa-oo)*(length tempo)/360,
+length tempo+angle(bb-oo)*(length tempo)/360) of tempo;
+    elseif (angle(bb-oo)&lt;0):
+      if (angle(aa-oo)=angle(bb-oo)) or (angle(aa-oo)&lt;angle(bb-oo)):
+        arc=subpath((length tempo)+angle(aa-oo)*(length tempo)/360,
+(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+      else:
+        arc=subpath((length tempo)+angle(aa-oo)*(length tempo)/360,
+2*(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+      fi;
+    fi;
+  fi;
+  arc
+enddef;
+
+vardef coupdecompas(expr ab,ac,ad)=arccercle(pointarc(cercles(ab,ac),
+angle(ac-ab)-ad),pointarc(cercles(ab,ac),angle(ac-ab)+ad),ab)
+enddef;
+
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Droites</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+vardef segment(expr aa,bb)=
+  save <FONT COLOR=#669933>$</FONT>;
+  path <FONT COLOR=#669933>$</FONT>;
+  if typetrace="mainlevee":
+    <FONT COLOR=#669933>$</FONT>=aa<FONT COLOR=#00008B>{</FONT>dir(angle(bb-aa)+5)<FONT COLOR=#00008B>}</FONT>..bb<FONT COLOR=#00008B>{</FONT>dir(angle(bb-aa)+5)<FONT COLOR=#00008B>}</FONT>
+  else:
+    <FONT COLOR=#669933>$</FONT>=aa--bb
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef droite(expr AA,BB)=
+  save <FONT COLOR=#669933>$</FONT>;
+  path <FONT COLOR=#669933>$</FONT>;
+  if typetrace="mainlevee":
+    <FONT COLOR=#669933>$</FONT>=(_tfig/abs(AA-BB))[BB,AA]<FONT COLOR=#00008B>{</FONT>dir(angle(BB-AA)+10)<FONT COLOR=#00008B>}</FONT>..segment(AA,BB)..
+(_tfig/abs(AA-BB))[AA,BB]<FONT COLOR=#00008B>{</FONT>dir(angle(BB-AA)+10)<FONT COLOR=#00008B>}</FONT>
+  else:
+    <FONT COLOR=#669933>$</FONT>=(_tfig/abs(AA-BB))[BB,AA]--(_tfig/abs(AA-BB))[AA,BB]
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+vardef demidroite(expr AA,BB)=
+  save <FONT COLOR=#669933>$</FONT>;
+  path <FONT COLOR=#669933>$</FONT>;
+  if typetrace="mainlevee":
+    <FONT COLOR=#669933>$</FONT>=segment(AA,BB)..(_tfig/abs(AA-BB))[AA,BB]<FONT COLOR=#00008B>{</FONT>dir(angle(BB-AA)+10)<FONT COLOR=#00008B>}</FONT>
+  else:
+    <FONT COLOR=#669933>$</FONT>=AA--(_tfig/abs(AA-BB))[AA,BB]
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef bissectrice(expr AA,BB,CC)=
+  save <FONT COLOR=#669933>$</FONT>;
+  path <FONT COLOR=#669933>$</FONT>;
+  if typetrace="mainlevee":
+    <FONT COLOR=#669933>$</FONT>=rotation(demidroite(BB,CentreCercleI(AA,BB,CC)),BB,-5+uniformdeviate(10))
+  else:
+    <FONT COLOR=#669933>$</FONT>=demidroite(BB,CentreCercleI(AA,BB,CC))
+  fi;
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef mediatrice(expr AA,BB)=droite(iso(AA,BB),rotation(BB,iso(AA,BB),90))
+enddef;
+<FONT COLOR=#FF0000>%main levee : passer par la perpendiculaire passant par le milieu.</FONT>
+vardef perpendiculaire(expr AA,BB,II)=droite(iso(AA,BB),rotation(BB,
+iso(AA,BB),90)) shifted (II-iso(AA,BB))
+enddef;
+vardef parallele(expr AA,BB,II)=droite(AA,BB) shifted (II-
+(projection(II,AA,BB)))
+enddef;
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>% Transformations</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+vardef rotation(expr p,c,a)=
+  p rotatedaround(c,a)
+enddef;
+vardef symetrie(expr x)(text t)=
+  save n;
+  n:=0;
+  for p_=t:
+    n:=n+1;
+    _t[n]:=p_;
+  endfor;
+  if n=1:
+    rotation(x,_t[1],180)
+  elseif n=2:
+    x reflectedabout(_t[1],_t[2])
+  fi
+enddef;
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+<FONT COLOR=#FF0000>%Sucres</FONT>
+<FONT COLOR=#FF0000>%------------------------------------------------</FONT>
+vardef hachurage(expr chemin, angle, ecart, trace)=
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  path support;
+  support=((u*(-37,0))--(u*(37,0))) rotated angle;
+  if trace=1:
+    drawoptions(dashed evenly);
+  elseif trace=2:
+    drawoptions(dashed dashpattern(on12bp off6bp on3bp off6bp));
+  fi;
+  <FONT COLOR=#669933>$</FONT> = image(
+    for j=-200 upto 200:
+      if ((support shifted (ecart*j*(u,0))) intersectiontimes chemin)&lt;&gt;(-1,-1):
+        draw support shifted (ecart*j*(u,0));
+      fi
+    endfor;
+    );
+  clip <FONT COLOR=#669933>$</FONT> to chemin;
+  drawoptions();
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+<FONT COLOR=#FF0000>%fl&egrave;che pour coter un segment [AB] (Jacques Marot)</FONT>
+vardef cotation(expr aa,bb,ecart,decalage,cote)=
+  pair m[] ;
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  m3=unitvector(bb-aa) rotated 90;
+  m1=aa+ecart*m3;
+  m2=bb+ecart*m3;
+  <FONT COLOR=#669933>$</FONT>=image(
+    pickup pencircle scaled 0.2bp;
+    drawdblarrow m1--m2 ;
+    draw aa--m1 dashed evenly;
+    draw bb--m2 dashed evenly;
+    label(cote rotated angle(m2-m1),(m1+m2)/2+decalage*m3);
+    );
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef appelation(expr aa,bb,decalage,cote)=
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  pair m[];
+  m3=unitvector(bb-aa) rotated 90;
+  <FONT COLOR=#669933>$</FONT>=image(
+    label(cote rotated angle(bb-aa),(bb+aa)/2+decalage*m3);
+    );
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef cotationmil(expr aa,bb,ecart,decalage,cote)= <FONT COLOR=#FF0000>%Christophe</FONT>
+  pair m[] ;
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  m3=unitvector(bb-aa) rotated 90;
+  m1=aa+ecart*m3;
+  m2=bb+ecart*m3;
+  <FONT COLOR=#669933>$</FONT>=image(
+    pickup pencircle scaled 0.2bp;
+    drawarrow (1/2[m1,m2]+decalage*unitvector(m1-m2))--m1;
+    drawarrow (1/2[m1,m2]-decalage*unitvector(m1-m2))--m2;
+    draw aa--m1 dashed evenly;
+    draw bb--m2 dashed evenly;
+    label(cote rotated angle(m2-m1),(m1+m2)/2);
+    );
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+vardef cotationmilrap(expr aa,bb,ecart,decalage,cote)= <FONT COLOR=#FF0000>%Christophe</FONT>
+  pair m[] ;
+  save <FONT COLOR=#669933>$</FONT>;
+  picture <FONT COLOR=#669933>$</FONT>;
+  m3=unitvector(bb-aa) rotated 90;
+  m1=aa+ecart*m3;
+  m2=bb+ecart*m3;
+  <FONT COLOR=#669933>$</FONT>=image(
+    pickup pencircle scaled 0.2bp;
+    draw (1/2[m1,m2]+decalage*unitvector(m1-m2))--9/10[m2,m1];
+    draw (1/2[m1,m2]-decalage*unitvector(m1-m2))--m2;
+    label(cote rotated angle(m2-m1),(m1+m2)/2);
+    );
+  <FONT COLOR=#669933>$</FONT>
+enddef;
+
+endinput
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>verbatim<FONT COLOR=#00008B>}</FONT>
+<FONT COLOR=#0000FF>\end</FONT><FONT COLOR=#00008B>{</FONT>document<FONT COLOR=#00008B>}</FONT>
+
+</span></pre>
+</td>
+</tr>
+
+</table>
+<hr noshade="noshade" size="1" />
+<div class="generateur">Page composée par <b>tex2html</b> le mardi 19 d&eacute;cembre 2006.</div>
+
+</body>
+</html>

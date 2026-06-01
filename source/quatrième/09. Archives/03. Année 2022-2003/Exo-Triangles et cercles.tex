@@ -1,0 +1,177 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{Triangle rectangle et cercle circonscrit}
+\addcontentsline{toc}{section}{Triangle rectangle et cercle circonscrit}
+
+\begin{exer1}
+
+\vspace{5mm}
+\begin{enumerate}[font=\color{exer1}]
+\item Quel est le centre du cercle circonscrit au triangle $EFH$ ?
+\item Quel est le centre du cercle circonscrit au triangle $EHG$ ?
+\end{enumerate}
+
+\vspace{-3.7cm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\clip(0.3,0.4) rectangle (7.8,4.8);
+\draw [line width=1.2pt] (1.,1.)-- (3.,1.);
+\draw [line width=1.2pt] (3.,1.)-- (5.,1.);
+\draw [line width=1.2pt] (3.9516,1.121) -- (3.9516,0.879);
+\draw [line width=1.2pt] (4.0484,1.121) -- (4.0484,0.879);
+\draw [line width=1.2pt] (5.,1.)-- (7.,1.);
+\draw [line width=1.2pt] (5.9516,1.121) -- (5.9516,0.879);
+\draw [line width=1.2pt] (6.0484,1.121) -- (6.0484,0.879);
+\draw [line width=1.2pt] (7.,1.)-- (5.,2.5);
+\draw [line width=1.2pt] (6.00484,1.59512) -- (6.15004,1.78872);
+\draw [line width=1.2pt] (5.9274,1.6532) -- (6.0726,1.8468);
+\draw [line width=1.2pt] (5.84996,1.71128) -- (5.99516,1.90488);
+\draw [line width=1.2pt] (5.,2.5)-- (3.,4.);
+\draw [line width=1.2pt] (4.00484,3.09512) -- (4.15004,3.28872);
+\draw [line width=1.2pt] (3.9274,3.1532) -- (4.0726,3.3468);
+\draw [line width=1.2pt] (3.84996,3.21128) -- (3.99516,3.40488);
+\draw [line width=1.2pt] (3.,4.)-- (2.,2.5);
+\draw [line width=1.2pt] (2.419457531508096,3.129186297262146) -- (2.34898287157768,3.35067808561488);
+\draw [line width=1.2pt] (2.419457531508096,3.129186297262146) -- (2.651017128422318,3.1493219143851214);
+\draw [line width=1.2pt] (2.,2.5)-- (1.,1.);
+\draw [line width=1.2pt] (1.4194575315080957,1.6291862972621456) -- (1.3489828715776797,1.8506780856148797);
+\draw [line width=1.2pt] (1.4194575315080957,1.6291862972621456) -- (1.6510171284223176,1.6493219143851214);
+\draw [line width=1.2pt] (3.,1.)-- (3.,2.5);
+\draw [line width=1.2pt] (2.879,1.75) -- (3.121,1.75);
+\draw [line width=1.2pt] (3.,2.5)-- (3.,4.);
+\draw [line width=1.2pt] (2.879,3.25) -- (3.121,3.25);
+\begin{scriptsize}
+\draw [color=blue] (3.,4.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.1626,4.6487) node {\large{$E$}};
+\draw [color=blue] (3.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.1626,0.8009) node {\large{$H$}};
+\draw [color=blue] (1.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.4764,0.9219) node {\large{$F$}};
+\draw [color=blue] (7.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (7.4702,0.8977) node {\large{$G$}};
+\draw [color=blue] (5.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.1712,1.5511) node {\large{$L$}};
+\draw [color=blue] (5.,2.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.3406,3.1967) node {\large{$K$}};
+\draw [color=blue] (3.,2.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.4772,2.7369) node {\large{$M$}};
+\draw [color=blue] (2.,2.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.6864,2.9789) node {\large{$I$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+\end{exer1}
+
+\begin{exer1}
+$BIEN$ est un rectangle de centre$ M$.
+\begin{enumerate}[font=\color{exer1}]
+\item Que représente le point $M$ pour le segment $[EB]$ ? Justifie.
+\item Quel est le centre du cercle circonscrit au triangle $BIE$ ? Pourquoi ?
+\item Pourquoi $N$ appartient-il aussi à ce cercle ?
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+Soient $ABC$ et $BCD$ deux triangles rectangles respectivement en $A$ et en $D$. Démontre que les points $A$ et $D$ appartiennent au cercle de diamètre $[BC]$.
+\end{exer1}
+
+\begin{exer1}
+$BO= 4$cm ; $OA= 6$cm ; $BA = 3$cm.
+
+\noindent \begin{minipage}{11cm}
+\begin{enumerate}[font=\color{exer1}]
+\item Fais une figure en vraie grandeur
+\item Démontre que le point $M$ appartient au cercle de diamètre $[OA]$.
+\item Démontre que les points $M$, $O$, $N$ et $A$ sont sur un même cercle dont tu préciseras le centre et le rayon.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\clip(1.2,0.8) rectangle (6.5,5.);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (4.550712791636575,3.721966525756733) -- (4.748086850023098,3.4913098760273025) -- (4.978743499752528,3.6886839344138256) -- (4.781369441366005,3.919340584143256) -- cycle; 
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (2.9788792253155774,3.743131691744333) -- (3.2440663772619915,3.5953657165304107) -- (3.3918323524759133,3.8605528684768244) -- (3.1266452005294996,4.008318843690747) -- cycle; 
+\draw [line width=1.2pt,domain=1.2:6.5] plot(\x,{(-2.5691241789283543--2.8764623805946132*\x)/1.6028049085900324});
+\draw [line width=1.2pt,dash pattern=on 3pt off 3pt,domain=1.2:6.5] plot(\x,{(-16.54118063813308--1.6028049085900324*\x)/-2.8764623805946132});
+\draw [line width=1.2pt] (1.5238402919394671,1.1318564630961334)-- (6.143880658902184,2.3270732151447744);
+\draw [line width=1.2pt,domain=1.2:6.5] plot(\x,{(-8.403033902249824--1.0329267848552255*\x)/-0.8838806589021839});
+\draw [line width=1.2pt,dash pattern=on 3pt off 3pt,domain=1.2:6.5] plot(\x,{(--0.1777681039576562-0.8838806589021839*\x)/-1.0329267848552255});
+\draw [line width=1.2pt] (4.191769362369358,3.414816823163065)-- (6.143880658902184,2.3270732151447744);
+\draw [line width=1.2pt] (4.191769362369358,3.414816823163065)-- (1.5238402919394671,1.1318564630961334);
+\draw [line width=1.2pt] (1.5238402919394671,1.1318564630961334)-- (6.143880658902184,2.3270732151447744);
+\begin{scriptsize}
+\draw [color=blue] (1.5238402919394671,1.1318564630961334)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.380732710815357,1.4824700368502033) node {\large{$O$}};
+\draw [color=blue] (3.1266452005294996,4.008318843690747)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.9978483775178004,4.659458337805447) node {\large{$N$}};
+\draw [color=blue] (6.143880658902184,2.3270732151447744)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.960175306786879,1.9976573288969997) node {\large{$A$}};
+\draw [color=blue] (4.781369441366005,3.919340584143256)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.886868448356053,4.444796966119282) node {\large{$M$}};
+\draw [color=blue] (4.191769362369358,3.414816823163065)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.171330542735504,3.929609674072486) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{exer1}
+
+\begin{exer1}
+Construis un cercle $(\mathcal{C})$ de centre $I$ et de rayon $5$cm. Place un point $P$ sur $(\mathcal{C})$ et trace un diamètre $[MN]$ de $(\mathcal{C})$.
+Quelle est la nature du triangle $MNP$ ? Pourquoi ?
+\end{exer1}
+
+\begin{exer2}
+$R$, $I$ et $O$ sont trois points alignés dans cet ordre. $(\mathcal{C})$ est le cercle de diamètre $[RI]$ et $(\mathcal{C'})$ est le cercle de diamètre $[IO]$. Soit $A$ un point de $(\mathcal{C})$ différent de $I$ et $R$. La droite $(AI)$ coupe $(\mathcal{C'})$ en $B$.
+\begin{enumerate}[font=\color{exer1}]
+\item Fais une figure.
+\item Démontre que les droites $(RA)$ et $(BO)$ sont parallèles.
+\end{enumerate}
+\end{exer2}
+
+\begin{exer2}
+Soit $IBC$ un triangle rectangle en $C$. Soit $M$ le milieu de $[IB]$.
+Quelle est la nature du triangle $MIC$ ? Justifie ta réponse.
+\end{exer2}
+
+\begin{exer2}
+Le triangle $ROD$ est tel que $RD=8,5$cm ; $RO=1,3$cm et $DO=8,4$cm.
+\begin{enumerate}[font=\color{exer2}]
+\item Fais une figure.
+\item Fais une figure en vraie grandeur. Ce triangle est-il rectangle ? Justifie ta réponse.
+\item Place un point $N$ tel que $RN=7,7$cm et $DN=3,6$cm.
+Les points $R$, $O$, $N$ et $D$ sont-ils sur un même cercle ? Justifie ta réponse.
+\end{enumerate}
+\end{exer2}
+
+\begin{exer3}
+Calcule, en justifiant, la valeur approchée par défaut de $EF$ au centimètre près.
+
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\clip(1.2,1.8) rectangle (8.5,5.7);
+\draw[line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (2.4242640687119286,2.) -- (2.4242640687119286,2.4242640687119286) -- (2.,2.4242640687119286) -- (2.,2.) -- cycle; 
+\draw [line width=1.2pt] (2.,5.)-- (2.,2.);
+\draw [line width=1.2pt] (2.,2.)-- (8.,2.);
+\draw [line width=1.2pt] (2.,5.)-- (5.,3.5);
+\draw [line width=1.2pt] (5.,3.5)-- (8.,2.);
+\draw [line width=1.2pt] (5.,3.5)-- (2.,2.);
+\begin{scriptsize}
+\draw [color=blue] (2.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.72,5.47) node {\large{$F$}};
+\draw [color=blue] (2.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.46,2.39) node {\large{$E$}};
+\draw [color=blue] (8.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (8.18,2.61) node {\large{$D$}};
+\draw [color=blue] (5.,3.5)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.3,4.05) node {\large{$K$}};
+\draw[color=black] (3.35,3.1) node {\large{$3$m}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{exer3}
+
+\end{document}

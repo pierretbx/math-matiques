@@ -1,0 +1,115 @@
+\PassOptionsToPackage{margin=1.15cm}{geometry}
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.98, 0.4, 0.0}
+\newpage
+\setcounter{chapter}{7}
+\chapter{Puissance de dix}
+
+\fontsize{8.7}{9.7}\selectfont
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\parskip}{0pt}
+\vspace{-3mm}
+\section{Définition}
+
+\vspace{-3mm}
+\begin{defn}[Puissance à exposant positif]
+Si $n$ un entier naturel, alors $10^n$, qui se lit \og $10$ puissance $n$ \fg{} ou \og $10$ exposant $n$ \fg{}, est le nombre \[ 10^n=\underset{n\ \text{facteurs égaux à } 10 }{\underbrace{10\times 10 \times \dots \times 10}}=\underset{n\ \text{zéros} }{\underbrace{100 \dots 00}} \]
+
+\vspace{-2mm}
+\noindent Par convention : $10^1 = 10$ \quad et \quad $10^0 = 1$;
+\end{defn}
+
+\begin{defn}[Puissance à exposant négatif]
+Soit $n$ un nombre strictement positif. On appelle « $10$ puissance moins $n$ » le nombre noté $10^{-n}$ tel que :  \[ 10^{-n}=\underset{n\ \text{zéros} }{\underbrace{0,00 \dots 01}} \]
+\end{defn}
+
+\vspace{-3mm}
+\section{Les préfixes}
+
+\vspace{-2mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{lightgray!80} }p{2.5cm}|*{7}{>{\centering \arraybackslash }X|}}
+\hline
+Préfixes & giga & méga & kilo & ... & milli & micro & nano \\\hline
+Symbole & $G$ & $M$ & $k$ & ... & $m$ & $\mu$ & $n$ \\\hline
+Signification & $10^{9}$ & $10^{6}$ & $10^{3}$ & ... & $10^{-3}$ & $10^{-6}$ & $10^{-9}$ \\\hline
+\end{tabularx}
+\end{center}
+
+\vspace{-4mm}
+\begin{ex}
+1 gigaoctet, noté Go, est égal à $10^{9}$ octets, \quad ou encore $1 \mu m = 10^{-6} m$
+\end{ex}
+
+\begin{prop}
+Pour multiplier un nombre décimal par $10^{n}$, on décale la virgule de $n$ rangs vers la droite.
+
+\vspace{1mm}
+\noindent Pour multiplier un nombre décimal par $10^{-n}$, on décale la virgule de $n$ rangs vers la gauche.
+\end{prop}
+
+\begin{meth}
+
+\vspace{-4mm}
+\noindent \begin{minipage}{4cm}
+$$A =  9,4\times 10^{3}$$
+
+On déplace la virgule dans $9,4$ de $3$ rangs vers la droite.
+
+$$A  = 9 400$$
+\end{minipage}
+\hspace{1mm}
+\vline
+\hspace{1mm}
+\begin{minipage}{4cm}
+$$B = 54\times 10^{8}$$
+
+On déplace la virgule dans $54$ de $8$ rangs vers la droite.
+
+$$B = 5 400 000 000$$
+\end{minipage}
+\hspace{1mm}
+\vline
+\hspace{1mm}
+\begin{minipage}{4cm}
+$$C = 185,003\times 10^{-2}$$
+
+On déplace la virgule dans $185,003$ de $2$ rangs vers la gauche.
+
+$$C = 1,85003$$
+\end{minipage}
+\hspace{1mm}
+\vline
+\hspace{1mm}
+\begin{minipage}{4cm}
+$$B = 54\times 10^{-8}$$
+
+On déplace la virgule dans $54$ de $8$ rangs vers la gauche.
+
+$$B = 0,00000054$$
+\end{minipage}
+\end{meth}
+
+\vspace{-4mm}
+\section{L'écriture scientifique d'un nombre décimal}
+
+\vspace{-3mm}
+\begin{defn}
+Un nombre positif est écrit en notation scientifique quand il est écrit sous la forme $a \times 10^n$ avec : 
+\begin{enumerate}
+\item[•]$a$ un nombre décimal ne comportant qu'un seul chiffre non nul devant la virgule
+\item[•]$n$ un nombre entier relatif
+\end{enumerate} 
+
+\end{defn}
+
+\begin{ex}
+L'écriture scientifique de $2600$ est $2,6 \times 10^{3}$. De même, $2600 = 2,6 \times 10^3$ ou encore $0,0137 = 1,37 \times 10^{-2}$
+\end{ex}
+
+\end{document}

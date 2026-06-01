@@ -1,0 +1,312 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{5}
+\chapter{Droites perpendiculaires et droites parallèles}
+
+\section{Définitions et notations}
+
+\subsection{Droites sécantes}
+
+\begin{defn}
+Deux droites sécantes sont deux droites qui ont un seul point commun. Ce point est le \dotfill
+
+\medskip \noindent \dotfill
+\end{defn}
+
+\begin{ex}
+Est ce que les droites $(d$) et $(d')$ sont elles sécantes ? Si oui, quel est le point d'intersection ?
+
+\medskip
+\noindent \begin{minipage}{6cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-3.5,-1.) rectangle (2.5,2.5);
+\draw [line width=1.2pt,domain=-3.5:2.5] plot(\x,{(--4.-3.*\x)/5.});
+\draw [line width=1.2pt,domain=-3.5:2.5] plot(\x,{(-2.-1.*\x)/-4.});
+\begin{scriptsize}
+\draw[color=black] (-3.2,2) node {\Large{$(d)$}};
+\draw[color=black] (-2.9,-0.73) node {\Large{$(d')$}};
+\draw [color=blue] (0.35294117647058826,0.5882352941176471)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (0.5,0.99) node {\Large{$E$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{10cm}
+\noindent\grandscarreaux{\linewidth}{3.8cm}
+\end{minipage}
+\end{ex}
+
+\subsection{Droites perpendiculaires}
+
+\begin{defn}
+Deux droites perpendiculaires sont deux droites qui se coupent en formant\dotfill
+
+\medskip \noindent \dotfill
+\end{defn}
+
+\begin{ex}
+Que peut-on dire des droites $(d)$ et $(d')$ ?
+
+\medskip
+\noindent \begin{minipage}{5.5cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.5,-1.) rectangle (3.,2.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d')$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{10.5cm}
+\noindent\grandscarreaux{\linewidth}{3.8cm}
+\end{minipage}
+\end{ex}
+
+\begin{prop}
+Le symbole $(d)\perp(d')$signifie que \og $(d)$ est perpendiculaire à $(d')$ \fg{}.
+\end{prop}
+
+\begin{rem}
+\begin{enumerate}
+\item[•] Deux droites perpendiculaires sont sécantes.
+\item[•] Pour indiquer que deux droites sont perpendiculaires, on code un seul des quatre angles droites.
+\item[•] On utilise une équerre pour tracer une droite perpendiculaire à une autre.
+\end{enumerate} 
+\end{rem}
+
+\subsection{Droites parallèles}
+
+\begin{defn}
+Deux droites parallèles sont deux droites qui ne sont pas \dotfill
+\end{defn}
+
+\begin{ex}
+Que peut-on dire des droites $(d)$ et $(d')$ ?
+
+\vspace{-3mm}
+\medskip
+\noindent \begin{minipage}{10.5cm}
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5.5cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.5,-1.) rectangle (3.,2.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-7.-1.*\x)/-4.});
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+\begin{scriptsize}
+\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d')$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}
+
+\begin{prop}
+Le symbole $//$ signifie \og est parallèle à \fg{}.
+\end{prop}
+
+\begin{rem}
+\noindent\begin{minipage}[t]{0.62\linewidth}
+Lorsque les points $A$, $B$ et $C$ sont alignés, les droites $(AB)$ et $(BC)$ ont ne infinité de points communs : elles sont confondues.
+
+\medskip\noindent Elles ne sont pas sécantes : les droites $(AB)$ et $(BC)$ sont donc parallèles.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+\vspace{-1.2em}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.75cm,y=0.75cm]
+\clip(-2.5,-1.) rectangle (3.,2.5);
+\draw [line width=2.pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+\begin{scriptsize}
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\draw [color=blue] (-0.35294117647058826,0.4117647058823529)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (-0.22,0.83) node {\Large{$A$}};
+\draw [color=blue] (-2.,0.)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (-1.86,0.41) node {\Large{$B$}};
+\draw [color=blue] (2.,1.)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (2.14,1.41) node {\Large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\end{rem}
+
+\section{Programmes de constructions}
+
+\subsection{Construire la droite perpendiculaire à $(d)$ passant par le point $M$}
+
+\medskip
+\noindent \begin{tabular}{p{3cm}|p{4.9cm}|p{3.9cm}|p{3.9cm}}
+\arrayrulecolor{lightgray}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (2.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+%\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=blue] (-1.3,1.8) node {\Large{$M$}};
+\draw [color=blue] (-0.75,2)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}&
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (4.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=2pt,domain=-0.82:-0.55] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-2.-1.*\x)/-4.});
+\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+\draw[color=blue] (-1.3,1.8) node {\Large{$M$}};
+\draw [color=blue] (-0.75,2)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}&
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (3.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=2pt,domain=-2.5:2] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\tkzRule[width=6,height=1,angle=104.4]{0,-.8}
+\begin{scriptsize}
+\draw[color=blue] (-1.3,1.8) node {\Large{$M$}};
+\draw [color=blue] (-0.75,2)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}& 
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (3.,3.5);
+\draw[line width=1.2pt,color=red,fill=red,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+\draw[color=blue] (-1.3,1.8) node {\Large{$M$}};
+\draw [color=blue] (-0.75,2)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=black] (0,2.6) node {\Large{$(d')$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}\\
+& On place l'un des cotés de l'angle droit de l'équerre sur la droite $(d)$ et l'autre coté sur le point $M$. On trace le long du coté de l'équerre. & On prolonge la droite à l'aide de la règle & On nomme la droite $(d')$ et on code \textcolor{red}{l'angle droit}.
+\end{tabular}
+
+\vspace{5mm}
+\begin{ex}
+Construire $(d’)$ la perpendiculaire à $(d)$ \\passant par $M$.
+
+\vspace{-13mm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=1.5]
+\clip(-2.5,-0.7) rectangle (4.,2.2);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+%\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=blue] (-1.3,1.8) node {\Large{$M$}};
+\draw [color=blue] (-0.75,2)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+\end{ex}
+
+\subsection{Construire la droite parallèle à $(d)$ passant par le point $N$}
+
+
+\medskip\noindent \renewcommand{\arraystretch}{2.2}\begin{tabular}{p{3cm}|p{4.5cm}|p{4.5cm}|p{2.9cm}}
+\arrayrulecolor{lightgray}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (2.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+%\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=blue] (-1.3,1.8) node {\Large{$N$}};
+\draw [color=blue] (-0.75,2.05)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}&
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (4.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-2.-1.*\x)/-4.});
+\tkzSquare[width=4,height=2,angle=194.04,color=red!50]{2,1}
+\tkzRule[width=6,height=1,angle=104.4]{2.8,-2}
+\begin{scriptsize}
+\draw[color=blue] (-1.3,1.8) node {\Large{$N$}};
+\draw [color=blue] (-0.75,2.05)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}&
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (4.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=2pt,domain=-1.5:1] plot(\x,{(-9.-1.*\x)/-4.});
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-2.-1.*\x)/-4.});
+\tkzSquare[width=4,height=2,angle=194.04,color=red!50]{1.6,2.6}
+\tkzRule[width=6,height=1,angle=104.4]{2.8,-2}
+\begin{scriptsize}
+\draw[color=blue] (-1.3,2.2) node {\Large{$N$}};
+\draw [color=blue] (-0.75,2.05)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}& 
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-2.5,-1.) rectangle (2.,3.5);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-9.-1.*\x)/-4.});
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=4,height=2,angle=194.04]{1.6,2.6}
+%\tkzRule[width=6,height=1,angle=104.4]{2.8,-2}
+\begin{scriptsize}
+\draw[color=blue] (-1.3,2.2) node {\Large{$N$}};
+\draw [color=blue] (-0.75,2.05)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=black] (-0,1.5) node {\Large{$(d')$}};
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}\\
+& On place un coté de l'angle droit de l'équerre sur la droite $(d)$ et la règle sur l'autre coté de l'angle droit & On fait coulisser l'équerre la long de la règle jusqu'au point $N$ sans bouger la règle. On trace la droite le long du coté de l'équerre. & On nomme la droite $(d')$.
+\end{tabular}
+
+\vspace{5mm}
+\begin{ex}
+Construire $(d’)$ la droite parallèle à $(d)$ \\passant par $N$.
+
+\vspace{-13mm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=1.5]
+\clip(-2.5,-0.7) rectangle (4.,2.2);
+%\draw[line width=1.2pt,color=blue,fill=blue,fill opacity=0.1] (0.058655427871433075,0.5146638569678582) -- (-0.04424372321407227,0.9262604613098796) -- (-0.4558403275560936,0.8233613102243742) -- (-0.35294117647058826,0.4117647058823529) -- cycle; 
+%\draw [line width=1.2pt,domain=-2.5:3.] plot(\x,{(-1.-4.*\x)/1.});
+\draw [line width=1.2pt,domain=-2.5:4.] plot(\x,{(-2.-1.*\x)/-4.});
+%\tkzSquare[width=3,height=2,angle=14.04]{-0.35,0.41}
+\begin{scriptsize}
+%\draw[color=black] (-1.48,2.01) node {\Large{$(d)$}};
+\draw[color=blue] (-1.3,1.8) node {\Large{$N$}};
+\draw [color=blue] (-0.75,2)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=black] (-2.1,-0.43) node {\Large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+\end{ex}
+
+\end{document}

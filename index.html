@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site de mathématiques pour le collège et le lycée.">
+  <title>Accueil - Mathématiques</title>
+  <link rel="shortcut icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-school-mode="lycee">
+  <header>
+    <nav>
+      <div class="brand-zone">
+        <a class="logo" href="index.html" aria-label="Accueil"><img src="./assets/icon.png" alt="Logo du site"></a>
+        <label class="school-switch">
+          <input class="school-switch-input" type="checkbox" aria-label="Passer du mode lycée au mode collège">
+          <span class="school-switch-track">
+            <span class="school-switch-option switch-college">Collège</span>
+            <span class="school-switch-option switch-lycee">Lycée</span>
+            <span class="school-switch-thumb"></span>
+          </span>
+        </label>
+      </div>
+      <button class="toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span class="bars"></span></button>
+      <ul class="menu">
+        <li class="item"><a href="index.html" aria-current="page">Accueil</a></li>
+        <li class="item nav-sixieme" data-mode-nav="college"><a href="sixieme.html">6ème</a></li>
+        <li class="item nav-cinquieme" data-mode-nav="college"><a href="cinquieme.html">5ème</a></li>
+        <li class="item nav-quatrieme" data-mode-nav="college"><a href="quatrieme.html">4ème</a></li>
+        <li class="item nav-troisieme" data-mode-nav="college"><a href="troisieme.html">3ème</a></li>
+        <li class="item nav-seconde" data-mode-nav="lycee"><a href="seconde.html">Seconde</a></li>
+        <li class="item dropdown nav-premiere" data-mode-nav="lycee">
+          <a href="premiere.html">Première</a>
+          <ul class="submenu">
+            <li class="sub-techno"><a href="premiere-technologique.html">Technologique</a></li>
+            <li class="sub-specific"><a href="premiere-specifique.html">Spécifique</a></li>
+            <li class="sub-premiere-specialite"><a href="premiere-specialite.html">Spécialité</a></li>
+          </ul>
+        </li>
+        <li class="item dropdown nav-terminale" data-mode-nav="lycee">
+          <a href="terminale.html">Terminale</a>
+          <ul class="submenu">
+            <li class="sub-terminale-technologique"><a href="terminale-technologique.html">Technologique</a></li>
+
+            <li class="sub-complementaires"><a href="terminale-complementaires.html">Complémentaires</a></li>
+            <li class="sub-terminale-specialite"><a href="terminale-specialite.html">Spécialité</a></li>
+            <li class="sub-expertes"><a href="terminale-expertes.html">Expertes</a></li>
+          </ul>
+        </li>
+        <li class="item button secondary"><a href="mailto:pierre.thiebeaux@ac-dijon.fr?subject=%C3%80%20propos%20du%20site">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Ressources de mathématiques</p>
+        <h1>Bienvenue</h1>
+        <p data-mode-panel="lycee">Ressources de mathématiques pour le lycée : cours, exercices et devoirs classés par niveau.</p>
+        <p data-mode-panel="college">Ressources de mathématiques pour le collège : cours, exercices et devoirs classés de la 6ème à la 3ème.</p>
+      </div>
+    </section>
+
+    <section class="section levels" id="classes" data-mode-panel="lycee">
+      <div class="section-header">
+        <h2>Choisir un niveau</h2>
+        <p>Accès direct aux ressources classées.</p>
+      </div>
+      <div class="level-grid">
+        <article class="level-card level-seconde">
+          <h3>Seconde</h3>
+          <p>Cours, exercices et devoirs classés par chapitre.</p>
+          <div class="level-options">
+            <a class="level-button" href="seconde.html">Seconde générale</a>
+          </div>
+        </article>
+        <article class="level-card level-premiere">
+          <h3>Première</h3>
+          <p>Ressources par parcours de Première.</p>
+          <div class="level-options">
+            <a class="level-button" href="premiere-technologique.html">Technologique</a>
+            <a class="level-button" href="premiere-specifique.html">Spécifique</a>
+            <a class="level-button" href="premiere-specialite.html">Spécialité</a>
+          </div>
+        </article>
+        <article class="level-card level-terminale">
+          <h3>Terminale</h3>
+          <p>Ressources par parcours de Terminale.</p>
+          <div class="level-options">
+            <a class="level-button" href="terminale-technologique.html">Technologique</a>
+            <a class="level-button" href="terminale-complementaires.html">Complémentaires</a>
+            <a class="level-button" href="terminale-specialite.html">Spécialité</a>
+            <a class="level-button" href="terminale-expertes.html">Expertes</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section levels" id="classes-college" data-mode-panel="college">
+      <div class="section-header">
+        <h2>Choisir un niveau</h2>
+        <p>Accès direct aux ressources classées.</p>
+      </div>
+      <div class="level-grid college-grid">
+        <article class="level-card level-sixieme" id="sixieme">
+          <h3>6ème</h3>
+          <p>Entrer au collège avec les bases de calcul, de géométrie et de raisonnement.</p>
+          <div class="level-options">
+            <a class="level-button" href="sixieme.html">Ressources 6ème</a>
+          </div>
+        </article>
+        <article class="level-card level-cinquieme" id="cinquieme">
+          <h3>5ème</h3>
+          <p>Consolider les méthodes et découvrir de nouveaux outils de calcul et d'organisation.</p>
+          <div class="level-options">
+            <a class="level-button" href="cinquieme.html">Ressources 5ème</a>
+          </div>
+        </article>
+        <article class="level-card level-quatrieme" id="quatrieme">
+          <h3>4ème</h3>
+          <p>Approfondir les nombres, les grandeurs, les figures et les premières démarches algébriques.</p>
+          <div class="level-options">
+            <a class="level-button" href="quatrieme.html">Ressources 4ème</a>
+          </div>
+        </article>
+        <article class="level-card level-troisieme" id="troisieme">
+          <h3>3ème</h3>
+          <p>Préparer le brevet et faire le lien avec les attendus de l'entrée au lycée.</p>
+          <div class="level-options">
+            <a class="level-button" href="troisieme.html">Ressources 3ème</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="./assets/js/click.js"></script>
+</body>
+
+</html>

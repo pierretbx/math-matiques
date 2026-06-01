@@ -1,0 +1,171 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+\pagestyle{empty}
+\newpage
+\section*{Probabilités}
+\addcontentsline{toc}{section}{Probabilités}
+
+\begin{ex}
+\textbf{Partie 1}
+	
+Dans cette première partie, on lance un dé bien équilibré à six faces numérotées de 1 à 6, puis on note le numéro de la face du dessus.
+	
+\begin{enumerate}
+\item Donner sans justification les issues possibles.
+\item Quelle est la probabilité de l'évènement A : « On obtient 2 » ?
+\item Quelle est la probabilité de l'évènement B : « On obtient un nombre impair » ?
+\end{enumerate}
+
+\textbf{Partie 2}
+	
+Dans cette deuxième partie, on lance simultanément deux dés bien équilibrés à six faces, un rouge et un vert. On appelle « score » la somme des numéros obtenus sur chaque dé.
+	
+\begin{enumerate}
+\item Quelle est la probabilité de l'évènement C : « le score est 13 » ? Comment appelle-t-on un tel évènement ?
+\item Dans le tableau à double entrée, on remplit chaque case avec la somme des numéros obtenus sur chaque dé.
+\begin{enumerate}
+\item Établir, sans justifier, le tableau à double entrée.		
+\item Donner la liste des scores possibles.
+\end{enumerate}
+\item \begin{enumerate}
+\item Déterminer la probabilité de l'évènement D : « le score est 10 ».
+\item Déterminer la probabilité de l'évènement E : « le score est un multiple de 4 ».
+\item Démontrer que le score obtenu a autant de chance d'être un nombre premier qu'un nombre strictement plus grand que 7.
+\end{enumerate}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+On dispose de deux urnes:
+
+\begin{itemize}
+\item une urne bleue contenant trois boules bleues numérotées: \textcircled{2},\textcircled{3} et \textcircled{4}.
+\item une urne rouge contenant quatre boules rouges numérotées: \textcircled{2},\textcircled{3}, \textcircled{4} et \textcircled{5}.
+\end{itemize}
+
+Dans chaque urne, les boules sont indiscernables au toucher et ont la même probabilité d'être tirées.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{|*{2}{>{\centering \arraybackslash}X|}}\hline
+Urne bleue &Urne rouge\\
+\textcircled{2} \textcircled{3}  \textcircled{4}& \textcircled{2} \textcircled{3} \textcircled{4}  \textcircled{5}\\ \hline
+\end{tabularx}
+\end{center}
+\medskip
+
+On s'intéresse à l'expérience aléatoire suivante :
+
+\og On tire au hasard une boule bleue et on note son numéro, puis on tire au hasard une boule rouge et on note son numéro. \fg
+
+\emph{Exemple} : si on tire la boule bleue numérotée \textcircled{3}, puis la boule rouge numérotée \textcircled{4},le tirage obtenu sera noté (3~;~4).
+
+On précise que le tirage (3~;~4) est différent du tirage (4~;~3).
+
+\medskip
+
+\begin{enumerate}
+\item On définit les deux évènements suivants:
+
+\og On obtient deux nombres premiers \fg{} et \og La somme des deux nombres est égale à 12 \fg
+	\begin{enumerate}
+		\item Pour chacun des deux évènements précédents, dire s'il est possible ou impossible lorsqu'on effectue l'expérience aléatoire.
+		\item Déterminer la probabilité de l'évènement \og On obtient deux nombres premiers \fg.
+	\end{enumerate}
+\item On obtient un \og double \fg{} lorsque les deux boules tirées portent le même numéro. 
+
+Justifier que la probabilité d'obtenir un \og double \fg{} lors de cette expérience, est $\dfrac{1}{4}$.
+\item Dans cette question, aucune justification n'est attendue. 
+
+On souhaite simuler cette expérience \np{1000} fois.
+
+Pour cela, on a commencé à écrire un programme, à ce stade, encore incomplet. Voici des copies d'écran :
+
+\begin{center}
+{\footnotesize
+\begin{tabular}{|c |c|}\hline
+\textbf{Script principal}& \textbf{Bloc \og Tirer deux boules \fg}\\
+\begin{scratch}
+\blockinit{quand \greenflag est cliqué},
+\blockrepeat{répéter \ovalnum{A} fois}
+		{
+		\blockif{si \booloperator{\ovalmove{Boule bleue} = \ovalmove{Boule rouge}} alors}
+{\blockmove{ajouter à \selectmenu{Nombre de doubles} \ovalnum{1}}}		
+		}	
+\end{scratch}
+&
+\begin{scratch}	
+\initmoreblocks{définir \namemoreblocks{Tirer deux boules}}
+\blockmove{mettre \selectmenu{Boule bleue} à {nombre aléatoire entre \ovalnum{2} et \ovalnum{B}}}
+\blockmove{mettre \selectmenu{Boule rouge} à {nombre aléatoire entre \ovalnum{2} et \ovalnum{C}}}
+\end{scratch}
+\\ 
+\multicolumn{2}{|c|}{Boule bleue, Boule rouge et Nombre de doubles 
+ sont des variables.}\\
+\multicolumn{2}{|c|}{Le bloc \begin{scratch}\blockmove{Tirer deux boules}\end{scratch} est à insérer dans le script principal.}\\ \hline
+\end{tabular}}
+\end{center}
+	\begin{enumerate}
+		\item Par quels nombres faut-il remplacer les lettres A, B et C ?
+		\item Dans le script principal, indiquer où placer le bloc \begin{scratch}\blockmove{Tirer deux boules}\end{scratch}
+		\item Dans le script principal, indiquer où placer le bloc 
+\begin{scratch}
+\blockmove{mettre \selectmenu{Nombre de doubles}à \ovalnum{0} }
+\end{scratch}
+		\item On souhaite obtenir la fréquence d'apparition du nombre de \og doubles \fg{} obtenus.
+		
+Parmi les instructions ci-dessous, laquelle faut-il placer à la fin du script principal après la
+boucle \og répéter \fg{} ?
+
+\begin{center}
+{\footnotesize
+\begin{tabular}{|ccc|}\hline
+Proposition \textcircled{1}&Proposition \textcircled{2} & Proposition \textcircled{3}\\
+\begin{scratch}
+\blockmove{dire \ovaloperator{Nombre de doubles}} 
+\end{scratch}&
+\begin{scratch} 
+\blockmove{dire \ovaloperator{Nombre de doubles}/\ovalnum{1000}}\end{scratch}&\begin{scratch} 
+\blockmove{dire \ovaloperator{Nombre de doubles}/\ovalnum{2}}
+\end{scratch}\\ \hline
+\end{tabular}}
+\end{center}
+	\end{enumerate}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+\medskip
+
+Damien a fabriqué trois dés à six faces parfaitement équilibrés mais un peu particuliers.
+
+Sur les faces du premier dé sont écrits les six plus petits nombres pairs strictement positifs : 2 ; 4; 6 ; 8 ; 10; 12.
+
+Sur les faces du deuxième dé sont écrits les six plus petits nombres impairs positifs.
+
+Sur les faces du troisième dé sont écrits les six plus petits nombres premiers.
+
+Après avoir lancé un dé, on note le nombre obtenu sur la face du dessus.
+
+\medskip
+
+\begin{enumerate}
+\item Quels sont les six nombres figurant sur le deuxième dé ? 
+
+Quels sont les six nombres figurant sur le troisième dé ?
+\item  Zoé choisit le troisième dé et le lance. Elle met au carré le nombre obtenu.
+Léo choisit le premier dé et le lance. Il met au carré le nombre obtenu.
+\begin{enumerate}
+\item Zoé a obtenu un carré égal à $25$. Quel était le nombre lu sur le dé qu'elle a lancé ?
+\item Quelle est la probabilité que Léo obtienne un carré supérieur à celui obtenu par Zoé ?
+\end{enumerate}
+\item  Mohamed choisit un des trois dés et le lance quatre fois de suite. Il multiplie les quatre nombres obtenus et obtient 525.
+\begin{enumerate}
+\item Peut-on déterminer les nombres obtenus lors des quatre lancers ? Justifier.
+\item Peut-on déterminer quel est le dé choisi par Mohamed ? Justifier.
+\end{enumerate}
+\end{enumerate}
+\end{ex}
+
+\end{document}

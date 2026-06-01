@@ -1,0 +1,1010 @@
+%A compiler en XELATEX sinon pas d'arbre de proba
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{color}
+\usepackage[table]{xcolor} 
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{eurosym}
+
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{tkz-tab}
+\usepackage{cellspace}
+\usepackage{diagbox}
+%%% Figures
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+%\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+%%%Affichage
+\newcommand{\ds}{\displaystyle}
+\usepackage{cancel}
+\usepackage{numprint}
+\renewcommand{\arraystretch}{1.5} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+%\TeacherModeOff
+\TeacherModeOn
+%%% Macro
+\newcommand{\V}{\overrightarrow}
+\newcommand{\Rep}{(O;\V{i};\V{j})}
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\begin{document}
+\setcounter{chapter}{8}
+\chapter{Fonctions exponentielles}
+
+\section{Définition et première propriété}
+
+\begin{defn}
+Soit $q$ un nombre réel strictement positif. On appelle fonction exponentielle de base $q$ la fonction définie sur $\mathbb{R}$ qui à tout nombre $x$ lui associe $q^x$. 
+\end{defn}
+
+\begin{rem}
+Cette fonction est le \gap*{prolongement} de la suite $(u_n)$ telle que $u_n = q^n$ pour tout entier naturel $n$. Sur le graphique ci-dessous, les croix représentent le nuage de point associé à la suite géométrique de terme général $u_n = 1,5^n$.
+On observe bien que la fonction $f$ définie sur $\mathbb{R}$ par 
+$f (x) = 1,5^x$ prolonge cette suite à tout nombre réel.\\
+
+Si $x<0$,on a $1,5^{−x} = \dfrac{1}{1,5^x}$
+\end{rem}
+
+\vspace*{-1.3cm}\hspace*{7.5cm}\includegraphics[scale=0.70]{expo.1}
+
+\vfill
+\newpage
+
+\begin{prop}[Signe des fonctions exponentielles]
+La fonction exponentielle de base $q$ est une fonction \gap*{dérivable} sur $\mathbb{R}$ donc également \gap*{continue} sur $\mathbb{R}$.
+Cette fonction est également \gap*{positive} sur $\mathbb{R}$.
+\end{prop}
+
+\section{Variations}
+
+\begin{prop}[Variations des fonctions exponentielles]
+Une fonction exponentielle de base $q$ sera :
+\begin{itemize}
+\item[$\bullet$]  \gap*{strictement croissante} sur $\mathbb{R}$ si $q>1$;
+\item[$\bullet$]  \gap*{strictement décroissante} sur $\mathbb{R}$ si $q<1$;
+\item[$\bullet$]  \gap*{constante}  $\mathbb{R}$ si $q=1$.
+\end{itemize}
+\end{prop}
+
+\begin{exemple}
+Ci-dessous, sont tracés les représentations graphiques des fonctions $f$ et $g$ telles que $f(x)= 1,5^x$ et $g(x)=0,7^x$.
+\end{exemple}
+
+\vspace*{-1.4cm}\hspace*{7.5cm}\includegraphics[scale=0.78]{expo.2}
+
+\vfill
+\newpage
+\section{Relation fonctionnelle et propriétés algébriques}
+
+\begin{thm}[Relation fonctionnelle des fonctions exponentielles]
+Pour toute fonction exponentielle de base $q>0$ et tous réels $x$ et $y$ : 
+$$f(x) \times f(y) =f(x+y)$$
+\end{thm}
+
+\begin{cor}
+Du résultat précédent découle plusieurs propriétés, 
+\begin{multicols}{4}
+\begin{itemize}
+\item[$\bullet$]  $q^x \times q^y =q^{x+y}$
+\item[$\bullet$]  $(q^x)^y=q^{x \times y}$
+\item[$\bullet$]  $\dfrac{q^x}{q^y}=q^{x-y}$
+\item[$\bullet$]  $q^{-x}=\dfrac{1}{q^x}$
+\end{itemize}
+\end{multicols}
+\end{cor}
+
+\section{Les fonctions du type $x\mapsto k \times q^x$}
+
+\begin{prop}[Signe des fonctions du type $x\mapsto k \times q^x$]
+Le signe d'une fonction du type $x\mapsto k \times q^x$ est du même signe que $k$.
+\end{prop}
+
+
+\begin{prop}[Variations des fonctions du type $x\mapsto k \times q^x$]
+
+Une fonction du type $x\mapsto k \times q^x$:
+\begin{itemize}
+\item[$\bullet$]  a le \gap*{même sens de variation} sur $\mathbb{R}$ que $x\mapsto q^x$ si $k>0$;
+\item[$\bullet$]  a \gap*{le sens de variation contraire} sur $\mathbb{R}$ que $x\mapsto q^x$ si $k<0$;
+\item[$\bullet$]  est \gap*{nulle} donc \gap*{constante} sur $\mathbb{R}$ si $k=0$.
+\end{itemize}
+\end{prop}
+
+
+
+\section{Application : le taux d'évolution moyen}
+
+\begin{exemple}
+Un établissement bancaire propose le placement suivant :
+« \textit{Si vous déposez un capital de 10000 €, vous obtenez un capital de 15000 € au bout de 10 ans.} ».
+
+Le taux global pour les 10 ans est donc $\tau_g = \dfrac{15000-10000}{10000}= 0,5$ donc un taux de $50\%$.
+
+Nous souhaitons alors calculer le taux annuel correspondant $\tau_m$. Nous avons donc $$(1+\tau_m)^{10} =1+\tau_g$$ 
+
+les propriétés précédentes nous permettent d'en déduire :
+
+$$1+\tau_m =(1+\tau_g)^{\frac{1}{10}} \approx 1,041$$
+
+Le taux annuel de ce placement est donc de 4,1 \%.
+\end{exemple}
+
+\begin{prop}
+Si $\tau_g$ est le \gap*{taux d'évolution global} pendant une certaine période, \gap*{le taux d'évolution moyen} équivalent $\tau_m$ pendant une période $n$ fois plus courte est donc défini par :
+$$1+\tau_m =(1+\tau_g)^\frac{1}{n}$$
+\end{prop}
+
+\newpage
+\section{Exercices}
+
+
+
+\begin{exocor}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=2^{x}$.
+
+\begin{enumerate}
+\item Indiquer le sens de variations de la fonction $f$.
+\item Compléter le tableau en arrondissant à $10^{-3}$ :
+\end{enumerate}
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline$x$ & -2 & $-1,5$ & -1 & $-0,5$ & 0 & 0,5 & 1 & 1,5 & 2 \\
+\hline$f(x)$ & & & & & & & & & \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{exocor}
+
+
+\begin{exocor}
+Soit $g$ la fonction définie sur $\mathbb{R}$ par $g(x)=0,5^{x}$.
+
+\begin{enumerate}
+\item Indiquer le sens de variations de la fonction $g$.
+
+\item Compléter le tableau en arrondissant à $10^{-3}$ :
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline$x$ & -2 & $-1,5$ & -1 & $-0,5$ & 0 & 0,5 & 1 & 1,5 & 2 \\
+\hline$g(x)$ & & & & & & & & & \\
+\hline
+
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Au $1^{\text {er }}$ janvier 2019, la France compte 66,9 millions d'habitants. On estime son taux de croissance annuel à $0,4 \%$.
+
+Pour tout entier naturel $n$, on note $u_{n}$ le nombre de millions d'habitants en France au $1^{\text {er }}$ janvier de l'année $2019+n$ et on admet que la suite $\left(u_{n}\right)$ est une suite géométrique.
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Donner la raison de la suite $\left(u_{n}\right)$.
+\item Exprimer $u_{n}$ en fonction de $n$.
+\end{enumerate}
+
+\item 
+\begin{enumerate}
+\item Proposer l'expression d'une fonction $f$ permettant d'exprimer le nombre de millions d'habitants en France $x$ années après le $1^{\text {er }}$ janvier 2019, $x$ étant un nombre réel.
+
+\item Déterminer, selon ce modèle, le nombre d'habitants en France au $1^{\text {er }}$ janvier 2022, $1^{\text {er }}$ juillet 2023 et au $1^{\text {er }}$ octobre 2025.
+\end{enumerate}
+
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+
+\begin{enumerate}
+\item Déterminer le sens de variations des fonctions définies sur $\mathbb{R}$ par :
+\begin{enumerate}
+\begin{multicols}{3}
+\item $t \mapsto-2 \times 1,4^{t}$
+\item $t \mapsto 9,85 \times 0,85^{t}$
+\item $t \mapsto 0,8 \times 2,25^{t}$
+\end{multicols}
+\end{enumerate}
+
+\item Déterminer le sens de variations des fonctions définies sur $\mathbb{R}$ par :
+\begin{enumerate}
+\begin{multicols}{3}
+\item $x \mapsto \frac{1}{3} \times\left(\frac{4}{5}\right)^{x}$
+\item $x \mapsto 2 \times\left(\frac{5}{4}\right)^{x}$
+\item $x \mapsto-\frac{7}{12} \times\left(\frac{2020}{2019}\right)^{x}$
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+
+Le nombre de joueurs à un jeu vidéo, en milliers, est modélisé par la fonction $f$ définie sur l'intervalle [0;12] par $f(x)=65 \times 1,05^{x}$, où $x$ est le nombre de mois écoulés depuis le lancement du jeu.
+
+Au bout de combien de temps, en mois et en jour, atteindra-t-on 100 milliers de joueurs?
+
+\end{exocor}
+
+\begin{exocor}
+
+La pression atmosphérique est égale à $1013 \mathrm{hPa}$ (hectoPascal) au niveau de la mer, et diminue régulièrement de $12 \%$ à chaque fois que l'on monte de 1000 mètres.
+
+Il s'agit d'une décroissance exponentielle.
+
+On peut la modéliser par une fonction $P$ de l'altitude $h$ en milliers de mètres vérifiant:
+
+$$
+P(h)=k \times a^{h}
+$$
+
+\begin{enumerate}
+\item Déterminer les constantes $k$ et $a$.
+
+\item Calculer la pression à $5500 \mathrm{~m}$ d'altitude à $1 \mathrm{hPa}$ près.
+\end{enumerate}
+
+\end{exocor}
+
+
+\begin{exocor}
+La température $T$ (en $\left.{ }^{\circ} \mathrm{C}\right)$ d'une tasse de café que l'on laisse refroidir après l'avoir sortie d'un four à micro-ondes diminue en fonction du temps $t$ (en minute) suivant la formule :
+
+$$
+T(t)=21+65 \times 0,9^{t}
+$$
+
+\begin{enumerate}
+\item Quelle est la température du café à sa sortie du four puis au bout de 5 minutes?
+
+\item Combien de temps doit attendre une personne qui aime boire son café à $55^{\circ} \mathrm{C}$ ?
+
+\item Quelle semble être la température de la pièce?
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On a représenté une fonction $f$ du type :
+$$ x \mapsto k \times a^{x} $$
+Déterminer les valeurs de $k$ et de $a$ en utilisant le graphique.
+
+\vspace*{-1.3cm}\hspace*{9cm}\includegraphics[scale=0.8]{expo.4}\vspace*{1cm}
+\end{exocor}
+
+
+\begin{exocor}
+\begin{enumerate}
+\item Quelle est le sens de variations de la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=1,01^{x}$.
+\item Résoudre dans $\mathbb{R}$ l'inéquation $1,01^{x}>1,01^{3,5}$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+\begin{enumerate}
+\item Quelle est le sens de variations de la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=0,33^{x}$.
+
+\item Résoudre dans $\mathbb{R}$ l'inéquation $0,33^{x} \leqslant 0,33^{1,8}$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+L'offre $o$ et la demande $d$ pour un produit (en milliers d'unités) sont modélisées par deux fonctions du prix de vente $x$ (en euros).
+
+Pour tout réel $x \in[0 ; 10]$, on a $o(x)=1,3^{x}-1$ et $d(x)=10 \times 0,8^{x}$.
+
+\begin{enumerate}
+\item Calculer $o(2)$ et $d(2)$ et interpréter les résultats.
+
+\item Déterminer le sens de variations des fonctions $o$ et $d$.
+
+\item On donne les représentations graphiques des fonctions $o$ et $d$.
+
+\vspace*{-1cm}\hspace*{3.5cm}\includegraphics[scale=1]{expo.3}\vspace*{1cm}
+
+\begin{enumerate}
+\item Donner par lecture graphique le montant de l'offre correspondant à un prix de vente de 5 euros.
+
+\item Utiliser ce graphique pour trouver le prix d'équilibre, où l'offre est égale à la demande.
+\end{enumerate}
+
+\item Retrouver à l'aide de la calculatrice le prix d'équilibre au centime près.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Écrire sous la forme d'une seule puissance de 2 :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $a=2^{1,5} \times 2^{-3}$
+\item $b=\left(2^{4,5}\right)^{3}$
+\item $c=2^{3} \times 4^{2}$
+\item $d=\frac{2^{5}}{4}$ 
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+
+Simplifier les expressions suivantes puis calculer leur valeur :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $a=5^{1,7} \times 5^{1,3}$
+\item $b=\left(2^{-\frac{1}{3}}\right)^{6}$
+\item $c=4^{-0,7} \times \times \frac{1}{4^{0,3}}$
+\item $d=\frac{6^{4,5} \times 6^{2,3}}{\left(6^{1,6}\right)^{3}}$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Le chiffre d'affaires d'une entreprise a augmenté de $38 \%$ en trois ans.
+Calculer l'augmentation annuelle moyenne du chiffre d'affaires à $0,1 \%$ près.
+\end{exocor}
+
+
+
+\begin{exocor}
+La taxe foncière en France a augmenté en moyenne de 21,26\% en cinq ans, de 2008 à 2013.
+
+Déterminer son augmentation annuelle moyenne à $0,1 \%$ près.
+\end{exocor}
+
+\begin{exocor}
+
+
+\begin{enumerate}
+\item Résoudre sur l'intervalle $] 0 ;+\infty$ [ les équations suivantes :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x^{0,25}=4$
+\item $x^{0,1}=3$
+\item $x^{0,5}=2,5$
+\item $x^{\frac{1}{3}}=10$
+\end{multicols}
+\end{enumerate}
+
+\item Résoudre sur l'intervalle $] 0 ;+\infty[$ les équations suivantes :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x^{-0,2}=3$
+\item $x^{-\frac{1}{6}}=2$
+\item $x^{-0,25}=5$
+\item $x^{-\frac{1}{4}}=1,5$
+\end{multicols}
+
+\end{enumerate}
+\item Résoudre sur l'intervalle $] 0 ;+\infty[$ les inéquations suivantes :
+
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x^{0,5}<5$
+\item $x^{0,2} \geqslant 2$
+\item $x^{\frac{1}{5}} \leqslant 3$
+\item $x^{\frac{2}{3}}<4$
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Calculer le taux mensuel $t_{\mathrm{m}}$ équivalent à un taux annuel $t_{\mathrm{a}}=+6 \%$.
+
+\item Calculer le taux journalier $t_{\mathrm{j}}$ équivalent à un taux annuel $t_{\mathrm{a}}=+6 \%$. On considère qu'une année comprend 365 jours.
+\end{enumerate}
+
+\item Un capital de $10000 €$ est placé à intérêts composés au taux annuel $t_{\mathrm{a}}=+6 \%$.
+
+\begin{enumerate}
+\item Quelle est la valeur du capital au bout de 1 an?
+
+\item Quelle est la valeur du capital au bout de 1 mois? au bout de 3 mois?
+
+\item Quelle est la valeur du capital au bout de 1 jour? au bout de 45 jours? 
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+On modélise la population de la ville de Nohouaire depuis 2010 par la fonction $p$ définie par
+
+$$
+p(x)=12 \times 2^{\frac{x}{18}}
+$$
+
+où $p(x)$ est la population en milliers d'habitants l'année $2010+x$.
+
+\begin{enumerate}
+\item Quelle était la population en 2010 et 2020 ?
+
+\item En quelle année, selon ce modèle, la population dépassera-t-elle 20000 habitants.
+
+\item Montrer que : $p(x+18)=2 \times p(x)$. Interpréter ce résultat.
+
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+
+Le nombre d'adhérentes à un club de basket a augmenté lors des trois dernières années de $2,5 \%$, puis de $4,1 \%$, et enfin de $3,8 \%$.
+
+Calculer le taux d'évolution annuel moyen.
+
+\end{exocor}
+
+\begin{exocor}
+\begin{enumerate}
+\item Une action baisse de $20 \%$ une année, puis de $80 \%$ l'année suivante.
+
+Quel est le pourcentage de baisse annuel moyen.
+
+\item Quel est le taux d'évolution moyen correspondant à une hausse de $60 \%$, suivie d'une baisse de $60 \%$.
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Le $1^{\text {er }}$ janvier 2019, on a placé 5000 euros sur un compte avec un rendement annuel de $2 \%$.
+
+Les intérêts produits sont calculés au moment du retrait en tenant compte du nombre exact de jours.
+
+La somme d'argent disponible au bout de $x$ années est donnée par $s(x)=k \times a^{x}$ où $k$ et $a$ sont des réels à déterminer.
+
+\begin{enumerate}
+\item Déterminer $k$ et $a$.
+
+\item Quelle somme d'argent sera disponible le 8 avril 2019? Et le 15 novembre 2022?
+
+\item Calculer le taux mensuel de ce placement à $0,01 \%$ près.
+
+\item Calculer de deux façons différentes la somme d'argent disponible le $1^{\text {er }}$ juillet 2019. Quel résultat est le plus fiable?
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+Un site internet comptait 46400 abonnés le $1^{\text {er }}$ septembre 2018 et 51156 abonnés le $1^{\text {er }}$ septembre 2020.
+
+\begin{enumerate}
+\item Déterminer le taux de croissance annuel moyen de 2018 à 2020.
+
+\item Le directeur du site suppose que la croissance va se poursuivre au même rythme et décide de modéliser le nombre d'abonnés par une fonction $f$ du type $x \mapsto k \times a^{x}$ où $x$ est le nombre d'années écoulées depuis le $1^{\text {er }}$ septembre 2020.
+
+\begin{enumerate}
+\item Déterminer les valeurs de $k$ et $a$.
+
+\item Donner la valeur de $f(-2)$ sans utiliser de calculatrice.
+
+\item Déterminer, selon ce modèle, le nombre d'abonnés prévus le 25 décembre 2020.
+
+\item Déterminer, à l'aide de la calculatrice, à quelle date le nombre d'abonnés dépassera 60000. 
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+
+
+
+\begin{exocor}
+On prélève du sang sur un patient souffrant d'une infection bactérienne. Les bactéries, trop petites, sont indétectables dans le sang et on les met en culture pendant 24 heures.
+
+\begin{enumerate}
+\item On observe une phase de latence de 12 heures pendant laquelle les bactéries s'adaptent au milieu, suivie d'une phase de croissance exponentielle de 12 heures durant laquelle le nombre de bactéries par $\mathrm{mL}$ de sang est modélisé par la fonction $f$ définie sur l'intervalle $[12 ; 24]$ par :
+
+$$
+f(x)=0,008 \times 2,8^{x}
+$$
+
+\begin{enumerate}
+\item Justifier que la fonction $f$ est croissante sur l'intervalle [12; 24].
+
+\item Déterminer la concentration de bactéries dans la culture au bout de 2 heures $30$ minutes de croissance exponentielle, puis à la fin de la phase de culture.
+\end{enumerate}
+
+\item Après 24 heures de culture et ayant détecté une infection au Staphylococcus aureus, on introduit un puissant antibiotique.
+
+On admet que la concentration de bactéries, en milliers de bactéries par mL, est alors modélisée par la fonction $g$ définie sur l'intervalle [24 ; 42] par :
+
+$$
+g(x)=-1613 x^{2}+82633 x-622702
+$$
+
+\begin{enumerate}
+\item Étudier les variations de la fonction $g$.
+
+\item Au bout de combien de minutes après l'introduction de l'antibiotique la population de bactéries commence-t-elle à diminuer?
+
+\item L'antibiotique est jugé bien dosé s'il tue au moins $99 \%$ des bactéries en 18 heures. Cet antibiotique est-il bien dosé?
+
+\item Représenter sur un graphique l'évolution de la population de bactéries durant les trois phases : latence, croissance exponentielle, élimination.
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+D'un navire perdu au Nouveau Monde débarque 4 souris. Un an après, les souris, qui se reproduisent de façon exponentielle, sont 34 .
+
+Combien de souris seront présentes deux an et demi après le débarquement.
+\end{exocor}
+
+\newpage
+
+\section{Corrigés}
+\begin{corrige}
+\begin{enumerate}
+\item $f$ est strictement croissante sur $\mathbb{R}$ car $k=2>0$.
+\item 
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline$x$ & -2 & $-1,5$ & -1 & $-0,5$ & 0 & 0,5 & 1 & 1,5 & 2 \\
+\hline$f(x)$ & $0,25$ & $0.354$ & $0,5$ & $0,707$ & $1$ & $1,414$ & $2$ & $2,828$ & $4$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $g$ est strictement décroissante sur $\mathbb{R}$ car $k=0,5>0$.
+\item 
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline$x$ & -2 & $-1,5$ & -1 & $-0,5$ & 0 & 0,5 & 1 & 1,5 & 2 \\
+\hline$f(x)$ & $4$ & $2,828$ & $2$ & $1,414$ & $1$ & $0,707$ & $0,5$ & $0,354$ & $0,25$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item \begin{enumerate}
+\item La raison de la suite $u_n$ est $1,004$.
+\item $u_n=66,9 \times (1,004)^n$
+\end{enumerate}
+\item \begin{enumerate}
+\item $f(x)=66,9 \times (1,004)^x$
+\item 2022: $u_3=f(3)\approx 67,7$ ; 2023: $u_4\approx 68$ ; 2025: $u_6 \approx 68.5$
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+
+\begin{enumerate}
+\item Déterminer le sens de variations des fonctions définies sur $\mathbb{R}$ par :
+\begin{enumerate}
+
+\item Strictement décroissante sur $\mathbb{R}$ ($k=-2<0$ et $q=1,4>0$)
+\item Strictement décroissante sur $\mathbb{R}$ ($k=9,85>0$ et $q=0,85<1$)
+\item Strictement croissante sur $\mathbb{R}$ ($k=0,8>0$ et $q=2,25>1$)
+
+\end{enumerate}
+
+\item Déterminer le sens de variations des fonctions définies sur $\mathbb{R}$ par :
+\begin{enumerate}
+
+\item Strictement décroissante sur $\mathbb{R}$ ($k=\dfrac{1}{3}>0$ et $q=\dfrac{4}{5}<1$)
+\item Strictement croissante sur $\mathbb{R}$ ($k=2>0$ et $q=\dfrac{5}{4}>1$)
+\item Strictement décroissante sur $\mathbb{R}$ ($k=-\dfrac{7}{12}<0$ et $q=\dfrac{2020}{2019}>1$)
+
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Avec la calculatrice on trouve que 8 mois et 24 jours il y a approximativement 99,85 milliers de joueurs alors qu'à 8 mois et 25 jours on dépasse les 100 milliers de joueurs. 
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $P(0)=1013=k$ et $1,12=\dfrac{P(1)}{P(0)}=\dfrac{\cancel{k}\times a^1}{\cancel{k} \times a^0}=a$
+\item $P(5,5) \approx 1889 $
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item La température de la tasse à café à la sortie du four à micro onde est de $T(0)=86^{\circ} C$ et au bout de 5 minutes $T(5) \approx 59,38^{\circ} C$
+\item On peut dire qu'à partir de 6 minutes d'attente, la personne peut boire son café. 
+\item Si le temps s'écoule de manière prolongé alors la température de la tasse à café sera la même que la pièce et semble être de $21^{\circ} C$.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Graphiquement , on déduit que $k=2$ en regardant la valeur prise par la fonction en 0.  De plus $f(0,5)=3,5$, donc $3,5=2 \times a^{0,5}$. Par suite $a=(\dfrac{3,5}{2})^2$.
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item Ici $q=1,01>1$ donc $f$ est strictement croissante sur $\mathbb{R}$. 
+\item D'après ce qui précède on déduit que l'inéquation est équivalent à $x>3,5$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item Ici $q=0,33<1$ donc $f$ est strictement décroissante sur $\mathbb{R}$. 
+\item D'après ce qui précède on déduit que l'inéquation est équivalent à $x\geq 1,8$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+L'offre $o$ et la demande $d$ pour un produit (en milliers d'unités) sont modélisées par deux fonctions du prix de vente $x$ (en euros).
+
+Pour tout réel $x \in[0 ; 10]$, on a $o(x)=1,3^{x}-1$ et $d(x)=10 \times 0,8^{x}$.
+
+\begin{enumerate}
+\item Calculer $o(2)$ et $d(2)$ et interpréter les résultats. \\
+$o(2)=1,3^2-1=0,69$ soit 69 offres et $d(2)=10*0,8^2=6,4$ soit 640 demandes, il y a donc plus de demandes que d'offres.
+
+\item Déterminer le sens de variations des fonctions $o$ et $d$.
+
+$o$ est strictement croissante sur $[0;10]$ et $d$ est strictement décroissante sur $[0;10]$.
+
+\item On donne les représentations graphiques des fonctions $o$ et $d$.
+
+\vspace*{-1cm}\hspace*{3.5cm}\includegraphics[scale=1]{expo.3}\vspace*{1cm}
+
+\begin{enumerate}
+\item Donner par lecture graphique le montant de l'offre correspondant à un prix de vente de 5 euros.\\
+
+$o(5)\approx 2,7$ soit 270 offres.
+
+\item Utiliser ce graphique pour trouver le prix d'équilibre, où l'offre est égale à la demande.\\
+
+On constate que le prix à l'équilibre se situe vers $5,35$ euros, soit l'abscisse du point d'intersection ou encore quand $o(x)=d(x)$.
+
+\end{enumerate}
+
+\item Retrouver à l'aide de la calculatrice le prix d'équilibre au centime près.\\
+
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Écrire sous la forme d'une seule puissance de 2 :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $a=2^{-1,5}$
+\item $b=2^{13,5}$
+\item $c=2^{3} \times 2^{2 \times 2}=2^7$
+\item $d=\dfrac{2^{5}}{2^2}=2^3$ 
+\end{multicols}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+
+Simplifier les expressions suivantes puis calculer leur valeur :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $a=5^3=125$
+\item $b=2^{-2}=0,25$
+\item $c=4^{-1}=0,25$
+\item $d=\dfrac{6^{6,8}}{6^{4,8}}=6^2=36$
+\end{multicols}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Le chiffre d'affaires d'une entreprise a augmenté de $38 \%$ en trois ans.
+Calculer l'augmentation annuelle moyenne du chiffre d'affaires à $0,1 \%$ près.\\
+
+$$(1+\dfrac{38}{100})^{\dfrac{1}{3}}\approx 1+\dfrac{11,3}{100}$$
+
+Soit une augmentation annuelle du chiffre d'affaires d'environ $11,3 \%$.
+
+\end{corrige}
+
+
+
+\begin{corrige}
+La taxe foncière en France a augmenté en moyenne de 21,26\% en cinq ans, de 2008 à 2013.
+
+Déterminer son augmentation annuelle moyenne à $0,1 \%$ près. \\
+
+$$(1+\dfrac{21,26}{100})^{\dfrac{1}{5}}\approx 1+\dfrac{3,9}{100}$$
+
+Soit une augmentation annuelle de la taxe foncière d'environ $3,9 \%$.
+\end{corrige}
+
+\begin{corrige}
+
+\begin{enumerate}
+\item Résoudre sur l'intervalle $] 0 ;+\infty$ [ les équations suivantes :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x=4^4=256$
+\item $x=3^10$
+\item $x=2,5^2=6,25$
+\item $x=10^3=1000$
+\end{multicols}
+Toutes les solutions sont bien dans l'ensemble $]0;+ \infty[$.
+\end{enumerate}
+
+\item Résoudre sur l'intervalle $] 0 ;+\infty[$ les équations suivantes :
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x=3^{-5}=\dfrac{1}{243}$
+\item $x=2^{-6}=\dfrac{1}{64}$
+\item $x=5^{-4}=\dfrac{1}{625}$
+\item $x=1,5^{-4}=\dfrac{3}{2}^{-4}=\dfrac{16}{81}$
+\end{multicols}
+Toutes les solutions sont bien dans l'ensemble $]0;+ \infty[$.
+\end{enumerate}
+\item Résoudre sur l'intervalle $]0 ;+\infty[$ les inéquations suivantes :
+
+\begin{enumerate}
+\begin{multicols}{4}
+\item $0<x<25$
+\item $x \geqslant 32$
+\item $0<x \leqslant 243$
+\item $0<x<8$
+\end{multicols}
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Calculer le taux mensuel $t_{\mathrm{m}}$ équivalent à un taux annuel $t_{\mathrm{a}}=+6 \%$.\\
+
+$$(1+\dfrac{6}{100})^{\dfrac{1}{12}}$$
+
+\item Calculer le taux journalier $t_{\mathrm{j}}$ équivalent à un taux annuel $t_{\mathrm{a}}=+6 \%$. On considère qu'une année comprend 365 jours.\\
+
+$$(1+\dfrac{6}{100})^{\dfrac{1}{365}}$$
+
+\end{enumerate}
+
+\item Un capital de $10000 €$ est placé à intérêts composés au taux annuel $t_{\mathrm{a}}=+6 \%$.
+
+\begin{enumerate}
+\item Quelle est la valeur du capital au bout de 1 an? \\
+
+La valeur du capital sera de $10600=10000\times 1,06$ euros au bout d'un an.
+
+
+\item Quelle est la valeur du capital au bout de 1 mois? au bout de 3 mois?
+
+La valeur du capital sera d'environ $10049=10000\times (1+\dfrac{6}{100})^{\dfrac{1}{12}}$ euros au bout d'un mois et $10147==10000\times (1+\dfrac{6}{100})^{\dfrac{3}{12}}$ euros au bout de trois mois.
+
+
+\item Quelle est la valeur du capital au bout de 1 jour? au bout de 45 jours? 
+
+La valeur du capital sera d'environ $10002=10000\times (1+\dfrac{6}{100})^{\dfrac{1}{365}}$ euros au bout d'un jour et $10072=10000\times (1+\dfrac{6}{100})^{\dfrac{3}{12}}$ euros au bout de 45 jours.
+
+
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+On modélise la population de la ville de Nohouaire depuis 2010 par la fonction $p$ définie par
+
+$$
+p(x)=12 \times 2^{\frac{x}{18}}
+$$
+
+où $p(x)$ est la population en milliers d'habitants l'année $2010+x$.
+
+\begin{enumerate}
+\item Quelle était la population en 2010 et 2020 ?
+
+$$p(0)=12 \;\;\; p(10)=12 \times 2^\dfrac{10}{18}\approx 17,64$$
+
+Soit une population de 12000 habitant en 2010 et 17640  en 2020.
+
+\item En quelle année, selon ce modèle, la population dépassera-t-elle 20000 habitants.
+
+$$p(13)<20 \;\; p(14)>20$$
+
+A partir de l'année 2024 le nombre d'habitant de Nohouraire dépassera 20000.
+ 
+
+\item Montrer que : $p(x+18)=2 \times p(x)$. Interpréter ce résultat.
+
+$$p(x+18)=12 \times 2^{\dfrac{x+18}{18}} = 12 \times 2 \times 2^\dfrac{x}{18}= 2\times p(x)$$
+
+Autrement dit, la population double tous les 18 ans, quelque soit l'année de départ.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+
+Le nombre d'adhérentes à un club de basket a augmenté lors des trois dernières années de $2,5 \%$, puis de $4,1 \%$, et enfin de $3,8 \%$.
+
+Calculer le taux d'évolution annuel moyen.
+
+$$((1+\dfrac{2,5}{100})(1+\dfrac{4,1}{100})(1+\dfrac{3,8}{100}))^{\dfrac{1}{3}}  \approx 1+\dfrac{3,5}{100}$$
+
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item Une action baisse de $20 \%$ une année, puis de $80 \%$ l'année suivante.
+
+Quel est le pourcentage de baisse annuel moyen.
+
+$$((1-\dfrac{20}{100})(1-\dfrac{80}{100}))^{\dfrac{1}{2}} = 1 -\dfrac{60}{100}$$
+
+\item Quel est le taux d'évolution moyen correspondant à une hausse de $60 \%$, suivie d'une baisse de $60 \%$.
+
+$$((1+\dfrac{60}{100})(1-\dfrac{60}{100}))^{\dfrac{1}{2}}=1-\dfrac{20}{100}$$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Le $1^{\text {er }}$ janvier 2019, on a placé 5000 euros sur un compte avec un rendement annuel de $2 \%$.
+
+Les intérêts produits sont calculés au moment du retrait en tenant compte du nombre exact de jours.
+
+La somme d'argent disponible au bout de $x$ années est donnée par $s(x)=k \times a^{x}$ où $k$ et $a$ sont des réels à déterminer.
+
+\begin{enumerate}
+\item Déterminer $k$ et $a$.
+$s(0)=k=5000$ et $\dfrac{s(1)}{s(0)}=a=1,02$
+
+\item Quelle somme d'argent sera disponible le 8 avril 2019? Et le 15 novembre 2022?
+
+$$s(4+\dfrac{8}{30})\approx 5441 \;\;\; s(11+\dfrac{15}{30})\approx 6279$$
+
+\item Calculer le taux mensuel de ce placement à $0,01 \%$ près.
+
+$$(1,02)^\dfrac{1}{12}=1+\dfrac{0,17}{100}$$
+
+\item Calculer de deux façons différentes la somme d'argent disponible le $1^{\text {er }}$ juillet 2019. Quel résultat est le plus fiable?
+
+$$5000 \times (1+ \dfrac{0,17}{100})^7 \approx 5059,80$$
+$$s(\dfrac{7}{12})\approx 5058,09$$
+
+Le plus fiable reste le second résultat qui n'utilise pas d'approximation.
+
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Un site internet comptait 46400 abonnés le $1^{\text {er }}$ septembre 2018 et 51156 abonnés le $1^{\text {er }}$ septembre 2020.
+
+\begin{enumerate}
+\item Déterminer le taux de croissance annuel moyen de 2018 à 2020.
+
+$$(\dfrac{51156}{46400})^\dfrac{1}{3}=a$$
+
+\item Le directeur du site suppose que la croissance va se poursuivre au même rythme et décide de modéliser le nombre d'abonnés par une fonction $f$ du type $x \mapsto k \times a^{x}$ où $x$ est le nombre d'années écoulées depuis le $1^{\text {er }}$ septembre 2020.
+
+\begin{enumerate}
+\item Déterminer les valeurs de $k$ et $a$.\\
+
+$k=51156$
+\item Donner la valeur de $f(-2)$ sans utiliser de calculatrice.\\
+
+$f(-2)=46400$
+\item Déterminer, selon ce modèle, le nombre d'abonnés prévus le 25 décembre 2020.\\
+
+$f(12+\dfrac{25}{31})\approx 75590$
+
+\item Déterminer, à l'aide de la calculatrice, à quelle date le nombre d'abonnés dépassera 60000. \\
+
+Le 26 octobre 2024.
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+On prélève du sang sur un patient souffrant d'une infection bactérienne. Les bactéries, trop petites, sont indétectables dans le sang et on les met en culture pendant 24 heures.
+
+\begin{enumerate}
+\item On observe une phase de latence de 12 heures pendant laquelle les bactéries s'adaptent au milieu, suivie d'une phase de croissance exponentielle de 12 heures durant laquelle le nombre de bactéries par $\mathrm{mL}$ de sang est modélisé par la fonction $f$ définie sur l'intervalle $[12 ; 24]$ par :
+
+$$
+f(x)=0,008 \times 2,8^{x}
+$$
+
+\begin{enumerate}
+\item Justifier que la fonction $f$ est croissante sur l'intervalle [12; 24].\\
+
+Ici $k=0,008>0$ et $q=2,8>1$, la fonction $f$ est donc strictement croissante sur $\mathbb{R}$ et donc strictement croissante \textit{et donc croissante} sur $[12;24]$ car $[12;24] \subset \mathbb{R}$.
+
+\item Déterminer la concentration de bactéries dans la culture au bout de 2 heures $30$ minutes de croissance exponentielle, puis à la fin de la phase de culture.\\
+
+$$f(14,5)=0,008 \times 2,8^{14,5}\approx \numprint{24371} $$
+$$f(24)=0,008 \times 2,8^{24} \approx \numprint{431402581}$$
+
+\end{enumerate}
+
+\item Après 24 heures de culture et ayant détecté une infection au Staphylococcus aureus, on introduit un puissant antibiotique.
+
+On admet que la concentration de bactéries, en milliers de bactéries par mL, est alors modélisée par la fonction $g$ définie sur l'intervalle [24 ; 42] par :
+
+$$
+g(x)=-1613 x^{2}+82633 x-622702
+$$
+
+\begin{enumerate}
+\item Étudier les variations de la fonction $g$.\\
+
+La fonction $g$ est dérivable car polynôme du second degré, 
+$$g'(x)=-3226x+82633$$
+
+$$g'(x)>0 \Longleftrightarrow x<\dfrac{82633}{3226} \,(\approx 25,6)$$ 
+
+Autrement dit, $g$ est strictement croissante sur $[24;25,6]$ et strictement décroissante sur $[25,6;42]$.
+
+\item Au bout de combien de minutes après l'introduction de l'antibiotique la population de bactéries commence-t-elle à diminuer?\\
+
+Au bout de $25,6-24$ heures soit environ $1$ heure et $36$ minutes.
+
+\item L'antibiotique est jugé bien dosé s'il tue au moins $99 \%$ des bactéries en 18 heures. Cet antibiotique est-il bien dosé? \\
+
+$$\dfrac{g(24+18)}{g(24)}=\dfrac{2552}{431402}\approx 5,9 \times 10^{-3}=0,0059=\dfrac{0,59}{100}<\dfrac{1}{100}$$
+
+L'antibiotique est donc bien dosé. 
+
+\item Représenter sur un graphique l'évolution de la population de bactéries durant les trois phases : latence, croissance exponentielle, élimination.
+
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+D'un navire perdu au Nouveau Monde débarque 4 souris. Un an après, les souris, qui se reproduisent de façon exponentielle, sont 34 .
+
+Combien de souris seront présentes deux ans et demi après le débarquement.\\
+
+$$s(t)=P_0\times r^t$$ 
+avec, 
+$P_0=4 \;\;\; r=\dfrac{s(1)}{s(0)}=\dfrac{34}{4}=\dfrac{17}{2}$
+et $t$ exprimé en année
+$s(2,5)=4 \times (\dfrac{17}{2})^{2,5}  \approx 842,57$ 
+ 
+Au bout de deux ans et demi, il y aura 842 souris.
+\end{corrige}
+
+
+\end{document}

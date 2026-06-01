@@ -1,0 +1,67 @@
+verbatimtex
+%&latex
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{color}
+\newcommand{\vect}[1]{\overrightarrow{#1\rule{0.1em}{0ex}}}\newcommand{\calc}{\mathscr{C}}
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex $C'$ etex ;
+latexmp_picture[2]:= btex $D'$ etex ;
+latexmp_picture[3]:= btex $A$ etex ;
+latexmp_picture[4]:= btex $B$ etex ;
+latexmp_picture[5]:= btex $C$ etex ;
+latexmp_picture[6]:= btex $D$ etex ;
+latexmp_picture[7]:= btex $E$ etex ;
+latexmp_picture[8]:= btex $C'$ etex ;
+latexmp_picture[9]:= btex $D'$ etex ;
+latexmp_picture[10]:= btex $A$ etex ;
+latexmp_picture[11]:= btex $B$ etex ;
+latexmp_picture[12]:= btex $C$ etex ;
+latexmp_picture[13]:= btex $D$ etex ;
+latexmp_picture[14]:= btex $E$ etex ;
+latexmp_picture[15]:= btex $O$ etex ;
+latexmp_picture[16]:= btex $A$ etex ;
+latexmp_picture[17]:= btex $B$ etex ;
+latexmp_picture[18]:= btex $H$ etex ;
+latexmp_picture[19]:= btex $O$ etex ;
+latexmp_picture[20]:= btex $A$ etex ;
+latexmp_picture[21]:= btex $B$ etex ;
+latexmp_picture[22]:= btex $H$ etex ;
+latexmp_picture[23]:= btex $O$ etex ;
+latexmp_picture[24]:= btex $O$ etex ;
+latexmp_picture[25]:= btex $A$ etex ;
+latexmp_picture[26]:= btex $B$ etex ;
+latexmp_picture[27]:= btex $H$ etex ;
+latexmp_picture[28]:= btex $\overrightarrow{u}$ etex ;
+latexmp_picture[29]:= btex $\overrightarrow{v}$ etex ;
+latexmp_picture[30]:= btex $O$ etex ;
+latexmp_picture[31]:= btex $O$ etex ;
+latexmp_picture[32]:= btex $A$ etex ;
+latexmp_picture[33]:= btex $B$ etex ;
+latexmp_picture[34]:= btex $H$ etex ;
+latexmp_picture[35]:= btex $\overrightarrow{u}$ etex ;
+latexmp_picture[36]:= btex $\overrightarrow{v}$ etex ;
+latexmp_picture[37]:= btex $O$ etex ;
+latexmp_picture[38]:= btex $A$ etex ;
+latexmp_picture[39]:= btex $B$ etex ;
+latexmp_picture[40]:= btex $\overrightarrow{u}$ etex ;
+latexmp_picture[41]:= btex $\overrightarrow{v}$ etex ;
+latexmp_picture[42]:= btex $O$ etex ;
+latexmp_picture[43]:= btex $A$ etex ;
+latexmp_picture[44]:= btex $B$ etex ;
+latexmp_picture[45]:= btex $C$ etex ;
+latexmp_picture[46]:= btex $O$ etex ;
+latexmp_picture[47]:= btex $A$ etex ;
+latexmp_picture[48]:= btex $B$ etex ;
+latexmp_picture[49]:= btex $C$ etex ;
+latexmp_picture[50]:= btex $O$ etex ;
+latexmp_picture[51]:= btex $A$ etex ;
+latexmp_picture[52]:= btex $B$ etex ;
+latexmp_picture[53]:= btex $\overrightarrow{u}$ etex ;
+latexmp_picture[54]:= btex $\overrightarrow{v}$ etex ;

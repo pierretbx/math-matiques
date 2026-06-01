@@ -1,0 +1,123 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{5}
+\chapter{Notions de fonctions}
+
+\section{Généralités}
+
+\subsection{Notion de fonction}
+
+\begin{defn}
+Une fonction est un procédé qui, à un nombre, associe un unique nombre.
+\end{defn}
+
+\begin{rem}
+On utilise la notation : $f \colon x \mapsto f(x)$ qui se lit \og $f$ est la fonction qui, à $x$ associe le nombre $f(x$) \fg{}.
+\end{rem}
+
+\begin{ex}
+\begin{enumerate}
+\item Déterminons la fonction $g$ qui, à la longueur $x$ d'une arrête d'un cube, associe le périmètre d'une face de ce cube.
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\item Déterminons la fonction $h$ qui, à la longueur $x$ d'une arrête d'un cube, associe le volume de ce cube.
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{enumerate}
+\end{ex}
+
+\subsection{Images et antécédents}
+
+\begin{defn}
+Soit $f$ une fonction.
+
+\medskip
+\noindent Si $f(a)=b$ alors on dit que :
+\begin{enumerate}
+\item[•] $b$ est l'image de $a$ par $f$. L'image d'un nombre, si elle existe, est unique.
+\item[•] $a$ est un antécédent de $b$ par $f$. Un nombre $b$ peut avoir plusieurs antécédents.
+\end{enumerate}
+\end{defn}
+
+\begin{ex}
+Soit $f$ une fonction telle que $f(-2)=0$. Traduis cette égalité par deux phrases.\medskip
+\begin{enumerate}
+\item[•] $0$ est \dotfill de $-2$ par la fonction $f$. \medskip
+\item[•] $-2$ est \dotfill du nombre $0$ par la fonction $f$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Soit la fonction $f\colon x \mapsto x^2-4$.
+
+\medskip
+\noindent Déterminons l'image de $-5$ puis celle de $5$ par $f$. Que remarques-tu ?
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{ex}
+
+\begin{defn}
+Les images respectives par la fonction f de certaines valeurs de x peuvent être présentées dans un tableau appelé tableau de valeurs.
+\end{defn}
+
+\begin{ex}
+Voici un tableau de valeurs de la fonction $f\colon x \mapsto x^2-4$.
+\begin{center}
+\renewcommand{\arraystretch}{2.2}
+\begin{tabularx}{\linewidth}{|>{\centering\columncolor{gray!20}}p{1cm}|*{9}{>{\centering \arraybackslash}X|}}
+\hline
+$x$ & $-4$ & $-3$ & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+$f(x)$ & $12$ & $5$ & $0$ & $-3$ & $-4$ & $-3$ & $0$ & $5$ & $12$ \\\hline
+\end{tabularx}
+\end{center}
+\begin{enumerate}
+\item Déterminons l'image de $0$ par la fonction $f$.
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\item Déterminons le(s) antécédent(s) de $5$ par la fonction $f$.
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{enumerate}
+\end{ex}
+
+\subsection{Représentation graphique}
+
+\begin{defn}
+La représentation graphique d'une fonction $f$ est la courbe constituée de l'ensemble des points de coordonnées $(x;f(x))$.
+\end{defn}
+
+\begin{ex}
+Le graphique ci-dessous représente la fonction $f\colon x \mapsto x^2-4$.
+
+\medskip\medskip
+\noindent \begin{minipage}{8.3cm}
+\begin{enumerate}
+\item[•] Détermine graphiquement l'image de $1,5$ par la fonction $f$.
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\item[•] Détermine graphiquement le (les) antécédent(s) de $-3$ par la fonction $f$.
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{enumerate}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=0.5cm,scale=0.95]
+\begin{axis}[x=1.0cm,y=0.5cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-4.2,xmax=4.2,ymin=-5.0,ymax=9.2,xtick={-4.0,-3.0,...,4.0},ytick={-4.0,-2.0,...,8.0},]
+\clip(-4.2,-5.) rectangle (4.2,9.2);
+\draw[line width=2.pt,color=blue,smooth,samples=100,domain=-4.2:4.2] plot(\x,{(\x)^(2.0)-4});
+\begin{scriptsize}
+\draw[color=blue] (-3.64,10.705142857142866) node {$f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\end{document}

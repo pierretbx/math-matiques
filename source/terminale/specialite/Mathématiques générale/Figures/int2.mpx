@@ -1,0 +1,67 @@
+% Written by metapost version 1.9991
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi12";
+_s("x",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(6.6521,0.0000)--
+ (6.6521,5.1474)--(0,5.1474)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi12";
+_s("y",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-2.3246)--(6.1366,-2.3246)--
+ (6.1366,5.1474)--(0,5.1474)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi12";
+_s("a",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(6.1449,0.0000)--
+ (6.1449,5.1474)--(0,5.1474)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi12";
+_s("y",_n0,1.00000,0.0000,0.0000,);
+_n1="cmr12";
+_s("=",_n1,1.00000,9.4575,0.0000,);
+_s("f",_n0,1.00000,21.8830,0.0000,);
+_s("(",_n1,1.00000,28.9294,0.0000,);
+_s("x",_n0,1.00000,33.4817,0.0000,);
+_s(")",_n1,1.00000,40.1338,0.0000,);
+setbounds _p to (0,-2.9888)--(44.6861,-2.9888)--
+ (44.6861,8.9664)--(0,8.9664)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi12";
+_s("b",_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,0.0000)--(4.9771,0.0000)--
+ (4.9771,8.3022)--(0,8.3022)--cycle;
+_p endgroup
+mpxbreak
+begingroup save _p,_r,_s,_n; picture _p; _p=nullpicture;
+string _n[];
+vardef _s(expr _t,_f,_m,_x,_y)(text _c)=
+  addto _p also _t infont _f scaled _m shifted (_x,_y) _c; enddef;
+_n0="cmmi12";
+_s(char22,_n0,1.00000,0.0000,0.0000,);
+setbounds _p to (0,-2.3246)--(7.0430,-2.3246)--
+ (7.0430,5.1474)--(0,5.1474)--cycle;
+_p endgroup
+mpxbreak

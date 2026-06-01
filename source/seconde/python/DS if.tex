@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
+\usepackage{tcolorbox}
+\usepackage{listings}
+\usepackage{xcolor}
+%\usepackage{multicol}
+
+\definecolor{codegray}{rgb}{0.95,0.95,0.95}
+\lstset{
+    language=Python,
+    backgroundcolor=\color{codegray},
+    basicstyle=\ttfamily\small,
+    keywordstyle=\color{blue},
+    commentstyle=\color{gray},
+    stringstyle=\color{red},
+    frame=single,
+    breaklines=true
+}
+
+\begin{document}
+
+\centering\textbf{Devoir Surveillé d’Algorithmique - Python : Affectation et condition \texttt{if}}\\
+\vspace{0.5cm}
+
+\noindent\textbf{Nom :} \underline{\hspace{5cm}} \hfill \textbf{Prénom :} \underline{\hspace{5cm}} \\
+\textbf{Classe :} \underline{\hspace{5cm}}\\
+\vspace{1cm}
+
+%\begin{multicols}{2}
+\section*{Sujet A}
+
+\begin{enumerate}
+    \item Que va afficher le programme suivant après exécution ? Justifie ta réponse.
+
+\begin{lstlisting}
+note = 14
+moyenne = 10
+
+if note >= moyenne:
+    print("Admis")
+    if note >= 16:
+        print("Mention tres bien")
+else:
+    print("Refuse")
+\end{lstlisting}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{3.5cm}
+\end{tcolorbox}
+
+    \item Écris un programme en Python qui :
+    \begin{itemize}
+        \item crée deux variables \texttt{a} et \texttt{b}, avec les valeurs de ton choix ;
+        \item affiche "\texttt{La somme est paire}" si la somme est paire ;
+        \item sinon affiche "\texttt{La somme est impaire}".
+    \end{itemize}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{5cm}
+\end{tcolorbox}
+
+\end{enumerate}
+
+\vspace{0.3cm}
+\textbf{Rappel :} Pour savoir si un nombre est pair, on utilise :\\
+\texttt{if nombre \% 2 == 0:}
+
+%\columnbreak
+\newpage
+
+\section*{Sujet B}
+
+\begin{enumerate}
+    \item Que va afficher le programme suivant après exécution ? Justifie ta réponse.
+
+\begin{lstlisting}
+note = 9
+moyenne = 10
+
+if note >= moyenne:
+    print("Admis")
+    if note >= 16:
+        print("Mention tres bien")
+else:
+    print("Refuse")
+\end{lstlisting}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{3.5cm}
+\end{tcolorbox}
+
+    \item Écris un programme en Python qui :
+    \begin{itemize}
+        \item crée deux variables \texttt{x} et \texttt{y}, avec les valeurs de ton choix ;
+        \item affiche "\texttt{La somme est paire}" si la somme est paire ;
+        \item sinon affiche "\texttt{La somme est impaire}".
+    \end{itemize}
+
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{5cm}
+\end{tcolorbox}
+
+\end{enumerate}
+
+\vspace{0.3cm}
+\textbf{Rappel :} Pour savoir si un nombre est pair, on utilise :\\
+\texttt{if nombre \% 2 == 0:}
+
+%\end{multicols}
+
+\end{document}

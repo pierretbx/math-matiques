@@ -1,0 +1,490 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[french,lined,boxed]{algorithm2e}	% pour les algorithmes
+%\ configuration package algorithm
+\SetKw{Retour}{Afficher}
+\SetKwBlock{Traitement}{Début traitement}{Fin traitement.}
+\SetKw{Afficher}{Afficher}
+\usepackage{listings}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\cro}[1]{ \ds [#1]}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pst-tree}
+\usepackage{pifont}
+%\usepackage[cp1252]{inputenc}
+
+
+%\newcommand{\binom}[2]{C_{#2}^{#1}}
+\newcommand{\C}[2]{C_{#1}^{#2}}
+\newcommand{\V}{\overrightarrow}
+\newcommand{\Rep}{(O;\V{i};\V{j})}
+%\newcommand{\Int}[2]{[\, #1 ; #2 \,]}
+%\newcommand{\Reel}{\mathfrak{Re}} 
+%\newcommand{\Ima}{\mathfrak{Im}} 
+%\renewcommand{\Abs}[1]{\left \lvert#1\right \rvert}
+\newcommand{\Cnp}{\begin{pmatrix} n\\p \end{pmatrix}}
+%\newcommand{\C}[2]{\begin{pmatrix} #1\\#2 \end{pmatrix}}
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\dx}{dx}
+
+\begin{document}
+
+
+\tableofcontents
+
+
+\chapter{Lois de probabilités discrètes}
+
+\section{Loi uniforme}
+
+\begin{defn}
+Soit $E=\{1;2;...;n\}$ où $n$ est un entier naturel non nul. On dit qu'une variable aléatoire $X$ suit la \emph{loi uniforme} de paramètre $n$ si pour tout $k\in \{1;2;...;n\}$, 
+$$P(X=k)=\frac{1}{n}$$
+\end{defn}
+
+\begin{demo}
+Il faut montrer que l'on obtient bien une loi de probabilité en posant $P(X=k)=\frac{1}{n}$.\\
+On a  $P(X=k)\geq 0$\\
+et $\sum_{k=0}{n}\frac{1}{n}=\frac{1}{n}+\frac{1}{n}+...\frac{1}{n}=n\times \frac{1}{n}=1$.\\
+Donc on définit bien une loi de probabilité. 
+\end{demo}
+
+\begin{rem}
+La loi uniforme apparaît lorsque l'on modélise une expérience aléatoire à l'aide d'une loi \emph{équirépartie}, c'est à dire lorsque l'on a affaire à une situation \emph{d'équiprobabilité}.
+\end{rem}
+
+
+
+\begin{prop}
+\begin{itemize}
+\item[$\bullet$] Soit $A$ un événement de $E$. Alors $P(X\in A)=\frac{\textrm{nombre d'éléments de }A}{n}$.
+\item[$\bullet$] L'espérance est $E(X) = \frac{n+1}{2}$
+\end{itemize}
+
+\end{prop}
+
+
+\begin{demo}
+Le premier point est immédiat. Preuve de l'espérance :\\
+$E(X)=\sum_{k=1}^{n}kP(X=k)=\sum_{k=1}^{n}k\frac{1}{n}=\frac{1}{n}(\sum_{k=0}^{n}k)=\frac{1}{n}\frac{n(n+1)}{2}=\frac{n+1}{2}$\\
+ou écrit autrement :
+$E(X)=1\times P(X=1)+2\times P(X=2)+\cdots +n\times P(X=n)=1\times \frac{1}{n}+2\times \frac{1}{n}+\cdots +n\times \frac{1}{n}=\frac{1}{n}(1+2+\cdots+n)=\frac{1}{n}\frac{n(n+1)}{2}=\frac{n+1}{2}$.
+
+\end{demo}
+
+\section{Loi de Bernoulli}
+
+
+
+\begin{defn}
+Soit $p$ un nombre réel tel que $p\in[0;1]$. Soit $X$ une variable aléatoire. On dit que $X$ suit une loi de Bernoulli de paramètre $p$ si :
+\begin{itemize}
+ \item[$\bullet$] $X$ prend pour seules valeurs 1 (\og{}succès\fg{}) et 0 (\og{}échec\fg{}) ;
+\item[$\bullet$] $P(X=1)=p$ et $P(X=0)=1-p$.
+\end{itemize}
+\end{defn}
+
+
+\begin{prop}
+Si $X$ suit une loi de Bernoulli de paramètre $p$ :
+\begin{itemize}
+\item[$\bullet$] L'espérance est $E(X)=p$ ;
+\item[$\bullet$] la variance est $V(X)=p(1-p)$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\begin{itemize}
+\item[$\bullet$] $E(X)=0\times P(X=0)+1\times P(X=1)=1\times p=p$
+\item[$\bullet$] $V(X)= P(X=0)\times (0-E(X))^2+P(X=1)\times (1-E(X))^2=(1-p)\times (0-p)^2+p\times (1-p)^2=p^2(1-p)+p(1-p)^2=p(1-p)(p+1-p)=p(1-p)$
+\end{itemize}
+\end{demo}
+\begin{comment}
+\begin{rem}[Algorithmique]
+Algorithme de simulation d'une épreuve de Bernoulli de paramètre $p$.
+
+\begin{algorithm}
+\Donnees{$p$ : nombre décimal entre 0 et 1 ;}
+\Traitement{
+$t$ prend une valeur aléatoire décimale entre 0 inclus et 1 exclu ;\\
+\Si{$t<p$}{Renvoyer "Succès" ; }
+\Sinon{Renvoyer "\'Echec" ;}
+}
+\end{algorithm}
+\end{rem}
+
+\begin{rem}{Exemple de programmation en langage python}
+\begin{lstlisting}[language=python,frame=single,keywordstyle=\color{blue},numberstyle=\color{green},stringstyle=\color{orange},identifierstyle=\color{purple}]
+import random
+def bernoulli(p):
+	t=random.random()
+	if t<p:
+		return 1
+	else:
+		return 0
+\end{lstlisting}
+\end{rem}
+\end{comment}
+
+\section{Schéma de Bernoulli}
+
+\begin{defn}
+Deux expériences sont dites indépendantes si le résultat de l'une n'influe pas sur le résultat de l'autre.
+\end{defn}
+
+\begin{exemple}
+il y a indépendance lorsqu'on lance deux fois de suite une pièce de monnaie.
+\end{exemple}
+
+\begin{defn}
+On considère une expérience aléatoire ne comportant que deux issues ; l'une appelée \og{}succès\fg{} et l'autre appelée \og{}échec\fg{}. On note $p$ la probabilité de succès et $q$ la probabilité d'échec ($q=1-p$). La répétition de cette expérience $n$ fois de manière indépendante constitue \emph{un schéma de Bernoulli} de paramètres $n$ et $p$.
+\end{defn}
+
+
+
+\begin{prop}
+Dans un schéma de Bernoulli, la probabilité d'une liste de résultats est le produit des probabilités de chaque résultat
+\end{prop}
+
+
+\begin{exemple}
+%\begin{center}
+ %\includegraphics[width=6cm]{arbre.png}
+%\end{center}
+On contrôle la qualité d'un produit sur une chaîne de production. On prélève 3 produits au hasard. On suppose que les prélèvements sont indépendants. Statistiquement, chaque produit a une probabilité $p=0,05$ d'être défectueux.\\
+Sur l'arbre ci-dessus représentant un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$, la probabilité d'avoir les deux premières expériences qui donnent un succès et la dernière qui donne un échec est $P(SS\bar{S})=0,05^2\times 0,95\approx 0,002$\\
+soit 0,2 \% de chances d'avoir deux produits défectueux sur les trois prélevés.
+\end{exemple}
+
+\section{Loi binomiale}
+
+
+\begin{defn}
+Soient $n$ et $k$ deux entiers naturels avec $k\leq n$. On note $\C{n}{k}$ (on dit \og{}$k$ sous $n$\fg{}) le nombre de manières d'obtenir $k$ succès et $n-k$ échecs pour $n$ répétitions indépendantes de la même expérience de Bernoulli. 
+\end{defn}
+
+
+
+
+\begin{exemple}
+%\begin{center}
+ %\includegraphics[width=8cm]{arbre.png}
+%\end{center}
+
+\noindent $\C{3}{3}=1$ : il y a une seule manière d'obtenir 3 succès lors de la répétition de 3 épreuves identiques indépendantes.\\
+$\C{3}{2}=3$ : il y a trois manières d'obtenir 2 succès et un échec lors de la répétition de 3 épreuves identiques indépendantes ($SSE$ ; $SES$ ; $ESS$).
+\end{exemple}
+
+\begin{defn}
+On considère une épreuve de Bernoulli de paramètre $p\in [0;1]$. On répète $n$ fois ($n\geq 1$) cette expérience indépendamment et on note $X$ la variable aléatoire qui compte le nombre de succés. On dit alors que la variable aléatoire $X$ suit une loi \emph{binomiale} de paramètres $n$ et $p$ et on note $X\sim \mathcal{B}(n;p)$.
+\end{defn}
+
+
+
+\begin{prop}
+ Si $X$ est une variable aléatoire qui suit une loi binomiale de paramètres $n$ et $p$, alors la probabilité d'obtenir $k$ succès avec $k\in\{0;1;2;...;n\}$ est $P(X=k)=\C{n}{k}p^k(1-p)^{n-k}$.
+\end{prop}
+
+
+\begin{demo}
+Il y a $\C{n}{k}$ manières d'obtenir $k$ succès dans $n$ répétitions d'expériences identiques et indépendantes. La probabilité de chacune de ces événements qui sont évidemment incompatibles est $p^k(1-p)^{n-k}$ d'où le résultat.
+\end{demo} 
+
+\begin{exemple}
+On considère le problème précédent de test des produits d'une chaîne de production. Les prélèvements étant supposés indépendants les uns des autres, l'expérience constitue un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$. La variable aléatoire $X$ qui compte le nombre de succès suit la loi binomiale de paramètres $n=3$ et $p=0,05$.\\
+On a $P(X=2)=P(SS\bar{S}\cap S\bar{S}S\cap \bar{S}SS)$\\
+ car trois chemins permettent d'obtenir deux succès c'est à dire deux objets défectueux.\\
+D'où $P(X=2)=P(SS\bar{S})+P(S\bar{S}S)+P(\bar{S}SS)$\\
+donc $P(X=2)=0,05^2\times 0,95+0,95\times 0,05\times 0,95+0,95\times 0,05^2=3\times 0,05^2\times 0,95=0,007$\\
+soit une probabilité très faible de 0,007 d'avoir deux produits défectueux.
+\end{exemple}
+
+\begin{rem}{Calcul pratique de $P(X=k)$ et $P(X\leq k)$}
+Soit $X$ une variable aléatoire de paramètres $n$ et $p$. Pour $k$ allant de 0 à $n$, pour calculer $P(X=k)$ ou $P(X\leq k)$, on utilise une calculatrice :
+\begin{itemize}
+\item[$\bullet$] Sur Texas instrument : aller dans le menu \fbox{2nd}\fbox{distrib}, choisir \fbox{binomFdp} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $P(X=k)$ et choisir \fbox{binomFRép} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $P(X\leq k)$.
+\item[$\bullet$] Sur Casio : aller dans le menu \fbox{STAT} puis \fbox{DIST} puis \fbox{BINM}. Sélectionner alors \fbox{Bpd} puis \fbox{Var} pour variable, puis entrer alors $k$  dans la ligne \og{}x\fg{}, $n$ dans la ligne \og{}numtrial\fg{} et $p$ dans la ligne \og{}p\fg{} puis aller sur \og{}execute\fg{} pour valider et calculer ainsi $P(X=k)$. Pour le calcul de  $P(X\leq k)$, on utilisera \fbox{Bcd} au lieu de \fbox{Bpd}.
+\end{itemize}
+\end{rem}
+
+\begin{exemple}
+On considère une variable aléatoire $X$ suivant la loi binomiale de paramètres $n=4$ et $p=0,4$.\\
+Sur TI, la probabilité $P(X\leq 3)$ est donnée par \texttt{binomFrép(4,0.4,3)}.
+\end{exemple}
+
+\begin{rem}
+\begin{itemize}
+\item[$\bullet$] On a $P(X<3)=P(X\leq 2)$\\
+\item[$\bullet$] pour calculer $P(X>k)$, on calcule $1-P(X\leq k)$.
+\end{itemize}
+\end{rem}
+
+\begin{prop}
+Soit $X$ une variable aléatoire qui suit la loi binomiale de paramètres $n$ et $p$ :
+\begin{itemize}
+\item[$\bullet$] $E(X)=np$ ;
+\item[$\bullet$] $V(X)=np(1-p)$ et $\sigma(X)=\sqrt{np(1-p)}$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+Pour rappel si $X_1,X_2,\cdots X_n$ sont des variables aléatoires indépendantes qui suivent une loi de Bernouilli de paramètre $p$ alors $X_1+X_2+\cdots + X_n$ est une variable aléatoire qui suit une loi Binomiale de paramètre $\calb(n,p)$.
+
+Ainsi soit $Z$ une variable aléatoire qui suit une loi Binomiale de paramètre $\calb(n,p)$ alors $E(Z)=E(X_1+X_2+\cdots + X_n)=E(X_1)+E(X_2)+\cdots +E(X_n)=p+p+\cdots+p=np$.
+
+De même pour la variance $V(Z)=V(X_1+X_2+\cdots + X_n)=V(X_1)+V(X_2)+\cdots +V(X_n)=p(1-p)+p(1-p)+\cdots+p(1-p)=np(1-p)$.
+
+On peut donc déduire aussi l'écart-type $\sigma(Z)=\sqrt{np(1-p)}$.
+\end{demo}
+
+
+\begin{exemple}
+Pour le problème de la chaîne de production, en prélevant $n=100$ produits indépendamment, la loi binomiale a pour paramètres $n=100$ et $p=0,05$. On a alors $E(X)=np=100\times 0,05=5$ ce qui signifie que l'on peut prévoir 5 produits défectueux pour un prélèvement de 100 produits indépendants.
+\end{exemple}
+
+\begin{comment}
+\begin{rem}
+Algorithme de simulation d'une loi binomiale de paramètres $n$ et $p$.
+
+\begin{algorithm}
+\Donnees{$p$ : nombre décimal entre 0 et 1 ; $n$ : entier naturel ;}
+\Traitement{
+$c\leftarrow 0$;\\
+\Pour{$k$ de 1 jusque $n$}
+  {$t$ prend une valeur aléatoire décimale entre 0 inclus et 1 exclu;\\
+  \Si{$t<p$}{$c\leftarrow c+1$;\\}
+  }
+}
+\end{algorithm}
+\end{rem}
+\end{comment}
+
+\section{Coefficients binomiaux}
+
+
+\begin{defn}
+On appelle \emph{coefficients binomiaux} l'ensemble des nombres $\C{k}{n}$ pour $n\in\mathbb{N}$ et $k\in\mathbb{N}$.
+\end{defn}
+
+\begin{rem}[Utilisation de la calculatrice]
+\begin{itemize}
+\item[Casio : ] Touche \fbox{nCr}. Taper sur \fbox{OPTN} puis \fbox{PROB} puis \fbox{nCr}.\\
+Syntaxe : 7\fbox{nCr}4
+\item[TI : ] Touche \fbox{Combinaison}. Taper sur \fbox{math} puis aller dans le menu \fbox{PROB} puis choisir \fbox{Combinaison}.\\
+Syntaxe : 7\fbox{Combinaison}4
+\item[Numworks : ] menu boîte à outils puis \fbox{Dénombrement} puis \fbox{binomial(n,k)} (Attention : nom mal choisi, cela n'a rien à voir avec une loi binomiale).\\
+
+\end{itemize}
+\end{rem} 
+
+
+\begin{prop}
+\begin{itemize}
+\item[$\bullet$] $\C{n}{k}=\C{n}{n-k}$ ;
+\item[$\bullet$] $\C{n}{k}+\C{n}{k+1}=\C{n+1}{k+1}$
+\end{itemize}
+\end{prop}
+
+
+
+
+\section{Triangle de Pascal}
+ Le triangle de Pascal, du nom de Blaise Pascal, mathématicien français du XVII\up{e} siècle qui le\og{}redécouvra\fg{} en Occident (car il était connu avant en Orient et au Moyen-Orient) est une disposition permettant de visualiser et de calculer les coefficients binomiaux et qui s'appuie sur la formule précédente.
+\begin{center}
+ \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+  $\C{0}{0}=1$ & & & & &\\
+\hline
+$\C{1}{0}=1$ & $\C{1}{1}=1$ & & & &\\
+\hline
+$\C{2}{0}=1$ & $\C{2}{1}=2$ & 1 & & &\\
+\hline
+$\C{3}{0}=1$ & $\C{3}{1}=3$ & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+\end{center}
+Explication de la construction : le nombre de la ligne $n$ et de la colonne $k$ est le coefficient binomial $\C{n-1}{k-1}$. Il est obtenu en ajoutant le nombre situé au dessus (ligne $n-1$ et colonne $k$) au nombre de la colonne et de la ligne précédente (ligne $n-1$ et colonne $k-1$).\\
+Par exemple, $\C{3}{1}=3$ est la somme de $\C{2}{1}=2$ et de $\C{2}{0}=1$.
+\begin{center}
+ \begin{tabular}{|c|c|c|c|c|c|}
+\hline
+  1 & & & & &\\
+\hline
+1 & 1 & & & &\\
+\hline
+1 & 2 & 1 & & &\\
+\hline
+1 & 3 & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+\end{center}
+
+\newpage
+
+\begin{comment}
+\begin{sanscadre}{Exemple de programmation du triangle de Pascal en langage python}
+\begin{lstlisting}[language=python,frame=single,keywordstyle=\color{blue},numberstyle=\color{green},stringstyle=\color{orange},identifierstyle=\color{purple}]
+def trianglePascal(n):
+	L=[1]
+	L=L+[0 for k in range(n)]
+	t=[L]
+	for k in range(1,n+1):
+		L=[1]
+		for l in range(1,k+1):
+			L.append(t[k-1][l]+t[k-1][l-1])
+		L=L+[0 for l in range(k,n)]
+		t=t+[L]
+	return t
+\end{lstlisting}
+\end{sanscadre}
+\end{comment}
+
+
+\section{Loi géométrique}
+
+
+\begin{defn}
+Soit $E=\mathbb{N}^{*}$. Soit $p\in [0;1]$. On dit qu'une variable aléatoire $X$ définie sur $E$ suit une loi géométrique de paramètre $p$ lorsqu'elle donne le nombre d'expériences de Bernoulli de paramètre $p$ répétées indépendamment nécessaires pour obtenir un premier succès. On note alors $X\sim \mathcal{G}(p)$.
+\end{defn}
+
+
+\begin{prop}
+Si $X$ suit une loi géométrique de paramètre $p$ alors :
+\begin{itemize}
+\item[$\bullet$] pour tout $k\in\mathbb{N}^{*}$, 
+$$P(X=k)=p(1-p)^{k-1}$$
+\item[$\bullet$] $E(X)=\frac{1}{p}$.
+\end{itemize}
+\end{prop}
+
+
+\begin{prop}
+$X$ suit une loi géométrique si et seulement si pour tout $m,n\in\mathbb{N}^{*}$, $P_{X>m}(X>m+n)=P(X>n)$.\\
+Cette propriété illustre que la loi géométrique est une loi dite \og{}sans mémoire\fg{}. Cette propriété montre aussi que les seules lois discrètes sans mémoire sont les lois géométriques.
+\end{prop}
+
+
+\begin{demo}[Preuve de la condition nécessaire]
+$P_{X>m}(X>m+n)=\frac{P(X>m+n\cap X>m)}{X>m}=\frac{P(X>m+n)}{X>m}$ car $X>m$ est nécessairement réalisé si $X>m+n$.\\
+Remarquons ensuite que $P(X>m)=1-P(X\leq m)=1-\sum_{k=1}^{m}p(1-p)^{k-1}=1-p\sum_{k=0}^{m-1}(1-p)^k=1-p\frac{1-(1-p)^m}{1-(1-p)}=1-p\frac{1-(1-p)^m}{p}=1-(1-(1-p)^m)=(1-p)^m$\\
+D'où $P_{X>m}(X>m+n)=\frac{P(X>m+n)}{X>m}=\frac{(1-p)^{m+n}}{(1-p)^m}=(1-p)^n$.\\
+Or $P(X>n)=(1-p)^n$ d'où l'égalité.
+\end{demo}
+
+\end{document}

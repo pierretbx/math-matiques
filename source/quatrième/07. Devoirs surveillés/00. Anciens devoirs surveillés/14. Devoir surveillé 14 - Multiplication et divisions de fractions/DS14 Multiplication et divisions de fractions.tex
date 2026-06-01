@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 14 - Multiplication et divisions de fractions\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Calculer : $\frac35\times\frac{10}{9}$, $\frac78\times\frac{12}{21}$, $-\frac23\times\frac{15}{4}$.\end{exercice}\begin{exercice}{2}{5}Calculer : $\frac56\div\frac{10}{9}$, $\frac34\div\frac{7}{2}$, $-\frac85\div\frac{12}{25}$.\end{exercice}\begin{exercice}{3}{5}Les $\frac34$ d'un terrain sont cultivés. Les $\frac25$ de cette partie sont plantés en tomates. Quelle fraction du terrain est plantée en tomates ?\end{exercice}\begin{exercice}{4}{6}Résoudre et simplifier : $A=\frac23+\frac54\times\frac{8}{15}$ et $B=(\frac56-\frac13)\div\frac74$.\end{exercice}\end{document}

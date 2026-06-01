@@ -1,0 +1,118 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\setcounter{chapter}{15}
+\chapter{Divisibilité et nombres premiers}
+
+\section{Divisibilité}
+
+\vspace{-2mm}
+%\begin{dft}
+%Un nombre entier $a$ est divisible par un nombre entier $b$ si le reste de la division euclidienne de $a$ par $b$ est nul. 
+
+%\medskip
+%\noindent Dans ce cas, $a$ est un multiple de $b$ et $b$ est un diviseur de $a$.
+%\end{dft}
+
+%\smallskip
+%\begin{ex}
+%$72$ est divisible par $24$. 
+
+%\medskip
+%\noindent En effet, $72 = 3\times 24 + 0$ donc le reste de la division euclidienne de $72$ par $24$ est nul.
+
+%\noindent On peut donc dire que $72$ est un multiple de $24$ et de $3$ ou que $24$ est un diviseur de $72$.
+%\end{ex}
+
+\begin{meth}[Critère de divisibilité]
+\begin{enumerate}
+\item[•] Un nombre est divisible par $2$ si il se termine par $0$, $2$, $4$, $6$ ou $8$
+\item[•] Un nombre est divisible par $5$ s'il se termine par $0$ ou $5$.
+
+\item[•] Un nombre est divisible par $3$ si la somme de ses chiffres est divisible par $3$.
+
+\medskip
+\textit{Exemple :} $249$ est divisible par $3$ car $2 + 4 + 9 = 15$ qui est divisible par $3$ ($3 \times 5 = 15$).
+
+\item[•] Un nombre est divisible par $9$ si la somme de ses chiffres est divisible par $9$.
+
+\medskip
+\textit{Exemple :} $2 538$ est divisible par $9$ car $2 + 5 + 3 + 8 = 18$ qui est divisible par $9$ ($3 \times 9 = 18$).
+\end{enumerate}
+\end{meth}
+
+\vspace{-2mm}
+\section{Nombres premiers}
+
+\vspace{-2mm}
+\begin{dft}
+Un nombre qui n'est divisible que par $1$ est lui-même est appelé un nombre premier.
+\end{dft}
+
+\begin{rmq}
+Il n'existe pas à ce jour de formule pour trouver des nombres premiers. Afin d'être certains qu'un nombre soit premier, il faut faire de nombreux calculs, souvent a l'aide d'ordinateur.
+\end{rmq}
+
+\begin{ex}[\href{https://www.geogebra.org/m/rwdu9xt2}{Crible d'Eratosthène}]
+
+Cette méthode permet de trouve facilement les nombre entiers de $1$ jusqu'à $100$.
+
+\medskip
+\begin{minipage}{9cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+1&2&3&4&5&6&7&8&9&10 \\\hline
+11&12&13&14&15&16&17&18&19&20 \\\hline
+21&22&23&24&25&26&27&28&29&30 \\\hline
+31&32&33&34&35&36&37&38&39&40 \\\hline
+41&42&43&44&45&46&47&48&49&20 \\\hline
+51&52&53&54&55&56&57&58&59&60 \\\hline
+61&62&63&64&65&66&67&68&69&70 \\\hline
+71&72&73&74&75&76&77&78&79&80 \\\hline
+81&82&83&84&85&86&87&88&89&90 \\\hline
+91&92&93&94&95&96&97&98&99&100 \\\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{7.2cm}
+Légende :
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{4cm}
+
+\medskip
+Liste des nombres premiers :
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{0.8cm}
+\end{minipage}
+\end{ex}
+
+\vspace{-2mm}
+\section{Décomposition en produit de facteurs premiers}
+
+\vspace{-5mm}
+\noindent \begin{minipage}{14cm}
+
+\begin{prop}
+On peut toujours décomposer un nombre non premier en produit de plusieurs facteurs premiers, cette décomposition est unique.
+\end{prop}
+
+\begin{ex}
+La décomposition du produit en facteurs premier de $324$ est : $$324 = 2^2 \times 3^4$$
+\end{ex}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\begin{tabular}{c|c}
+324 & 2 \\
+162 & 2 \\
+81 & 3 \\
+27 & 3 \\
+9 & 3 \\
+3 & 3 \\
+1 &  \\
+\end{tabular}
+\end{minipage}
+
+\end{document}

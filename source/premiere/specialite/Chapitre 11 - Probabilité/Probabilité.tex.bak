@@ -1,0 +1,533 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Probabilit\'es}
+\section{Introduction}
+\subsection{Exp\'erience al\'eatoire}
+\begin{defn}
+Une exp\'erience dont on connaît les issues (les r\'esultats) est appel\'ee exp\'erience al\'eatoire si on ne peut pas pr\'evoir ni calculer l'issue qui sera r\'ealis\'ee.
+
+L'ensemble des r\'esultats possibles d'une exp\'erience al\'eatoire (aussi appel\'es \'eventualit\'es) est appel\'e univers de l'exp\'erience. On le note souvent $\Omega$. Le nombre de ses \'el\'ements est appel\'e cardinal et se note $\text{Card}\ \Omega$.
+\end{defn}
+
+\begin{exemple}
+jeu de Pile ou Face, nombre obtenu suite au lancer d'un d\'e, nombre tir\'e au sort dans une loterie, couleur de la prochaine voiture qui passera dans la rue, vingt et uni\`eme mot d'un livre choisi au hasard...
+\end{exemple}
+
+\subsection{Loi de probabilit\'e}
+\begin{defn}
+D\'efinir une loi de probabilit\'e sur un univers $\Omega=\{x_1,x_2,\ldots,x_n\}$ c'est associer à chaque \'eventualit\'e $x_i$ un nombre $p_i$ positif ou nul, appel\'e probabilit\'e de l'\'eventualit\'e $x_i$, tel que $p_1 + p_2 + \cdots + p_n=1$.
+\end{defn}
+
+Cons\'equence : Pour tout $i$, $p_i\ie 1$.
+
+\subsection{Mod\'elisation - Loi des grands nombres}
+\begin{defn}
+Mod\'eliser une exp\'erience al\'eatoire d'univers $\Omega$ c'est choisir une loi de probabilit\'e sur $\Omega$ qui repr\'esente le \og mieux possible \fg{} la situation.
+\end{defn}
+
+\newpage
+\begin{minipage}{9cm}
+\begin{exemple}
+On consid\`ere la roue de loterie suivante. L'exp\'erience consiste à faire tourner la roue et à noter le nombre sur lequel elle s'arr\^ete. D\'efinir une loi de probabilit\'e permettant de mod\'eliser l'exp\'erience.
+\end{exemple}
+
+
+L'univers est $\Omega=\{1;2;3;4;5;6\}$
+
+On associe à l'\'eventualit\'e 1 la probabilit\'e $p_1=\dfrac{45}{360}=\dfrac{1}{8}$. On fait de m\^eme pour les autres \'eventualit\'es. 
+
+On obtient le tableau suivant :
+
+\vspace{1ex}
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+\'eventualit\'e & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+Probabilit\'e & $\dfrac{1}{8}$ & $\dfrac{1}{4}$ & $\dfrac{1}{8}$ & $\dfrac{1}{12}$ & $\dfrac{1}{3}$ & $\dfrac{1}{12}$ \\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+\end{minipage}
+\hfill
+\begin{minipage}{5cm}
+\begin{center}
+\includegraphics[scale=1.3]{CoursProbasFigures.1}
+\end{center}
+\end{minipage}
+
+\vspace{3ex}
+Toutes les exp\'eriences ne sont pas aussi simples à mod\'eliser que le lancer d'un d\'e \'equilibr\'e. Cependant, pour construire ou valider un mod\`ele, on dispose du r\'esultat th\'eorique ci-dessous appel\'e \og Loi des grands nombres \fg{} :
+
+%\vspace{1ex}
+\begin{prop}
+On consid\`ere une exp\'erience d'univers $\Omega$ qui suit une loi de probabilit\'e $P$. La fr\'equence d'obtention de chaque r\'esultat $x_i$ lorsqu'on r\'ealise $n$ fois l'exp\'erience tend vers la probabilit\'e de $x_i$ lorsque $n$ devient grand.
+\end{prop}
+
+\begin{exemple}
+Si l'on r\'ealise un tr\`es grand nombre de fois l'exp\'erience pr\'ec\'edente (la roue de loterie), la fr\'equence d'obtention de \og 1 \fg{} va se rapprocher de $\dfrac{1}{8}$, la fr\'equence d'obtention de \og 2 \fg{} va se rapprocher de $\dfrac{1}{4}$, la fr\'equence d'obtention de \og 3 \fg{} va se rapprocher de $\dfrac{1}{8}$...
+
+Si, lors du lancer d'un d\'e, les fr\'equences d'apparition de chacune des faces ne se rapprochent pas de $\dfrac{1}{6}$, il est vraisemblable que le d\'e ne soit pas correctement \'equilibr\'e.
+\end{exemple}
+%
+\newpage
+\section{Vocabulaire des \'ev\`enements}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$.
+\subsection{D\'efinitions}
+
+\begin{defn}
+On appelle \'ev\`enement toute partie de $\Omega$.
+
+Un \'ev\`enement \'el\'ementaire est un \'ev\`enement qui ne contient qu'un seul \'el\'ement.
+
+L'univers $\Omega$ contient tous les r\'esultats possibles, on l'appelle \'ev\`enement certain.
+
+L'ensemble vide $\varnothing$ ne contient aucun r\'esultat, on l'appelle \'ev\`enement impossible.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer la liste des \'eventualit\'es des \'ev\`enements suivants
+\begin{multicols}{2}
+$A$ : \og On obtient un nombre pair \fg
+
+$B$ : \og On obtient un nombre sup\'erieur ou \'egal à 3 \fg
+
+$C$ : \og On obtient un multiple de 5 \fg
+
+$D$ : \og On obtient un nombre n\'egatif \fg.
+\end{multicols}
+\end{exemple}
+
+\begin{multicols}{2}
+$A=\{2~;~4~;~6\}$
+
+$B=\{3~;~4~;~5~;~6\}$
+
+$C=\{5\}$
+
+$D=\varnothing$
+
+\end{multicols}
+
+%\vspace{3em}
+\subsection{Intersection - R\'eunion}
+\begin{minipage}{11.1cm}
+$A$ et $B$ sont deux \'ev\`enements de $\Omega$.
+
+%\vspace{1ex}
+\begin{defn}
+On appelle intersection de $A$ et $B$ l'\'ev\`enement not\'e $A\cap B$ compos\'e des \'eventualit\'es qui appartiennent à la fois à $A$ et à $B$.
+
+Si $A\cap B=\varnothing$, on dit que $A$ et $B$ sont incompatibles.
+
+On appelle r\'eunion de $A$ et $B$ l'\'ev\`enement not\'e $A\cup B$ compos\'e des \'eventualit\'es qui appartiennent à $A$ ou à $B$ (c'est-à-dire qui appartiennent à au moins l'un des deux).
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'ecrire par une phrase et d\'eterminer les \'eventualit\'es des \'ev\`enements $A\cap B$, $A\cup B$, $A\cap C$, $B\cup C$.
+\end{exemple}
+\end{minipage}
+\hfill
+\begin{minipage}{3.8cm}
+\begin{center}
+\includegraphics{CoursProbasFigures.2}
+\par
+\includegraphics{CoursProbasFigures.3}
+\end{center}
+\end{minipage}
+
+
+\begin{itemize}
+\item[$\bullet$]  $A \cap B$ : \og On obtient un nombre pair et sup\'erieur ou \'egal à 3. \fg
+
+\hspace{6em} $A \cap B = \{4~;~6\}$
+
+\item[$\bullet$]  $A\cup B$ : \og On obtient un nombre pair ou sup\'erieur ou \'egal à 3. \fg
+
+\hspace{6em} $A\cup B = \{2~;~3~;~4~;~5~;~6\}$
+
+\item[$\bullet$]  $A\cap C$ : \og On obtient un nombre pair et multiple de 5. \fg
+
+\hspace{6em} $A\cap C = \varnothing$
+
+\item[$\bullet$]  $B\cup C$ : \og On obtient un nombre sup\'erieur ou \'egal à 3 ou multiple de 5. \fg
+
+\hspace{6em} $B\cup C =  \{3~;~4~;~5~;~6\}$
+\end{itemize}
+
+
+%\vspace{4em}
+\subsection{\'ev\`enement contraire}
+\begin{minipage}{10cm}
+$A$ est un \'ev\`enement de $\Omega$.
+
+%\vspace{1ex}
+\begin{defn}
+On appelle contraire de $A$ l'\'ev\`enement not\'e $\barre{A}$ constitu\'e de toutes les \'eventualit\'es qui n'appartiennent pas à $A$.
+\end{defn}
+\end{minipage}
+\hfill
+\begin{minipage}{4.5cm}
+\begin{center}
+\includegraphics{CoursProbasFigures.4}
+\end{center}
+\end{minipage}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'ecrire par une phrase et d\'eterminer les \'eventualit\'es des \'ev\`enements $\barre{A}$, $\barre{B}$, $\barre{C}$.
+\end{exemple}
+
+
+\begin{itemize} 
+\item[$\bullet$] $\barre{A}$ : \og On obtient un nombre impair. \fg
+
+\hspace{6em} $\barre{A} = \{1~;~3~;~5\}$
+
+\item[$\bullet$] $\barre{B}$ : \og On obtient un nombre strictement inf\'erieur à 3. \fg
+
+\hspace{6em} $\barre{B} = \{1~;~2\}$
+
+\item[$\bullet$]  $\barre{C}$ : \og On obtient un nombre qui n'est pas multiple de 5. \fg
+
+\hspace{6em} $\barre{C} = \{1~;~2~;~3~;~4~;~6\}$
+\end{itemize}
+
+
+\section{Calcul des probabilit\'es}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$ muni d'une loi de probabilit\'e.
+\subsection{Probabilit\'e d'un \'ev\`enement}
+\begin{defn}
+Soit $A$ un \'ev\`enement de $\Omega$. On appelle probabilit\'e de $A$ la somme des probabilit\'es des \'eventualit\'es qui le composent. On la note $P(A)$.
+\end{defn}
+
+Cons\'equences :
+
+$P(\varnothing)=0$ \hspace{2em} $P(\Omega)=1$ \hspace{2em} Pour tout \'ev\`enement $A$, $0\ie P(A)\ie1$.
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer $P(A)$, $P(B)$ et $P(C)$.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$] $P(A)=P(\{2\})+P(\{4\})+P(\{6\}) = \dfrac{1}{4} + \dfrac{1}{12} + \dfrac{1}{12} = \dfrac{5}{12}$
+\item[$\bullet$] $P(B)=P(\{3\})+P(\{4\})+P(\{5\})+P(\{6\}) = \dfrac{1}{8} + \dfrac{1}{12} + \dfrac{1}{3} + \dfrac{1}{12} = \dfrac{5}{8}$
+\item [$\bullet$] $P(B)=P(\{5\}) = \dfrac{1}{3}$
+\end{itemize}
+
+
+\subsection{Propri\'et\'es}
+\begin{prop}
+Quels que soient les \'ev\`enements $A$ et $B$ de $\Omega$ :
+
+\begin{tabular}{l@{\hspace{3.5ex}}l}
+ \textbullet Si $A\cap B=\varnothing$ alors $P(A\cup B)=P(A)+P(B)$ &\textbullet $P(\barre{A})=1-P(A)$ \\
+ \textbullet $P(A\cup B)=P(A)+P(B)-P(A\cap B)$ &\textbullet Si $A\subset B$ alors $P(A)\ie P(B)$
+\end{tabular}
+
+% \begin{itemize}
+% \item Si $A\cap B=\varnothing$ alors $P(A\cup B)=P(A)+P(B)$.
+% \item $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
+% \item $P(\barre{A})=1-P(A)$
+% \item Si $A\subset B$ alors $P(A)\ie P(B)$
+% \end{itemize}
+\end{prop}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer $P(A\cup C)$, $P(A\cap B)$, $P(A\cup B)$, $P(\barre{A})$ et $P(\barre{C})$.
+\end{exemple}
+
+
+\begin{itemize}
+\item $A\cap C = \varnothing$ donc $P(A\cup C) = P(A)+P(C)= \dfrac{5}{12}+\dfrac{1}{3} = \dfrac{3}{4}$
+\item $A \cap B = \{4~;~6\}$ donc $P(A\cap B) = P(\{4\})+P(\{6\}) = \dfrac{1}{12}+\dfrac{1}{12} = \dfrac{1}{6}$
+\item $P(A\cup B) = P(A)+P(B)-P(A\cap B) = \dfrac{5}{12}+\dfrac{5}{8}-\dfrac{1}{6} = \dfrac{7}{8}$
+\item $P(\barre{A}) = 1-P(A) = 1-\dfrac{5}{12} = \dfrac{7}{12}$
+\quad et \quad $P(\barre{C}) = 1-P(C) = 1-\dfrac{1}{3} = \dfrac{2}{3}$
+\end{itemize}
+
+
+%\vspace{5em}
+\subsection{Loi \'equir\'epartie}
+\begin{defn}
+On dit que $P$ est une loi \'equir\'epartie si toutes les \'eventualit\'es ont la m\^eme probabilit\'e. Cette probabilit\'e est alors \'egale à $\dfrac{1}{\text{Card}\ \Omega}$
+\end{defn}
+
+\begin{exemple}
+On lance un d\'e \'equilibr\'e et on s'int\'eresse au nombre obtenu. D\'efinir une loi de probabilit\'e permettant de mod\'eliser l'exp\'erience.
+\end{exemple}
+
+
+$\Omega=\{1;2;3;4;5;6\}$. Le fait que le d\'e soit bien \'equilibr\'e justifie le choix de la loi \'equir\'epartie. On obtient donc le tableau suivant :
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+\'eventualit\'e & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+Probabilit\'e & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ \\ \hline
+\end{tabular}
+\end{center}
+
+
+\vspace{1ex}
+Soit $A$ un \'ev\`enement de $\Omega$.
+
+\begin{prop}
+Si $P$ est une loi \'equir\'epartie alors 
+\[P(A)=\dfrac{\text{Card}\ A}{\text{Card}\ \Omega}=\dfrac{\text{Nombre de cas favorables}}{\text{Nombre total de cas}}\]
+\end{prop}
+
+\begin{exemple}
+Dans le cas du lancer de d\'e \'equilibr\'e, d\'eterminer les probabilit\'es de $A$ : \og On obtient un nombre pair \fg, $B$ : \og On obtient un nombre sup\'erieur ou \'egal à 3 \fg{} et $C$ : \og On obtient un multiple de 5 \fg
+\end{exemple}
+
+
+$P(A)=\dfrac{\text{Card}\ A}{\text{Card}\ \Omega}=\dfrac{3}{6}=\dfrac{1}{2}$
+\hfill
+$P(B)=\dfrac{\text{Card}\ B}{\text{Card}\ \Omega}=\dfrac{4}{6}=\dfrac{2}{3}$
+\hfill
+$P(C)=\dfrac{\text{Card}\ C}{\text{Card}\ \Omega}=\dfrac{1}{6}$
+
+
+\section{Param\`etres d'une loi de probabilit\'e}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega=\{x_1;x_2;\ldots;x_n\}$ dont les \'eventualit\'es sont des nombres r\'eels. $\Omega$ est muni d'une loi de probabilit\'e $P$. On pose $p_i=P(x_i)$.
+
+\begin{defn}
+On appelle esp\'erance de la loi de probabilit\'e le r\'eel $\mu$ d\'efini par :
+\[\mu=p_1x_1+\cdots+p_n x_n=\sum_{i=1}^n p_ix_i\]
+C'est la moyenne des $x_i$ avec les coefficients $p_i$.\\
+
+On appelle variance de la loi de probabilit\'e le r\'eel $V$ d\'efini par :
+\[V= p_1(x_1-\mu)^2+\dots+p_n(x_n-\mu)^2=\sum_{i=1}^np_i(x_i-\mu)^2=\left( \sum_{i=1}^np_ix_i² \right)-\mu²\]
+
+On appelle \'ecart-type de la loi de probabilit\'e le r\'eel $\sigma$ d\'efini par $\sigma=\sqrt{V}$
+\end{defn}
+
+\begin{exemple}
+On reprend la situation de la roue de loterie.
+
+D\'eterminer l'esp\'erance, la variance et l'\'ecart-type de la loi de probabilit\'e.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$] Esp\'erance : $\mu=\frac{1}{8}\times1 + \frac{1}{4}\times2 + \frac{1}{8}\times3 + \frac{1}{12}\times4 + \frac{1}{3}\times5 + \frac{1}{12}\times6 = \frac{3}{24}+\frac{12}{24} + \frac{9}{24} + \frac{8}{24} + \frac{40}{24} + \frac{12}{24} = \frac{84}{24} = \frac{7}{2}$
+\item[$\bullet$] Variance : $V = \frac{1}{8}\times\left( 1-\frac{7}{2} \right)^2 + \frac{1}{4}\times\left( 2-\frac{7}{2} \right)^2 + \frac{1}{8}\times\left( 3-\frac{7}{2} \right)^2 + \frac{1}{12}\times\left( 4-\frac{7}{2} \right)^2 + \frac{1}{3}\times\left( 5-\frac{7}{2} \right)^2 + \frac{1}{12}\times\left( 6-\frac{7}{2} \right)^2 = \frac{1}{8}\times\left( -\frac{5}{2} \right)^2 + \frac{1}{4}\times\left( -\frac{3}{2} \right)^2 + \frac{1}{8}\times\left( -\frac{1}{2} \right)^2 + \frac{1}{12}\times\left( \frac{1}{2} \right)^2 + \frac{1}{3}\times\left(\frac{3}{2}  \right)^2 + \frac{1}{12}\times\left(\frac{5}{2}  \right)^2 = \frac{25}{32} + \frac{9}{16} + \frac{1}{32} + \frac{1}{48} + \frac{9}{12} + \frac{25}{48} = \frac{8}{3}$
+\item[$\bullet$] \'ecart-type : $\sigma = \sqrt{V} = \sqrt{\frac{8}{3}} \simeq 1,63$
+\end{itemize}
+
+
+
+\section{Variables al\'eatoires}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$ muni d'une loi de probabilit\'e $P$.
+\subsection{D\'efinitions}
+\begin{defn}
+Une variable al\'eatoire $X$ sur $\Omega$ est une fonction de $\Omega$ dans $\R$. $X$ associe donc à toute \'eventualit\'e de $\Omega$ un unique r\'eel.
+\end{defn}
+
+Remarque : On utilise les variables al\'eatoires quand on s'int\'eresse plus à un nombre associ\'e au r\'esultat de l'exp\'erience (par ex. un gain...) qu'au r\'esultat lui-m\^eme.
+
+\begin{exemple}
+On lance trois fois une pi\`ece de monnaie et on s'int\'eresse au côt\'e sur lequel elle tombe. On appelle $X$ la variable al\'eatoire qui à chaque \'eventualit\'e associe le nombre de fois où \textsc{pile} apparaît.
+
+D\'eterminer l'univers $\Omega$ de cette exp\'erience puis d\'ecrire $X$.
+\end{exemple}
+
+
+En notant $P$ et $F$ les r\'esultats possibles d'un lancer, on obtient : 
+\[\Omega = \{PPP,PPF,PFP,PFF,FPP,FPF,FFP,FFF\}\]
+
+$X$ est la fonction d\'efinie sur $\Omega$ par :
+\begin{align*}
+X(PPP)&=0 & X(PPF)&=1 & X(PFP)&=1 & X(PFF)&=2\\
+X(FPP)&=1 & X(FPF)&=2 & X(FFP)&=2 & X(FFF)&=3
+\end{align*}
+
+
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$ et soit $x\in\R$. L'\'ev\`enement form\'e des \'eventualit\'es $\omega_i$ de $\Omega$ telles que $X(\omega_i)=x$ se note $(X=x)$.
+\vspace{2mm}
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer l'ensemble $(X=2)$.
+\end{exemple}
+
+
+Avec les notations pr\'ec\'edentes, on a : $(X=2)=\{PFF,FPF,FFP\}$
+
+
+\subsection{Loi de probabilit\'e d'une variable al\'eatoire}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$. On appelle $\Omega'=\{x_1,x_2,\ldots,x_n\}$ l'ensemble des valeurs prises par $X$. On peut d\'efinir sur $\Omega'$ une loi de probabilit\'e en associant à chaque valeur $x_i$ la probabilit\'e de l'\'ev\`enement $(X=x_i)$. Cette loi est appel\'ee loi de probabilit\'e de la variable al\'eatoire $X$.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer la loi de probabilit\'e de $X$.
+\end{exemple}
+
+
+La loi de probabilit\'e $P$ sur $\Omega$ est une loi \'equir\'epartie. On a donc :
+\begin{align*}
+P(X=0)&=P(\{PPP\})=\dfrac{1}{8} & P(X=1)&=P(\{PPF,PFP,FPP)\}=\dfrac{3}{8} \\
+P(X=2)&=P(\{PFF,FPF,FFP)\}=\dfrac{3}{8} & P(X=3)&=P(\{FFF\})=\dfrac{1}{8}
+\end{align*}
+
+On peut aussi r\'esumer ceci sous forme de tableau :
+
+\begin{center}
+\renewcommand{\arraystretch}{3}
+\begin{tabular}{|c|c|c|c|c|} \hline
+$x_i$ & 0 & 1 & 2 & 3 \\ \hline
+$P(X=x_i)$ & $\dfrac{1}{8}$ & $\dfrac{3}{8}$ & $\dfrac{3}{8}$ & $\dfrac{1}{8}$ \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Param\`etres d'une variable al\'eatoire}
+\begin{defn}
+L'esp\'erance, la variance, l'\'ecart-type d'une variable al\'eatoire sont respectivement l'esp\'erance, la variance, l'\'ecart-type de sa loi de probabilit\'e.
+
+Si $X$ prend les valeurs $x_1,x_2,\ldots x_n$ et si on pose $p_i=P(X=x_i)$, on a :
+
+$E(X)=\ds\sum_{i=1}^np_ix_i ;\hfill V(X)=\ds\sum_{i=1}^np_i(x_i-E(X))^2=\sum_{i=1}^np_ix_i^2-(E(X))^2 ;
+\hfill \sigma(X)=\sqrt{V(X)}$
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer l'esp\'erance, la variance et l'\'ecart-type de $X$.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$]  Esp\'erance : $E(X)=\dfrac{1}{8}\times0 + \dfrac{3}{8}\times1 + \dfrac{3}{8}\times2 + \dfrac{1}{8}\times3 = \dfrac{12}{8} = \dfrac{3}{2}$
+\item[$\bullet$]  Variance : $V(X) = \dfrac{1}{8}\times\left( 0-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 1-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 2-\dfrac{3}{2} \right)^2 + \dfrac{1}{8}\times\left( 3-\dfrac{3}{2} \right)^2 = \dfrac{1}{8}\times\dfrac{9}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{1}{8}\times\dfrac{9}{4} = \dfrac{24}{32} = \dfrac{3}{4}$
+\item[$\bullet$]  \'ecart-type : $\sigma(X) = \sqrt{V(X)} = \sqrt{\dfrac{3}{4}} = \dfrac{\sqrt{3}}{2} \simeq 0,87$
+\end{itemize}
+
+
+\end{document}

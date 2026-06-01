@@ -1,0 +1,57 @@
+verbatimtex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+etex;
+
+numeric u;
+u:=1.5cm;
+
+beginfig(1)
+ drawarrow (0,0)--(1.5u,0);
+ drawarrow ((0,0)--(1.7u,0)) rotated 45;
+ label.lft (btex $O$ etex,(0,0));
+ label.rt (btex $A$ etex,(1.5u,0));
+ label.urt (btex $B$ etex,(1.7u,0) rotated 45);
+ label.bot (btex $\overrightarrow{u}$ etex,(0.7u,0));
+ label.ulft (btex $\overrightarrow{v}$ etex,(0.8u,0)rotated 45);
+endfig;
+
+beginfig(2)
+ drawarrow (0,0)--(0,1.5u);
+ drawarrow (0,0)--(-1.5u,0) dashed evenly;
+ drawarrow ((0,0)--(-1.5u,0)) shifted (1.5u,1.5u);
+ label.lrt (btex $O$ etex,(0,0));
+ label.ulft (btex $B$ etex,(0,1.5u));
+ label.llft (btex $A$ etex,(-1.5u,0));
+ label.lft (btex $\overrightarrow{v}$ etex,(0,0.7u));
+ label.bot (btex $\overrightarrow{u}$ etex,(0.7u,1.5u));
+endfig;
+
+beginfig(3)
+ drawarrow ((0,0)--(2u,0)) rotated 45;
+ drawarrow (0,0)--(-1u,0) dashed evenly;
+ drawarrow ((0,0)--(-1u,0)) shifted (1.6u,0.5u);
+ label.lrt (btex $O$ etex,(0,0));
+ label.urt (btex $A$ etex,(2u,0) rotated 45);
+ label.llft (btex $B$ etex,(-1u,0));
+ label.ulft (btex $\overrightarrow{u}$ etex,(u,0) rotated 45);
+ label.bot (btex $\overrightarrow{v}$ etex,(-0.5u,0)shifted (1.6u,0.5u));
+endfig;
+
+beginfig(4)
+  pair O,A,B,C;
+  O:=(0,0);
+  A:=(0,u);;
+  B:=A rotated 120;
+  C:=A rotated 240;
+  draw A--B--C-- cycle;
+  draw A..B..C.. cycle;
+  dotlabel.top (btex $O$ etex,O);
+  label.top(btex $A$ etex,A);
+  label.llft(btex $B$ etex,B);
+  label.lrt(btex $C$ etex,C);
+  defaultfont := "rsfs10";
+  label.urt("C",A rotated -60);
+endfig;
+end

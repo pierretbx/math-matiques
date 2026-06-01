@@ -1,0 +1,774 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{stmaryrd}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\newcommand{\bsyc}{\left\{\begin{array}{rcl}} % systï¿½e serrï¿½sur le ï¿½al
+\newcommand{\esyc}{\end{array}\right.}
+\usepackage{picins,picinpar}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pstricks-add}
+\usepackage{pst-eps,pst-fill,pst-node,pst-math}
+\usepackage{indentfirst}
+%\usepackage[colorlinks=true]{hyperref}
+%\usepackage{color}
+\newcommand{\ofr}[2]{\dfrac{#1}{#2}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+  \usepackage{tkz-tab}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\newcommand{\I}{i}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\usepackage[bottom]{footmisc}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%\usepackage{preambule}
+%%
+\newcommand{\R}{\mathbb {R}}
+\newcommand{\bbr}{\mathbb {R}}
+\newcommand{\bbc}{\mathbb {C}}
+\newcommand{\bbz}{\mathbb {Z}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+%\newcommand{\imath}{i}
+\newcommand{\tm}{\times}
+\newcommand{\ab}[1]{\vert #1 \vert}
+\newcommand{\nov}[1]{\Vert \overrightarrow{#1} \Vert}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\ud}[1]{\dfrac{#1}{2}}
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+\newcommand{\calr}{\mathscr{R}}
+\newcommand{\cali}{\mathscr{I}}
+\newcommand{\RR}{\calr }
+\newcommand{\CR}{\calc}
+\newcommand{\IR}{\cali }
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+%\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+%\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cacheg}[1]{#1}
+\newcommand{\cacheb}[1]{#1}
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+
+\newenvironment{arrayl}[1][rcl]%
+	{\setlength{\arraycolsep}{1.5pt}
+	 $\begin{array}[t]{#1}}%
+	{\end{array}$}%
+%\newcommand{\coordpp}[3]{\begin{pmatrix}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+\newcommand{\un}{\suite}
+\newcommand{\eit}{e^{it}}
+\newcommand{\eimt}{e^{imt}}
+\newcommand{\vn}{\suite[v]}
+%\newcommand{\pa}[1]{(#1)}
+\newcommand{\cro}[1]{[#1]}
+\newcommand{\abs}[1]{\vert #1 \vert}
+
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\Rep}{(O;\ve{i};\ve{j})}
+\newcommand{\C}[2]{C_{#1}^{#2}}
+\newcommand{\dx}{dx}
+
+\begin{document}
+\tableofcontents
+\chapter{Matrices}
+
+ \section{Définitions}
+
+\begin{defn}
+Une \textbf{matrice} $A$ de dimension $n\times p$ ou de format $(n;p)$ est un tableau de nombres comportant $n$ lignes et $p$ colonnes.
+   
+   On note $a_{ij}$ l'élément se trouvant à l'intersection de la ligne $i$ et de la colonne $j$.
+   
+   Lorsque $n=p$ on dit que la matrice est une matrice \textbf{carrée} \textbf{d'ordre} $n$.
+   
+\end{defn} 
+
+\begin{exemple}
+   
+    $A=\begin{pmatrix}
+    2 & -5 & 4 \\ 
+   6 & 3 & -8
+   \end{pmatrix} $ est une matrice de format $(2;3)$
+   
+   Une matrice carrée d'ordre 2 est une matrice de la forme: $\begin{pmatrix}
+    a_{11} & a_{12}  \\ 
+   a_{21} & a_{22} 
+   \end{pmatrix}$
+   
+\end{exemple}
+   
+\subsection{Matrices particulières}
+   
+    Si $n=1$, $A$ est une \textbf{matrice ligne}.
+   
+     Si $p=1$, $A$ est une \textbf{matrice colonne}.
+   
+    Si tous les coefficients sont nuls, $A$ est une \textbf{matrice nulle}.
+   
+\subsection{Égalité de matrices}
+   \begin{defn}
+   
+    Deux matrices sont égales lorsqu'elles ont le même format et les mêmes coefficients aux mêmes emplacements.
+   
+   \end{defn}
+   
+\begin{defn}
+   
+   La matrice \textbf{transposée} d'une matrice $A$ de format $(n;p)$ est la matrice de format $(p;n)$, notée $A^{T}$ obtenue en échangeant les lignes et les colonnes de $A$.
+   
+\end{defn}   
+
+\begin{exemple}
+
+Si $A=\begin{pmatrix}
+    2 & -5 & 4 \\ 
+   6 & 3 & -8
+   \end{pmatrix} $  alors $A^{T}=\begin{pmatrix}
+    2 & 6 \\ 
+   -5 & 3 \\
+   4 &-8
+   \end{pmatrix} $ 
+   
+\end{exemple}
+   
+ \subsection{Addition de deux matrices de même format}
+   
+    On appelle \textbf{somme } de deux matrices de même format la matrice obtenue en additionnant les coefficients de même emplacement.
+   
+\subsection{Multiplication d'une matrice par un nombre réel}
+   
+    Pour un réel $k$ et une matrice $A$, on note $kA$ la matrice $M$ dont l'élément $m_{ij}$ est égal à $ka_{ij}$
+   
+\begin{exemple}
+   
+   $2\begin{pmatrix}
+    2 & -5 & 4 \\ 
+   6 & 3 & -8
+   \end{pmatrix} = \begin{pmatrix}
+    2\times 2 & 2\times (-5) &2\times 4 \\ 
+   2\times 6 & 2\times 3 & 2 \times (-8)
+   \end{pmatrix}=\begin{pmatrix}
+    4 & -10 & 8 \\ 
+   12 & 6 & -16
+   \end{pmatrix} $ 
+   
+  \end{exemple}
+   
+\begin{prop}
+   
+    $A,B$ et $C$ sont des matrices de même format, $O$ est la matrice nulle de même format, $k$ et $k'$ sont deux nombres réels.
+
+
+   
+   \begin{enumerate}
+   \item $A+B=B+A$
+   
+   \item $A+(B+C)=(A+B)+C$
+   
+   \item $A+O=O+A=A$
+   
+   \item $0A=O$ et $1A=A$
+   
+   \item $(k+k')A=kA+k'A$ et $k(A+B)=kA+kB$ 
+   \end{enumerate}
+\end{prop}   
+
+\subsection{Multiplication de deux matrices}
+   
+  \begin{defn} 
+   $\blacktriangleright$ Le produit de la matrice ligne $L=\begin{pmatrix}
+   a_{1}&a_{2}&...&a_{p}
+   \end{pmatrix}$ par la matrice colonne $C= \begin{pmatrix}
+   b_{1}\\
+   b_{2}\\
+   .\\
+   .\\
+   .\\
+   b_{p}
+   
+   \end{pmatrix}$
+      est le nombre $LC=a_{1}b_{1}+a_{2}b_{2}+...+a_{p}b_{p}=\displaystyle\sum_{k=1}^{p}a_{k}b_{k}$
+      
+   $\blacktriangleright$ Le \textbf{produit} de la matrice $A=\left( a_{ij}\right) $ de format $(n;p)$ par une matrice $B=\left( b_{ij}\right) $ de format $(p;r)$ est la matrice, notée $AB$, de format $(n;r)$ dont le coefficient $(c_{ij})$ est le produit de la matrice ligne $i$ de $A$ par la matrice colonne $j$ de $B$:
+   
+ \begin{center}
+  \boxed{ $$c_{ij}=\displaystyle\sum_{k=1}^{p}a_{ik}b_{kj}$$}
+ \end{center}
+ \end{defn}
+ 
+\begin{exemple}
+ 
+ $A$ de format $(2;3)$ $B$ de format $(3;2)$, $C=AB$ de format $(2;2)$
+  \begin{center}
+ \begin{tabular}{cc}
+   \begin{pspicture}(2,2)
+  \psline{*->}(0.4,-0.6)(2.4,0.6)
+  \psline{*->}(1,-0.6)(2.4,0.1)
+  \psline{*->}(1.6,-0.6)(2.4,-0.4)
+  \end{pspicture}  &$ \begin{pmatrix}
+   1 & -1 \\ 
+   3 & 2 \\
+   -3 & 4 
+   \end{pmatrix} $ \\ 
+ $\begin{pmatrix}
+    1 & 3 & 5 \\ 
+   2 & 4 & 6
+   \end{pmatrix} $ & $\begin{pmatrix}
+    -5 & 25  \\ 
+   -4 & 30 
+   \end{pmatrix} $ \\ 
+ 
+ \end{tabular} 
+ \end{center}
+ 
+ \end{exemple}
+
+\begin{rem}
+
+ 
+  Si les matrices $AB$ et $BA$ sont définies, $\boxed{ \text{en général } AB\neq BA}$.
+  \end{rem}
+  
+  
+\begin{prop}
+
+   $A,B$ et $C$ sont des matrices dont les formats permettent les calculs indiqués, $k$ est un réel
+  
+  \begin{enumerate}
+  \item $A(BC)=(AB)C$
+  
+  \item $A(B+C)=AB+AC$
+  
+  \item $(A+B)C=AC+BC$
+  
+  \item $(kA)B=A(kB)=k(AB)$
+\end{enumerate}   
+
+\end{prop}
+
+\subsection{Matrices unités}
+\begin{defn}
+Soit $n$ un entier naturel non nul. On appelle \textbf{matrice unité d'ordre $n$} la matrice $I$, carrée d'ordre $n$ dont tous les coefficients sont nuls sauf ceux de la diagonale principale (éléments $a_{ii}$) qui sont égaux à 1.
+\end{defn}
+
+\begin{exemple}
+
+La matrice unité d'ordre 3 est $I=\begin{pmatrix}
+    1 & 0 & 0 \\ 
+   0 & 1 & 0 \\
+   0 & 0 & 1
+   \end{pmatrix} $
+  
+\end{exemple}
+
+   \section{Inverse d'une matrice carrée}
+  
+   \begin{defn}
+   $A$ est une matrice carrée d'ordre $n$. On dit qu'une matrice $B$, carrée d'ordre $n$, est \textbf{l'inverse} de $A$ si elle vérifie $AB=I$ et $BA=I$.
+	\end{defn}   
+   
+\begin{prop}
+   
+   Si la matrice carrée $A$ d'ordre $n$ admet une inverse, celle-ci est unique. On la note $A^{-1}$.
+   
+\end{prop}
+   
+ \section{Puissance d'une matrice carrée}
+   \begin{defn}
+   
+   $A$ est une matrice carrée et $n \in \mathbb{N}^{*}$. La puissance n-ième de la matrice $A$, notée $A^{n}$, est la matrice définie par: $A^{n}=\underbrace{AA....A}_{\text{n fois}}$
+   
+    Par convention, $A^{0}=I$
+   
+  \end{defn}
+  
+   \begin{thm}
+   
+   Pour $n \in \mathbb{N}^{*}$ et pour tous nombres réels $a$ et $b$,
+    
+    \begin{center}
+    $\begin{pmatrix}
+    a & 0  \\ 
+   0 & b 
+   \end{pmatrix}^{n}=\begin{pmatrix}
+    a^{n} & 0  \\ 
+   0 & b^{n} 
+   \end{pmatrix}$
+    \end{center}
+   \end{thm}
+   
+    \begin{demo}
+    par récurrence: exercice
+	\end{demo}
+	
+	    
+\begin{thm}
+    
+    Soit $A=\begin{pmatrix}
+    a & b  \\ 
+   c & d 
+   \end{pmatrix}$ une matrice carrée d'ordre 2.
+   
+   1) Si $ad-bc\neq 0$, $A$ admet une inverse $\boxed{A^{-1}=\dfrac{1}{ad-bc}\begin{pmatrix}
+    d &-b  \\ 
+   -c & a 
+   \end{pmatrix}}$
+   
+   2) Si $ad-bc=0$, $A$ n'a pas d'inverse.
+   
+  \end{thm}
+   
+\begin{demo}
+   
+   1) Soit $B=\dfrac{1}{ad-bc}\begin{pmatrix}
+    d &-b  \\ 
+   -c & a 
+   \end{pmatrix}$. On vérifie que $AB=BA=I=\begin{pmatrix}
+    1 & 0  \\ 
+   0 & 1 
+   \end{pmatrix}$
+   
+   2)  On suppose que $A$ admet une inverse $A'$
+   
+   Soit $B=\begin{pmatrix}
+    -c & a  \\ 
+   -c & a 
+   \end{pmatrix}$ et $C=\begin{pmatrix}
+    d &-b  \\ 
+   d & -b 
+   \end{pmatrix}$
+   
+   $BA=\begin{pmatrix}
+    -c & a  \\ 
+   -c & a 
+   \end{pmatrix}$
+    $ \begin{pmatrix}
+    a & b  \\ 
+   c & d 
+   \end{pmatrix}=\begin{pmatrix}
+    0 & 0  \\ 
+   0 & 0
+   \end{pmatrix}=O$
+   De même, $CA=O$
+   
+   $B=B(AA')=(BA)A'=O$ donc $a=c=0$
+   
+   $C=C(AA')=(CA)A'=O$ donc $d=b=0$, $A$ est la matrice $O$ 
+   
+   ce qui implique que: $AA'=I=O$ ce qui est impossible: $A$ n'a pas d'inverse.\\
+  \end{demo} 
+   
+   \begin{rem}
+    Le nombre $ad-bc$ s'appelle le \textbf{déterminant }de la matrice $A$\\
+   \end{rem}
+   
+ \section{Application aux systèmes linéaires}
+   
+   Tout système linéaire de $n$ équations à $n$ inconnues peut s'écrire sous la forme matricielle $AX=B$ où $A$ est la matrice carrée d'ordre $n$ des coefficients du système, $X$ est la matrice colonne des inconnues et $B$ est la matrice colonne formée par les seconds membres des équations.
+   
+   Si la matrice carrée $A$ est inversible alors le système a une unique solution égale à $A^{-1}B$.
+   
+\section{Matrices et suites }
+\subsection{Suites de matrices}
+
+Une suite de matrices colonnes de taille $k$ ( $k \in \mathbb{N}, k\geq 2$) est une fonction de $\mathbb{N}$ dans l'ensemble des matrices colonnes de taille $k$.
+
+\begin{defn}
+
+On dit que la suite de matrices colonnes $(X_{n})$ de taille $k$ est \textbf{convergente} si les $k$ suites formées par les termes correspondant à la même ligne sont convergentes.
+
+La limite de la suite est alors la matrice colonne formée des $k$ limites obtenues.
+\end{defn}
+
+\subsection{Suites de la forme $U_{n+1}=AU_{n}+B$}
+
+\begin{prop}
+
+Soit une suite de matrices colonnes $(U_{n})$ de taille $k$ telle que, pour tout $n \in \mathbb{N}$,
+
+\begin{center}
+$\boxed{U_{n+1}=AU_{n}, \text{ où } A \text{ est une matrice carrée d'ordre }k}$
+\end{center}
+
+Alors, pour tout $n$ de $\mathbb{N}$ , $\boxed{U_{n}=A^{n}U_{0}}$\\
+
+\end{prop}
+
+\begin{demo}
+\vspace{3cm}
+\end{demo}
+
+\begin{prop}
+
+
+Soit une suite de matrices colonnes $(U_{n})$ de taille $k$ vérifiant pour tout $n \in \mathbb{N}$ , $U_{n+1}=AU_{n}+B$, où $A$ est une matrice carrée non nulle d'ordre $k$ et $B$ une matrice colonne de taille $k$.
+
+S'il existe une matrice $C$ telle que $C=AC+B$ alors le terme général de cette suite peut s'écrire:
+
+\begin{center}
+$\boxed{U_{n}=A^{n}(U_{0}-C)+C}$
+\end{center}
+
+\end{prop}
+
+\begin{rem}
+Si $I-A$ est inversible alors $C=(I-A)^{-1}B$
+\end{rem}
+ 
+\begin{demo}
+ 
+ Comme  $U_{n+1}=AU_{n}+B$ et $C=AC+B$, par différence on a: $U_{n+1}-C=A(U_{n}-C)$
+ 
+ La suite $(V_{n})$ telle que $V_{n}=U_{n}-C$ vérifie $V_{n+1}=AV_{n}$ donc $V_{n}=A^{n}V_{0}$
+ 
+ D'où: $U_{n}-C=A^{n}(U_{0}-C)$ soit $U_{n}=A^{n}(U_{0}-C)+C$
+ 
+\end{demo} 
+
+\subsection{Convergence des suites vérifiant $U_{n+1}=AU_{n}+B$}
+ 
+ Soit une suite de matrices colonnes vérifiant $U_{n+1}=AU_{n}+B$
+ 
+ On suppose qu'il existe une matrice $C$ telle que $C=AC+B$
+ 
+ 1) Si $U_{0}=C$, la suite converge vers $C$
+ 
+ 2) Si $U_{0}\neq C$ et si la suite $(A^{n})$ converge vers une matrice $A'$ alors la suite $(U_{n})$ converge vers
+ 
+ \begin{center}
+ $A'(U_{0}-C)+C$
+ \end{center}
+ 
+ 
+\begin{demo}
+\vspace{3cm}
+\end{demo}
+ 
+
+\section{Marche Aléatoire}
+
+ \subsection{Marche aléatoire entre deux états}
+    \begin{defn}
+         
+          On considère un système qui n'a que deux états possibles A et B et qui évolue par étapes successives.
+           
+           On note $p$ la probabilité qu'il passe de A à B.
+           
+           On note $q$ la probabilité qu'il passe de B à A.
+           
+           Le \textbf{graphe probabiliste} ci-contre donne l'évolution du système d'une étape à la suivante.
+           
+           \vspace{0.7cm}
+          \begin{center}
+           \begin{psmatrix}[mnode=circle]
+              A &  & B 
+           \end{psmatrix}
+           \psset{arrows=->,shortput=nab}
+           \nccircle[angleA=0]{1,1}{0.5cm}^{1-p}
+           \ncarc[arcangle=15]{1,1}{1,3}^{p}
+           \ncarc[arcangle=15]{1,3}{1,1}^{q}
+           \nccircle[angleA=0]{1,3}{0.5cm}^{1-q}
+          \end{center}
+          
+          \vspace{0.3cm}
+          
+          On définit la \textbf{matrice de transition} par: $T=\begin{pmatrix}
+    1-p & p  \\ 
+   q & 1-q
+   \end{pmatrix}$
+   
+   \end{defn}
+   
+\begin{rem}
+   
+   Tous les coefficients appartiennent à $[0;1]$
+   
+   Pour chaque ligne, la somme des coefficients est 1.
+   
+   \end{rem}
+   
+  \begin{defn}
+   
+   Pour $n \in \mathbb{N}$ , on note:
+   
+   $A_{n}$ l'événement: "à l'étape $n$ le système est dans l'état A".
+   
+   $B_{n}$ l'événement: "à l'étape $n$ le système est dans l'état B".
+   
+   $a_{n}=p(A_{n}), b_{n}=p(B_{n})$. On a: $\boxed{a_{n}+b_{n}=1}$
+\end{defn}   
+   
+\begin{defn}
+   
+   La matrice \textbf{ligne} $P_{n}=(a_{n}\hspace{0.3cm} b_{n})$ est appelée la \textbf{répartition de probabilité à l'étape $n$}.
+   
+  \end{defn}
+
+\begin{prop}
+   
+   Pour $n \in \mathbb{N},\boxed{P_{n+1}=P_{n}T}$
+   
+   \end{prop}
+   
+   \begin{demo}
+   
+   
+   \begin{tabular}{cc}
+   \psset{nodesep=0mm,levelsep=20mm,treesep=10mm}
+\pstree[treemode=R]{\Tdot}
+{
+\pstree
+{\Tdot~[tnpos=a]{$A_{n}$}\taput{\small $a_{n}$}}
+{
+\Tdot~[tnpos=r]{$A_{n+1}$}\taput{\small $1-p$}
+\Tdot~[tnpos=r]{$B_{n+1}$}\tbput{\small $p$}
+}
+\pstree
+{\Tdot~[tnpos=a]{$B_{n}$}\tbput{\small $b_{n}$}}
+{
+\Tdot~[tnpos=r]{$A_{n+1}$}\taput{\small $q$}
+\Tdot~[tnpos=r]{$B_{n+1}$}\tbput{\small $1-q$}
+}
+}
+\begin{tabular}{rl}
+
+
+ $p(A_{n+1})=$&$ p(A_{n}\cap A_{n+1})+p(B_{n}\cap A_{n+1})$\\
+ =&$(1-p)a_{n}+qb_{n}$ \\
+ -----------------&-----------------------------------------\\
+ $p(B_{n+1})=$&$p(A_{n}\cap B_{n+1})+p(B_{n}\cap B_{n+1})$\\
+ =&$pa_{n}+(1-q)b_{n}$
+ \end{tabular}\\ 
+ 
+   \end{tabular} 
+   
+  
+\begin{center}
+ \begin{tabular}{cc}
+    &$ \begin{pmatrix}
+    \hspace{1.1cm}1-p & p \textcolor{white}{.} \\ 
+  \hspace{1.1cm} q & 1-q \textcolor{white}{.} 
+   \end{pmatrix} $ \\ 
+ $P_{n}T=\begin{pmatrix}
+     a_{n} & b_{n}
+   \end{pmatrix} $ & $\begin{pmatrix}
+    (1-p)a_{n}+b_{n}q & pa_{n}+(1-q)b_{n}  
+   
+   \end{pmatrix} $ \\ 
+ 
+ \end{tabular} 
+ \end{center}
+
+  On a bien:  $P_{n+1}=P_{n}T$
+  
+  \end{demo}
+  
+\begin{prop}
+
+   Pour tout $n \in \mathbb{N}:P_{n}=P_{0}T^{n}$
+ \end{prop}
+   
+  \begin{demo}
+  Par récurrence.
+\end{demo}   
+   
+   \begin{defn}
+   
+   On appelle \textbf{répartition stable de probabilité} une matrice ligne $P$ dont tous les coefficients sont positifs et de somme 1 vérifiant: 
+   
+   \begin{center}
+   $\boxed{P=PT}$
+   \end{center}
+   
+   \end{defn}
+   
+   \begin{thm}
+   Avec les notations précédentes, si $(p;q)\neq (0;0)$ et $(p;q)\neq (1;1)$ alors:
+   
+   1) il existe une unique répartition stable de probabilité $P$ donnée par:
+   
+   \begin{center}
+   $\boxed{P=\left( \dfrac{q}{p+q}\hspace{0.4cm}\dfrac{p}{p+q}\right) }$
+   \end{center}
+   
+   2) la suite $(P_{n})$ converge vers $P$, indépendamment   de $P_{0}$
+   
+   \end{thm}
+   
+\begin{demo}
+
+   $0\leq p \leq 1$ et $0\leq q \leq 1$ donc: $0\leq p+q\leq 2$
+   
+   Comme $p+q\neq 0$ et $p+q\neq 2$ on a: $0 < p+q<  2$ puis $-2<-p-q<0$ et enfin:
+   
+   \begin{center}
+   $\boxed{-1<1-p-q<1}$ (*)
+   \end{center}
+   
+   On a vu que: $a_{n+1}=(1-p)a_{n}+qb_{n}$ et $b_{n}=1-a_{n}$ donc: $a_{n+1}=(1-p-q)a_{n}+q$
+   
+   A partir de cette dernière formule, on peut démontrer par récurrence que:
+   
+   \begin{center}
+   $\boxed{a_{n}=(1-p-q)^{n}\left( a_{0}-\dfrac{q}{p+q}\right) +\dfrac{q}{p+q}}$ puis $\boxed{b_{n}=\dfrac{p}{p+q}-(1-p-q)^{n}\left( a_{0}-\dfrac{q}{p+q}\right) }$
+   \end{center}
+   
+   D'après (*), $\lim_{n \to +\infty}\limits a_{n}=\dfrac{q}{p+q}$ et $\lim_{n \to +\infty}\limits b_{n}=\dfrac{p}{p+q}$. On a bien: $\lim_{n \to +\infty}\limits P_{n}=P$
+   
+   \begin{center}
+    \begin{tabular}{cc}
+    &$ \begin{pmatrix}
+    \hspace{1.1cm}1-p & p \textcolor{white}{.} \\ 
+  \hspace{1.1cm} q & 1-q \textcolor{white}{.} 
+   \end{pmatrix} $ \\ 
+ $PT=P\Leftrightarrow=\begin{pmatrix}
+     x & y
+   \end{pmatrix} $ & $\begin{pmatrix}
+    (1-p)x+qy & px+(1-q)y  
+   
+   \end{pmatrix}= (x \hspace{0.3cm}y) $ \\
+   
+ \end{tabular} 
+   \end{center}
+     
+   On obtient le système: $ \left\lbrace
+\begin{array}{l}
+
+ x-xp+yq = x\\[0.3cm]
+ 
+  x+y = 1\\[0.3cm] 
+\end{array}
+\right.  $ qui donne: $ \left\lbrace
+\begin{array}{l}
+
+ x=\dfrac{q}{p+q}\\[0.3cm]
+ 
+  y=\dfrac{p}{p+q}\\[0.3cm] 
+\end{array}
+\right.  $
+   
+      
+   \end{demo}   
+      
+\section{Marche aléatoire entre plusieurs états}
+ 
+  Les définitions et propriétés précédentes se généralisent à un système qui peut se trouver dans plusieurs états.
+  
+\begin{thm}
+ 
+ Si la matrice de transition $T$ a une puissance n'ayant aucun coefficient nul, alors:
+ 
+ 1) il existe une unique répartition stable de probabilité $P$ telle que $PT=P$
+   
+      
+   2) la suite $(P_{n})$ converge vers $P$, indépendamment   de $P_{0}$ \end{thm}
+
+\end{document}
+

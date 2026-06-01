@@ -1,0 +1,105 @@
+input latexmp;
+input repere;
+
+vardef f(expr x)=cos(x) enddef;
+vardef g(expr x)=sin(x) enddef;
+
+beginfig(1);
+repere(-6.5,4,1cm,-2,2,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-6.4,4,100);
+ Cg:=courbefonc(g,-6.4,4,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+ %draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(-3.14,0);
+ B:=_c(3.14,0);
+ C:=_c(1.57,0);
+ D:=_c(-1.57,0);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(3.4,-0.2);
+ Y:=_c(-0.2,1.8);
+ dotlabel.llft(btex $ \displaystyle \pi \over 2 $ etex, C) ;
+  dotlabel.lrt(btex $- \displaystyle \pi \over 2 $ etex, D) ;
+ dotlabel.bot(btex $ \pi $ etex, B) ;
+ dotlabel.bot(btex $ -\pi $ etex, A) ;
+ label.lft(btex $ \cos(x) $ etex, F) ;
+  dotlabel.ulft(btex $1$ etex, E) ;
+  %label.ulft(btex $C_{\ln} $ etex, G) ;
+ % label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.rt(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+% draw projectionaxes(A,LaTeX("$1$"),LaTeX("$e$")) dashed evenly;
+% drawoptions (withcolor red) ;
+ % draw droite(A,B);
+ % draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ endfig;
+
+beginfig(2);
+repere(-6.5,4,1cm,-2,2,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-6.4,4,100);
+ Cg:=courbefonc(g,-6.4,4,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ %draw Cf;
+ draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(-3.14,0);
+ B:=_c(3.14,0);
+ C:=_c(1.57,0);
+ D:=_c(-1.57,0);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(3.4,-0.2);
+ Y:=_c(-0.2,1.8);
+ dotlabel.llft(btex $ \displaystyle \pi \over 2 $ etex, C) ;
+  dotlabel.lrt(btex $- \displaystyle  \pi \over 2 $ etex, D) ;
+ dotlabel.bot(btex $ \pi $ etex, B) ;
+ dotlabel.bot(btex $ -\pi $ etex, A) ;
+ label.lft(btex $ \sin(x) $ etex, F) ;
+ dotlabel.ulft(btex $1$ etex, E) ;
+  %abel.ulft(btex $C_{\ln} $ etex, G) ;
+ % label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.rt(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+% draw projectionaxes(A,LaTeX("$1$"),LaTeX("$e$")) dashed evenly;
+% drawoptions (withcolor red) ;
+ % draw droite(A,B);
+ % draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ endfig;
+
+
+
+end

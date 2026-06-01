@@ -1,0 +1,196 @@
+\documentclass[9pt,french]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{pstricks}
+\pgfplotsset{compat=newest}
+\usepackage{geometry}
+\usepackage{eurosym}
+\geometry{hmargin=0.5cm,vmargin=1cm}
+\pagestyle{empty}
+\begin{document}
+\underline{Devoir surveillé II}\\
+\vspace{1mm}
+
+
+
+\underline{La feuille est à rendre avec votre copie. Lors du tracé de vecteur, il est indispensable de marqué le nom du vecteur représenté.}
+
+Nom:\\
+Prénom:
+
+\vspace{2mm}
+
+
+
+
+\underline{Exercice 1}
+
+\textit{\underline{Définition}}
+\vspace{2mm}
+
+1) Donner les trois critères qui déterminent entièrement un vecteur.
+\vspace{2mm}
+
+
+
+\textit{\underline{Addition et soustraction de vecteurs}}
+\vspace{2mm}
+
+
+\definecolor{yqyqyq}{rgb}{0.5019607843137255,0.5019607843137255,0.5019607843137255}
+\begin{center}
+
+\begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=yqyqyq,, xstep=1.0cm,ystep=1.0cm] (0.6,-4.7) grid (15.92,6.92);
+\clip(0.6,-4.7) rectangle (15.92,6.92);
+\draw [->,line width=2pt] (3.,0.) -- (5.,2.);
+\draw [->,line width=2pt] (10.,3.) -- (6.,3.);
+\draw [->,line width=2pt] (6.,1.) -- (8.,1.);
+\begin{scriptsize}
+\draw[color=black] (3.8,1.24) node {$u$};
+\draw[color=black] (7.9,3.3) node {$v$};
+\draw[color=black] (6.84,1.3) node {$w$};
+\draw[color=black] (13.14,-1.64) node {$A$};
+\draw [fill=black] (13.,-2.) circle (2.5pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+
+
+2) $\overrightarrow{w}$ à la même direction que ..... .
+
+3) On pose $\overrightarrow{z}=\overrightarrow{u}+\overrightarrow{v}$
+, tracer $\overrightarrow{z}$ en laissant les traits de constructions.
+
+4) On pose $\overrightarrow{a}=\overrightarrow{w}-\overrightarrow{u}$
+, tracer $\overrightarrow{a}$ en laissant les traits de constructions. 
+
+5) Est-ce que $\overrightarrow{z}$ et $\overrightarrow{a}$ ont la même direction? 
+
+6) Si oui,  ont-ils même sens?
+
+7)Est-ce que $\overrightarrow{z}$ et $\overrightarrow{a}$ ont même longueur?
+
+8) Tracer  $2\overrightarrow{z}$ et $- \overrightarrow{w}$ et $2\overrightarrow{z}+\overrightarrow{u}$.
+
+9) Déterminer le point $M$ tel que $\overrightarrow{AM}=\overrightarrow{z}$
+
+\vspace{2mm}
+
+
+
+\textit{\underline{Relation de Chasles}}
+
+\vspace{2mm}
+
+
+
+On rappel la relation de Chasles: 
+
+$$ \overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC} $$
+\definecolor{xfqqff}{rgb}{0.4980392156862745,0.,1.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.4,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.58,-4.72) rectangle (15.9,6.9);
+\draw [->,color=ffqqqq] (1.54,-0.86) -- (15.3,0.02);
+\draw [->,color=qqqqff] (15.3,0.02) -- (5.54,3.52);
+\draw [->,color=xfqqff] (1.54,-0.86) -- (5.54,3.52);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1.54,-0.86) circle (2.5pt);
+\draw[color=qqqqff] (1.3,-0.5) node {$A$};
+\draw [fill=qqqqff] (15.3,0.02) circle (2.5pt);
+\draw[color=qqqqff] (15.44,0.38) node {$B$};
+\draw [fill=qqqqff] (5.54,3.52) circle (2.5pt);
+\draw[color=qqqqff] (5.8,3.88) node {$C$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+10) Réduire les expressions vectorielles suivantes à l'aide de la relation de Chasles:
+
+
+
+
+\begin{itemize}
+\item[a)]   $\overrightarrow{AB} + \overrightarrow{MA} + \overrightarrow{CM}$
+\item[b)] $\overrightarrow{AB} + \overrightarrow{MA} - \overrightarrow{MC}$
+\item[c)] $\overrightarrow{CA} + \overrightarrow{AB} + \overrightarrow{BC}$
+\end{itemize}
+
+
+\underline{Exercice 2}\\
+
+Soient $ABCD$ un parallélogramme de centre $O$ et $\mathcal{C}$ le cercle de centre $O$ de rayon $OB$.\\
+
+
+
+\underline{L'objectif est de montrer que $EBFD$ est un rectangle}\\
+
+\definecolor{dbwrru}{rgb}{0.8588235294117647,0.3803921568627451,0.0784313725490196}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{center}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\draw [color=cqcqcq,, xstep=2cm,ystep=2cm] (-7.106889489791369,-4.935186427211233) grid (17.91185394507301,12.510184962089731);
+\clip(-7.106889489791369,-4.935186427211233) rectangle (17.91185394507301,12.510184962089731);
+\draw [line width=2pt,color=wrwrwr] (-6,-2)-- (2,-2);
+\draw [line width=2pt,color=wrwrwr] (8,8)-- (16,8);
+\draw [line width=2pt,color=wrwrwr] (2,-2)-- (8,8);
+\draw [line width=2pt,color=wrwrwr] (-6,-2)-- (16,8);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=dtsfsf] (5,3) circle (5.8309518948453cm);
+\draw [line width=2pt,color=dbwrru] (-0.3083031367642161,0.5871349378344473)-- (2,-2);
+\draw [line width=2pt,color=dbwrru] (2,-2)-- (10.308303136764216,5.412865062165553);
+\draw [line width=2pt,color=dbwrru] (10.308303136764216,5.412865062165553)-- (8,8);
+\draw [line width=2pt,color=dbwrru] (8,8)-- (-0.3083031367642161,0.5871349378344473);
+\draw [line width=2pt,color=wrwrwr] (-6,-2)-- (8,8);
+\draw [line width=2pt,color=wrwrwr] (2,-2)-- (16,8);
+\begin{scriptsize}
+\draw [fill=rvwvcq] (-6,-2) circle (2.5pt);
+\draw[color=rvwvcq] (-5.824497418178399,-1.5598337104186057) node {$A$};
+\draw [fill=rvwvcq] (8,8) circle (2.5pt);
+\draw[color=rvwvcq] (8.16083498544985,8.457342094256289) node {$D$};
+\draw [fill=rvwvcq] (2,-2) circle (2.5pt);
+\draw[color=rvwvcq] (2.2206981254312774,-1.4993435183613901) node {$B$};
+\draw [fill=rvwvcq] (16,8) circle (2.5pt);
+\draw[color=rvwvcq] (16.169736413825195,8.457342094256289) node {$C$};
+\draw [fill=dtsfsf] (5,3) ++(-1.5pt,0 pt) -- ++(1.5pt,1.5pt)--++(1.5pt,-1.5pt)--++(-1.5pt,-1.5pt)--++(-1.5pt,1.5pt);
+\draw[color=dtsfsf] (4.90521459411956,3.351969884627297) node {$O$};
+\draw[color=dtsfsf] (1.6762863969163366,8.408949940610517) node {$\mathcal{C}$};
+\draw [color=sexdts] (-0.3083031367642161,0.5871349378344473)-- ++(-2pt,-2pt) -- ++(4pt,4pt) ++(-4pt,0) -- ++(4pt,-4pt);
+\draw[color=sexdts] (-0.13841936480013156,0.9807543559844476) node {$E$};
+\draw [color=qqwuqq] (10.308303136764216,5.412865062165553)-- ++(-2pt,-2pt) -- ++(4pt,4pt) ++(-4pt,0) -- ++(4pt,-4pt);
+\draw[color=qqwuqq] (10.48365836044693,5.819969720561692) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+Compléter le texte à trou suivant:\\
+
+Comme $O$ est le milieu de $[DB]$ alors $\overrightarrow{\cdots}=\overrightarrow{\cdots}$.
+
+Comme $[EF]$ est un ............... du cercle $\mathcal{C}$ alors $O$ est le milieu de $[....]$, donc $\overrightarrow{\cdots}=\overrightarrow{\cdots}$. 
+
+Comme $[EF]$ et $[DB]$ sont de même ................... . \\
+
+Ainsi comme $EBFD$ est un quadrilatère dont ces diagonales $[EF]$ et $[DB]$ se coupent en leurs milieux ...., $EBFD$ est un .............
+
+De plus comme $EF=BD$ alors $EBFD$ est un .................. . 
+
+
+\end{document}
+
+

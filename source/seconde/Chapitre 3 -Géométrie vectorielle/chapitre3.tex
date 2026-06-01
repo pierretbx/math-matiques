@@ -1,0 +1,370 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\chapter{Géométrie vectorielle}
+
+\section{Translations, vecteurs, géométrie et représentants} 
+
+\begin{defn}
+\begin{itemize}
+\item Un point C est l’image d’un point D par la \underline{translation} qui transforme A en B lorsque le quadrilatère ABCD est un parallélogramme.
+\item On dit alors que C est l’image du point D par la translation de \underline{vecteur} $\overrightarrow{AB}$.
+\end{itemize}
+\end{defn}
+
+Translation de vecteur $\overrightarrow{AB}$ transformant C en D: 
+
+
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\definecolor{qqwwwc}{rgb}{0,0.4,0.4235294117647059}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{center}
+
+
+\begin{tikzpicture}[scale=1.3,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2.04154666591729,-2.509212811768067) rectangle (10.94147959627377,4.803882449981706);
+\draw [->,line width=1pt,color=qqwwwc] (-1.1982293622361304,-1.1418373144650869) -- (7.648453205347327,0.5052927731930859);
+\draw [->,line width=1pt,color=qqwwwc] (0.8341166330195284,2.099289632217124) -- (9.680799200602985,3.7464197198752967);
+\draw [line width=1pt,dash pattern=on 1pt off 1pt,color=ccqqqq] (-1.1982293622361304,-1.1418373144650869)-- (0.8341166330195284,2.099289632217124);
+\draw [line width=1pt,dash pattern=on 1pt off 1pt,color=ccqqqq] (7.648453205347326,0.5052927731930859)-- (9.680799200602985,3.7464197198752967);
+\begin{scriptsize}
+\draw [fill=ududff] (-1.1982293622361304,-1.1418373144650869) circle (0.5pt);
+\draw[color=ududff] (-1.3721093742730635,-1.215981680182635) node {$A$};
+\draw [fill=ududff] (7.648453205347326,0.5052927731930859) circle (0.5pt);
+\draw[color=ududff] (7.766723955597361,0.4474685596605864) node {$B$};
+\draw [fill=ududff] (0.8341166330195284,2.099289632217124) circle (0.5pt);
+\draw[color=ududff] (0.9202062001450451,2.3137785848505423) node {$C$};
+\draw [fill=ududff] (9.680799200602985,3.7464197198752967) circle (0.5pt);
+\draw[color=ududff] (9.764892841262702,3.967085835426427) node {$D$};
+\draw[color=black] (4.9202062001450451,2.6137785848505423) node {$\overrightarrow{u}$};
+\draw[color=black] (3.202062001450451,-0.6) node {$\overrightarrow{u}$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+
+% image 
+
+
+\begin{rem}
+\begin{itemize}
+\item $(AB)$ et $(DC)$ sont parallèles (même direction),
+\item AB et DC sont de même longueur,
+\item $\overrightarrow{AB}$ et $\overrightarrow{DC}$ vont dans le même sens.\\
+\end{itemize}
+ Les vecteurs seront souvent notés $\overrightarrow{u},\overrightarrow{v},\overrightarrow{w},...$. \\
+ Le vecteur $\overrightarrow{u}$ n'est pas fixe, on peut le représenter n'importe où sur une feuille, chacun de ces vecteurs est un \underline{représentant} du vecteur $\overrightarrow{u}$. 
+\end{rem}
+
+\definecolor{qqwwzz}{rgb}{0,0.4,0.6}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.5940549442843843,-5.061970261878616) rectangle (11.456240980454272,3.847112957937895);
+\draw [->,line width=1pt] (-2.3273104707114953,-3.200749924037803) -- (4.473742794457772,-1.3676535361601587);
+\draw [->,line width=1pt,color=qqwwzz] (-2.2874605492358957,0.2396266300224129) -- (4.513592715933372,2.072723017900057);
+\draw [->,line width=1pt,color=qqwwzz] (1.7240982126412883,-0.676921563916409) -- (8.525151477810557,1.156174823961235);
+\draw [->,line width=1pt,color=qqwwzz] (3.8759939723237506,-2.7225508663305913) -- (10.677047237493017,-0.8894544784529472);
+\begin{scriptsize}
+\draw[color=black] (0.8790215128218503,-2.040790168612129) node {$\overrightarrow{u}$};
+\draw[color=qqwwzz] (1.0149437256068465,1.3943348454086615) node {$\overrightarrow{u}$};
+\draw[color=qqwwzz] (5.080253544358093,0.5293753095041458) node {$\overrightarrow{u}$};
+\draw[color=qqwwzz] (7.242652384119395,-1.5218144470694197) node {$\overrightarrow{u}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\section{Égalité de vecteurs}
+
+\begin{defn}
+Deux vecteurs $\overrightarrow{AB}$ et $\overrightarrow{DC}$ sont \underline{égaux} si et seulement si le quadrilatère ABCD est un parallélogramme (éventuellement aplati). On note alors $\overrightarrow{AB} = \overrightarrow{DC}$.
+\end{defn}
+
+Aucun des vecteurs ci-dessous ne sont égaux deux à deux.
+
+\definecolor{qqwwzz}{rgb}{0,0.4,0.6}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-5.312960747998242,-7.95348648890992) rectangle (8.989137638993555,0.6695959841282022);
+\draw [->,line width=1pt] (-2.156521746492763,-4.527209796312038) -- (3.2896341885060587,-2.8402297871782656);
+\draw [->,line width=1pt,color=ccqqqq] (0.31334227843086193,-1.8237426405466266) -- (-4.814762985784294,-5.418013297066244);
+\draw [->,line width=1pt,color=qqwuqq] (3.0901352292463855,-1.6551786596626903) -- (7.673510986179554,-2.8617672952563837);
+\draw [->,line width=1pt,color=qqwwzz] (5.931114956424192,-3.1947109786981516) -- (0.48495902142537073,-4.881690987831924);
+\begin{scriptsize}
+\draw[color=black] (0.5952261336673113,-3.342947940565682) node {$\overrightarrow{u}$};
+\draw[color=ccqqqq] (-2.3588673071654656,-3.3788276179847028) node {$\overrightarrow{v}$};
+\draw[color=qqwuqq] (5.438982585235224,-1.9556004136968574) node {$\overrightarrow{w}$};
+\draw[color=qqwwzz] (3.537359682027081,-4.120340951311143) node {$\overrightarrow{a}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\begin{rem}
+\begin{itemize}
+\item $\overrightarrow{AB}=\overrightarrow{0}$ si et seulement si $A=B$,
+\item si on fixe un point O, alors pour tout vecteur $\overrightarrow{u}$, il existe un unique point M vérifiant  $\overrightarrow{u}=\overrightarrow{OM}$.
+\end{itemize}
+\end{rem}
+
+\section{Opposé d'un vecteur}
+
+\begin{defn}
+Quels que soient les points A et B, le vecteur $\overrightarrow{BA}$ est appelé \underline{vecteur opposé} au vecteur $\overrightarrow{AB}$, on le note aussi $-\overrightarrow{AB}$.
+\end{defn}
+%illustration
+\definecolor{ffwwqq}{rgb}{1,0.4,0}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{center}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.0605420727142807,-3.2026265759689405) rectangle (12.906864579078977,4.52947043231683);
+\draw [->,line width=1pt] (-1.6619982425971727,-1.226011478166051) -- (2.8941761127798924,1.9885488541990934);
+\draw [->,line width=1pt,color=ffwwqq] (1.7506648269583551,-0.7831880211846782) -- (8.166502184530142,0.5849926161442878);
+\draw [->,line width=1pt] (7.781286276932663,4.224618777582509) -- (3.225111921555598,1.0100584452173642);
+\draw [->,line width=1pt,color=ffwwqq] (11.580312124273307,-1.248103771733356) -- (5.16447476670152,-2.616284409062322);
+\begin{scriptsize}
+\draw[color=black] (0.32085598967479245,0.62470663307213) node {$\overrightarrow{u}$};
+\draw [fill=ududff] (1.7506648269583551,-0.7831880211846782) circle (1.5pt);
+\draw[color=ududff] (1.8828215920981715,-0.42232525426661893) node {$D$};
+\draw [fill=ududff] (8.166502184530142,0.5849926161442878) circle (1.5pt);
+\draw[color=ududff] (8.302328573486564,0.9508313192923962) node {$E$};
+\draw[color=ffwwqq] (4.766450396572102,0.26425303251288856) node {$\overrightarrow{DE}$};
+\draw[color=black] (5.913482283910851,2.564290293224239) node {$-\overrightarrow{u}$};
+\draw[color=ffwwqq] (8.182177373300151,-1.5036860559443435) node {$\overrightarrow{ED}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\section{Somme de deux vecteurs}
+\begin{defn}
+Soit $\overrightarrow{u}$ et $\overrightarrow{v}$ deux vecteurs, on définit le vecteur $\overrightarrow{w}=\overrightarrow{u}+\overrightarrow{v}$ de la façon suivante: \\
+
+soit A un point du plan, on trace le représentant de $\overrightarrow{u}$ d'origine A : il a pour extrémité B, puis on trace le représentant de $\overrightarrow{v}$ d'origine $B$ : il a pour extrémité C.\\
+
+La vecteur $\overrightarrow{AC}$ est un représentant du vecteur $\overrightarrow{w}$.
+\end{defn}
+%image 
+
+\definecolor{wwqqcc}{rgb}{0.4,0,0.8}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\draw [color=cqcqcq,, xstep=0.5cm,ystep=0.5cm] (-0.39818369975740425,-1.7292135206977852) grid (5.432350729346309,3.3525116238702024);
+\clip(-0.39818369975740425,-1.7292135206977852) rectangle (5.432350729346309,3.3525116238702024);
+\draw [->,line width=0.8pt,color=ffqqqq] (1,-1) -- (5,1);
+\draw [->,line width=0.8pt,color=qqqqff] (5,1) -- (3,3);
+\draw [->,line width=0.8pt,dash pattern=on 1pt off 1pt,color=wwqqcc] (1,-1) -- (3,3);
+\begin{scriptsize}
+\draw[color=ffqqqq] (3.156842903524037,-0.05348012180948612) node {$\overrightarrow{u}$};
+\draw[color=qqqqff] (4.167371937994631,2.0620878568304057) node {$\overrightarrow{v}$};
+\draw[color=wwqqcc] (1.8482441538498868,1.1387987390047483) node {$\overrightarrow{w}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\begin{prop}
+Relation de Chasles: pour tout point A,B et C du plan, on a $\overrightarrow{AB} + \overrightarrow{BC} =\overrightarrow{AC}$
+\end{prop}
+
+\definecolor{wwqqcc}{rgb}{0.4,0,0.8}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{center}
+
+\begin{tikzpicture}[scale=1.3,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\draw [color=cqcqcq,, xstep=0.5cm,ystep=0.5cm] (-0.39818369975740425,-1.7292135206977852) grid (5.432350729346309,3.3525116238702024);
+\clip(-0.39818369975740425,-1.7292135206977852) rectangle (5.432350729346309,3.3525116238702024);
+\draw [->,line width=0.8pt,color=ffqqqq] (1,-1) -- (5,1);
+\draw [->,line width=0.8pt,color=qqqqff] (5,1) -- (3,3);
+\draw [->,line width=0.8pt,dash pattern=on 1pt off 1pt,color=wwqqcc] (1,-1) -- (3,3);
+\begin{scriptsize}
+\draw [fill=qqqqff] (1,-1) circle (0.5pt);
+\draw[color=qqqqff] (1.0485449179379063,-1.1677193438289633) node {$A$};
+\draw [fill=qqqqff] (5,1) circle (0.5pt);
+\draw[color=qqqqff] (5.054311090551555,1.131528745951003) node {$B$};
+\draw[color=ffqqqq] (3.156842903524037,-0.15348012180948612) node {$\overrightarrow{AB}$};
+\draw [fill=qqqqff] (3,3) circle (0.5pt);
+\draw[color=qqqqff] (3.047793007717858,3.138046828784715) node {$C$};
+\draw[color=qqqqff] (4.27371937994631,2.0620878568304057) node {$\overrightarrow{BC}$};
+\draw[color=wwqqcc] (1.7582441538498868,1.1387987390047483) node {$\overrightarrow{AC}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\begin{prop}
+Quels que soient les vecteurs $ \overrightarrow{u},\overrightarrow{v}$ et $\overrightarrow{w}$ du plan, on a:
+\begin{itemize}
+\item $ \overrightarrow{u}+\overrightarrow{v}=\overrightarrow{v}+\overrightarrow{u}$
+\item $(\overrightarrow{u}+\overrightarrow{v})+\overrightarrow{w}=\overrightarrow{u}+(\overrightarrow{v}+\overrightarrow{w})$,
+\item $\overrightarrow{u}+\overrightarrow{0}=\overrightarrow{u}$
+\end{itemize}
+\end{prop}
+
+
+\section{Différence de deux vecteurs}
+\begin{defn}
+Soit $\overrightarrow{u}$ et $\overrightarrow{v}$ deux vecteurs, on définit le vecteur $\overrightarrow{z}=\overrightarrow{u}-\overrightarrow{v}$ comme la somme du vecteur $\overrightarrow{u}$ et du vecteur $-\overrightarrow{v}$.
+\end{defn}
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.056841780860057,-2.0482217238340934) rectangle (8.799310047069776,4.426348688449437);
+\draw [->,line width=1pt,color=qqqqff] (-0.7864468403215852,-1.779436058074702) -- (4.779258859104043,0.27947655149801376);
+\draw [->,line width=1pt,color=qqqqff] (0.4356174182635169,2.112572939375658) -- (6.001323117689145,4.1714855489483735);
+\draw [->,line width=1pt,color=ccqqqq] (-0.7864468403215852,-1.779436058074702) -- (0.43561741826351685,2.112572939375658);
+\draw [->,line width=1pt,color=ccqqqq] (4.779258859104043,0.2794765514980138) -- (6.001323117689145,4.1714855489483735);
+\draw [->,line width=1pt,color=qqwuqq] (4.779258859104043,0.2794765514980138) -- (0.43561741826351685,2.112572939375658);
+\begin{scriptsize}
+\draw[color=qqqqff] (3.1305874543408243,3.337991001119945) node {$\overrightarrow{v}$};
+\draw[color=ccqqqq] (5.575918768851353,2.180163674173677) node {$\overrightarrow{u}$};
+\draw[color=qqwuqq] (2.913769616640166,1.3743158546190748) node {$\overrightarrow{u}-\overrightarrow{v}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+
+\section{Multiplication d'un vecteur par un nombre réel}
+
+\begin{defn}
+Soit $\overrightarrow{u}=\overrightarrow{AB}$ un vecteur non nul et $k \in \mathbb{R}^*$ on définit le vecteur $\overrightarrow{v}=k \overrightarrow{u} = \overrightarrow{AC}$ par :
+
+\begin{itemize}
+\item A,B et C sont alignés,
+\item si $k>0$, $AC = kAB$ et B et C sont du même coté par rapport à A,
+\item si $k<0$, $AC=-kAB$ et B et C sont de part et d'autre de A.
+\end{itemize}
+\end{defn}
+
+
+\definecolor{ffvvqq}{rgb}{1,0.3333333333333333,0}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{zzttff}{rgb}{0.6,0.2,1}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\draw [color=cqcqcq,, xstep=0.5cm,ystep=0.5cm] (-0.5910484495505731,-0.9956587878117392) grid (6.566912672783369,2.9132590438378);
+\clip(-0.5910484495505731,-0.9956587878117392) rectangle (6.566912672783369,2.9132590438378);
+\draw [->,line width=1pt] (0.5,0.5) -- (2.5,1.5);
+\draw [->,line width=1pt,color=zzttff] (2,0) -- (6,2);
+\draw [->,line width=1pt,color=qqwuqq] (3.5,-0.5) -- (4.5,0);
+\draw [->,line width=1pt,color=ffvvqq] (6,2.5) -- (0,-0.5);
+\begin{scriptsize}
+\draw[color=black] (1.4389045874863182,1.0986040561836155) node {$\overrightarrow{u}$};
+\draw[color=zzttff] (4.407218437093313,0.8972863996179737) node {$\overrightarrow{v}=2\overrightarrow{u}$};
+\draw[color=qqwuqq] (4.5168890229519025,-0.32180385402952194) node {$\overrightarrow{w}=\frac{1}{2}\overrightarrow{u}$};
+\draw[color=ffvvqq] (2.4642458265434624,1.1097883704372622) node {$\overrightarrow{x}=-3\overrightarrow{u}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\begin{rem}
+Si $\overrightarrow{u}=\overrightarrow{0}$ ou $k=0$ alors  $\overrightarrow{v}=\overrightarrow{0}$.
+\end{rem}
+
+\begin{prop}
+Quels que soient les vecteurs $\overrightarrow{u}$,$\overrightarrow{v}$ et les réels $k, \lambda$ et $l$ , on a:
+
+\begin{itemize}
+\item $k(\overrightarrow{u}+\overrightarrow{v})=k\overrightarrow{u}+k\overrightarrow{v}$
+\item $(k+l) \overrightarrow{u}= k\overrightarrow{u} + l \overrightarrow{u}$
+\item $k(\lambda \overrightarrow{u})=(k\lambda)\overrightarrow{u}$
+\item $k\overrightarrow{u}=\overrightarrow{0} \Longleftrightarrow k=0$ ou $\overrightarrow{u}=\overrightarrow{0}$.
+\end{itemize}
+\end{prop}
+\newpage
+\section{Colinéarité de deux vecteurs}
+
+\begin{defn}
+Deux vecteur $\overrightarrow{u}$ et $\overrightarrow{v}$ sont \underline{colinéaires} s'il existe $k \in \mathbb{R}^*$ tel que $\overrightarrow{v}=k\overrightarrow{u}$. \\
+
+Autrement dit, les vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ ont la même direction.
+
+  
+\end{defn}
+
+\begin{prop}
+\begin{itemize}
+\item Trois point A,B et C sont alignés si et seulement si les vecteurs $\overrightarrow{AB}$ et $\overrightarrow{AC}$ sont colinéaires,
+\item deux droites (AB) et (CD) sont parallèles si et seulement si les vecteurs $\overrightarrow{AB}$ et $\overrightarrow{CD}$ sont colinéaires.
+\end{itemize}
+\end{prop}
+
+\definecolor{ttttff}{rgb}{0.2,0.2,1}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{center}
+\begin{tikzpicture}[scale=1,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.8947407154184757,-2.0907315036595575) rectangle (13.107892447504687,5.194300200155465);
+\draw [line width=0.5pt,domain=-3.8947407154184757:13.107892447504687] plot(\x,{(--0.11020359903845317--0.7172985865608171*\x)/2.165179066840997});
+
+\draw [->,line width=1pt,color=ttttff] (-1.795978184370148,-0.5440884923310725) -- (7.018599266682028,2.3760782705941716);
+
+\draw [->,line width=0.5pt,color=ffqqqq] (-1.795978184370148,-0.5440884923310725) -- (0.36920088247084903,0.17321009422974465);
+\begin{scriptsize}
+\draw [fill=ududff] (-1.795978184370148,-0.5440884923310725) circle (0.5pt);
+\draw[color=ududff] (-1.6897117271018778,-0.25849738842259906) node {$A$};
+\draw [fill=ududff] (0.36920088247084915,0.17321009422974462) circle (0.5pt);
+\draw[color=ududff] (0.4754673397391189,0.45880119813821807) node {$B$};
+\draw [fill=xdxdff] (7.018599266682028,2.3760782705941716) circle (0.5pt);
+\draw[color=xdxdff] (7.130404226164512,2.6638301864548044) node {$C$};
+\draw[color=ffqqqq] (-0.8528633761142532,0.11343521201634318) node {$\overrightarrow{AB}$};
+\draw[color=ttttff] (2.866462628275189,1.3556495491258382) node {$\overrightarrow{AC}$};
+\end{scriptsize}
+\end{tikzpicture}
+
+
+
+\definecolor{qqzzff}{rgb}{0,0.6,1}
+\definecolor{ffqqqq}{rgb}{1,0,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[scale=1.4,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.813335559368229,-0.8053959587987695) rectangle (7.065827437128698,5.135646958819455);
+\draw [line width=1pt,domain=-3.813335559368229:7.065827437128698] plot(\x,{(--11.36414460329706--2.1784623739995186*\x)/6.017338142815775});
+\draw [line width=1pt,domain=-3.813335559368229:7.065827437128698] plot(\x,{(--2.8943388990546204--2.1784623739995186*\x)/6.017338142815775});
+\draw [->,line width=1pt,color=ffqqqq] (-2.499993463772435,0.9834918309002973) -- (3.51734467904334,3.161954204899816);
+\draw [->,line width=1pt,color=qqzzff] (2.034214551248869,1.2174484108623713) -- (3.3456860173121665,1.692241612704269);
+\begin{scriptsize}
+\draw [fill=ududff] (-2.499993463772435,0.9834918309002973) circle (0.5pt);
+\draw[color=ududff] (-2.4279421465330735,1.1622026612707856) node {$A$};
+\draw [fill=ududff] (3.51734467904334,3.161954204899816) circle (0.5pt);
+\draw[color=ududff] (3.581095539813276,3.3465346066611774) node {$B$};
+\draw [fill=ududff] (2.034214551248869,1.2174484108623713) circle (0.5pt);
+\draw[color=ududff] (2.1022093199769754,1.400184351819155) node {$C$};
+\draw [fill=xdxdff] (3.3456860173121665,1.692241612704269) circle (0.5pt);
+\draw[color=xdxdff] (3.411108617993012,1.876147732915894) node {$D$};
+\draw[color=ffqqqq] (0.6148237540496609,1.9271438094619733) node {$\overrightarrow{AB}$};
+\draw[color=qqzzff] (2.782157007258033,1.2746863135461156) node {$\overrightarrow{CD}$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+
+
+\end{document}

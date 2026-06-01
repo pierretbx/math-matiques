@@ -1,0 +1,140 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+
+\begin{document}
+\thispagestyle{empty}
+
+\underline{Fiche rappel,méthode et compréhension pour information chiffrée}\\
+
+
+\textit{Pourquoi ce chapitre? On peut voir dans la vie quotidienne beaucoup d’informations qui nous sont transmises. Notamment à l’aide de nombre, le but ici est de comprendre, non seulement les mathématiques qui sont derrières ces informations, mais aussi de les appliquer de manière concrète dans le monde qui nous entoure.}\\
+ 
+
+\underline{Proportion :}\\
+
+Une proportion doit représenter une \underline{sous-population} ( de n individus ) par rapport à une \underline{population} ( de N individus ). La formule \underline{à retenir} est très simple puisque c’est la phrase précédente qui nous la donne ( par rapport se traduit en mathématiques en une division ), donc la proportion sera donné par la formule $\frac{n}{N}$.\\
+
+\underline{Exemple :}
+
+Dans une famille, j’ai un père brun, une mère blonde, deux filles dont une est blonde et l’autre est rousse, et un garçon blond.
+La proportion d’enfant \underline{par rapport} à la famille  est de $\frac{3}{5} = 0,6$.
+La proportion d’enfant blond \underline{par rapport} au enfant est de $\frac{2}{3} =0,66666666666... \approx 0,667$.
+On remarque qu’une proportion exprimé sous un nombre est toujours comprise entre 0 et 1.\\
+
+\underline{L’écriture d’une proportion :}\\
+
+Pour exprimer une proportion nous avons 3 écritures possibles qui sont: 
+
+\begin{itemize}   
+\item Fractionnaire ( Attention elle n’est pas unique ) 
+\item Décimale 
+\item La notation \% ( Attention ce n’est pas un nombre ) 
+\end{itemize}
+
+ 
+Faites un tableau avec ces 3 colonnes et écrivez sous ces 3 formes les nombres ou notations suivantes:
+
+$0,3 ; 0,2 ; 1 ; 40\% ; 1$
+$\frac{2}{5}; 0\% ;  \frac{4}{10};$
+$20\% ; \frac{20}{50} ; \frac{40}{100} ; \frac{10}{100}$ \\
+
+
+\underline{Proportion de proportion:}\\
+
+Malgré ce nom un peu barbare, l’idée ici reste assez "simple".
+
+1)En relisant l’exercice, calculer la proportion d’enfant blond par rapport à la famille.
+ 
+2)Sans l'énoncé, est-il possible de deviner la proportion d’enfant blond par rapport à la famille en connaissant la proportion d’enfant par rapport à  la famille  et de la proportion d’enfant blond par rapport au enfant ? \\
+
+La réponse est oui grâce à la notion proportion de proportion. La proportion est un rapport, donc peut être vue comme une fraction, elle obéit donc au même règle. On peut le comprendre avec le "schéma" suivant.
+
+$$P_{\frac{\textrm{enfant}}{\textrm{famille}}} \times P_{\frac{\textrm{enfant blond}}{\textrm{enfant}}} = P_{\frac{\textrm{enfant}}{\textrm{famille}} \times \frac{\textrm{enfant blond}}{\textrm{enfant}} } = P_\frac{\textrm{enfant blond}}{\textrm{famille}} $$\\
+
+
+\underline{Évolution}:\\
+
+Maintenant que nous avons traité du concept de proportion, on peut s’aider de cet outil pour mesurer une évolution dans le temps d'une quantité. 
+
+Petit rappel, quand on multiplie un nombre réel positif $N$ par un autre nombre: 
+\begin{itemize}
+\item compris strictement entre 0 et 1 alors le résultat du produit est plus petit que $N$
+\item égale à 1 alors le résultat du produit est $N$
+\item plus grand strictement que 1 alors le résultat du produit est plus grand que $N$.
+\end{itemize}
+
+Ainsi une augmentation du nombre $N$ reviendra à le multiplier par un nombre plus grand que 1, une diminution par un nombre compris strictement entre 0 et 1.
+
+La question est maintenant de savoir quel est ce nombre en fonction de l’augmentation ou la diminution?\\
+
+\newpage
+
+\underline{Méthode:}\\
+
+Lors d’une augmentation ou une diminution de $t\%$, appelé aussi \underline{taux d'évolution}, le nombre par lequel nous devrons multiplier notre quantité de départ sera $1+t$, appelé aussi \underline{coefficient multiplicateur}, noté $C_m$.
+
+Le taux d’évolution est soit, à calculer grâce à la méthode du cours, ou il peut être donné de manière implicite. On a donc la formule $C_m=1+t$.\\
+
+
+\underline{Exemple:} 
+
+Si un article subit une augmentation de 20\% alors le taux d’évolution associé est de $\frac{20}{100}$.
+Si un article subit une diminution de 30\% alors le taux d’évolution est de $-\frac{30}{100}$.
+
+Multiplier un nombre par 0.66 revient à lui appliquer une réduction de 44\%. 
+
+Multiplier un nombre par 0.50 revient à lui appliquer une réduction de 50\%. 
+
+Multiplier un nombre par 0.99 revient à lui appliquer une réduction de 1\%. 
+
+Multiplier un nombre par 1,1 revient à lui appliquer une augmentation de 10\%. \\
+
+
+
+\underline{Évolution successive}:\\
+
+Si j’augmente un article de 20\% et que je lui applique ensuite 
+20\% de réduction alors le prix n’est pas le prix initial.
+
+Le but est de savoir à quelle augmentation ou diminution correspond une augmentation de 20\% et une diminution 
+de 20\%? 
+
+On sait déjà qu’une augmentation de 20\% revient à multiplier par $(1+\frac{20}{100})$
+et qu’une diminution de 20\% revient à multiplier par $(1-\frac{20}{100})$. 
+
+Ainsi faire appliquer cette augmentation et cette diminution revient à multiplier par $$(1+\frac{20}{100})(1-\frac{20}{100}) = 0,96 = 1-\frac{4}{100}$$ ( identitée remarquable si on la remarque... ).\\
+
+
+Ce nombre s’appel \underline{coefficient multiplicateur global}.
+Ainsi cela revient à appliquer une réduction de 4\%.  On appel \underline{le taux d’évolution global}, le taux d’évolution du coefficient multiplicateur global.\\
+
+
+Calculer le coefficient multiplicateur global d’une réduction de 44\%, puis de 
+50\%, de 
+1\% ainsi qu‘ une augmentation
+de 10\%. 
+Donner le taux d’évolution global. Cela correspond donc à une ........... de ... \%. 
+
+
+\end{document}

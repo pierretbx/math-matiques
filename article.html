@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Article de démonstration sur le binôme de Newton.">
+  <title>Article - Binôme de Newton</title>
+  <link rel="shortcut icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="index.html" aria-label="Accueil"><img src="./assets/icon.png" alt="Logo du site"></a>
+      <button class="toggle" aria-label="Ouvrir le menu" aria-expanded="false"><span class="bars"></span></button>
+      <ul class="menu">
+        <li class="item"><a href="index.html">Accueil</a></li>
+        <li class="item nav-seconde"><a href="seconde.html">Seconde</a></li>
+        <li class="item dropdown nav-premiere">
+          <a href="premiere.html">Première</a>
+          <ul class="submenu">
+            <li class="sub-techno"><a href="premiere-technologique.html">Technologique</a></li>
+            <li class="sub-specific"><a href="premiere-specifique.html">Spécifique</a></li>
+            <li class="sub-premiere-specialite"><a href="premiere-specialite.html">Spécialité</a></li>
+          </ul>
+        </li>
+        <li class="item dropdown nav-terminale">
+          <a href="terminale.html">Terminale</a>
+          <ul class="submenu">
+            <li class="sub-terminale-technologique"><a href="terminale-technologique.html">Technologique</a></li>
+
+            <li class="sub-complementaires"><a href="terminale-complementaires.html">Complémentaires</a></li>
+            <li class="sub-terminale-specialite"><a href="terminale-specialite.html">Spécialité</a></li>
+            <li class="sub-expertes"><a href="terminale-expertes.html">Expertes</a></li>
+          </ul>
+        </li>
+        <li class="item button"><a href="article.html" aria-current="page">Article</a></li>
+        <li class="item button secondary"><a href="mailto:pierre.thiebeaux@ac-dijon.fr?subject=%C3%80%20propos%20du%20site">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <p class="eyebrow">Article guidé</p>
+      <h1>Binôme de Newton</h1>
+      <p>Une démonstration guidée avec questions progressives et correction dépliable.</p>
+    </section>
+
+    <section class="section article-preview">
+      <div class="section-header">
+        <h2>Démonstration</h2>
+        <p>Lis l'énoncé, déroule les questions, puis compare avec la correction.</p>
+      </div>
+      <article>
+        <h3>Démonstration du binôme de Newton</h3>
+        <div class="card">
+          <p>L'objectif est de démontrer la formule du binôme de Newton pour des paramètres strictement positifs à l'aide de la loi binomiale. Soit <span class="math">\(a,b>0\)</span>, alors pour tout <span class="math">\(n\geq 1\)</span> on a :</p>
+          <p class="math display">\[\sum_{k=0}^n \binom{n}{k} a^k b^{n-k} = (a+b)^n\]</p>
+        </div>
+        <div class="content">
+          <ol class="question">
+            <li>Montrer que <span class="math">\(a<1\)</span>.</li>
+            <li>Soit <span class="math">\(n\geq 1\)</span>, et <span class="math">\(X\sim \mathcal{B}(n,a)\)</span>. Montrer que <span class="math">\(\mathbb{P}(X=k)= \binom{n}{k} a^k b^{n-k}\)</span>.</li>
+            <li>En utilisant la formule des probabilités totales, en déduire une valeur simple pour <span class="math">\(\sum_{k=0}^n \binom{n}{k} a^k b^{n-k}\)</span>.</li>
+            <li>À partir de <span class="math">\(a+b=c\)</span>, déterminer <span class="math">\(a', b'>0\)</span> en fonction de <span class="math">\(a, b, c\)</span> tel que <span class="math">\(a'+b'=1\)</span>.</li>
+            <li>En déduire que si <span class="math">a,b>0\)</span>, alors pour tout <span class="math">n\geq 1\)</span> on a : <span class="math">\(\sum_{k=0}^n \binom{n}{k} a^k b^{n-k} = (a+b)^n\)</span>.</li>
+            <li>En déduire que <span class="math">\(\sum_{k=0}^n \binom{n}{k} = 2^n\)</span>.</li>
+          </ol>
+        </div>
+        <div class="article-actions">
+          <button class="show-more" aria-expanded="false">Voir toutes les questions</button>
+          <button class="show-correction" aria-expanded="false">Voir la correction</button>
+        </div>
+        <div class="seecorrect">
+          <h3>Correction</h3>
+          <ol class="question">
+            <li>Ici <span class="math">\(b>0\)</span>, donc <span class="math">\(1=a+b>a\)</span> d'où <span class="math">\(a\in ]0;1[\)</span>.</li>
+            <li>On a <span class="math">\(X\sim\mathcal{B}(n,a)\)</span>, donc <span class="math">\(\mathbb{P}(X=k)= \binom{n}{k} a^k (1-a)^{n-k}\)</span>. Or <span class="math">\(1-a=b\)</span>, donc <span class="math">\(\mathbb{P}(X=k)= \binom{n}{k} a^k b^{n-k}\)</span>.</li>
+            <li>La somme des probabilités est 1, donc <span class="math">\(\sum_{k=0}^n \binom{n}{k} a^k b^{n-k}=1\)</span>.</li>
+            <li>Avec <span class="math">\(a+b=c\)</span>, poser <span class="math">\(a'=a/c\)</span> et <span class="math">\(b'=b/c\)</span> donne <span class="math">\(a'+b'=1\)</span>.</li>
+            <li>Appliquer le résultat admis à <span class="math">\(a'\)</span> et <span class="math">\(b'\)</span> conduit à <span class="math">\((a+b)^n\)</span>.</li>
+            <li>En posant <span class="math">\(a=1\)</span> et <span class="math">\(b=1\)</span>, on obtient <span class="math">\(\sum_{k=0}^n \binom{n}{k}=2^n\)</span>.</li>
+          </ol>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p><a href="index.html">Retour à l'accueil</a></p>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.3/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="./assets/js/click.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+\documentclass[french]{book}
+%\usepackage{teach}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{lscape}
+%\usepackage[landscape]{geometry}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+%\redefinecolor{thm}{title}{bgcolor}{alizarin}
+%\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+%\redefinecolor{defn}{title}{bgcolor}{olivine}
+%\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+%\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+%\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz}
+\newcommand{\ie}{\leq}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+
+\newcommand{\norme}[1]{\left\Vert #1\right\Vert}
+
+\begin{document}
+\section*{Une inégalité importante}
+%\chapter*{Interprétation géométrique du déterminant}
+\begin{center}
+
+\textit{Soient $a,b \in \mathbb{R}_+$, l'objectif est de montrer que $\sqrt{a+b} \leq \sqrt{a}+\sqrt{b}$.}
+
+\end{center}
+
+\underline{Rappel} : Pour tout $x \in \mathbb{R}$ alors $\sqrt{x^2}=\vert x \vert$.
+
+\begin{enumerate}
+\item Soient $x,y \in \mathbb{R}_+$, montrer que si $x^2 \leq y^2$ alors $x \leq y$.
+\item Comparer $(\sqrt{a+b})^2$ et $(\sqrt{a}+\sqrt{b})^2$.
+\item Montrer alors que $\sqrt{a+b} \leq \sqrt{a}+\sqrt{b}$.
+\end{enumerate}
+
+\section*{Élément de correction}
+\begin{enumerate}
+\item Ici $0\leq x^2 \leq y^2$ on peut donc appliquer la fonction racine carré à cette inégalité, elle \underline{conserve l'ordre} puisqu'elle est strictement \underline{croissante} sur $\mathbb{R}_+$.
+
+Ainsi on obtient,
+$$0\ie \sqrt{x^2} \ie \sqrt{y^2}$$
+puisque $\sqrt{x^2}=\vert x \vert$ on a l'inégalité suivante,
+$$0 \ie \vert x \vert \ie \vert y \vert$$ 
+Or ici $x\in \mathbb{R}_+$ et $y\in \mathbb{R}_+$ on a $\vert x \vert=x$ et  $ \vert y \vert =y $ d'où l'inégalité demandée,
+$$0 \ie x \ie y \Longrightarrow  \boxed{x \ie y}$$ 
+
+\item Soient $a,b \in \mathbb{R}_+$ alors d'une part,
+
+$$(\sqrt{a+b})^2=\vert a+b \vert =\boxed{a+b} \;\;\; \rm{car \; a+b} \geq 0$$
+d'autre part,
+$$(\sqrt{a}+\sqrt{b})^2= \sqrt{a}^2+ 2\sqrt{a}\sqrt{b} + \sqrt{b}^2$$
+Puisque $\sqrt{a}\sqrt{b}=\sqrt{ab}$ et $\sqrt{x}^2=\vert x \vert $ on a,
+$$\sqrt{a}^2+ 2\sqrt{a}\sqrt{b} + \sqrt{b}^2 = \vert a \vert + 2\sqrt{ab} + \vert b \vert $$
+or ici $a \in \mathbb{R}_+$ et  $b \in \mathbb{R}_+$ donc,
+$$ \vert a \vert + 2\sqrt{ab} + \vert b \vert = \boxed{a +2\sqrt{ab} + b}$$
+ 
+ Il nous reste à comparer ces deux expressions,
+ 
+ $$\sqrt{a+b})^2-(\sqrt{a}+\sqrt{b})^2=a+b-(a+2\sqrt{ab}+b)=-2\sqrt{ab}$$
+
+Ici $\sqrt{ab} \geq 0$ mais comme $-2 \ie 0$ on change l'ordre de l'inégalité en la multipliant. D'où $-2\sqrt{ab} \ie 0$, ce qui est équivalent à dire,
+
+$$\sqrt{a+b}^2-(\sqrt{a}+\sqrt{b})^2 \ie 0$$ 
+
+En reprenant l'expression précédante, on ajoute le terme $(\sqrt{a}+\sqrt{b})^2$ sur chaque membre pour obtenir l'inégalité suivante,
+ $$\sqrt{a+b}^2\ie(\sqrt{a}+\sqrt{b})^2 $$
+
+\item Comme $\sqrt{a+b},(\sqrt{a}+\sqrt{b}) \in \mathbb{R}_+$ et que $\sqrt{a+b}^2\ie(\sqrt{a}+\sqrt{b})^2 $ on peut appliquer le résultat de la question 1 pour en déduire l'inégalité souhaitée.
+
+$$\boxed{\sqrt{a+b} \ie \sqrt{a} + \sqrt{b}}$$
+
+\end{enumerate}
+
+\end{document}

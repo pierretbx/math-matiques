@@ -1,0 +1,161 @@
+input latexmp;
+%input repere;
+input geometriesyr16;
+input courbes;
+input couleur;
+input geo;
+
+verbatimtex
+%&latex 
+\documentclass[12pt]{article} 
+\usepackage{mathrsfs} 
+\usepackage{amsmath,amsfonts,amssymb}
+\newcommand{\PR}{\mathscr{P}}
+\newcommand{\DR}{\mathscr{D}}
+%\usepackage{preambule}
+\begin{document} 
+etex 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
+%   I N T E G    F O N C T I O N     D e     L A       B O R N E                       S U P
+%
+%
+%
+%numeric u,k;
+u:=1cm;k:=1.8;
+figure(-1.5u,-3.5u,10u,3u)
+
+pair A,B,C,A',B',C',O;
+path t,tt;
+O:=origin;
+A=u*(2,-1.5); B=u*(3,-1); C=u*(2.2,1);
+t:=polygone(A,B,C);
+A':=A scaled k; B':=B scaled k; C':=C scaled k;
+tt:=t scaled k;
+trace t withpen pencircle scaled 1.3bp withcolor black;
+trace tt withpen pencircle scaled 1.3bp withcolor black;
+trace segment (O,A') dashed evenly;
+trace segment (O,B') dashed evenly;
+trace segment (O,C') dashed evenly;
+nomme.bot(A);
+nomme.bot(A');
+nomme.lft(O);
+nomme.urt(B);
+nomme.urt(B');
+nomme.top(C);
+nomme.top(C');
+
+
+fillcolor:=bleu_m;
+transparence t;
+fillcolor:=bleu_f;
+transparence tt;
+
+
+fin;
+
+figure(-1.5u,-3.5u,10u,3u)
+
+pair A,B,C,A',B',C',v,D,D';
+path t,tt;
+v:=(4u,u);
+A=u*(2,-1.5); B=u*(3,-1); C=u*(2.2,1);
+t:=polygone(A,B,C);
+A':=A shifted v; B':=B shifted v; C':=C shifted v;
+tt:=t shifted v;
+trace t withpen pencircle scaled 1.3bp;
+trace tt withpen pencircle scaled 1.3bp;
+drawarrow A--A' dashed evenly;
+drawarrow B--B' dashed evenly;
+drawarrow C--C' dashed evenly;
+label.bot(btex $M$ etex, A);
+label.bot(btex $M'$ etex,A');
+label.urt(btex $N$ etex,B);
+label.urt(btex $N'$ etex,B');
+label.top(btex $P$ etex,C);
+label.top(btex $P'$ etex,C');
+D:=C shifted(0,u); D':=C' shifted(0,u); 
+drawarrow D--D' withcolor rouge;
+label.top(btex $\overrightarrow{v}$ etex, 0.5[D,D']) withcolor rouge;
+
+fillcolor:=bleu_m	;
+transparence t;
+fillcolor:=bleu_f;
+transparence tt;
+fin;
+
+
+figure(-1.5u,-3.5u,10u,4u)
+
+pair A,B,C,A',B',C',D;
+path T,tt;
+numeric t;
+t:=60;
+A=u*(2,-1.5); B=u*(3,-1); C=u*(1.2,.5); D=u*(-1,0);
+T:=polygone(A,B,C);
+A':=A rotatedaround(D,t); B':=B rotatedaround(D,t); C':=C rotatedaround(D,t);
+tt:=T rotatedaround(D,t);
+trace T withpen pencircle scaled 1.3bp;
+trace tt withpen pencircle scaled 1.3bp;
+draw D--A dashed evenly scaled 0.5;draw D--A' dashed evenly scaled 0.5;
+draw D--B dashed withdots withpen pencircle scaled 1.5bp;draw D--B' dashed withdots withpen pencircle scaled 1.5bp;
+draw D--C dashed evenly scaled 2;draw D--C' dashed evenly scaled 2;
+
+trace codesegments(D,A,D,A',1);trace codesegments(D,B,D,B',2); trace codesegments(D,C,D,C',4);
+label.bot(btex $M$ etex, A);
+label.bot(btex $M'$ etex,A');
+label.urt(btex $N$ etex,B);
+label.urt(btex $N'$ etex,B');
+label.top(btex $P$ etex,C);
+label.top(btex $P'$ etex,C');
+
+
+label.lft(btex $C$ etex, D);
+
+
+fillcolor:=bleu_m;
+transparence T;
+fillcolor:=bleu_f;
+transparence tt;
+
+fin;
+
+
+
+figure(-1.5u,-3.5u,10u,3u)
+pair C,E,M,M';
+
+
+marque_p:="non";
+
+C:=origin; E=u*(2,0); M=u*(4,1); M':=rotation(M,C,30);
+
+drawarrow C--E;
+drawarrow C--M withpen pencircle scaled 1.3bp;
+drawarrow C--M' withpen pencircle scaled 1.3bp withcolor orange;
+
+trace arccercle(M,M',C) dashed evenly withcolor orange;
+
+marque_a:=30;
+trace Codeangle(E,C,M,1,btex $\theta$ etex);
+
+marque_a:=20;
+trace Codeangle(M,C,M',2,btex $\alpha$ etex) withcolor orange;
+
+nomme.rt(M);
+nomme.rt(M');
+nomme.lft(C);
+label.bot(btex $\overrightarrow{e_1}$ etex, 0.5E);
+
+fin;
+
+
+
+end

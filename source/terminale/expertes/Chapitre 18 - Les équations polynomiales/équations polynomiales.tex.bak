@@ -1,0 +1,519 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{stmaryrd}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\newcommand{\bsyc}{\left\{\begin{array}{rcl}} % systï¿½e serrï¿½sur le ï¿½al
+\newcommand{\esyc}{\end{array}\right.}
+
+
+\newcommand{\ofr}[2]{\dfrac{#1}{#2}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+  \usepackage{tkz-tab}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\newcommand{\I}{i}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\usepackage[bottom]{footmisc}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%\usepackage{preambule}
+%%
+\newcommand{\R}{\mathbb {R}}
+\newcommand{\bbr}{\mathbb {R}}
+\newcommand{\bbc}{\mathbb {C}}
+\newcommand{\bbz}{\mathbb {Z}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+%\newcommand{\imath}{i}
+\newcommand{\tm}{\times}
+\newcommand{\ab}[1]{\vert #1 \vert}
+\newcommand{\nov}[1]{\Vert \overrightarrow{#1} \Vert}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\ud}[1]{\dfrac{#1}{2}}
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+\newcommand{\calr}{\mathscr{R}}
+\newcommand{\cali}{\mathscr{I}}
+\newcommand{\RR}{\calr }
+\newcommand{\CR}{\calc}
+\newcommand{\IR}{\cali }
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+%\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cacheg}[1]{#1}
+\newcommand{\cacheb}[1]{#1}
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+
+\newenvironment{arrayl}[1][rcl]%
+	{\setlength{\arraycolsep}{1.5pt}
+	 $\begin{array}[t]{#1}}%
+	{\end{array}$}%
+%\newcommand{\coordpp}[3]{\begin{pmatrix}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+\newcommand{\un}{\suite}
+\newcommand{\eit}{e^{it}}
+\newcommand{\eimt}{e^{imt}}
+\newcommand{\vn}{\suite[v]}
+%\newcommand{\pa}[1]{(#1)}
+\newcommand{\cro}[1]{[#1]}
+\newcommand{\abs}[1]{\vert #1 \vert}
+
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\Rep}{(O;\ve{i};\ve{j})}
+\newcommand{\C}[2]{C_{#1}^{#2}}
+\newcommand{\dx}{dx}
+
+\begin{document}
+\tableofcontents
+\chapter{Les équations polynomiales}
+Dans tout ce cours, $K$ d\'{e}signe $\mathbb{R}$ ou $\mathbb{C}$%
+\section{Définitions des  Fonctions polyn\^{o}mes.}
+
+\begin{defn}
+
+une application $f$ d'une partie $I$ de $K$ dans $K$ est dite \textit{%
+polynomiale} (ou appel\'{e}e une \textit{fonction polyn\^{o}me}) si 
+\begin{equation*}
+\exists n\in \mathbb{N}\;\exists \left( a_{0},a_{1},...,a_{n}\right) \in
+K^{n+1}\;/\;\forall x\in I\;\;f\left( x\right) =\underset{k=0}{\overset{n}{%
+\sum }}a_{k}x^{k}=a_{0}+a_{1}x+...+a_{n}x^{n}
+\end{equation*}
+
+L'ensemble des fonctions polynomiales de $I$ dans $K$ est not\'{e} $\mathcal{%
+P}\left( I,K\right) $. Cette ensemble à le bon goût d'être stable par multiplication et addition de polynôme.
+
+\end{defn}
+
+
+\begin{defn}
+
+\qquad - le \textit{degr\'{e}} d'un polyn\^{o}me non nul est l'indice
+maximum d'un coefficient non nul ; par convention, le degr\'{e} du polyn\^{o}%
+me nul est $-\infty .$%
+\begin{equation*}
+\text{pour }P=\left( a_{k}\right) _{k\geqslant 0},\deg P=\underset{a_{k}\neq
+0}{\max }k
+\end{equation*}
+
+\bigskip \qquad - la \textit{valuation} d'un polyn\^{o}me non nul est
+l'indice minimum d'un coefficient non nul ; par convention, la valuation du
+polyn\^{o}me nul est $+\infty .$%
+
+\end{defn}
+
+%\begin{equation*}
+%\text{pour }P=\left( a_{k}\right) _{k\geqslant 0}, \limfunc{val}P=\underset{%
+%a_{k}\neq 0}{\min }k
+%\end{equation*}
+
+\begin{defn}
+\qquad - les polyn\^{o}mes de degr\'{e} 0 et le polyn\^{o}me nul sont dits 
+\textit{constants}.
+
+%\qquad - $P$ est appel\'{e} un \textit{mon\^{o}me} si $\deg P=\limfunc{val}P$
+(un seul coefficient non nul).
+
+\qquad - si $n=\deg P,$ le coefficient de rang $n$ est appel\'{e} le
+coefficient \textit{dominant} ou "\textit{de t\^{e}te}" du polyn\^{o}me.
+
+\qquad - un polyn\^{o}me dont le coefficient dominant est \'{e}gal \`{a} $1$
+est dit \textit{normalis\'{e}}, ou \textit{unitaire}.
+\end{defn}
+
+\begin{prop}
+
+\begin{equation*}
+\forall P,Q\in K[X]\;\;\forall x\in K\;\left\{ 
+\begin{array}{c}
+\left( P+Q\right) \left( x\right) =P\left( x\right) +Q\left( x\right) \\ 
+\left( PQ\right) \left( x\right) =P\left( x\right) Q\left( x\right) \\ 
+\left( P\circ Q\right) \left( x\right) [\text{ou }\left( P\left( Q\right)
+\right) \left( x\right) ]=P\left( Q\left( x\right) \right)%
+\end{array}
+\right.
+\end{equation*}
+
+\end{prop}
+\section{Division euclidienne des polyn\^{o}mes.}
+
+\bigskip
+
+\begin{thm}[Division euclidienne des polynomes]
+
+ \'{e}tant donn\'{e} deux polyn\^{o}mes $A,B\neq 0,$ il existe un unique
+couple $\left( Q,R\right) $ de polyn\^{o}mes v\'{e}rifiant 
+\begin{equation*}
+A=BQ+R,\text{ avec }\deg R<\deg B
+\end{equation*}
+
+$Q$ et $R$ sont appel\'{e}s respectivement le \textit{quotient} et le 
+\textit{reste} de la division euclidienne de $A$ par $B.$
+
+\end{thm}
+
+\section{Polyn\^{o}mes premiers entre eux, PGCD, PPCM.}
+
+\begin{defn}
+Il existe un unique polynôme $D$ nul ou unitaire tel que, pour tout $R$ de $K[X]$, on ait :
+($R\vert P$ et $R\vert Q$) si et seulement si $R\vert D$.
+Ce polynôme D est appelé le pgcd de $P$ et $Q$, on le note aussi $PGCD(P,Q)$ ou $P\wedge Q$.\\
+
+$P$ et $Q$ sont premiers entre eux ssi leur $PGCD$ est $1$.
+\end{defn}
+
+\begin{thm}[Théorème de B\'{e}zout ]
+
+$A$ et $B$ sont premiers entre eux si et seulement s'il
+existe deux polyn\^{o}mes $U$ et $V$ tels que $AU+BV=1.$
+
+\end{thm}
+
+\begin{cor}[Théorème de Gauss]
+Si $A$ divise $BC$ et $A$ et $B$ sont
+premiers entre eux, alors $A$ divise $C$.
+\end{cor}
+
+
+\begin{rem}
+On peut poser $A\wedge 0=0\wedge A=A.$
+\end{rem}
+
+\begin{defn}
+Soient $P$ et $Q$ deux éléments de $K[X]$. Il existe un unique polynôme $M$ nul ou unitaire tel que, pour tout $R$ de $K[X]$, on ait :
+($P \vert R$) et $Q\vert R$) si et seulement si $M \vert R$.
+Ce polynôme $M$ est appelé le ppcm de $P$ et $Q$.
+\end{defn}
+
+
+\begin{defn}
+$PPCM\left( A,B\right) .PGCD\left( A,B\right) =AB$ si $A$ et 
+$B$ sont ont des coefficients dominants égaux à 1.
+\vspace{5mm}
+\end{defn}
+
+\section{Racines des polynôme}
+
+
+\subsection{D\'{e}finition et premiers exemples}
+
+\begin{defn} soit $P\in K[X]$ et $x_{0}\in K$ ; on dit que $x_{0}$ est une racine
+(ou un z\'{e}ro) de $P$ si $P\left( x_{0}\right) =0$.
+\vspace{5mm}
+\end{defn}
+
+\begin{thm}[Racine et divisibilité] 
+$x_{0}$ est une racine de $P$ si et seulement si le polyn\^{o}me $X-x_{0}$ divise $P$
+dans $K[X]$.
+\end{thm}
+
+\begin{demo}
+Faisons la division euclidienne de $P$ par $(X-x_0)$. Ainsi ils existent $R,Q \in K[X]$ tels que $P=(X-x_0)Q+R$ avec $deg(R)<1$ donc $deg(R)=0$ autrement dit $R$ est un polynôme constant.\\
+
+On sait que $P(x_0)=0$ donc $(X-x_0)Q+R)(x_0)=0$, autrement dit $R(x_0)=0$.$R$ étant constant, on déduit que est le polynôme nul, d'où $R=0$.\\
+
+On conclut, $P=(X-x_0)Q$ ce qui par définition équivaut à dire que le polyn\^{o}me $X-x_{0}$ divise $P$.
+\end{demo}
+\subsection{Formule fondamentale de l'algèbre}
+\begin{thm}
+$$X^n-a^n=(X-a)(X^{n-1}+X^{n-2}a+\cdots+Xa^{n-2}+a^{n-1})$$\\
+Autrement dit,
+$$X^n-a^n=(X-a)\sum_{k=1}^n-1 X^{n-k}a^k$$
+\end{thm}
+
+\begin{demo}
+Soit $P=X^{n-1}+X^{n-2}a+\cdots+Xa^{n-2}+a^{n-1}$, alors $XP=X^n+X^{n-1}a+\cdots+Xa^{n_1}$ et $aP=X^{n-1}a+\cdots+Xa^{n_1}+a^n$. \\
+Ainsi $XP-aP=X^n-a^n$, et $XP-aP=(X-a)P=(X-a)((X^{n-1}+X^{n-2}a+\cdots+Xa^{n-2}+a^{n-1})$
+\end{demo}
+
+
+
+
+\section{Nombre de racines d'un polyn\^{o}me.}
+
+
+\begin{prop}
+un polyn\^{o}me non nul a toujours un nombre fini de racines
+distinctes, inf\'{e}rieur ou \'{e}gal \`{a} son degr\'{e}.
+\end{prop}
+
+\begin{demo}
+Supposons par l'absurde qu'il existe un polynôme $P$ de degré $n$ qui possèdent $k$ racines avec $k>n$ notées $\al_1, \al_2, \cdots, \al_k$ alors $P=(X-\al_1)(X-\al_2)\cdots(X-\al_k)Q$ avec $deg(Q) \se0 $.\\
+ 
+Or $deg(P)=deg((X-\al_1)(X-\al_2)\cdots(X-\al_k)Q)=deg((X-\al_1))+deg((X-\al_2))+\cdots+deg((X-\al_k))+deg(Q) =k+deg(Q)$.\\
+
+Donc d'un coté $deg(P)=n$ et d'autre part $deg(P)=k+deg(Q)(\se k)$, donc $n\se k$ or $k>n$ par hypothèse, d'où l'absurdité.
+\end{demo}
+
+\section{Racines $n$-ième et polygones réguliers}
+
+\subsection{Résolution générale de l'équation $z^n-a=0$}
+Soit $a\in \mathbb{C}$, on pose $a=r_ae^{i\theta_a}$ son écriture exponentielle avec $r_a \se 0$ et $\theta_a$ un argument de $a$ compris entre $[0;2\pi[$. De même supposons que $z=re^{i\theta}$ soit solution avec $r \se 0$ et $\theta \in [0;2\pi[$
+alors on a nécéssairement 
+$$r^ne^{in\theta}=r_ae^{in\theta}$$ 
+En appliquant le module à cette équation on déduit facilement que $r=\sqrt[n]{r_a}$.\\
+
+En appliquant l'argument à cette équation on déduit aussi nécéssairement que $$n\theta \equiv \theta_a \pmod {2\pi}$$
+autrement dit, 
+$$\theta \equiv \dfrac{\theta_a}{n} \pmod {\dfrac{2\pi}{n}}$$
+
+il existe donc $n$ arguments possibles sur un segment de longueur $2\pi$.\\
+
+Ainsi pour tout $k\in\{0,1,\cdots,n-1\}$, $z_k=\sqrt[n]{r_a}e^{  \dfrac{\theta_a}{n} +\dfrac{2k\pi}{n} } $ est une racine du polynôme $z^n-a=0$. Or un polynôme de degré $n$ à au plus $n$ racines, donc le polynôme $z^n-a$ à exactement $n$ racine qui sont les $(z^k)^{n-1}_{k=0}$. \\
+
+Puisque $z^n-a$ est divisible par tous les $z-z_k$ on a $z^n-a=\prod^{n-1}_{k=0}(z-z_k)Q$ avec $deg(Q)=0$. \\
+
+\textit{Effectivement $z^n-a=(z-z_0)Q_0$ pour un certain $Q_0$ alors on sait que $deg(z^n-a)=deg((z-z_0)Q_0)=deg((z-z_0))+deg(Q_0)=1+deg(Q_0)$ donc $n=1+deg(Q_0)$ d'où $deg(Q_0)=n-1$.}
+\textit{De plus $z^n-a(z_1)=(z-z_0)Q_0(z_1)$ ce qui équivaut à dire que $0=(z_1-z_0)Q_0(z_1)$ et comme $(z_1-z_0)\neq 0$ alors nécéssairement $Q_0(z_1)=0$ ainsi $Q_0=(z-z_1)Q_1$ avec $deg(Q_1)=deg(Q_0)-deg(z-z_1)=n-1-1=n-2$.}
+\textit{En répétant ce procédé $n$ fois on obtient le résultat $z^n-a=\prod^{n-1}_{k=0}(z-z_k)Q$ avec $deg(Q)=0$}
+
+Reste donc à déterminer le polynôme constant $Q$, le coefficient dominant de $z^n-a$ est 1. \\
+
+Le coefficient dominant de $\prod^{n-1}_{k=0}(z-z_k)Q$ est le produit des coefficients dominants de chaque termes et donc égale au coefficient dominant de $Q$ qui est la constante recherchée.\\
+
+Par l'égalité $z^n-a=\prod^{n-1}_{k=0}(z-z_k)Q$ on déduit l'égalité des coefficients dominants et donc $Q=1$ nécéssairement. \\
+
+On a donc la formule suivante. 
+
+$$z^n-a= \prod^{n-1}_{k=0}(z-z_k) =\prod^{n-1}_{k=0}(z-\sqrt[n]{r_a}e^{(  
+\frac{\theta_a}{n} +\frac{2k\pi}{n} )} )$$
+
+\subsection{Liens avec polygones réguliers}
+On va représenter nos racines dans le plan complexe.\\
+
+Une des premières choses à remarquer est que le module des racines est constante, ainsi toutes les racines sont situés sur le cercle $\calc (O,\sqrt[n]{r_a})$, ensuite on remarque que l'angle formé $\widehat{Z_kOZ_{k+1}}$ est toujours de $\dfrac{2\pi}{n}$ \emph{de même pour $\widehat{Z_{n+1}OZ_0}$}.\\
+
+Ainsi, on $n$ affixes dans le plan,  tous sont sur le cercle $\calc (O,\sqrt[n]{r_a})$ espacées d'un angle régulier  $\dfrac{2\pi}{n}$. Reste à déterminer un seul point pour fixé le polygone, prenons une affixe $Z_k$ quelconque et le tour est joué.
+
+
+\subsection{Cas particuliers: Racine  $n$-ième de l'unité}
+Soit $n\se 1$ un entier. On appelle racine $n$-ième de l'unité dans  $\bbc$, tout élément $z$ de $\bbc$ vérifiant $z^n=1$. Une racine $n$-ième de l'unité est donc une racine du polynôme $X^n-1$ de $\bbc [X]$.\par
+Si on cherche $z$ sous la forme exponentielle $z=\rho\exp^{\imath \theta}$, on voit que $\rho^n\exp^{\imath n\theta}=1$, ce qui donne $\rho=1$ et $\theta=2k\pi/n$ avec $0\ie k<n$.\\
+
+ Les racines  $n$-ièmes de l'unité dans $\bbc$ sont les $n$ nombres complexes
+
+ $\exp^{2\imath k\dfrac{\pi}{n}}=\cos(2k\dfrac{\pi}{n})+\imath\sin(2k\dfrac{\pi}{n})$,  avec $0\ie k<n$, on note $\mathbb{U}_n$ l'ensemble des racines $n$-ièmes de l'unité. \\
+ 
+
+ 
+Pour $n=2$, les racines carrées de l'unité sont 1 et $-1=\exp^{\imath\pi}$.\\
+
+Pour $n=3$, les racines cubiques de l'unité sont 1, $\jmath$ et $\jmath^2$ avec $\jmath=\exp^{2\imath\pi/3}=-\dfrac{1}{2}+\imath\dfrac{\sqrt3}{2}$ et $\jmath^2=\exp^{4\imath\pi/3}=-\dfrac{1}{2}-\imath\dfrac{\sqrt3}{2}$.\\
+\begin{center}
+\includegraphics{../Figures/polyn.5}
+\end{center}
+Pour $n=4$, les racines quatrièmes de l'unité sont $\pm1$, $\imath=\exp^{\imath\pi/2}$ et $-\imath=\exp^{3\imath\pi/2}$.\\
+\begin{center}
+\includegraphics{../Figures/polyn.4}
+\end{center}
+Pour finir, voici deux autres illustrations pour n=5 et n=6, etc.
+
+\begin{minipage}{7cm}
+\includegraphics[scale=0.7]{../Figures/polyn.6}
+\end{minipage}
+\hfill
+\begin{minipage}{7cm}
+\includegraphics[scale=0.7]{../Figures/polyn.1}
+\end{minipage}
+
+
+Comme $X^n-1=(X-1)(\sum_{1\ie k\ie n}X^{n-k})$, toute racine $n$-ième de l'unité distincte de 1 est racine du polynôme $\sum_{1\ie k\ie n}X^{n-k}=X^{n-1}+X^{n-2}+\ldots+1$. Autrement dit, si $\zeta$ est une racine $n$-ième de l'unité, elle vérifie les deux relations $\zeta^n=1$ et, si $\zeta\not=1$, $\sum_{1\ie k\ie n}\zeta^{n-k}=0$ qui sont très utiles dans certains calculs.\\
+
+Pour calculer avec des racines $n$-ièmes de l'unité, on peut utiliser leur forme exponentielle $\exp^{2\imath k\pi/n}$ ou leur forme trigonométrique $\cos(2k\pi/n)+\imath\sin(2k\pi/n)$.
+
+
+\begin{rem}
+Une subtilité et non pas des moindres est à remarquer ici, l'ensemble des racines $n$-ième de l'unité $\mathbb{U}_n$ à le bon gout s'il est muni de la multiplication complexe, d'être stable par $\times$, de contenir un élément neutre $1$,  et qui de plus est stable par inverse.\\
+
+Un tel ensemble est qualifié comme groupe, une notion très importante en mathématiques.
+
+\end{rem}
+\section{Dérivation des Polynômes, formules de Taylor}
+
+\section{D\'{e}finition de l'application dérivation}
+
+\begin{defn}
+le polyn\^{o}me d\'{e}riv\'{e} du polyn\^{o}me $P=\underset{k\geqslant
+0}{\sum }a_{k}X^{k}$ est le polyn\^{o}me, not\'{e} $P^{\prime }=\underset{%
+k\geqslant 1}{\sum }ka_{k}X^{k-1}=\underset{k\geqslant 0}{\sum }\left(
+k+1\right) a_{k+1}X^{k}.$\\
+
+Les polyn\^{o}mes d\'{e}riv\'{e}s successifs se notent de la m\^{e}%
+me fa\c{c}on que pour les fonctions.
+
+On notera $D$ l'application : $\left\{ 
+\begin{array}{c}
+K[X]\rightarrow K[X] \\ 
+P\mapsto P^{\prime }%
+\end{array}%
+\right. $
+\end{defn}
+
+\begin{prop}
+
+P1 : $P\in K\Leftrightarrow P^{\prime }=0$
+
+\bigskip
+
+P2 : si $\deg \left( P\right) \geqslant 1,\;\deg $ $P^{\prime }=\deg P-1,$
+et mieux, si $n\geqslant 1,$ $P\in K_{n}[X]\Leftrightarrow P^{\prime }\in
+K_{n-1}[X]$
+
+\bigskip
+
+P3 : $\left( P+Q\right) ^{\prime }=P^{\prime }+Q^{\prime }$ ; $\left(
+\lambda P\right) ^{\prime }=\lambda P^{\prime }$ ; $\left( PQ\right)
+^{\prime }=P^{\prime }Q+PQ^{\prime }$
+
+\bigskip
+
+P4 : $\left( P\circ Q\right) ^{\prime }=\left( P^{\prime }\circ Q\right)
+Q^{\prime }$
+
+\end{prop}
+
+\section{Formule de Taylor}
+
+\section{Formule de Taylor pour les polyn\^{o}mes}
+
+\bigskip
+\begin{prop}
+Si deg$P=n,$%
+\begin{equation*}
+P=P\left( X\right) =\underset{k=0}{\overset{n}{\sum }}\dfrac{P^{\left(
+k\right) }\left( x_{0}\right) }{k!}\left( X-x_{0}\right) ^{k}=P\left(
+x_{0}\right) +P^{\prime }\left( x_{0}\right) \left( X-x_{0}\right)
++P^{\prime \prime }\left( x_{0}\right) \dfrac{\left( X-x_{0}\right) ^{2}}{2}%
++..+P^{\left( n\right) }\left( x_{0}\right) \dfrac{\left( X-x_{0}\right) ^{n}%
+}{n!}
+\end{equation*}
+
+ou, ce qui revient au m\^{e}me 
+\begin{equation*}
+P\left( x_{0}+X\right) =\underset{k=0}{\overset{n}{\sum }}\dfrac{P^{\left(
+k\right) }\left( x_{0}\right) }{k!}X^{k}=P\left( x_{0}\right) +P^{\prime
+}\left( x_{0}\right) X+P^{\prime \prime }\left( x_{0}\right) \dfrac{X^{2}}{2}%
++..+P^{\left( n\right) }\left( x_{0}\right) \dfrac{X^{n}}{n!}
+\end{equation*}
+
+\end{prop}
+
+\begin{cor}
+
+un polyn\^{o}me de degr\'{e} $n$ est enti\`{e}rement d\'{e}termin\'{e} par
+la connaissance de $P\left( x_{0}\right) ,P^{\prime }\left( x_{0}\right)
+,P^{\prime \prime }\left( x_{0}\right) ,...,P^{\left( n\right) }\left(
+x_{0}\right) $
+\end{cor}
+
+
+
+\end{document}
+

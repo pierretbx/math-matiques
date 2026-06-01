@@ -1,0 +1,116 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{lscape}
+%\usepackage[landscape]{geometry}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+
+\newcommand{\norme}[1]{\left\Vert #1\right\Vert}
+
+\begin{document}
+\pagestyle{empty}
+\section*{Interprétation géométrique du déterminant}
+%\chapter*{Interprétation géométrique du déterminant}
+\begin{center}
+
+\textit{L'objectif est de montrer dans un cas particulier que l'aire d'un parallélograme est égale}
+
+ \textit{au déterminant des deux vecteurs formant le parallélogramme}
+\end{center}
+\subsection*{Construction}
+
+Tracer les \underline{droites} $(OA);(OB);(AC);(BC)$.\\
+Tracer un repère orthonormé $(O;\overrightarrow{i};\overrightarrow{j})$ où $\norme{\overrightarrow{i}}=\norme{\overrightarrow{j}}=1cm$ et tel que l'axe des abscisses soit parallèles à la feuille.\\
+
+On note $\overrightarrow{u}=\overrightarrow{OB}$ et $\overrightarrow{v}=\overrightarrow{OA}$. On notera les coordonnées de $\overrightarrow{u}=\left( \begin{array}{c}
+x_u\\
+y_u
+\end{array} \right)
+$ et $\overrightarrow{v}=\left( \begin{array}{c}
+x_v\\
+y_v
+\end{array} \right)$. \\
+
+Tracer les droites $y=y_u; \; y=y_v; \; x=x_u; \; x=x_v$.\\
+
+Placer : 
+\begin{itemize}
+\item W le point d'intersection de $y=y_v$ et l'axe des ordonnées
+\item J le point d'intersection de $x=x_u$ et $(AC)$
+\item P le point d'intersection de $(AC)$ et l'axe des ordonnées
+\item K le point d'intersection de $y=y_v$ et $x=x_u$.\\
+\end{itemize} 
+
+À l'aide d'un compas, placer le point R tel que $\overrightarrow{OR}=\overrightarrow{AK}$. On note $R=(x_r;y_r)$ ces coordonnées.\\
+
+Tracer la droite $x=x_r$.\\
+
+Placer : 
+\begin{itemize}
+\item H le point d'intersection de $x=x_r$ et $OB$
+\item T le point d'intersection de $x=x_r$  et $y=y_u$
+\item Z le point d'intersection de $x=x_r$ et $y=y_v$.\\
+\end{itemize} 
+
+\subsection*{Interprétation}
+
+Par construction, l'aire de AKJ est la même que ORH, l'aire de BCJ est la même que OAP, l'aire de HBT est la même que PAW. \\
+
+Ainsi l'aire du parallélogramme OBCA est égale la somme de l'aire du rectangle ORZW et de l'aire du rectangle TBKZ.\\
+
+\textit{
+(Pour s'en persuader, vous pouvez photocopier votre figure et découper les triangles AKJ,BCJ et HBT puis les superposés respectivement sur les triangles ORH,OAP et PAW.)}\\
+
+
+On sait que la longueur AK est égale à $x_u-x_v$. En déduire par contruction, la longueur de OR puis l'aire de ORZW sachant que la longueur OW est égale à $y_v$.\\
+
+De même, on sait que la longueur TB est égale à $x_v$ et que la longueur BK est égale à $y_v-y_u$ en déduire l'aire de TBKZ.\\
+
+Pour finir, déterminer l'aire du parallélogramme OBCA, puis conclure.
+\newpage
+
+\begin{landscape}
+\begin{center}
+
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-1.4915269060215481,-1.9491351810091735) rectangle (9.40069011843094,8.823551341117295);
+\draw [->,line width=1pt] (0.39576749678791573,0.8506587593149608) -- (1.617831755373018,3.2549373550095515);
+\draw [->,line width=1pt] (0.39576749678791573,0.8506587593149608) -- (6.26698926085982,3.0556877476315467);
+\draw [->,line width=1pt] (1.617831755373018,3.2549373550095515) -- (7.489053519444922,5.459966343326137);
+\draw [->,line width=1pt] (6.26698926085982,3.0556877476315467) -- (7.489053519444922,5.459966343326137);
+\begin{scriptsize}
+\draw [fill=ududff] (0.39576749678791573,0.8506587593149608) circle (1pt);
+\draw[color=ududff] (0.09225224979733232,0.6282412753941756) node {$O$};
+\draw [fill=ududff] (1.617831755373018,3.2549373550095515) circle (1pt);
+\draw[color=ududff] (1.7357966567791894,3.6463864591244763) node {$A$};
+\draw[color=black] (0.7795526381715634,2.1821378056315583) node {$\overrightarrow{v}$};
+\draw [fill=ududff] (6.26698926085982,3.0556877476315467) circle (1pt);
+\draw[color=ududff] (6.5170167498173175,2.824614255633553) node {$B$};
+\draw[color=black] (3.4092236893425345,1.7534289242351887) node {$\overrightarrow{u}$};
+\draw [fill=ududff] (7.489053519444922,5.459966343326137) circle (1pt);
+\draw[color=ududff] (7.607732583541641,5.842759439363853) node {$C$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+\end{landscape}
+\end{document}

@@ -1,0 +1,87 @@
+verbatimtex
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[frenchb]{babel}
+\begin{document}
+etex;
+
+input geometriesyr15;
+
+numeric u;
+
+
+u:=2cm;
+figure(-1.5*u,-1.5*u,1.5*u,1.5*u)
+pair o,a,b,c,d,e,f;
+o:=(0,0);
+a:=(1,0)*u;
+b:=(cosd(45),sind(45))*u;
+c:=(cosd(135),sind(135))*u;
+d:=(-1,0)*u;
+e:=(cosd(-150),sind(-150))*u;
+f:=(cosd(-30),sind(-30))*u;
+draw fullcircle scaled (u*2);
+draw a--d;
+draw o--b;
+draw o--c;
+draw o--e;
+draw o--f;
+trace codeangle.urt(a,o,b,0,btex \begin{footnotesize}45\degres\end{footnotesize} etex);
+trace codeangle.top(b,o,c,0,btex \begin{footnotesize}90\degres\end{footnotesize} etex);
+trace codeangle.ulft(c,o,d,0,btex \begin{footnotesize}45\degres\end{footnotesize} etex);
+trace codeangle.llft(d,o,e,0,btex \begin{footnotesize}30\degres\end{footnotesize} etex);
+trace codeangle.bot(e,o,f,0,btex \begin{footnotesize}120\degres\end{footnotesize} etex);
+trace codeangle.lrt(f,o,a,0,btex \begin{footnotesize}30\degres\end{footnotesize} etex);
+label.rt(btex \begin{LARGE}1\end{LARGE} etex,(cosd(22.5),sind(22.5))*0.6*u);
+label.top(btex \begin{LARGE}2\end{LARGE} etex,(cosd(90),sind(90))*0.6*u);
+label.lft(btex \begin{LARGE}3\end{LARGE} etex,(cosd(157.5),sind(157.5))*0.6*u);
+label.rt(btex \begin{LARGE}6\end{LARGE} etex,(cosd(-15),sind(-15))*0.6*u);
+label.bot(btex \begin{LARGE}5\end{LARGE} etex,(cosd(-90),sind(-90))*0.6*u);
+label.lft(btex \begin{LARGE}4\end{LARGE} etex,(cosd(-165),sind(-165))*0.6*u);
+fin;
+
+u:=1cm;
+
+beginfig(2)
+path a,b,c;
+a:=fullcircle xscaled (1.5*u) yscaled u rotated 10;
+b:=a rotated -15 shifted (1*u,0);
+c:=fullcircle xscaled (3.5*u) yscaled (2*u) shifted (0.5*u,0);
+fill a withcolor 0.5*white;
+fill buildcycle(reverse a,b) withcolor white;
+label.urt(btex $\Omega$ etex,(u,0.95*u));
+label.lft(btex $B$ etex,(1.5*u,0));
+label.lft(btex $A$ etex,(0,0));
+label.lft(btex $A\cap B$ etex,(1*u,-1.5*u));
+drawarrow (0.5*u,-1.25*u)--(0.5*u,0);
+draw a; draw b; draw c;
+endfig;
+
+beginfig(3)
+path a,b,c;
+a:=fullcircle xscaled (1.5*u) yscaled u rotated 10;
+b:=a rotated -15 shifted (1*u,0);
+c:=fullcircle xscaled (3.5*u) yscaled (2*u) shifted (0.5*u,0);
+fill b withcolor 0.5*white;
+fill a withcolor 0.5*white;
+label.urt(btex $\Omega$ etex,(u,0.95*u));
+label.lft(btex $B$ etex,(1.5*u,0));
+label.lft(btex $A$ etex,(0,0));
+label.lft(btex $A\cup B$ etex,(2*u,-1.5*u));
+drawarrow (1.5*u,-1.25*u)--(1*u,0);
+draw a; draw b; draw c;
+endfig;
+
+beginfig(4)
+path a,b,c;
+a:=fullcircle xscaled (2*u) yscaled (1.5*u) rotated 10;
+c:=fullcircle xscaled (3.5*u) yscaled (2*u) shifted (0.5*u,0);
+fill c withcolor 0.5*white;
+fill a withcolor white;
+label.urt(btex $\Omega$ etex,(u,0.95*u));
+label.rt(btex $\overline{A}$ etex,(1.5*u,0));
+label.lft(btex $A$ etex,(0,0));
+draw a; draw c;
+endfig;
+
+end

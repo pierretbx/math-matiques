@@ -1,0 +1,133 @@
+\PassOptionsToPackage{margin=1.25cm}{geometry}
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{10}
+\chapter{Fonctions linéaires}
+
+\small
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+
+\section{Proportionnalité et fonction linéaire}
+
+\begin{defn}
+$a$ est un nombre donné. Une fonction linéaire $f$ de coefficient $a$ est une fonction qui, à tout nombre $x$, associe le nombre $ax$.
+
+\medskip
+On la note : $f : x \mapsto ax$. On dit que $f(x)$ est l'image de $x$ par la fonction $f$, et on écrit $f(x)=ax$.
+\end{defn}
+
+\begin{ex}
+La fonction $f : x \mapsto 3x$ est la fonction linéaire de coefficient $3$.
+\begin{itemize}
+\item L'image de $5$ est $f(5)=3 \times 5=15$.
+\item L'image de $-3$ est $f(-3)=3 \times (-3)=-9$.
+\item L'image de $0$ est $f(0)=3 \times 0=0$.
+\end{itemize}
+\end{ex}
+
+\begin{rem}
+On peut regrouper ces résultats dans un tableau de proportionnalité :
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $5$ & $-3$ & $0$\\
+\hline
+$f(x)$ & $15$ & $-9$ & $0$\\
+\hline
+\end{tabular}
+\end{center}
+Le coefficient de proportionnalité est $3$ et on a $f(x)=3x$.
+\end{rem}
+
+\begin{ex}
+\begin{itemize}
+\item $h : x \mapsto -5x$ est la fonction linéaire de coefficient $-5$.
+\item $h(4)=-5 \times 4=-20$, donc l'image de $4$ par $h$ est $-20$.
+\item L'antécédent de $-15$ par $h$ est $3$, car $-5 \times 3=-15$.
+\item $g : x \mapsto 4x+5$ n'est pas une fonction linéaire.
+\item $i : x \mapsto 2x^2$ n'est pas une fonction linéaire.
+\item $j : x \mapsto \dfrac{1}{3}x$ est la fonction linéaire de coefficient $\dfrac{1}{3}$.
+\item Le périmètre d'un carré de côté $x$ est égal à $4x$ : cette situation est modélisée par $f : x \mapsto 4x$.
+\end{itemize}
+\end{ex}
+
+\begin{prop}
+\begin{enumerate}
+\item L'image du nombre $0$ par une fonction linéaire est $0$.
+\item L'image du nombre $1$ par une fonction linéaire de coefficient $a$ est $a$.
+\item Tout nombre admet un unique antécédent par une fonction linéaire de coefficient $a \neq 0$.
+\item La fonction qui modélise une situation de proportionnalité est une fonction linéaire dont le coefficient est le coefficient de proportionnalité.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+Ce tableau peut-il être celui d'une fonction linéaire ? Si oui, quel est son coefficient ?
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & $0$ & $2$ & $10$\\
+\hline
+$g(x)$ & $0$ & $5$ & $25$\\
+\hline
+\end{tabular}
+\end{center}
+\end{ex}
+
+\section{Représentation graphique}
+
+\begin{prop}
+Dans un repère, la représentation graphique d'une fonction linéaire de coefficient $a$ est l'ensemble des points de coordonnées $(x; ax)$.
+
+\medskip
+C'est une droite qui passe par l'origine. Le nombre $a$ s'appelle le coefficient directeur de la droite.
+\end{prop}
+
+\begin{ex}
+Dans un repère, représentons graphiquement les fonctions $f : x \mapsto 2x$ et $g : x \mapsto -\dfrac{x}{2}$.
+
+\medskip
+Ces fonctions sont linéaires, donc leurs représentations graphiques sont des droites qui passent par l'origine.
+\begin{center}
+\begin{tikzpicture}[scale=0.58]
+\draw[step=1cm,gray!35,very thin] (-4.2,-4.2) grid (4.2,4.2);
+\draw[->,thick] (-4.4,0)--(4.5,0);
+\draw[->,thick] (0,-4.4)--(0,4.5);
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+  \draw (\x,0.08)--(\x,-0.08) node[below] {\scriptsize \x};
+\foreach \y in {-4,-3,-2,-1,1,2,3,4}
+  \draw (0.08,\y)--(-0.08,\y) node[left] {\scriptsize \y};
+\draw[alizarin,thick,domain=-2:2] plot(\x,{2*\x}) node[right] {$f$};
+\draw[olivine!50!black,thick,domain=-4:4] plot(\x,{-0.5*\x}) node[right] {$g$};
+\fill (0,0) circle (1.5pt) node[below left] {$O$};
+\fill (1,2) circle (1.5pt) node[right] {$(1;2)$};
+\fill (2,-1) circle (1.5pt) node[below right] {$(2;-1)$};
+\end{tikzpicture}
+\end{center}
+\end{ex}
+
+\section{Déterminer l'expression d'une fonction linéaire}
+
+\begin{meth}[En connaissant un nombre et son image]
+Déterminons la fonction linéaire $f$ sachant que $f(2)=-7$.
+\[
+f(x)=ax \qquad 2a=-7 \qquad a=-3,5
+\]
+Donc $f(x)=-3,5x$.
+\end{meth}
+
+\begin{meth}[En connaissant un point de sa représentation graphique]
+Déterminons la fonction linéaire $g$ dont la représentation graphique passe par le point $M(-3;5)$.
+\[
+g(x)=ax \qquad g(-3)=5 \qquad -3a=5 \qquad a=-\frac{5}{3}
+\]
+Donc $g(x)=-\dfrac{5}{3}x$.
+\end{meth}
+
+\end{document}

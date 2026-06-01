@@ -1,0 +1,265 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.98, 0.4, 0.0}
+\newpage
+\setcounter{chapter}{2}
+\chapter{Enchainement d'opérations}
+
+\section{Priorités opératoires}
+
+Une expression est une suite d'opérations enchaînées.
+	
+\subsection{Expression sans parenthèse}
+
+\begin{prop}
+Les règles de priorités pour l'instant se limitent à : (Dans l'ordre des priorités)
+\begin{enumerate}
+	\item Les multiplications en allant de gauche à droite.
+	\item Les additions et soustractions en allant de gauche à droite.
+\end{enumerate}
+\end{prop}
+ 
+\begin{ex}
+
+\vspace{-1cm} \hspace{3cm}
+\begin{minipage}{6cm}
+\begin{eqnarray*}
+A &=& 5 + 4 \times 3 \\
+&=& 5 + 12 \\
+&=& 17
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{eqnarray*}
+B &=& 11 – 10 \div 2\\
+&=& 11 – 5\\
+&=& 6
+\end{eqnarray*}
+\end{minipage}
+\end{ex}
+ 
+\subsection{Des cas particuliers sans parenthèses}
+
+
+\noindent \begin{minipage}{10cm} 
+\begin{memento}
+Avec seulement des additions et des soustractions, on effectue les calculs de gauche à droite
+\end{memento}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\begin{ex}  
+
+\vspace{-1cm}
+\begin{eqnarray*}
+\hspace{3cm}A &=& 38 -7 +4 \\
+&=& 34 + 4 \\
+&=& 35
+\end{eqnarray*}
+\end{ex}
+\end{minipage}
+
+\noindent \begin{minipage}{10cm} 
+\begin{memento}
+Avec seulement des multiplications et des divisions, on effectue les calcul de gauche à droite
+\end{memento}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\begin{ex}
+
+\vspace{-1cm}
+\begin{eqnarray*}
+\hspace{3cm}B &=& 10 \div 2 \times 5 \\
+&=& 5 \times 5 \\
+&=& 25
+\end{eqnarray*}
+\end{ex}
+\end{minipage}
+
+\begin{memento}
+Avec seulement des additions, on effectue les calculs dans l'ordre que l'on veut.
+\end{memento}
+
+\begin{ex} 
+
+\vspace{-1cm} \hspace{2.5cm}
+\begin{minipage}{5cm}
+\begin{eqnarray*}
+C &=& 12 + 3 + 8 \\
+&=& 15 + 8 \\
+&=& 23
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{eqnarray*}
+C &=& 12 + 3 + 8 \\
+&=& 12 + 11 \\
+&=& 23
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{eqnarray*}
+C &=& 12 + 3 + 8 \\
+&=& 20 + 3 \\
+&=& 23
+\end{eqnarray*}
+\end{minipage}
+\end{ex}
+
+\begin{memento}
+Avec seulement des multiplications, on effectue les calculs dans l'ordre que l'on veut.
+\end{memento}
+
+\begin{rem}
+On ne peut pas changer l'ordre avec les soustraction ou les division.
+\end{rem}
+
+\begin{ex}
+
+\vspace{-1cm} \hspace{2.5cm}
+\begin{minipage}{5cm}
+
+\begin{eqnarray*}
+D &=& 10 \times 3 \times 8 \\
+&=& 30 \times 8 \\
+&=& 240
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{eqnarray*}
+D &=& 10 \times 3 \times 8 \\
+&=& 10 \times 24 \\
+&=& 240
+\end{eqnarray*}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{eqnarray*}
+D &=& 10 \times 3 \times 8 \\
+&=& 80 \times 3 \\
+&=& 240
+\end{eqnarray*}
+\end{minipage}
+\end{ex}
+
+\newpage
+\section{Calculs avec parenthèses}
+
+\begin{prop}
+Les règles de priorités se limitent maintenant à : (Dans l'ordre des priorités)
+\begin{enumerate}
+	\item Les calculs entre parenthèses ou crochets. S'il y a des parenthèses emboîtées les plus emboîtées sont prioritaires.
+	\item Les multiplications en allant de gauche à droite.
+	\item Les additions et soustractions en allant de gauche à droite.
+\end{enumerate}
+\end{prop}
+
+\begin{meth}[Calculer avec des parenthèses]
+Calculons $A = 7 + 2 \times (5 + 7) - 5$.
+ 
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{meth}
+
+\section{Vocabulaire}
+
+\begin{defn}
+Le résultat d'une addition s'appelle une somme.
+
+\hspace{6cm}et les nombres utilisés s'appellent les termes.
+
+\noindent Le résultat d'une soustraction s'appelle une différence.
+
+\hspace{6cm}et les nombres utilisés s'appellent les termes.
+
+\noindent Le résultat d'une multiplication s'appelle un produit.
+
+\hspace{6cm}et les nombres utilisés s'appellent les facteurs.
+
+\noindent Le résultat d'une division s'appelle un quotient.
+\end{defn}
+
+\begin{ex} 
+\renewcommand{\arraystretch}{0.7}
+\begin{tabularx}{\linewidth}{*{3}{>{\centering \arraybackslash}X}}
+$63 + 25 = 88$&
+$262 -40 = 222$&
+$3 \times 25 = 75$\\
+\end{tabularx}
+\vspace{3mm}
+
+\noindent\grandscarreaux{\linewidth}{0.8cm}
+\end{ex}
+
+\begin{defn}
+
+\begin{minipage}{7cm}
+La \textbf{somme} de ~\dots~ \dots~ \textbf{et} de ~\dots~ \dots~  \\      
+La \textbf{différence} de ~\dots~ \dots~  \textbf{et} de ~\dots~ \dots~ 
+\end{minipage}
+\begin{minipage}{7cm}
+Les deux terme sont séparé par le mot : \textbf{ET}
+\end{minipage}           
+
+\vspace{3mm}
+\noindent \begin{minipage}{7cm}
+Le \textbf{produit} de ~\dots~ \dots~ par ~\dots~ \dots~\\
+Le \textbf{quotient} de ~\dots~ \dots~ par ~\dots~ \dots~
+\end{minipage}
+\begin{minipage}{7cm}
+Les deux facteur sont séparé par le mot : \textbf{PAR}  
+\end{minipage}
+
+\end{defn}
+
+\begin{ex}
+Écris l'expression numérique correspondant à chacune des phrases suivantes :
+
+\begin{enumerate}
+\item La somme de $5$ et du produit de $2$ par $3$ : 
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\item Le produit de la somme de $5$ et de $2$ par $3$ :
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{enumerate}
+\end{ex}
+
+\section{Expression avec un quotient}
+
+\begin{defn}
+\textbf{Quotient : }"résultat d'une division" mais aussi "écriture avec une barre de fraction"
+
+\textbf{Numérateur : }ce qui est au dessus de la barre de fraction (nombre ou expression)
+
+\textbf{Dénominateur : }ce qui est en dessous de la barre de fraction (nombre ou expression)
+\end{defn}
+
+\begin{ex}
+Donne l'écriture décimale des écritures fractionnaires suivantes : %$\dfrac{10}{2} = 10 \div 2 = 5$
+
+\vspace{2mm}
+\renewcommand{\arraystretch}{0.7}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+$A = \dfrac{12}{3}$&
+$B = \dfrac{5}{10}$&
+$C = \dfrac{13}{2}$&
+$D = \dfrac{4,9}{7}$\\
+\end{tabularx}
+
+\vspace{2mm}
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{ex}
+
+\begin{memento}
+Pour calculer une expression contenant des écritures fractionnaires, il faut considérer que le numérateur et le dénominateur sont entre parenthèses.
+\end{memento}
+
+\begin{ex}
+Écrire en ligne l'expression  $E = \dfrac{7 + 4\times 2}{5+3}+10$, puis la calculer. 
+
+\vspace{2mm}
+\noindent\grandscarreaux{\linewidth}{5.6cm}
+\end{ex}
+\end{document}

@@ -1,0 +1,212 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{1}
+\chapter{Théorème de Thalès}
+
+\section{Configurations de Thalès}
+
+\begin{defn}[Configuration de Thalès]
+On dit que deux triangles sont en configuration de Thalès lorsqu'ils ont :
+\begin{itemize}
+\item un sommet commun ;
+\item deux côtés portés par les mêmes droites ;
+\item deux autres côtés parallèles.
+\end{itemize}
+\end{defn}
+
+\begin{ex}
+Dans la figure ci-dessous, les points $A$, $M$, $B$ sont alignés, les points $A$, $N$, $C$ sont alignés et les droites $(MN)$ et $(BC)$ sont parallèles.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round]
+\coordinate (A) at (0,4);
+\coordinate (B) at (-3,0);
+\coordinate (C) at (4,0);
+\coordinate (M) at (-1.6,1.85);
+\coordinate (N) at (2.15,1.85);
+\draw[line width=1.1pt] (A)--(B)--(C)--cycle;
+\draw[line width=1.1pt,blue] (M)--(N);
+\draw[blue] (0.3,1.55) node {$(MN)\parallel(BC)$};
+\foreach \P/\pos in {A/above,B/below left,C/below right,M/left,N/right}
+  \fill (\P) circle (2pt) node[\pos] {$\P$};
+\end{tikzpicture}
+\end{center}
+\end{ex}
+
+\section{Théorème de Thalès}
+
+\begin{thm}[Théorème de Thalès]
+Soient deux droites $(BM)$ et $(CN)$ sécantes en $A$.
+
+Si les droites $(MN)$ et $(BC)$ sont parallèles, alors les longueurs des triangles $AMN$ et $ABC$ sont proportionnelles :
+\[
+\dfrac{AM}{AB}=\dfrac{AN}{AC}=\dfrac{MN}{BC}.
+\]
+\end{thm}
+
+\begin{demo}
+La démonstration complète utilise les aires de triangles ayant une même base et une même hauteur.
+En classe de troisième, on retient surtout l'idée suivante : lorsque les droites sont parallèles, le petit triangle est une réduction ou un agrandissement du grand triangle.
+Les longueurs correspondantes sont donc proportionnelles.
+\end{demo}
+
+\begin{meth}[Écrire les quotients de Thalès]
+Pour utiliser le théorème de Thalès :
+\begin{enumerate}
+\item repérer les deux triangles ;
+\item écrire les sommets correspondants dans le même ordre ;
+\item écrire les quotients avec les côtés qui se correspondent.
+\end{enumerate}
+\end{meth}
+
+\begin{ex}
+Dans la figure précédente, les triangles $AMN$ et $ABC$ sont en configuration de Thalès.
+Comme $(MN)\parallel(BC)$, on a :
+\[
+\dfrac{AM}{AB}=\dfrac{AN}{AC}=\dfrac{MN}{BC}.
+\]
+\end{ex}
+
+\section{Calculer une longueur}
+
+\begin{meth}[Calculer une longueur avec Thalès]
+Pour calculer une longueur :
+\begin{enumerate}
+\item vérifier l'alignement des points ;
+\item vérifier que les deux droites sont parallèles ;
+\item écrire l'égalité des quotients ;
+\item remplacer par les longueurs connues ;
+\item utiliser un produit en croix.
+\end{enumerate}
+\end{meth}
+
+\begin{ex}
+On sait que $A$, $M$, $B$ sont alignés, que $A$, $N$, $C$ sont alignés et que $(MN)\parallel(BC)$.
+On donne :
+\[
+AM=3\text{ cm}, \quad AB=8\text{ cm}, \quad AC=12\text{ cm}.
+\]
+Calculons $AN$.
+
+\medskip
+D'après le théorème de Thalès :
+\[
+\dfrac{AM}{AB}=\dfrac{AN}{AC}.
+\]
+Donc :
+\[
+\dfrac{3}{8}=\dfrac{AN}{12}.
+\]
+Ainsi :
+\[
+AN=\dfrac{3\times 12}{8}=4,5.
+\]
+Donc $AN=4,5$ cm.
+\end{ex}
+
+\begin{ex}
+Calculer la longueur demandée.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\coordinate (A) at (0,4);
+\coordinate (B) at (-3,0);
+\coordinate (C) at (4,0);
+\coordinate (M) at (-1.5,2);
+\coordinate (N) at (2,2);
+\draw[line width=1.1pt] (A)--(B)--(C)--cycle;
+\draw[line width=1.1pt,blue] (M)--(N);
+\foreach \P/\pos in {A/above,B/below left,C/below right,M/left,N/right}
+  \fill (\P) circle (2pt) node[\pos] {$\P$};
+\node[left] at (-0.85,3.1) {$4$ cm};
+\node[left] at (-2.35,0.9) {$6$ cm};
+\node[right] at (1.1,3.1) {$5$ cm};
+\node[right] at (3.05,0.9) {$x$};
+\node at (0.4,1.7) {$(MN)\parallel(BC)$};
+\end{tikzpicture}
+\end{center}
+
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{ex}
+
+\section{Réciproque du théorème de Thalès}
+
+\begin{thm}[Réciproque du théorème de Thalès]
+Soient deux droites $(BM)$ et $(CN)$ sécantes en $A$.
+
+Si les points $A$, $M$, $B$ et les points $A$, $N$, $C$ sont alignés dans le même ordre et si
+\[
+\dfrac{AM}{AB}=\dfrac{AN}{AC},
+\]
+alors les droites $(MN)$ et $(BC)$ sont parallèles.
+\end{thm}
+
+\begin{meth}[Démontrer que deux droites sont parallèles]
+Pour démontrer que deux droites sont parallèles avec la réciproque de Thalès :
+\begin{enumerate}
+\item vérifier que les points sont alignés dans le même ordre ;
+\item calculer séparément les deux quotients ;
+\item comparer les deux quotients ;
+\item conclure avec la réciproque du théorème de Thalès.
+\end{enumerate}
+\end{meth}
+
+\begin{ex}
+Les points $A$, $M$, $B$ sont alignés dans le même ordre que les points $A$, $N$, $C$.
+On donne :
+\[
+AM=4,\quad AB=10,\quad AN=6,\quad AC=15.
+\]
+On a :
+\[
+\dfrac{AM}{AB}=\dfrac{4}{10}=0,4
+\quad \text{et} \quad
+\dfrac{AN}{AC}=\dfrac{6}{15}=0,4.
+\]
+Les deux quotients sont égaux.
+Donc, d'après la réciproque du théorème de Thalès, les droites $(MN)$ et $(BC)$ sont parallèles.
+\end{ex}
+
+\section{Contraposée du théorème de Thalès}
+
+\begin{thm}[Contraposée du théorème de Thalès]
+Soient deux droites $(BM)$ et $(CN)$ sécantes en $A$.
+
+Si les points $A$, $M$, $B$ et les points $A$, $N$, $C$ sont alignés dans le même ordre et si
+\[
+\dfrac{AM}{AB}\neq\dfrac{AN}{AC},
+\]
+alors les droites $(MN)$ et $(BC)$ ne sont pas parallèles.
+\end{thm}
+
+\begin{ex}
+Les points $A$, $M$, $B$ sont alignés dans le même ordre que les points $A$, $N$, $C$.
+On donne :
+\[
+AM=5,\quad AB=12,\quad AN=7,\quad AC=18.
+\]
+On a :
+\[
+\dfrac{AM}{AB}=\dfrac{5}{12}
+\quad \text{et} \quad
+\dfrac{AN}{AC}=\dfrac{7}{18}.
+\]
+Or $5\times 18=90$ et $7\times 12=84$, donc les deux quotients ne sont pas égaux.
+
+D'après la contraposée du théorème de Thalès, les droites $(MN)$ et $(BC)$ ne sont pas parallèles.
+\end{ex}
+
+\section{Bilan}
+
+\begin{memento}
+\begin{itemize}
+\item Le théorème de Thalès sert à calculer une longueur lorsque l'on connaît des droites parallèles.
+\item La réciproque du théorème de Thalès sert à démontrer que deux droites sont parallèles.
+\item La contraposée du théorème de Thalès sert à démontrer que deux droites ne sont pas parallèles.
+\end{itemize}
+\end{memento}
+
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 15 - Les parallèlogrammes\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Énoncer deux propriétés des côtés et deux propriétés des diagonales d'un parallélogramme.\end{exercice}\begin{exercice}{2}{5}Construire un parallélogramme $ABCD$ tel que $AB=6$ cm, $AD=4$ cm et $\widehat{BAD}=60^\circ$.\carreaux{5}\end{exercice}\begin{exercice}{3}{5}Dans un parallélogramme $EFGH$, $EF=7$ cm et $FG=3$ cm. Donner les longueurs $GH$ et $EH$ en justifiant.\end{exercice}\begin{exercice}{4}{6}Les diagonales d'un quadrilatère ont le même milieu. Que peut-on conclure ? Rédiger la propriété utilisée.\end{exercice}\end{document}

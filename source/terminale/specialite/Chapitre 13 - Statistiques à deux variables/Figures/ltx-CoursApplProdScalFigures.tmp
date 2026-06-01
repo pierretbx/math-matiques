@@ -1,0 +1,27 @@
+verbatimtex
+%&latex
+\documentclass{article}
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex $A$ etex ;
+latexmp_picture[2]:= btex $B$ etex ;
+latexmp_picture[3]:= btex $M$ etex ;
+latexmp_picture[4]:= btex $I$ etex ;
+latexmp_picture[5]:= btex $A$ etex ;
+latexmp_picture[6]:= btex $B$ etex ;
+latexmp_picture[7]:= btex $C$ etex ;
+latexmp_picture[8]:= btex $a$ etex ;
+latexmp_picture[9]:= btex $c$ etex ;
+latexmp_picture[10]:= btex $b$ etex ;
+latexmp_picture[11]:= btex $\widehat{A}$ etex ;
+latexmp_picture[12]:= btex $\widehat{B}$ etex ;
+latexmp_picture[13]:= btex $\widehat{C}$ etex ;
+latexmp_picture[14]:= btex $A$ etex ;
+latexmp_picture[15]:= btex $B$ etex ;
+latexmp_picture[16]:= btex $C$ etex ;
+latexmp_picture[17]:= btex $H$ etex ;
+latexmp_picture[18]:= btex $a$ etex ;
+latexmp_picture[19]:= btex $c$ etex ;
+latexmp_picture[20]:= btex $b$ etex ;
+latexmp_picture[21]:= btex $\widehat{A}$ etex ;

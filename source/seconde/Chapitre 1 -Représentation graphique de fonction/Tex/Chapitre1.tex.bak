@@ -1,0 +1,759 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\pagestyle{empty}
+\tableofcontents
+\begin{comment}
+\section{Activité introductive} 
+
+À la manière de Nicolas Oresme, on va découvrir ici une représentation graphique d'un phénomène physique "simple"; la chute des corps. 
+
+
+Cette fonction représente ici la hauteur d'un ballon que l'on lance en l'air au cours du temps. Le ballon est envoyé en l'air à l'instant initial (qui ici sera 0 sur l'axe des abscisses), puis rattrapé par la suite. 
+
+En voici une représentation graphique. 
+
+
+%\begin{center} 
+%\begin{tikzpicture} 
+%\begin{axis}[ 
+%xlabel=temps (en seconde), 
+%ylabel=hauteur du ballon (en mètre), 
+%width=7cm,height=8cm, 
+%axis lines=left, 
+%scaled ticks=false, 
+%] 
+%\addplot [red,domain=0:1.5]{x^3+1}; 
+%\addplot [blue,domain=1.5:3.337]{-(x-1.5)^2+(1.5)^3+1}; 
+%\addplot [brown,domain=3.337:5]{1}; 
+%\addplot [black,domain=0:1.5]{0}; 
+%\end{axis} 
+%\end{tikzpicture} 
+%\end{center} 
+
+
+
+\begin{center} 
+\begin{tikzpicture} 
+%\draw [red,domain=0:1.5]{x^3+1}; 
+%\draw [blue,domain=1.5:3.337] plot({\x},%(\x-1.5)^2+(1.5)^3+1}); 
+%\draw [brown,domain=3.337:5]{1}; 
+%\draw [black,domain=0:1.5]{0}; 
+%\draw [dashed] (-1,0) -- (6,0) ;
+\draw[->] (-1,0) -- (5,0);
+\draw (5,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,6);
+\draw (0,6) node[above] {$y$};
+\foreach \x in {1,...,5} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+%\foreach \y in {-2,...,6} {
+  %\draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm]
+  %\draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm] {$\y\strut$};
+  
+\foreach \y in {-2,-1.75,...,6} {
+  %\draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm]
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm] {$ \strut$};
+}
+
+\foreach \y in {-2,...,6} {
+\draw (0.1cm,\y) -- (-0.1cm,\y) node[left =0.05cm] {$\y$};
+}
+  
+
+\draw [red,domain=0:1.5] plot({\x},\x^3+1);
+\draw [blue,domain=1.5:3.4685]plot(\x,{-(\x-1.5)^2+(1.5)^3+1});
+\draw [brown,domain=3.4685:5] plot(\x,0.5);
+
+\end{tikzpicture} 
+\end{center} 
+
+
+
+
+\section {Questions} 
+Toutes les réponses aux questions doivent être justifiées, par le biais de phrase courte, on pourra approximer les réponses numériques au besoin. 
+\begin{itemize} 
+\item[A)] {Associer les phases de descente, montée, récupération du ballon à chaque couleur.} 
+\item[B)] {Quel était la hauteur du ballon à 2 secondes? Même question pour 4 seconde.} 
+\item[C)] {Est-ce que les hauteurs proposées par cette représentation graphique vous semble plausibles/réalisables ?} 
+\item[D)] {À quels instants le ballon est à 1m85?} 
+\item[E)] {Est-ce que le ballon touche le sol à un instant, si oui lequel ou lesquels?} 
+\item[F)] {Au total, combien de temps le ballon aura été en l'air?} 
+\item[G)] {À quel instant la hauteur du ballon est maximale, quelle est sa hauteur maximale?} 
+\item[H)] {Quelle est la hauteur minimale du ballon?} 
+\item[I)] {À quels instants la hauteur du ballon est minimale?} 
+\item[J)] {Avons-nous une idée de la trajectoire du ballon?} 
+\end{itemize} 
+
+
+
+%\begin{center} 
+%\begin{tikzpicture} 
+%\begin{axis}[ 
+%xlabel=axe des abscisses, 
+%ylabel=axe des ordonnées, 
+%width=7cm,height=7cm, 
+%axis lines=left, 
+%scaled ticks=false, 
+%] 
+%\addplot [red,domain=0:1,5]{x^3+1}; 
+%\addplot [red,domain=1,5:3.33]{-(x-1.5)^2+3.337}; 
+%\addplot [red,domain=3.33:5]{1}; 
+%\end{axis} 
+%\end{tikzpicture} 
+%\end{center} 
+\end{comment}
+%\dominitoc % <-- Ne pas oublier cette ligne !
+\chapter{Fonctions et courbes représentatives}
+\textit{C'est au XIV\up{ème} siècle que Nicolas Oresme a introduit la notion de fonction, il cherche à comprendre des phénomènes physiques, notamment la chaleur, la vitesse et établi, à l'aide d'une des premières représentations graphiques, une relation entre le temps et la vitesse.}
+% http://vivienfrederic.free.fr/QuelquesReperesHistoriquesLesfonctions.pdf
+
+
+
+
+\section{Définitions et notations}
+
+
+\begin{defn}
+Une fonction $f$, est un procédé qui, à un nombre \underline{de départ} lui associe un \underline{unique} nombre d'arrivé, appelé \underline{image}.
+
+%Une fonction est la donnée d'un ensemble de nombre noté $D_f$, appelé ensemble de définition et d'un objet $f:x \rightarrow f(x)$ qui à n'importe quel nombre $x$ de $D_f$ lui associe un \underline{unique} nombre noté $f(x)$, appelé image de $x$ par $f$.
+\end{defn}
+
+\underline{Exemple}: Soit Julien un individu de 35 ans, on peut faire la fonction ($f$) qui à l'âge de Julien lui associe sa taille, si à 17 ans Julien mesure $1,75m$, on peut écrire $f(17)=1,75$ ou encore  $f:17 \mapsto 1,75$.
+ 
+\underline{Inversement}, si l'on a $f(25)=1,80 $ ou encore $f:25 \mapsto 1,80$, on peut traduire ceci par la phrase suivante: "À 25 ans, Julien mesurait 1,80m.". \\
+
+
+On peut aussi faire la fonction ($g$) qui associe l'heure de la journée au pourcentage de la batterie d'un smartphone, si à 3h le téléphone indique 55\% de batterie on pourra écrire $g(3)=55$ ou encore $g:3 \mapsto 55$.
+\underline{Inversement}, si on lit $g(7)=100$, on peut traduire ceci par la phrase suivante: "À 7h la batterie du téléphone était rechargée au maximum de sa capacité".
+
+\begin{defn}
+On appelle ensemble de définition de $f$, l'ensemble des nombres de départ, que l'on notera $D_f$.
+\vspace{4mm}
+
+\end{defn}
+
+\underline{Exemple}: Ici pour notre premier exemple $D_f$ serai $[0;35]$ et pour notre second exemple $[0;24]$.\\ \emph{Attention cependant à la conversion temps-unité}\\
+
+%\underline{Exemple}: Soit ici $D_f=\mathbb{R}$ et $f:x \rightarrow 2x+3$ que l'on notera aussi $f(x)=2x+3$ qui est l'image de $x$ par $f$.
+
+%\begin{defn}
+%Quand un tel nombre $f(x)$ existe, on dit que $x$ est \underline{un} antécédent de $f(x)$, attention contrairement à l'image, il n'y a \underline{pas nécéssairement unicité} de l'antécédent.
+%\end{defn}
+
+%\underline{Exemple}: Soit ici $D_f=\mathbb{R}$ et $f(x)=(x-2)(x-3)$ alors ici on $f(2)=0$ et $f(3)=0$ ainsi $3$ est \underline{un} antécédent de $0$ par $f$ et \underline{les} antécédents de $0$ par $f$ sont $2$ et $3$.
+
+
+On peut donner de manière équivalente la définition d'une fonction avec des représentations graphiques, c'est ce que l'on étudiera dans la suite de ce chapitre.
+
+\newpage
+
+\section{Définition d'une fonction par représentation graphique}
+
+\begin{defn}
+Un point $A$ du plan est la donnée de deux nombres: son \underline{abscisse} noté $x_A$ et son \underline{ordonnée} $y_A$. Un point $A$ sera noté sous la forme suivante, $A=(x_A;y_A)$.
+\end{defn}
+
+Soit une fonction $f$ définie sur un ensemble $D_f$.
+
+\begin{defn}
+
+La courbe représentative de la fonction $f$, notée $C_f$,  est l’ensemble des points de coordonnées $(x ; f(x))$, avec $x$ qui prend \emph{(une par une)} toutes les valeurs de l'ensemble $D_f$.
+
+%est le nombre de départ et $y$ l'image \textit{(le nombre d'arrivé)}, et où $x$ prend toutes les valeurs de l’ensemble $D_f$. 
+
+%On note parfois $C_f$, $\{y=f(x)\}$ que l'on peut traduire littéralement par:  "$y$ est l'image du nombre de départ $x$ par la fonction $f$." 
+
+%Une fonction $f$ est la donnée d'une courbe qui se situera au dessus ou en dessous des nombres de $D_f$ représenté sur l'axe des abscisse, l'unique point au dessus ou en dessous d'un nombre de $D_f$ est appelé de ce nombre par la fonction $f$. 
+
+%On placera les nombres de $D_f$ sur l'axe des abscisses,  l'unique po au dessus ou en dessous d'un nombre de $D_f$ est appelé image de ce nombre par la fonction $f$.
+
+%$f:x \rightarrow f(x)$ qui à n'importe quel nombre $x$ de $D_f$ lui associe un \underline{unique} nombre noté $f(x)$, appelé image de $x$ par $f$.
+\end{defn}
+
+%Pour des questions pratiques, on travaillera ici dans un %repère orthonormé.
+
+%L'axe des abscisses représentera les éventuels nombres réels $D_f$ et l'axe des ordonnées représentera les éventuelles valeurs prises par la fonction $f$.
+
+
+\underline{Exemple}: Voici une représentation graphique d'une fonction $f$ où $D_f$ est l'intervalle $[0;5]$.
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=axe des abscisses,
+ylabel=axe des ordonnées,
+width=9cm,height=9cm,
+axis lines=left,
+scaled ticks=false,
+]
+\addplot [red,domain=0:5]{(-((x-3)^2)+9)/3};
+\end{axis}
+\node[right] at (7,6.5) {$C_f$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{L'image d'une valeur par une fonction}
+Ici on se pose la question suivante: "Soit un certain nombre $a$ de $D_f$ que vaut l'image de ce nombre par $f$?".%$f(a)$?".
+
+%\underline{Exemple}: On reprend l'exemple précédent, on pose ici $D_f=[0;5]$, $f(x)=x^2$ et $x=2$ alors ici $f(x)=2^2:=2\times 2=4$, ainsi on à pu déduire que $f(x)=4$. 
+
+\subsubsection{Comment déterminer graphiquement l'image d'une valeur $a$ de $D_f$ par la fonction $f$?}
+Voici la marche à suivre, tout d'abord il nous faut, avant de se lancer dans une éventuelle recherche: 
+\begin{itemize}
+\item[$\bullet$] {une représentation graphique de la fonction $f$}
+\item[$\bullet$]  {la valeur $a$ de $D_f$ que l'on recherche à évaluer}
+\item[$\bullet$]  {une règle.}
+\end{itemize}
+
+\underline{Exemple}: on prend la représentation graphique de la fonction suivante que l'on appelera courbe, et $a=1$ dans un premier temps et puis pour $a=3$ dans un second.
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+\draw [red,domain=0:6.28,samples=100] plot({\x},{cos(((\x))*180/3)});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+%\node[above] at (3.14,0) {$\pi$};
+
+\draw[blue] (1,0) -- (1,0.5);
+\draw[olivine] (3,0) -- (3,-1);
+\draw[<-,black,dashed] (0,0.5)--(1,0.5);
+\draw[<-,brown,dashed] (0,-1) -- (3,-1);
+\end{tikzpicture}
+\end{center}
+
+%Il suffit ensuite de tracer la droite perpendiculaire à la droite parallèle à l'axe des ordonées, passant par le point d'intersection entre la courbe et la droite $x=a$, puis de repérer le point d'intersection entre cette nouvelle droite et l'axe des ordonées, le nombre correspondant sur l'axe des ordonées sera l'image de $a$ par $f$. 
+
+%Il suffit de partir de la valeur $a$ à évaluer sur l'axe des abscisses, de monter ou descendre jusqu'à croiser la courbe, poser la règle entre ces deux points et tout en gardant un doigt sur la courbe, faire glisser horizontalement la règle pour lire la valeur sur l'axe des ordonnées.
+
+Il suffit de partir de la valeur $a$ à évaluer sur l'axe des abscisses. Tracer la droite verticale (donc parallèle à l'axe des ordonnées) et passant par $a$. Repérer le point où cette droite intersecte la courbe. Notre but est alors de trouver l'ordonnée de ce point. Il nous faut tracer la droite horizontale (donc parallèle à l'axe des abscisses) et passant par notre point. En regardant où elle coupe l'axe des ordonnées on peut enfin lire la valeur recherchée.
+
+Ici on a l'image de $1$ par $f$ \textit{(en bleu)} qui est $0.5$ et de $3$ par $f$ qui est $-1$ \textit{(en vert)}.
+
+
+
+\subsection{Les antécédents d'une valeur par une fonction}
+
+Ici on se pose la question suivante "On se donne un certain nombre $k \in  \mathbb{R}$, quels sont les éventuels nombres de $D_f$ tel que leur image par $f$ donne $k$?". On appelera un tel nombre, s'il existe, \underline{antécédent} de $k$ par $f$.\\
+
+
+%\underline{Exemple}: On reprend l'exemple précédent, on pose ici $D_f=[0;	5]$, $f(x)=x^2$ et $k=4$, on aura alors un unique antécédent qui est $2$ .
+
+\underline{Exemple}: On reprend l'exemple précédent et l'on remarque que $1$ est antécédent de $0,5$, pour autant ce n'est pas le seul, $5$ est  aussi un antécédent de $0,5$.
+
+On voit aussi que 3 est l'unique antécédent de -1 ici.
+%\begin{center}
+%\begin{tikzpicture}
+%\draw [dashed] (0,0) -- (,0) ;
+%\draw[->] (-1,0) -- (7,0);
+%\draw (7,0) node[right] {$x$};
+%\draw [->] (0,-2) -- (0,2);
+%\draw (0,2) node[above] {$y$};
+%\draw [red,domain=0:6.28,samples=100] plot({\x},{cos(((\x))*180/3)});
+%\foreach \x in {1,...,6} {
+%  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+%}
+%\foreach \y in {-2,-1,1} {
+%  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+%}
+%\node[left] at (0,2) {2};
+%\node[below left=0.10cm] at (0,0) {0};
+%\node[above] at (3.14,0) {$\pi$};
+
+%\draw[blue] (1,0) -- (1,0.5);
+%\draw[olivine] (3,0) -- (3,-1);
+%\draw[black,dashed] (0,0.5)--(1,0.5);
+%\draw[brown,dashed] (0,-1) -- (3,-1);
+%\end{tikzpicture}
+%\end{center}
+
+%\textit{Attention, les antécédents d'une fonction peuvent changer si $D_f$ est changer, il est bon d'avoir en tête l'exemple suivant: si l'on avait choisi $D_f=\mathbb{R}$ et $f(x)=x^2$ ici, il y aurait eu deux antécédents, $2$ et $-2$.}
+
+
+\subsubsection{Comment déterminer graphiquement les éventuels antécédents d'une valeur $k$ prise par la fonction $f$ ?"}
+
+Voici la marche à suivre, tout d'abord voici ce qu'il nous faut avant de se lancer dans une éventuelle recherche: 
+\begin{itemize}
+\item[$\bullet$] {une représentation graphique de la fonction $f$}
+\item[$\bullet$]  {la valeur de $k$}
+\item[$\bullet$]  {une règle.}
+\end{itemize}
+
+
+
+
+\underline{Exemple}: on prend la représentation graphique de la fonction suivante que l'on appelera courbe, et dans un premier temps on prendra $k=0.5$ puis $k=-1$ dans un second. 
+
+%\begin{center}
+%\begin{tikzpicture}
+%\begin{axis}[
+%xlabel=axe des abscisses,
+%ylabel=axe des ordonnées,
+%width=7cm,height=7cm,
+%axis lines=left,
+%scaled ticks=false,
+%]
+%\addplot [red,domain=0:6.28,samples=100]{cos(((\x))*180/pi)};
+%\addplot [blue,domain=0:6.28]{0.5};
+%\end{axis}
+%\draw[brown,dashed] (1.047,0) -- (1.047,0.5);
+%\end{tikzpicture}
+%\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+\draw [red,domain=0:6.28,samples=100] plot({\x},{sin(((\x))*180/3)});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+%\node[above] at (3.14,0) {$\pi$};
+
+\draw[blue] (0,0.5) -- (2.5,0.5);
+\draw[olivine] (0,-1) -- (4.5,-1);
+\draw[->,magenta,dashed] (2.5,0.5) -- (2.5,0);
+\draw[->,black,dashed] (0.5,0.5)--(0.5,0);
+\draw[brown,dashed] (4.5,0) -- (4.5,-1);
+\end{tikzpicture}
+\end{center}
+
+%Il suffit ensuite de tracer la droite parallèle à l'axe des ordonnées, passant par le point d'intersection entre la courbe et la droite $y=k$, puis de repérer le point d'intersection entre cette nouvelle droite et l'axe des abscisses, le nombre correspondant sur l'axe des abscisses sera \underline{un} antécédent.
+
+Il suffit de partir de la valeur $k$ recherchée sur l'axe des ordonnées, d'aller à droite ou à gauche jusqu'à croiser la courbe, poser la règle entre ces deux points et tout en gardant un doigt sur la courbe, faire glisser verticalement la règle pour lire la valeur sur l'axe des abscisses.
+
+Pour trouver \underline{tous les antécédents}, il suffit de le reproduire pour chaque points d'intersection entre la droite parralèle à l'axe des abscisses et passant par $k$, (\emph{notée souvent $y=k$}), et la courbe.
+
+
+
+\section{Appartenance d'un point à une courbe}
+
+On dit qu'un point $A$ appartient à une courbe $\mathcal{C}_f$ si jamais le point se trouve sur la représentation graphique, on notera $A \in \mathcal{C}_f$.
+
+\underline{Exemple}: Soit ici $A=(0,75;0,7)$ et la représentation graphique précédente alors on dit que $A$ appartient à la courbe contrairement à $B=(1,5;0,7)$.
+
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+\draw [red,domain=0:6.28,samples=100] plot({\x},{sin(((\x))*180/3)});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+\node[orange] at (0.75,0.707) {$\bullet$} ;
+\node[below right=0.05cm,orange] at (0.75,0.707) {$A$};
+\node[blue] at (1.5,0.707) {$\bullet$} ;
+\node[below right=0.05cm,blue] at (1.5,0.707) {$B$};
+%\node[above] at (3.14,0) {$\pi$};
+
+%\draw[blue] (0,0.5) -- (0.523,0.5);
+%\draw[olivine] (0,-1) -- (4.712,-1);
+%\draw[black,dashed] (0.523,0)--(0.523,0.5);
+%\draw[brown,dashed] (4.712,0) -- (4.712,-1);
+\end{tikzpicture}
+\end{center}
+
+\begin{prop}
+Un point $A=(x_A;y_A)$ appartient à une courbe $\mathcal{C}_f$ représentant une fonction $f$ si et seulement si $x_A \in D_f$ et $f(x_A)=y_A$.
+\end{prop}
+
+\section{Variation de fonction}
+\begin{defn}
+On dit qu'une fonction $f$ est \underline{croissante} sur un intervalle $I$ inclus dans $D_f$ si elle respecte l'ordre sur $I$, c'est à dire que pour tout nombre $x_1,x_2\in I$ tels que $x_1 \leq x_2$ alors $f(x_1) \leq f(x_2)$. %la courbe de cette fonction \underline{monte} sur cet intervalle $I$. 
+\end{defn}
+
+\begin{defn}
+On dit qu'une fonction $f$ est \underline{décroissante} sur un intervalle $I$ inclus dans $D_f$ si elle change l'ordre sur $I$, c'est à dire que pour tout nombre $x_1,x_2\in I$ tels que $x_1 \leq x_2$ alors $f(x_1) \geq f(x_2)$. %la courbe de cette fonction \underline{monte} sur cet intervalle $I$. %la courbe de cette fonction \underline{descend} sur cet intervalle $I$. 
+\end{defn}
+
+Pour décrire ce phénomène on fait appel à un tableau appelé tableau de variation.
+
+\underline{Exemple}: on reprend l'exemple précédent, voici son tableau de variation .
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $f(x)$ / 2}{$0$, $1{,}5$, $4{,}5$,$6$}
+   \tkzTabVar{-/ 0, +/ $f(1{,}5)=1$, -/ -1, +/0 }
+\end{tikzpicture}
+\end{center}
+
+
+%En particulier, l'une des applications principales de l'étude de variation est de savoir s'il y a conservation de l'ordre, on en reparlera plus tard dans le chapitre dans la partie inéquation, une autre application est l'étude d'extrema.
+
+
+\section{Extrema}
+On est souvent amené à chercher les extremas d'une fonction $f$, un extrema correspond à un minimum ou à un maximum prise par au moins une valeur de $f$. Dans une représentation graphique, ces extremas sont donnés par les ordonnées des points de la courbe les plus hauts \underline{et} les plus bas.\\
+
+Pour trouver en quelle valeur est atteint un extréma on applique la recherche d'antécédents.
+
+\begin{center} 
+\begin{tikzpicture} 
+%\draw [red,domain=0:1.5]{x^3+1}; 
+%\draw [blue,domain=1.5:3.337] plot({\x},%(\x-1.5)^2+(1.5)^3+1}); 
+%\draw [brown,domain=3.337:5]{1}; 
+%\draw [black,domain=0:1.5]{0}; 
+%\draw [dashed] (-1,0) -- (6,0) ;
+\draw[->] (-1,0) -- (5,0);
+\draw (5,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,6);
+\draw (0,6) node[above] {$y$};
+\foreach \x in {1,...,5} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+%\foreach \y in {-2,...,6} {
+  %\draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm]
+  %\draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm] {$\y\strut$};
+  
+\foreach \y in {-2,-1.75,...,6} {
+  %\draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm]
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[below left=0.03cm] {$ \strut$};
+}
+
+\foreach \y in {-2,...,6} {
+\draw (0.1cm,\y) -- (-0.1cm,\y) node[left =0.05cm] {$\y$};
+}
+  
+
+%\draw [red,domain=0:1.5] plot({\x},\x^3+1);
+%\draw [blue,domain=1.5:3.4685]plot(\x,{-(\x-1.5)^2+(1.5)^3+1});
+%\draw [brown,domain=3.4685:5] plot(\x,0.5);
+\draw [red,domain=1.1:4.6,smooth] plot(\x,{(\x-1)*(\x-3)*(\x-4)+2});
+\node[red] at (1.1,2.551) {$\bullet$} ;
+\node[red] at (4.6,5.540) {$c$} ;
+\node[red] at (4.6,3) {$C_f$} ;
+\end{tikzpicture} 
+\end{center} 
+
+ 
+Ici il y a un maximum de $5,5$ atteint en une unique valeur de $4,6$ et un minimum de $1,25$ atteint en une unique valeur de $3,6$. Attention, il n'existe pas forcément une unique valeur qui atteint un extréma.\\
+
+
+Si nous sommes en possession d'un tableau de variation complet, il est possible de déterminer les extremas de la fonction sans même en avoir une représentation graphique.\\
+
+\begin{defn}
+$f$ admet un \underline{maximum} en $x=a$ si et seulement si pour tout $x\in D_f$ on a $f(x)\leq f(a)$.
+
+$f$ admet un \underline{minimum} en $x=a$ si et seulement si pour tout $x\in D_f$ on a $f(x)\geq f(a)$.
+
+\vspace{2mm}
+\end{defn}
+
+\underline{Exemple}: Voici la représentation graphique et le tableau de variation de notre exemple précédent.
+
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+\draw [red,domain=0:6.28,samples=100] plot({\x},{sin(((\x))*180/3)});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+%\node[above] at (3.14,0) {$\pi$};
+
+\draw[blue] (0,1) -- (1.5,1);
+\draw[olivine] (0,-1) -- (4.5,-1);
+%\draw[magenta,dashed] (2.5,0) -- (2.5,0.5);
+\draw[black,dashed] (1.5,0)--(1.5,1);
+\draw[brown,dashed] (4.5,0) -- (4.5,-1);
+\end{tikzpicture}
+\end{center}
+
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $f(x)$ / 2}{$0$, $1.5$, $4.5$,$6$}
+   \tkzTabVar{-/ 0, +/ 1, -/ -1, +/0 }
+\end{tikzpicture}
+\end{center}
+
+Cette fonction admet pour extrema 1 et -1, le maximum 1 est atteint en 1,5 et le minimum -1 est atteint en 4,5.
+
+\section{Résolution graphique d'équations du type $f(x)=k$, $f(x)\geq k$ et $f(x) > k$}
+\subsection{Résoudre une équation du type $f(x)=k$}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.7]
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+%\draw [red,domain=0:6.28,samples=100] plot({\x},{sin(((\x))*180/3)});
+\draw[color=red,smooth,samples=100,domain=0:5.1] plot(\x,{0-(\x/1.3)*((\x/1.3)-2)^(2)*((\x/1.3)-4)-2});
+\draw[,dashed,color=black,smooth,samples=100,domain=0:6] plot(\x,{1});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+\node[above] at (5.3,-0.7) {$C_f$};
+\node[above] at (6,1) {$y=k$};
+%\draw[blue] (0,1) -- (1.5,1);
+%\draw[olivine] (0,-1) -- (4.5,-1);
+%\draw[magenta,dashed] (2.5,0) -- (2.5,0.5);
+%\draw[black,dashed] (1.5,0)--(1.5,1);
+%\draw[brown,dashed] (4.5,0) -- (4.5,-1);
+\end{tikzpicture}
+\end{center}
+
+
+Résoudre une équation du type $f(x)=k$ c'est déterminer \underline{l'ensemble des solutions} $S\subset D_f$ constitué de \underline{tous} les éléments $x\in D_f$ tel que $f(x)=k$.
+
+\subsubsection{Méthode de résolution graphique d'équations du type $f(x)=k$}
+Ici on obtiendra l'ensemble $S$ en pratiquant la méthode de recherche d'antécédents, $S$ sera l'ensemble de  \underline{tous} les antécédents de $k$ par $f$.
+
+\subsection{Résoudre une inéquation du type $f(x)\geq k$}
+Résoudre une inéquation du type $f(x) \geq k$ c'est déterminer \underline{l'ensemble des solutions} $S\subset D_f$ constitué de \underline{tous} les éléments $x\in D_f$ tel que $f(x)\geq k$.
+\subsubsection{Méthode de résolution graphique d'inéquations du type $f(x)\geq k$}
+On trace ici la droite $y=k$ sur la représentation graphique puis l'on cherche l'ensemble des points de la courbe $C_f$ situés \underline{au-dessus} de cette droite. Les solutions sont tous les nombres qui sont abscisses de ces points. L'ensemble $S$ est une union d'intervalle.
+
+Le cas \underline{d'inégalité stricte} se traite presque de la même façon, la différence est l'exclusion  de l'ensemble des solutions de $f(x)=k$.
+
+%\subsubsection{Méthode de résolution graphique d'inéquation du type $f(x) > k$}
+%On trace ici la droite $y=k$ sur la représentation graphique puis l'on cherche l'ensemble des points %\underline{strictement au dessus} de cette droite. Les solutions sont les abscisses de ces points. 
+%L'ensemble $S$ est une union d'intervalle.
+
+\section{Dresser le tableau de signe d'une fonction avec une représentation graphique}
+On cherche ici à savoir quand une fonction $f$ est positive ou négative ce qui revient à résoudre l'inéquation $f(x) \geq 0$, c'est à dire à remplacer $k$ par 0 et inutile de tracer la droite $y=0$ puisqu'elle est déjà représentée par l'axe des abscisses.
+
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+\draw [red,domain=0:6.28,samples=100] plot({\x},{sin(((\x))*180/3)});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+%\node[orange] at (0.75,0.707) {$\bullet$} ;
+%\node[below right=0.05cm,orange] at (0.75,0.707) {$A$};
+%\node[blue] at (1.5,0.707) {$\bullet$} ;
+%\node[below right=0.05cm,blue] at (1.5,0.707) {$B$};
+%\node[above] at (3.14,0) {$\pi$};
+
+%\draw[blue] (0,0.5) -- (0.523,0.5);
+%\draw[olivine] (0,-1) -- (4.712,-1);
+%\draw[black,dashed] (0.523,0)--(0.523,0.5);
+%\draw[brown,dashed] (4.712,0) -- (4.712,-1);
+\end{tikzpicture}
+\end{center}
+
+
+
+Par suite on dresse un tableau de signe.
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $f(x)$ / 1}{$0$, $3$, $6$}
+   \tkzTabLine{, +, z, -}
+\end{tikzpicture}
+\end{center}
+
+
+\begin{comment}
+\section{Équations, inéquations}
+\subsection{Équations}
+\begin{defn}
+Une équation $E$ est une égalité mathématique qui peut faire intervenir des variables et qui n'est pas nécéssairement vrai. \\
+
+\underline{Résoudre une équation}, c'est trouver \underline{toutes} les valeurs des variables possibles tel que l'égalité deviennent vrai. Si l'on met \underline{toutes} ces valeurs dans un même ensemble on obtient alors \underline{l'ensemble des solutions} associé à l'équation $E$, que l'on notera $S$. 
+\end{defn}
+
+\subsubsection{Équation du premier degré}
+Ici on se donne une variable réelle que l'on note $x$, une équation du premier degré est une égalité du type: 
+$$(E) \; ax+b=0 $$ 
+où $a\in \mathbb{R}^{*}$ et $b\in \mathbb{R}$.
+
+Notre but est de résoudre ce type d'équation, dans une équation du premier degré on peut décrire directement l'ensemble des solutions $S$.
+
+$$S=\{ - \frac{b}{a}\}$$
+On remarque que ce type d'équation admet toujours une \underline{unique} solution.\\
+
+
+\underline{Exemple}: On souhaite résoudre l'équation suivante, $(E) \; 4x+3=0$, cette équation n'est pas vrai par exemple pour $x=0$ ou encore pour $x=2$.
+
+Il nous faut donc trouver l'ensemble des solutions $S$ pour savoir pour quel valeur de $x$ l'équation $E$ est vrai. Ici $S=\{-\frac{3}{4}\}$, donc l'équation $E$ est vrai si et seulement si $x\in S$ ou encore ici, $x=-\frac{3}{4}$.
+
+
+\subsection{Inéquations}
+\begin{defn}
+Une inéquation $I$ est une inégalité mathématique qui peut faire intervenir des variables et qui n'est pas nécéssairement vrai. \\
+
+\underline{Résoudre une inéquation}, c'est trouver \underline{toutes} les valeurs des variables possible tel que l'inégalité soit vrai. Si l'on met \underline{toutes} ces valeurs dans un même ensemble on obtient alors \underline{l'ensemble des solutions} associé à l'inéquation $I$, que l'on notera aussi $S$. 
+\end{defn}
+
+\subsubsection{Inéquation du premier degré}
+
+Une différence notable entre la résolution d'inéquation et la résolution d'équations se trouve dans le  \underline{signe des nombres}, qui doit être prise en compte dans les inéquations contrairement au équations donc il n'y aura pas de méthode générale ici.\\
+
+
+\underline{Exemple}: Résolvons l'inéquation suivante:
+$$(I) \; -3x+2\leq 0$$
+$$(I) \; -3x\leq -2$$
+$$(I) \; x \geq \frac{2}{3}$$
+
+Ainsi on a $S=[\frac{2}{3};+\infty]$. On remarque le changement de signe entre la deuxième ligne et la troisième ligne qui est dû au fait que $-3$ soit négatif.
+
+\subsubsection{Tableau de signe}
+De manière analagogue au tableau de variation on peut dresser le tableau de signe d'une expression mathématique ce qui nous permettra de connaitre simplement le signe d'expression parfois plus complexe.
+
+Voici un tableau de signe en reprenant l'exemple précédant:
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $-3x+2$ / 1}{$-\infty$, $0$, $\frac{2}{3}$, $+\infty$}
+   \tkzTabLine{, , +, , z, -, }
+\end{tikzpicture}
+\end{center}
+
+l'intérêt de cet outil réside dans la résolution d'inéquation plus complexe tel que 
+
+$$(I) \;  (-3x+2)(4x+3)\geq 0$$
+
+Pour cela on rappel quelques règles mémotechniques: $"+ \times + donne +"$, $"- \times - donne +"$, $"- \times + donne -"$ et $"+ \times - donne -"$.  
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $-3x+2$ / 1, $4x+3$ /1 , $(-3x+2)(4x+3)$ /1}{$-\infty$, -$\frac{3}{4}$ ,$0$, $\frac{2}{3}$, $+\infty$}
+   \tkzTabLine{,+, , , +, , z , -, }
+   \tkzTabLine{,-,z, , +, ,  , +, }
+   \tkzTabLine{,-,z, , +, , z , -, }
+\end{tikzpicture}
+\end{center}
+
+Ainsi l'ensemble des solutions est 
+$ S= [-\frac{3}{4}; \frac{2}{3}] $.
+\end{comment}
+
+\section{Égalité de fonctions et interprétation graphique}
+
+Prenons deux fonctions $(D_f,f)$ et $(D_g,g)$, on suppose qu'il existe un nombre $i$ qui appartient à $D_f$ et à $D_g$ et tel que $f(i)=g(i)$. Cette égalité est \underline{ponctuelle} (c'est à dire en \underline{un} nombre) et ce traduit graphiquement de manière intuitive grâce à une intersection de courbe, il est très facile de détecter quand deux fonctions prennent la même valeur.
+
+\underline{Exemple}: Prenons deux fonctions réprésentées sur le même graphique %Prenons $([0;1,2],x^2)$ et $([0;1],x^3)$  et traçons leurs représentations graphiques respectives.
+ 
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+xlabel=$x$,
+ylabel=$y$,
+width=7cm,height=7cm,
+axis lines=left,
+scaled ticks=false,
+]
+\addplot [red,domain=0:1.2]{x^2};
+\addplot [blue,domain=0:1]{x^3};
+\end{axis}
+\draw [dashed] (4.5,0) -- (4.5,3.8);
+\node[orange] at (4.5,3.8) {$\bullet$} ;
+\node[above left=0.05cm,orange] at (4.5,3.8) {$I_1$};
+\node[purple] at (0,0) {$\bullet$} ;
+\node[above left=0.05cm,purple] at (0,0) {$I_2$};
+\end{tikzpicture}
+\end{center}
+
+Ainsi les deux courbes s'intersectent en 2 points, $I_1$ et $I_2$, on peut ainsi trouver $i_1$ en appliquant la recherche d'antécédents à la valeur $k=y_{I_1}$ ou $k=y_{I_2}$ pour trouver $i_2$.
+
+Autrement dit, les courbes s'intersectent en $I_1$ et $I_2$ et elles sont donc égales en $x_{I_1}$ et $x_{I_2}$.
+
+\section{Inégalité de fonctions et interprétation graphique}
+
+Prenons les deux fonctions précédentes, on remarque que la courbe bleu est en dessous de la courbe rouge sur un intervalle, on dira alors que \underline{sur cet intervalle}, la fonction bleue est inférieure à la fonction rouge.
+
+Attention, être inférieur ou supérieur sur un intervalle ne veut pas dire que ceci est vrai sur n'importe quel intervalle, en voici un contre-exemple.
+
+\begin{center}
+\begin{tikzpicture}
+\draw [dashed] (0,0) -- (,0) ;
+\draw[->] (-1,0) -- (7,0);
+\draw (7,0) node[right] {$x$};
+\draw [->] (0,-2) -- (0,2);
+\draw (0,2) node[above] {$y$};
+\draw [red,domain=0:6.28,samples=100] plot({\x},{sin(((\x))*180/pi)});
+\draw [blue,domain=0:6.28,samples=100] plot({\x},{cos(((\x))*180/pi)});
+\foreach \x in {1,...,6} {
+  \draw (\x,0.1cm) -- (\x,-0.1cm) node[below] {$\x\strut$};
+}
+\foreach \y in {-2,-1,1} {
+  \draw (0.1cm,\y) -- (-0.1cm,\y) node[left] {$\y\strut$};
+}
+\node[left] at (0,2) {2};
+\node[below left=0.10cm] at (0,0) {0};
+\node[orange] at (0.785,0.707) {$\bullet$} ;
+\node[below right=0.05cm,orange] at (0.785,0.707) {$A$};
+\node[blue] at (1.507,0.707) {$\bullet$} ;
+\node[below right=0.05cm,blue] at (1.507,0.707) {$B$};
+\node[above] at (3.14,0) {$\pi$};
+
+\draw[blue] (0,0.5) -- (0.523,0.5);
+\draw[olivine] (0,-1) -- (4.712,-1);
+\draw[black,dashed] (0.523,0)--(0.523,0.5);
+\draw[brown,dashed] (4.712,0) -- (4.712,-1);
+\end{tikzpicture}
+\end{center}
+
+
+\end{document}

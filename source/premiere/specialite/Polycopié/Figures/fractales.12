@@ -1,0 +1,407 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -114 -22 114 1 
+%%HiResBoundingBox: -113.39998 -21.25864 113.39998 0.85007 
+%%Creator: MetaPost 1.9991
+%%CreationDate: 2020.03.28:2142
+%%Pages: 1
+%%DocumentResources: procset mpost-minimal
+%%DocumentSuppliedResources: procset mpost-minimal
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset mpost-minimal
+/bd{bind def}bind def/fshow {exch findfont exch scalefont setfont show}bd
+/fcp{findfont dup length dict begin{1 index/FID ne{def}{pop pop}ifelse}forall}bd
+/fmc{FontMatrix dup length array copy dup dup}bd/fmd{/FontMatrix exch def}bd
+/Amul{4 -1 roll exch mul 1000 div}bd/ExtendFont{fmc 0 get Amul 0 exch put fmd}bd
+/ScaleFont{dup fmc 0 get Amul 0 exch put dup dup 3 get Amul 3 exch put fmd}bd
+/SlantFont{fmc 2 get dup 0 eq{pop 1}if Amul FontMatrix 0 get mul 2 exch put fmd}bd
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+%%Page: 1 1
+ 0 0 0 setrgbcolor 0 1.70013 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+gsave newpath 113.3858 0 moveto
+-113.3858 0 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 113.3858 -3.40143 moveto
+37.79642 -3.40143 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -37.79642 -3.40143 moveto
+-113.3858 -3.40143 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 113.3858 -6.80286 moveto
+88.18973 -6.80286 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 62.9925 -6.80286 moveto
+37.79642 -6.80286 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -37.79642 -6.80286 moveto
+-62.9925 -6.80286 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -88.18973 -6.80286 moveto
+-113.3858 -6.80286 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 113.3858 -10.20428 moveto
+104.98724 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 96.58829 -10.20428 moveto
+88.18973 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 62.9925 -10.20428 moveto
+54.59393 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 46.19498 -10.20428 moveto
+37.79642 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -37.79642 -10.20428 moveto
+-46.19498 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -54.59393 -10.20428 moveto
+-62.9925 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -88.18973 -10.20428 moveto
+-96.58829 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -104.98724 -10.20428 moveto
+-113.3858 -10.20428 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 113.3858 -13.60571 moveto
+110.58632 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 107.78673 -13.60571 moveto
+104.98724 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 96.58829 -13.60571 moveto
+93.7888 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 90.98921 -13.60571 moveto
+88.18973 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 62.9925 -13.60571 moveto
+60.19301 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 57.39342 -13.60571 moveto
+54.59393 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 46.19498 -13.60571 moveto
+43.3955 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 40.5959 -13.60571 moveto
+37.79642 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -37.79642 -13.60571 moveto
+-40.5959 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -43.3955 -13.60571 moveto
+-46.19498 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -54.59393 -13.60571 moveto
+-57.39342 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -60.19301 -13.60571 moveto
+-62.9925 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -88.18973 -13.60571 moveto
+-90.98921 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -93.7888 -13.60571 moveto
+-96.58829 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -104.98724 -13.60571 moveto
+-107.78673 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -110.58632 -13.60571 moveto
+-113.3858 -13.60571 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 113.3858 -17.00714 moveto
+112.45265 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 111.51947 -17.00714 moveto
+110.58632 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 107.78673 -17.00714 moveto
+106.85358 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 105.9204 -17.00714 moveto
+104.98724 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 96.58829 -17.00714 moveto
+95.65514 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 94.72195 -17.00714 moveto
+93.7888 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 90.98921 -17.00714 moveto
+90.05606 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 89.12288 -17.00714 moveto
+88.18973 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 62.9925 -17.00714 moveto
+62.05934 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 61.12616 -17.00714 moveto
+60.19301 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 57.39342 -17.00714 moveto
+56.46027 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 55.52708 -17.00714 moveto
+54.59393 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 46.19498 -17.00714 moveto
+45.26183 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 44.32864 -17.00714 moveto
+43.3955 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 40.5959 -17.00714 moveto
+39.66275 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 38.72957 -17.00714 moveto
+37.79642 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -37.79642 -17.00714 moveto
+-38.72957 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -39.66275 -17.00714 moveto
+-40.5959 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -43.3955 -17.00714 moveto
+-44.32864 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -45.26183 -17.00714 moveto
+-46.19498 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -54.59393 -17.00714 moveto
+-55.52708 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -56.46027 -17.00714 moveto
+-57.39342 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -60.19301 -17.00714 moveto
+-61.12616 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -62.05934 -17.00714 moveto
+-62.9925 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -88.18973 -17.00714 moveto
+-89.12288 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -90.05606 -17.00714 moveto
+-90.98921 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -93.7888 -17.00714 moveto
+-94.72195 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -95.65514 -17.00714 moveto
+-96.58829 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -104.98724 -17.00714 moveto
+-105.9204 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -106.85358 -17.00714 moveto
+-107.78673 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -110.58632 -17.00714 moveto
+-111.51947 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -112.45265 -17.00714 moveto
+-113.3858 -17.00714 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 113.3858 -20.40857 moveto
+113.07475 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 112.7637 -20.40857 moveto
+112.45265 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 111.51947 -20.40857 moveto
+111.20842 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 110.89737 -20.40857 moveto
+110.58632 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 107.78673 -20.40857 moveto
+107.47568 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 107.16463 -20.40857 moveto
+106.85358 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 105.9204 -20.40857 moveto
+105.60934 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 105.2983 -20.40857 moveto
+104.98724 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 96.58829 -20.40857 moveto
+96.27724 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 95.96619 -20.40857 moveto
+95.65514 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 94.72195 -20.40857 moveto
+94.4109 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 94.09985 -20.40857 moveto
+93.7888 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 90.98921 -20.40857 moveto
+90.67816 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 90.36711 -20.40857 moveto
+90.05606 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 89.12288 -20.40857 moveto
+88.81183 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 88.50078 -20.40857 moveto
+88.18973 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 62.9925 -20.40857 moveto
+62.68144 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 62.37039 -20.40857 moveto
+62.05934 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 61.12616 -20.40857 moveto
+60.81511 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 60.50406 -20.40857 moveto
+60.19301 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 57.39342 -20.40857 moveto
+57.08237 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 56.77132 -20.40857 moveto
+56.46027 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 55.52708 -20.40857 moveto
+55.21603 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 54.90498 -20.40857 moveto
+54.59393 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 46.19498 -20.40857 moveto
+45.88393 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 45.57288 -20.40857 moveto
+45.26183 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 44.32864 -20.40857 moveto
+44.0176 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 43.70654 -20.40857 moveto
+43.3955 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 40.5959 -20.40857 moveto
+40.28485 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 39.9738 -20.40857 moveto
+39.66275 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 38.72957 -20.40857 moveto
+38.41852 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath 38.10747 -20.40857 moveto
+37.79642 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -37.79642 -20.40857 moveto
+-38.10747 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -38.41852 -20.40857 moveto
+-38.72957 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -39.66275 -20.40857 moveto
+-39.9738 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -40.28485 -20.40857 moveto
+-40.5959 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -43.3955 -20.40857 moveto
+-43.70654 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -44.0176 -20.40857 moveto
+-44.32864 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -45.26183 -20.40857 moveto
+-45.57288 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -45.88393 -20.40857 moveto
+-46.19498 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -54.59393 -20.40857 moveto
+-54.90498 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -55.21603 -20.40857 moveto
+-55.52708 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -56.46027 -20.40857 moveto
+-56.77132 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -57.08237 -20.40857 moveto
+-57.39342 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -60.19301 -20.40857 moveto
+-60.50406 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -60.81511 -20.40857 moveto
+-61.12616 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -62.05934 -20.40857 moveto
+-62.37039 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -62.68144 -20.40857 moveto
+-62.9925 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -88.18973 -20.40857 moveto
+-88.50078 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -88.81183 -20.40857 moveto
+-89.12288 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -90.05606 -20.40857 moveto
+-90.36711 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -90.67816 -20.40857 moveto
+-90.98921 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -93.7888 -20.40857 moveto
+-94.09985 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -94.4109 -20.40857 moveto
+-94.72195 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -95.65514 -20.40857 moveto
+-95.96619 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -96.27724 -20.40857 moveto
+-96.58829 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -104.98724 -20.40857 moveto
+-105.2983 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -105.60934 -20.40857 moveto
+-105.9204 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -106.85358 -20.40857 moveto
+-107.16463 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -107.47568 -20.40857 moveto
+-107.78673 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -110.58632 -20.40857 moveto
+-110.89737 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -111.20842 -20.40857 moveto
+-111.51947 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -112.45265 -20.40857 moveto
+-112.7637 -20.40857 lineto
+0.01666 1 scale stroke grestore
+gsave newpath -113.07475 -20.40857 moveto
+-113.3858 -20.40857 lineto
+0.01666 1 scale stroke grestore
+showpage
+%%EOF

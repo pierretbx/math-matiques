@@ -1,0 +1,589 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+
+
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+    \usepackage{stmaryrd}
+\usepackage{etex}
+%\usepackage{preambuleTrm}
+%\usepackage{enumitem}
+%\usepackage{tikz}
+%
+\usetikzlibrary{calc}
+%\usepackage[xcas]{pro-courbes}
+%\usepackage[autolanguage]{numprint}
+\usepackage[french,vlined]{algorithm2e}
+\usepackage{cclicenses}
+%\usepackage{cclicence}
+%\usepackage{docacompleter}
+
+\newcommand{\cacheb}[1]{#1}
+\newcommand{\cacheg}[1]{#1} 
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cachegg}[1]{#1} 
+
+% \newcommand{\cacheb}[1]{\dotfill\textcolor{white}{#1}\textcolor{white}{#1}}
+% \newcommand{\cacheg}[1]{\dotfill\textcolor{0.9white}{#1}\textcolor{0.9white}{#1}} 
+
+% \newcommand{\cachegg}[1]{\dots\dots\textcolor{0.8white}{#1}\textcolor{0.8white}{#1}} 
+\newcolumntype{A}{>{\arraybackslash}X}
+
+\usepackage{textcomp}
+\usepackage{mathtools}
+%\usepackage[xcas]{pro-statdiv}
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+\newcommand\binomialCoefficient[2]{%
+    % Store values 
+    \c@pgf@counta=#1% n
+    \c@pgf@countb=#2% k
+    %
+    % Take advantage of symmetry if k > n - k
+    \c@pgf@countc=\c@pgf@counta%
+    \advance\c@pgf@countc by-\c@pgf@countb%
+    \ifnum\c@pgf@countb>\c@pgf@countc%
+        \c@pgf@countb=\c@pgf@countc%
+    \fi%
+    %
+    % Recursively compute the coefficients
+    \c@pgf@countc=1% will hold the result
+    \c@pgf@countd=0% counter
+    \pgfmathloop% c -> c*(n-i)/(i+1) for i=0,...,k-1
+        \ifnum\c@pgf@countd<\c@pgf@countb%
+        \multiply\c@pgf@countc by\c@pgf@counta%
+        \advance\c@pgf@counta by-1%
+        \advance\c@pgf@countd by1%
+        \divide\c@pgf@countc by\c@pgf@countd%
+    \repeatpgfmathloop%
+    \the\c@pgf@countc%
+}
+\makeatother
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+\newcommand{\co}[2]{C_#2^#1}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+\tableofcontents
+
+
+\chapter{Ensembles, cardinaux et dénombrements}
+\section{Ensembles, $k$-uplet et cardinaux}
+Soit $A$ un ensemble et soit $x,y,z\in A$ trois \textbf{éléments} de $A$. 
+
+\begin{defn}
+On dit que $(x;y)$ est un \textbf{couple} de l'ensemble $A$ et que $(x;y;z)$ est un \textbf{triplet} de l'ensemble $A$.\\
+
+\par De manière générale, soit $a_1,a_2,\cdots,a_n \in A$, $n$ éléments de $A$, on dit que  $(a_1;a_2;\cdots;a_n) $ est un \textbf{$n$-uplet} d'éléments de  l'ensemble $A$.
+\end{defn}
+
+\subsection{Produit cartésien d'ensembles}
+Soit $A,B$ deux ensembles.
+
+\begin{defn}
+On note $A \times B$ le\textbf{ produit cartésien de $A$ et $B$}. Il contient tous les éléments du type $(a;b)$ avec $a\in A$ et $b\in B$. Autrement dit,
+$$A\times B=\{(a;b) / a \in A, b \in B \} $$ 
+\end{defn} 
+
+\begin{rem}
+Attention, contrairement à la multiplication, le produit cartésien n'est pas commutatif, ils ont même symbole mais pas même signification. 
+
+$$A \times B \neq B \times A$$ 
+\end{rem}
+
+\begin{defn}
+On note $A^k$ l'ensemble $\underbrace{ A \times A \times \cdots  \times A }_{k-\text{occurences}} $ des $k$-uplets d’éléments d’un ensemble $A$. \\
+
+$$ A^k=\{(a_1;a_2;\cdots;a_k)/ a_i \in A \; \text{pour tout} \; i\in \llbracket 1;n \rrbracket \} $$
+\end{defn}
+
+\subsection{Cardinal d'un ensemble}
+\begin{defn}
+La cardinalité est une notion de taille pour les ensembles, il s'agit du nombre d'éléments de l'ensemble. On note $\#A$ le \textbf{cardinal} de $A$.
+\end{defn}
+
+\begin{rem}
+En particulier, le cardinal de l'ensemble vide est zéro. $(\#\emptyset =0)$
+\end{rem}
+
+\begin{prop}
+Soit $A\subset B$ alors $\#A \ie \#B$.
+\end{prop}
+
+\subsection{Opérations sur les ensembles et cardinalité}
+\begin{prop}
+Le cardinal de la \textbf{réunion} d'ensemble: $ \# A\cup B \ie \#A +\#B$ .
+\par Le cardinal de la \textbf{réunion disjointe} d'ensemble: $ \# A\uplus B = \#A +\#B$
+\par Le cardinal de l'\textbf{intersection} d'ensemble: $ \# A\cap B \ie max(\#A,\#B)$.
+\par Le cardinal du \textbf{produit cartésien} d'ensemble: $\# (A\times B)= \#A \times \#B$.
+\end{prop}
+
+\subsection{Nombre de $k$-uplets d'un ensemble à $n$ éléments}
+\begin{prop}
+Le nombre  de $k$-uplets d'un ensemble à $n$ éléments est égal à $n^k$ 
+\end{prop}
+
+\subsection{Nombre de $k$-uplets d'éléments distincts d'un ensemble à $n$ éléments}
+\begin{prop}
+Le nombre  de $k$-uplets d'un ensemble à $n$ éléments est égal à $n(n-1)(n-2)\cdots(n-k)$. 
+\end{prop}
+
+\subsection{Nombre de sous ensemble d’un ensemble à $n$ éléments}
+Soit $A$ un ensemble fini à $n$ éléments que l'on note $a_1,a_2,\cdots,a_n$. Soit $B$ un sous ensemble de $A$, à $B$, on associe un $n$-uplet de la manière suivante.
+\begin{itemize}
+\item[$\bullet$]Dans la $i$-ième coordonnée, mettre 1 si $a_i \in B$ et 0 sinon.
+\end{itemize}
+Ainsi n'importe quel sous-ensemble est identifié avec un \textbf{unique} $n$-uplet de l'ensemble $\{0;1\}$, ainsi d'apr\`es la propriété sur la cardinalité on a $\# \{0;1\}^n =2^n$ sous ensemble d'un ensemble à $n$.  
+\section{Permutations}
+
+Le Père Noël a offert à ma petite cousine un jeu de cubes
+où sont inscrits les lettres de l'alphabet.\\
+
+Très pédagogue, je lui donne d'abord les trois cubes A, B et C.
+Combien de " mots " de 3 lettres peut-elle alors former~? Et si
+je lui en donne quatre~? vingt-six~? trente-deux~?\\
+
+
+Moralité~: avec un ensemble \textit{(non ordonné)} $\{a,b,c\}$ de
+trois éléments, je peux former $3\times 2\times 1$ listes
+\textit{(ordonnées)}, comme par exemple $(a,b,c)$, $(b,a,c)$,
+$(c,b,a)$, etc.
+
+Je peux donc \textit{permuter} 3 cubes de $3\times 2\times 1$
+manières différentes.
+
+\begin{defn}[factorielle]
+  Soit $n$ un entier naturel non nul. Le nombre $n\times(n-1)\times\cdots\times2\times1$ est appelé \textbf{factorielle n}. On
+note
+$$n!=n\times(n-1)\times\cdots\times2\times1$$
+Conventionnellement, $0!=1$.
+\end{defn}
+
+
+
+D'après notre étude, nous pouvons donc dire maintenant que~:
+
+
+\begin{thm}[nombre de permutations]
+  Le nombre de \textbf{permutations} d'un ensemble contenant $n$ éléments est $n!$.
+\end{thm}
+
+
+\begin{exemple}[]
+  \begin{enumerate}
+  \item il y a trente-deux chaises dans une salle.
+\textit{Dénombrer} toutes les manières possibles pour les 30 élèves
+de $TS_4$ d'occuper les chaises de la salle~;
+\item Combien y a-t-il d'annagrammes du mot ZO\'E~? du mot ANA~?
+  \end{enumerate}
+\end{exemple}
+
+
+\section{Combinaisons}
+
+Il n'y a pas assez de gagnants au loto. Les règles en sont donc
+modifiées. Il s'agit maintenant de trouver 3 numéros parmi 5.
+Combien y a-t-il de grilles (combinaisons) possibles~?
+
+Par exemple, on pourrait dire que j'ai cinq manières de choisir le
+premier numéro, quatre choix pour le deuxième et trois choix pour
+le troisième, donc il y a $5\times 4\times 3$ grilles différentes.\\
+
+Posons une petite définition pour clarifier les débats. Donnons en
+fait un nom à une grille du loto, c'est à dire à un sous-ensemble
+(une partie) contenant $k$ éléments d'un plus grand ensemble
+contenant $n$ éléments.
+
+\begin{defn}[combinaison]
+  Soit $n$ et $k$ deux entiers naturels et $E$ un ensemble contenant $n$ éléments. Un sous-ensemble de $E$ contenant $k$
+éléments est appelé une \textbf{combinaison} de $k$ éléments de $E$ ou encore une $k$\textbf{-combinaison} d'éléments de
+\unboldmath${E}$.
+\end{defn}
+
+
+Or ce qui nous intéresse, c'est le nombre de ces combinaisons,
+donc introduisons une notation~:
+\subsection{Nombre de sous ensemble à $k$ éléments parmis un ensemble à $n$ éléments}
+\begin{defn}[nombre de combinaisons]
+   Le nombre de sous ensemble à $k$ éléments (\textit{ appelé aussi parfois $k$-combinaisons}) parmi un ensemble à $n$ éléments est $\co{k}{n}$. On le prononcera le nombre de combinaison de $k$ parmis $n$
+  \vspace{3mm}
+\end{defn}
+
+Revenons à notre mini-loto. Considérons une grille quelconque
+(c'est à dire une 3-combinaison de l'ensemble des 5 numéros)~: par
+exemple $\{2,4,5\}$. Nous  avons vu dans le paragraphe précédent
+qu'il y a $3!$ facons d'ordonner ces nombres. Finalement, il y a
+$\co{3}{5} \times 3!$ suites de 3 nombres ordonnées. Or nous en
+avons comptées $5\times 4\times 3$ tout à l'heure. Nous en
+déduisons finalement que
+$$\co{3}{5}  =\dfrac{5\times 4\times 3}{3!}$$
+
+Il est alors aisé de généraliser la formule suivante~:
+
+
+\begin{prop}[]
+  $$\co{k}{n}=\dfrac{n(n-1)(n-2)(n-3)\cdots(n-k)}{k!}$$
+\end{prop}
+
+
+
+Nous pouvons formuler cette propriété plus synthétiquement. En
+effet~:
+
+
+
+
+\begin{thm}[]
+   $$\co{k}{n}=\dfrac{n!}{k!(n-k)!}$$
+\end{thm}
+
+\begin{demo}
+\begin{eqnarray*}
+  {\co{k}{p}}&=&\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}\times
+\dfrac{(n-k)(n-k-1)(n-k-2)\times\cdots\times 2\times
+1}{(n-k)(n-k-1)(n-k-2)\times\cdots\times 2\times
+1}\\
+&=&\dfrac{n!}{k!(n-k)!}
+\end{eqnarray*}
+\end{demo}
+
+
+\begin{prop}
+$\sum^n_{k=1} \co{k}{n} =2^n$
+\end{prop}
+
+\begin{demo}
+
+On sait que le nombre total de sous-ensemble d'un ensemble $n$ éléments est $2^n$, de plus le nombre de sous-ensemble à $k$ éléments parmi un ensemble à $n$ éléments est égal à $\co{k}{n}$. \\ 
+
+Mais le nombre total de sous-ensemble d'un ensemble $n$ éléments ($2^n$) est la somme de tous les sous-ensembles à $1$ élément parmi un ensemble à $n$ éléments $(\co{1}{n})$, à $2$ éléments parmi un ensemble à $n$ éléments  $(\co{2}{n})$, ... , à $n$ éléments parmi un ensemble à $n$ éléments  $ (\co{n}{n})$. 
+
+Autrement dit, 
+
+$$ 2^n= \co{1}{n} + \co{2}{n} + \cdots +  \co{n}{n} $$
+
+ou encore 
+$$\sum^n_{k=1}  \co{k}{n} = 2^n $$
+\end{demo}
+ \newpage
+\section{Triangle de Pascal - Binôme de Newton}
+
+\subsection{Raisonnement calculatoire}
+
+À l'aide des formules précédentes, établissez que~:
+
+
+\begin{prop}[Symétrie]
+$$\co{k}{n}=\co{{n-k}}{n}$$
+\end{prop}
+
+
+\'Etablissez, toujours par le calcul, la relation suivante, dite \textbf{Relation de Pascal} même si les mathématiciens chinois l'avaient
+mise en évidence avant lui~:
+
+
+\begin{prop}[Relation de \textsc{Pascal}]
+   $$\co{k}{n}=\co{{k}}{{n-1}}+\co{{k-1}}{{n-1}}$$
+\end{prop}
+
+\begin{demo}
+\begin{align*}
+\co{{k}}{{n-1}}+\co{{k-1}}{{n-1}} &=\dfrac{(n-1)!}{(n-1-k)!k!}+\dfrac{(n-1)!}{(n-k)!k-1!}\\
+& = \dfrac{(n-k)(n-1)!}{(n-k)!k!}+\dfrac{k(n-1)!}{(n-k)!k!} \\
+& = \dfrac{(n-k)(n-1)! + k(n-1)!}{(n-k)!k!} \\
+& = \dfrac{(n-k + k)(n-1)!}{(n-k)!k!} \\
+& =\dfrac{n(n-1)!}{(n-k)!k!} \\
+& =\dfrac{n!}{(n-k)!k!}\\
+ & =:\co{k}{n} \; \text{par définition}
+\end{align*}
+d'où 
+$$\co{k}{n}=\co{{k}}{{n-1}}+\co{{k-1}}{{n-1}}$$
+
+\end{demo}
+
+
+
+Cette relation permet de calculer les coefficients binomiaux de proche en proche, ce qui s'avère fort utile car la fonction factorielle
+croît extrêmement rapidement et dépasse vite les capacités d'une calculatrice de poche.
+
+Ainsi, la procédure suivante permet de calculer les coefficients binomiaux assez rapidement avec
+
+% \Prog{XCAS}
+
+%\begin{lstlisting}
+%combi(p,n):={
+ %si p=0 alors 1; 
+ %sinon si p>n alors 0;
+    %   sinon combi(p,n-1)+combi(p-1,n-1);
+      % fsi
+% fsi
+%}:;
+%\end{lstlisting}
+
+
+%Mais que viennent faire les deux conditions : \texttt{si p=0} et \texttt{si p>n}~?
+\newpage
+\subsection{Raisonnement ensembliste}
+
+Si je forme un groupe de 3 élèves dans la classe, j'obtiens du même coup un groupe de 26 élèves puisque vous êtes 29.
+
+Si l'on compte le nombre de parties A ayant $p$ éléments dans un ensemble E, il revient au même de compter le nombre de parties
+complémentaires de A. En quoi ce raisonnement nous permet-il d'obtenir une des formules précédentes~?
+
+
+
+
+Considérons la classe de TS4 et ses 30 élèves. Je veux dénombrer les groupes de trois élèves. On peut distinguer deux types de
+groupes~:
+
+\begin{itemize}
+\item ceux qui ne vous contiennent pas : il faut donc former des groupes de 3 avec les 22 élèves restant : ça fait combien~?
+\item ceux qui vous contiennent : on vous ajoute aux groupes de 2 formés avec les 22 élèves restant. Ça fait combien~?
+\end{itemize}
+
+
+
+Tenez   un  raisonnement   similaire   pour  établir   la  relation   de
+\textsc{Pascal}.
+
+
+
+\subsection{Formule du binôme de \textsc{Newton}}
+
+Sir Isaac  n'a pas  fait que dormir  sous un  pommier. Il a  par exemple
+établi que~:
+
+
+\begin{thm}[Formule du binôme de \textsc{Newton}]
+   Soit $a$ et $b$ des nombres réels ou complexes et $n$ un entier naturel non nul, alors
+$$(a+b)^n=\sum_{k=0}^n\co{k}{n}a^kb^{n-k}=a^n+\co{1}{n}a^{n-1}b+\cdots+\co{{n-1}}{n}ab^{n-1}+b^n$$
+\end{thm}
+
+
+On peut prouver cette formule par récurrence en remarquant que $(a+b)^{k+1}=a(a+b)^k+b(a+b)^k$ et en
+utilisant la relation de Pascal au bon moment.\\ 
+
+Cette formule nous permet donc d'obtenir de nouveaux " produits remarquables ", à conditions de connaître les coefficients binomiaux.
+
+Testez la formule aux rangs 2, 3, 4, 5. Disposez vos résultats dans un tableau en n'écrivant que les coefficients et conjecturer le
+triangle de \textsc{Pascal}...
+
+\begin{center}
+\begin{tabular}{>{$}l<{$}|*{7}{c}}
+\multicolumn{1}{l}{$k$} &&&&&&&\\\cline{1-1} 
+0 &1&&&&&&\\
+1 &1&1&&&&&\\
+2 &1&2&1&&&&\\
+3 &1&3&3&1&&&\\
+4 &1&4&6&4&1&&\\
+5 &1&5&10&10&5&1&\\
+6 &1&6&15&20&15&6&1\\\hline
+\multicolumn{1}{l}{} &0&1&2&3&4&5&6\\\cline{2-8}
+\multicolumn{1}{l}{} &\multicolumn{7}{c}{$n$}
+\end{tabular}
+\end{center}
+\begin{comment}
+
+\begin{center}
+\includegraphics[height=8cm]{triangle}
+\end{center}
+
+
+
+
+\modeexercice % entre en mode exercice
+\section{EXERCICES}
+
+
+\begin{listeexercices}
+
+  \begin{exercice}[Coefficients binômiaux]
+    \begin{enumerate}
+    \item Donnez une expression simple de $\binom{n}{0}$, de $\binom{n}{1}$, de $\binom{n}{n}$, de $\binom{n}{n-1}$. Utilisez des
+simplifications pour calculer à la main $\binom{20}{3}$.
+
+\item On donne $\binom{13}{5}=1287$ et $\binom{13}{6}=1716$. Calculez alors à la main $\binom{13}{8}$ et $\binom{14}{9}$
+    \end{enumerate}
+    
+  \end{exercice}
+
+
+  \begin{exercice}[Une vieille connaissance]
+    
+Donnez une nouvelle démonstration très rapide de la formule bien connue : $(1+x)^n>1+nx$
+
+  \end{exercice}
+
+
+  \begin{exercice}[Nombre de parties]
+    
+Combien y a-t-il de parties d'un ensemble ayant $n$ éléments~?
+
+  \end{exercice}
+
+
+  \begin{exercice}[Bac avec ROC]
+    
+
+\begin{enumerate} \item \textbf{Démonstration de cours.} Démontrer que, pour tous entiers naturels
+$n$ et $k$ tels que $1 \leqslant  k < n$, on a :
+
+\[\binom{n-1}{k - 1} + \binom{n - 1}{k} = \binom{n}{k}.\]
+
+\item En déduire que pour tous entiers naturels $n$ et $k$ tels que $2 \leqslant k <
+n - 1$, on a :
+\[\binom{n-2}{k-2} + 2 \binom{n-2}{k-1} + \binom{n-2}{k} =
+\binom{n}{k}.\]
+
+\item On considère deux entiers naturels $n$ et $k$ tels que $2 \leqslant k <
+n - 1$. On dispose d'une urne contenant $n$ boules indiscernables au toucher. Deux des boules sont rouges, les autres sont blanches.
+
+On tire au hasard et simultanément $k$ boules de l'urne. On appelle A l'évènement « au moins une boule rouge a été tirée ».
+
+\begin{enumerate} \item Exprimer en fonction de $n$ et de $k$ la probabilité
+de l'évènement $\overline{\text{A}}$, contraire de A.
+
+En déduire la probabilité de A.
+
+ \item Exprimer d'une autre manière la probabilité de l'évènement A et
+montrer, à l'aide la formule obtenue à la question \textbf{2.}, que l'on retrouve le même résultat.
+
+\end{enumerate}
+
+\end{enumerate}
+  \end{exercice}
+
+
+
+
+  \begin{exercice}
+    Calulez $\ds\int_{\efr{\pi}{6}}^{\efr{\pi}{3}}\sin^5t \mathrm{d}t$
+
+  \end{exercice}
+
+
+  \begin{exercice}[exercice grec]
+    \begin{center}\includegraphics[width=0.7\linewidth]{ouzo}\end{center}
+
+ Périclès est goutteur d'olives dans une usine grecque. Un
+matin, il goutte cent olives au hasard et les replace dans le réservoir.
+
+L'après-midi, l'ouzo de l'apéritif lui a fait perdre la mémoire. Il goutte à nouveau cent olives dans le même réservoir. Douze d'entre
+elles avaient déjà été mâchées.
+
+On note $A$ l'événement \og il y a douze olives mâchées parmi les cent choisies \fg{} et $B_n$ l'événement \og il y a $n$ olives dans le
+réservoir \fg{}.
+
+On considère la fonction $f$ définie pour les entiers supérieurs à cent  par
+$f(n)=\bbp_{B_n}(A)$ et la suite $(u_n)$ définie pour les entiers
+supérieurs à 100 par
+$u_n=f(n+1)/f(n)$.
+\been \item Comparez $u_n$ à 1.
+\jok{$u_n=\fr{\binom{100}{12}\binom{n-100}{88}\binom{n+1}{100}}{\binom{100}{12}\binom{n-99}{88}\binom{n}{100}}$}
+ \item Montrez que la fonction $f$ atteint un maximum sur $[\![100,+\infty[\![$. \item On appelle
+\textsl{maximum de vraissemblance} $m$ la valeur de $n$ correspondant à ce maximum. Déterminez $m$. \een
+\begin{flushright}\rotatebox{180}{Réponse~: $m=833$}\end{flushright}
+  \end{exercice}
+
+
+\end{listeexercices}
+
+
+\modenormal
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "/home/moi/Lycee/TS/2009_10/PolyTs/PolyTs.tex"
+%%% End: 
+\end{comment}
+\end{document}

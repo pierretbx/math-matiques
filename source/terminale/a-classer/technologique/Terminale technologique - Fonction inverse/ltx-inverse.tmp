@@ -1,0 +1,81 @@
+verbatimtex
+%&latex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[e]{esvect}
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage[french]{babel}
+\newcommand{\vect}[1]{\vv{#1}}\newcommand{\calc}{\mathscr{C}}\newcommand{\calp}{\mathscr{P}}\DecimalMathComma
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex $\num{-7}$ etex ;
+latexmp_picture[2]:= btex $\num{7}$ etex ;
+latexmp_picture[3]:= btex $\num{-6}$ etex ;
+latexmp_picture[4]:= btex $\num{-5}$ etex ;
+latexmp_picture[5]:= btex $\num{-4}$ etex ;
+latexmp_picture[6]:= btex $\num{-3}$ etex ;
+latexmp_picture[7]:= btex $\num{-2}$ etex ;
+latexmp_picture[8]:= btex $\num{-1}$ etex ;
+latexmp_picture[9]:= btex $\num{1}$ etex ;
+latexmp_picture[10]:= btex $\num{2}$ etex ;
+latexmp_picture[11]:= btex $\num{3}$ etex ;
+latexmp_picture[12]:= btex $\num{4}$ etex ;
+latexmp_picture[13]:= btex $\num{5}$ etex ;
+latexmp_picture[14]:= btex $\num{6}$ etex ;
+latexmp_picture[15]:= btex $\num{0}$ etex ;
+latexmp_picture[16]:= btex $\num{-7}$ etex ;
+latexmp_picture[17]:= btex $\num{7}$ etex ;
+latexmp_picture[18]:= btex $\num{-6}$ etex ;
+latexmp_picture[19]:= btex $\num{-5}$ etex ;
+latexmp_picture[20]:= btex $\num{-4}$ etex ;
+latexmp_picture[21]:= btex $\num{-3}$ etex ;
+latexmp_picture[22]:= btex $\num{-2}$ etex ;
+latexmp_picture[23]:= btex $\num{-1}$ etex ;
+latexmp_picture[24]:= btex $\num{1}$ etex ;
+latexmp_picture[25]:= btex $\num{2}$ etex ;
+latexmp_picture[26]:= btex $\num{3}$ etex ;
+latexmp_picture[27]:= btex $\num{4}$ etex ;
+latexmp_picture[28]:= btex $\num{5}$ etex ;
+latexmp_picture[29]:= btex $\num{6}$ etex ;
+latexmp_picture[30]:= btex $\num{0}$ etex ;
+latexmp_picture[31]:= btex $\num{0}$ etex ;
+latexmp_picture[32]:= btex $\mathcal{C}_f: y=\frac{1}{x}$ etex ;
+latexmp_picture[33]:= btex $x$ etex ;
+latexmp_picture[34]:= btex $\mathcal{C}_f: y=\frac{1}{x}$ etex ;
+latexmp_picture[35]:= btex $y$ etex ;
+latexmp_picture[36]:= btex $\num{170}$ etex ;
+latexmp_picture[37]:= btex $\num{10}$ etex ;
+latexmp_picture[38]:= btex $\num{20}$ etex ;
+latexmp_picture[39]:= btex $\num{30}$ etex ;
+latexmp_picture[40]:= btex $\num{40}$ etex ;
+latexmp_picture[41]:= btex $\num{50}$ etex ;
+latexmp_picture[42]:= btex $\num{60}$ etex ;
+latexmp_picture[43]:= btex $\num{70}$ etex ;
+latexmp_picture[44]:= btex $\num{80}$ etex ;
+latexmp_picture[45]:= btex $\num{90}$ etex ;
+latexmp_picture[46]:= btex $\num{100}$ etex ;
+latexmp_picture[47]:= btex $\num{110}$ etex ;
+latexmp_picture[48]:= btex $\num{120}$ etex ;
+latexmp_picture[49]:= btex $\num{130}$ etex ;
+latexmp_picture[50]:= btex $\num{140}$ etex ;
+latexmp_picture[51]:= btex $\num{150}$ etex ;
+latexmp_picture[52]:= btex $\num{160}$ etex ;
+latexmp_picture[53]:= btex $\num{0}$ etex ;
+latexmp_picture[54]:= btex $\num{110}$ etex ;
+latexmp_picture[55]:= btex $\num{10}$ etex ;
+latexmp_picture[56]:= btex $\num{20}$ etex ;
+latexmp_picture[57]:= btex $\num{30}$ etex ;
+latexmp_picture[58]:= btex $\num{40}$ etex ;
+latexmp_picture[59]:= btex $\num{50}$ etex ;
+latexmp_picture[60]:= btex $\num{60}$ etex ;
+latexmp_picture[61]:= btex $\num{70}$ etex ;
+latexmp_picture[62]:= btex $\num{80}$ etex ;
+latexmp_picture[63]:= btex $\num{90}$ etex ;
+latexmp_picture[64]:= btex $\num{100}$ etex ;
+latexmp_picture[65]:= btex $\num{0}$ etex ;
+latexmp_picture[66]:= btex $\num{0}$ etex ;

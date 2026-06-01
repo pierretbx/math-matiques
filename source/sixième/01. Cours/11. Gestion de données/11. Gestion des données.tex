@@ -1,0 +1,192 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{10}
+\chapter{Gestion des données}
+
+\section{Tableaux}
+
+\begin{prop}
+Un tableau permet de regrouper des données, de lire facilement des informations.
+\end{prop}
+
+\begin{ex}
+Les tableaux ci-dessous sont des tableaux à simple entrée.
+\begin{center}
+\renewcommand{\arraystretch}{2.5}
+\begin{tabularx}{14cm}{|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{lightgray!50}Continent & Population en 2008 en million d'habitants\\\hline
+Afrique & $\np{987}$\\\hline
+Asie & $\np{4 075}$\\\hline
+Europe & $\np{731}$\\\hline
+Amérique Latine & $\np{579}$\\\hline
+Amérique du Nord & $\np{342}$\\\hline
+Océanie	& $\np{35}$ \\\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\noindent Que signifie les nombres $731$ et $35$ ?
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{8cm}
+\end{ex}
+
+
+\section{Représentations graphiques et interprétation}
+
+\subsection{Graphique cartésien}
+
+\begin{prop}
+Un graphique cartésien permet de représenter l'évolution d'une grandeur en fonction d'une autre.
+\end{prop}
+
+\begin{ex}
+Voici un diagramme qui donne l'évolution de la population du département de l'Isère en fonction de l'année.
+
+\medskip
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.25cm,y=12.cm]
+\begin{axis}[x=0.25cm,y=12.0cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=1965.0,xmax=2020.0,ymin=0.6,ymax=1.4,
+xtick={1965.0,1970.0,...,2020.0},ytick={0.6,0.7,...,1.4},
+ylabel={Population (en millions d'habitants)},
+xlabel={Année},
+x tick label style={
+		/pgf/number format/1000 sep=},
+x label style={at={(axis description cs:0.5,-0.1)},anchor=north},
+y label style={at={(axis description cs:-0.1,.5)},rotate=90,anchor=south},]
+\clip(1965.,0.) rectangle (2020.,1.4);
+\draw [line width=2.pt,domain=1965.:2020.] plot(\x,{(-708.0269180000003--0.37504800000000005*\x)/38.});
+\begin{scriptsize}
+\draw [color=blue] (1968.,0.767678)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1975.,0.860339)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1982.,0.936771)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1990.,1.016228)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1999.,1.094006)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (2008.,1.188660)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (2013.,1.235387)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (2018.,1.263563)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1968.,0.767678)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1975.,0.860339)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1982.,0.936771)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1990.,1.016228)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (1999.,1.094006)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (2008.,1.188660)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (2013.,1.235387)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw [color=blue] (2018.,1.263563)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\noindent En quelle année le million d'habitants a-t-il été atteint ?
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{ex}
+
+
+\subsection{Diagramme en bâton}
+
+\begin{prop}
+Dans un diagramme en bâton, les hauteurs des bâtons sont proportionnelles aux quantités représentées.
+\end{prop}
+
+\begin{ex}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.3]
+\begin{axis}[xscale=1.5,
+	x tick label style={
+		/pgf/number format/1000 sep=},
+	ylabel=Population (en millard d'habitants),
+	enlargelimits=0,
+	legend style={at={(0.3,-0.1)},
+	anchor=north,legend columns=-1},
+	ybar interval=0.8,
+]
+\addplot 
+	coordinates { (2008,0.987) (1995,0.700) (1982,1.2)};
+\addplot 
+	coordinates { (2008,4.075) (1995,3.450) (1982,1.2)};
+\addplot 
+	coordinates { (2008,0.720) (1995,0.720) (1982,1.2)};
+\addplot 
+	coordinates { (2008,0.600) (1995,0.500) (1982,1.2)};
+\addplot 
+	coordinates { (2008,0.350) (1995,0.300) (1982,1.2)};
+\addplot 
+	coordinates { (2008,0.14) (1995,0.13) (1982,0.1)};
+\legend{Afrique,Asie,Europe,Amérique Latine,Amérique du Nord,Océanie}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item[•] Que permet de visualiser d'un premier coup d'œil ce diagramme ?
+
+\noindent\grandscarreaux{\linewidth}{4.8cm}
+\item[•] Quel est le continent où il y a le plus d'écart de population entre $1995$ et $2008$ ?
+
+\noindent\grandscarreaux{\linewidth}{4.8cm}
+\end{enumerate}
+\end{ex}
+
+
+\subsection{Diagramme circulaire}
+
+\begin{prop}
+Dans un diagramme circulaire (ou semi-circulaire), les mesures des angles sont proportionnelles aux quantités représentées.
+\end{prop}
+
+\begin{ex} Ci-contre on a construit un diagramme circulaire représentant la population en $2008$, en pourcentage de la population mondiale, par continent.
+
+\begin{center}
+\begin{minipage}{0.48\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=2.9]
+\def\rayon{1.15}
+\draw[fill=blue!50,draw=white,line width=0.8pt] (0,0) -- (0:\rayon) arc (0:54:\rayon) -- cycle;
+\draw[fill=red!50,draw=white,line width=0.8pt] (0,0) -- (54:\rayon) arc (54:266.4:\rayon) -- cycle;
+\draw[fill=violet!50,draw=white,line width=0.8pt] (0,0) -- (266.4:\rayon) arc (266.4:306:\rayon) -- cycle;
+\draw[fill=pink!100,draw=white,line width=0.8pt] (0,0) -- (306:\rayon) arc (306:356.4:\rayon) -- cycle;
+\draw[fill=green!50,draw=white,line width=0.8pt] (0,0) -- (356.4:\rayon) arc (356.4:360:\rayon) -- cycle;
+
+\node at (27:0.67) {\textbf{15\%}};
+\node at (160.2:0.58) {\textbf{59\%}};
+\node at (286.2:0.72) {\textbf{11\%}};
+\node at (331.2:0.72) {\textbf{14\%}};
+\draw[thin] (358.2:\rayon) -- (0:1.35);
+\node[anchor=west] at (0:1.38) {\textbf{1\%}};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.38\linewidth}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}ll@{}}
+\tikz{\draw[fill=blue!50,draw=blue!50] (0,0) rectangle (0.25,0.25);} & Afrique : 15\%\\
+\tikz{\draw[fill=red!50,draw=red!50] (0,0) rectangle (0.25,0.25);} & Asie : 59\%\\
+\tikz{\draw[fill=violet!50,draw=violet!50] (0,0) rectangle (0.25,0.25);} & Europe : 11\%\\
+\tikz{\draw[fill=pink!100,draw=pink!100] (0,0) rectangle (0.25,0.25);} & Amérique : 14\%\\
+\tikz{\draw[fill=green!50,draw=green!50] (0,0) rectangle (0.25,0.25);} & Océanie : 1\%
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\begin{enumerate}
+\item[•] Classe les continents du moins peuplé au plus peuplé en $2008$.
+
+\noindent\grandscarreaux{\linewidth}{4cm}
+\item[•] Est-il vrai que plus de la moitié de la population mondiale en $2008$ se trouve en Asie ?
+
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{enumerate}
+\end{ex}
+
+\end{document}

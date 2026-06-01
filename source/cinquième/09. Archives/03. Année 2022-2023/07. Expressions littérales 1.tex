@@ -1,0 +1,195 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.12, 0.56, 1.0}
+\newpage
+\setcounter{chapter}{6}
+\chapter{Expressions littérales 1}
+
+\vspace{-1mm}
+\section{Chercher un problème}
+
+\vspace{-3mm}
+\begin{ex}
+
+\noindent \begin{minipage}{6.5cm}
+
+Voici un programme de calcul :
+
+\medskip
+\arrayrulecolor{black}
+\renewcommand{\arraystretch}{0.1}
+\begin{tabular}{|p{6.5cm}|}
+\hline
+\vspace{2mm} \edupythoninline{Choisis un nombre} \\ 
+\vspace{2mm} \edupythoninline{Ajoute 3} \\ 
+\vspace{2mm} \edupythoninline{Multiplie le resultat par 2} \\ 
+\vspace{2mm} \edupythoninline{Ajoute 4} \\ 
+\vspace{2mm} \edupythoninline{Retranche deux fois le nombre de depart} \\
+\vspace{2mm} \\
+\hline
+\end{tabular}
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{9.8cm}
+\begin{enumerate}
+\item Choisis un nombre, effectue ce programme de calcul.
+Recommence avec d'autres nombres. Que constates-tu ?
+\item Écris une expression numérique traduisant ce programme pour le nombre que tu as choisi.
+\item On appelle N le nombre que tu as choisi. Dans l'expression trouvé au 2), remplace le nombre que tu as choisi par la lettre N.
+Tu obtiens ce que l'on appelle \og une expression littérale \fg{}.
+\end{enumerate}
+\end{minipage}
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{ex}
+
+
+\begin{meth}
+Pour chercher un problème de ce type :
+\begin{enumerate}
+\item Je vérifie que je comprends :
+
+\vspace{-7.5mm}
+\begin{enumerate}
+\begin{tabularx}{\linewidth}{p{3.6cm}>{\arraybackslash}p{2.3cm}>{\arraybackslash}X}
+&
+\item[•] l'énoncé.&
+\item[•] ce que l'on me demande, le type de réponse attendue.\\
+\end{tabularx}
+\end{enumerate}
+\item Si besoin j'explicite mon problème en le représentant et/ou en le modélise
+\begin{enumerate}
+\item[•] Je fais les schémas, je traduis le problème en langage mathématiques.
+\end{enumerate}
+\item Je cherche ce qu'il se passe dans les cas simples,
+\begin{enumerate}
+\item[•] Je fais les calculs pour les premiers cas ....
+\end{enumerate}
+\item Quand je pense avoir une idée, je fais une proposition de solution.
+\item Je vérifie si ma proposition fonctionne sur les cas simples.
+\begin{enumerate}
+\item[•] Sinon je réfléchis à une modification pour faire une nouvelle proposition. (retour au 1.)
+\end{enumerate}
+\item Quand je pense avoir trouvé, je rédige ma réponse en expliquant comment j'ai fait pour
+trouver et pourquoi cela semble correct.
+\end{enumerate}
+\end{meth}
+
+\vspace{-3mm}
+\section{Produire une expression littérale}
+
+\vspace{-2mm}
+\subsection{Définition d'une expression littérale}
+
+\begin{dft}
+Une expression littérale est une expression contenant des lettres qui remplacent
+des nombres.
+
+\noindent Elle sert, par exemple, à :
+
+\vspace{-2mm}
+\begin{enumerate}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+\item[•] Établir une formule &
+\item[•] Traduire l'énoncé &
+\item[•] Trouver un nombre &
+\item[•] Prouver un résultat. \\
+\end{tabularx}
+\end{enumerate}
+\end{dft}
+
+\begin{ex}
+\begin{enumerate}
+\item La formule du périmètre d'un cercle est $2 \times r \times \pi$ ou $d \times \pi$ .
+Dans ces expressions numériques $r$ est le rayon du cercle $d$ est le diamètre et $\pi$ est un
+nombre qui ne change pas est qui vaut environ $3,14$.
+\item On obtient la vitesse avec la formule suivante : $V = \dfrac{d}{t}$ ou $V$ est la vitesse, $d$ la distance et $t$ le temps.
+\end{enumerate}
+\end{ex}
+
+\vspace{-3mm}
+\subsection{Convention d'écriture}
+
+\vspace{-2mm}
+\noindent \begin{minipage}{11cm}
+\begin{dft}
+$5 \times 5 = 5^2$ lire \og $5$ au carré \fg{} ; \quad de même $7 \times 7\times 7 = 7^3$ lire \og $7$ au cube \fg{}
+
+\medskip
+\noindent On peut faire de même avec les lettres :
+
+\noindent $x \times x = x^2$ lire \og $x$ au carré \fg{} ; \quad de même $x \times x \times x = x^3$ lire \og $x$ au cube \fg{}
+\end{dft}
+
+\begin{regle}
+Pour simplifier l'écriture d'une expression littérale, on peut supprimer le symbole \og $\times$ \fg{} devant une lettre ou une parenthèse.
+\end{regle}
+
+\begin{rmq}
+On ne peut pas supprimer le signe \og $\times$ \fg{} entre deux nombres écrits à l'aide de chiffres.
+En effet, $4 \times 5$ est différent de $45$.
+
+\medskip
+\noindent On a les résultats suivants : \quad $1 \times x = x$; \quad $0 \times x = 0$; \quad $x \times y = y \times x$
+\end{rmq}
+
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{7cm}
+\begin{ex}
+On peut supprimer le signe $\times$ entre :
+\begin{enumerate}
+\item[•]Deux lettres, $$d \times \pi = d \pi$$
+\item[•]Entre un nombre et une lettre $$2 \times r = 2 r$$
+\item[•]Devant une parenthèse. $$5 \times (2 + x) = 5 (2 + x)$$
+$$c \times (x + 4) = c(x + 4)$$
+\end{enumerate}
+\end{ex}
+\end{minipage}
+
+\subsection{Vocabulaire}
+
+\vspace{-2mm}
+\begin{dft}
+Écrire un résultat « en fonction de $x$ », c'est écrire une expression littérale
+contenant la lettre $x$.
+\end{dft}
+
+\begin{ex} 
+\vspace{-5.5mm} \hspace{2.8cm} J'ai choisi un nombre $x$. Je l'ai multiplié par $3$, puis j'ai ajouté $7$.
+Écris le résultat en fonction de $x$.
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{ex}
+
+\vspace{-3mm}
+\section{Calculer la valeur d'une expression littérale}
+
+\vspace{-2mm}
+\begin{dft}
+Calculer la valeur d'une expression littérale, c'est attribuer un nombre à chaque lettre de l'expression afin d'effectuer le calcul
+\end{dft}
+
+\begin{rmq}
+
+\vspace{-4.5mm} \hspace{3cm} Une même lettre désigne toujours un même nombre dans une expression littérale donnée.
+\end{rmq}
+
+\vspace{-2mm}
+\begin{meth}
+Une golfeuse frappe une balle de golf.
+La hauteur $h$, en mètre, à laquelle se trouve cette balle, $t$ secondes après son départ, est
+donnée par la formule $h = 30 \times t - 4,9 \times t^2$
+
+\medskip
+\noindent Cette formule est valable jusqu'au moment où la balle retombe au sol.
+
+\medskip
+\noindent Calcule la hauteur à laquelle se trouve la balle 5 secondes après le lancer.
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{meth}
+\end{document}

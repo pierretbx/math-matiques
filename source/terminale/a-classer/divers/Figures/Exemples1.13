@@ -1,0 +1,67 @@
+%!PS
+%%BoundingBox: -75 -158 235 268 
+%%Creator: MetaPost
+%%CreationDate: 2006.11.25:1841
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath -73.47447 -45.71013 moveto
+80.55804 -57.08691 lineto
+79.99992 -157.13234 lineto
+ closepath stroke
+newpath 80.55804 -57.08691 moveto
+233.81868 -17.2102 lineto
+79.99992 -157.13234 lineto
+ closepath stroke
+ [3 3 ] 0 setdash 1 setlinecap
+newpath -73.47447 -45.71013 moveto
+-15.40645 1.19711 lineto
+79.99992 -157.13234 lineto stroke
+newpath -15.40645 1.19711 moveto
+174.51022 18.81097 lineto
+79.99992 -157.13234 lineto stroke
+newpath 174.51022 18.81097 moveto
+233.81868 -17.2102 lineto stroke
+ [] 0 setdash
+newpath -73.81883 127.21005 moveto
+-14.51038 91.18887 lineto
+79.99992 267.13219 lineto
+ closepath stroke
+newpath -14.51038 91.18887 moveto
+175.4063 108.80273 lineto
+79.99992 267.13219 lineto
+ closepath stroke
+newpath 175.4063 108.80273 moveto
+233.47432 155.70998 lineto
+79.99992 267.13219 lineto
+ closepath stroke
+ [3 3 ] 0 setdash
+newpath -73.81883 127.21005 moveto
+79.4418 167.08676 lineto
+79.99992 267.13219 lineto stroke
+newpath 79.4418 167.08676 moveto
+233.47432 155.70998 lineto stroke
+ [] 0 setdash
+newpath -73.81883 127.21005 moveto
+-73.47447 -45.71013 lineto
+-14.51038 91.18887 lineto
+ closepath stroke
+newpath -14.51038 91.18887 moveto
+80.55804 -57.08691 lineto
+175.4063 108.80273 lineto
+ closepath stroke
+newpath 175.4063 108.80273 moveto
+233.81868 -17.2102 lineto
+233.47432 155.70998 lineto
+ closepath stroke
+ [3 3 ] 0 setdash
+newpath -73.81883 127.21005 moveto
+-15.40645 1.19711 lineto
+79.4418 167.08676 lineto stroke
+newpath 79.4418 167.08676 moveto
+174.51022 18.81097 lineto
+233.47432 155.70998 lineto stroke
+showpage
+%%EOF

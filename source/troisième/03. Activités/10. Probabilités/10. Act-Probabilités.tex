@@ -1,0 +1,159 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{Probabilités et tableau à double entrée}
+\addcontentsline{toc}{section}{Probabilités et tableau à double entrée}
+
+\subsection*{Enoncé}
+\addcontentsline{toc}{subsection}{Enoncé}
+
+On tire, deux fois de suite et avec remise, une boule dans une urne contenant une boule bleue et deux boules rouges.
+
+\medskip
+\noindent En utilisant un tableau à double entrée, déterminer la probabilité de :
+\begin{enumerate}
+\item Tirer successivement deux boules rouges,
+\item Tirer au moins une boule rouge.
+\end{enumerate}
+
+\subsection*{Résolution guidé}
+\addcontentsline{toc}{subsection}{Résolution guidé}
+
+On réalise un tableau à double entrée présentant en ligne et en colonne les issues possibles pour chaque tirage :
+
+\begin{center}
+\renewcommand{\arraystretch}{2.4}
+\begin{tabular}{|C{2.4}|*{3}{C{2.4}|}}
+\hline 
+\rowcolor{lightgray!20} \diagbox{Urne 1}{Urne 2}& & & \\\hline
+\cellcolor{lightgray!20}{} & & & \\\hline
+\cellcolor{lightgray!20}{} & & & \\\hline
+\cellcolor{lightgray!20}{} & & & \\\hline
+\end{tabular} 
+\end{center}
+
+\begin{enumerate}
+\item On compte le nombre d'issues favorables et le nombre d'issues totales
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+
+On applique la formule de la \textbf{Propriété 4}
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+\item On considère l'évènement contraire de \og Tirer au moins une boule rouge \fg{} 
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+
+On compte le nombre d'issues favorables et le nombre d'issues totales
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+
+On conclue avec la \textbf{Propriété 4} et la \textbf{Propriété 3}
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{enumerate}
+
+\newpage
+\section*{Probabilités et arbres des possibles}
+\addcontentsline{toc}{section}{Probabilités et arbres des possibles}
+
+\vspace{-3mm}
+\setcounter{cprop}{4}
+\begin{prop}
+Dans un arbre de probabilités, la probabilité d'une issue est égale au produit des probabilités des branches conduisant à cette issue.
+\end{prop}
+
+\subsection*{Enoncé}
+\addcontentsline{toc}{subsection}{Enoncé}
+
+On dispose dans une urne de $3$ boules rouges et $7$ boules bleues.
+On effectue un premier tirage, puis un second sans replacer la première boule.
+
+\medskip
+\noindent En utilisant un arbre des possibles, déterminer la probabilité de :
+\begin{enumerate}
+\item Tirer successivement deux boules rouges,
+\item Tirer au moins une boule rouge.
+\end{enumerate}
+
+\subsection*{Résolution guidé}
+\addcontentsline{toc}{subsection}{Résolution guidé}
+
+\noindent \begin{minipage}{8cm}
+On calcule la probabilités de l'événement \\ R : \og On obtiens une boule rouge lors du premier tirage\fg{} 
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+
+\medskip
+On calcule la probabilités de l'événement \\ B : \og On obtiens une boule bleue lors du premier tirage\fg{} 
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+
+\end{minipage}
+\hspace{2mm}
+\vline
+\hspace{2mm}
+\begin{minipage}{8.4cm}
+On réalise un arbre des possibles en complétant les évènements et les probabilités
+\begin{center}
+% Racine à Gauche, développement vers la droite
+\begin{tikzpicture}[xscale=1,yscale=1,scale=0.8]
+% Styles (MODIFIABLES)
+\tikzstyle{fleche}=[-,>=latex,thick]
+\tikzstyle{noeud}=[fill=white]
+\tikzstyle{feuille}=[fill=white]
+\tikzstyle{etiquette}=[midway,above]
+\tikzstyle{etiquette1}=[midway,below]
+% Dimensions (MODIFIABLES)
+\def\DistanceInterNiveaux{2}
+\def\DistanceInterFeuilles{1}
+% Dimensions calculées (NON MODIFIABLES)
+\def\NiveauA{(0)*\DistanceInterNiveaux}
+\def\NiveauB{(1.6666666666666665)*\DistanceInterNiveaux}
+\def\NiveauC{(3)*\DistanceInterNiveaux}
+\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+\node[noeud] (R) at ({\NiveauA},{(3.5)*\InterFeuilles}) {};
+\node[noeud] (Ra) at ({\NiveauB},{(1.5)*\InterFeuilles}) {\quad \quad \quad \quad \quad \quad \quad \quad};
+\node[noeud] (Raa) at ({\NiveauC},{(0.5)*\InterFeuilles}) {};
+\node[noeud] (Rab) at ({\NiveauC},{(2.5)*\InterFeuilles}) {};
+\node[noeud] (Rb) at ({\NiveauB},{(5.5)*\InterFeuilles}) {\quad \quad \quad \quad \quad \quad \quad \quad};
+\node[noeud] (Rba) at ({\NiveauC},{(4.5)*\InterFeuilles}) {};
+\node[noeud] (Rbb) at ({\NiveauC},{(6.5)*\InterFeuilles}) {};
+% Arcs (MODIFIABLES : Styles)
+\draw[fleche] (R)--(Ra);
+\draw[fleche] (Ra)--(Raa);
+%\draw[fleche] (Raa)--(Raaa);
+%\draw[fleche] (Raa)--(Raab);
+\draw[fleche] (Ra)--(Rab);
+%\draw[fleche] (Rab)--(Raba);
+%\draw[fleche] (Rab)--(Rabb);
+\draw[fleche] (R)--(Rb);
+\draw[fleche] (Rb)--(Rba);
+%\draw[fleche] (Rba)--(Rbaa);
+%\draw[fleche] (Rba)--(Rbab);
+\draw[fleche] (Rb)--(Rbb);
+%\draw[fleche] (Rbb)--(Rbba);
+%\draw[fleche] (Rbb)--(Rbbb);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\medskip
+On calcule la probabilités manquante de l'arbre :
+
+\medskip \noindent\grandscarreaux{\linewidth}{3.2cm}
+
+\begin{enumerate}
+\item On applique la formule de la \textbf{Propriété 5}
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+\item On considère l'évènement contraire de \og Tirer au moins une boule rouge \fg{} 
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+
+On conclue avec la \textbf{Propriété 5} et la \textbf{Propriété 3}
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{enumerate}
+\end{document}

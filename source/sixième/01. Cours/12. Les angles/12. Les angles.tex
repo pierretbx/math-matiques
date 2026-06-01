@@ -1,0 +1,184 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newcommand{\rapporteurAngle}{%
+\begin{tikzpicture}[scale=1.45,line cap=round,line join=round,>=triangle 45]
+\def\R{3}
+\def\r{2.35}
+\fill[gray!8] (-\R,0) arc (180:0:\R) -- (\R,-0.35) -- (-\R,-0.35) -- cycle;
+\draw (-\R,0) arc (180:0:\R);
+\draw (-\r,0) arc (180:0:\r);
+\draw (-\R,-0.35) -- (\R,-0.35);
+\draw (-2,0)--(2,0);
+\draw (0,-0.15)--(0,2.05);
+\foreach \a in {0,1,...,180}{\draw (\a:\R)--(\a:2.9);}
+\foreach \a in {0,5,...,180}{\draw (\a:\R)--(\a:2.82);}
+\foreach \a in {0,10,...,180}{\draw (\a:\R)--(\a:2.72);}
+\foreach \a in {0,10,...,180}{\draw (\a:\r)--(\a:2.25);}
+\foreach \a/\lab in {0/0,10/10,20/20,30/30,40/40,50/50,60/60,70/70,80/80,90/90,100/100,110/110,120/120,130/130,140/140,150/150,160/160,170/170,180/180}{%
+  \pgfmathsetmacro{\innerlab}{180-\a}
+  \node[font=\scriptsize] at (\a:2.58) {\lab};
+  \node[font=\scriptsize] at (\a:2.12) {\pgfmathprintnumber[fixed,precision=0]{\innerlab}};
+}
+\draw [shift={(0.,0.)},line width=1.2pt,color=green!45!black,fill=green!45!black,fill opacity=0.12] (0,0) -- (45.:0.6) arc (45.:180.:0.6) -- cycle;
+\draw [line width=1.2pt] (-3.5,0)--(0,0);
+\draw [line width=1.2pt] (0,0)--(2.7,2.7);
+\begin{scriptsize}
+\draw [color=blue] (0.,0.)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (0.32,-0.18) node {\large{$O$}};
+\draw [color=blue] (1.,1.)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (1.05,0.62) node {\large{$A$}};
+\draw [color=blue] (-2.,0.)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (-1.78,0.48) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}%
+}
+
+
+\setcounter{chapter}{11}
+\chapter{Les angles}
+
+\section{Notion d'angle}
+
+\noindent\begin{minipage}{14cm}
+\begin{defn}
+Un angle est une proportion de plan qui est délimitée par deux demi-droites de même origine.
+\end{defn}
+\end{minipage}
+
+\noindent\begin{minipage}{12cm}
+\begin{prop}
+L'origine de ces deux demi-droites est le sommet de l'angle.
+
+\noindent Ces deux demi-droites sont les côtés de l'angle.
+\end{prop}
+\end{minipage}
+
+
+\begin{ex}
+\noindent\begin{minipage}{0.55\linewidth}
+Le point $O$, en rouge, est le sommet de l'angle.
+
+\medskip
+\noindent Les demi-droites $[OA)$ et $[OB)$, en noir, sont les côtés de l'angle en vert.
+\end{minipage}
+\hfill
+\begin{minipage}{0.38\linewidth}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.8cm,y=0.8cm]
+\clip(0.5,0.2) rectangle (4.5,4.5);
+\draw [shift={(3.24,4.06)},line width=2.pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-126.20510303455669:0.6) arc (-126.20510303455669:-69.74936649071753:0.6) -- cycle;
+\draw [line width=1.2pt,domain=0.5:3.24] plot(\x,{(--0.82-3.06*\x)/-2.24});
+\draw [line width=1.2pt,domain=3.24:4.5] plot(\x,{(--9.76-2.06*\x)/0.76});
+\begin{scriptsize}
+\draw [color=red] (3.24,4.06)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=red] (2.8,3.87) node {\Large{$O$}};
+\draw [color=blue] (1.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1,1.45) node {\Large{$A$}};
+\draw [color=blue] (4.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (4.1,2.5) node {\Large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\begin{prop}
+Un angle se note à l'aide de trois lettres. La lettre entre les deux autres est celle qui désigne le sommet de l'angle
+\end{prop}
+
+\begin{ex}
+\noindent\begin{minipage}{0.55\linewidth}
+L'angle vert se note $\widehat{CID}$ ; $\widehat{EIF}$ ; $\widehat{CIF}$ ; $\widehat{DIC}$ ; $\widehat{DIE}$ ; $\widehat{FIC}$ ; $\widehat{FIE}$ ; \dots
+
+\medskip
+\noindent Dans toutes ces notations, la lettre $I$ désigne le sommet de l'angle.
+\end{minipage}
+\hfill
+\begin{minipage}{0.38\linewidth}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.72cm,y=0.72cm]
+\clip(0.,0.) rectangle (6.,3.1);
+\draw [shift={(2.4,2.56)},line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (0,0) -- (-131.9059419410829:0.6) arc (-131.9059419410829:-19.290046219188742:0.6) -- cycle;
+\draw [line width=1.2pt,domain=0.0:2.4] plot(\x,{(--0.16-1.56*\x)/-1.4});
+\draw [line width=1.2pt,domain=2.4:6.0] plot(\x,{(--5.44-0.56*\x)/1.6});
+\begin{scriptsize}
+\draw [color=blue] (2.4,2.56)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (2.02,2.99) node {\Large{$I$}};
+\draw [color=blue] (4.,2.)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (3.8,2.57) node {\Large{$C$}};
+\draw [color=blue] (0.5105608157319734,0.45462490895848484)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (0.4,1.01) node {\Large{$D$}};
+\draw [color=blue] (5.211581291759465,1.575946547884187)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (5.3,2.05) node {\Large{$E$}};
+\draw [color=blue] (1.6890386016023307,1.767785870356883)-- ++(-3.0pt,0 pt) -- ++(6.0pt,0 pt) ++(-3.0pt,-3.0pt) -- ++(0 pt,6.0pt);
+\draw[color=blue] (1.36,2.11) node {\Large{$F$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\section{Mesure d'un angle}
+
+\subsection{Unité : le degré}
+
+Au collège, l'unité de mesure d'angle est le degré.
+
+\begin{defn}
+Un angle plat peut être partagé en $180$ parties égales.
+
+\noindent Un degré (noté \degre) est la mesure de chacune de ces parties.
+\end{defn}
+
+\begin{prop}
+Lorsque la mesure d'un angle $\widehat{AOB}$ est égale à 40\degre, on note : $\widehat{AOB} = 40$\degre
+\end{prop}
+
+\begin{rem}
+\begin{enumerate}
+\item[•] Un angle plat mesure 180 \degre
+\item[•] Pour mesurer un angle, on utilise un rapporteur.
+\item[•] La plupart des rapporteurs sont gradués dans les deux sens.
+\end{enumerate}
+\end{rem}
+
+\begin{ex}
+\begin{center}
+\rapporteurAngle
+\end{center}
+
+\bigskip
+La mesure de l'angle $\widehat{AOB}$ est environ égale à \dotfill
+\end{ex}
+
+\subsection{Angles particuliers}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{|>{\cellcolor{titlecolor!30}}p{2.5cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+& & & & & \\
+Représentation & & & & & \\
+& & & & & \\\hline
+Angle & nul & aigu & droit & obtus & plat \\\hline
+Mesure & Égale à $0$\degre & Compris entre & Égale à & Comprise entre & Égale à \\
+& & & & & \\\hline
+\end{tabularx}
+\end{center}
+
+
+\begin{ex}
+\begin{center}
+\rapporteurAngle
+\end{center}
+
+\bigskip
+\noindent L'angle $\widehat{AOB}$ est un angle \dotfill           
+\end{ex}
+
+\end{document}

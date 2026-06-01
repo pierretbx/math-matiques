@@ -1,0 +1,752 @@
+\documentclass[french]{book}
+\usepackage{teach}
+%\usepackage{verbatim}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{tikz,tkz-tab}
+\usepackage{multicol}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\newcommand{\defi}[1]{\begin{defn} #1 \end{defn}}
+
+\usepackage{dashundergaps}
+\newcommand{\mgap}[1]{\text{\gap*[blank]{\ensuremath{#1}}}}
+
+\begin{document}
+
+\chapter{Polynômes du second et du troisième degré}
+
+\section{Rappel}
+\begin{prop}
+Pour tous les nombres réels $a$, $b$ et $k$ :
+\begin{multicols}{2}
+$$k(a+b)=ka+kb$$
+$$(a+b)(c+d)=ac+ad+bc+bd$$
+$$(a+b)^2=a^2+2ab+b^2$$
+$$(a-b)^2=a^2-2ab+b^2$$
+$$(a-b)(a+b)=a^2-b^2$$
+\end{multicols}
+\end{prop}
+\section{Définitions et propriétés}
+\begin{defn}
+On appelle \gap*{fonction polynôme du second degré} toute fonction $f$ définie sur $\mathbb{R}$ et qui s'écrit $f(x)=ax^2+bx+c$ où $a$, $b$ et $c$ sont des réels fixés et $a\neq 0$.
+\end{defn}
+
+\begin{exemple}
+la fonction $f:x\mapsto -x^{3}-5x^{2}+7x-1$  n'est pas une fonction polynôme du second degré. la fonction $g:x\mapsto 3x-x^{2}$ est une fonction polynôme du second degré avec $a=-1$ ,$b=3$ et $c=0$.
+\end{exemple}
+
+\subsection{Racines d'un polynôme}
+\begin{defn}
+Soit $f$ une fonction polynôme du second degré. On appelle \gap*{racine} de $f$ toute solution de l'équation $f(x)=0$.
+\vspace{5mm}
+\end{defn}
+
+\begin{exemple}
+0 est une racine de $x\mapsto 3x-x^{2}$ car $3\times0-0^2=0$. Attention, certains polynômes n'admettent pas de racine.
+\end{exemple}
+
+\section{Equation du type $x^2=c$, avec $c$ strictement positif}
+
+\begin{thm}
+Soit $c$ un nombre \gap*{strictement positif} alors l'équation du type $x^2=c$ admet deux solutions notées $x_1$, $x_2$  et telles que $x_1=\sqrt{c}$ et $x_2=-\sqrt{c}$.
+\end{thm}
+
+\begin{exemple}
+$x^2=2$ admet deux solutions $x_1=\sqrt{2}$ et $x_2=-\sqrt{2}$.
+\end{exemple}
+
+\section{Forme factorisée et forme développée d'un polynôme du second degré}
+
+Un polynôme du second degré peut être écrit sous deux formes différentes : \gap*{la forme développée} et \gap*{potentiellement sous forme factorisée}.
+
+\begin{defn}
+La \gap*{forme développée} d'un polynôme du second degré est donnée par $ax^2 + bx + c$, où $a, b$ et $c$ sont des \gap*{coefficients}.
+\end{defn}
+
+\defi{Un polynôme du second degré peut être écrit sous \gap*{forme factorisée} sous la forme $a(x - x_1)(x - x_2)$, où $x_1$ et $x_2$ sont les \gap*{racines du polynôme}.}
+
+\begin{exemple}
+Soit le polynôme du second degré $x^2 - 5x + 6$. Nous pouvons le factoriser en $(x - 2)(x - 3)$. Il est donc possible de passer de la forme développée à la forme factorisée et vice versa.
+
+Attention, un polynôme qui \gap*{ne possède pas de racine} ne possède pas non plus de \gap*{forme factorisée}.
+\end{exemple}
+
+
+\subsection{Relations de Viète pour les polynômes du second degré}
+
+\begin{prop}
+Soit $ax^2+bx+c$ un polynôme du second degré tel qu'il existe admet deux racines $x_{1}$ et $x_{2}$ alors 
+$\left\lbrace 
+\begin{array}[c]{l}
+x_{1}+x_{2}=-\dfrac{b}{a} \\
+x_{1}x_{2}=\dfrac{c}{a}
+\end{array}
+\right.$
+\end{prop}
+
+\newpage
+\begin{exemple}
+Soit le polynôme suivant : $f(x) = 2x^2 - 15x + 25$. On sait que l'une des racines de ce polynôme est 5. Utilisez les relations de Viète pour déterminer l'autre racine. \\
+
+Les relations de Viète sont des formules qui établissent des relations entre les coefficients d'un polynôme et ses racines. Pour un polynôme de degré 2 de la forme $ax^2 + bx + c$, ces relations sont les suivantes :\\
+
+\begin{itemize}
+\item La somme des racines est égale à $-\dfrac{b}{a}$
+\item Le produit des racines est égal à $\dfrac{c}{a}$
+\end{itemize}
+
+Dans notre cas, le polynôme $f(x) = 2x^2 - 15x + 25$ est de degré 2 et de la forme $ax^2 + bx + c$ avec $a=2$, $b=-15$ et $c=25$. Nous pouvons donc utiliser les relations de Viète pour trouver les racines de ce polynôme.\\
+
+Calcul de la somme des racines
+La somme des racines est égale à $-\dfrac{b}{a}$. Dans notre cas, cela donne :
+
+$$-\dfrac{b}{a} = \dfrac{15}{2}$$
+
+Calcul du produit des racines
+Le produit des racines est égal à $\dfrac{c}{a}$. Dans notre cas, cela donne :
+
+$$\dfrac{c}{a} = \dfrac{25}{2}$$
+
+Nous savons maintenant que la somme des racines est $\dfrac{15}{2}$ et que le produit des racines est $\dfrac{25}{2}$. Nous pouvons utiliser ces informations pour trouver l'autre racine du polynôme. Pour cela, nous devons trouver un nombre qui, ajouté à 5, donne une somme égale à $\dfrac{15}{2}$ et un produit égal à $\dfrac{25}{2}$.
+
+Nous pouvons résoudre ce système d'équations:
+
+$$x + 5 = \frac{15}{2}$$
+$$5x = \frac{25}{2}$$
+
+En utilisant une des deux équations, au choix, pour exprimer $x$, on obtient $x = \dfrac{5}{2}$
+La deuxième racine du polynôme est donc $ \dfrac{5}{2}$.
+
+Vérification :
+Nous pouvons vérifier que ces valeurs sont bien les racines du polynôme en utilisant la formule de la factorisation du polynôme. En effet, certains polynômes de degré 2 peuvent s'écrire sous la forme $a(x-r_1)(x-r_2)$, où $r_1$ et $r_2$ sont les racines du polynôme.
+
+Dans notre cas, le polynôme $f(x) = 2x^2 - 15x + 25$ peut s'écrire sous la forme :
+$$f(x) = 2(x - 5)(x - \dfrac{5}{2})$$
+Nous pouvons donc vérifier que les racines du polynôme sont bien 5 et $\dfrac{5}{2}$.
+\end{exemple}
+
+
+\section{Représentation graphique des polynômes du type $x\mapsto ax^2$ et $x\mapsto ax^2+b$}
+
+\begin{exemple}
+
+Représentation graphique de $w$ définie par $w(x)=0,07x^2$ sur $[-1,1;1,1]$.
+
+\begin{center}
+\includegraphics[scale=0.9]{courbeax2b.3}
+\end{center}
+
+\end{exemple}
+
+\begin{exemple}
+
+
+Représentation graphique de $z$ définie par $z(x)=-3x^2+\dfrac{3}{2}$ sur $[-1,1;1,1]$.
+
+\begin{center}
+\includegraphics[scale=0.9]{courbeax2b.2}
+\end{center}
+\end{exemple}
+
+\newpage
+\section{Signes d'un polynôme du second degré}
+\begin{prop}
+\begin{itemize}
+\item Si le polynôme $P$ n'a pas de racine alors 
+
+\vspace{1ex}
+
+\begin{tabular}[c]{|c|ccc|} \hline
+$x$ & $-\infty$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & \\ \hline
+\end{tabular}
+
+\item Si $x_1=x_2$ alors 
+\vspace{1ex}
+
+\begin{tabular}[c]{|c|ccccc|} \hline
+$x$ & $-\infty$ &  & $-\frac{b}{2a}$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & $0$ & Signe de $a$ & \\ \hline
+\end{tabular}
+
+
+\item Si $x_1 \neq x_2 \neq 0$ alors
+
+\vspace{1ex}
+
+\begin{tabular}[c]{|c|ccccccc|} \hline
+$x$ & $-\infty$ &  & $x_{1}$ &  & $x_{2}$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & $0$ & Signe de $-a$ & $0$ & Signe de $a$ & \\ \hline
+\end{tabular}
+
+\vspace{1ex}
+
+\hspace*{1cm}où $x_{1}$ et $x_{2}$ sont les racines de $P$ et $x_{1}<x_{2}$
+\end{itemize}
+\end{prop}
+
+%\begin{exemple}
+%Pour étudier le signe de $2(x - 5)(x - \frac{5}{2})$ sur $\mathbb{R}$, nous pouvons utiliser un tableau de signe.
+
+%\begin{tabular}[c]{|c|ccccccc|} \hline
+%$x$ & $-\infty$ &  & $\frac{5}{2}$ &  & $5$ &  & $+\infty$ \\ \hline
+%Signe de $2(x-5)(x-\frac{5}{2})$ &  & + & $0$ & - & $0$ & + & \\ \hline
+%\end{tabular}
+
+%\end{exemple}
+
+
+\section{Représentation graphique, axe de symétrie}
+\begin{prop}
+Soit $\oij$ un repère du plan.
+
+La représentation graphique de $P$ est l'image d'une translation de la parabole représentant la fonction $x\mapsto ax^{2}$.
+L'axe de sym\'etrie d'une parabole repr\'esentative d'une fonction polyn\^ome du second degr\'e  du type $P(x)=ax^2+bx+c$ est $x=\dfrac{-b}{2a}$.
+C'est donc une parabole de sommet $S\left(-\frac{b}{2a};P(-\frac{b}{2a})\right)$.
+\end{prop}
+
+\begin{center}
+ \begin{tabular}{|c|c|c|c|}
+   \hline
+    & Deux racines distinctes  & Une racine double & Pas de racine  \\
+   \hline
+   Factorisation de $P(x)$ & $a(x-x_{1})(x-x_{2})$ & $a(x-x_{0})^{2}$ &
+   pas de factorisation  \\
+   \hline
+   Équation $P(x)=0$ & $2$ solutions $x_{1}$ et $x_{2}$ & une solution $x_{0}$ & pas de solution\\ \hline
+   \rule[0pt]{0pt}{2.2cm} \raisebox{1.1cm}[0pt][0pt]{$a>0$} & \includegraphics[scale=0.7]{CoursSecondDegFigures.1} & \includegraphics[scale=0.7]{CoursSecondDegFigures.2}
+   & \includegraphics[scale=0.7]{CoursSecondDegFigures.3} \\
+   \hline
+   \rule[0pt]{0pt}{2.2cm} \raisebox{1.1cm}[0pt][0pt]{$a<0$} & \includegraphics[scale=0.7]{CoursSecondDegFigures.4} & \includegraphics[scale=0.7]{CoursSecondDegFigures.5} &  \includegraphics[scale=0.7]{CoursSecondDegFigures.6} \\
+   \hline
+  \end{tabular}
+\end{center}
+
+  \newpage
+
+
+
+\section{Variations et extrema}
+
+\begin{prop}
+\begin{multicols}{2}
+les variation d'un polynôme du second degré sont si $a<0$ :
+\begin{itemize}
+\item strictement croissante sur $]-\infty; \frac{-b}{2a}]$
+\item strictement décroissante sur $[\frac{-b}{2a}; + \infty[$
+\end{itemize}
+
+les variation d'un polynôme du second degré sont si $a>0$ :
+\begin{itemize}
+\item strictement décroissante sur $]-\infty; \frac{-b}{2a}]$
+\item strictement croissante sur $[\frac{-b}{2a}; + \infty[$
+\end{itemize}
+\end{multicols}
+\end{prop}
+
+\begin{prop}
+La valeur de l'extrema d'un polynôme du second degré est atteinte en $x = \frac{-b}{2a}$ c'est un maximum si $a<0$ ou un minimum si $a>0$. 
+\end{prop}
+ 
+\begin{exemple}
+ Considérons le polynôme du second degré $p(x) = -x^2 + 4x + 3$. Nous allons déterminer le maximum de ce polynôme.
+
+Tout d'abord, nous pouvons remarquer que le coefficient du terme en $x^2$ est négatif, ce qui signifie que le graphe de la fonction $p$ est une parabole ouverte vers le bas, et donc que $p$ admet un maximum.\\
+
+La valeur du maximum de $p$ est atteinte en $x = \frac{-b}{2a} = \frac{-4}{-2} = 2$. Nous avons donc $p(2) = -(2)^2 + 4(2) + 3 = 7$.
+
+Ainsi, le maximum de $p$ est $7$, atteint en $x=2$. La courbe de la fonction $p$ est une parabole ouverte vers le bas, qui passe par le point $(2,7)$ est le sommet de cette parabole, qui est le point le plus élevé de la courbe.
+
+%\begin{center}
+% 
+%\begin{tikzpicture}
+%   \tkzTabInit{$x$ / 1 , Variation de $p$ / 1.5}{$-\infty$, $2$, $+\infty$}
+%   \tkzTabVar{-/ $-\infty$ , +/ 7, -/ $-\infty$}
+%\end{tikzpicture}
+%
+%
+%\end{center}
+
+%
+
+
+Représentions graphique de $p$ sur $[-0,7;4,7]$.
+
+\begin{center}
+\includegraphics[scale=0.62]{courbeax2b.8}
+\end{center}
+\end{exemple}
+
+
+\section{Forme factorisée et forme développée d'un polynôme du troisième degré}
+
+\begin{defn}
+On appelle \gap*{fonction polynôme du troisième degré} toute fonction $f$ définie sur $\mathbb{R}$ et qui s'écrit $f(x)=ax^3+bx^2+cx+d$ où $a$, $b$, $c$ et $d$ sont des réels fixés et $a\neq 0$.\\
+
+Un polynôme du troisième degré peut être écrit sous \gap*{forme factorisée} sous la forme $a(x - x_1)(x - x_2)(x-x_3)$, où $x_1$, $x_2$ et $x_3$ sont les \gap*{racines du polynôme}
+\end{defn}
+
+\section{Les polynômes du troisième degré sous forme factorisée }
+\begin{exemple}
+
+Représentation graphique de $m$ définie par $m(x)=\dfrac{-2}{10}x(x-3)(x+2)$ sur $[-3;3,5]$.
+
+\begin{center}
+\includegraphics[scale=0.7]{courbeax2b.7}
+\end{center}
+
+\end{exemple}
+
+\section{Les polynômes du troisième degré du type $x\mapsto ax^3$ et $x\mapsto ax^3+b$}
+
+\begin{exemple}
+
+Représentation graphique de $h$ définie par $h(x)=2x^3$ sur $[-3;3]$.
+
+\begin{center}
+\includegraphics[scale=0.7]{courbeax2b.4}
+\end{center}
+
+\end{exemple}
+
+\begin{exemple}
+
+Représentation graphique de $q$ définie par $q(x)=\dfrac{-1}{10}x^3$ sur $[-3;3]$.
+
+\begin{center}
+\includegraphics[scale=0.9]{courbeax2b.5}
+\end{center}
+
+\end{exemple}
+
+\begin{exemple}
+
+Représentation graphique de $n$ définie par $n(x)=\dfrac{-1}{10}x^3+1$ sur $[-3;3]$.
+
+\begin{center}
+\includegraphics[scale=0.9]{courbeax2b.6}
+\end{center}
+
+\end{exemple}
+
+
+\section{Equation du type $x^3=c$, avec $c$ strictement positif}
+
+\begin{thm}
+Soit $c$ un nombre strictement positif alors l'équation du type $x^3=c$ admet une \gap*{unique solution} appelé \textit{racine cubique de $c$} et souvent noté $\sqrt[3]{c}$ (ou encore $c^{\frac{1}{3}}$).  
+\end{thm}
+
+\begin{exemple}
+Pour résoudre une équation de la forme $x^3=c$ avec $c$ strictement positif à l'aide d'une calculatrice, nous pouvons utiliser la fonction racine cubique. Cette fonction est généralement notée $\sqrt[3]{\cdot}$ ou $\text{cubeRoot}(\cdot)$ sur les calculatrices.
+
+Prenons l'exemple suivant : $x^3=125$. Nous allons utiliser la fonction racine cubique pour trouver la valeur de $x$.
+
+Sur une calculatrice, nous pouvons entrer l'équation $x^3=125$ de la manière suivante :
+
+\begin{enumerate}
+\item Appuyez sur la touche de la racine cubique $\sqrt[3]{\cdot}$.
+\item Appuyez sur la touche $125$.
+\item Appuyez sur la touche $EXE$.
+\end{enumerate}
+
+Cela donnera la solution $x=5$.
+
+Ainsi, la solution de l'équation $x^3=125$ est $x=5$.
+\end{exemple}
+
+\newpage
+
+\section{Exercices}
+
+\begin{exocor}
+Développer, réduire et ordonner :
+\begin{enumerate}
+\begin{multicols}{2}
+\item  $f(x)=(2x-3)(x+1)$
+\item  $f(x)=(x-3)(4 x-1)$
+\item  $f(x)=3(x-1)(x+2)$
+\item $f(x)=-5(x-4)^{2}$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Représenter dans un repère orthogonal la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=-2 x^{2}$.
+\end{exocor}
+
+
+\begin{exocor}
+Résoudre dans $\mathbb{R}$ les équations suivantes:
+
+\begin{enumerate}
+\begin{multicols}{3}
+\item  $x^{2}=5$
+\item  $x^{2}=36$
+\item  $x^{2}=7$
+\item  $x^{2}=18$
+\item  $x^{2}=0$
+\item  $x^{2}=-27$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=\frac{1}{3} x^{2}$.
+
+\begin{enumerate}
+\item Dresser le tableau de variation de $f$.
+\item Résoudre algébriquement l'équation $f(x)=3$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Résoudre dans $\mathbb{R}$ les équations suivantes. On donnera la valeur exacte puis une valeur approchée à 0,01 près des solutions.
+
+\begin{enumerate}
+\begin{multicols}{3}
+\item $x^{2}=100$
+\item $x^{2}=64$
+\item $2 x^{2}+1=5$
+\item $x^{2}-4=0$
+\item $2 x^{2}=x^{2}+1$
+\item $x^{2}-4 x^{2}=0$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Représenter dans un repère orthogonal la fonction $f$ définie sur $\mathbb{R}$ par $f(x)=\frac{1}{3} x^{2}-2$.
+\end{exocor}
+
+\begin{exocor}
+Résoudre dans $\mathbb{R}$ les équations suivantes :
+\begin{enumerate}
+
+\begin{multicols}{2}
+\item $4 x^{2}-16=0$;
+\item $-2 x^{2}+8=0$;
+\item $3 x^{2}+7=1$
+\item $7 x^{2}-5=10$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On considère les fonctions $f$ et $g$ dont les représentations graphiques sont les paraboles données ci-dessous. Pour chacune d'elle, déterminer son expression puis dresser son tableau de variation.
+
+\begin{center}
+\includegraphics[scale=1]{courbeax2b.11}
+\end{center}
+
+\end{exocor}
+
+\begin{exocor}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=x^{2}-3$ et $\mathcal{C}$ sa courbe représentative. Indiquer si les affirmations suivantes sont vraies ou fausses. Justifier
+
+\begin{enumerate}
+\item Le minimum de $f$ est 0 .
+\item Le sommet de $\mathcal{C}$ a pour coordonnées $S(0 ;-3)$.
+\item L'axe de symétrie de $\mathcal{C}$ a pour équation $x=-3$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+Pour chaque polynôme du second degré, déterminer les racines :
+\begin{enumerate}
+\begin{multicols}{2}
+\item $f(x)=2(x-3)(x+1)$
+\item $f(x)=-5(x-3)(x-1)$
+\item $f(x)=3(x-6)(x+2,5)$
+\item $f(x)=5(x+8)^{2}$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On considère le polynôme du second degré $f(x)=-3 x^{2}-3 x+6$.
+
+\begin{enumerate}
+\item Vérifier que 1 et -2 sont des racines de $f$. 
+\item En déduire une factorisation de $f(x)$.
+\item Même question avec $f(x)=4 x^{2}-4$ et les racines -1 et 1 .
+\item Même question avec $f(x)=-2 x^{2}+8 x-8$ et 2 pour unique racine (racine double).
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On considère le polynôme du second degré $f(x)=3 x^{2}-15 x+18$.
+\begin{enumerate}
+\item Vérifier que $\alpha=2$ est une racine de $f$.
+\item Déterminer la seconde racine de $f$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On considère le polynôme du second degré $f(x)=3 x^{2}+9x-30$.
+\begin{enumerate}
+\item Vérifier que $\alpha=-5$ est une racine de $f$.
+\item Déterminer la seconde racine de $f$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $f$ la fonction polynôme de second degré définie sur $\mathbb{R}$ par $f(x)=2 x^{2}-6 x-20$.
+
+\begin{enumerate}
+\item Vérifier que $2 x^{2}-6 x-20=2(x+2)(x-5)$.
+\item En déduire les racines de $f$ et l'axe de symétrie de la courbe représentative de $f$.
+\item Déterminer les coordonnées du sommet de la parabole, courbe représentative de $f$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $f$ la fonction polynôme du second degré définie sur $\mathbb{R}$ par $f(x)=-3 x^{2}-3 x+6$.
+
+\begin{enumerate}
+\item Vérifier que $f(x)=-3(x-1)(x+2)$ pour tout réel $x$.
+\item En déduire les racines de $f$.
+\item Dresser le tableau de variation de $f$ sur $\mathbb{R}$.
+\end{enumerate}
+
+\end{exocor}
+
+\begin{exocor}
+On considère la fonction $f$ du second degré définie par $f(x)=x^{2}-58 x-183$ sur $\mathbb{R}$.
+
+\begin{enumerate}
+\item  Vérifier que $f(x)=(x-61)(x+3)$ pour tout réel $x$.
+\item  En déduire les racines de $f$.
+\item  Dresser le tableau de variation de $f$ sur $\mathbb{R}$.
+\item  En déduire le minimum de $f$ sur $\mathbb{R}$ et la valeur en laquelle il est atteint. 
+
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On considère la fonction $f$ du second degré définie par $f(x)=3x^{2}+3 x-6$ sur $\mathbb{R}$.
+
+\begin{enumerate}
+\item  Vérifier que $f(x)=3(x-1)(x+2)$ pour tout réel $x$.
+\item  En déduire les racines de $f$.
+\item  Dresser le tableau de variation de $f$ sur $\mathbb{R}$.
+\item  En déduire le minimum de $f$ sur $\mathbb{R}$ et la valeur en laquelle il est atteint. 
+
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+On considère la fonction $f$ définie sur l'intervalle $[-4 ; 4]$ par $f(x)=x^{2}-2 x-3$.
+\begin{enumerate}
+\item  Calculer l'image de -1 par $f$.
+\item  Montrer que 3 est solution de l'équation $f(x)=0$.
+\item  En utilisant les questions 1 et 2, donner une forme factorisée de $f(x)$.
+\item  Dresser le tableau de signes de $f$ sur l'intervalle $[-4 ; 4]$.
+\item Parmi les trois courbes suivantes, déterminer, en justifiant, celle qui représente graphiquement la fonction $f$.
+\end{enumerate}
+
+\begin{center}
+\includegraphics[scale=0.8]{courbeax2b.12}
+\end{center}
+
+\end{exocor}
+
+\begin{exocor}
+Une usine agricole produit chaque mois entre 0 et 50 machines agricoles. On a modélisé le bénéfice de cette entreprise, exprimé en milliers d'euros, par la fonction $f$ définie pour tout $x \in[0 ; 50]$ par :
+
+$$
+f(x)=x^{3}-95 x^{2}+2450 x-10000
+$$
+
+\begin{enumerate}
+\item Montrer que, pour tout $x \in[0 ; 50], f(x)=(x-5)(x-40)(x-50)$.
+\item Étudier le signe de $f(x)$
+\item En déduire le nombre de machines agricoles que l'entreprise doit produire pour réaliser des profits. 
+\end{enumerate}
+
+\end{exocor}
+
+
+\begin{exocor}
+
+\begin{enumerate}
+\item Justifier que les fonctions suivantes sont des fonctions polynômes du troisième degré.
+
+\begin{enumerate}
+\item $f(x)=4 x^{3}-2 x+3$
+\item $g(x)=-3(x+7)(x-2)(x-1)$
+\item $h(x)=2(x-1)(x-1)^{2}$
+\end{enumerate}
+
+\item On considère la fonction polynôme de degré 3 définie pour tout $x \in \mathbb{R}$ par : $f(x)=x^{3}-3 x^{2}+4$.
+
+\begin{enumerate}
+\item Montrer que 2 et $-1$ sont deux racines de $f$.
+\item Que peut-on en déduire graphiquement ?
+\end{enumerate}
+
+\end{enumerate}
+
+\end{exocor}
+
+\begin{exocor}
+Résoudre dans $\mathbb{R}$ les équations suivantes. On donnera la valeur exacte puis une valeur approchée à 0,01 près des solutions.
+
+\begin{enumerate}
+\begin{multicols}{4}
+\item $x^{3}=1000$
+\item $x^{3}=64$
+\item $2 x^{3}+11=5$
+\item $x^{3}-4=0$
+\item $2 x^{3}=x^{3}+1$
+\item $x^{3}-4 x^{2}=0$
+\item $x^{3}+3 x^{2}=3 x^{2}-1$ 
+\item $3 x^{3}+3=2 x^{3}+4$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $f$ la fonction définie sur $\mathbb{R}$ par :
+
+$$f(x)=-3(x-8)(x+5)(x-3)$$
+
+\begin{enumerate}
+	\item Dresser le tableau de signes de $f$ sur $\mathbb{R}$.
+	\item En déduire les solutions de l'inéquation $f(x)<0$.	
+	\item Résoudre dans $\mathbb{R}$ les inéquations suivantes :
+		\begin{enumerate}
+			\item $2(x-1)(x+4)(x-3) \geqslant 0$
+			\item $-(x+1)^{2}(x+2) \leqslant 0$
+			\item $-2 x(x+5)(x-2)>0$  
+			\item $(x-1)^{3} \leqslant 0$
+		\end{enumerate}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+L'objectif de l'exercice est de trouver le maximum de la fonction $f$ définie sur l'intervalle $[200 ; 400]$ par
+
+$$f(x)=-0,01 x^{3}+4 x^{2}$$
+
+\begin{enumerate}
+	\item On admet que la fonction $f$ est dérivable sur $[200 ; 400]$ et on note $f^{\prime}$ sa dérivée.
+	\item Calculer $f^{\prime}(x)$ et montrer que $f^{\prime}(x)=x(-0,03 x+8)$.
+	\item Donner le tableau de signe de la fonction dérivée $f^{\prime}$ sur l'intervalle $[200 ; 400]$.
+	\item En déduire le tableau de variation de la fonction $f$ sur l'intervalle $[200 ; 400]$.
+	\item Quel est le maximum de cette fonction sur l'intervalle $[200 ; 400]$ ? En quelle valeur est-il atteint?
+\end{enumerate}
+
+\end{exocor}
+
+\begin{exocor}
+Soit $f$ la fonction définie sur l'intervalle $[-5 ; 5]$ par :
+
+$$f(x)=x^{3}-3 x^{2}-24 x+8$$
+
+\begin{enumerate}
+	\item Calculer $f^{\prime}(x)$, où $f^{\prime}$ désigne la fonction dérivée de $f$ sur l'intervalle $[-5 ; 5]$.
+	\item Vérifier que pour tout $x \in[-5 ; 5], f^{\prime}(x)=3(x-4)(x+2)$.
+	\item Étudier le signe de $f^{\prime}(x)$ sur l'intervalle $[-5 ; 5]$.
+	\item En déduire les variations de $f$ sur l'intervalle $[-5 ; 5]$.
+	\item Déterminer la valeur de $x$ pour laquelle la fonction $f$ admet un maximum sur l'intervalle $[-5 ; 5]$ et en préciser la valeur.
+\end{enumerate}
+
+\end{exocor}
+
+\newpage
+
+\begin{exocor}
+On a représenté graphiquement ci-dessous une fonction $f$ polynôme du troisième degré sur un intervalle et telle que
+
+$$f(x)=a(x-x_1)(x-x_2)(x-x_3)$$
+
+\begin{center}
+\includegraphics[scale=0.8]{courbeax2b.9}
+\end{center}
+\begin{enumerate}
+\item Quelles sont les valeurs de $x_{1}, x_{2}$ et $x_{3}$ ?
+\item Déterminer la valeur de $a$ sachant que $f(0)=1$.
+\item En déduire l'expression de $f(x)$.
+\end{enumerate}
+
+\end{exocor}
+
+\begin{exocor}
+On a représenté graphiquement ci-dessous une fonction $g$ polynôme du troisième degré sur un intervalle et telle que
+
+$$g(x)=a(x-x_1)(x-x_2)(x-x_3)$$
+
+\begin{center}
+\includegraphics[scale=0.8]{courbeax2b.10}
+\end{center}
+
+
+\begin{enumerate}
+\item Quelles sont les valeurs de $x_{1}, x_{2}$ et $x_{3}$ ?
+\item Déterminer la valeur de $a$ sachant que $g(1)=-2$.
+\item En déduire l'expression de $g(x)$.
+\item Déterminer l'expression de $g'(x)$.
+\item Montrer que $g'(x)=3x(x^2-3)$
+\item Dresser le tableau de signe de $g'(x)$ et le tableau de variation de $g$ sur $[-2;2]$.
+\end{enumerate}
+
+\end{exocor}
+
+
+\end{document}

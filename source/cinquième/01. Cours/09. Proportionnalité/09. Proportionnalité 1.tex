@@ -1,0 +1,144 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.56, 0.27, 0.52}
+\newpage
+\setcounter{chapter}{8}
+\chapter{Proportionnalité 1}
+
+\section{Tableau de proportionnalité}
+
+\begin{defn}
+Dans un tableau de nombres à deux lignes, on reconnaît une situation de proportionnalité lorsque les nombres de la deuxième ligne s'obtiennent en multipliant ceux de la première par un même nombre.
+\medskip
+
+\noindent Ce nombre est appelé coefficient de proportionnalité.
+\end{defn}
+
+\begin{ex}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{12cm}{|>{\columncolor{lightgray!50}}p{3cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+Nombre de sms & $1$ & $2$ & $5$ & $8$ & $10$ \\\hline
+Prix payé en \euro & $0,15$ & $0,30$ & $0,75$ & $1,20$ & $1,50$ \\\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\noindent On a : \quad $0,15 \div 1 = 0,15$ \quad ;\quad  $0,30 \div 2 = 0,15$ \quad ;\quad  $0,75 \div 5 = 0,15$ \quad ;\quad  $1,20 \div 8 = 0,15$ \quad et \quad $1,50 \div 10 = 0,15$
+\medskip
+
+\noindent Tous les quotients sont égaux à $0,15$ donc le prix payé est proportionnel au nombre de sms envoyés.
+\medskip
+
+\noindent Le coefficient de proportionnalité est $0,15$. Cela signifie qu'on paie $0,15$\euro pour $1$ sms.
+\end{ex}
+
+\begin{ex}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{9cm}{|>{\columncolor{lightgray!50}}p{3cm}|*{3}{>{\centering \arraybackslash}X|}}
+\hline
+Nombre de BD & $3$ & $5$ & $11$ \\\hline
+Prix payé & $7,50$ & $9$ & $18$ \\\hline
+\end{tabularx}
+\end{center}
+\medskip
+
+\noindent On a : \quad $7,50 \div 3 = 2,5 \quad \quad 9 \div 5 = 1,8$
+\medskip
+
+\noindent $2,5 \neq 1,8$ donc le prix n'est pas proportionnel au nombre de BD achetées.
+
+\noindent Ce tableau n'est pas un tableau de proportionnalité.
+\end{ex}
+
+\section{Quatrième proportionnelle}
+
+\begin{memento}
+Dans un tableau de proportionnalité, si on connaît $3$ nombres non nuls, (dont deux se correspondent), alors on
+peut calculer le quatrième nombre manquant.
+\medskip
+
+\noindent Ce nombre manquant est appelé quatrième proportionnelle.
+\end{memento}
+
+\begin{meth}
+Lorsqu'on achète des cerises, leur prix (en \euro) est proportionnel à leur masse (en kg).
+\medskip
+
+\noindent Voici différentes méthodes pour calculer le nombre manquant $x$ :
+
+\begin{enumerate}
+\item \textbf{On utilise le coefficient de proportionnalité :}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{7cm}{|>{\columncolor{lightgray!50}}p{3cm}|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+Masse (en kg) & $4$ & $5$ \\\hline
+Prix (en \euro) & $11,20$ & $x$ \\\hline
+\end{tabularx}
+\end{center}
+Le coefficient de proportionnalité est $11,20 \div 4 = 2,8$
+
+\noindent $5 \times  2,8 = 14$ donc $x = 14$
+
+\newpage
+\item \textbf{Méthode des produits en croix :}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{7cm}{|>{\columncolor{lightgray!50}}p{3cm}|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+Masse (en kg) & $4$ & $5$ \\\hline
+Prix (en \euro) & $11,20$ & $x$ \\\hline
+\end{tabularx}
+\end{center}
+On a : 
+
+\vspace{-5mm}
+\begin{eqnarray*}
+\dfrac{11,20}{4} &=& \dfrac{x}{5} \\
+x &=& \dfrac{11,20 \times 5}{4}\\
+x &=& \dfrac{56}{4}\\
+x &=& 14
+\end{eqnarray*}
+On multiplie les nombres des cases en diagonale et on divise par le troisième nombre.
+\item \textbf{Par multiplication (ou division) :}
+
+\medskip
+\noindent On peut multiplier ou diviser une colonne :
+
+\vspace{5mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{7cm}{|>{\columncolor{lightgray!50}}p{3cm}|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+Masse (en kg) & $4$ & $5$ \\\hline
+Prix (en \euro) & $11,20$ & $x$ \\\hline
+\end{tabularx}
+\end{center}
+\vspace{5mm}
+
+$11,20 \times 1,25 = 14$ donc $x = 14$.
+\item \textbf{Par addition :}
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.8}
+\begin{tabularx}{9cm}{|>{\columncolor{lightgray!50}}p{3cm}|*{3}{>{\centering \arraybackslash}X|}}
+\hline
+Masse (en kg) & $4$ & $1$ & $5$ \\\hline
+Prix (en \euro) & $11,20$ & $2,80$ & $x$ \\\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\noindent On a : \quad $4 + 1 = 5$ donc $11,20 + 2, 80 = 14$. 
+
+\noindent Donc $x = 14$.
+\end{enumerate}
+\end{meth}
+\end{document}

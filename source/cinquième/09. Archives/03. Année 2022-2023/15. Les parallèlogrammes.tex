@@ -1,0 +1,218 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{14}
+\chapter{Les parallélogrammes}
+
+\section{Aspect graphique}
+
+\vspace{-6mm}
+\noindent \begin{minipage}{11cm}
+\begin{dft}
+Un parallélogramme est un quadrilatère qui a ses côtés opposés parallèles deux à deux. 
+\end{dft}
+\medskip
+
+\begin{rmq}
+$ABCD$ est un parallélogramme, mais $ABDC$ n'en est pas un. Attention à l'ordre des lettres. 
+\end{rmq}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+\clip(1.5,1.5) rectangle (9.5,7.5);
+\draw [line width=1.6pt] (2.,4.)-- (7.,7.);
+\draw [line width=1.6pt] (7.,7.)-- (9.,5.);
+\draw [line width=1.6pt] (9.,5.)-- (4.,2.);
+\draw [line width=1.6pt] (4.,2.)-- (2.,4.);
+\begin{scriptsize}
+\draw [color=black] (2.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (2.2,4.67) node {\large{$A$}};
+\draw [color=black] (7.,7.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (7.64,7.2) node {\large{$B$}};
+\draw [color=black] (9.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (8.9,4.3) node {\large{$C$}};
+\draw [color=black] (4.,2.)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw[color=black] (3.38,1.8) node {\large{$D$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-3mm}
+\section{Construction d'un parallélogramme}
+
+\vspace{-3mm}
+\begin{meth}[\href{https://www.youtube.com/watch?v=7-HH2Y6oDaQ}{Avec une règle et une équerre}]
+
+\begin{center}
+\includegraphics[scale=0.48]{../40.Image/15. Les parallélogrammes 1.png}
+\end{center}
+\end{meth}
+
+\begin{meth}[\href{https://www.youtube.com/watch?v=oszYYwCRaAI}{Avec une règle et un compas}]
+
+\begin{center}
+\includegraphics[scale=0.48]{../40.Image/15. Les parallélogrammes 2.png}
+\end{center}
+\end{meth}
+
+\section{Caractérisation d'un parallélogramme}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{11cm}
+\begin{prop}
+\textbf{Si} un quadrilatère est un parallélogramme, \textbf{alors} les côtés opposés ont la même longueur.
+\end{prop}
+
+\begin{prop}
+\textbf{Si} un quadrilatère est un parallélogramme, \textbf{alors} ses diagonales se coupent en leur milieu.
+\end{prop}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+\clip(1.5,1.5) rectangle (9.5,7.5);
+\draw [domain=1.5:9.5] plot(\x,{(--14.--3.*\x)/5.});
+\draw [domain=1.5:9.5] plot(\x,{(-2.--3.*\x)/5.});
+\draw [domain=1.5:9.5] plot(\x,{(--28.-2.*\x)/2.});
+\draw [domain=1.5:9.5] plot(\x,{(--12.-2.*\x)/2.});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt on 2pt off 4pt,color=ffqqqq] (2.,4.)-- (9.,5.);
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt on 2pt off 4pt,color=ffqqqq] (7.,7.)-- (4.,2.);
+\draw [line width=1.6pt] (2.,4.)-- (7.,7.);
+\draw [line width=1.6pt] (7.,7.)-- (9.,5.);
+\draw [line width=1.6pt] (9.,5.)-- (4.,2.);
+\draw [line width=1.6pt] (4.,2.)-- (2.,4.);
+\begin{scriptsize}
+\draw [color=black] (2.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (2.2,4.67) node {\large{$A$}};
+\draw [color=black] (7.,7.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (7.64,6.89) node {\large{$B$}};
+\draw[color=black] (-2.72,1.53) node {\large{$f$}};
+\draw [color=black] (9.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (8.7,4.59) node {\large{$C$}};
+\draw[color=black] (-2.72,-1.67) node {\large{$g$}};
+\draw[color=black] (4.84,9.43) node {\large{$h$}};
+\draw[color=black] (-2.72,8.53) node {\large{$i$}};
+\draw [color=black] (4.,2.)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw[color=black] (3.38,2.19) node {\large{$D$}};
+\draw [color=black] (5.5,4.5)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw[color=black] (5.86,4.17) node {\large{$I$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{prop}[Centre de symétrie]
+\textbf{Si} un quadrilatère est un parallélogramme, \textbf{alors} il a un centre de symétrie qui est le point $I$ d'intersection de ses diagonales.
+\end{prop}
+
+\noindent \begin{minipage}{12cm}
+\begin{prop}
+\textbf{Si} un quadrilatère est un parallélogramme, \textbf{alors} ses angles opposés ont la même mesure.
+\end{prop}
+
+\medskip
+\begin{rmq}
+Les rectangles, les losanges et les carrés sont des parallélogrammes particuliers .
+\end{rmq}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{center}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm,scale=0.9]
+\clip(1.5,1.5) rectangle (9.5,7.5);
+\draw [line width=1.6pt] (2.,4.)-- (7.,7.);
+\draw [line width=1.6pt] (7.,7.)-- (9.,5.);
+\draw [line width=1.6pt] (9.,5.)-- (4.,2.);
+\draw [line width=1.6pt] (4.,2.)-- (2.,4.);
+\begin{scriptsize}
+\draw [color=black] (2.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (2.2,4.67) node {\large{$A$}};
+\draw [color=black] (7.,7.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (7.64,7.2) node {\large{$B$}};
+\draw [color=black] (9.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (8.9,4.3) node {\large{$C$}};
+\draw [color=black] (4.,2.)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw[color=black] (3.38,1.8) node {\large{$D$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-3mm}
+\section{Reconnaitre un parallélogramme}
+
+\vspace{-3mm}
+\begin{meth}[La démonstration]
+Il faut savoir les reconnaître, mais aussi savoir justifier pourquoi ce sont bien des parallélogrammes. Il est
+important de donner les bons arguments en s'appuyant sur les informations dont on est sûr : données de
+l'énoncé, codages sur le dessin ou éléments prouvés avant...
+
+En résumé : 
+
+\begin{center}
+\boxed{\begin{minipage}{14cm}
+$ABCD$ est un quadrilatère non croisé.
+\begin{enumerate}
+\item[•] \textbf{Si} $ABCD$ a ses côtés opposés parallèles $2$ à $2$, \textbf{alors} c'est un parallélogramme.
+\item[•] \textbf{Si} $ABCD$ a ses côtés opposés égaux $2$ à $2$, \textbf{alors} c'est un parallélogramme.
+\item[•] \textbf{Si} $ABCD$ a ses diagonales qui se coupent en leur milieu, \textbf{alors} c'est un parallélogramme.
+\item[•] \textbf{Si} $ABCD$ a deuc côtés opposés parallèles et égaux, \textbf{alors} c'est un parallélogramme.
+\end{enumerate}
+\end{minipage}}
+\end{center}
+\end{meth}
+
+\vspace{-3mm}
+\section{Aire d'un parallélogramme}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{9cm}
+\begin{prop}
+L'aire d'un parallélogramme est égale au produit d’un de ses côtés par la hauteur relative à ce
+côté, exprimés dans la même unité :
+
+
+\begin{center}
+\Large{$\mathcal{A} = c \times h$}
+\end{center}
+$\mathcal{A}$ est l'aire du parallélogramme\\
+$c$ est la mesure d'un des cotés du parallélogramme\\
+$h$ est la mesure de la hauteur relative au coté $c$.
+\end{prop}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\clip(-0.5,0.5) rectangle (8.5,5.7);
+\draw [line width=1.8pt,color=blue] (2.,5.)-- (8.,5.);
+\draw [line width=1.8pt,color=blue] (8.,5.)-- (6.,2.);
+\draw [line width=1.8pt,color=blue] (6.,2.)-- (0.,2.);
+\draw [line width=1.8pt,color=blue] (0.,2.)-- (2.,5.);
+\draw [<->,line width=1.2pt] (5.,5.)-- (5.,2.);
+\draw [<->,line width=1.2pt] (0.,1.5)-- (6.,1.5);
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=black] (1.6343270187369738,5.403074949472213) node {\Large{$A$}};
+\draw [color=black] (8.,5.)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=black] (8.266319101774872,5.427729195134064) node {\Large{$B$}};
+\draw [color=black] (6.,2.)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=black] (6.343287940150501,1.7912279600110523) node {\Large{$C$}};
+\draw [color=black] (0.,2.)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=black] (-0.3256855113801746,1.7295923458564249) node {\Large{$D$}};
+\draw[color=black] (4.568182252497234,3.566333647664319) node {\Large{$h$}};
+\draw[color=black] (3.0026376529696996,1.0392734673245991) node {\Large{$c$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\end{document}

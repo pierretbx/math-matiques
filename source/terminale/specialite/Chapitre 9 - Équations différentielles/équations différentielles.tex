@@ -1,0 +1,642 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\usepackage{tkz-tab}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[all]{xy}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{hyperref}
+%  \usepackage[frenchb]{babel}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\usepackage[latin1]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\usepackage{yhmath} 
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%\newcommand{\imath}{\overrightarrow{i}}
+%\newcommand{\jmath}{\overrightarrow{j}}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\usepackage[cp1252]{inputenc}
+%\usepackage[T1]{fontenc}
+%\usepackage{lmodern}
+%\usepackage[a4paper,vmargin=1cm,hmargin=1.5cm,includefoot,includehead]{geometry}
+%\usepackage{graphicx}
+%\usepackage{pstricks,pst-plot} 
+%\usepackage{framed}
+%\usepackage[fleqn]{amsmath}
+%\usepackage{amssymb}
+%\usepackage{fancyhdr}
+%\usepackage{fancybox}
+%\usepackage{multicol}
+%\usepackage{xcolor}
+%\usepackage{epsfig}
+\usepackage{pifont}
+%\usepackage[framed]{ntheorem}
+%\usepackage[frenchb]{babel}
+%\usepackage{tabularx}
+
+%\lhead[]{\small BTS DOMOTIQUE}
+%\chead[]{\textsc{Équations différentielles}}
+%\rhead[]{\small {$2008$-$2010$}}
+%\lfoot{\small \url{http://mathematiques.daval.free.fr}}
+%\rfoot{\small -\thepage-}
+%\cfoot{}
+
+%\def\R{{\mathbb R}}
+%\def\Q{{\mathbb Q}}
+%\def\Z{{\mathbb Z}}
+%\def\D{{\mathbb D}}
+%\def\N{{\mathbb N}}
+%\def\C{{\mathbb C}}
+
+%\pagestyle{fancy}
+
+%\theoremstyle{break}
+%\theorembodyfont{\upshape}
+%\newframedtheorem{Th}{Théorème}
+%\newframedtheorem{Prop}{Propriété}
+%\newtheorem{Rem}{Remarque}
+%\theorembodyfont{\small \sffamily}
+%\newtheorem{Ex}{Exemple}
+%\theorembodyfont{\slshape}
+%\shadecolor{lightgray}
+%\newshadedtheorem{Def}{Définition}
+%\theoremstyle{nonumberbreak}
+%\theorembodyfont{\rmfamily}
+%\newtheorem{Exo}{EXERCICE}
+
+%\renewcommand\thesection{\Roman{section}}
+%\renewcommand\FrenchLabelItem{\textbullet}
+%\newcommand{\V}{\overrightarrow}
+%\newcommand{\Rep}{(O;\V{i};\V{j})}
+%\newcommand{\Int}[2]{[\, #1 ; #2 \,]}
+%\newcommand{\Reel}{\mathfrak{Re}} 
+%\newcommand{\Ima}{\mathfrak{Im}} 
+%\renewcommand{\Abs}[1]{\left \lvert#1\right \rvert}
+%\newcommand{\Coor}[2]{\begin{pmatrix} #1\\#2 \end{pmatrix}}
+%\newcommand{\Syst}[2]{\left\{\begin{array}{rrr} #1\\ #2 \end{array}\right.}
+%\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+%\renewcommand{\arraystretch}{1.5} 
+
+
+\begin{document}
+\tableofcontents
+\chapter{Primitives et équations différentielles}
+\section{Primitives}
+
+\begin{defn}
+On s'interesse à l'équation fonctionnelle $y'=f$ sur un certain intervalle $I$, on souhaite résoudre cette équation en $y$, c'est à dire toutes les fonctions dérivables telles que leurs dérivés soit égales à $f$ en tout point de $I$. Une solution de cette équation est appelée \underline{primitive} de la fonction $f$.
+\end{defn}
+
+On va se poser plusieurs questions, la première portant sur l'existence de solutions? Sous quels condition? La seconde porte sur l'unicité d'une solution? Si non, combien en existent-ils?
+
+\subsection{Existence}
+\begin{thm}[admis]
+Soit $f$ une fonction continue sur un intervalle $I$, alors $f$ admet une primitive sur $I$
+\end{thm}
+
+\subsection{Unicité}
+
+\begin{thm}
+Si $f$ admet une primitive sur un intervalle $I$, alors $f$ admet une infinité de primitive sur $I$.
+\end{thm}
+
+\begin{thm}[Caractérisation des primitives]
+Soit $F$ et $\overline{F}$ deux primitives de $f$ alors $F$ et  $\overline{F}$  diffèrent d'une constante.
+\end{thm}
+
+\begin{demo}
+Soit $H=F-\overline{F}$, alors $H$ est dérivable car somme de fonctions dérivable, et donc l'on a une suite d'égalité de fonction
+$$H'=F'-\overline{F}'=f-f=0$$  
+Ainsi la dérivé de $H$ est nulle, autrement dit $H$ n'a pas de variation, elle est donc constante, notons cette constante $K$.
+
+Alors on a pour tout $x\in I$ $F(x)-\overline{F}'(x)=K$. 
+\end{demo}
+
+Ainsi pour une fonction $f$ donnée, nous avons "juste" à trouver une seule primitive de $f$ pour toute les trouver.
+
+\subsection{Problème dit: de Cauchy}
+Un moyen de "fixé" une primitive pour parler d'unicité est d'imposer une condition supplémentaire, comme de fixer l'image d'un point de $I$ par la primitive.
+
+\begin{thm}{Problème de cauchy}
+Soit $k$ un réel et $f$ une fonction continue sur un intervalle $I$ et $t_0\in I$, alors il existe une unique primitive $F$ tel que $F(t_0)=k$.
+\end{thm}
+
+
+\begin{demo}
+Soit $k$ un réel et $f$ une fonction continue sur un intervalle $I$ et $t_0\in I$
+
+\underline{Existence:} 
+D'après le théorème 1, il existe une primitive $F$ sur $I$, on pose $G$ une fonction définie sur $I$ telle que $G(x)=F(x)-F(t_0)+k$ alors on remarque que $G'=f$ et que $G(t_0)=F(t_0)$.
+
+ \underline{Unicité:}
+Supposons par l'absurde, qu'il existe $H$ une primitive de $f$ telle que $H(t_0)=k$ avec $H\neq G$.\\
+
+Par le théorème 3, pour tout $x \in I$ $H(x)-G(x)=a$, avec $a \neq 0$ nécéssairement puisque $H\neq G$. Or $H(t_0)-G(t_0)=k-k=0$ ce qui est absurde. 
+\end{demo}
+\newpage
+
+\subsection{Primitives des fonctions usuellles}
+
+\renewcommand\arraystretch{2}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+% after \\ : \hline or \cline{col1-col2} \cline{col3-col4} ...
+ Fonction $f$     &Fonction primitive $F$& Intervalle   \\
+ \hline
+ \rule[-2.5ex]{0pt}{6ex}
+$x^n$, $n\in{\mathbb N}$  &$\displaystyle\frac{x^{n+1}}{n+1}$&${\mathbb R}$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}
+$\displaystyle\frac{1}{x}$ &$\ln\vert x\vert$&$]-\infty,0[$ ou $]0,+\infty[$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}
+$\displaystyle\frac{1}{x^n}=x^{-n}$, $n\in{\mathbb N}\setminus\{0,1\}$  &$\displaystyle\frac{x^{-n+1}}{1-n}=\frac{1}{(1-n)x^{n-1}}$&$]-\infty,0[$ ou $]0,+\infty[$  \\
+\hline
+\rule[-2.5ex]{0pt}{6ex}
+$x^{\alpha}$, $\alpha>0$  &$\displaystyle\frac{x^{\alpha+1}}{\alpha+1}$&$]0,+\infty[$  \\
+ \hline\hline
+ $e^x$   &$e^x$&${\mathbb R}$  \\
+ \hline\hline
+ $\cos x$    &$\sin x$&${\mathbb R}$  \\
+ \hline
+ $\sin x$     &$-\cos x$&${\mathbb R}$  \\
+  \hline
+\rule[-2.5ex]{0pt}{6ex}  $1+\tan^2( x)= \displaystyle\frac{1}{\cos^2(x)}$&$\tan x$ &$]-\frac{\pi}{2}+k\pi;\frac{\pi}{2}+k\pi[$ avec $k\in{\mathbb Z}$  \\
+ \hline
+  \hline
+ $\cosh x$    &$\sinh x$&${\mathbb R}$  \\
+ \hline
+ $\sinh x$   &$\cosh x$&${\mathbb R}$  \\
+ \hline
+ \rule[-2.5ex]{0pt}{6ex}  $1-\tanh^2(x)= \displaystyle\frac{1}{\cosh^2(x)}$&$\tanh x$&${\mathbb R}$  \\
+ \hline\hline
+\rule[-2.5ex]{0pt}{6ex}     $-\displaystyle \displaystyle\frac{1}{\sqrt{1-x^2}}$&$\arccos x$ &$]-1,1[$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}   $\displaystyle\frac{1}{\sqrt{1-x^2}}$& $\arcsin x$ &$]-1,1[$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}     $\displaystyle\frac{1}{1+x^2}$& $\arctan x$&${\mathbb R}$  \\
+ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+\textbf{Bref historique :} C'est au début du  XVII\up{ème} siècle, avec le calcul différentiel et intégral de Newton et
+Leibniz, qu'apparut la notion d'équations différentielles.
+
+Elles sont issues de problèmes de géométrie et de
+mécanique. Au début du XVIII\up{ème}  siècle les méthodes classiques de résolution de certaines équations
+(linéaires et de Bernouilli notamment) furent découvertes.
+
+Avec le développement de la mécanique, la résolution des équations différentielles devient une branche
+importante des mathématiques (grâce à Euler, Lagrange, Laplace ?).
+
+
+Une \underline{équation différentielle} est une équation liant une fonction et sa ou ses dérivée(s).\\
+\underline{Résoudre} une telle équation signifie déterminer toutes les fonctions qui satisfont à l'égalité.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Équations différentielles d'ordre 1}
+
+\begin{defn}
+Soient $a$, $b$ et $c$ trois fonctions
+définies sur un intervalle $I$ de $\R$ et $y$ la fonction inconnue, définie et dérivable sur l'intervalle $I$.
+On suppose de plus que la fonction $a$ ne s'annule pas sur l'intervalle $I$. \\
+On appelle \underline{équation différentielle linéaire du premier
+ordre} toute équation du type :
+$$(E):a(x)y'(x)+b(x)y(x) =c(x).$$
+
+\end{defn}
+
+On se posera quelques questions sur l'existence, l'unicité de solution comme pour la notion de primitive.
+
+
+\begin{tabular}{||l}
+Voici le genre d'exercice type que l'on rencontrera. \\
+
+On considère l'équation différentielle $(E):y'-2y=xe^x$ où $y$ est une fonction de la variable réelle $x$, \\
+définie et dérivable sur $\R$, et $y'$ la fonction dérivée de $y$. \\
+1. Déterminer les solutions définies sur $\R$ de l'équation différentielle $(E_0):y'-2y=0$. \\
+2. Soit $g$ la fonction définie sur $\R$ par $g(x)=(-x-1)e^x$. \\
+\hspace*{0.3cm} Démontrer que la fonction $g$ est une solution particulière de l'équation différentielle $(E)$. \\
+3. En déduire l'ensemble des solutions de l'équation différentielle $(E)$. \\
+4. Déterminer la solution $f$ de l'équation différentielle $(E)$ qui vérifie la condition initiale $f(0)=0$. \\
+\end{tabular}
+
+
+
+\begin{exemple}
+Dans cet exemple, les fonctions $a$, $b$ et $c$ sont définies sur $\R$ par :
+\begin{itemize}
+   \item $a(x)=1$, $b(x)=-2$ et $c(x)=xe^x$.
+\end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\subsection{Solution générale de l'équation sans second membre}
+
+Soit $(E_0):a(x)y'(x)+b(x)y(x)=0$, cette équation est appelée équation différentielle sans second membre, ou encore équation homogène associée à $(E)$. \\
+$a$ étant une fonction ne s'annulant pas, on peut encore écrire 
+$$(E_0):y'(x)+\dfrac{b(x)}{a(x)}y(x)=0$$.
+
+\begin{thm}
+   $a$ et $b$ étant des fonctions dérivables sur $I$ avec $a$ ne s'annulant pas sur $I$, l'ensemble des solutions de l'équation différentielle $(E_0):y'(x)+\dfrac{b(x)}{a(x)}y(x)=0$ est l'ensemble des fonctions $y$ définies sur $I$ par $y(x)=ke^{-G(x)}$ où $k$ est une constante réelle et $G$ une primitive de le fonction $\gamma(x)=\dfrac{b(x)}{a(x)}$. \\ 
+   
+ On note encore  l'ensemble des solutions de l'équation homogène associé à $(E)$ l'ensemble $\cals_h=\{  ke^{-G(x)} \vert k\in \mathbb{R} \}$.
+  
+\end{thm}
+\subsection{Applications : les équations différentielles du type $y'-ay=0$ }
+
+Soit $a$ une constantes non nulles, alors soit l'équation homogène $(E_0): y'-ay=0 $. \\
+
+Une primitive de la fonction constante $\gamma$ définie par $\gamma(x)=-a$ est $G(x)=-ax$. \\
+
+L'ensemble des solutions à l'équation homogène $(E_0): y'-ay=0 $,\\
+ noté $\cals_h$ est égal à $\{Ke^{ax} \vert  K\in \mathbb{R} \; \text{quelconque} \}$
+
+
+
+\begin{exemple}
+Dans l'exemple type, on souhaite résoudre $(E_0):y'(x)-2y(x)=0$. \\
+On a $\gamma(x)=-2$ et donc $G(x)=-2x$. La solution générale est alors du type $y_0(x)=ke^{2x}$.
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Solution particulière de l'équation différentielle $(E)$}%
+
+\begin{defn}
+On appelle \underline{solution particulière} de l'équation différentielle $a(x)y'(x)+b(x)y(x)= c(x)$ toute fonction $y$ vérifiant cette équation.
+\end{defn}
+
+Dans les sujets, toutes les indications permettant d'obtenir une solution particulière sont en générales données. Bien souvent, une fonction est proposée et il suffit de vérifier que c'est une solution particulière de $(E)$, c'est à dire de remplacer les "$y$" par la fonction proposée dans l'équation homogène (sans second membre), et de vérifier que l'on obtient bien le second membre.\\
+
+Sinon, il est vivement conseillé d'apprendre la méthode de la variation de la constante, méthode très efficace quand il s'agit de trouver une solutions particulière.
+
+\begin{exemple}
+Dans l'exemple, on nous demande de montrer que la fonction $g$ est une solution particulière de $(E)$ :
+\begin{itemize}
+   \item Calcul de la dérivée : \\
+   \hspace*{0.3cm} $g(x)=(-x-1)e^x$ donc $g'(x) =(-1)e^x+(-x-1)e^x =(-x-2)e^x$.
+   \item Remplacement dans l'équation homogène : \\
+   \hspace*{0.3cm} $g'(x)-2g(x) =(-x-2)e^x-2(-x-1)e^x =(-x-2+2x+2)e^x = xe^x$.
+   \item $g$ est donc bien une solution particulière de $(E)$.
+\end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Les équations différentielles du type $y'-ay=b$ }
+
+Soit $a$ une constantes non nulles, alors soit l'équation homogène $(E): y'-ay=b $. \\
+
+\underline{Résolution de l'équation homogène:}\\
+
+Concidérons l'équation homogène $(E_0): y'-ay=0 $ associée à l'équation $(E)$.\\
+
+Une primitive de la fonction constante $\gamma$ définie par $\gamma(x)=-a$ est $G(x)=ax$. \\
+
+L'ensemble des solutions à l'équation homogène $(E_0): y'-ay=0 $ noté $\cals_0$ est égal à $\{Ke^{ax} \vert  K\in \mathbb{R} \; \text{quelconque} \}$
+
+Reste à déterminer une solution particulière, on posera dorénavant $K$ comme étant une fonction et non une constante.\\
+
+Cette méthode présentée çi-dessous se nomme \textbf{la variation de la constante}, elle porte très bien son nom.\\
+
+\underline{Détermination d'une solution particulière:}\\
+
+Supposons que $F(x)=K(x)e^{ax}$ soit solution de l'équation différentielle $(E): y'-ay=b$. \\
+
+D'une part, $F'(x)=K'(x)e^{ax}+aK(x)e^{ax}$, on remarque alors que $F'(x)=K'(x)e^{ax}+aF(x)$, ce qui est équivalent à l'équation $F'(x)-aF(x)=K'(x)e^{ax}$.\\
+
+D'autre part, $F$ est solution de $(E): y'-ay=b$ donc $F'(x)-aF(x)=b$. \\
+
+On a donc nécéssairement $K'(x)e^{ax}=b$  autrement dit $K'(x)=be^{-ax}$ donc  nécéssairement $K(x)=- \dfrac{b}{a}e^{-ax} + \alpha $ où $\alpha \in \mathbb{R}$. \\
+
+Par exemple, si $\alpha=0$ la fonction $y_p(x)=-\dfrac{b}{a}$ est une solution particulière . \\
+
+
+\underline{Résolution de l'équation générale:}\\
+
+En remplacant $K(x)$ par l'expression précédente on détermine  l'ensemble des solutions générales à $(E): y'-ay=b $ noté $\cals_G$ est égal à $\{ \alpha e^{ax} + \dfrac{b}{a}   \vert  \alpha \in \mathbb{R} \; \text{quelconque} \}$.
+
+ 
+
+ 
+
+
+
+
+
+
+\subsection{Ensemble des solutions d'une équation différentielle}
+
+\begin{thm}
+Les solutions d'une équation différentielle sont de la forme $y(x)=y_0(x)+y_p(x)$ où $y_0$ est la solution de l'équation sans second membre $(E_0)$ et $y_p$ une solution particulière de l'équation complète $(E)$.
+\end{thm}
+
+\begin{exemple}
+Dans notre exemple, on a $y_0(x)=ke^{-2x}$ et $y_p(x)=g(x)=(-x-1)e^x$. \\
+Donc, la solution de l'équation $(E)$ est : $y(x)=ke^{-2x}+(-x-1)e^x$.
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Problème de Cauchy, unicité de la solution sous condition initiale}
+
+\begin{thm}[Théorème de Cauchy-Lipschitz dans un cas particulier, admis]
+Soient $a$, $b$ et $c$ trois fonctions continues, une équation différentielle linéaire du premier ordre du type $(E):a(x)y'(x)+b(x)y(x) =c(x)$ possède une unique solution $y$ vérifiant une condition initiale du type $y(A)=B$, avec $A \in I$ et $B\in \mathbb{R}$
+\end{thm}
+
+\begin{demo}[De l'unicité]
+Supposons qu'il existe deux solutions différentes $F_1$ et $F_2$ à l'équation différentielle $(E):a(x)y'(x)+b(x)y(x) =c(x)$ telle que  $y(A)=B$.\\
+
+Par le principe de superposition, $F_1-F_2$ est solution de l'équation homogène 
+
+$$(E_0): a(x)y'(x)+b(x)y(x) =0 $$ 
+
+Or les solutions de cette équation $ (E_0)$ sont connues et ont pour forme $Ke^{-G(x)}$ avec $K \in \mathbb{R}$ et $G$ une primitive de $\dfrac{b(x)}{a(x)}$  d'où $F_1(x) -F_2(x) = Ke^{-G(x)}$.
+Pour finir on sait que $F_1-F_2(A)=F_1(A)-F_2(A) = B-B=0$ donc $Ke^{-G(A)}=0$. Or une exponentielle ne s'annule en aucun point donc $K$ est nécéssairement nul.
+On en déduit alors que $F_1(x) -F_2(x) = 0$ et ceux pour tout $x \in I$, ce qui est absurde puisque les deux solutions sont supposés différentes.
+
+\end{demo}
+
+\begin{exemple}
+Dans l'exemple, on recherche la solution $f$ de $(E)$ vérifiant $f(0)=0$. \\
+\begin{itemize}
+   \item On a alors : $f(0)=0 \Longleftrightarrow ke^{-2\times0}+(-0-1)e^0=0 \Longleftrightarrow k-1=0 \Longleftrightarrow k=1$.
+   \item Soit $f(x)=e^{-2x}+(-x-1)e^x$.
+\end{itemize}
+\end{exemple}
+
+\newpage
+\section{Courbe représentative des solutions}
+
+\subsection{Des équations différentielles du type $ y'-ay=0$ }
+Si $a>0$ les solutions on l'allure d'une exponentielle croissante, si $a<0$ elles ont l'allure d'une exponentielle décroissante.\\
+
+\begin{minipage}{7cm}
+\includegraphics[scale=0.8] {../Figures/diff.1}
+\end{minipage}
+\hfill
+\begin{minipage}{7cm} 
+\includegraphics[scale=0.8]{../Figures/diff.2}
+\end{minipage}
+
+\subsection{Des équations différentielles du type $ y'-ay=b$ }
+Ce sont les mêmes courbes translatés de $\pm \dfrac{b}{a}$
+
+\begin{minipage}{7cm}
+\includegraphics[scale=0.8] {../Figures/diff.3}
+\end{minipage}
+\hfill
+\begin{minipage}{7cm} 
+\includegraphics[scale=0.8]{../Figures/diff.4}
+\end{minipage}
+
+\newpage
+
+
+\section{Équations différentielles d'ordre 2 à coefficients constants}
+
+\begin{defn}
+Soient $a\neq0$, $b$ et $c$ trois constantes réelles, $d$ une fonction dérivable sur $I$ et $y$ la fonction inconnue, définie et deux fois dérivable sur $I$. \\
+On appelle \underline{équation différentielle linéaire du second
+ordre à coefficients constants} toute équation du type
+$$(E):ay''(x)+by'(x)+cy(x) =d(x).$$
+\end{defn}
+
+
+Tout comme les équations différentielles d'ordre 1, nous allons travailler sur un exemple.
+
+
+\begin{tabular}{||l}
+On considère l'équation différentielle $(E):y''-2y'+y=8e^x$ où $y$ est une fonction de la variable réelle $x$, \\
+définie et deux fois dérivable sur $\R$, $y'$ la fonction dérivée de $y$ et $y''$ sa fonction dérivée seconde. \\
+1. Déterminer les solutions définies sur $\R$ de l'équation différentielle $(E_0):y''-2y'+y =0$. \\
+2. Soit $h$ la fonction définie sur $\R$ par $h(x)=4x^2e^x$. \\
+   \hspace{0.3cm} Démontrer que la fonction $h$ est une solution particulière de l'équation différentielle $(E)$. \\
+3. En déduire l'ensemble des solutions de l'équation différentielle $(E)$. \\
+4. Déterminer la solution $f$ de l'équation différentielle $(E)$ qui vérifie les conditions initiales \\
+   \hspace{0.3cm} $f(0)=-4$ et $f'(0)=-4$. \\
+\end{tabular}
+
+\begin{exemple}
+Dans cet exemple, on a :
+\begin{itemize}
+   \item $a=1$, $b=-2$, $c=1$ et $d(x)=4x^2e^x$.
+\end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Solution générale de l'équation sans second membre}
+
+\begin{thm}
+On considère l'équation différentielle sans second membre $(E_0):ay''+by'+cy= 0$ \\
+d'équation caractéristique associée $ar^2+br+c= 0$. \\
+Le tableau ci-dessous donne les solutions de $(E_0)$ en fonction du discriminant $\Delta =b^2-4ac$ : (dans tous les cas, $a$ et $b$ sont des constantes réelles quelconque).
+\begin{center}
+\begin{tabular}{c|c|c}
+   & Solutions de l'équation caractéristique associée & Solution générale de $(E_0)$ \\
+   \hline
+   $\Delta> 0$ & 2 racines réelles & $y(x)= Ae^{r_1x}+Be^{r_2x}$ \\
+   & $r_1 =\dfrac{-b-\sqrt{\Delta}}{2a}$ et $r_2 =\dfrac{-b+\sqrt{\Delta}}{2a}$ & \\
+   \hline
+   $\Delta= 0$ & une racine double réelle & $y(x)=(Ax+B)e^{rx}$ \\
+   & $r =-\dfrac{b}{2a}$ & \\
+   \hline
+   $\Delta< 0$ & 2 racines complexes conjuguées & $y(x)= e^{\alpha x}[A\cos(\beta x)+B\sin(\beta x)]$ \\
+   & $\alpha+i\beta$ et $\alpha-i\beta$ où $\alpha =\dfrac{-b}{2a}$ et $\beta  =\dfrac{\sqrt{-\Delta }}{2a}$ & \\
+\end{tabular}
+\end{center}
+\end{thm}
+
+\begin{exemple}
+   Résolution de l'équation différentielle $(E_0):y''+\omega^2y=0$ :
+   \begin{itemize}
+      \item L'équation caractéristique de $(E_0)$ est $r^2+\omega^2 =0$ de discriminant $\Delta =-4\omega^2 <0$. \\
+      \hspace*{0.3cm} Les solutions de cette équation sont $0+i\omega$ et $0-i\omega$.
+      \item Les solutions de $(E_0)$ sont du type $y(x)= e^{0\times x}[A\cos(\omega x)+B\sin(\omega x)] = A\cos(\omega x)+B\sin(\omega x)$.
+      \item On remarque que l'on retrouve le résultat étudié en terminale !
+   \end{itemize}
+\end{exemple}
+
+\begin{exemple}
+   Résolution de l'équation différentielle $(E_0):2y''-5y'-3y=0$ :
+   \begin{itemize}
+      \item L'équation caractéristique de $(E_0)$ est $2r^2-5r-3 =0$ de discriminant $\Delta =49 >0$. \\
+      \hspace*{0.3cm} Les solutions de cette équation sont $r_1 =-\dfrac12$ et $r_2 =3$.
+      \item Les solutions de $(E_0)$ sont donc du type $y_0(x) =Ae^{\frac12x}+Be^{3x}$
+   \end{itemize}
+\end{exemple}
+
+
+\begin{exemple}
+Dans l'exemple, on souhaite résoudre $(E_0):y''-2y'+y =0$.
+\begin{itemize}
+      \item L'équation caractéristique de $(E_0)$ est $r^2-2r+1 =0$ de discriminant $\Delta =0$. \\
+      \hspace*{0.3cm} L'équation admet donc une solution double $r =1$.
+      \item Les solutions de $(E_0)$ sont donc du type $y(x) =(Ax+B)e^x$.
+   \end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Solution particulière de l'équation différentielle $(E)$}
+
+\begin{defn}
+On appelle solution particulière de l'équation différentielle $ay''(x)+by'(x)+cy(x)= d(x)$ toute fonction $y$ vérifiant cette équation.
+\end{defn}
+
+Dans les sujets, toutes les indications permettant d'obtenir une solution particulière sont en générales données. Bien souvent, une fonction est proposée et il suffit de vérifier que c'est une solution particulière de $(E)$, c'est à dire de remplacer les "$y$" par la fonction proposée dans l'équation homogène (sans second membre), et de vérifier que l'on obtient bien le second membre
+
+\begin{exemple}
+Dans l'exemple, on nous demande de montrer que la fonction $h$ est une solution particulière de $(E)$.
+\begin{itemize}
+   \item Calcul de la dérivée première : \\
+   \hspace*{0.3cm} $h(x)=4x^2e^x$ donc $h'(x) =8xe^x+4x^2e^x =(8x+4x^2)e^x$.
+   \item Calcul de la dérivée seconde : \\
+   \hspace*{0.3cm} $h''(x) =(8+8x)e^x+(8x+4x^2)e^x =(8+16x+4x^2)e^x$.
+   \item Remplacement dans l'équation homogène : \\
+   \hspace*{0.3cm} $h''(x)-2h'(x)+h(x) =(8+16x+4x^2)e^x -2(8x+4x^2)e^x +4x^2e^x = (8+16x+4x^2-16x-8x^2+4x^2)e^x =8e^x$.
+   \item $h$ est donc bien une solution particulière de $(E)$.
+\end{itemize}
+\end{exemple}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ensemble des solutions d'une équation différentielle}
+
+\begin{thm}
+Les solutions d'une équation différentielle sont de la forme $y(x)=y_0(x)+y_p(x)$ où $y_0$ est la solution de l'équation sans second membre et $y_p$ une solution particulière de l'équation complète.
+\end{thm}
+
+\begin{exemple}
+Dans notre exemple, on a $y_0(x) =(Ax+B)e^x$ et $y_p(x)=h(x)=4x^2e^x$. \\
+Donc, la solution de l'équation $(E)$ est : $y(x) =(Ax+B)e^x+4x^2e^x =(4x^2+Ax+B)e^x$.
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unicité de la solution sous conditions initiales}
+
+\begin{thm}
+Une équation différentielle linéaire à coefficients constants du second ordre $(E)$ possède une unique solution vérifiant deux conditions initiales.
+\end{thm}
+
+\begin{exemple}
+Dans l'exemple, on recherche la solution $f$ de $(E)$ vérifiant $f(0) =-4$ et $f'(0) =-4$.
+\begin{itemize}
+   \item Première condition initiale : \\
+   \hspace*{0.3cm} $f(0) =-4 \Longleftrightarrow (4\times0^2+A\times0+B)e^0 =-4 \Longleftrightarrow B =-4$.
+   \item Calcul de la dérivée : \\
+   \hspace*{0.3cm} $f'(x) =(8x+A)e^x+(4x^2+Ax+B)e^x =(4x^2+8x+Ax+A+B)e^x$.
+   \item Deuxième condition initiale : \\
+   \hspace*{0.3cm} $f'(0) =-4 \Longleftrightarrow (4\times0^2+8\times0+A\times0+A+B)e^0 =-4 \Longleftrightarrow A+B =-4 \Longleftrightarrow A =0$.
+   \item Conclusion : 
+   \hspace*{0.3cm} $f(x) =(4x^2-4)e^x$.
+\end{itemize}
+\end{exemple}
+
+
+\end{document}

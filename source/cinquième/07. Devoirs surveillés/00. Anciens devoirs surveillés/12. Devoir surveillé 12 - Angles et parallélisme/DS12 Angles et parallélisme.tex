@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 12 - Angles et parallélisme\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Définir deux angles alternes-internes et deux angles correspondants.\end{exercice}\begin{exercice}{2}{5}Deux droites parallèles sont coupées par une sécante. Un angle correspondant mesure $68^\circ$. Donner la mesure de trois autres angles de la figure en justifiant.\end{exercice}\begin{exercice}{3}{5}Tracer deux droites parallèles et une sécante, puis placer deux angles alternes-internes égaux à $115^\circ$.\carreaux{5}\end{exercice}\begin{exercice}{4}{6}Sur une figure, deux angles alternes-internes mesurent $42^\circ$ chacun. Peut-on affirmer que les deux droites sont parallèles ? Rédiger la justification.\end{exercice}\end{document}

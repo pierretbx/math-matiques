@@ -1,0 +1,127 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{ALGORITHMIQUE ET PROGRAMMATION - Travaux pratiques 4}
+\addcontentsline{toc}{section}{ALGORITHMIQUE ET PROGRAMMATION - Travaux pratiques 4}
+
+\noindent \textbf{Objectif 1 :} \quad Si ... alors ... sinon
+
+\medskip
+\noindent \begin{minipage}{8.5cm}
+\begin{dinglist}{111}
+\item Sur Scratch, remets dans l'ordre les briques ci-contre de telle façon que le script permette de faire le programme de calcul ci-dessous
+\end{dinglist}
+\begin{center}
+\begin{minipage}{7cm}
+\begin{edupython}
+Choisis un nombre
+Si le nombre est positif, lui soustraire 5
+Sinon lui ajouter 5
+Prendre le double du resultat
+\end{edupython}
+\end{minipage}
+\end{center}
+
+\ding{226} \textit{Appelle le professeur pour la vérification}
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{8cm}
+\begin{center}
+\includegraphics[scale=0.35]{../40.Image/54.Bon_nombre_1.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\noindent \textbf{Objectif 2  :} \quad Le bon nombre
+
+\medskip
+\noindent Le jeu du bon nombre consiste à faire deviner un nombre précis à un joueur.
+
+\noindent Le jeu doit mettre en interaction le lutin et le joueur :
+\begin{enumerate}
+\item[•] le lutin pense à un nombre choisi au hasard entre $1$ et $10$ ;
+\item[•] l'utilisateur doit deviner ce nombre. Pour cela, il n'a droit qu'à un seul essai.
+\end{enumerate}
+
+\medskip
+\begin{dinglist}{111}
+\item Faire dire au lutin \og Tu vas essayer de deviner un nombre entier compris entre $1$ et $10$ \fg{} pendant $2$ secondes.
+\item Créer une variable \ovalvariable{nombre} et la cacher pour qu'elle n'apparaisse pas à l'écran.
+\item Affecter à la variable \ovalvariable{nombre} une valeur aléatoire entre $1$ et $10$ : \ovaloperator{nombre aléatoire entre \ovalnum{1} et \ovalnum{10}} 
+\item Demander \og Quel nombre proposes-tu ? \fg{} 
+\item \textbf{Si} la réponse donnée est correct, \textbf{alors} faire dire au lutin \og Bravo ! Tu as deviné du premier coup! \fg{}. 
+
+\textbf{Sinon}, faire dire au lutin \og Perdu le nombre était : \fg{} et faire afficher le bon nombre   
+\end{dinglist}
+
+\ding{226} \textit{Appelle le professeur pour la vérification}
+
+\bigskip
+\noindent \textbf{Objectif 3  :} \quad Précision de la réponse
+
+\medskip
+\noindent \begin{minipage}{12cm}
+\begin{dinglist}{111}
+\item On souhaite améliorer le jeu précédent pour que :
+\begin{enumerate}
+\item[•]Si l'utilisateur a trouve l bon nombre, alors le lutin affiche \og Bravo ! Tu as deviné du premier coup! \fg{}.
+\item[•]Sinon :
+\begin{enumerate}
+\item[-] Si il a trouvé un nombre plus grand, alors le lutin dit \og Dommage ton nombre était trop grand. L abonne réponse était : \fg{} et il donne la bonne réponse.
+\item[-] Si il a trouvé un nombre plus petit, alors le lutin dit \og Dommage ton nombre était trop petit. L abonne réponse était : \fg{} et il donne la bonne réponse.
+\end{enumerate}
+\end{enumerate}
+\end{dinglist}
+\ding{226} \textit{Appelle le professeur pour la vérification}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{4cm}
+\begin{center}
+\includegraphics[scale=0.75]{../40.Image/54.Bon_nombre_2.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\hrulefill
+\bigskip
+
+On souhaite complexifié un peu le jeu précédent. Le lutin pense désormais à un nombre entier entre $1$ et $1000$.
+
+\bigskip
+\noindent \textbf{Objectif bonus 1 :} \quad Augmentation du nombre de tentatives
+
+\vspace{-2mm}
+\noindent \begin{minipage}{12.5cm}
+L'utilisateur a autant d'éssais qui lui sont nécéssaires pour trouver le bon nombre
+\begin{dinglist}{111}
+\item Effectuer les changements nécessaires pour que le jeu arrive a son terme.
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{4cm}
+\begin{scratch}[scale=0.8]
+\blockrepeat{répéter jusqu'à \booloperator{~~~~~~}}
+{
+\blockspace
+}
+\end{scratch}
+\end{minipage}
+
+\vspace{-2mm}
+\noindent \textbf{Objectif bonus 2  :} \quad Compteur de coup
+
+\medskip
+\begin{dinglist}{111}
+\item Créer une variable et l'insérer dans le script de telle façon qu'elle compte le nombre d'essais.
+\end{dinglist}
+
+
+\bigskip
+\noindent \textbf{Objectif bonus 3  :} \quad Limitation du nombre de coup
+
+\begin{dinglist}{111}
+\item Le joueur ne doit avoir que $10$ essais pour trouver le bon nombre.
+\end{dinglist}
+\ding{226} \textit{Appelle le professeur pour la vérification}
+
+\end{document}

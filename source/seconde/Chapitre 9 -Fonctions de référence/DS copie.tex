@@ -1,0 +1,224 @@
+\documentclass[9pt,french]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{pstricks}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+\usepackage[landscape,twocolumn]{geometry}
+\usepackage{eurosym}
+\geometry{hmargin=1cm,vmargin=1cm}
+\pagestyle{empty}
+\begin{document}
+\begin{comment}
+\section*{Noyé ou emprisonné}
+
+Vous êtes au fond d'un puits de forme cylindrique. Pour sortir du puits, vous décidez de le remplir d'eau grâce à un robinet qui délivre exactement le volume d'eau choisi. \\
+
+L'objectif ici est de délivrer exactement le bon volume d'eau pour remplir le puits et en sortir. Pas assez d'eau et vous resterez bloqués dans le puits. Trop d'eau et vous serez repérés puis arrêtés.
+
+Vous disposerez d'une manivelle attachée à une roue qui enroule une corde attachée à un seau. Vous avez fait 8 tours de manivelle \textit{(donc de roue)} pour remonter le seau du fond du puits à la surface. On sait que la roue à un rayon de $30cm$. On sait aussi que le rayon du puits est de $3m$ \\
+
+\begin{enumerate}
+\item Déterminer la profondeur du puits.
+\item En déduire le volume du puits.
+\end{enumerate}
+
+\section*{Élément de correction}
+\begin{enumerate}
+\item On sait que la hauteur du puit, notée $h$, est égale à la distance parcourue en un tour multipliée par le nombre de tour, soit ici $8$. \\
+Or la distance parcourue en anglais en tour est égale à $2\pi \times 0,3$ mètre. \\
+Par suite la hauteur du puits $h$ est égale à $8 \times 2\pi \times 0,3$ soit environ 15 mètres.\\
+Ainsi la profondeur du puits est de 15 mètres environ.
+
+\item On sait que le volume du puits, noté $V$, est égale à la hauteur du puits  multipliée par la surface de la base du cylindre soit la surface d'un disque de rayon 3, ou encore $\pi \times 3^2$.  \\
+Par suite le volume du puits $V$ est égale à $15 \times \pi \times 9$ mètres cube, soit environ $424m^3$. \\
+Ainsi le volume du puits est de $424m^3$. 
+\end{enumerate}
+
+\section*{CDI - le navire}
+\begin{center}
+Cote d'un livre sur l'indépendance. 
+%Jamais deux sans trois. 
+\end{center}
+
+\section*{Salle 1 - Le fort}
+
+\begin{center}
+Je suis commun à tous
+ $$1$$
+$$11$$
+$$21$$
+$$1211$$
+$$111221$$
+
+\end{center}
+
+\section*{Salle UC - Les égouts}
+\begin{center}
+A1B2C3-RDV21/3
+\end{center}
+
+\end{comment}
+
+\section*{Devoir surveillé VII - le 14/02/20}
+
+
+
+
+\section{Résolution algébrique}
+
+Résoudre algébriquement l'équation $f(x)=3$ avec: 
+
+\begin{enumerate}
+\item $f(x)=x^2 $
+\item $f(x)=\dfrac{1}{x}$
+\item $f(x)=\sqrt{x}$
+\item $f(x)=-x+ \dfrac{2}{3} $
+\end{enumerate}
+
+
+\section{Identification de fonction}
+Donner l'expression algébrique de $f(x),g(x),h(x)$ de chaque courbe représentées $\mathcal{C}_f, \mathcal{C}_g, \mathcal{C}_h$ sur le graphique \\
+\vspace{1cm}
+
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[scale=0.9,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-6.875677434446674,0.) -- (7.9081973978945665,0.);
+\foreach \x in {-6.,-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.,6.,7.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-5.604930285375101) -- (0.,4.731328773096916);
+\foreach \y in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-6.875677434446674,-5.604930285375101) rectangle (7.9081973978945665,4.731328773096916);
+\draw [samples=50,rotate around={0.:(0.,0.)},xshift=0.cm,yshift=0.cm,domain=-4.0:4.0)] plot (\x,{(\x)^2/2/0.5});
+\draw[line width=1.2pt,color=qqwuqq,smooth,samples=500,domain=-6.875677434446674:7.9081973978945665] plot(\x,{1.0/(\x)});
+\draw[line width=1.2pt,color=ccqqqq,smooth,samples=100,domain=-6.875677434446674:7.9081973978945665] plot(\x,{(\x)^(3.0)});
+\begin{scriptsize}
+\draw[color=black] (-0.5956439617433553,1.1554456909060802) node {$C_h$};
+\draw[color=qqwuqq] (-6.73335372968286,-0.26779135673206317) node {$C_f$};
+\draw[color=ccqqqq] (-1.538538505803627,-5.3736542651339025) node {$C_g$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\newpage
+
+\section{Résolution}
+
+Résoudre algébriquement ou graphiquement l'inéquation $f(x) \leq 4$ avec \textit{(pensez à utiliser la variation des fonctions du chapitre si vous résolvez par une méthode algébrique)} : \\
+\begin{enumerate}
+\item $f(x)=x^2 $
+\item $f(x)=\dfrac{1}{x}$
+\item $f(x)=x^3$
+\item $f(x)=-x+ \dfrac{2}{3} $
+\end{enumerate}
+
+
+
+\section{Position relative de courbe}
+Soit $f$ et $g$ deux fonctions tel que $f(x)=3x^3+2x+1$ et $g(x)=x(x^2+3)+1$. 
+Déterminer pour quels $x$ la courbe représentative $C_f$ est en dessous de la courbe représentative $C_g$.
+
+\section{Étude de fonction}
+Soit $v$ la fonction valeur absolue définie par $v(x)=\vert x \vert$. Étudier la fonction $v$.
+
+
+\newpage
+
+\section*{Devoir surveillé VII - le 17/02/20}
+
+
+
+
+\section{Résolution algébrique}
+
+Résoudre algébriquement l'équation $f(x)=4$ avec: 
+
+\begin{enumerate}
+\item $f(x)=x^2+1 $
+\item $f(x)=\dfrac{1}{x-2}$
+\item $f(x)=\sqrt{x}+4$
+\item $f(x)=-x+ \dfrac{3}{2} $
+\end{enumerate}
+
+
+\section{Identification de fonction}
+Donner l'expression algébrique de $f(x),g(x),h(x)$ de chaque courbe représentées $\mathcal{C}_f, \mathcal{C}_g, \mathcal{C}_h$ sur le graphique
+
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{ccqqqq}{rgb}{0.8,0.,0.}
+\begin{tikzpicture}[scale=1.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.776357241774422,0.) -- (4.870203595708844,0.);
+\foreach \x in {-4.,-3.,-2.,-1.,1.,2.,3.,4.}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0.,-3.0507688945580305) -- (0.,3.693697828158897);
+\foreach \y in {-3.,-2.,-1.,1.,2.,3.}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.776357241774422,-3.0507688945580305) rectangle (4.870203595708844,3.693697828158897);
+\draw [samples=50,rotate around={0.:(0.,0.)},xshift=0.cm,yshift=0.cm,domain=-4.0:4.0)] plot (\x,{(\x)^2/2/0.5});
+\draw[line width=1.2pt,color=ccqqqq,smooth,samples=100,domain=-4.776357241774422:4.870203595708844] plot(\x,{(\x)^(3.0)});
+\draw[line width=1.2pt,color=qqqqff,smooth,samples=100,domain=2.305053690051119E-6:4.870203595708844] plot(\x,{(\x)^(0.5)});
+\begin{scriptsize}
+\draw[color=black] (-0.7366422340196964,1.0934215013282744) node {$C_f$};
+\draw[color=ccqqqq] (-1.2938443040548309,-2.899860000590182) node {$C_g$};
+\draw[color=qqqqff] (0.3081116472961807,0.8960791015241645) node {$C_h$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\newpage
+
+\section{Résolution}
+
+Résoudre algébriquement ou graphiquement l'inéquation $f(x) \leq 1,5$ avec \textit{(pensez à utiliser la variation des fonctions du chapitre si vous résolvez par une méthode algébrique)} : \\
+\begin{enumerate}
+\item $f(x)=x^2 $
+\item $f(x)=\sqrt{x}$
+\item $f(x)=x^3$
+\item $f(x)=-x+ \dfrac{2}{3} $
+\end{enumerate}
+
+
+
+\section{Position relative de courbe}
+Soit $f$ et $g$ deux fonctions tel que $f(x)=3x^3+2x^2+1$ et $g(x)=4x(x^2+3x)+1$. 
+Déterminer pour quels $x$ la courbe représentative $C_f$ est en dessous de la courbe représentative $C_g$.
+
+\section{Étude de fonction}
+Soit $v$ la fonction valeur absolue définie par $v(x)=x\vert x \vert$. Étudier la fonction $v$.
+
+
+\newpage 
+\begin{comment}
+\begin{enumerate}
+
+\item Programmer une fonction, appelée "successeur", qui donne le successeur d'un entier. ( c'est à dire que si je rentre 95 la fonction me rend affiche "le successeur du nombre est 96" ) \\
+
+%Condition "si/alors"
+\item Programmer une fonction, appelée "parité", qui me dit si un entier est pair ou impair.\\
+
+%Boucle "pour"
+\item Programmer une fonction, appelée "affichage", qui affiche les $n$ premiers entiers naturels pairs.\\
+
+%iste
+\item Modifier la fonction "affichage", pour qu'elle n'affiche plus les entiers mais qui me donne une liste avec les $n$  premiers entiers naturels pairs. \\
+
+\item Programmer une fonction, appelée "héron", qui donne une liste avec les $n$ premières itération de l'algorithme du devoir à la maison (On pourra prendre 2 comme nombre de départ).
+
+
+\end{enumerate}
+
+\end{comment}
+
+
+
+
+\end{document}
+

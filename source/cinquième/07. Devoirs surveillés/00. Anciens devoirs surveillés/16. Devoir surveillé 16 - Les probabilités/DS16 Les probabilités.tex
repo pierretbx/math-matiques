@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 16 - Les probabilités\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}On lance un dé équilibré à six faces. Donner la probabilité d'obtenir $4$, puis un nombre pair.\end{exercice}\begin{exercice}{2}{5}Une urne contient $5$ boules rouges, $3$ bleues et $2$ vertes. Calculer la probabilité de tirer une boule rouge, puis une boule qui n'est pas bleue.\end{exercice}\begin{exercice}{3}{5}Classer les événements : impossible, certain, peu probable, équiprobable.\begin{enumerate}\item Obtenir pile en lançant une pièce équilibrée.\item Tirer une boule jaune dans une urne sans boule jaune.\item Obtenir un nombre inférieur à $7$ avec un dé à six faces.\end{enumerate}\end{exercice}\begin{exercice}{4}{6}Inventer une expérience aléatoire dans laquelle la probabilité d'un événement est $\dfrac14$, puis expliquer.\end{exercice}\end{document}

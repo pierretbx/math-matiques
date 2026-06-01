@@ -1,0 +1,166 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{6}
+\chapter{Pyramides et cônes}
+
+\section{Pyramides et cônes : définition et perspective}
+
+\subsection{La pyramide}
+
+\begin{dft}
+Une pyramide est un solide dont :
+\begin{enumerate}
+\item[•] une face est un polygone appelée la base de la pyramide ;
+\item[•] les autres faces, appelées face latérales, sont des triangles qui ont un sommet commun, appelé le sommet de la pyramide.
+\end{enumerate}
+\end{dft}
+
+\begin{dft}
+La hauteur d'une pyramide est le segment issu de son sommet et perpendiculaire à la base.
+\end{dft}
+
+\begin{dft}
+Une arête latérale est un segment joignant les sommets de la base au sommet de la pyramide.
+\end{dft}
+
+\begin{ex}
+
+\noindent \begin{minipage}{5.5cm}
+\includegraphics[scale=0.7]{../40.Image/Pyramide_et_cone_1.png}
+\end{minipage}
+\begin{minipage}{11cm}
+Traçons une pyramide $SABCDE$ de sommet $S$ en perspective cavalière et décrivons les éléments de ce solide.
+\medskip
+
+\begin{enumerate}
+\item[•] Le sommet de cette pyramide est le point $S$.
+\item[•] La base de cette pyramide est la pentagone $ABCDE$.
+\item[•] Les faces latérales sont les triangles : $SAB$, $SBC$, $SCD$, $SDE$, $SEA$.
+\item[•] Les arêtes latérales sont les segments : $[AS]$, $[BS]$, $[CS]$, $[DS]$, $[ES]$.
+\item[•] La hauteur de la pyramide est le segment $[OS]$.
+\end{enumerate}
+\end{minipage}
+\end{ex}
+
+\begin{dft}
+Une pyramide régulière est une pyramide dont la base est un polygone régulier (par exemple un triangle équilatéral ou un carré) et dont les faces latérales sont des triangles isocèles superposables.
+\end{dft}
+
+\noindent \begin{minipage}{11cm}
+\begin{rmq}\medskip
+\begin{enumerate}
+\item[•] Une pyramide régulière à base triangulaire s'appelle un tétraèdre.
+C'est un solide dont les quatre faces sont des triangles équilatéraux superposables.\medskip
+\item[•] La hauteur d'une pyramide régulière passe par le centre de la base qui est le point de concours des diagonales.
+\end{enumerate} 
+\end{rmq}
+\end{minipage}
+\begin{minipage}{5cm}
+\vspace{10mm}
+\begin{center}
+\begin{tikzpicture}[scale=4]
+	\def\tetcol{blue}
+	\def\opacity{0.8}
+	\coordinate (A) at (0,0,0);
+	\coordinate (B) at (1,0,0);
+	\coordinate (C) at (0.5,0,0.866);
+	\coordinate (D) at (0.5,0.866,0.5);
+	\filldraw[fill=blue!10,rounded corners=0.5pt] (A) -- (B) -- (D) -- cycle;
+	\filldraw[fill=blue!60,rounded corners=0.5pt] (A) -- (C) -- (B) -- cycle;
+	\filldraw[fill=blue!20,fill opacity=\opacity,rounded corners=0.5pt] (B) -- (C) -- (D) -- cycle;
+	\filldraw[fill=blue!30,fill opacity=\opacity,rounded corners=0.5pt] (A) -- (C) -- (D) -- cycle;
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{ex}
+Trace une pyramide régulière à base carrée de côté 2 cm et de hauteur 3 cm en perspective cavalière.
+
+\noindent\grandscarreaux{\linewidth}{6.4cm}
+\end{ex}
+
+\section{Le cône de révolution}
+
+\vspace{-8mm}
+\noindent \begin{minipage}{12cm}
+\begin{dft}
+Un cône de révolution est un solide qui est généré par un triangle rectangle en rotation autour d'un des côtés de son angle droit.
+\end{dft}
+
+\begin{dft}
+La base du cône de révolution est un disque.
+\end{dft}
+
+\begin{dft}
+La hauteur du cône de révolution est le segment qui joint le centre de ce disque au sommet du cône. Il est perpendiculaire au disque de base.
+\end{dft}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{4cm}
+\vspace{5mm}
+\begin{center}
+\begin{tikzpicture}
+\newcommand{\radiusx}{2}
+\newcommand{\radiusy}{.5}
+\newcommand{\height}{5}
+\coordinate (a) at (-{\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+\coordinate (b) at ({\radiusx*sqrt(1-(\radiusy/\height)*(\radiusy/\height))},{\radiusy*(\radiusy/\height)});
+\draw[fill=blue!15] (a)--(0,\height)--(b)--cycle;
+\fill[blue!30] circle (\radiusx{} and \radiusy);
+\begin{scope}
+\clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,-2*\radiusy)$);
+\draw circle (\radiusx{} and \radiusy);
+\end{scope}
+\begin{scope}
+\clip ([xshift=-2mm]a) rectangle ($(b)+(1mm,2*\radiusy)$);
+\draw[dashed] circle (\radiusx{} and \radiusy);
+\end{scope}
+\draw[dashed] (0,\height)|-(\radiusx,0) node[right, pos=.25]{} node[above,pos=.75]{};
+\draw (0,.15)-|(.15,0);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{rmq}
+La surface latérale d'un cône, appelée aussi développement, est générée par l'hypoténuse du triangle rectangle. Elle a la forme d'un secteur de disque.
+\end{rmq}
+
+\begin{ex}
+Trace un cône de révolution en perspective et décris les éléments de ce solide.
+
+\noindent\grandscarreaux{\linewidth}{6.4cm}
+\end{ex}
+
+\section{Patron d'une pyramide ou d'un cône}
+
+\subsection{La pyramide}
+
+\begin{ex}
+Dessine le patron d'une pyramide dont la base est un rectangle de longueur $5$cm et de largeur $4$cm et dont chaque arrête latérale mesure $6$cm.
+
+\renewcommand{\arraystretch}{2}
+\noindent \begin{tabularx}{\linewidth}{p{2cm}*{1}{>{ \arraybackslash}X}}
+Étape 1 : & On trace le rectangle de longueur $5$ cm et de largeur $4$cm.\\
+Étape 2 : & On trace des arcs de cercle, de centre les sommets du rectangle et de rayon $6$cm.\\
+Étape 3 : & On trace les $4$ triangles isocèles formant les faces latérales de la pyramide.\\
+\end{tabularx}
+
+\noindent\grandscarreaux{\linewidth}{8cm}
+\end{ex}
+
+\subsection{Le cône de révolution \textit{(Hors programme)}}
+
+\begin{ex}
+Dessine le patron d'un cône $SOA$ de rayon $3$cm et de hauteur $4$cm.
+
+\vspace{-1cm}
+\begin{flushright}
+\grandscarreaux{6.48cm}{0.8cm}
+\end{flushright}
+\vspace{-4.2mm}
+\noindent\grandscarreaux{\linewidth}{7.2cm}
+
+\end{ex}
+\end{document}

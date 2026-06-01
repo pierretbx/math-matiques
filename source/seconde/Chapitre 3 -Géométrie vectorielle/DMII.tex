@@ -1,0 +1,92 @@
+ \documentclass[french]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+%\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgf,pgfplots,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{lscape}
+\usepackage{pstricks-add}
+%\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+%\redefinecolor{thm}{title}{bgcolor}{alizarin}
+%\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+%\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\geometry{hmargin=2cm,vmargin=2cm}
+\pagestyle{empty}
+
+\begin{document}
+\section*{Devoir à la maison II}
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-12.248318523626864,-6.148614831021472) rectangle (10.42454346131598,6.622583208934634);
+\draw [line width=1pt] (-3.62,5.03)-- (-5.02,-1.97);
+\draw [line width=1pt] (-3.62,5.03)-- (1.8159411764079942,2.1057239853717946);
+\draw [line width=1pt] (-4.32,1.53)-- (-0.9020294117960029,3.5678619926858977);
+\draw [line width=1pt] (-5.02,-1.97)-- (1.8159411764079942,2.1057239853717946);
+\begin{scriptsize}
+\draw [fill=ududff] (-3.62,5.03) circle (2.5pt);
+\draw[color=ududff] (-3.4802976778872483,5.409230829271675) node {$A$};
+\draw [fill=ududff] (-5.02,-1.97) circle (2.5pt);
+\draw[color=ududff] (-5.2,-1.5874726738942917) node {$B$};
+\draw [fill=ududff] (1.8159411764079942,2.1057239853717946) circle (2.5pt);
+\draw[color=ududff] (1.9576465638138871,2.486557214025132) node {$C$};
+\draw [fill=uuuuuu] (-4.32,1.53) circle (2pt);
+\draw[color=uuuuuu] (-4.471111441490976,1.8665961441243502) node {$I$};
+\draw [fill=uuuuuu] (-0.9020294117960029,3.5678619926858977) circle (2pt);
+\draw[color=uuuuuu] (-0.7524689703238123,3.921324261509799) node {$J$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+\subsection*{Exercice 1 - Le théorème des milieux}
+Soient ABC un triangle quelconque; $I$,$J$ les milieux respectifs [AB] et [BC].
+
+\underline{L'objectif ici est de montrer que $\overrightarrow{IJ}$ est colinéaire à $\overrightarrow{BC}$.}\\
+
+
+\begin{itemize}
+\item[A)] Exprimer $\overrightarrow{BA}$ en fonction de $\overrightarrow{IA}$.
+\item[B)] Exprimer $\overrightarrow{AC}$ en fonction de $\overrightarrow{AJ}$.
+\item[C)]A l'aide de la relation de Chasles et \underline{des points $A,B$ et $C$} recopier et compléter l'expression ci dessous:  $$\overrightarrow{BC} = \overrightarrow{\cdots} + \overrightarrow{\cdots}$$
+\item[D)] A l'aide de C) puis de A) et B) ainsi que la relation de Chasles, montrer que $\overrightarrow{BC}=2\overrightarrow{IJ}$.
+\item[E)] Conclure.
+\end{itemize}
+
+\subsection*{Exercice 2 - Le parralèlogramme de Varignon ( \underline{bonus} )}
+
+\underline{Dans cet exercice, on supose que le résultat de l'exercice 1 est vrai, c'est à dire $2\overrightarrow{IJ}=\overrightarrow{BC}$.}\\
+
+
+\begin{itemize}
+\item[A)] Tracer le quadrilatère ABDC de votre choix ( noté dans le sens inverse des aiguilles d'une montre  ).\\
+\end{itemize}
+On note I,J,K,L les milieux respectifs de [AB], [AC], [BD], [DC].\\
+
+
+\begin{itemize}
+\item[B)] Tracer I,J,K,L au compas, laissez les traits de construction.\\
+
+\end{itemize}
+
+\underline{L'objectif est de montrer que IJKL est un parralèlogramme.}\\
+
+
+
+\begin{itemize}
+\item[C)] Expliquer \underline{à l'aide de l'exercice 1} que $\overrightarrow{KL}$ est colinéaire à  $\overrightarrow{BC}$. 
+\item[D)] Exprimer $\overrightarrow{BC}$ en fonction de $\overrightarrow{KL}$.
+\item[E)] En déduire que  $\overrightarrow{IJ}=\overrightarrow{KL}$.
+\item[F)] Conclure.
+\end{itemize}
+
+\end{document}

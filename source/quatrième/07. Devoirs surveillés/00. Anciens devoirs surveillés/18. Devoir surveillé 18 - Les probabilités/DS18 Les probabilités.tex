@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 18 - Les probabilités\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}On tire une carte dans un jeu de $32$ cartes. Calculer la probabilité d'obtenir un roi, puis un coeur.\end{exercice}\begin{exercice}{2}{5}Une roue comporte $8$ secteurs égaux : $3$ rouges, $2$ bleus et $3$ verts. Calculer les probabilités des trois couleurs.\end{exercice}\begin{exercice}{3}{5}Une urne contient $4$ boules noires, $5$ blanches et $1$ rouge. Quelle est la probabilité de ne pas tirer une boule rouge ?\end{exercice}\begin{exercice}{4}{6}Inventer une expérience dont une issue a pour probabilité $\frac{3}{10}$.\end{exercice}\end{document}

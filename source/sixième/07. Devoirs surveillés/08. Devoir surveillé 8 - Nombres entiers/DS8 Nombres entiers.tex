@@ -1,0 +1,66 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\pagestyle{empty}
+\noindent NOM, Prénom et classe : \dotfill
+
+\section*{Devoir surveillé 8 - Nombres entiers}
+\noindent\textit{La calculatrice est interdite. Les réponses doivent être justifiées lorsque c'est demandé.} \hfill \textit{Durée : 45 minutes}
+
+\medskip
+\paragraph{Exercice 1} \hfill \textbf{4 points}
+
+\noindent Écris les nombres suivants en chiffres.
+\begin{enumerate}
+\item Trois-millions-quatre-cent-douze-mille-soixante-dix-huit.
+\item Neuf-cent-huit-millions-cinq-mille-six.
+\item Quarante-deux-milliards-sept-cent-millions.
+\item Dix-huit-mille-neuf-cent-quarante.
+\end{enumerate}
+
+\medskip
+\paragraph{Exercice 2} \hfill \textbf{5 points}
+
+\noindent Recopie puis complète le tableau.
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabularx}{\linewidth}{|c|X|X|X|}
+\hline
+Nombre & Chiffre des dizaines de mille & Nombre de centaines & Décomposition additive\\\hline
+$438\,507$ & & & \\\hline
+$7\,092\,040$ & & & \\\hline
+$85\,603$ & & & \\\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\paragraph{Exercice 3} \hfill \textbf{4 points}
+
+\noindent Range les nombres suivants dans l'ordre croissant :
+\[
+708\,045 \quad ; \quad 780\,405 \quad ; \quad 78\,450 \quad ; \quad 708\,450 \quad ; \quad 780\,045.
+\]
+
+\medskip\noindent\grandscarreaux{\linewidth}{2.4cm}
+
+\medskip
+\paragraph{Exercice 4} \hfill \textbf{4 points}
+
+\noindent Place approximativement les nombres $120$, $275$, $430$ et $690$ sur la demi-droite graduée.
+
+\begin{center}
+\begin{tikzpicture}[scale=1,line cap=round]
+\draw[->,line width=1pt] (0,0)--(14,0);
+\foreach \x/\n in {0/0,2/100,4/200,6/300,8/400,10/500,12/600}
+  {\draw[line width=1pt] (\x,-0.12)--(\x,0.12); \node[below] at (\x,-0.12) {$\n$};}
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\paragraph{Exercice 5} \hfill \textbf{3 points}
+
+\noindent Dans une bibliothèque, il y a $12\,480$ livres. On ajoute $3\,275$ livres puis on en retire $1\,846$. Combien de livres contient maintenant la bibliothèque ?
+
+\medskip\noindent\grandscarreaux{\linewidth}{4cm}
+
+\end{document}

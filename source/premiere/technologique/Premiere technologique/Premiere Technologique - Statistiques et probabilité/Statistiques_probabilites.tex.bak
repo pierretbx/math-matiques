@@ -1,0 +1,843 @@
+
+%A compiler en XELATEX sinon pas d'arbre de proba
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{eurosym}
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+%%% Figures
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+%%%Affichage
+\newcommand{\ds}{\displaystyle}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+\TeacherModeOff
+%\TeacherModeOn
+
+
+
+\begin{document}
+%\tableofcontents
+\setcounter{chapter}{7}
+\tableofcontents
+\chapter*{Statistiques et probabilités}
+\section{Tableaux croisés}
+
+\begin{defn}[Croisement de deux variables]
+Soient $A$ et $B$ deux variables étudiées sur une même population. On peut croiser ces deux variables à l'aide d'un \gap*{tableau croisé}. La \gap*{ligne} et la \gap*{colonne} intitulées « \gap*{Total} » sont appelées les marges.\\
+
+On note \gap*{card(E)} le nombre d'élément contenu dans un ensemble $E$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline & $B$ & $\bar{B}$ & Total \\
+\hline$A$ & $\operatorname{card}(A \cap B)$ & $\operatorname{card}(A \cap \bar{B})$ & $\operatorname{card}(A)$ \\
+\hline $\bar{A}$ & $\operatorname{card}(\bar{A} \cap B)$ & $\operatorname{card}(\bar{A} \cap \bar{B})$ & $\operatorname{card}(\bar{A})$ \\
+\hline Total & $\operatorname{card}(B)$ & $\operatorname{card}(\bar{B})$ & $\operatorname{card}(E)$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{defn}
+
+
+
+\subsection{Fréquences marginales, fréquences conditionnelles}
+\begin{defn}
+On appelle \gap*{fréquences marginales} les effectifs des marges divisés par l'effectif total.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|c|c|c|c|}
+\hline & $B$ & $\bar{B}$ & Total \\
+\hline$A$ & $\frac{\operatorname{card}(A \cap B)}{\operatorname{card}(E)}$ & $\frac{\operatorname{card}(A \cap \bar{B})}{\operatorname{card}(E)}$ & $\frac{\operatorname{card}(A)}{\operatorname{card}(E)}$ \\
+\hline $\bar{A}$ & $\frac{\operatorname{card}(\overline{A} \cap B)}{\operatorname{card}(E)}$ & $\frac{\operatorname{card}(\overline{A \cap B})}{\operatorname{card}(E)}$ & $\frac{\operatorname{card}(\bar{A})}{\operatorname{card}(E)}$ \\
+\hline Total & $\frac{\operatorname{card}(B)}{\operatorname{card}(E)}$ & $\frac{\operatorname{card}(\bar{B})}{\operatorname{card}(E)}$ & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\end{defn}
+
+\begin{exemple}
+On considère le tableau d'effectif suivant donnant la répartition des élèves d'une classe :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline & $F$ & $\bar{F}$ & Total \\
+\hline$E$ & 12 & 10 & 22 \\
+\hline $\bar{E}$ & 6 & 6 & 12 \\
+\hline Total & 18 & 16 & 34 \\
+\hline
+\end{tabular}
+\end{center}
+
+Le tableau donnant les fréquences marginales arrondies à 0,001 près est donc :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline & $F$ & $\bar{F}$ & Total \\
+\hline$E$ & 0,353 & 0,294 & 0,647 \\
+\hline $\bar{E}$ & 0,176 & 0,176 & 0,353 \\
+\hline Total & 0,529 & 0,471 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+\end{exemple}
+
+\begin{defn}
+
+On appelle \gap*{fréquence conditionnelle} de $B$ dans $A$ le nombre noté $f_{A}(B)$ défini par:
+
+$$
+f_{A}(B)=\frac{\operatorname{card}(A \cap B)}{\operatorname{card}(A)}
+$$
+\end{defn}
+
+
+\begin{exemple}
+D'après le tableau ci-dessus la fréquence des externes parmi les filles est :
+
+$$f_{F}(E)=\frac{\operatorname{card}(F \cap E)}{\operatorname{card}(F)}=\frac{12}{18} \approx 0,66$$
+
+\end{exemple}
+
+\section{Probabilité conditionnelle}
+
+\begin{defn}
+Pour tout événement $A$ non impossible et tout événement $B$, on appelle \gap*{probabilité conditionnelle} de $B$ sachant $A$ et notée $\mathbb{P}(B)$ le nombre $$\mathbb{P}_A(B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}$$
+
+\emph{Il mesure la chance que $B$ se réalise sachant que $A$ est déjà réalisé.}
+\end{defn}
+
+\begin{exemple}
+Lors d'un sondage, 50\% des personnes interrogées déclarent pratiquer un sport régulièrement et 75\% des
+personnes interrogées déclarent aller au cinéma régulièrement. De plus, 40\% des personnes déclarent faire du sport et aller au cinéma régulièrement. On interroge à nouveau une de ces personnes au hasard et on considère les événements \og{}la personne interrogée pratique un sport régulièrement\fg{} et \og{}la personne interrogée va au cinéma régulièrement\fg{} que l'on notent $S$ et $C$ respectivement.
+On cherche à calculer la probabilité que la personne pratique un sport régulièrement sachant qu'elle va régulièrement au cinéma.
+
+On a $\mathbb{P}(C)=0,75$ et $\mathbb{P}(S\cap C)=0,4$. Donc $\mathbb{P}_C(S)=\frac{\mathbb{P}(S\cap C)}{\mathbb{P}(C)}=\frac{0,4}{0,75}\approx 0,53$.
+\end{exemple}
+
+
+\begin{prop}
+Soient $A$ et $B$ deux événements non impossibles d'un univers donné. La connaissance de la probabilité d'un événement $B$ et de la probabilité conditionnelle d'un événements $A$ sachant $B$ permet de retrouver la probabilité $\mathbb{P}(A\cap B)$ de l'intersection de $A$ et $B$ avec la formule $$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}_A(B)$$.
+\end{prop}
+
+
+\begin{prop}
+Pour tous les événements $A$ et $B$ tels que $\mathbb{P}(A)\neq 0$ :
+\begin{itemize}
+\item[$\bullet$] $\mathbb{P}_A(A)=1$ ;
+\item[$\bullet$] $\mathbb{P}_A(\bar{B})=1-\mathbb{P}_A(B)$ ;
+\item[$\bullet$] Si $A$ et $B$ sont des événements incompatibles (c'est à dire ne pouvant pas se réaliser simultanément ou encore tels que $A\cap B=\emptyset$) alors $\mathbb{P}_A(B)=0$.
+\end{itemize}
+\end{prop}
+
+\subsection{Arbres pondérés}
+
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$\bar{A}$}
+    child {node {$\bar{B}$} edge from parent node[below]{$\mathbb{P}_{\bar{A}}(\bar{B})$}}
+    child {node {$B$} edge from parent node[above]{$\mathbb{P}_{\bar{A}}(B)$}}
+    edge from parent node[below]{$\mathbb{P}(\bar{A})$}}
+  child{node {$A$}
+    child {node {$\bar{B}$} edge from parent node[below]{$\mathbb{P}_{A}(\bar{B})$}}
+    child {node {$B$}  edge from parent node[above]{$\mathbb{P}_{A}(B)$}}
+    edge from parent node[above]{$\mathbb{P}(A)$}};
+\end{tikzpicture}
+\end{center}
+\begin{defn}
+Le schéma ci-dessus est appelé \gap*{arbre pondéré} ou \emph{arbre à probabilités}. Il comporte 4 \gap*{chemins} : $A\cap B$, $A\cap \bar{B}$, $\bar{A}\cap B$ et $\bar{A}\cap \bar{B}$. Un \gap*{noeud} est un point d'où partent plusieurs \gap*{branches}.
+\end{defn}
+
+
+
+\begin{prop}
+Dans un \emph{arbre pondéré} ou \emph{arbre à probabilités} comme ci-dessus,
+\begin{itemize}
+\item[$\bullet$] La somme des probabilités portées sur les branches issues d'un même noeud est égale à 1 (par exemple, $\mathbb{P}_A(B)+\mathbb{P}_A(\bar{B})=1$) ;
+\item[$\bullet$] la probabilité d'un chemin est le produit des probabilités portées par ses branches (par exemple, $\mathbb{P}(A\cap B)=\mathbb{P}(A) \times \mathbb{P}_A(B)$) ;
+\end{itemize}
+\end{prop}
+
+\section{Expérience aléatoire et loi de probabilité}
+\subsection{Exp\'erience al\'eatoire}
+
+\begin{defn}
+Une exp\'erience dont on connaît les issues (les r\'esultats) est appel\'ee exp\'erience al\'eatoire si on ne peut pas pr\'evoir ni calculer l'issue qui sera r\'ealis\'ee.
+
+L'ensemble des r\'esultats possibles d'une exp\'erience al\'eatoire (aussi appel\'es \'eventualit\'es) est appel\'e \gap*{univers} de l'exp\'erience noté $\Omega$.  Le nombre de ses \'el\'ements est appel\'e cardinal de $\Omega$  et se note $ Card(\Omega)$. On le note souvent $ \#\Omega$ ou encore $\vert \Omega \vert$.
+\end{defn}
+
+\begin{exemple}
+Jeu de Pile ou Face, nombre obtenu suite au lancer d'un d\'e, nombre tir\'e au sort dans une loterie, couleur de la prochaine voiture qui passera dans la rue, vingt et uni\`eme mot d'un livre choisi au hasard...
+\end{exemple}
+
+\subsection{Loi de probabilité et modélisation}
+\begin{defn}
+D\'efinir une loi de probabilit\'e sur un univers $\Omega=\{x_1,x_2,\ldots,x_n\}$ c'est associer à chaque \'eventualit\'e $x_i$ un nombre $p_i$ positif ou nul, appel\'e \gap*{probabilit\'e de l'\'eventualit\'e} $x_i$, tel que $p_1 + p_2 + \cdots + p_n=1$.
+\end{defn}
+
+\begin{rem}
+Mod\'eliser une exp\'erience al\'eatoire d'univers $\Omega$ c'est choisir une loi de probabilit\'e sur $\Omega$ qui repr\'esente le \og mieux possible \fg{} la situation.
+\end{rem}
+
+\begin{minipage}{13cm}
+\begin{exemple}
+On consid\`ere la roue de loterie suivante. L'exp\'erience consiste à faire tourner la roue et à noter le nombre sur lequel elle s'arr\^ete. D\'efinir une loi de probabilit\'e permettant de mod\'eliser l'exp\'erience.
+\end{exemple}
+
+L'univers est $\Omega=\{1;2;3;4;5;6\}$
+
+On associe à l'\'eventualit\'e 1 la probabilit\'e $p_1=\dfrac{45}{360}=\dfrac{1}{8}$.
+
+On fait de m\^eme pour les autres \'eventualit\'es. On obtient le tableau suivant : \\
+
+\begin{center}
+\renewcommand{\arraystretch}{2.5}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+Éventualit\'e & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+Probabilit\'e & $\dfrac{1}{8}$ & $\dfrac{1}{4}$ & $\dfrac{1}{8}$ & $\dfrac{1}{12}$ & $\dfrac{1}{3}$ & $\dfrac{1}{12}$ \\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{5cm}
+\begin{center}
+\includegraphics[scale=0.8]{CoursProbasFigures.1}
+\end{center}
+\end{minipage}
+
+
+\section{Variables al\'eatoires}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$ muni d'une loi de probabilit\'e $P$.
+\subsection{D\'efinitions}
+\begin{defn}
+Une variable al\'eatoire $X$ sur $\Omega$ est \gap*{une fonction de $\Omega$ dans $\R$}. $X$ associe donc à toute \'eventualit\'e de $\Omega$ un unique r\'eel.
+\end{defn}
+
+\begin{rem} On utilise les variables al\'eatoires quand on s'int\'eresse plus à un nombre associ\'e au r\'esultat de l'exp\'erience (par exemple un gain...) qu'au r\'esultat lui-m\^eme.
+\end{rem}
+
+\begin{exemple}
+On lance trois fois une pièce de monnaie et on s'int\'eresse au côt\'e sur lequel elle tombe.
+On appelle $X$ la variable aléatoire qui à chaque éventualité associe le nombre de fois où pile apparaît. Déterminer l'univers $\Omega$ de cette expérience puis décrire $X$.
+\end{exemple}
+
+
+En notant $P$ et $F$ les r\'esultats possibles d'un lancer, on obtient : 
+\[\Omega = \{PPP,PPF,PFP,PFF,FPP,FPF,FFP,FFF\}\]
+
+$X$ est la fonction d\'efinie sur $\Omega$ par :
+\begin{align*}
+X(PPP)&=0 & X(PPF)&=1 & X(PFP)&=1 & X(PFF)&=2\\
+X(FPP)&=1 & X(FPF)&=2 & X(FFP)&=2 & X(FFF)&=3
+\end{align*}
+
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$ et soit $x\in\R$. L'\'ev\`enement form\'e des \'eventualit\'es $\omega_i$ de $\Omega$ telles que $X(\omega_i)=x$ se note $(X=x)$.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer l'ensemble $(X=2)$.
+\end{exemple}
+
+
+Avec les notations pr\'ec\'edentes, on a : $(X=2)=\{PFF,FPF,FFP\}$
+
+\subsection{Loi de probabilit\'e d'une variable al\'eatoire}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$. On appelle $\Omega'=\{x_1,x_2,\ldots,x_n\}$ l'ensemble des valeurs prises par $X$. On peut d\'efinir sur $\Omega'$ une loi de probabilit\'e en associant à chaque valeur $x_i$ la probabilit\'e de l'\'ev\`enement $(X=x_i)$. Cette loi est appel\'ee loi de probabilit\'e de la variable al\'eatoire $X$.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer la loi de probabilit\'e de $X$.
+\end{exemple}
+
+
+La loi de probabilit\'e $P$ sur $\Omega$ est une loi \'equir\'epartie. On a donc :
+\begin{align*}
+P(X=0)&=P(\{PPP\})=\dfrac{1}{8} & P(X=1)&=P(\{PPF,PFP,FPP\})=\dfrac{3}{8} \\
+P(X=2)&=P(\{PFF,FPF,FFP\})=\dfrac{3}{8} & P(X=3)&=P(\{FFF\})=\dfrac{1}{8}
+\end{align*}
+
+On peut aussi r\'esumer ceci sous forme de tableau :
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|c|c|c|c|c|} \hline
+$x_i$ & 0 & 1 & 2 & 3 \\ \hline
+$P(X=x_i)$ & $\dfrac{1}{8}$ & $\dfrac{3}{8}$ & $\dfrac{3}{8}$ & $\dfrac{1}{8}$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Param\`etres d'une variable al\'eatoire}
+\begin{defn}
+\gap*{L'esp\'erance} d'une variable al\'eatoire est liée à l'esp\'erance de sa loi de probabilit\'e.
+
+Si $X$ prend les valeurs $x_1,x_2,\ldots x_n$ et si on pose $p_i=P(X=x_i)$, on a :
+
+$$E(X)=p_1x_1+p_2x_2+\cdots+p_nx_n$$
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer l'esp\'erance de la variable aléatoire $X$.
+\end{exemple}
+
+$$E(X)=\dfrac{1}{8}\times0 + \dfrac{3}{8}\times1 + \dfrac{3}{8}\times2 + \dfrac{1}{8}\times3 = \dfrac{12}{8} = \dfrac{3}{2}$$
+
+\begin{defn}
+La \gap*{variance} et \gap*{l'écart-type} d'une variable aléatoire sont liés à la variance et l'écart-type de sa loi de probabilité.
+Si $X$ prend les valeurs $x_1,x_2,\ldots x_n$ et si on pose $p_i=P(X=x_i)$, on a :
+
+$$V(X)=p_1(x_1-E(X))^2+p_2(x_2-E(X))^2+\cdots+p_n(x_n-E(X))^2$$
+$$ \sigma(X)=\sqrt{V(X)}$$
+\end{defn}
+
+\begin{prop}
+On a une formule plus pratique pour déterminer la variance,
+$$V(X)=E(X^2)-E(X)^2$$
+Avec $$E(X^2)=p_1x^2_1+p_2x^2_2+\cdots+p_nx^2_n$$
+\end{prop}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer la variance et l'\'ecart-type de $X$.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$]  Variance \textit{(à l'aide de la définition)} : $$V(X) = \dfrac{1}{8}\times\left( 0-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 1-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 2-\dfrac{3}{2} \right)^2 + \dfrac{1}{8}\times\left( 3-\dfrac{3}{2} \right)^2 = \dfrac{1}{8}\times\dfrac{9}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{1}{8}\times\dfrac{9}{4} = \dfrac{24}{32} = \dfrac{3}{4}$$
+
+\item[$\bullet$]  Variance \textit{(à l'aide de la propriété)} : $$E(X^2) =\dfrac{1}{8}\times 0^2 + \dfrac{3}{8}\times1^2 + \dfrac{3}{8}\times2^2 + \dfrac{1}{8}\times3^2 = 3$$
+Donc $$V(X)=E(X^2)-E(X)^2=3-(\dfrac{3}{2})^2=\dfrac{3}{4}$$
+
+\item[$\bullet$]  \'ecart-type : $$\sigma(X) = \sqrt{V(X)} = \sqrt{\dfrac{3}{4}} = \dfrac{\sqrt{3}}{2} \simeq 0,87$$
+\end{itemize}
+
+\subsubsection{Interprétation des paramètres d'une variable aléatoire}
+\begin{rem}
+\begin{itemize}
+\item[$\bullet$]Si l'on \gap*{répète} l'expérience aléatoire \gap*{un grand nombre} de fois et que l'on fait la \gap*{moyenne} des résultats obtenus pour $X$, alors cette moyenne se rapprochera de \gap*{l'espérance} de $X$.
+
+\item[$\bullet$]L'écart-type est une quantité positive qui indique la \gap*{dispersion} autour de la moyenne. Plus l'écart-type est \gap*{grand}, plus les valeurs de $X$ lors des expérience aléatoire seront \gap*{éloignées} de l'espérance de $X$, a contrario, plus l'écart-type est \gap*{proche} de 0, plus les valeurs de $X$ lors des expérience aléatoire seront \gap*{proches} de l'espérance de $X$.
+\end{itemize}
+\end{rem}
+
+\section{Loi de Bernouilli}
+\begin{defn}
+Soit $p$ un nombre réel tel que $p\in[0;1]$. Soit $X$ une variable aléatoire. On dit que $X$ suit une \gap*{loi de Bernoulli} de paramètre $p$ si :
+\begin{itemize}
+ \item[$\bullet$] $X$ prend pour seules valeurs 1 (\og{}succès\fg{}) et 0 (\og{}échec\fg{}) ;
+\item[$\bullet$] $P(X=1)=p$ et $P(X=0)=1-p$.
+\end{itemize}
+\end{defn}
+
+
+\begin{prop}
+ Soit $X$ une variable aléatoire qui suit la loi de Bernoulli de paramètre $p$.
+\begin{itemize}
+ \item[$\bullet$] $E(X)=p$ ;
+\item[$\bullet$] $V(X)=p(1-p)$.
+\end{itemize}
+\end{prop}
+
+
+\begin{demo}
+ D'une part, $E(X)=0\times P(X=0)+1\times P(X=1)=0\times (1-p)+1\times p = p$. \par
+\noindent En outre, $V(X)=P(X=0)\times (0-E(X))^2+P(X=1)\times (1-E(X))^2=(1-p)p^2+p(1-p)^2=p(1-p)(p+1-p)=p(1-p)$
+\end{demo}
+
+\section{Schéma de Bernoulli}
+
+
+\begin{defn}
+Deux expériences sont dites indépendantes si le résultat de l'une n'influence pas le résultat de l'autre.
+\vspace{5mm}
+\end{defn}
+
+
+\begin{exemple}
+Il y a indépendance lorsqu'on lance deux fois de suite une pièce de monnaie.
+\end{exemple}
+
+
+\begin{defn}
+La répétition d'une expérience aléatoire suivant une loi de Bernoulli de paramètre $p$, ceci $n$ fois de manière indépendante constitue \gap*{un schéma de Bernoulli} de paramètres $n$ et $p$.
+\vspace{2mm}
+\end{defn}
+
+
+\begin{prop}
+Dans un schéma de Bernoulli, la probabilité d'une liste de résultats est le \gap*{produit des probabilités} de chaque résultat.
+\end{prop}
+
+
+\begin{exemple}[de savoir faire]
+\begin{itemize}
+\item[$\bullet$] Construire un arbre représentant un schéma de Bernoulli de paramètres donnés.\\
+On contrôle la qualité d'un produit sur une chaîne de production. On prélève 3 produits au hasard. On suppose que les prélèvements sont indépendants. Statistiquement, chaque produit a une probabilité $p=0,05$ d'être défectueux.\\
+On a donc un schéma de Bernoulli de paramètres $p=0,05$ et $n=3$.\\
+
+%\begin{center}
+ %\includegraphics[width=6cm]{arbre.png}
+%\end{center}
+
+\begin{center}
+\begin{tikzpicture}[
+  level 1/.style={level distance=6em, sibling distance=10em},
+  level 2/.style={level distance=6em, sibling distance=5em},
+  level 3/.style={level distance=6em, sibling distance=2em},
+  grow'=right,
+  ]
+
+  \coordinate                   % joli sommet de l'arbre
+    child foreach \evenemi in {S, \bar{S}}
+      {
+      	node {$\evenemi$} 
+        child foreach \evenemii in {S, \bar{S}}
+          {
+            node {$\evenemii$}
+            child foreach \evenemiii in {S, \bar{S}}
+              { node {$\evenemiii$} }
+          }
+      };
+\end{tikzpicture}
+\end{center}
+
+\item[$\bullet$] Calculer la probabilité d'un événement représenté par un chemin sur un arbre pondéré.\\
+
+Sur l'arbre ci-dessus représentant un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$, la probabilité d'avoir les deux premières expériences qui donnent un succès et la dernière qui donne un échec est $\mathbb{P}(SS\bar{S})=0,05^2\times 0,95\approx 0,002$, soit environ 0,2 \% de chances d'avoir deux produits défectueux sur les trois prélevés.
+\end{itemize}
+\end{exemple}
+
+\newpage
+\section{Exercices}
+\subsection{Tableaux croisés}
+\begin{exo}
+Soit le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+& \textbf{Groupe A} & \textbf{Groupe B} \\
+\hline
+\textbf{Femme} & 20 & 40 \\
+\hline
+\textbf{Homme} & 30 & 10 \\
+\hline
+\end{tabular}
+\end{center}
+
+On note $F$ l'événement "être une femme" et $A$ l'événement "appartenir au groupe A".
+
+\begin{enumerate}
+\item Calculer les fréquences marginales $f(F)$, $f(A)$, $f(\overline{F})$ et $f(\overline{A})$.
+\item Calculer les fréquences conditionnelles $f_F(A)$ et $f_{\bar{A}}(F)$.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+Soit le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+& \textbf{Sportif} & \textbf{Non sportif} & \textbf{Total}\\
+\hline
+\textbf{Femme} & $\cdots$ & 360 & 500\\
+\hline
+\textbf{Homme} & 30 & $\cdots$ & $\cdots$ \\
+\hline
+\textbf{Total} & $\cdots$ & $\cdots$  & 1000 \\
+\hline
+\end{tabular}
+\end{center}
+
+On note $F$ l'événement "être une femme" et $S$ l'événement "être sportif".
+
+\begin{enumerate}
+\item Recopier et compléter le tableau.
+\item Dresser le tableau des fréquences marginales.
+\item Calculer les fréquences conditionnelles $f_F(S)$ et $f_{\bar(S)}(F)$.
+\end{enumerate}
+\end{exo}
+
+\subsection{Probabilités conditionnelles}
+
+\begin{exo}
+Dans une entreprise, 70\% des employés ont un contrat à durée indéterminée (CDI) et 30\% ont un contrat à durée déterminée (CDD). Parmi les employés en CDI, 80\% ont une mutuelle d'entreprise, tandis que parmi les employés en CDD, seulement 30\% ont une mutuelle d'entreprise.
+
+On choisit au hasard un employé de cette entreprise. Recopier et compléter le tableau au fil des question.
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline $\cap$ & $M$ & $\bar{M}$ & Total \\
+\hline $CDI$ & $\cdots$ & $\cdots $ & 0,7 \\
+\hline $\bar{CDI}$ &$ \cdots$ & $\cdots $& 0,3 \\
+\hline Total & $\cdots$ & $\cdots$ & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Déterminer $\mathbb{P}_{CDI}(M)$, $\mathbb{P}_{\overline{CDI}}(M)$.
+\item Calculer la probabilité que cet employé ait un CDI et une mutuelle d'entreprise, c'est-à-dire $\mathbb{P}(CDI \cap M)$.
+\item Calculer la probabilité que cet employé ait un CDD et une mutuelle d'entreprise.
+\item En déduire la probabilité que cet employé ait une mutuelle d'entreprise.
+\item Calculer $\mathbb{P}(\overline{CDI} \cap \bar{M})$, $P_M(CDI)$, $P_M(\overline{CDI})$, $P_{\bar{M}}(CDI)$.
+\end{enumerate}
+\end{exo}
+
+
+\subsection{Arbres pondérés}
+\begin{exo}
+Une expérience aléatoire est représentée par l'arbre ci-dessous. Dans celui-ci, $A$ et $B$ désignent deux évènements; $\bar{A}$ et $\bar{B}$ représentent leur évènement complémentaire.
+
+
+\begin{enumerate}
+\item Recopier et compléter l'arbre pondéré.
+
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$\bar{A}$}
+    child {node {$\bar{B}$} edge from parent node[below]{$\cdots$}}
+    child {node {$B$} edge from parent node[above]{$0,7$}}
+    edge from parent node[below]{$\cdots$}}
+  child{node {$A$}
+    child {node {$\bar{B}$} edge from parent node[below]{$0,4$}}
+    child {node {$B$}  edge from parent node[above]{$\cdots$}}
+    edge from parent node[above]{$0,3$}};
+\end{tikzpicture}
+\end{center}
+
+\item Calculer la probabilité des évènements obtenus à la fin de chaque branche.
+
+\item En déduire la valeur de $\mathbb{P}(B)$.
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Une urne contient 2 boules noires et 8 boules blanches; toutes les boules sont indiscernables au touché. On prélève au hasard une boule dans l'urne. $N$ désigne l'évènement " obtenir une boule noire " et $B$ désigne l'évènement " obtenir une boule blanche ".
+
+\begin{enumerate}
+
+\item Dresser un arbre pondéré décrivant la situation.
+
+\item Trois prélèvements (avec remise) dans l'urne sont réalisés de manière successive. Compléter l'arbre pondéré en conséquent.
+
+\item Calculer la probabilité de l'évènement $E$ : " obtenir trois boules noires ".
+
+\item Montrer que la probabilité de l'évènement $F$ : " obtenir exactement deux boules noires " vaut $0,096$.
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+Au goûter d'un centre de vacances, Céline prend un gâteau fourré puis une brique de jus de fruits. Dans un premier sac, il y a 12 gâteaux à l'orange et 36 gâteaux à la fraise. Dans un second sac, il y a 24 briques de jus de pommes et 24 briques de jus de raisin.
+
+On notera $O$ le choix d'un gâteau à l'orange, $F$ le choix d'un gâteau à la fraise, $P$ le choix d'une brique au jus de pomme et $R$ le choix d'une brique de jus de raisin.
+
+\begin{enumerate}
+\item Construire un arbre pondéré illustrant cette situation puis déterminer l'ensemble des issues possibles.
+
+\item Calculer la probabilité de l'évènement $A$ : " Céline a pris un gâteau à l'orange et un jus de pomme ".
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Pour réaliser un travail en art plastiques, Mélanie dispose d'une boîte d'objets à peindre ; $48 \%$ des objets sont des cubes et $52 \%$ des sphères. Il dispose également de 5 tubes de peinture, 3 tubes de vert, 1 tube de bleu et 1 tube de jaune. Il prend au hasard un objet et un tube de peinture.
+\begin{enumerate}
+
+\item Construire un arbre illustrant cette situation et déterminer l'ensemble des issues possibles.
+
+\item Calculer la probabilité de l'évènement $A$ :" Mélanie prend un cube et un tube de peinture verte ".
+
+\item Calculer la probabilité de l'évènement $B$ :" Mélanie prend une sphère et un tube de peinture jaune ".
+
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Gaspard a collé une gommette sur chacune des faces d'un dé : trois gommettes bleues et trois gommettes rouges. Sur les faces d'un autre dé, il a de nouveau collé six gommettes : trois bleues, deux jaunes et une verte. Il lance un dé, puis l'autre, et note la couleur obtenue pour chaque dé.
+
+\begin{enumerate}
+\item Représenter l'arbre pondéré illustrant la situation.
+
+\item Calculer la probabilité de l'évènement $E_{1}$ : " obtenir deux faces bleues ".
+
+\item Calculer la probabilité de l'évènement $E_{2}$ : " les deux faces obtenues sont de la même couleur ".
+\end{enumerate}
+
+\end{exo}
+
+
+\begin{exo}
+Alice joue au jeu suivant : elle tire au hasard un des deux jetons d'un premier sac, notés $J_{1}$ et $J_{2}$, et note le jeton obtenu. Elle tire ensuite une des trois boules d'un second sac, notées $B_{1}, B_{2}$ et $B_{3}$, et note la boule obtenue.
+
+Construire un arbre de probabilités illustrant cette situation, puis déterminer l'ensemble des issues possibles.
+\end{exo}
+
+\subsection{Variables aléatoires discrètes}
+
+\begin{exo}
+Une expérience aléatoire consiste à lancer un dé à quatre faces et regarder le résultat obtenu. L'univers associé à cette expérience est l'ensemble de toutes les issues possibles : Ici $\Omega=\{1 ; 2 ; 3 ; 4\}$
+
+On considère le jeu suivant :
+\begin{itemize}
+\item Si le résultat est pair, on gagne $2$ \euro;
+\item Si le résultat est 1 , on gagne $3$ \euro;
+\item Si le résultat est 3 , on perd $6$ \euro.
+\end{itemize}
+On note $X$ la variable aléatoire représentant le gain ou la perte en euro du joueur.
+
+\begin{enumerate}
+\item Quelle sont les valeurs possibles pour $X$ ? On notera les possibles valeurs $x_1; x_2,\cdots$ etc.
+\item Donner la loi de probabilité de $X$ à l'aide d'un tableau.
+\item Déterminer l'espérance de $X$, notée $E(X)$.
+\item Le jeu est-il équitable? 
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+On note $X$ la variable aléatoire qui, à chaque jour, associe le nombre de véhicules neufs vendus par un concessionnaire. Sa loi de probabilité est donnée par le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline$x_{i}$ & 0 & 1 & 2 & 3 \\
+\hline$\mathbb{P}\left(X=x_{i}\right)$ & 0,65 & 0,10 & 0,15 & $\ldots \ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Donner la probabilité $\mathbb{P}(X=1)$. Interpréter ce résultat.
+\item Quelle est la probabilité que le concessionnaire vende trois véhicules dans la journée?
+\item Calculer $\mathbb{P}(X \geqslant 1)$. Interpréter ce résultat.
+\item Combien de véhicules par jour vend en moyenne le concessionnaire?
+\end{enumerate}
+
+\end{exo}
+
+
+\begin{exo}
+Une expérience aléatoire consiste à lancer un dé à six faces et regarder le résultat obtenu. L'univers associé à cette expérience est l'ensemble de toutes les issues possibles : Ici $\Omega=\{1 ; 2 ; 3 ; 4;5 ; 6\}$
+
+On considère le jeu suivant :
+\begin{itemize}
+\item Si le résultat est pair, on gagne $2$ \euro;
+\item Si le résultat est 1 , on gagne $3$ \euro;
+\item Si le résultat est 3 ou 5 , on perd $6$ \euro.
+\end{itemize}
+On note $X$ la variable aléatoire représentant le gain ou la perte en euro du joueur.
+
+\begin{enumerate}
+\item Quelle sont les valeurs possibles pour $X$ ? On notera les possibles valeurs $x_1; x_2,\cdots$ etc.
+\item Donner la loi de probabilité de $X$ à l'aide d'un tableau.
+\item Déterminer l'espérance de $X$, notée $E(X)$.
+\item Le jeu est-il équitable? 
+
+
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+On note $X$ la variable aléatoire qui, à chaque jour, associe le nombre de véhicules neufs vendus par un concessionnaire. Sa loi de probabilité est donnée par le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline$x_{i}$ & 0 & 1 & 2 & 3 \\
+\hline$\mathbb{P}\left(X=x_{i}\right)$ & 0,45 & 0,3 & 0,15 & $\ldots \ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Donner la probabilité $\mathbb{P}(X=1)$. Interpréter ce résultat.
+\item Quelle est la probabilité que le concessionnaire vende trois véhicules dans la journée?
+\item Calculer $\mathbb{P}(X \geqslant 1)$. Interpréter ce résultat.
+\item Combien de véhicules par jour vend en moyenne le concessionnaire?
+\end{enumerate}
+\end{exo}
+
+
+\subsection{Loi de Bernouilli}
+\begin{exo}
+Un avion possède deux moteurs identiques. La probabilité que chacun tombe en panne est 0,001. On suppose que la panne d'un moteur n'a aucune influence sur la panne de l'autre moteur.\\
+
+Construire un arbre pondéré illustrant la situation. Justifier qu'il s'agit d'une épreuve de Bernoulli et donner la probabilité de succès.
+\end{exo}
+
+\begin{exo}
+Des plats cuisinés d'un certain type sont fabriqués en grande quantités. Parmi les 5000 plats préparés, on prélève l'un d'entre eux au hasard pour vérifier s'il est conforme ($C$ désignera un tel évènement); lors du dernier contrôle, 4850 plats étaient conformes.
+
+\begin{enumerate}
+\item Déterminer la probabilité de l'évènement $C$.
+\item Justifier que l'expérience aléatoire est une épreuve de Bernoulli.
+\item Donner deux exemples d'expériences aléatoires qui ne sont pas des épreuves de Bernoulli.
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+La probabilité pour qu'un français ait comme groupe sanguin le groupe $A$ vaut $0,45$. On étudie le groupe sanguin de trois personnes prises au hasard dans la population française.
+
+\begin{enumerate}
+\item Construire un arbre illustrant cette situation. Justifier qu'il s'agit d'un épreuve de Bernoulli
+
+\item Quelle est la probabilité que ces trois personnes appartiennent toutes au groupe $A$ ?
+
+\item Quelle est la probabilité qu'au moins une de ces personnes appartienne au groupe $A$ ?
+\end{enumerate}
+\end{exo}
+
+\subsection{Schéma de Bernouilli}
+\begin{exo}
+On a représenté par un arbre ci-dessous la répétition d'épreuves de Bernoulli indépendantes.
+
+Dans chaque cas, déterminer le nombre de répétition et la probabilité du succès $S$. 
+\begin{enumerate}
+
+
+\begin{minipage}{7cm}
+\item
+\begin{tikzpicture}
+			\tikzstyle{level 1}=[level distance=3cm, sibling distance=3cm]
+			\tikzstyle{level 2}=[level distance=3cm, sibling distance=2cm]
+			\tikzstyle{level 3}=[level distance=3cm, sibling distance=1cm]
+			\node{}[grow=right]
+			child{node{$\bar{S}$}
+				child{node{$\bar{S}$}}
+				child{node{$S$}}
+				edge from parent node[below]{$0,07$}}
+			child{node{$S$}
+				child{node{$\bar{S}$}}
+				child{node{$S$}}
+				edge from parent node[above]{}};
+\end{tikzpicture}	
+\end{minipage}
+\begin{minipage}{9cm}
+\item 
+\begin{tikzpicture}
+			\tikzstyle{level 1}=[level distance=3cm, sibling distance=4cm]
+			\tikzstyle{level 2}=[level distance=3cm, sibling distance=2cm]
+			\tikzstyle{level 3}=[level distance=3cm, sibling distance=1cm]
+			\node{}[grow=right]
+			child{node{$\bar{S}$}
+				child{node{$\bar{S}$}
+						child{node{$\bar{S}$}}
+						child{node{$S$}}}
+				child{node{$S$}
+						  child{node{$\bar{S}$}}
+						  child{node{$S$}}}
+				edge from parent node[below]{}}
+			child{node{$S$}
+				child{node{$\bar{S}$}
+						child{node{$\bar{S}$}}
+						child{node{$S$}}}
+				child{node{$S$}
+						  child{node{$\bar{S}$}}
+						  child{node{$S$}}}
+				edge from parent node[above]{$0,2$}};
+\end{tikzpicture}	
+\end{minipage}
+
+\end{enumerate}
+\end{exo}
+
+
+\begin{exo}
+Un sac contient 4 boules orange et 6 boules violettes. On tire successivement, et avec remise, trois boules dans le sac.
+
+\begin{enumerate}
+\item Justifier qu'il s'agit d'un schéma de Bernoulli
+\item Calculer la probabilité des évènements $A$ : " les trois boules sont orange " et $B$ :" exactement une boule est orange".
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+On a représenté par un arbre pondéré (voir la figure ci-dessous) la répétition de deux épreuves de Bernoulli indépendantes.
+
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$\bar{S}$}
+    child {node {$\bar{S}$} edge from parent node[below]{}}
+    child {node {$S$} edge from parent node[above]{}}
+    edge from parent node[below]{}}
+  child{node {$S$}
+    child {node {$\bar{S}$} edge from parent node[below]{$0,9$}}
+    child {node {$S$}  edge from parent node[above]{}}
+    edge from parent node[above]{}};
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item Recopier et compléter l'arbre.
+\item Quelle est la probabilité de l'issue $SS$ ? de l'issue $\bar{S}S$ ? 
+\end{enumerate}
+\end{exo}
+
+\begin{exo}
+On lance un dé cubique équilibré trois fois de suite. On appelle succès le fait d'obtenir le numéro 6 .
+
+\begin{enumerate}
+\item  Combien y-a-t-il de répétitions de l'épreuve? Justifier qu'il s'agit d'un schéma de Bernoulli.
+\item  Calculer la probabilité d'obtenir 0 succès, 1 succès, 2 succès puis 3 succès.
+\end{enumerate}
+\end{exo}
+
+
+\end{document}

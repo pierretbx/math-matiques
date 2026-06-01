@@ -1,0 +1,160 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage[francais,bloc,nowatermark]{automultiplechoice}    
+% [nowatermark] pour enlever le texte "PROJET" et le pied de page
+\usepackage{multicol}
+\usepackage{eurosym}
+\usepackage{fancyhdr,amssymb,amsmath}
+
+%===================
+\begin{document}
+%===================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% début des questions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% On répartie les quesitons dans différents groupes.
+% ---------------------------------
+%%% Questions groupe : "catégorie1"
+%----------------------------------
+\element{categorie1}{
+  \begin{question}{calcul littéral 1}    
+% Question ouverte   
+
+Une expérience aléatoire consiste à lancer un dé à six faces et regarder le résultat obtenu. L'univers associé à cette expérience est l'ensemble de toutes les issues possibles : Ici $\Omega=\{1 ; 2 ; 3 ; 4;5 ; 6\}$
+
+On considère le jeu suivant :
+\begin{itemize}
+\item Si le résultat est pair, on gagne $2$ \euro;
+\item Si le résultat est 1 , on gagne $3$ \euro;
+\item Si le résultat est 3 ou 5 , on perd $6$ \euro.
+\end{itemize}
+On note $X$ la variable aléatoire représentant le gain ou la perte en euro du joueur.
+
+\begin{enumerate}
+\item Quelle sont les valeurs possibles pour $X$ ? On notera les possibles valeurs $x_1; x_2,\cdots$ etc.
+\item Donner la loi de probabilité de $X$ à l'aide d'un tableau.
+\item Déterminer l'espérance de $X$, notée $E(X)$.
+\item Le jeu est-il équitable? 
+
+
+\end{enumerate}
+   \AMCOpen{lines=7,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points     
+  \end{question}
+}
+
+%
+\element{categorie2}{
+  \begin{question}{calcul littéral 2}  
+% Question ouverte  
+On note $X$ la variable aléatoire qui, à chaque jour, associe le nombre de véhicules neufs vendus par un concessionnaire. Sa loi de probabilité est donnée par le tableau suivant :
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline$x_{i}$ & 0 & 1 & 2 & 3 \\
+\hline$\mathbb{P}\left(X=x_{i}\right)$ & 0,45 & 0,3 & 0,15 & $\ldots \ldots$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Donner la probabilité $\mathbb{P}(X=1)$. Interpréter ce résultat.
+\item Quelle est la probabilité que le concessionnaire vende trois véhicules dans la journée?
+\item Calculer $\mathbb{P}(X \geqslant 1)$. Interpréter ce résultat.
+\item Combien de véhicules par jour vend en moyenne le concessionnaire?
+\end{enumerate}
+
+
+   \AMCOpen{lines=11,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fin des questions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% fabrication des copies%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\exemplaire{18}{    
+
+%%% debut de l'entête des copies :    
+	%%% première ligne
+
+	\begin{minipage}{1\linewidth}
+	  \centering\large\bf DS TSTMG sur les variables aléatoires discrètes 
+	\end{minipage}
+
+	%%% codage des numéros d'étudiants sur 2 chiffres par les candidats et encadré d'écriture manuelle des noms.
+	\vspace*{3mm}
+	{\setlength{\parindent}{0pt}\hspace*{\fill}
+	\begin{minipage}[b]{12cm}
+	 
+
+	 \hfill\champnom{\fbox{
+	 \begin{minipage}{1\linewidth}
+		\vspace*{3mm}
+		NOM - Prénom - Classe :
+		\vspace*{3mm}
+	 \end{minipage}
+	    }
+	   }
+	\hfill\vspace{1ex}
+ %texte de présentation 
+\begin{center}\em
+
+Durée : 55 minutes.
+
+  Aucun document n'est autorisé. La calculatrice est autorisée.
+%  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
+%  présenter une ou plusieurs bonnes réponses. Les autres ont une unique bonne réponse.
+%  Les réponses fausses ou incohérentes retirent des points.
+
+\end{center}
+
+	\end{minipage}\hspace*{\fill}
+	}
+
+\vspace{4ex}
+
+%%% Fin de l'entête
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Composition des QCM
+%%% On mélange des questions par groupe
+% On efface le {tout} précédent
+\cleargroup{tout}
+
+% On mélange par "catégorie", et on prélève aléatoirement [n] questions 
+% du lot {categorie-k} vers la copie complète {tout}
+% puis on restitue la copie.
+% Si on met [0], toutes les questions sont prises.
+\melangegroupe{categorie1}\copygroup[0]{categorie1}{tout}
+\melangegroupe{categorie2}\copygroup[0]{categorie2}{tout}
+%\melangegroupe{categorie3}\copygroup[0]{categorie3}{tout}
+%\melangegroupe{categorie4}\copygroup[0]{categorie4}{tout}
+
+\restituegroupe{tout}
+
+% Saut d'une page si le sujet comporte un nombre impair de pages.
+% Ainsi il est possible d'imprimer les sujets en recto-verso.
+
+\AMCcleardoublepage    
+
+%%% Fin de la création des questionnaires
+
+}
+% Fin de exemplaires{k}{ 
+
+\end{document}
+

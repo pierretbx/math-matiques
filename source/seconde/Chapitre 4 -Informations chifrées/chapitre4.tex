@@ -1,0 +1,182 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{eurosym}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\pgfplotsset{compat=newest}
+\usetikzlibrary{arrows}
+
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\pagestyle{empty}
+\chapter*{Informations Chiffrées}
+
+\section{Proportions et pourcentages}
+
+    \subsection{Population et sous-population}
+
+\begin{defn}
+On appelle \underline{population} un ensemble d’éléments appelés individus.
+
+On appelle \underline{sous-population} une partie de la population.
+\end{defn}
+
+\underline{Exemple :}  On considère une classe de seconde au sein d’un lycée. Un individu est un élève de seconde. L’ensemble des filles de cette classe de seconde constitue une sous-population des élèves de la classe.
+
+   \subsection{Proportion d’une sous-population}
+
+\begin{defn}
+On considère une population qui possède $N$ individus et une sous-population composée de $n$ individus. La proportion d’individus de la sous-population, notée $p$, est égale à $p=\frac{n}{N}$.
+\end{defn}
+
+\underline{Exemple :}
+Dans une classe, il y a 18 garçons sur les 30 élèves. La proportion de garçons dans la classe est de $\frac{18}{30}=0,6$.
+
+\underline{Remarques :}
+
+\begin{itemize}
+
+\item[$\bullet$] une proportion peut être exprimée sous forme de fraction, sous forme décimale ou sous forme de pourcentage. Dans l’exemple précédent, on peut dire que $0,6 \times 100 = 60\%$ des élèves de la classe sont des garçons.
+
+\item[$\bullet$] la proportion est un nombre toujours compris entre 0 et 1 \emph{(ou un pourcentage entre $0\%$ et $100\%$)}.
+\end{itemize}
+
+   \subsection{Proportion de proportion}
+
+\begin{prop}
+A et C sont deux sous populations d’une population E telles que C est incluse dans A. La proportion de A dans E est notée $p$ et la proportion de C dans A est notée $p’$. La proportion de C dans E est égale au produit $p\times p’$.
+\end{prop}\\
+
+
+\begin{center}
+\definecolor{ccffww}{rgb}{0.8,1,0.4}
+\definecolor{qqzzcc}{rgb}{0,0.6,0.8}
+\definecolor{ffzztt}{rgb}{1,0.6,0.2}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-5,-1) rectangle (2.5,3.5);
+\draw [rotate around={-3.062287085400037:(-1.211512669394665,1.3886326992355753)},line width=2pt,color=ffzztt,fill=ffzztt,fill opacity=0.46] (-1.211512669394665,1.3886326992355753) ellipse (3.6966818052133736cm and 1.7935056151820508cm);
+\draw [rotate around={-8.308276127483298:(-1.2181543229739313,1.5480323851379791)},line width=2pt,color=qqzzcc,fill=qqzzcc,fill opacity=0.66] (-1.2181543229739313,1.5480323851379791) ellipse (2.4514055805085846cm and 1.2405964244869365cm);
+\draw [rotate around={28.570698548466485:(-1.2181543229739307,1.448407581448977)},line width=2pt,color=ccffww,fill=ccffww,fill opacity=0.75] (-1.2181543229739307,1.448407581448977) ellipse (1.117851673976015cm and 0.8161941205790404cm);
+\draw (-4.359787365015315,1.6967344060660892) node[anchor=north west] {\textbf{E}};
+\draw (-2.9988513562897547,2.430774623236079) node[anchor=north west] {\textbf{A}};
+\draw (-1.5082773193514754,1.6813852290822337) node[anchor=north west] {\textbf{C}};
+\end{tikzpicture}
+\end{center}
+
+
+
+%%%Dessin
+
+\underline{Exemple :} On considère une entreprise qui possède des véhicules. $\frac{3}{4}$  de ces véhicules sont électriques. Parmi les véhicules électriques, la proportion de deux-roues est $0,3$.
+La proportion $p$ de deux-roues électriques dans la population totale est donc : $p= \frac{3}{4} \times 0,3 =0,225$
+
+On peut dire que les deux roues électriques représentent 22,5\% de l’ensemble des véhicules de l’entreprise.\\
+
+
+
+\underline{Attention !} On n’effectue pas de produit avec les pourcentages ! Par exemple ici $75\% \times 30\%=2250\%$, ce qui ne représente pas une proportion. Il faut convertir sous forme décimale ou fractionnaire.
+\section{Taux d'évolutions}
+
+    \subsection{Variation absolue, variation relative}
+
+Une quantité à une valeur de départ $V_d$. Elle varie pour atteindre une valeur d’arrivée $V_a$.
+
+\begin{defn}
+La \underline{variation absolue}, notée $\Delta V$ est donnée par $\Delta V = V_a - V_d$. \\
+
+Le \underline{taux d’évolution} (ou évolution relative) noté $t$ est le quotient de la variation absolue $\Delta V$ par $V_d$. On a $t=\frac{\Delta V}{V_d}$. Il peut s’exprimer en pourcentage.
+\end{defn}
+
+\underline{Exemple :} Adam place 110 \euro{} en bourse. Il se rend compte 15 jours plus tard que ses actions valent 132 \euro{}. Quel est le taux d’évolution ? 
+
+La variation absolue est $\Delta V = 132- 110=22$  . Le taux d’évolution est donc $t=\frac{22}{110}=0,2$.
+On peut dire qu’il y a eu une augmentation de 20\% par rapport à la somme placée au départ.\\
+
+
+\underline {Exemple :} Le prix d’une tablette tactile passe de 759 \euro{} à 683,10 \euro{}.
+La variation absolue est  $\Delta V =683,10 - 759 = -75,9$   Le taux d’évolution est donc $t=-\frac{75.9}{759}=-0,1$ 
+Il y a eu une réduction de 10\%.\\
+
+
+\underline{Remarque :} on peut avoir une variation absolue négative, ce qui signifie que la quantité a diminué.
+
+\begin{prop} 
+Soit $t$ le taux d’évolution qui permet de passer d’une quantité $V_d$ à une quantité $V_a$. On a alors $V_a=(1+t)\times V_d$.
+\end{prop}
+
+\begin{defn}
+Le nombre $1+t$ est appelé le \underline{coefficient multiplicateur}. On le note $C_m$.
+\vspace{0.5cm}
+\end{defn}
+
+\underline{Remarque :} dans le cas d’une baisse, $t$ est négatif et $C_m$ est un réel compris entre $0$ et $1$. Sinon, s’il s’agit d’une augmentation, $t$ est positif et $C_m$ est supérieur à $1$.\\
+
+\underline{Exemple :} un article à 85 \euro{} est soldé à -25\%. Quel est le nouveau prix après réduction ?
+On a $V_d=85$ et $t=-0.25$ car l'article a un prix réduit de 25\%.
+
+Calculons le coefficient multiplicateur. $C_m= V_d \times 0,75 = 85 \times 0,75 = 63,75$. Le nouveau prix de cet article est donc de 63,75 \euro{}.
+
+\newpage
+
+    \section{Evolutions successives} 
+
+
+
+\begin{prop} Une valeur de départ $V_d$ subit deux évolutions successives : une évolution de coefficient multiplicateur $C_{m1}$, puis une évolution de coefficient $C_{m2}$.
+Le \underline{coefficient multiplicateur global} est donné par $C_{mg}=C_{m1} \times C_{m2}$.
+\end{prop}
+
+\begin{defn}
+Le taux d’évolution global, noté $T$ est $T=C_{mg}-1$
+\vspace{5mm}
+\end{defn}
+
+\underline{Remarques :}
+\begin{itemize}
+ \item[$\bullet$] De façon équivalente, $C_{mg}=T+1$
+ \item[$\bullet$] Lorsque l’on a plus de deux évolutions successives, on procède de la même manière.	
+\end{itemize}
+
+\underline{Exemple :} le nombre d’abonnés à un journal quotidien augmente de 20\% puis diminue de 10\%.  \\
+
+Quelle est alors l’évolution globale ?\\
+
+Augmenter de 20\% signifie que $t_1=0,2$, donc $C_{m1}=1,2$.
+
+Diminuer de 10\% signifie que $t_2=-0,1$ donc $C_{m2}=0,9$.\\
+
+On a alors $C_{mg} = 1,2 \times 0,9 = 1,08$. Le taux d’évolution est $T = C_{mg}-1 = 1,08-1 = 0,08$. On peut donc dire que le nombre d’abonnés a augmenté de 8\%. \\
+
+\underline{Attention !} Lorsqu’on applique successivement des augmentations en pourcentage, le pourcentage global n’est pas la somme des pourcentages.
+
+   \section{Evolution réciproque}
+\begin{defn}
+On appelle évolution réciproque l’évolution qui permet de repasser d’une quantité d’arrivé $V_a$ à une quantité de départ $V_d$. On le note $t’$.
+\end{defn}
+
+\begin{prop}
+Le coefficient multiplicateur $C_{m’}$ est l’inverse du coefficient multiplicateur $C_{m}$. $C_{m’}=\frac{1}{C_m}$
+\end{prop}
+
+\underline{Exemple :} Un prix augmente de 10\%.Quelle évolution permettrait de retrouver le prix initial ?
+Le coefficient multiplicateur est $C_m$=1,1. Le coefficient multiplicateur réciproque noté $C_{m’}$ est $C_{m’}=\frac{1}{1,1}\simeq 0,909$.
+Le taux d’évolution réciproque est $t’=C_{m’}-1=0,909-1 \simeq - 0,091$. Il faudrait donc baisser le prix de 9.1\% pour retrouver le prix de départ et non pas de 10\% !
+
+
+\end{document}

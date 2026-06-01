@@ -1,0 +1,415 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{Statistiques}
+\addcontentsline{toc}{section}{Statistiques}
+
+\vspace{-3mm}
+\subsection*{Effectifs et fréquences}
+\addcontentsline{toc}{subsection}{Effectifs et fréquences}
+
+\vspace{-3mm}
+\begin{exer1}
+On a écrit la même expression dans différentes langues (néerlandaise, italienne, anglaise, allemande et française). Calcule l'effectif, puis la fréquence des voyelles dans chaque expression.
+
+\noindent \begin{center}
+Gelukkige verjaardag \hspace{3mm} Buon compleanno \hspace{3mm} Happy birthday \hspace{3mm} Alles Gute zum Geburtstag \hspace{3mm} Joyeux anniversaire
+\end{center}
+\end{exer1}
+
+\begin{exer1}
+Dans les classes de 5$^e$ TANDEM et de 5$^e$ COUBERTIN, $32$ élèves sont demi-pensionnaires dont $14$ sont en 5$^e$ COUBERTIN. Les $11$ autres élèves de la classe sont externes \\comme $9$ élèves de la classe de 5$^e$ TANDEM.
+
+\begin{enumerate}[font=\color{exer1}]
+\item Complète le tableau suivant
+\item Combien d'élèves y a-t-il en 5$^e$ TANDEM.
+\item Quel est le nombre total d'élèves pour ces deux classes
+\end{enumerate}
+
+\vspace{-3cm}
+\begin{flushright}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{6cm}{|p{1.5cm}|*{3}{>{\centering \arraybackslash}X|}}
+\cline{2-4}
+\multicolumn{1}{c|}{} & \cellcolor{exer1!20}{5$^e$ T} & \cellcolor{exer1!20}{5$^e$ C} & \cellcolor{exer1!20}{Total} \\\hline
+\cellcolor{exer1!20}{Externes} & & &\\\hline
+\cellcolor{exer1!20}{D.P.} & & &\\\hline
+\cellcolor{exer1!20}{Total} & & &\\\hline
+\end{tabularx}
+\end{flushright}
+\end{exer1}
+
+\begin{exer1}
+Le diagramme en bâton ci-dessous représente le temps de trajet pour venir au collège des élèves de 5$^e$ TANDEM.
+
+\noindent \begin{minipage}{8cm}
+\begin{enumerate}[font=\color{exer1}]
+\item Calcule l'effectif total de la classe de 5$^e$ TANDEM.
+\item Quelle est la fréquence des élèves dont le temps de trajet est égale à $15$ minutes ?
+\item Quelle est la fréquence dont le temps de trajet est égale à $45$ minutes ?
+\item Quelle est la fréquence des élèves dans le temps de trajet est compris entre $5$ et $30$ minutes incluses ? Écris le résultats sous la forme d'un pourcentage.
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{axis}[x=0.15cm,y=0.6cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-0.8,xmax=50,ymin=-0.15,ymax=6.6,
+xtick={-0.0,5.0,...,45},ytick={-0,1,...,6},
+xlabel=Temps (en mn),
+ylabel=Effectif,]
+\clip(-1.45,-0.2) rectangle (50,6.6);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (4,0.) rectangle (6,4.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (9,0.) rectangle (11,5.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (14,0.) rectangle (16,6.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (19,0.) rectangle (21,3.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (24,0.) rectangle (26,2.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (29,0.) rectangle (31,4.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (34,0.) rectangle (36,2.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (39,0.) rectangle (41,2.);
+\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (44,0.) rectangle (46,2.);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{exer1}
+
+\begin{exer1}
+Ces tableaux donnent la répartition des masses des œufs (en grammes) d'un élevage de poules.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{2cm}|*{17}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer1!20}{Masse (en g)}  & $41$- & $42$ & $43$ & $44$ & $45$ & $46$ & $47$ & $48$ & $49$ & $50$ & $51$ & $52$ & $53$ & $54$ & $55$ & $56$ & $57$ \\\hline
+\cellcolor{exer1!20}{Effectif} & $4$ & $1$ & $2$ & $1$ & $2$ & $2$ & $3$ & $2$ & $2$ & $3$ & $4$ & $4$ & $10$ & $15$ & $17$ & $30$ & $46$ \\\hline
+\end{tabularx}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{2cm}|*{16}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer1!20}{Masse (en g)} & $58$ & $59$ & $60$ & $61$ & $62$ & $63$ & $64$ & $65$ & $66$ & $67$ & $68$ & $69$ & $70$ & $71$ & $72$ & $73$+ \\\hline
+\cellcolor{exer1!20}{Effectif} & $39$ & $48$ & $57$ & $55$ & $53$ & $68$ & $72$ & $91$ & $94$ & $93$ & $85$ & $75$ & $68$ & $59$ & $55$ & $140$ \\\hline
+\end{tabularx}
+\end{center}
+
+\begin{enumerate}[font=\color{exer1}]
+\item Calcule le nombre d'œufs répertorié.
+\item Suivant le pays les œufs ne sont pas calibré de la même façon. \\Complète la colonne $E$ (Effectif) \\pour chaque tableau.
+
+\vspace{-8mm}
+\noindent \renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{5cm}{|p{1cm}|p{1.5cm}|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{exer1!20}{Suisse}}\\\hline
+\multicolumn{2}{|c|}{Calibre} & E & F\\\hline
+\cellcolor{exer1!20}{Petit} & $49$g et - & &  \\\hline
+\cellcolor{exer1!20}{Moyen} & $50$g à $65$g & &  \\\hline
+\cellcolor{exer1!20}{Gros} & $66$g et + & &  \\\hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{4.5cm}{|p{0.5cm}|p{1.5cm}|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{exer1!20}{France}}\\\hline
+\multicolumn{2}{|c|}{Calibre} & E & F\\\hline
+\cellcolor{exer1!20}{S} & $52$g et - & &  \\\hline
+\cellcolor{exer1!20}{M} & $53$g à $62$g & &  \\\hline
+\cellcolor{exer1!20}{L} & $62$g à $72$g & &  \\\hline
+\cellcolor{exer1!20}{XL} & $73$g et + & &  \\\hline
+\end{tabularx}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{5.5cm}{|p{1.5cm}|p{1.5cm}|*{2}{>{\centering \arraybackslash}X|}}
+\hline
+\multicolumn{4}{|c|}{\cellcolor{exer1!20}{Canada}}\\\hline
+\multicolumn{2}{|c|}{Calibre} & E & F\\\hline
+\cellcolor{exer1!20}{Pee Wee} & $41$g et - & &  \\\hline
+\cellcolor{exer1!20}{Petit} & $42$g à $48$g & &  \\\hline
+\cellcolor{exer1!20}{Moyen} & $49$g à $55$g & &  \\\hline
+\cellcolor{exer1!20}{Gros} & $56$g à $63$g & &  \\\hline
+\cellcolor{exer1!20}{Extra Gros} & $64$g à $69$g & &  \\\hline
+\cellcolor{exer1!20}{Jumbo} & $70$g et + & &  \\\hline
+\end{tabularx}
+
+\vspace{-8mm}
+\item Complète la colonne $F$ \\(fréquence en pourcentage) de chaque tableau.
+\item Compare le pourcentages obtenus dans chaque pays pour la catégorie Gros (L pour la France).
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+Dans le collège, on a demandé au élèves de 5$^e$, le sport qu'ils pratiquent au sein d'un club. Le tableau suivant récapitule les différentes réponses. Complète le.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{2cm}|*{7}{>{\centering \arraybackslash}X|}}
+\cline{2-4}
+\rowcolor{exer1!20}Sport  & Football & Basket & Rugby & Tennis & Danse & Equitation & Total \\\hline
+\cellcolor{exer1!20}{Effectif} & $52$ & $48$ & $35$ & $27$ & $46$ & & $250$\\\hline
+\cellcolor{exer1!20}{Fréquence} & & & & & & & \\\hline
+\end{tabularx}
+\end{center}
+\end{exer1}
+
+\begin{exer2}
+La tableau représente le choix de la langue vivante en classe de cinquième. Des données ont été effacées. Retrouve les.
+
+\vspace{-5mm}
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{3.5cm}|*{4}{>{\centering \arraybackslash}X|}}
+\cline{2-5}
+\multicolumn{1}{c|}{} & \cellcolor{exer2!20}{Anglais} & \cellcolor{exer2!20}{Espagnol} & \cellcolor{exer2!20}{Allemand} & \cellcolor{exer2!20}{Total} \\\hline
+\cellcolor{exer2!20}{Garçons} & & & $5$ & $58$\\\hline
+\cellcolor{exer2!20}{Filles} & $38$ & $15$ & &\\\hline
+\cellcolor{exer2!20}{Total} & $82$ & & & $122$\\\hline
+\end{tabularx}
+\end{center}
+\end{exer2}
+
+\subsection*{Moyenne une série statistique}
+\addcontentsline{toc}{subsection}{Moyenne une série statistique}
+
+\begin{exer1}
+Les élèves de $5^e$ du collège de Yenne ont indiqué le nombre de livres qu'ils ont lus durant le mois de septembre. Voici les résultats de l'enquête.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{3cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer1!20}{Nombre de livre lus} & $0$ & $1$ & $2$ & $3$ & $7$ & $8$ & $15$\\\hline
+\cellcolor{exer1!20}{Effectifs} & $12$ & $4$ & $3$ & $3$ & $1$ & $1$ & $1$ \\\hline
+\end{tabularx}
+\end{center}
+
+Calcul le nombre de livres lus, en moyenne, pas un élève du collège de Yenne au mois de septembre.
+\end{exer1}
+
+\begin{exer1}
+Une équipe de volley comporte neuf joueurs. Voici leurs tailles et le nombre de points que chacun a marqués lors de cette saison.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|*{9}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{exer1!20} Marc & Akim & Alex & Loic & Chris & Olivier & Sylvain & Thomas & Laurent \\\hline
+$1,95$m & $1,90$m & $2,01$m & $1,86$m & $1,92$m & $2,03$m & $1,74$m & $1,65$m & $1,97$m \\\hline
+$35$pts & $24$pts & $31$pts & $32$pts & $33$pts & $27$pts & $3$pts & $0$pts & $22$pts \\\hline
+\end{tabularx}
+\end{center}
+
+\begin{enumerate}[font=\color{exer1}]
+\item Calcule la taille moyenne des joueurs de cette équipe. Arrondi au cm.
+\item Calcul le nombre moyen de points marqués par joueurs, par cette équipe au cours de cette saison.
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+Lors d'une compétition de snowboard, Tom passe deux épreuves : un slalom et une session freestyle en half-pipe.
+
+\begin{enumerate}[font=\color{exer1}]
+\item Voici les temps que Tom a réalisés lors de trois descentes de slalom : $2$mn $45$s, $3$mn $1$s et $2$mn $41$s.
+
+\noindent Quel est le temps moyen de Tom sur le slalom ? 
+
+\noindent Pour ce temps Tom obtient $175$ points.
+\item Voici maintenant les résultats de Tom sur les trois runs de half-pipe : $187$pts, $236$ pts et $192$pts.
+
+\noindent Quelle est la moyenne des points obtenus par Tom sur cette seconde épreuve?
+
+\item Le score final est la moyenne des points pour le slalom et pour le freestyle. Quel est le score final de Tom ?
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+Voici le discours d'un entraineur de football en fin de saison à son équipe :
+
+\begin{quotation}
+\textit{Après avoir marqué $8$ buts lors des $4$ premières rencontres, on au eu un petit passage à vide avec seulement $3$ buts marqués lors des $5$ matchs suivants ! \\Par contre, un grand bravo pour la fin de saison et les $11$ buts marqués sur les $3$ derniers matchs !}
+\end{quotation}
+
+Calcule la moyenne de buts marqués par match par l'équipe lors de cette saison.
+\end{exer1}
+
+\begin{exer1}
+Voici le température en degré Celsius relevées chaque jour d'un mois de novembre : \quad 5 \quad 4 \quad 6 \quad 2 \quad 1 \quad 4 \quad 5 \quad 6 \quad 3 \quad 0 \quad -2 \quad -1 \quad -1 \quad 4 \quad 5 \quad 5 \quad 5 \quad 0 \quad 0 \quad 4 \quad 3 \quad 3 \quad 5 \quad 5 \quad -1 \quad 5 \quad 6 \quad 0 \quad -2 \quad 0
+
+\begin{enumerate}[font=\color{exer1}]
+\item Classe les données dans le tableau.
+\item Calcule la température moyenne de ce \\mois de novembre (arrondis au dixième).
+\end{enumerate}
+
+\vspace{-1.8cm}
+\begin{flushright}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{9.5cm}{|p{2cm}|*{9}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer1!20}{Température} & $-2$ & $-1$ & $0$ & $1$ & $2$ & $3$ &  $4$ & $5$ & $6$ \\\hline
+\cellcolor{exer1!20}{Nb de jours} & & & & & & & & & \\\hline
+\end{tabularx}
+\end{flushright}
+\end{exer1}
+
+\begin{exer2}
+Voila, pour le moment, les notes (sur 20) de Bastien au troisième trimestre en mathématiques :
+
+\begin{flushright}
+10 \quad 9 \quad 15 \quad 5 \quad 3 \quad 8 \quad 15 \quad 15 \hspace{2cm} \textcolor{white}{.}
+\end{flushright}
+
+\vspace{-8mm}
+\begin{enumerate}[font=\color{exer2}]
+\item Quelle est sa moyenne trimestrielle ?
+\item On ajoute une note et sa moyenne augmente. Que peux tu dire sur cette note ?
+\item Il obtient $9,5$ à un contrôle. Que se passe-t-il pour sa moyenne ?
+\item Le professeur s'est trompé sur deux notes rentrées sur PRONOTE. En fait la moyenne de Bastien est de $12,5$. Effectue les changements.
+\end{enumerate}
+\end{exer2}
+
+\subsection*{Médiane une série statistique}
+\addcontentsline{toc}{subsection}{Médiane une série statistique}
+
+\begin{exer1}
+Détermine la médiane de chacune des séries statistiques suivantes.
+
+\begin{enumerate}[font=\color{exer1}]
+\item $10$ - $25$ – $32$ – $143$ – $280$ – $301$
+\item $8$ – $9.5$ – $14$ – $16$ – $18$ – $19$ – $20$
+\item $2$ – $4$ – $7$ – $9$ – $9$ – $10$ – $10$ – $10$ – $11$ – $12$
+\item $1$ – $1$ – $1$ – $3$ – $4$ – $4$ – $5$ – $5$ – $5$ – $9$ – $10$
+\end{enumerate}
+\end{exer1}
+
+\begin{exer1}
+Un gérant a relevé le nombre de personnes fréquentant son club sur une semaine.
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\linewidth}{|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{exer1!20} Lu & Ma & Me & Je & Ve & Sa & Di \\\hline
+$32$ & $38$ & $21$ & $49$ & $60$ & $84$ & $24$\\\hline
+\end{tabularx}
+\end{center}
+
+\begin{enumerate}[font=\color{exer1}]
+\item Calcule le nombre moyen de personnes fréquentant le club par jour.
+\item Détermine une médiane de cette série.
+\end{enumerate}
+\end{exer1}
+
+\begin{exer3}
+Sam a relevé les durées des morceaux de sa compilation de rap préférée en min:sec.
+
+\medskip
+\noindent $4$:$08$ \quad ; \quad $3$:$19$ \quad ; \quad $4$:$47$ \quad ; \quad $3$:$46$ \quad ; \quad $3$:$15$ \quad ; \quad $3$:$19$ \quad ; \quad $3$:$58$ \quad ; \quad $3$:$50$ \quad ; \quad $3:24$ \quad ; \quad $3$:$55$ \quad ; \quad $3$:$16$ \quad ; \quad $3$:$24$ \quad ; \quad $3$:$07$ 
+
+\begin{enumerate}[font=\color{exer3}]
+\item Calcule la durée moyenne des morceaux.
+\item Détermine la durée médiane.
+\end{enumerate}
+\end{exer3}
+
+\subsection*{Représenter une série statistiques}
+\addcontentsline{toc}{subsection}{Représenter une série statistiques}
+
+\begin{exer1}
+Voici les réponses des élèves d'une classe de 
+
+\vspace{-6mm}
+\noindent \begin{minipage}{9.5cm}
+
+\vspace{5mm}
+$5^e$ à un sondage portant sur le couleur préféré.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{2cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer1!20}{Couleur} & Rouge & Vert & Bleu & Violet & Jaune\\\hline
+\cellcolor{exer1!20}{Effectif} & $6$ & $8$ & $5$ & $3$ & $5$ \\\hline
+\end{tabularx}
+\end{center}
+
+Représente cette série à l'aide d'un diagramme en bâton sur le repère tracé ci-contre.
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{axis}[x=1cm,y=0.4cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=0,xmax=5.5,ymin=0,ymax=8.5,
+xtick={1,2,3,4,5},
+xticklabels={Rouge, Vert, Bleu, Violet, Jaune},
+ytick={-0,1,...,8},
+ylabel=Effectif,]
+\clip(0,0) rectangle (5.5,8.6);
+%\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (0.75,0.) rectangle (1.25,6);
+%\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (1.75,0.) rectangle (2.25,8);
+%\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (2.75,0.) rectangle (3.25,5);
+%\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (3.75,0.) rectangle (4.25,3);
+%\draw[line width=0.8pt,color=exer1,fill=exer1,fill opacity=0.3] (4.75,0.) rectangle (5.25,5);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{exer1}
+
+\begin{exer2}
+Effectuons maintenant un sondage à l'intérieur de cette classe portant sur votre couleur préféré.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{2cm}|*{6}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{exer2!20}{Couleur} & Rouge & Vert & Bleu & Violet & Jaune & Autre\\\hline
+\cellcolor{exer2!20}{Effectif} &  &  &  &  &  &  \\\hline
+\end{tabularx}
+\end{center}
+
+Représente cette série à l'aide d'un diagramme en bâton.
+\end{exer2}
+
+\begin{exer2}
+La répartition du régime alimentaire d'un sanglier en France est donnée dans le tableau ci-contre. L'objectif est de représenter les données sous \\forme d'un diagramme circulaire.
+
+\begin{enumerate}[font=\color{exer2}]
+\item Complète le tableau de proportionnalité \\suivant en écrivant tes calculs.
+\item Représente cette répartiton alimentaire à \\l'aide d'une diagramme circulaire
+\item Quelle est l'alimentation principale du \\sanglier ?
+\item Quels pourcentages représentent les \\graminées et les céréales dans l'alimentation \\du sanglier ?
+\end{enumerate}
+
+\vspace{-5.2cm}
+\begin{flushright}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{9cm}{|p{2.5cm}|*{6}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{exer2!20} Aliments & Pourcentage & Angles (en degré)\\\hline
+\cellcolor{exer2!20}{Fruits forestiers} & $60$ &  \\\hline
+\cellcolor{exer2!20}{Graminées} & $18$ &  \\\hline
+\cellcolor{exer2!20}{Céréales} & $11$ &  \\\hline
+\cellcolor{exer2!20}{Animaux} & $4$ &  \\\hline
+\cellcolor{exer2!20}{Racines} & $7$ &  \\\hline
+\cellcolor{exer2!20}{Total} & $100$ & $360$ \\\hline
+\end{tabularx}
+\end{flushright}
+\end{exer2}
+
+\begin{exer3}
+Madame BIOT et Monsieur BOUTROIS sont tous les deux professeurs de mathématiques et ont tous les deux une classe de cinquième ayant$20$ élèves. Ils souhaitent comparer les notes obtenues par leurs élèves au dernier devoir commun.
+
+\textbf{Note attribuées par Madame Biot : }
+7-8-12-12-18-5-11-6-3-8-5-18-9-20-6-16-6-18-7-15
+
+\textbf{Note attribuées par Monsieur Boutrois : }
+8-8-9-12-11-8-16-15-7-6-10-10-12-8-10-14-12-11-14-9
+
+\begin{enumerate}[font=\color{exer3}]
+\item Construis sur un même graphique les diagrammes en bâtons représentant les deux séries de notes. Utilise deux couleurs
+\item Calcule la moyenne de chaque classe
+\item En observant le diagramme en bâtons de la question \textcolor{exer3}{\textbf{1.}} et la réponse de la question \textcolor{exer3}{\textbf{2.}}, que pourrait-on conclure ?
+\end{enumerate}
+\end{exer3}
+
+\end{document}

@@ -1,0 +1,336 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{7}
+\chapter{Prismes droits, volumes}
+
+\vspace{-2mm}
+\section{Rappel sur les volumes}
+
+\vspace{-3mm}
+\subsection{Unité de mesure}
+
+\begin{dft}
+L'unité principale d'un volume est le mètre cube, noté m$^3$, qui est le volume d'un cube de $1$m d'arête.
+
+\medskip
+\noindent On peut aussi exprimer un volume en litre. $1$L = $1$dm$^3$
+\end{dft}
+
+\medskip
+On a les égalités :
+
+\vspace{-2mm}
+\begin{enumerate}
+\begin{tabularx}{\linewidth}{p{4.5cm}*{3}{>{\arraybackslash}X}}
+\item[•] $1$ m$^3$ = $1 000$ dm$^3$ = $1 000$ L&
+\item[•] $1$ dm$^3$ = $1 000$ cm$^3$&
+\item[•] $1$ L = $10$ dL&
+\item[•] $1$ dL = $10$ cL\\
+\end{tabularx}
+\end{enumerate}
+
+\noindent Pour les conversions, on peut aussi utiliser un tableau :
+
+\begin{center}
+\renewcommand{\arraystretch}{1.7}
+\begin{tabularx}{\linewidth}{|*{3}{>{\centering \arraybackslash}X|}|*{3}{>{\centering \arraybackslash}X|}|*{3}{>{\centering \arraybackslash}X|}|*{3}{>{\centering \arraybackslash}X|}}
+\hline
+\rowcolor{lightgray!50} \multicolumn{3}{|c||}{Mètre cube} & \multicolumn{3}{|c||}{Décimètre cube} & \multicolumn{3}{|c||}{Centimètre cube} & \multicolumn{3}{|c|}{Millimètre cube}\\\hline
+\rowcolor{lightgray!50} & & m$^ 3$ & & & dm$^ 3$& & & cm$^ 3$& & & mm$^ 3$ \\\hline
+\rowcolor{lightgray!50} & & & hL & daL & L & dL & cL & mL & & & \\\hline
+ & & & & & & & & & & & \\\hline
+% & & & & & & & & & & & \\\hline
+% & & & & & & & & & & & \\\hline
+\end{tabularx}
+\end{center}
+
+\vspace{-4mm}
+\begin{ex}
+Convertir les longueur suivantes :
+
+\vspace{-2mm}
+\begin{enumerate}
+\begin{tabularx}{\linewidth}{*{3}{>{\arraybackslash}X}}
+\item[•] $23,0005$ m$^3$ = \hspace{1.5cm}  dm$^3$&
+\item[•] $215$ cm$^3$ = \hspace{1.5cm}  m$^3$&
+\item[•] $2,1$ L = \hspace{1.5cm}  dL\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\vspace{-3mm}
+\subsection{Calcul de volume}
+
+\vspace{-12mm}
+\noindent \begin{minipage}{9.5cm}
+\begin{prop}
+Le volume $V$ d'un pavé droit de dimension $L$, $l$ et $h$ est :
+$$V = L \times l \times h$$
+\end{prop}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6.5cm}
+\begin{tikzpicture}[join=round,x=0.9cm,y=0.9cm,scale=1]
+    \tikzstyle{conefill} = [fill=gray!20,fill opacity=0.4]
+
+    %coordonnées des sommets   
+    %base inférieure
+    \draw(0,0,0)node[left](A){A};
+    \draw(5,0,0)node[below right](B){B};
+    \draw(5,0,3)node[below right](C){C};
+    \draw(0,0,3)node[below left](D){D};
+    %base supérieure
+    \draw(0,2,0)node[above left](E){E};
+    \draw(5,2,0)node[above right](F){F};
+    \draw(5,2,3)node[right](G){G};
+    \draw(0,2,3)node[above left](H){H};   
+       
+   %tracer les arêtes
+   \draw[dashed]  (A.east)--(B.north west);
+   \draw[dashed]  (D.north east)--(A.east);
+   \draw[dashed] (A.east)--(E.south east);
+   
+   %remplir les faces
+   \fill[conefill] (0,0,0)--(5,0,0)--(5,0,3)--(0,0,3)--cycle; %base inférieure
+   \fill[conefill] (0,2,0)--(5,2,0)--(5,2,3)--(0,2,3)--cycle; %base supérieure
+   \fill[conefill] (0,0,0)--(0,2,0)--(0,2,3)--(0,0,3)--cycle; %face latérale gauche
+   \fill[conefill] (0,0,0)--(5,0,0)--(5,2,0)--(0,2,0)--cycle; %face arrière
+   \fill[conefill] (5,0,0)--(5,2,0)--(5,2,3)--(5,0,3)--cycle; %face latérale droite
+   \fill[conefill] (0,0,3)--(5,0,3)--(5,2,3)--(0,2,3)--cycle; %face avant
+   
+   %tracer les arêtes
+   \draw (B.north west)--node[right]{\large{$l$}} (C.north west);
+   \draw (C.north west)--node[below]{\large{$L$}} (D.north east);
+   \draw (E.south east)--(F.south west);
+   \draw (F.south west)--(G.west);
+   \draw (G.west)--(H.south east);
+   \draw (H.south east)--(E.south east);
+   \draw (B.north west)--(F.south west);
+   \draw (C.north west)--(G.west);
+   \draw (D.north east)--node[left]{\large{$h$}} (H.south east); 
+   
+   \draw(5,2,3)node[right](G){G};  
+\end{tikzpicture}
+\end{minipage}
+
+\vspace{-7mm}
+\noindent \begin{minipage}{6.5cm}
+\begin{center}
+\begin{tikzpicture}[join=round,x=0.9cm,y=0.9cm,scale=0.8]
+    \tikzstyle{conefill} = [fill=gray!20,fill opacity=0.4]
+
+    %coordonnées des sommets   
+    %base inférieure
+    \draw(0,0,0)node[left](A){A};
+    \draw(3,0,0)node[below right](B){B};
+    \draw(3,0,3)node[below right](C){C};
+    \draw(0,0,3)node[below left](D){D};
+    %base supérieure
+    \draw(0,3,0)node[above left](E){E};
+    \draw(3,3,0)node[above right](F){F};
+    \draw(3,3,3)node[right](G){G};
+    \draw(0,3,3)node[above left](H){H};   
+       
+   %tracer les arêtes
+   \draw[dashed]  (A.east)--(B.north west);
+   \draw[dashed]  (D.north east)--(A.east);
+   \draw[dashed] (A.east)--(E.south east);
+   
+   %remplir les faces
+   \fill[conefill] (0,0,0)--(3,0,0)--(3,0,3)--(0,0,3)--cycle; %base inférieure
+   \fill[conefill] (0,3,0)--(3,3,0)--(3,2,3)--(0,3,3)--cycle; %base supérieure
+   \fill[conefill] (0,0,0)--(0,3,0)--(0,2,3)--(0,0,3)--cycle; %face latérale gauche
+   \fill[conefill] (0,0,0)--(3,0,0)--(3,3,0)--(0,3,0)--cycle; %face arrière
+   \fill[conefill] (3,0,0)--(3,3,0)--(3,3,3)--(3,0,3)--cycle; %face latérale droite
+   \fill[conefill] (0,0,3)--(3,0,3)--(3,3,3)--(0,3,3)--cycle; %face avant
+   
+   %tracer les arêtes
+   \draw (B.north west)--node[right]{\large{$c$}} (C.north west);
+   \draw (C.north west)--node[below]{\large{$c$}} (D.north east);
+   \draw (E.south east)--(F.south west);
+   \draw (F.south west)--(G.west);
+   \draw (G.west)--(H.south east);
+   \draw (H.south east)--(E.south east);
+   \draw (B.north west)--(F.south west);
+   \draw (C.north west)--(G.west);
+   \draw (D.north east)--node[left]{\large{$c$}} (H.south east); 
+   
+   \draw(3,3,3)node[right](G){G};  
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{9.5cm}
+\begin{prop}
+Le volume $V$ d'un cube de côté $c$ est
+$$V = c \times c \times c = c^3$$
+\end{prop}
+\end{minipage}
+
+\vspace{-3mm}
+\section{Prisme}
+
+\vspace{-3mm}
+\subsection{Définition et représentation}
+
+\vspace{-2mm}
+\begin{dft}
+Un prisme droit est un solide dont :
+\begin{enumerate}
+\item[•] Les faces latérales sont des rectangles perpendiculaires aux bases.
+\item[•] Les deux bases sont deux polygones parallèles et superposables ($2$ triangles, $2$ quadrilatères, etc..)
+\end{enumerate}
+\end{dft}
+
+\begin{regle}[Représentation en perspective cavalière]
+\begin{enumerate}
+\item[•] Les droites parallèles restent parallèles.
+\item[•] Les arêtes cachées sont représentées en pointillé.
+\end{enumerate}
+\end{regle}
+
+\begin{rmq}
+
+\vspace{-4.5mm} \hspace{2.8cm} Le cube et le pavé droit sont des prismes droits particuliers.
+\end{rmq}
+
+\vspace{-3mm}
+\subsection{Patron}
+
+\vspace{-2mm}
+\begin{meth}
+\begin{enumerate}
+\item Compter le nombre total de faces (faces latérales et bases) du prisme.
+\item Choisir une face latérale ou une base pour le premier tracé.
+\item Faire à main levée le schéma d'un patron en repérant et en codant les longueurs égales.
+\item Faire ce patron en construisant les faces en vraie forme et en vraie grandeur. Vérifier le patron.
+\end{enumerate}
+\end{meth}
+
+\begin{ex}
+Patron d'un prisme droit de $5$ cm de hauteur et dont les bases \\sont des triangles de dimensions $3$ cm, $3,5$ cm et $4$ cm.
+
+\vspace{-6mm}
+\begin{flushright}
+A COLLER ICI \hspace{2.5cm}\textcolor{white}{.}
+\end{flushright}
+\end{ex}
+
+\vspace{-3mm}
+\section{Volume d'un prisme}
+
+\vspace{-2mm}
+\begin{prop}
+Le volume d'un prisme droit s'obtient en multipliant l'aire de la base par la hauteur :
+
+\medskip
+\noindent \begin{minipage}{6cm}
+$$V = A_B \times h_P$$
+\end{minipage}
+\begin{minipage}{10cm}
+$V$ est le volume du solide, en unité de volume
+
+$A_B$ est l'aire de la base, en unité d'aire
+
+$h_P$ est la hauteur du prisme, en unité de longueur.
+\end{minipage}
+\end{prop}
+
+\begin{rmq}
+Toutes les longueurs doivent être exprimées dans la même unité de mesure.
+Dans la formule $V = AB \times h_P$ , $A_B$ est l'aire de la base du prisme (c'est un polygone).
+(Aire : d'un triangle : $A = \dfrac{c \times h}{2}$, d'un rectangle : $A = L \times l$, d'un parallélogramme : $A = c \times h$ ...)
+\end{rmq}
+
+\begin{ex}
+
+\vspace{-5mm}
+\noindent \begin{minipage}{5cm}
+\begin{center}
+\textbf{Exemple}
+\end{center}
+
+La base est un triangle
+rectangle ;
+
+\noindent Son aire est :
+$A_{triangle} = \dfrac{c \times h_t}{2} $
+
+soit $A_{triangle} = \dfrac{1,8 \times 3,6}{2}$
+
+On a donc $A_B = 3,24$ cm$^2$.
+
+\medskip
+Le volume du prisme est :
+$$V = A_B \times h_p$$
+
+Soit $V = 3,24 \times 4 = 12,96$
+
+\noindent 
+Le volume du prisme droit est
+$12,96$ cm$^3$.
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{center}
+\textbf{Méthode}
+\end{center}
+
+\begin{enumerate}
+\item On calcule l'aire de la base :
+\begin{enumerate}
+\item[•] repérer la forme de la base
+\item[•] écrire la formule d'aire correspondante ;
+\item[•] remplacer par les mesures connues ;
+\item[•] effectuer le calcul.
+\end{enumerate}
+\item On calcule le volume du prisme droit :
+\begin{enumerate}
+\item[•] écrire la formule du volume d'un prisme
+droit.
+\item[•] remplacer par les nombres connus.
+\end{enumerate}
+\item On conclut avec les unités.
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{4cm}
+\begin{center}
+\textbf{Figure}
+\end{center}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.5]
+\clip(-0.5,-1.5) rectangle (7.,12.5);
+\fill[line width=0.pt,color=red,fill=red!20,fill opacity=0.2] (1.,1.) -- (3.,-1.) -- (6.26,2.26) -- cycle;
+\draw[line width=2.pt,color=blue,fill=blue,fill opacity=0.2] (3.3714418604651164,-0.6285581395348838) -- (3.,-0.2571162790697674) -- (2.6285581395348836,-0.6285581395348837) -- (3.,-1.) -- cycle; 
+%\fill[line width=2.pt] (1.,1.) -- (3.,-1.) -- (6.26,2.26) -- cycle;
+%\fill[line width=2.pt] (1.0247627906976748,10.360334883720931) -- (3.024762790697675,8.360334883720931) -- (6.284762790697675,11.62033488372093) -- cycle;
+\draw[line width=2.pt,color=blue,fill=blue,fill opacity=0.2] (3.3962046511627912,8.731776744186048) -- (3.024762790697675,9.103218604651163) -- (2.6533209302325584,8.731776744186048) -- (3.024762790697675,8.360334883720931) -- cycle; 
+\draw [line width=1.6pt] (1.,1.)-- (3.,-1.);
+\draw [line width=1.6pt] (3.,-1.)-- (6.26,2.26);
+\draw [line width=1.6pt,dash pattern=on 5pt off 5pt] (6.26,2.26)-- (1.,1.);
+\draw [line width=1.6pt] (1.0247627906976748,10.360334883720931)-- (3.024762790697675,8.360334883720931);
+\draw [line width=1.6pt] (3.024762790697675,8.360334883720931)-- (6.284762790697675,11.62033488372093);
+\draw [line width=1.6pt] (6.284762790697675,11.62033488372093)-- (1.0247627906976748,10.360334883720931);
+\draw [line width=1.6pt] (3.024762790697675,8.360334883720931)-- (3.,-1.);
+\draw [line width=1.6pt] (6.284762790697675,11.62033488372093)-- (6.26,2.26);
+\draw [line width=1.6pt] (1.0247627906976748,10.360334883720931)-- (1.,1.);
+\begin{scriptsize}
+\draw [color=black] (1.,1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw [color=black] (3.,-1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw [color=black] (6.26,2.26)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (1,-0.4) node {\large{$1,8$ cm}};
+\draw[color=black] (5.9,0.2) node {\large{$3,6$ cm}};
+\draw[color=black] (4.2,5) node {\large{$4$ cm}};
+\draw [color=black] (1.0247627906976748,10.360334883720931)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw [color=black] (3.024762790697675,8.360334883720931)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw [color=black] (6.284762790697675,11.62033488372093)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\end{ex}
+
+\begin{rmq}
+Les formules du cube et du pavé droit sont des cas particuliers de la formule précédente.
+\end{rmq}
+\end{document}

@@ -1,0 +1,248 @@
+\documentclass[frenchb]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage[left=2cm, right=2cm, top=1cm, bottom=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+
+\title{Histoire des mathématiques}
+\author{Pierre Thiebeaux, Etienne Henry, Benoît Sordet}
+\date{}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},  
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,        
+    breaklines=true,                
+    captionpos=b,                    
+    keepspaces=true,                
+    %numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\maketitle
+
+\textit{Blaise Pascal (1623-1662) est un mathématicien, physicien, philosophe, moraliste et théologien français. À 19 ans, il invente la première machine à calculer.} \\
+
+\textit{Pierre de Fermat (1601-1665) est un magistrat et surtout mathématicien français qui s'est intéressé aux sciences et en particulier à la physique. Il est principalement connu pour le grand théorème de Fermat, qu'il a énoncé mais qui n'a été démontré que 300 ans plus tard.}
+%Première lettre (non datée) de Pascal à Fermat (extrait)
+
+\section*{Activité introductive aux Probabilités}
+\textit{Au XVIIème siècle, les mathématiciens commencent à s’intéresser aux jeux d’argent et de hasard. Dans cette lettre, Pascal aborde le sujet des paris sur le résultat de lancers de dés. Voici un extrait de la première lettre (datée du 29 juillet 1654) de Pascal à Fermat :\\}
+
+« Monsieur,
+
+Je n'ai pas eu le temps de vous envoyer la démonstration d'une difficulté qui étonnait fort M. de Méré, car il a très bon esprit, mais il n'est pas géomètre \textit{(c'est, comme vous savez, un grand défaut)} et même il ne comprend pas qu'une ligne mathématique soit divisible à l'infini et croit fort bien entendre qu'elle est composée de points en nombre fini, et je n'ai jamais pu l'en tirer. Si vous pouviez le faire, on le rendrait parfait. 
+
+Il me disait donc qu'il avait trouvé fausseté dans les nombres par cette raison :
+
+\textcolor{gray}{Il me disait donc qu’il avait trouvé des résultats de calculs contradictoires parce que : }
+
+Si on entreprend de faire un six avec un dé, il y a avantage\footnote{On dit qu'un pari est avantageux si la probabilité de succès est supérieure à $\frac{1}{2}.$} de l'entreprendre en 4, comme de 671 à 625.
+
+\textcolor{gray}{Si on souhaite faire un six avec un dé, il faut le lancer quatre fois avant d’avoir plus d’une chance sur deux de remporter le pari : on a alors 671 chances sur 1296 de gagner contre 625 chances sur 1296.}
+
+Si on entreprend de faire Sonnez\footnote{Un double six.} avec deux dés, il y a désavantage de l'entreprendre en 24.
+Et néanmoins 24 est à 36 (qui est le nombre des faces de deux dés) comme 4 à 6 (qui est le
+nombre des faces d'un dé).
+
+\textcolor{gray}{Si on souhaite obtenir un double six avec deux dés, après 24 lancers on a moins d’une
+chance sur deux d’avoir obtenu un double six. Pourtant, $\dfrac{24}{6}= \dfrac{4}{6}$. }
+
+ Voilà quel était son grand scandale qui lui faisait dire hautement que les propositions n'étaient pas constantes et que l'arithmétique se démentait : mais vous en verrez bien aisément la raison par les principes où vous êtes. »
+
+\section*{Questions}
+\begin{enumerate}
+\item Est-il avantageux, lorsqu'on joue au dé, de parier sur l'apparition d'un 6 en lançant 4 fois le
+dé?
+\item Est-il avantageux de parier sur l'apparition d'un double-six, quand on lance 24 fois deux
+dés?
+\end{enumerate}
+\section*{Questions (v.2)}
+\begin{enumerate}
+\item Vérifiez qu'il y a bien 671 chances sur 1296 contre 625 d'obtenir un six en quatre lancers. 
+\item En 24 lancers de deux dés, quelle est la probabilité d'avoir obtenu au moins un double six ? Est-il avantageux de parier qu'on y arrivera ?
+\item A partir de combien de lancers de deux dés ce pari devient-il avantageux ?
+\item Quel est le raisonnement du Chevalier de Méré, qui pensait qu'il suffirait de lancer les dés 24 fois pour que le pari d'obtenir un double six soit avantageux, ce qui est contesté par Blaise Pascal ?
+\end{enumerate}
+
+\section*{Note à l'enseignant}
+
+Cette activité a pour but de présenter les probabilités dans leur contexte historique, avant l'apparition d'un réel formalisme. C'est l'occasion de pratiquer le passage au complémentaire, et d'en comprendre la pertinence. Elle est également l'opportunité de manipuler les puissances. Cette activité met en évidence aux yeux des élèves le recul nécessaire qu'il convient d'avoir face aux intuitions, en particulier pour ce qui est des probabilités. L'exemple du problème des trois portes est un autre support possible du même esprit. Un prolongement possible peut être une activité algorithmique. L'expérimentation grâce à un script Python en lien avec la loi des Grands Nombres permet de vérifier les prédictions de Pascal et Fermat.
+
+\section*{Elements de correction}
+
+\begin{enumerate}
+\item Pour calculer la probabilité de faire au moins un six, on calcule le nombre de cas favorables sur le nombre de cas possibles. Il faut donc dénombrer les différentes possibilités. Pour le premier dé, il y a six issues possibles. Pour le second dé, il y a également six issues possibles. Les lancers ne dépendent pas les uns des autres. Pour les quatre lancers, il y a donc $6^4 = 1296$ issues possibles.
+
+Il faut maintenant compter le nombre de résultats possibles qui contiennent au moins un six, qu'on notera $n$, mais ceci demande beaucoup d'opérations : il faut étudier le cas où on obtient exactement 1 six, le cas où on obtient exactement 2 six, etc. Il est donc plus rapide de traiter un seul cas : celui où l'on n'obtient aucun six, qui est le contraire du cas recherché. On va noter $n'$ le nombre de tels cas. On aura alors $n + n' = 1296$. D'où $n = 1296 - n'$.
+
+Pour déterminer $n'$, il suffit de compter le nombre de lancers possibles qui n'utilisent pas la face six. Au premier lancer on a cinq possibilités : 1, 2, 3, 4 et 5. Au second lancer, à nouveau cinq possibilités. Donc au final il y a $5^4 = 625$ issues possibles. Par suite, il y a $n = 1296 - n' = 1296 - 625 = 671$ lancers qui contiennent au moins un six.
+
+\item Remarquons qu'en lançant deux dés, il y a une chance sur 36 d'obtenir un double six. Comme précédemment, on passe au complémentaire. Il y a $35^{24}$ issues possibles dans l'événement « les 24 lancers ne contiennent aucun double six ». Le nombre total d'issues possibles est $36^{24}$. La probabilité de n'obtenir aucun double six est donc de $\dfrac{35^{24}}{36^{24}}$, on en déduit \underline{en passant au complémentaire} que la probabilité d'obtenir au moins un double six est de $1 - \dfrac{35^{24}}{36^{24}} \simeq 0,491$. Le pari n'est donc pas avantageux.
+
+\item On peut construire un tableau de valeurs :
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c| } 
+ \hline
+Nombre de lancers & 23 & 24 & 25 & 26 \\
+ \hline
+Probabilité arrondie & 0,477 & 0,491 & 0,506 & 0,519 \\
+ \hline
+\end{tabular}
+\end{center}
+
+A partir de 25 lancers, le pari devient avantageux.
+
+\item Le chevalier de Méré pensait que les probabilités étaient proportionnelles. Il pensait qu'il faudrait 6 fois plus d'essais, étant donnés que le nombre de résultats possibles en lançant deux dés est 6 fois plus grand.
+\end{enumerate}
+
+\section*{Prolongement algorithmique}
+Il est possible de prolonger l'étude de ce texte par une activité de programmation mettant en œuvre la loi des grands nombres de manière informelle. 
+
+Les consignes d'une telle activité pourraient être les suivantes : 
+\begin{enumerate}
+\item Ecrire une fonction en Python qui compte, pour une liste et une valeur données, le nombre d'apparitions de la valeur dans la liste. 
+\item Simuler 1000 tentatives du pari « J'obtiens au moins un six en quatre lancers ». Compter le nombre de fois où l'on gagne. La répétition à l'identique d'une expérience un nombre de fois donné se fait avec la boucle {\bf for}. \\ {\it Le professeur et la classe construisent collectivement le code à faire à partir du raisonnement des élèves guidé par l'enseignant. }\\
+Commenter le résultat obtenu. Est-ce cohérent avec le texte étudié. 
+\item Procéder également à des simulations pour le pari « J'obtiens au moins un double six en  24 lancers.» Comparer également les résultats obtenus avec le texte et commenter. 
+
+\end{enumerate}
+
+\subsection*{Un exemple de script possible}
+\begin{lstlisting}[language=Python]
+
+from random import*
+
+def compter(liste,valeur):
+    n=len(liste) # n prend comme valeur la taille de la liste
+    compteur=0
+    for i in range(n):
+        if(liste[i]==valeur):
+            compteur=compteur+1
+    return compteur
+
+# Question 1 : lancer d'un de 4 fois
+R=0 #Nombre de resultats favorables
+for j in range(1000):
+    Lancers=[]
+    for l in range(4):
+        Lancers=Lancers+[randint(1,6)]
+    if compter(Lancers,6)>=1:
+        R=R+1
+
+print("On a gagne le pari ",R," fois.")
+
+# Seconde partie : obtenir un double six avec deux des
+P=0 #Nombre de resultats favorables
+for j in range(10000):
+    D1=[]
+    D2=[]
+    for l in range(24):
+        D1=D1+[randint(1,6)]
+        D2=D2+[randint(1,6)]
+    double=0
+    for k in range(24):
+        if(D1[k]==6 and D2[k]==6):
+            double=1
+    if(double==1):
+        P=P+1
+print("En pariant sur 24 lancers,on a gagne le pari ",P," fois.")
+
+# Seconde partie : obtenir un double six avec deux des, en pariant 25 fois
+P=0 #Nombre de resultats favorables
+for j in range(10000):
+    D1=[]
+    D2=[]
+    for l in range(25):
+        D1=D1+[randint(1,6)]
+        D2=D2+[randint(1,6)]
+    double=0
+    for k in range(25):
+        if(D1[k]==6 and D2[k]==6):
+            double=1
+    if(double==1):
+        P=P+1
+print("En pariant sur 25 lancers,on a gagne le pari ",P," fois.")
+\end{lstlisting}
+
+\begin{thebibliography}{1}
+\bibitem{Original} {\it Oeuvres de Blaise Pascal, Volume 1}, Blaise Pascal, p.360 \\Lefèvre, 1819. \\
+\url{https://books.google.fr/books?id=N7EGAAAAQAAJ&hl=fr&pg=PA360#v=onepage&q&f=false}
+\bibitem{Original} {\it MacTutor History of Mathematics archive}, School of Mathematics and Statistics, University of St Andrews, Scotland. \\
+\url{https://mathshitory.st-andrews.ac.uk}
+
+\end{thebibliography}
+
+\section{Problème isopérimétrique}
+\subsection*{Devoir à la maison (niveau I)}
+1) Rappeler l'aire d'un disque, notée $A_D$, en fonction de son rayon $R$.
+
+2) Déterminer à quel intervalle appartient le rayon du cercle $R$ sachant que l'aire du disque soit plus grande ou égale à  $6\pi$ et strictement plus petite à $9\pi$.\\
+
+
+\textit{On accepte et on utilisera pour la question 2) le résultat suivant: soit $0 \leq a \leq x \leq b$ alors $\sqrt{a} \leq \sqrt{x} \leq \sqrt{b}$ }
+
+\subsection*{Devoir à la maison (niveau II)}
+
+\subsection*{La légende de Didon et le problème isopérimètrique}
+
+\textit{La légende raconte qu'au IXème siècle avant Jésus-Christ, Elissa, princesse de Tyr (en Phénicie, actuels Liban, Israël et Syrie) devient reine de Tyr. Mais son frère Pygmalion assassine son époux afin de prendre le pouvoir. Horrifiée, Elissa s'enfuit. Elle atteint l'Afrique du Nord à Byrsa ("la peau de bœuf"), citadelle proche de l'actuel Tunis, et demande asile aux autochtones. On ne lui concède que ce que pourrait couvrir la peau d'un bœuf. Astucieuse, elle découpe la peau en si fines lanières qu'elle obtient, bout à bout, une longueur fantastique: près de 4 km. Avec la corde ainsi formée, elle aurait encerclé son territoire et fondé (vers 814 av. J.-C.) la très célèbre ville de Carthage actuellement nommée Istanbul.}\\
+
+
+
+L'idée de former un cercle plutôt qu'un triangle, un rectangle, un carré ou tout autre forme géométrique fermée, place Didon au pinacle des mathématiques : elle avait donc admis sans hésiter le résultat isopérimétrique ci-après que Jacques Bernoulli prouva dans le cadre du calcul des variations (en 1698):
+
+
+
+\begin{center}
+
+\underline{ \textit{"De toutes les courbes fermées, de longueur donnée, celle qui entoure l'aire la plus grande est le cercle."} }
+\end{center}
+
+\section*{Questions}
+
+1) Rappeler le périmètre $P$ d'un disque en fonction de son  rayon $R$, en déduire le rayon $R$ d'un disque en fonction du périmètre $P$ puis donner l'aire d'un disque en fonction de son périmètre. \\
+
+2) Rappeler le périmètre $P$ d'un carré en fonction de son coté $c$, en déduire le coté $c$ d'un carré en fonction du périmètre $P$, puis donner l'aire d'un carré en fonction de son périmètre. \\
+
+3) Montrer que, à périmètre fixé, l'aire d'un disque est toujours plus grande que l'aire d'un carré.
+
+\section*{Une dimension plus loin... le problème isosurfacique}
+
+
+\begin{center}
+\textit{+2 points bonus au prochain DS en cas de réussite}
+\end{center}
+
+Pour les plus motivés et aguerris d'entre vous, voici un travail facultatif de recherche.
+
+1f) Rappeler la surface $S$ d'une sphère en fonction de son rayon $R$, en déduire le rayon $R$ d'une sphère en fonction de la surface $S$ puis donner le volume d'une sphère en fonction de sa surface. \\
+
+2f) Rappeler la surface $S$ d'un cube en fonction de son coté $c$, en déduire le coté $c$ d'un carré en fonction de la surface $S$, puis donner le volume d'un cube en fonction de sa surface. \\
+
+3f) Montrer que, à surface fixé, le volume d'une sphère est toujours plus grande que le volume d'un cube.\\
+
+
+\end{document}

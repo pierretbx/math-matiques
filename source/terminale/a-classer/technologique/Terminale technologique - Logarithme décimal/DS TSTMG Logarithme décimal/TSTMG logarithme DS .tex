@@ -1,0 +1,192 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8x]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage[frenchb]{babel}
+\usepackage[francais,bloc,nowatermark]{automultiplechoice}    
+% [nowatermark] pour enlever le texte "PROJET" et le pied de page
+\usepackage{multicol}
+\usepackage{tkz-tab}
+\usepackage{fancyhdr,amssymb,amsmath}
+%\DeclareGraphicsRule{.7}{mps}{*}{}
+
+%===================
+\begin{document}
+%===================
+
+%%% On répartie les quesitons dans différents groupes.
+% ---------------------------------
+%%% Questions groupe : "catégorie1"
+%----------------------------------
+\element{categorie1}{
+  \begin{question}{Derive1}    
+% Question ouverte   
+Résoudre les équations et inéquation suivantes:
+\begin{multicols}{3}
+\begin{enumerate}
+\item $2000\times 1,4^x$=$10$
+\item $30 x^{21}=500$ 
+\item $2^x=100$
+\item $x^{4,5}=13$
+\item $5^x < 0,0001$ 
+\end{enumerate}
+\end{multicols}
+
+   \AMCOpen{lines=11,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points     
+  \end{question}
+}
+
+%
+\element{categorie2}{
+  \begin{question}{Derive2}  
+% Question ouverte  
+Exprimer les quantités suivantes en fonction de $log(3)$ et/ou $log(2)$.
+
+\begin{multicols}{3}
+\begin{enumerate}
+\item $log(\dfrac{1}{2})$
+\item $log(54)$
+\item $log(\dfrac{9}{8})$
+\item $log(0,09)$
+\item $log(0,0081)$
+\item $log(0,3)$
+\end{enumerate}
+\end{multicols}
+\AMCOpen{lines=14,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+   
+}
+
+
+
+
+\element{categorie4}{
+  \begin{question}{variation1}  
+% Question ouverte  
+Le nombre de bactérie au sein d'un être vivant est modéliser par la fonction $b$ définie sur $\mathbb{R}_+^*$ telle que $b(t)=15000 \times (1,343)^t$ avec $t$ exprimé en heure.
+
+\begin{enumerate}
+\item Que cherche t-on à savoir quand on résout l'inéquation $b(t)>50000$ ?
+\item Résoudre l'inéquation $b(t)>50000$ et conclure par une phrase faisant le lien avec le problème donné.
+\end{enumerate} 
+
+
+   \AMCOpen{lines=14,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+\element{categorie4}{
+  \begin{question}{variation2}  
+% Question ouverte  
+Monsieur Truque souhaite se constituer une épargne en plaçant une certaine somme d'argent sur un
+compte rémunéré bloqué. Pour savoir quand son objectif sera atteint, il doit résoudre l'inéquation
+$$1000 \times (1,035)^n > 1600$$
+
+Déterminer l'objectif de Monsieur Truque, les modalités de son placement puis résoudre le problème.
+
+   \AMCOpen{lines=13,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+%-------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fin des questions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% fabrication des copies%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\exemplaire{1}{    
+
+%%% debut de l'entête des copies :    
+	%%% première ligne
+
+	\begin{minipage}{1\linewidth}
+	  \centering\large\bf DS de Mathématiques TSTMG sur le logarithme décimal  
+	\end{minipage}
+
+	%%% codage des numéros d'étudiants sur 3 chiffres par les candidats et encadré d'écriture manuelle des noms.
+%	\vspace*{3mm}
+	{
+	%\setlength{\parindent}{0pt}\AMCcode{etu}{2}\hspace*{\fill}
+	\begin{minipage}[b]{12cm}
+	% \hspace*{5mm}
+  	%  Codez votre numéro ci contre chiffre par chiffre, puis complétez l'encadré.
+    % \vspace{3ex}
+
+	 \hfill\champnom{
+	 \centering
+	 \fbox{
+	 \begin{minipage}{1\linewidth}
+		\vspace*{3mm}
+		NOM - Prénom - Classe :
+		\vspace*{3mm}
+	 \end{minipage}
+	    }	
+	   }
+	\hfill\vspace{1ex}
+% texte de présentation 
+\begin{center}\em
+
+Durée : 55 minutes.
+
+  Aucun document n'est autorisé. La calculatrice est autorisée.\\
+  Toutes les réponses doivent être justifiées.
+%  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
+%  présenter une ou plusieurs bonnes réponses. Les autres ont une unique bonne réponse.
+%  Les réponses fausses ou incohérentes retirent des points. Pour éviter les erreurs machines, il est nécessaire de \textbf{noircir vos cases}.
+
+\end{center}
+
+	\end{minipage}\hspace*{\fill}
+	}
+
+\vspace{4ex}
+
+%%% Fin de l'entête
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Composition des QCM
+%%% On mélange des questions par groupe
+% On efface le {tout} précédent
+\cleargroup{tout}
+
+% On mélange par "catégorie", et on prélève aléatoirement [n] questions 
+% du lot {categorie-k} vers la copie complète {tout}
+% puis on restitue la copie.
+% Si on met [0], toutes les questions sont prises.
+\melangegroupe{categorie1}\copygroup[0]{categorie1}{tout}
+\melangegroupe{categorie2}\copygroup[0]{categorie2}{tout}
+%\melangegroupe{categorie3}\copygroup[0]{categorie3}{tout}
+\melangegroupe{categorie4}\copygroup[0]{categorie4}{tout}
+
+\restituegroupe{tout}
+
+% Saut d'une page si le sujet comporte un nombre impair de pages.
+% Ainsi il est possible d'imprimer les sujets en recto-verso.
+
+\AMCcleardoublepage    
+
+%%% Fin de la création des questionnaires
+
+}
+% Fin de exemplaires{k}{ 
+
+\end{document}
+

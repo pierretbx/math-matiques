@@ -1,0 +1,155 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\livretTitre}{Livret de mathématiques - Sixième}
+\newcommand{\modeLivret}{\ifavecexercices Leçons et exercices\else Leçons\fi}
+
+\newcommand{\chapitre}[6]{%
+  \setcounter{chapter}{#1-1}%
+  \includepdf[
+    pages=-,
+    pagecommand={},
+    addtotoc={1,chapter,1,{#2},ch:#1}
+  ]{\detokenize{#3}}%
+  \ifavecexercices
+    \includepdf[
+      pages=-,
+      pagecommand={},
+      addtotoc={1,section,2,{Exercices},ex:#1}
+    ]{\detokenize{#6}}%
+  \fi
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{4cm}
+  {\Huge\bfseries \livretTitre\par}
+  \vspace{1.5cm}
+  {\Large \modeLivret\par}
+  \vfill
+  {\large Année de sixième\par}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\chapitre{01}
+{Chapitre 1 - Nombres entiers}
+{01. Nombres entiers (1ère partie)/01. Nombres entiers.pdf}
+{}
+{}
+{../02. Exercices/01. Nombres entiers/01. Exo-Les nombres entiers.pdf}
+
+\chapitre{02}
+{Chapitre 2 - Initiation à la géométrie}
+{02. Initiation à la géométrie/02. Initiation à la géométrie.pdf}
+{}
+{}
+{../02. Exercices/02. Initiation à la géométrie/02. Exo-Initiation à la géométrie.pdf}
+
+\chapitre{03}
+{Chapitre 3 - Nombres entiers 2}
+{03. Nombres entiers (2ème partie)/03. Les nombres entiers 2.pdf}
+{}
+{}
+{../02. Exercices/03. Nombres entiers 2/03. Exo-Les nombres entiers 2.pdf}
+
+\chapitre{04}
+{Chapitre 4 - Les cercles}
+{04. Les cercles/04. Les cercles.pdf}
+{}
+{}
+{../02. Exercices/04. Les cercles/04. Exo-Les cercles.pdf}
+
+\chapitre{05}
+{Chapitre 5 - Les fractions}
+{05. Les fractions/05. Les fractions.pdf}
+{}
+{}
+{../02. Exercices/05. Les fractions/05. Exo-Les fractions.pdf}
+
+\chapitre{06}
+{Chapitre 6 - Droites parallèles et perpendiculaires}
+{06. Droites parallèles et perpendiculaires/06. Droites parallèles et perpendiculaires.pdf}
+{}
+{}
+{../02. Exercices/06. Droites parallèles et perpendiculaires/06. Exo-Droites parallèles et perpendiculaires.pdf}
+
+\chapitre{07}
+{Chapitre 7 - Nombres décimaux}
+{07. Nombres décimaux/07. Les nombres décimaux.pdf}
+{}
+{}
+{../02. Exercices/07. Nombres décimaux/07. Exo-Les nombres décimaux.pdf}
+
+\chapitre{08}
+{Chapitre 8 - Les triangles et quadrilatères}
+{08. Les triangles et quadrilatères/08. Les triangles et quadrilatères.pdf}
+{}
+{}
+{../02. Exercices/08. Les triangles et quadrilatères/08. Exo- Les triangles et quadrilatères.pdf}
+
+\chapitre{09}
+{Chapitre 9 - La proportionnalité}
+{09. La proportionnalité/09. La proportionnalité.pdf}
+{}
+{}
+{../02. Exercices/09. La proportionnalité/09. Exo-La proportionnalité.pdf}
+
+\chapitre{10}
+{Chapitre 10 - Opérations sur les nombres décimaux}
+{10. Opérations sur les nombres/10. Opérations sur les nombres décimaux.pdf}
+{}
+{}
+{../02. Exercices/10. Opérations sur les nombres/10. Exo-Opérations sur les décimaux.pdf}
+
+\chapitre{11}
+{Chapitre 11 - Gestion de données}
+{11. Gestion de données/11. Gestion des données.pdf}
+{}
+{}
+{../02. Exercices/11. Gestion de données/11. Exo-Gestion des données.pdf}
+
+\chapitre{12}
+{Chapitre 12 - Les angles}
+{12. Les angles/12. Les angles.pdf}
+{}
+{}
+{../02. Exercices/12. Les angles/12. Exo-Les angles.pdf}
+
+\chapitre{13}
+{Chapitre 13 - Symétrie axiale}
+{13. Symétrie axiale/13. Symetre axiale.pdf}
+{}
+{}
+{../02. Exercices/13. Symétrie axiale/13. Exo-Symétrie axiale.pdf}
+
+\chapitre{15}
+{Chapitre 15 - Axes de symétries}
+{15. Axes de symétries/15. Axes de symétries.pdf}
+{}
+{}
+{../02. Exercices/15. Axes de symétries/15. Exo-Axes de symétries.pdf}
+
+\chapitre{16}
+{Chapitre 16 - Espace - Pavé droit et volumes}
+{16. Espace - Pavé droit et volumes/16. Espace - Pavé droit et volumes.pdf}
+{}
+{}
+{../02. Exercices/16. Espace - Pavé droit et volumes/16. Exo-Espaces - Pavé droit et volumes.pdf}
+
+\chapitre{17}
+{Chapitre 17 - Longueur, périmètre et aire}
+{livret_assets/ch17_cours.pdf}
+{}
+{}
+{livret_assets/ch17_exercices.pdf}
+
+\end{document}

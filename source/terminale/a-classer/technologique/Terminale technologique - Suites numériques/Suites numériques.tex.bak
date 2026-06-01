@@ -1,0 +1,1920 @@
+%A compiler en XELATEX sinon pas d'arbre de proba
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{color}
+\usepackage[table]{xcolor} 
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{eurosym}
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{tkz-tab}
+\usepackage{cellspace}
+\usepackage{diagbox}
+%%% Figures
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+%\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+%%%Affichage
+\newcommand{\ds}{\displaystyle}
+\usepackage{cancel}
+\renewcommand{\arraystretch}{1.5} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+%\TeacherModeOff
+\TeacherModeOn
+%%% Macro
+\newcommand{\V}{\overrightarrow}
+\newcommand{\Rep}{(O;\V{i};\V{j})}
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\begin{document}
+\setcounter{chapter}{8}
+\chapter{Suites numériques}
+
+\section{Généralités}
+
+\subsection{Définition et premiers exemples}
+\begin{defn}
+Une \gap*{suite} est une fonction définie sur $\N$. Une suite numérique est une suite à valeurs dans $\R$.
+
+ L'image de $n$ par une suite $u$ se note $u_{n}$ et est appelé \gap*{terme de rang} $n$ de la suite. Une suite $u$ est aussi notée $\suite[u]$.
+ 
+%Autrement dit, 
+%\begin{center}
+%\fbox{
+%$\begin{array}{ccccc}
+%u & : & \mathbb{N} & \longrightarrow & \mathbb{R} \\
+% & & n & \longmapsto & u_n\\
+%\end{array}$}
+%\end{center}
+\end{defn}
+
+\begin{rem}
+On peut aussi définir une suite \gap*{à partir d'un certain rang}.
+\end{rem}
+
+\begin{exemple}
+\begin{enumerate}
+\item $u$ définie sur $\N$ par $u_{n}=\dfrac{1}{n+2}$
+\hspace{2em} $u_0=\dfrac{1}{2}$, $u_1=\dfrac{1}{3}$, $u_2=\dfrac{1}{4}$, ...
+\item $v$ définie pour tout $n \geq 3$ par $v_{n}=\dfrac{1}{n-2}$
+\hspace{2em} $v_3=1$, $v_4=\dfrac{1}{2}$, $v_5=\dfrac{1}{3}$, ...
+\end{enumerate}
+\end{exemple}
+
+
+\subsection{Comment générer une suite}
+Selon le contexte les termes d'une suite peuvent être définis de différentes façons.
+\subsubsection*{Explicitement en fonction du rang}
+\begin{itemize}
+
+
+\item[$\bullet$] Toute fonction définie sur $[0;+\infty[$ (ou sur un intervalle de la forme $[a;+\infty[$) permet de définir une suite.
+\end{itemize}
+\begin{exemple}
+Calculer les premiers termes de la suite définie sur $\N$ par $u_{n}=2n^2-5n-1$.
+\begin{itemize}
+\item $u_0=2\times0^2-5\times0-1=-1$ ; $u_1=2\times1^2-5\times1-1=-4$ ;
+\item $u_2=2\times2^2-5\times2-1=-3$ ; $u_3=2\times3^2-5\times3-1=2$ ;
+\item $u_4=2\times4^2-5\times4-1=11$
+\end{itemize}
+\end{exemple}
+
+\begin{rem} 
+Les propriétés des nombres entiers permettent aussi de définir explicitement des suites qui ne peuvent pas être obtenues simplement par une fonction définie sur $\R$.
+\end{rem}
+
+\vspace*{-0.5cm}
+\begin{exemple}
+Calculer les premiers termes des suites $\suite[u]$ et $\suitep[v]$ où $u_{n}=(-1)^{n}$ et $v_{n}$ est le nombre de diviseurs de $n$.
+
+\begin{itemize}
+\item $u_0=1$ ; $u_1=-1$ ; $u_2=1$ ; $u_3=-1$ ; ...
+\item $v_1=1$ ; $v_2=2$ ; $v_3=2$ ; $v_4=3$ ; $v_5=2$ ; $v_6=4$ ...
+\end{itemize}
+\end{exemple}
+
+\subsubsection*{Implicitement ou par récurrence}
+Une suite peut aussi être définie par son premier terme (ou ses premiers termes) et par une relation permettant de calculer chaque terme en fonction du précédent (ou des précédents).
+
+\begin{exemple}
+Calculer les premiers termes des suites ci-dessous définies sur $\N$.\\
+
+\begin{enumerate}
+\item $u$ est définie par
+$
+\left\{\begin{array}{l}
+u_0=-6\\
+u_{n+1}=-\dfrac{1}{2}u_{n}-1 \quad \text{pour tout } n \geq 1
+\end{array}
+\right.
+$
+
+\begin{itemize}
+\item $u_1=-\dfrac{1}{2}u_0-1=-\dfrac{1}{2}\times(-6)-1=2$ ; $u_2=-\dfrac{1}{2}u_1-1=-\dfrac{1}{2}\times2-1=-2$
+\item $u_3=-\dfrac{1}{2}u_2-1=-\dfrac{1}{2}\times(-2)-1=0$ ; $u_4=-\dfrac{1}{2}u_3-1=-\dfrac{1}{2}\times0-1=-1$
+\end{itemize}
+
+
+
+\item $v$ est définie par
+$
+\left\{\begin{array}{l}
+v_0=1\; ; \; v_1=1\\
+v_{n+2}=v_{n+1}+v_{n} \quad \text{pour tout }n \geq 3
+\end{array}
+\right.
+$
+
+\begin{itemize}
+\item $v_2=v_1+v_0=1+1=2$ ; $v_3=v_2+v_1=2+1=3$ ;
+\item $v_4=v_3+v_2=3+2=5$ ; $v_5=v_4+v_3=5+3=8$ ;
+\item  $v_6=v_5+v_4=8+5=13$
+\end{itemize}
+
+\item $w$ est définie par
+$w_0=3
+\quad
+\text{et}
+\quad
+\begin{cases}
+w_{n+1}=\dfrac{w_{n}}{2}&\text{si $w_n$ est pair}\\
+w_{n+1}=3w_{n}+1&\text{si $w_n$ est impair}
+\end{cases}
+$
+
+
+\begin{itemize}
+\item $w_1=3\times w_0 + 1 = 3\times3 +1 = 10$ ; $w_2=\dfrac{w_1}{2}=\dfrac{10}{2}=5$ ; \item $w_3=3\times w_2 + 1 = 3\times5 +1 = 16$ ; $w_4=\dfrac{w_3}{2}=\dfrac{16}{2}=8$ ; \item $w_5=\dfrac{w_4}{2}=\dfrac{8}{2}=4$ ; $w_6=\dfrac{w_5}{2}=\dfrac{4}{2}=2$
+\end{itemize}
+\end{enumerate}
+\end{exemple}
+
+\newpage
+\section{Suites arithmétiques}
+\subsection{Définitions}
+
+\begin{defn}
+Soit $\suite[u]$ une suite et $r$ un réel.
+ 
+On dit qu'une suite $\suite[u]$ est une \gap*{suite arithmétique} de raison $r$ si pour tout entier naturel $n$ : \[u_{n+1}=u_n+r\]
+\end{defn}
+
+\begin{exemple}
+La suite des nombres impairs est une suite arithmétique de raison 2.
+
+Les suites $u$ et $v$ définies sur $\N$ par $u_n=3n-4$ et $v_n=n^2+2$ sont-elles arithmétiques ?
+
+\begin{itemize}
+\item Pour tout $n$, $u_{n+1}-u_n=3(n+1)-4-(3n-4)=3n+3-4-3n+4=3$.
+
+La suite $u$ est donc arithmétique de raison 3.
+
+\item $v_0=2$, $v_1=3$, $v_2=6$ ainsi $v_1=v_0+1$ et $v_2=v_1+3$
+
+La suite $v$ n'est donc pas arithmétique.
+\end{itemize}
+\end{exemple}
+
+\vspace{2ex}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\begin{itemize}
+\item[$\bullet$] Si $r>0$ alors $u$ est \gap*{strictement croissante}.
+\item[$\bullet$] Si $r=0$ alors $u$ est \gap*{constante}.
+\item[$\bullet$] Si $r<0$ alors $u$ est \gap*{strictement décroissante}.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+Pour tout $n \in \mathbb{N}$, $$u_{n+1}-u_n=r$$
+donc si  $r>0$ alors $u$ est strictement croissante, si $r=0$ alors $u$ est constante et si $r<0$ alors $u$ est strictement décroissante.
+\end{demo}
+
+\subsection{Moyenne arithmétiques}
+
+\begin{defn}
+La moyenne arithmétique de deux nombres $x$ et $y$ est le nombre $\dfrac{x+y}{2}$
+\vspace*{0.5cm}
+\end{defn}
+
+\begin{memento}
+Si trois nombres $x, y$ et $z$ sont, dans cet ordre, trois termes consécutifs d'une suite arithmétique alors, $y$ est la moyenne arithmétique des deux autres nombres $x$ et $z$.
+\end{memento}
+
+\subsection{Expression de $u_n$ en fonction de $n$}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Pour tous entiers naturels $n$ et $p$ : \[u_n=u_p+(n-p)r\]
+\par En particulier, pour tout entier naturel $n$ : \[u_n=u_0+nr\]
+\end{prop}
+
+\begin{demo}
+On suppose $n>p$. 
+On a : $$u_{n}-u_{n-1}=r$$  
+ $$u_{n-1}-u_{n-2}=r$$
+ $$\cdots$$ 
+ $$u_{p+2}-u_{p+1}=r$$
+ $$u_{p+1}-u_{p}=r$$ 
+ 
+En additionnant toutes ces égalités \textit{ (il y en a $(n-p)$)}, on obtient :
+$$\Longrightarrow u_{n}-u_{p}=(n-p)r$$
+$$\Longleftrightarrow u_n=u_p+(n-p)r$$
+\end{demo}
+
+\subsection{Notation $\Sigma$}
+
+\begin{defn}
+Le symbole $\displaystyle{\sum}$ s'utilise pour désigner de manière générale la somme de plusieurs termes. Ce symbole est généralement accompagné d'un indice que l'on fait varier de façon à englober tous les termes qui doivent être considérés dans la somme.
+\end{defn}
+
+\begin{exemple}
+\begin{multicols}{2}
+\begin{itemize}
+\item[$\bullet$] $\displaystyle{\sum_{i=1}^n i}= 1+2+3+\cdots+n$ 
+
+\item[$\bullet$] $u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}= \displaystyle{\sum_{k=0}^n u_k}$
+\end{itemize}
+\end{multicols}
+\end{exemple}
+
+\vfill
+\newpage
+\subsection{Somme de termes consécutifs}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Pour tout entier naturel $n$ :
+\[S=\displaystyle{\sum_{k=0}^n u_k}=u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}=(n+1)\times \dfrac{u_{0}+u_{n}}{2}\]
+\end{prop}
+
+\begin{demo}
+Soit $$S=u_0+u_1+ \cdots +u_{n-1}+u_n$$
+Comme l'addition est commutative on a,
+$$S=u_n+u_{n-1}+ \cdots +u_1+u_0$$
+Par somme des deux égalités précédentes 
+$$2S=(u_0+u_n)+(u_1+u_{n-1})+ \cdots +(u_{n-1}+u_1)+(u_n+u_0)$$
+Or, pour tout $k\in n$, $$u_k+u_{n-k}=\underbrace{u_0+kr}_{=u_k}+\underbrace{u_0+(n-k)r}_{=u_{n-k}}=u_0+\underbrace{u_0+nr}_{=u_n}=u_0+u_n$$
+On a donc $$2S=(n+1)\times (u_0+u_n)$$
+En prenant la moitié de la quantité précédente on obtient $$S=(n+1)\times \dfrac{u_{0}+u_{n}}{2}$$
+\end{demo}
+
+\begin{rem}
+On a aussi $u_{1}+u_2 \cdots + u_{n-1}+u_{n}=n\times \dfrac{u_{1}+u_{n}}{2}$
+\end{rem}
+
+\begin{memento}
+De manière générale, cette propriété peut se résumer de la manière suivante :
+$$S=\textrm{"Nombre de terme"} \times \textrm{"Moyenne arithmétique des termes extrémaux"}$$
+\end{memento}
+
+
+
+\newpage
+
+
+
+\section{Suites géométriques}
+\subsection{Définition}
+\begin{defn}
+Soit $\suite[u]$ une suite et $q$ un réel positif.
+\par On dit qu'une suite $\suite[u]$ est une \gap*{suite géométrique} de raison $q$ si pour tout entier naturel $n$ : \[u_{n+1}=q\times u_n\]
+\end{defn}
+
+\begin{rem}
+ Si $q\neq0$ et $u_{0}\neq0$ alors pour tout $n\in\N$, $u_{n}\neq 0$.
+\end{rem}
+
+\begin{exemple}
+\begin{itemize}
+\item[$\bullet$] La suite des puissances de 2 est la suite géométrique de premier terme 1 et de raison 2.
+\item[$\bullet$] Les suites $u$ et $v$ définies sur $\mathbb{N}$ par $u_n=-4\times 3^{n}$ et $v_n=n^2+1$ sont-elles géométriques ?
+
+Pour tout $n$, $\dfrac{u_{n+1}}{u_n}=\dfrac{-4\times 3^{n+1}}{-4\times 3^{n}}=3$. La suite $u$ est donc géométrique de raison 3.\\
+
+Comme $v_0=1$, $v_1=2$, $v_2=5$ ainsi $v_1=2\times v_0$ et $v_2=2,5\times v_1$, la suite $v$ n'est pas géométrique.
+\end{itemize}
+\end{exemple}
+
+\subsection{Expression de $u_n$ en fonction de $n$}
+\begin{prop}
+Soit $\suite[u]$ une suite géométrique de raison $q$.
+\par Pour tous entiers naturels $n$ et $p$ : \[u_n=u_p\times q^{n-p}\]
+\par En particulier, pour tout entier naturel $n$ : \[u_n=u_0\times q^{n}\]
+\end{prop}
+
+\begin{demo}
+ On suppose $n>p$ et $q\neq 0$ et tel que $u_0 \neq 0$. On a : \\
+ $$\dfrac{u_{n}}{u_{n-1}}=q ; \dfrac{u_{n-1}}{u_{n-2}}=q ; \cdots ; \dfrac{u_{p+2}}{u_{p+1}}=q ; \dfrac{u_{p+1}}{u_{p}}=q$$
+\par En multipliant toutes ces égalités \textit{ (il y en a $(n-p)$)}, on obtient :
+$$ \Longrightarrow \dfrac{u_n \times \cancel{u_{n-1}} \times \cdots \times \cancel{u_{p+2}} \times \cancel{u_{p+1}}}{\cancel{u_{n+1}}\times \cancel{u_{n-2}} \times \cdots \times \cancel{u_{p+1}} \times u_p}=\dfrac{u_{n}}{u_{p}}=q^{n-p}$$ $$\Longleftrightarrow u_n=u_p\times q^{n-p}$$
+\end{demo}
+
+\newpage
+\begin{prop}
+Soit $\suite[u]$ une suite géométrique de raison $q\neq 0$.
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+Variation de $\suite[u]$ &  $0<q<1$ & $q=1$ & $q>1$ \\ 
+\hline 
+$u_0 <0$ & strictement croissante & constante (et égale à $u_0$) &  strictement décroissante \\ 
+\hline 
+$u_0=0$ & constante (et nulle) & constante (et nulle) & constante (et nulle) \\ 
+\hline 
+$u_0>0$ & strictement décroissante & constante (et égale à $u_0$) & strictement croissante \\ 
+\hline 
+\end{tabular} 
+%\par Si $q>1$ alors 
+%$\left\{\begin{tabular}{@{}l}
+%si $u_0>0$, $u$ est strictement croissante.\\
+%si $u_0<0$, $u$ est strictement décroissante.
+%\end{tabular}\right.$
+%\par Si $q=1$ alors $u$ est constante.
+%\par Si $0<q<1$ alors 
+%$\left\{\begin{tabular}{@{}l}
+%si $u_0>0$, $u$ est strictement décroissante.\\
+%si $u_0<0$, $u$ est strictement croissante.
+%\end{tabular}\right.$
+%\par Si $q<0$ alors $u$ n'est pas monotone.
+\end{prop}
+
+
+
+\begin{demo}
+\par Pour tout $n$, $u_{n+1}-u_{n}=u_0\times q^{n+1}-u_0\times q^{n}=u_0\times q^{n}(q-1)$
+\par Le signe de $u_{n+1}-u_{n}$ s'obtient donc en fonction du signe de $u_0$, du signe de $q^{n}$ et du signe de $q-1$.
+\end{demo}
+
+\begin{defn}
+La moyenne géométrique de deux nombres positifs $x$ et $y$ est le nombre $\sqrt{xy}$
+\vspace*{0.5cm}
+\end{defn}
+
+\begin{memento}
+Si trois nombres $x$, $y$ et $z$ sont, dans cet ordre, trois termes consécutifs d'une suite géométrique
+alors $y$ est la moyenne géométrique des deux autres nombres $x$ et $z$.
+\end{memento}
+
+\subsection{Somme de termes consécutifs}
+\begin{prop}
+Soit $q$ un réel différent de 1.
+\par Pour tout entier naturel $n$ :
+\[ \ds{\sum_{k=0}^n q^k} = 1 + q + q^{2} + \cdots + q^{n-1} + q^{n} = \dfrac{1-q^{n+1}}{1-q} \]
+Soit $\suite[u]$ une suite géométrique de raison $q\neq 1$.
+Pour tout entier naturel $n$ :
+\[\displaystyle{\sum_{k=0}^n u_k}=u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}=u_{0}\times\dfrac{1-q^{n+1}}{1-q} \]
+\end{prop}
+
+\begin{demo}
+ Posons $$S=1 + q + q^{2} + \cdots + q^{n-1} + q^{n}$$ On a alors $$qS=q + q^{2} + q^{3} + \cdots + q^{n} + q^{n+1}$$
+ Ainsi, en faisant la différence des deux égalités précédentes on a, $$\Longrightarrow S-qS=1-q^{n+1}$$
+$$ \Longleftrightarrow S=\dfrac{1-q^{n+1}}{1-q}$$
+\end{demo}
+
+\begin{exemple}
+Déterminer la somme des $n$ premières puissances de 2.
+$$1+2+2^2+\cdots+2^{n-1}$$
+La suite des puissances de 2 est la suite géométrique de raison 2 et telle que $u_0=1$.
+
+Ainsi, $$u_{0}+u_{1}+ \cdots+u_{n-1}=u_{0}\times\dfrac{1-q^{n}}{1-q}=1\times\dfrac{1-2^n}{1-2}=2^n-1$$
+
+\end{exemple}
+\newpage
+\section{Exercices}
+
+\begin{exocor}
+Dans chaque cas, on donne les cinq premiers termes d'une suite $\left(u_{n}\right)$. Trouver les deux termes suivants possibles $u_{5}$ et $u_{6}$ de manière logique.
+
+
+\begin{enumerate}
+\begin{multicols}{5}
+\item $u_{0}=-3$
+
+$u_{1}=1$
+
+$u_{2}=5$
+
+$u_{3}=9$
+
+$u_{4}=13$
+\item $u_{0}=1$
+
+$u_{1}=3$
+
+$u_{2}=9$
+
+$u_{3}=27$
+
+$u_{4}=81$
+
+\item $u_{0}=7$
+
+$u_{1}=12$
+
+$u_{2}=19$
+
+$u_{3}=28$
+
+$u_{4}=39$
+
+\item $u_{0}=-1$
+
+$u_{1}=2$
+
+$u_{2}=-4$
+
+$u_{3}=8$
+
+$u_{4}=-16$
+
+\item $u_{0}=\frac{1}{2}$
+
+$u_{1}=\frac{3}{5}$
+
+$u_{2}=\frac{5}{8}$
+
+$u_{3}=\frac{7}{11}$
+
+$u_{4}=\frac{9}{14}$
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Déterminer la moyenne arithmétique des réels $a$ et $b$ dans chacun des cas suivants :
+\begin{enumerate}
+\begin{multicols}{3}
+\item $a=5$ et $b=15$.
+\item $a=\frac{1}{3}$ et $b=-\frac{3}{7}$.
+\item $a=105$ et $b=-205$.
+\end{multicols}
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+
+
+\begin{enumerate}
+\item Soit $\left(u_{n}\right)$ la suite arithmétique de raison 3 et de premier terme $u_{0}=2$.
+
+Calculer $u_{1}, u_{2}, u_{3}, u_{4}$ et $u_{6}$.
+
+\item Soit $\left(\nu_{n}\right)$ la suite arithmétique de raison -8 et de premier terme $v_{0}=28$.
+
+Calculer $v_{1}, v_{2}, v_{3}, v_{4}$ et $v_{6}$.
+
+\item Soit $\left(w_{n}\right)$ la suite arithmétique de raison 3 et de premier terme $w_{0}=\frac{1}{7}$.
+
+Calculer $w_{1}, w_{2}, w_{3}, w_{4}$ et $w_{6}$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+\begin{enumerate}
+\item Soit $\left(u_{n}\right)$ la suite arithmétique de raison $r=-2$ et de premier terme $u_{0}=7$.
+
+Exprimer $u_{n}$ en fonction de $n$ puis calculer $u_{10}$ et $u_{100}$.
+
+\item Soit $\left(v_{n}\right)$ une suite arithmétique telle que $v_{2}=7$ et $v_{6}=9$.
+
+Calculer sa raison $r$ puis son premier terme $v_{0}$. 
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Dans chaque cas, on donne les premiers termes $u_{0}, u_{1}, u_{2}, u_{3}$ et $u_{4}$ d'une suite $\left(u_{n}\right)$.
+
+Dans quel cas peut-elle être arithmétique?
+
+\begin{enumerate}
+\item $0 ; 1 ; 4 ; 9 ; 16$.
+
+\item $28 ; 21 ; 14 ; 7 ; 0$.
+
+\item $5,2 ; 5,6 ; 6 ; 6,4 ; 6,8$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+\begin{enumerate}
+\item Calculer la somme des 500 premiers entiers naturels non nuls.
+\item Calculer la somme des entiers de 35 à 150 .
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+
+Soit $\left(u_{n}\right)$ la suite arithmétique de raison 3 et de premier terme $u_{0}=5$.
+
+\begin{enumerate}
+\item Exprimer $u_{n}$ en fonction de $n$ puis en déduire $u_{15}$.
+\item Calculer $S=u_{0}+u_{1}+\ldots+u_{15}$.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Soit $\left(u_{n}\right)$ la suite arithmétique telle que $u_{3}=5$ et $u_{14}=39$.
+
+\begin{enumerate}
+\item Déterminer le nombre de termes de $u_{3}$ à $u_{14}$.
+\item Calculer $S=u_{3}+u_{4}+\ldots+u_{14}$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+Une personne qui n'a aucune pratique sportive décide au cours d'un mois de 30 jours de faire chaque jour 5 minutes de sport de plus que le jour précédent.
+
+On modélise cette situation par une suite $\left(t_{n}\right)$ où $t_{n}$ est le temps consacré par cette personne à faire du sport le $n$-ième jour de ce mois.
+
+\begin{enumerate}
+\item Déterminer $t_{1}$ et $t_{2}$.
+
+\item Déterminer la nature de la suite $\left(t_{n}\right)$.
+
+\item Exprimer $t_{n}$ en fonction de $n$.
+
+\item Déterminer le temps consacré à faire du sport le trentième jour.
+
+\item Calculer $S=t_{1}+t_{2}+\ldots+t_{30}$.
+
+\item Interpréter ce dernier résultat.
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Un apiculteur s'inquiète pour sa population d'abeilles.
+
+Il l'évalue la première année à 10 000, la deuxième à 9 250, et la troisième à 8200.
+
+Peut-il modéliser l'évolution du nombre d'abeilles par une suite arithmétique? 
+\end{exocor}
+
+
+\begin{exocor}
+Dans une station service lors des trois derniers mois de l'année 2019, le prix du gasoil a évolué de la manière suivante :
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline Mois & Octobre & Novembre & Décembre \\
+\hline Prix (en euros) & 1,491 & 1,503 & 1,515 \\
+\hline
+\end{tabular}
+\end{center}
+
+L'évolution de ce prix peut-elle être modélisée par une suite arithmétique? Si oui, laquelle?
+\end{exocor}
+
+
+\begin{exocor}
+
+On place un capital de $1250 €$ à intérêts simples au taux annuel de $6 \%$. Cela signifie que les intérêts produits chaque année sont égaux à $6 \%$ de $1250 €$.
+
+On désigne par $I$ les intérêts produits chaque année et par $C_{n}$ la somme disponible au bout de $n$ années. On a donc : $C_{0}=1250$.
+
+\begin{enumerate}
+\item Calculer $I$.
+
+\item Calculer $C_{1}, C_{2}$ et $C_{3}$.
+
+\item Montrer que $\left(C_{n}\right)$ est une suite arithmétique. Quel est son premier terme? Quelle est la raison?
+
+\item Exprimer $C_{n}$ en fonction de $n$.
+
+\item Calculer la somme disponible au bout de 5 ans.
+
+\item Au bout de combien d'années la somme disponible dépasse-t-elle $2000 €$ ?
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+La cloche d'une église sonne toutes les heures : 1 coup à 1 h00 et à 13h00; 2 coups à 2 h00 et à $14 \mathrm{~h} 00 ; \ldots ; 12$ coups à midi et à minuit. Un villageois se plaint du bruit.
+
+Pour tout entier naturel $n$ non nul, on note $u_{n}$ le nombre de coups à la $n$-ième heure.
+
+Combien de tintements le villageois entend-il en une journée?
+
+\end{exocor}
+
+
+
+\begin{exocor}
+Cédric s'est inscrit au marathon de Paris et il souhaite organiser sa préparation.
+
+Dans son programme d'entraînement hebdomadaire, il prévoit une séance unique.
+
+Quatre mois avant le départ (on considèrera que cela revient à 16 semaines), lors de sa première semaine de préparation, il court 15 kilomètres. Chaque semaine, il augmente la distance parcourue de 1,5 kilomètre.
+
+Pour tout entier naturel $n$ non nul, on note $u_{n}$ la distance parcourue pendant la séance de la $n$-ième heure.
+
+\begin{enumerate}
+\item Préciser $u_{1}, u_{2}$ et $u_{3}$.
+\item Déterminer la nature de la suite $\left(u_{n}\right)$.
+\item Pensez-vous que Cédric sera prêt pour le marathon de Paris?
+\item Quelle distance aura-t-il parcourue pendant ses quatre mois d'entraînement? 
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Dans une ville, le prix du $\mathrm{m}^{3}$ d'eau a augmenté de la façon suivante : il coûtait 3,20 euros le $1^{\text {er }}$ janvier 2018, 3,36 euros le $1^{\text {er }}$ janvier 2019 et 3,55 euros le $1^{\text {er }}$ janvier 2020.
+
+Peut-on modéliser l'évolution du prix du $\mathrm{m}^{3}$ d'eau par une suite géométrique?
+\end{exocor}
+
+
+\begin{exocor}
+
+Dans un laboratoire, on introduit initialement $1000 \mathrm{~g}$ de bactéries dans une cuve de milieu nutritif. Le jour suivant, la masse de bactéries est de $1150 \mathrm{~g}$ et le troisième jour de 1 322,5 g.
+
+L'évolution de la masse de bactéries peut-elle être modélisée par une suite géométrique?
+\end{exocor}
+
+
+
+\begin{exocor}
+\begin{enumerate}
+\item Quels sont les coefficients multiplicateurs associés à une hausse de $20 \%$ et à une hausse de $15 \%$ ?
+
+\item Déterminer la moyenne géométrique de 1,2 et 1,15 .
+
+\item En déduire l'évolution moyenne associée à deux hausses successives, une première de $20 \%$ et une deuxième de $15 \%$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+\begin{enumerate}
+
+\item Quels sont les coefficients multiplicateurs associés à une baisse de $30 \%$ et à une baisse de $25 \% ?$
+
+\item Déterminer la moyenne géométrique de 0,7 et 0,75 .
+
+\item En déduire l'évolution moyenne associée à deux baisses successives, une première de $30 \%$ et une deuxième de $25 \%$.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+Chaque somme $S$ est la somme de termes successifs d'une suite géométrique $\left(u_{n}\right)$. Calculer $S$.
+
+\begin{enumerate}
+\item $S=1+2+4+\ldots+2048$.
+
+\item $S=3+\frac{3}{2}+\frac{3}{4}+\ldots+\frac{3}{8192}$.
+
+\item $S=2+6+18+\ldots+13122$.
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Une entreprise place un capital de 10000 euros à intérêts composés au taux annuel de $3 \%$. Cela signifie que chaque année, le capital augmente de $3 \%$.
+
+On note $C_{n}$ la valeur acquise par le capital au bout de $n$ années.
+\begin{enumerate}
+ 
+\item Calculer $C_{1}$ et $C_{2}$.
+
+\item Indiquer la nature de la suite des capitaux $\left(C_{n}\right)$.
+
+\item Exprimer le terme général $C_{n}$ en fonction de $n$.
+
+\item Calculer la valeur acquise par le capital au bout de 10 ans.
+ \end{enumerate} 
+\end{exocor}
+
+
+\begin{exocor}
+En 2018, les dépenses de fonctionnement d'une entreprise s'élevaient à 12500 euros. Depuis, elles diminuent de 5,5\% par an.
+
+Le responsable veut savoir à partir de quelle année les dépenses de fonctionnement seront inférieures à 10000 euros si la baisse se poursuit avec la même évolution annuelle.
+
+Pour tout entier naturel $n$, on note $d_{n}$ les dépenses de fonctionnement l'année $2018+n$.
+
+\begin{enumerate}
+\item Préciser $d_{0}, d_{1}$ et $d_{2}$.
+
+\item Déterminer la nature de la suite $\left(d_{n}\right)$.
+
+\item Exprimer le terme général $d_{n}$ en fonction de $n$.
+
+\item Conclure en utilisant une calculatrice.
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Un atelier fabrique 250 paires de lunettes par semaine. Au $1^{\text {er }}$ janvier 2019, il reçoit une commande de 7500 pièces pour début juin. Le chef d'atelier compte réaliser cette commande en 24 semaines.
+
+\begin{enumerate}
+\item Ce délai est-il suffisant? Justifier la réponse.
+
+\item Le chef d'atelier décide d'augmenter la production de $5 \%$ par semaine. On note $u_{n}$ le nombre de paires de lunettes produites la $n$-ième semaine.
+
+\begin{enumerate}
+\item Calculer $u_{1}$ et $u_{2}$.
+
+\item Déterminer la nature de la suite $\left(u_{n}\right)$.
+
+\item Exprimer le terme général $u_{n}$ en fonction de $n$.
+\end{enumerate}
+
+\item Conclure.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+
+Un jour donné, la pression atmosphérique à l'altitude 0 est égale à 1000 hectopascals (hPa) et diminue de $1 \%$ pour une élévation d'altitude de 100 mètres.
+
+Pour tout entier naturel $n$, on note $u_{n}$ la pression à $n$ centaines de mètres d'altitude.
+
+\begin{enumerate}
+\item Déterminer la pression atmosphérique à $100 \mathrm{~m}$ et à $200 \mathrm{~m}$ d'altitude.
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ?
+
+\item Exprimer $u_{n}$ en fonction de $n$.
+
+\item En déduire la pression atmosphérique au sommet du Mont-Blanc à $4800 \mathrm{~m}$ ce jour-là.
+\end{enumerate}
+
+\end{exocor}
+
+\begin{exocor}
+Étienne vient d'acheter un lave-linge très perfectionné à 1500 euros qu'il décide d'assurer. En cas de défaillance, l'assureur rembourse l'appareil mais il applique une décote de $12 \%$ par an sur la valeur de l'appareil. On note $a_{n}$ la valeur remboursée du lave-linge la $n$-ième année.
+
+\begin{enumerate}
+\item Calculer $a_{1}$ et $a_{2}$.
+
+\item Quelle est la nature de la suite $\left(a_{n}\right)$ ?
+
+\item Exprimer $a_{n}$ en fonction de $n$.
+
+\item A partir de quelle année la valeur remboursée sera-t-elle inférieure à 100 euros? 
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+
+\textbf{Partie A}
+
+En France depuis 2016, les ventes de véhicules hybrides ont fortement augmenté. Le tableau ci-dessous donne le nombre de véhicules hybrides vendus en France par année :
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline Année & 2016 & 2017 & 2018 \\
+\hline Nombre de véhicules & 7420 & 11010 & 15350 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Déterminer le pourcentage d'évolution entre 2016 et 2017, puis entre 2017 et 2018.
+
+\item Déterminer la moyenne géométrique de 1,48 et 1,39 .
+
+\item Quel est le taux moyen annuel d'évolution entre 2016 et 2018 ?
+\end{enumerate}
+
+\textbf{Partie B}
+
+On suppose qu'à partir de 2018, les ventes de voitures hybrides augmentent de $43 \%$ par an et que cette évolution va se poursuivre.
+
+On modélise par la suite $\left(u_{n}\right)$ l'évolution des ventes où la partie entière de $u_{n}$ représente le nombre de voitures hybrides vendues au cours de l'année $2018+n$.
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Que vaut $u_{0}$ ?
+
+\item Calculer $u_{1}$ et $u_{2}$.
+\end{enumerate}
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ?
+
+\item Exprimer $u_{n}$ en fonction de $n$.
+
+\item Selon ce modèle, combien de voitures hybrides seront vendues en 2023 ?
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+Pour un emploi où elle compte rester 15 ans, Bahiya se voit proposer deux contrats de travail :
+
+\begin{itemize}
+\item Contrat 1 : 21000 euros de salaire annuel net et une augmentation annuelle de 1000 euros;
+
+\item Contrat 2 : 18000 euros de salaire annuel net et une augmentation annuelle de $8 \%$.
+\end{itemize}
+
+\begin{enumerate}
+\item On commence par étudier le contrat 1 .
+
+\begin{enumerate}
+\item On note $u_{n}$ la valeur du salaire annuel de Bahiya la $n$-ième année. Déterminer $u_{1}, u_{2}$ et $u_{3}$.
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ?
+
+\item Exprimer $u_{n}$ en fonction de $n$.
+
+\item Calculer $u_{15}$.
+\end{enumerate}
+
+\item On étudie maintenant le contrat 2.
+
+\begin{enumerate}
+\item On note $v_{n}$ la valeur du salaire annuel de Bahiya la $n$-ième année. Déterminer $v_{1}, v_{2}$ et $v_{3}$.
+
+\item Quelle est la nature de la suite $\left(v_{n}\right)$ ?
+
+\item Exprimer $v_{n}$ en fonction de $n$.
+
+\item Calculer $v_{15}$.
+\end{enumerate}
+
+\item Comparer les deux contrats sur le long terme. 
+\end{enumerate}
+\end{exocor}
+
+
+
+\begin{exocor}
+L'entreprise Iron SA exploite un filon de minerai de fer depuis 1950.
+
+La première année d'extraction l'entreprise a récupéré 20000 tonnes de fer. Cependant depuis 1950, en raison de difficultés croissantes d'extraction, de l'appauvrissement du filon, les quantités extraites diminuent de $1 \%$ par an.
+
+On appelle $T_{n}$ le nombre de tonnes extraites l'année $(1950+n)$. On a donc $T_{0}=20000$.
+
+Les résultats seront arrondis à la tonne.
+\begin{enumerate}
+
+\item Justifier que $T_{1}=19800$ puis calculer $T_{2}$ et $T_{3}$.
+
+\item Exprimer $T_{n+1}$ en fonction de $T_{n}$.
+
+\item Quelle est la nature de la suite $\left(T_{n}\right)$ ? En déduire l'expression de $T_{n}$ en fonction de $n$.
+
+\item Quelle est la quantité extraite en 2008?
+
+\item Montrer que la quantité totale extraite entre l'année 1950 et l'année $(1950+n)$ est :
+
+$$
+S_{n}=2000000 \times\left(1-0,99^{n+1}\right)
+$$
+
+6. En 1950, les géologues estimaient que ce filon recelait 1000000 tonnes de métal. En quelle année, théoriquement, le filon sera-t-il épuisé?
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Cet exercice est composé de deux parties indépendantes l'une de l'autre.
+
+\textbf{Partie A - Les économies}\\
+
+Afin de se constituer un capital, un épargnant place 1000 euros sur un compte non rémunéré et, chaque mois, verse 75 euros sur ce compte.
+
+On note $u_{n}$ le montant en euros du capital accumulé au bout de $n$ mois. Ainsi $u_{0}=1000$.
+
+\begin{enumerate}
+\item Calculer $u_{1}, u_{2}$ et $u_{3}$.
+
+\item Déterminer la nature de la suite $\left(u_{n}\right)$ en justifiant la réponse.
+
+\item En déduire l'expression de $u_{n}$ en fonction de $n$.
+Au bout de combien de temps le capital accumulé est-il supérieur à 3500 euros? Justifier la réponse.
+
+\end{enumerate}
+
+\textbf{Partie B - Les dépenses}\\
+
+Cet épargnant doit surveiller ses dépenses. En janvier 2014 il a dépensé $660 €$ et, jusqu'à présent, ses dépenses ont augmenté chaque mois de $4 \%$. On suppose que cette évolution va se poursuivre à l'avenir.
+
+Cette évolution conduit à modéliser le montant en euros des dépenses mensuelles au cours du $n$-ième mois après janvier 2014 par le terme $v_{n}$ d'une suite géométrique. Ainsi $v_{0}=660$.
+
+Dans cette partie, les résultats seront arrondis au centime d'euro.
+
+\begin{enumerate}
+\item Justifier que $v_{1}=1,04 v_{0}$. Calculer $v_{3}$ et interpréter le résultat.
+
+\item Calculer le montant des dépenses au mois de décembre 2014.
+
+\item Selon ce modèle, quand l'épargnant devrait-il doubler ses dépenses par rapport à janvier 2014 ? 
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Deux coureurs cyclistes, Ugo et Vivien, ont programmé un entraînement hebdomadaire afin de se préparer à une course qui aura lieu dans quelques mois. Leur objectif est de parcourir chacun une distance totale de $1500 \mathrm{~km}$ pendant leur période d'entraînement de 20 semaines.
+
+Ugo commence son entraînement en parcourant $40 \mathrm{~km}$ la première semaine et prévoit d'augmenter cette distance de $5 \mathrm{~km}$ par semaine. Vivien commence son entraînement en parcourant $30 \mathrm{~km}$ la première semaine et prévoit d'augmenter cette distance de $10 \%$ par semaine.
+
+On note $u_{n}$ la distance, en kilomètres, parcourue par Ugo la $n^{\text {ième }}$ semaine. On a ainsi $u_{1}=40$. On note $v_{n}$ la distance, en kilomètres, parcourue par Vivien la $n^{\text {ième }}$ semaine. On a ainsi $v_{1}=30$.
+
+\textbf{Partie A - L'entraînement d'Ugo}
+
+\begin{enumerate}
+\item Calculer les distances parcourues par Ugo au cours des deuxième et troisième semaines d'entraînement.
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ? Préciser sa raison.
+
+\item Montrer que, pour tout $n \geqslant 1, u_{n}=35+5 n$.
+\end{enumerate}
+
+\textbf{Partie B - L'entraînement de Vivien}
+
+\begin{enumerate}
+\item Quelle est la nature de la suite $\left(v_{n}\right)$ ? Justifier la réponse.
+
+\item Montrer que, pour tout $n \geqslant 1, v_{n}=30 \times 1,1^{n-1}$.
+
+\item Calculer $v_{8}$. On arrondira le résultat au dixième.
+\end{enumerate}
+
+\textbf{Partie C - Comparaison des deux entraînements}
+
+\begin{enumerate}
+\item Vivien est persuadé qu'il y aura une semaine où il parcourra une distance supérieure à celle parcourue par Ugo. Vivien a-t-il raison? On pourra utiliser les PARTIES A et B pour justifier la réponse.
+
+\item À la fin de la $17^{\mathrm{e}}$ semaine, les deux cyclistes se blessent. Ils décident alors de réduire leur entraînement. Ils ne feront plus que $80 \mathrm{~km}$ chacun par semaine à partir de la $18^{\mathrm{e}}$ semaine. Leur objectif sera-t-il atteint?
+\end{enumerate}
+
+\end{exocor}
+
+\begin{exocor}
+
+Un youtubeur compte 35000 abonnés à sa chaîne au 1 1er janvier 2019.
+
+Au cours de l'année 2019, il constate que chaque mois, il perd $20 \%$ des anciens abonnés mais qu'il en gagne 500 nouveaux.
+
+Pour $n \geqslant 1$, on note $u_{n}$ le nombre d'abonnés le $1^{\text {er }}$ du $n$-ième mois, le premier mois étant le mois de janvier 2019.
+
+\begin{enumerate}
+\item Préciser $u_{1}$.
+
+\item Calculer $u_{2}$ et $u_{3}$.
+
+\item La suite $\left(u_{n}\right)$ est-elle arithmétique? Est-elle géométrique?
+
+\item On introduit la suite $\left(v_{n}\right)$ définie pour tout entier $n \geqslant 1$ par $v_{n}=u_{n}-2500$.
+
+\begin{enumerate}
+\item Démontrer que la suite $\left(v_{n}\right)$ est une suite géométrique.
+
+Préciser sa raison et son premier terme.
+
+\item Exprimer $v_{n}$ en fonction de $n$ et en déduire l'expression de $u_{n}$ en fonction de $n$.
+
+\item Déterminer le nombre d'abonnés au $1^{\text {er }}$ janvier 2020.
+\end{enumerate}
+\end{enumerate}
+\end{exocor}
+\newpage
+\section{Corrigés}
+
+\begin{corrige}
+Dans chaque cas, on donne les cinq premiers termes d'une suite $\left(u_{n}\right)$. Trouver les deux termes suivants possibles $u_{5}$ et $u_{6}$ de manière logique.
+
+
+\begin{enumerate}
+\begin{multicols}{5}
+\item $u_{0}=-3$
+
+$u_{1}=1$
+
+$u_{2}=5$
+
+$u_{3}=9$
+
+$u_{4}=13$
+
+$u_5=17$
+
+$u_6=21$
+
+\item $u_{0}=1$
+
+$u_{1}=3$
+
+$u_{2}=9$
+
+$u_{3}=27$
+
+$u_{4}=81$
+
+$u_5=243$
+
+$u_6=729$
+
+\item $u_{0}=7$
+
+$u_{1}=12$
+
+$u_{2}=19$
+
+$u_{3}=28$
+
+$u_{4}=39$
+
+$u_5=52$
+
+$u_6=67$
+
+\item $u_{0}=-1$
+
+$u_{1}=2$
+
+$u_{2}=-4$
+
+$u_{3}=8$
+
+$u_{4}=-16$
+
+$u_{5}=32$
+
+$u_{6}=-64$
+
+\item $u_{0}=\frac{1}{2}$
+
+$u_{1}=\frac{3}{5}$
+
+$u_{2}=\frac{5}{8}$
+
+$u_{3}=\frac{7}{11}$
+
+$u_{4}=\frac{9}{14}$
+
+$u_{5}=\frac{11}{17}$
+
+$u_{6}=\frac{13}{20}$
+\end{multicols}
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Déterminer la moyenne arithmétique des réels $a$ et $b$ dans chacun des cas suivants :
+\begin{enumerate}
+\begin{multicols}{3}
+\item $a=5$ et $b=15$.\\
+$m=10$
+\item $a=\frac{1}{3}$ et $b=-\frac{3}{7}$.\\
+$m=\frac{-1}{21}$
+\item $a=105$ et $b=-205$.\\
+$m=-50$
+\end{multicols}
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+
+
+\begin{enumerate}
+\item Soit $\left(u_{n}\right)$ la suite arithmétique de raison 3 et de premier terme $u_{0}=2$.
+
+Calculer $u_{1}, u_{2}, u_{3}, u_{4}$ et $u_{6}$.
+
+$$u_1=5; \; u_2=8; \; u_3=11; \; u_4=14 \; u_6=20$$
+
+
+\item Soit $\left(\nu_{n}\right)$ la suite arithmétique de raison -8 et de premier terme $v_{0}=28$.
+
+Calculer $v_{1}, v_{2}, v_{3}, v_{4}$ et $v_{6}$.
+
+$$v_1=20; \; v_2=12; \; v_3=4; \; v_4=-4 \; v_6=-12$$
+
+\item Soit $\left(w_{n}\right)$ la suite arithmétique de raison 3 et de premier terme $w_{0}=\frac{1}{7}$.
+
+Calculer $w_{1}, w_{2}, w_{3}, w_{4}$ et $w_{6}$.
+
+$$w_1=\dfrac{22}{7}; \; w_2=\dfrac{43}{7}; \; w_3=\dfrac{64}{7}; \; w_4=\dfrac{85}{7} \; w_6=\dfrac{127}{7}$$
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+\begin{enumerate}
+\item Soit $\left(u_{n}\right)$ la suite arithmétique de raison $r=-2$ et de premier terme $u_{0}=7$.
+
+Exprimer $u_{n}$ en fonction de $n$ puis calculer $u_{10}$ et $u_{100}$.
+
+$$u_n=7 \times (-2)^n, \;\;\; u_{10}=7168, \;\;\; u_{100}=7\times 2^{100} \approx 8,87 \times 10^{30}$$
+
+\item Soit $\left(v_{n}\right)$ une suite arithmétique telle que $v_{2}=7$ et $v_{6}=9$.
+
+Calculer sa raison $r$ puis son premier terme $v_{0}$. 
+
+$$v_6=v_2+(6-2)r \Longleftrightarrow r=\dfrac{v_6-v_2}{4}=\dfrac{1}{2}=0,5$$
+
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Dans chaque cas, on donne les premiers termes $u_{0}, u_{1}, u_{2}, u_{3}$ et $u_{4}$ d'une suite $\left(u_{n}\right)$.
+
+Dans quel cas peut-elle être arithmétique?
+
+\begin{enumerate}
+\item $0 ; 1 ; 4 ; 9 ; 16$.\\
+La suite ne peut pas être arithmétique car les écarts sont non constants à savoir 1;3;...
+
+\item $28 ; 21 ; 14 ; 7 ; 0$.\\
+La suite peut être arithmétique car les écarts sont constants à savoir -7.
+
+\item $5,2 ; 5,6 ; 6 ; 6,4 ; 6,8$.\\
+La suite peut être arithmétique car les écarts sont constants à savoir 0,4.
+
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+\begin{enumerate}
+\item Calculer la somme des 500 premiers entiers naturels non nuls.\\
+Il s'agit d'une somme dont les termes forment le début d'une suite arithmétiques\\
+
+Nombre de terme est de 500, premier terme est égal à 1 et le dernier terme est égal à 500, par suite $S=500\dfrac{1+500}{2}=125250$
+
+\item Calculer la somme des entiers de 35 à 150.\\
+La somme des entiers jusqu'à 150 est de 11325.
+La somme des entiers jusqu'à 34 est de 595. 
+Donc la somme des entiers de 34 jusqu'à 150 est de 10730.\\
+
+Autre technique: Il y a 150-35+1=116 termes donc la somme est de $116\times \dfrac{35+150}{2} = 10730$ 
+ 
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+
+Soit $\left(u_{n}\right)$ la suite arithmétique de raison 3 et de premier terme $u_{0}=5$.
+
+\begin{enumerate}
+\item Exprimer $u_{n}$ en fonction de $n$ puis en déduire $u_{15}$.\\
+$u_n=5+3n$ donc on a $u_{15}=50$
+\item Calculer $S=u_{0}+u_{1}+\ldots+u_{15}$.\\
+Il y a $15-0+1=16$ termes donc $S=16\times\dfrac{5+50}{2}=440$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Soit $\left(u_{n}\right)$ la suite arithmétique telle que $u_{3}=5$ et $u_{14}=39$.
+
+\begin{enumerate}
+\item Déterminer le nombre de termes de $u_{3}$ à $u_{14}$.\\
+Il y a 14-3+1 termes soit 12 termes.
+\item Calculer $S=u_{3}+u_{4}+\ldots+u_{14}$. \\
+D'après ce que l'on sait $S=12\dfrac{5+39}{2}=264$.
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+Une personne qui n'a aucune pratique sportive décide au cours d'un mois de 30 jours de faire chaque jour 5 minutes de sport de plus que le jour précédent.
+
+On modélise cette situation par une suite $\left(t_{n}\right)$ où $t_{n}$ est le temps consacré par cette personne à faire du sport le $n$-ième jour de ce mois.
+
+\begin{enumerate}
+\item Déterminer $t_{1}$ et $t_{2}$.\\
+$$t_1=5, \;\;\; t_2=10$$
+
+\item Déterminer la nature de la suite $\left(t_{n}\right)$.\\
+La suite est arithmétique, de raison $5$ et de premier terme 5.
+
+\item Exprimer $t_{n}$ en fonction de $n$.
+$$t_n=t_1 + 5(n-1)= 5n$$
+
+\item Déterminer le temps consacré à faire du sport le trentième jour.
+$t_30=150$ Soit deux heures et demi de sport.
+
+\item Calculer $S=t_{1}+t_{2}+\ldots+t_{30}$.
+
+$S=30\times\dfrac{5+150}{2}=2325$
+
+\item Interpréter ce dernier résultat.\\
+
+Durant ce mois, cette personne aura pratiquer 2325 minutes de sport, soit 38 heures et 45 minutes.
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Un apiculteur s'inquiète pour sa population d'abeilles.
+
+Il l'évalue la première année à 10 000, la deuxième à 9 250, et la troisième à 8200.
+
+Peut-il modéliser l'évolution du nombre d'abeilles par une suite arithmétique? \\
+
+L'écart entre la première et la seconde année est 750 et l'écart entre la seconde et la troisième est de 1050. L'écart étant non constant il ne peut pas modéliser l'évolution du nombre d'abeilles par une suite arithmétique.
+\end{corrige}
+
+
+\begin{corrige}
+Dans une station service lors des trois derniers mois de l'année 2019, le prix du gasoil a évolué de la manière suivante :
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline Mois & Octobre & Novembre & Décembre \\
+\hline Prix (en euros) & 1,491 & 1,503 & 1,515 \\
+\hline
+\end{tabular}
+\end{center}
+
+L'évolution de ce prix peut-elle être modélisée par une suite arithmétique? Si oui, laquelle?\\
+
+L'écart est constant d'un mois à un autre et est de 0,012. On peut modéliser cela par une suite arithmétique de premier terme 1,491 et de raison 0,012.
+
+\end{corrige}
+
+
+\begin{corrige}
+
+On place un capital de $1250 €$ à intérêts simples au taux annuel de $6 \%$. Cela signifie que les intérêts produits chaque année sont égaux à $6 \%$ de $1250 €$.
+
+On désigne par $I$ les intérêts produits chaque année et par $C_{n}$ la somme disponible au bout de $n$ années. On a donc : $C_{0}=1250$.
+
+\begin{enumerate}
+\item Calculer $I$.\\
+
+$I=1250 \times \dfrac{6}{100}=75$
+
+\item Calculer $C_{1}, C_{2}$ et $C_{3}$.\\
+
+$$C_0=1250, \;\;\; C_1=1325, \;\;\; C_2=1400, \;\;\; C_3=1475$$
+
+\item Montrer que $\left(C_{n}\right)$ est une suite arithmétique. Quel est son premier terme? Quelle est la raison?\\
+
+$C_{n+1}-C_n=75$ Donc $(C_n)$ est une suite arithmétique de premier terme $1250$ et de raison $75$. 
+
+\item Exprimer $C_{n}$ en fonction de $n$.\\
+
+$C_n=1250+75n$
+
+\item Calculer la somme disponible au bout de 5 ans.
+
+$C_5=1625$, la somme disponible est de 1625 euros au bout de 5 ans.
+
+\item Au bout de combien d'années la somme disponible dépasse-t-elle $2000 €$ ?
+On cherche $n$ tel que 
+$$C_n\geq 2000 \Longleftrightarrow 75n \geq 750 \Longleftrightarrow  n \geq 10$$ 
+
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+La cloche d'une église sonne toutes les heures : 1 coup à 1 h00 et à 13h00; 2 coups à 2 h00 et à $14 \mathrm{~h} 00 ; \ldots ; 12$ coups à midi et à minuit. Un villageois se plaint du bruit.
+
+Pour tout entier naturel $n$ non nul, on note $u_{n}$ le nombre de coups à la $n$-ième heure.
+
+Combien de tintements le villageois entend-il en une journée?\\
+
+$$2(1+2+3+\cdots+12)=2 \times 12 \dfrac{1+12}{2} =24 \dfrac{13}{2} =156$$
+
+Le villageois entend 156 coups de cloche en une journée
+
+
+\end{corrige}
+
+
+
+\begin{corrige}
+Cédric s'est inscrit au marathon de Paris et il souhaite organiser sa préparation.
+
+Dans son programme d'entraînement hebdomadaire, il prévoit une séance unique.
+
+Quatre mois avant le départ (on considèrera que cela revient à 16 semaines), lors de sa première semaine de préparation, il court 15 kilomètres. Chaque semaine, il augmente la distance parcourue de 1,5 kilomètre.
+
+Pour tout entier naturel $n$ non nul, on note $u_{n}$ la distance parcourue pendant la séance de la $n$-ième heure.
+
+\begin{enumerate}
+\item Préciser $u_{1}, u_{2}$ et $u_{3}$.\\
+
+$$u_1=15, \;\;\; u_2=16,5, \;\;\; u_3=18 $$
+
+
+\item Déterminer la nature de la suite $\left(u_{n}\right)$.\\
+
+La suite est arithmétique, car l'écart est constant de 1,5.
+
+\item Pensez-vous que Cédric sera prêt pour le marathon de Paris? \\ 
+
+$16\times 1,5=24$ cela ajouté à 15 (=39) ne semble pas suffisant pour arrivé à 42km. 
+
+\item Quelle distance aura-t-il parcourue pendant ses quatre mois d'entraînement?
+
+Il a parcourut $15+16,5+\cdots+39= 16 \dfrac{15+39}{2} =216$ km
+ 
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Dans une ville, le prix du $\mathrm{m}^{3}$ d'eau a augmenté de la façon suivante : il coûtait 3,20 euros le $1^{\text {er }}$ janvier 2018, 3,36 euros le $1^{\text {er }}$ janvier 2019 et 3,55 euros le $1^{\text {er }}$ janvier 2020.
+
+Peut-on modéliser l'évolution du prix du $\mathrm{m}^{3}$ d'eau par une suite géométrique? \\
+
+$\dfrac{3,36}{3,20}=1,05$ 
+$\dfrac{3,55}{3,36}\approx 1,056$
+
+On ne peut modéliser cela par une suite géométrique car il y aurait une erreur. L'idée serait de mesurer l'erreur pour savoir si elle est significative mais ceci est une autre question.
+\end{corrige}
+
+
+\begin{corrige}
+
+Dans un laboratoire, on introduit initialement $1000 \mathrm{~g}$ de bactéries dans une cuve de milieu nutritif. Le jour suivant, la masse de bactéries est de $1150 \mathrm{~g}$ et le troisième jour de 1 322,5 g.
+
+L'évolution de la masse de bactéries peut-elle être modélisée par une suite géométrique?
+
+$$\dfrac{1150}{1000} =1,15, \;\;\; \dfrac{1322,5}{1150}=1,15$$
+
+On peut modéliser cela par une suite géométrique car les rapports sont constants.
+\end{corrige}
+
+
+
+\begin{corrige}
+\begin{enumerate}
+\item Quels sont les coefficients multiplicateurs associés à une hausse de $20 \%$ et à une hausse de $15 \%$ ?\\
+
+$1,2$ et $1,15$ respectivement.
+
+\item Déterminer la moyenne géométrique de 1,2 et 1,15 .\\
+
+$$\sqrt{1,2 \times 1,15}\approx 1,1747$$
+
+
+\item En déduire l'évolution moyenne associée à deux hausses successives, une première de $20 \%$ et une deuxième de $15 \%$.\\
+
+L'évolution moyenne associé à ces deux évolutions est une augmentation de $17,47\%$.
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+\begin{enumerate}
+
+\item Quels sont les coefficients multiplicateurs associés à une baisse de $30 \%$ et à une baisse de $25 \% $?\\
+
+$1-\dfrac{30}{100}=0,7$ et $1-\dfrac{25}{100}=0,75$.
+
+\item Déterminer la moyenne géométrique de 0,7 et 0,75 .\\
+
+$\sqrt{0,7 \times 0,75}\approx 0,7246 =1-\dfrac{27,54}{100}$
+
+\item En déduire l'évolution moyenne associée à deux baisses successives, une première de $30 \%$ et une deuxième de $25 \%$.\\
+
+L'évolution moyenne associé à ces deux évolutions est une diminution de $27,54\%$.
+
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+Chaque somme $S$ est la somme de termes successifs d'une suite géométrique $\left(u_{n}\right)$. Calculer $S$.
+
+\begin{enumerate}
+\item $S=1+2+4+\ldots+2048$.
+
+$$S=\dfrac{1-2^{12}}{1-2}=2^{12}-1$$
+
+\item $S=3+\frac{3}{2}+\frac{3}{4}+\ldots+\frac{3}{8192}$.
+
+$$S=3\times \dfrac{1-(\frac{1}{2})^{14}}{1-\frac{1}{2}}=6(1-(\dfrac{1}{2})^{14})$$
+
+\item $S=2+6+18+\ldots+13122$.
+
+$$S=2 \times (\dfrac{1-3^{9}}{1-3})=3^9-1$$
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Une entreprise place un capital de 10000 euros à intérêts composés au taux annuel de $3 \%$. Cela signifie que chaque année, le capital augmente de $3 \%$.
+
+On note $C_{n}$ la valeur acquise par le capital au bout de $n$ années.
+\begin{enumerate}
+ 
+\item Calculer $C_{1}$ et $C_{2}$.
+
+$C_1=10300$ et $C_2=10609$
+
+\item Indiquer la nature de la suite des capitaux $\left(C_{n}\right)$.
+
+La suite des capitaux forment une suite géométrique de premier terme 10000 et de raison 1,03.
+
+\item Exprimer le terme général $C_{n}$ en fonction de $n$.
+
+$$C_n=10000\times 1,03^n$$ 
+
+\item Calculer la valeur acquise par le capital au bout de 10 ans.\\
+
+La valeur acquise au bout de 10 ans sera de $C_{10}\approx 13439,16$
+
+
+ \end{enumerate} 
+\end{corrige}
+
+
+\begin{corrige}
+En 2018, les dépenses de fonctionnement d'une entreprise s'élevaient à 12500 euros. Depuis, elles diminuent de 5,5\% par an.
+
+Le responsable veut savoir à partir de quelle année les dépenses de fonctionnement seront inférieures à 10000 euros si la baisse se poursuit avec la même évolution annuelle.
+
+Pour tout entier naturel $n$, on note $d_{n}$ les dépenses de fonctionnement l'année $2018+n$.
+
+\begin{enumerate}
+\item Préciser $d_{0}, d_{1}$ et $d_{2}$.\\
+
+$d_0=12500$; $d_1=11812,5$; et $d_2\approx 11162.81$
+
+\item Déterminer la nature de la suite $\left(d_{n}\right)$.\\
+
+La suite $(d_n)$ est géométrique de premier terme $12500$ et de raison $1-\dfrac{5,5}{100}$.
+
+\item Exprimer le terme général $d_{n}$ en fonction de $n$.\\
+
+$$d_n=12500\times (1-\dfrac{5,5}{100})^n$$
+
+\item Conclure en utilisant une calculatrice.\\
+
+A partir de $n\geq 4$ $d_n\leq 10000$ les dépenses de fonctionnement de l'entreprise seront inférieurs à 10000 euros dans 4 ans.
+
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Un atelier fabrique 250 paires de lunettes par semaine. Au $1^{\text {er }}$ janvier 2019, il reçoit une commande de 7500 pièces pour début juin. Le chef d'atelier compte réaliser cette commande en 24 semaines.
+
+\begin{enumerate}
+\item Ce délai est-il suffisant? Justifier la réponse.
+
+$24 \times 250 =6000 < 7500$
+
+\item Le chef d'atelier décide d'augmenter la production de $5 \%$ par semaine. On note $u_{n}$ le nombre de paires de lunettes produites la $n$-ième semaine.
+
+\begin{enumerate}
+\item Calculer $u_{1}$ et $u_{2}$.
+
+$u_1 \approx 262$ et $u_2\approx 275$
+
+\item Déterminer la nature de la suite $\left(u_{n}\right)$.
+
+La suite $u_n$ est géométrique de raison 1,05 et de premier terme 250
+
+\item Exprimer le terme général $u_{n}$ en fonction de $n$.\\
+
+$$u_n=250\times 1,05^n$$
+\end{enumerate}
+
+\item Conclure.
+
+$$250+262,5+\cdots+806,27..=250(\dfrac{1-(1,05)^{24}}{1-1,05}=5000(1,05^{24}-1)\approx 11125 > 7500$$
+
+La commande sera bien honorée.
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+
+Un jour donné, la pression atmosphérique à l'altitude 0 est égale à 1000 hectopascals (hPa) et diminue de $1 \%$ pour une élévation d'altitude de 100 mètres.
+
+Pour tout entier naturel $n$, on note $u_{n}$ la pression à $n$ centaines de mètres d'altitude.
+
+\begin{enumerate}
+\item Déterminer la pression atmosphérique à $100 \mathrm{~m}$ et à $200 \mathrm{~m}$ d'altitude.
+
+$u_1=990$ et $u_2=980,1$.
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ?
+
+La suite $(u_n)$ est une suite géométrique de raison 0,99 et de premier terme 1000.
+
+\item Exprimer $u_{n}$ en fonction de $n$.
+
+$$u_n= 1000 \times 0,99^n$$
+ 
+\item En déduire la pression atmosphérique au sommet du Mont-Blanc à $4800 \mathrm{~m}$ ce jour-là.
+
+La pression au sommet du Mont-Blanc est de $u_48\approx 617$ hPa.
+
+\end{enumerate}
+
+\end{corrige}
+
+\begin{corrige}
+Étienne vient d'acheter un lave-linge très perfectionné à 1500 euros qu'il décide d'assurer. En cas de défaillance, l'assureur rembourse l'appareil mais il applique une décote de $12 \%$ par an sur la valeur de l'appareil. On note $a_{n}$ la valeur remboursée du lave-linge la $n$-ième année.
+
+\begin{enumerate}
+\item Calculer $a_{1}$ et $a_{2}$.
+
+$a_1=1320$ et $a_2=1161,6$
+
+\item Quelle est la nature de la suite $\left(a_{n}\right)$ ?
+
+La suite $(a_n)$ est une suite géométrique de raison 0,88 et de premier terme 1500
+
+\item Exprimer $a_{n}$ en fonction de $n$.
+
+$$a_n=1500\times (1-\dfrac{12}{100})^n$$
+
+\item A partir de quelle année la valeur remboursée sera-t-elle inférieure à 100 euros? \\
+
+A partir de $n \geq 22$ $a_n \leq 100$, autrement dit dans 22 ans la somme remboursé sera inférieur à 100 euros.  
+
+
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+
+\textbf{Partie A}
+
+En France depuis 2016, les ventes de véhicules hybrides ont fortement augmenté. Le tableau ci-dessous donne le nombre de véhicules hybrides vendus en France par année :
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline Année & 2016 & 2017 & 2018 \\
+\hline Nombre de véhicules & 7420 & 11010 & 15350 \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Déterminer le pourcentage d'évolution entre 2016 et 2017, puis entre 2017 et 2018.\\
+
+le pourcentage d'évolution entre 2016 et 2017 est de $\dfrac{11010-7420}{7420}\times 100 \approx 48,38\%$, puis entre 2017 et 2018 le pourcentage d'évolution est de $\dfrac{15350-11010}{11010}\times 100 \approx 39,42\%$
+
+\item Déterminer la moyenne géométrique de 1,48 et 1,39 .\\
+
+$$\sqrt{1,48 \times 1,39}\approx 1,4343$$
+
+
+\item Quel est le taux moyen annuel d'évolution entre 2016 et 2018 ?\\
+
+ le taux moyen annuel d'évolution entre 2016 et 2018 est d'environ $43,43\%$
+\end{enumerate}
+
+\textbf{Partie B}
+
+On suppose qu'à partir de 2018, les ventes de voitures hybrides augmentent de $43 \%$ par an et que cette évolution va se poursuivre.
+
+On modélise par la suite $\left(u_{n}\right)$ l'évolution des ventes où la partie entière de $u_{n}$ représente le nombre de voitures hybrides vendues au cours de l'année $2018+n$.
+
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Que vaut $u_{0}$ ?
+$u_0=15350$
+\item Calculer $u_{1}$ et $u_{2}$.
+$u_1=21950.5$ et $u_2=31389,215$.
+\end{enumerate}
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ?\\
+
+La suite $(u_n)$ est une suite géométrique de raison 1,43 et de premier terme 15350.
+
+\item Exprimer $u_{n}$ en fonction de $n$.
+
+$$u_n=15350 \times 1,43^n$$
+
+\item Selon ce modèle, combien de voitures hybrides seront vendues en 2023 ?
+
+$$u_5= 15350 \times 1,43^5 \approx 91788$$ 
+
+Arrondi à la partie entière le nombre de voiture hybrides vendues sera de 91788 en 2023.
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+Pour un emploi où elle compte rester 15 ans, Bahiya se voit proposer deux contrats de travail :
+
+\begin{itemize}
+\item Contrat 1 : 21000 euros de salaire annuel net et une augmentation annuelle de 1000 euros;
+
+\item Contrat 2 : 18000 euros de salaire annuel net et une augmentation annuelle de $8 \%$.
+\end{itemize}
+
+\begin{enumerate}
+\item On commence par étudier le contrat 1 .
+
+\begin{enumerate}
+\item On note $u_{n}$ la valeur du salaire annuel de Bahiya la $n$-ième année. Déterminer $u_{1}, u_{2}$ et $u_{3}$.\\
+
+$u_1=21000, \;\;\; u_2=22000, \;\;\; u_3=23000$
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ?\\
+
+La suite $(u_n)$ est une suite arithmétique de raison 1000 et de premier terme 21000.
+
+\item Exprimer $u_{n}$ en fonction de $n$.\\ 
+
+$$u_n=21000+1000(n-1)$$
+
+\item Calculer $u_{15}$.
+
+$$u_{15}=35000$$
+\end{enumerate}
+
+\item On étudie maintenant le contrat 2.
+
+\begin{enumerate}
+\item On note $v_{n}$ la valeur du salaire annuel de Bahiya la $n$-ième année. Déterminer $v_{1}, v_{2}$ et $v_{3}$.\\
+
+$v_1=18000, \;\;\; v_2=19440, \;\;\; v_3=20995,2$
+
+\item Quelle est la nature de la suite $\left(v_{n}\right)$ ?\\
+
+La suite $(v_n)$ est une suite arithmétique de raison 1,08 et de premier terme 18000.
+
+\item Exprimer $v_{n}$ en fonction de $n$.\\
+
+$$v_n=18000 \times 1,08^{n-1}$$
+
+\item Calculer $v_{15}$.\\
+
+$v_{15}=18000 \times 1,08^{14} \approx 52869,49$
+\end{enumerate}
+
+\item Comparer les deux contrats sur le long terme. \\
+
+Sur le long termes il est plus avantageux pour le salarié de prendre le contrat 2.
+\end{enumerate}
+\end{corrige}
+
+
+
+\begin{corrige}
+L'entreprise Iron SA exploite un filon de minerai de fer depuis 1950.
+
+La première année d'extraction l'entreprise a récupéré 20000 tonnes de fer. Cependant depuis 1950, en raison de difficultés croissantes d'extraction, de l'appauvrissement du filon, les quantités extraites diminuent de $1 \%$ par an.
+
+On appelle $T_{n}$ le nombre de tonnes extraites l'année $(1950+n)$. On a donc $T_{0}=20000$.
+
+Les résultats seront arrondis à la tonne.
+\begin{enumerate}
+
+\item Justifier que $T_{1}=19800$ puis calculer $T_{2}$ et $T_{3}$.\\
+
+$$T_1=20000 \times 0,99 =19800, \;\;\; T_2=19602, \;\;\; T_3=194055,98$$
+\item Exprimer $T_{n+1}$ en fonction de $T_{n}$.
+
+$$T_{n+1}=T_n \times 0,99$$
+
+\item Quelle est la nature de la suite $\left(T_{n}\right)$ ? En déduire l'expression de $T_{n}$ en fonction de $n$.
+
+La suite $(T_n)$ est une suite géométrique de raison 0,99 et de premier terme 20000, $T_n=20000 \times 0,99^n$.
+
+
+\item Quelle est la quantité extraite en 2008?\\
+
+$T_{58}\approx 1116$
+
+La quantité extraite en 2008 est de 1116 tonnes environ.
+
+\item Montrer que la quantité totale extraite entre l'année 1950 et l'année $(1950+n)$ est :
+
+$$
+S_{n}=2000000 \times\left(1-0,99^{n+1}\right)
+$$
+
+Il s'agit d'une somme dont les termes sont géométrique il  y a bien $n$ terme et diviser par $1-0,99$ revient à multiplier par 100 d'où les 2 000 000.
+
+6. En 1950, les géologues estimaient que ce filon recelait 1000000 tonnes de métal. En quelle année, théoriquement, le filon sera-t-il épuisé?\\
+
+Théoriquement cela arrivera pendant la 68 ième année pour extraire tous le filon et donc en 2018.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Cet exercice est composé de deux parties indépendantes l'une de l'autre.
+
+\textbf{Partie A - Les économies}\\
+
+Afin de se constituer un capital, un épargnant place 1000 euros sur un compte non rémunéré et, chaque mois, verse 75 euros sur ce compte.
+
+On note $u_{n}$ le montant en euros du capital accumulé au bout de $n$ mois. Ainsi $u_{0}=1000$.
+
+\begin{enumerate}
+\item Calculer $u_{1}, u_{2}$ et $u_{3}$.
+
+$$u_1=1075; \;\;\; u_2=1150, \;\;\; u_3=1225$$
+
+\item Déterminer la nature de la suite $\left(u_{n}\right)$ en justifiant la réponse.\\
+
+La suite $(u_n)$ est une suite arithmétique car l'écart est constant de raison 75 et de premier terme 1000.
+
+
+\item En déduire l'expression de $u_{n}$ en fonction de $n$.
+Au bout de combien de temps le capital accumulé est-il supérieur à 3500 euros? Justifier la réponse.
+
+$$u_n=1000+75n$$
+
+$$u_n\geq 3500 \Longleftrightarrow 75n \geq 2500 \Longleftrightarrow n\geq 34$$
+
+Au bout de 34 ans, le capital accumuler sera serait supérieur à 3500 euros.
+
+
+\end{enumerate}
+
+\textbf{Partie B - Les dépenses}\\
+
+Cet épargnant doit surveiller ses dépenses. En janvier 2014 il a dépensé $660 €$ et, jusqu'à présent, ses dépenses ont augmenté chaque mois de $4 \%$. On suppose que cette évolution va se poursuivre à l'avenir.
+
+Cette évolution conduit à modéliser le montant en euros des dépenses mensuelles au cours du $n$-ième mois après janvier 2014 par le terme $v_{n}$ d'une suite géométrique. Ainsi $v_{0}=660$.
+
+Dans cette partie, les résultats seront arrondis au centime d'euro.
+
+\begin{enumerate}
+\item Justifier que $v_{1}=1,04 v_{0}$. Calculer $v_{3}$ et interpréter le résultat.
+
+Ici les dépense du premier mois sont 4\% supérieur à 660 euros. soit $1,04 \times 660$.  $$v_3=1,04 \times v_2 =1,04 \times 1,04 \times v_1 =1,04 \times 1,04 \times 1,04 v_0 = 1,04^3 v_0=742$$
+
+\item Calculer le montant des dépenses au mois de décembre 2014.
+
+$v_12=(1,04)^12 660 \approx 1056,68$
+
+Les dépenses seront de 1056,68 euros au mois de décembre 2014.
+
+\item Selon ce modèle, quand l'épargnant devrait-il doubler ses dépenses par rapport à janvier 2014 ? \\
+
+$$(1,04)^n 660 \geq 1320 \Longleftrightarrow (1,04)^n \geq 2  \Longleftrightarrow n \geq 18$$
+
+Au bout de 18 mois, soit en juin 2015. 
+
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+Deux coureurs cyclistes, Ugo et Vivien, ont programmé un entraînement hebdomadaire afin de se préparer à une course qui aura lieu dans quelques mois. Leur objectif est de parcourir chacun une distance totale de $1500 \mathrm{~km}$ pendant leur période d'entraînement de 20 semaines.
+
+Ugo commence son entraînement en parcourant $40 \mathrm{~km}$ la première semaine et prévoit d'augmenter cette distance de $5 \mathrm{~km}$ par semaine. Vivien commence son entraînement en parcourant $30 \mathrm{~km}$ la première semaine et prévoit d'augmenter cette distance de $10 \%$ par semaine.
+
+On note $u_{n}$ la distance, en kilomètres, parcourue par Ugo la $n^{\text {ième }}$ semaine. On a ainsi $u_{1}=40$. On note $v_{n}$ la distance, en kilomètres, parcourue par Vivien la $n^{\text {ième }}$ semaine. On a ainsi $v_{1}=30$.
+
+\textbf{Partie A - L'entraînement d'Ugo}
+
+\begin{enumerate}
+\item Calculer les distances parcourues par Ugo au cours des deuxième et troisième semaines d'entraînement.\\
+
+$$u_2=45, \;\;\; u_3=50$$
+
+\item Quelle est la nature de la suite $\left(u_{n}\right)$ ? Préciser sa raison.\\
+
+$(u_n)$ est une suite arithmétique de raison 5 et de premier terme 40.
+
+\item Montrer que, pour tout $n \geqslant 1, u_{n}=35+5 n$.
+
+$$u_n=u_1+(n-1)\times 5=40+5n-5=35+5n$$
+
+\end{enumerate}
+
+\textbf{Partie B - L'entraînement de Vivien}
+
+\begin{enumerate}
+\item Quelle est la nature de la suite $\left(v_{n}\right)$ ? Justifier la réponse.
+
+La nature de $(v_n)$ est une suite géométrique car elle augmente de 10\% par semaine ce qui revient à multiplier par un même nombre à savoir la raison qui est de $1,1=q$. 
+
+\item Montrer que, pour tout $n \geqslant 1, v_{n}=30 \times 1,1^{n-1}$.\\
+
+Pour $n\geq1$,
+$$v_n=v_1 \times q^{n-1} = 30 \times 1,1^{n-1}$$
+
+\item Calculer $v_{8}$. On arrondira le résultat au dixième.\\
+
+$$v_8\approx 58,5$$
+
+\end{enumerate}
+
+\textbf{Partie C - Comparaison des deux entraînements}
+
+\begin{enumerate}
+\item Vivien est persuadé qu'il y aura une semaine où il parcourra une distance supérieure à celle parcourue par Ugo. Vivien a-t-il raison? On pourra utiliser les PARTIES A et B pour justifier la réponse.\\
+
+Au bout de la 13 ème semaine Vivien dépassera une distance supérieur celle de Ugo. 
+
+$$u_{13} =100, \;\;\; v_{13}\approx 103,56$$
+
+\item À la fin de la $17^{\mathrm{e}}$ semaine, les deux cyclistes se blessent. Ils décident alors de réduire leur entraînement. Ils ne feront plus que $80 \mathrm{~km}$ chacun par semaine à partir de la $18^{\mathrm{e}}$ semaine. Leur objectif sera-t-il atteint?\\
+
+$$S_u=u_1+\cdots+u_{17}+80\times 3=17\times \dfrac{40+125}{2} + 240 = 1600$$ 
+
+$$S_v=v_1+\cdots+v_{17}+ 80 \times 3=30 \times \dfrac{1-1,04^18}{1-1,04} + 240 \approx 1009$$
+
+L'objectif sera atteint pour Ugo mais pas pour Vivien.  
+
+\end{enumerate}
+
+\end{corrige}
+
+\begin{corrige}
+
+Un youtubeur compte 35000 abonnés à sa chaîne au 1er janvier 2019.
+
+Au cours de l'année 2019, il constate que chaque mois, il perd $20 \%$ des anciens abonnés mais qu'il en gagne 500 nouveaux.
+
+Pour $n \geqslant 1$, on note $u_{n}$ le nombre d'abonnés le $1^{\text {er }}$ du $n$-ième mois, le premier mois étant le mois de janvier 2019.
+
+\begin{enumerate}
+\item Préciser $u_{1}$.
+
+$u_1=35000$
+
+\item Calculer $u_{2}$ et $u_{3}$. \\
+
+$$u_2=35000 \times 0,8 +500 =28500$$
+$$u_3=28500 \times 0,8 +500=23300$$
+
+
+\item La suite $\left(u_{n}\right)$ est-elle arithmétique? Est-elle géométrique?
+
+Elle n'est pas arithmétique car l'écart n'est pas constant entre les termes (7000 puis 5200).\\
+Elle n'est pas géométrique car le rapport n'est pas constant entre les termes (1,2280  et 1,2231  environ).
+
+
+
+\item On introduit la suite $\left(v_{n}\right)$ définie pour tout entier $n \geqslant 1$ par $v_{n}=u_{n}-2500$.
+
+\begin{enumerate}
+\item Démontrer que la suite $\left(v_{n}\right)$ est une suite géométrique.
+
+Préciser sa raison et son premier terme.\\
+
+$$\dfrac{v_{n+1}}{v_n}=\dfrac{u_{n+1}-2500}{v_n}=\dfrac{u_n \times0,8+500-2500}{v_n}=\dfrac{u_n\times 0,8-2000}{v_n}=\dfrac{0,8(u_n-2500)}{v_n}=\frac{0,8v_n}{v_n}=0,8$$
+
+\item Exprimer $v_{n}$ en fonction de $n$ et en déduire l'expression de $u_{n}$ en fonction de $n$.\\
+
+$$v_n=v_1 \times 0,8^{n-1}=32500 \times 0,8^{n-1}$$
+$$u_n=v_n+2500=32500 \times 0,8^{n-1}+2500$$
+
+\item Déterminer le nombre d'abonnés au $1^{\text {er }}$ janvier 2020.\\
+
+$$u_{13} \approx 4287$$
+
+Le nombre d'abonnés sera d'environ 4287 le 
+$1^{\text {er }}$ janvier 2020.
+
+\end{enumerate}
+\end{enumerate}
+\end{corrige}
+
+\end{document}

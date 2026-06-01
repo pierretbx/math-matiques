@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{SCRATCH - Exemples de scripts de tracés}
+\addcontentsline{toc}{section}{SCRATCH - Exemples de scripts de tracés}
+
+\subsection*{Initialisation d'un tracé}
+\addcontentsline{toc}{subsection}{Initialisation d'un tracé}
+
+\vspace{-5mm}
+\noindent \begin{minipage}{11cm}
+Il est important de bien se positionner avant de faire un tracé. On peut :
+\begin{enumerate}
+\item[•] réduire la taille du lutin afin de mieux voir le tracé
+\item[•] se placer au centre du cadre (ou ailleurs)
+\item[•] regarder vers la droite
+\item[•] tout effacer
+\item[•] et se mettre en position pour tracer
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\setscratch{scale=0.8}
+\begin{scratch}
+\blockinit{quand \greenflag est cliqué}
+\blocklook{mettre à \ovalnum{20} $\%$ de la taille initiale}
+\blockmove{aller à x: \ovalnum{0} y: \ovalnum{0}}
+\blockmove{s'orienter à \ovalnum{90}}
+\blockpen{effacer tout}
+\blockpen{stylo en position d'écriture}
+\end{scratch}
+\end{minipage}
+
+\vspace{10mm}
+\noindent\begin{minipage}[t]{10.8cm}
+\subsection*{Dimensions de la scène}
+\addcontentsline{toc}{subsection}{Dimensions de la scène}
+
+\includegraphics[scale=0.315]{../40.Image/SCRATCH_cours_2_1.png}
+\end{minipage}
+\begin{minipage}[t]{5.6cm}
+\subsection*{Tracé d'un rectangle}
+\addcontentsline{toc}{subsection}{Tracé d'un rectangle}
+
+\setscratch{scale=0.8}
+\begin{scratch}
+\blockrepeat{répéter \ovalnum{2} fois}
+{
+	\blockmove{avancer de \ovalnum{3}}
+	\blockmove{tourner de \turnright{} de \ovalnum{90} degrés}
+	\blockmove{avancer de \ovalnum{1}}
+	\blockmove{tourner de \turnright{} de \ovalnum{90} degrés}	
+}
+\end{scratch}
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{minipage}
+
+\vspace{10mm}
+\noindent\begin{minipage}[t]{8.5cm}
+\subsection*{Tracé d'un carré}
+\addcontentsline{toc}{subsection}{Tracé d'un carré}
+
+\noindent\begin{minipage}{4cm}
+\setscratch{scale=0.8}
+\begin{scratch}
+\blockrepeat{répéter \ovalnum{4} fois}
+{
+	\blockmove{avancer de \ovalnum{2}}
+	\blockmove{tourner de \turnright{} de \ovalnum{90} degrés}
+}
+\end{scratch}
+\end{minipage}
+\begin{minipage}{4cm}
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{minipage}
+
+\bigskip
+\noindent\begin{minipage}{4cm}
+\setscratch{scale=0.8}
+\begin{scratch}
+\blockrepeat{répéter \ovalnum{4} fois}
+{
+	\blockmove{avancer de \ovalnum{2}}
+	\blockmove{tourner de \turnleft{} de \ovalnum{90} degrés}
+}
+\end{scratch}
+\end{minipage}
+\begin{minipage}{4cm}
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{minipage}
+
+\end{minipage}
+\begin{minipage}[t]{8.5cm}
+\subsection*{Tracé d'un triangle équilatéral}
+\addcontentsline{toc}{subsection}{Tracé d'un triangle équilatéral}
+
+\noindent\begin{minipage}{4.2cm}
+\setscratch{scale=0.8}
+\begin{scratch}
+\blockrepeat{répéter \ovalnum{3} fois}
+{
+	\blockmove{avancer de \ovalnum{3}}
+	\blockmove{tourner de \turnright{} de \ovalnum{120} degrés}
+}
+\end{scratch}
+\end{minipage}
+\begin{minipage}{4cm}
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{minipage}
+
+\bigskip
+\noindent\begin{minipage}{4.2cm}
+\setscratch{scale=0.8}
+\begin{scratch}
+\blockrepeat{répéter \ovalnum{3} fois}
+{
+	\blockmove{avancer de \ovalnum{3}}
+	\blockmove{tourner de \turnleft{} de \ovalnum{120} degrés}
+}
+\end{scratch}
+\end{minipage}
+\begin{minipage}{4cm}
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{minipage}
+\end{minipage}
+\end{document}

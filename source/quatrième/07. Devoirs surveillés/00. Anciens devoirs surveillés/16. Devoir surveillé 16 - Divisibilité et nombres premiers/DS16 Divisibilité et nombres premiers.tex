@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 16 - Divisibilité et nombres premiers\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Énoncer les critères de divisibilité par $2$, $3$, $5$ et $9$.\end{exercice}\begin{exercice}{2}{5}Décomposer $90$, $126$ et $168$ en produits de facteurs premiers.\end{exercice}\begin{exercice}{3}{5}Rendre la fraction $\frac{126}{168}$ irréductible.\end{exercice}\begin{exercice}{4}{6}On veut faire des paquets identiques avec $180$ bonbons et $132$ chocolats. Quel est le nombre maximal de paquets ? Que contient chaque paquet ?\end{exercice}\end{document}

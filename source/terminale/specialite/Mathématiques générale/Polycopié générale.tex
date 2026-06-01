@@ -1,0 +1,4992 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{stmaryrd}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+  \usepackage{tkz-tab}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+%\newcommand{\coordpp}[3]{\begin{pmatrix}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+
+\begin{document}
+
+
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+    \textsc{\LARGE Mathématiques spécialité }\\[2cm]
+    % Title
+    { \huge \bfseries Livret de terminal  \\[0.4cm] }
+    \HRule \\[2cm]
+    \includegraphics[scale=8]{../Figures/fractales.2}
+    \\[2cm]
+    \vfill
+    % Bottom of the page
+     \large Pierre \textsc{Thiebeaux} \\
+    {\large Année scolaire 2019 - 2020}
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\tableofcontents
+
+
+\chapter{Ensembles, cardinaux et dénombrements}
+\section{Ensembles, $k$-uplet et cardinaux}
+Soit $A$ un ensemble et soit $x,y,z\in A$ trois \textbf{éléments} de $A$. 
+
+\begin{defn}
+On dit que $(x;y)$ est un \textbf{couple} de l'ensemble $A$ et que $(x;y;z)$ est un \textbf{triplet} de l'ensemble $A$.\\
+
+\par De manière générale, soit $a_1,a_2,\cdots,a_n \in A$, $n$ éléments de $A$, on dit que  $(a_1;a_2;\cdots;a_n) $ est un \textbf{$n$-uplet} d'éléments de  l'ensemble $A$.
+\end{defn}
+
+\subsection{Produit cartésien d'ensembles}
+Soit $A,B$ deux ensembles.
+
+\begin{defn}
+On note $A \times B$ le\textbf{ produit cartésien de $A$ et $B$}. Il contient tous les éléments du type $(a;b)$ avec $a\in A$ et $b\in B$. Autrement dit,
+$$A\times B=\{(a;b) / a \in A, b \in B \} $$ 
+\end{defn} 
+
+\begin{rem}
+Attention, contrairement à la multiplication, le produit cartésien n'est pas commutatif, ils ont même symbole mais pas même signification. 
+
+$$A \times B \neq B \times A$$ 
+\end{rem}
+
+\begin{defn}
+On note $A^k$ l'ensemble $\underbrace{ A \times A \times \cdots  \times A }_{k-\text{occurences}} $ des $k$-uplets d’éléments d’un ensemble $A$. \\
+
+$$ A^k=\{(a_1;a_2;\cdots;a_k)/ a_i \in A \; \text{pour tout} \; i\in \llbracket 1;n \rrbracket \} $$
+\end{defn}
+
+\subsection{Cardinal d'un ensemble}
+\begin{defn}
+La cardinalité est une notion de taille pour les ensembles, il s'agit du nombre d'éléments de l'ensemble. On note $\#A$ le \textbf{cardinal} de $A$.
+\end{defn}
+
+\begin{rem}
+En particulier, le cardinal de l'ensemble vide est zéro. $(\#\emptyset =0)$
+\end{rem}
+
+\begin{prop}
+Soit $A\subset B$ alors $\#A \ie \#B$.
+\end{prop}
+
+\subsection{Opérations sur les ensembles et cardinalité}
+\begin{prop}
+Le cardinal de la \textbf{réunion} d'ensemble: $ \# A\cup B \ie \#A +\#B$ .
+\par Le cardinal de la \textbf{réunion disjointe} d'ensemble: $ \# A\uplus B = \#A +\#B$
+\par Le cardinal de l'\textbf{intersection} d'ensemble: $ \# A\cap B \ie max(\#A,\#B)$.
+\par Le cardinal du \textbf{produit cartésien} d'ensemble: $\# (A\times B)= \#A \times \#B$.
+\end{prop}
+
+\subsection{Nombre de $k$-uplets d'un ensemble à $n$ éléments}
+\begin{prop}
+Le nombre  de $k$-uplets d'un ensemble à $n$ éléments est égal à $n^k$ 
+\end{prop}
+
+\subsection{Nombre de $k$-uplets d'éléments distincts d'un ensemble à $n$ éléments}
+\begin{prop}
+Le nombre  de $k$-uplets d'un ensemble à $n$ éléments est égal à $n(n-1)(n-2)\cdots(n-k)$. 
+\end{prop}
+
+\subsection{Nombre de sous ensemble d’un ensemble à $n$ éléments}
+Soit $A$ un ensemble fini à $n$ éléments que l'on note $a_1,a_2,\cdots,a_n$. Soit $B$ un sous ensemble de $A$, à $B$, on associe un $n$-uplet de la manière suivante.
+\begin{itemize}
+\item[$\bullet$]Dans la $i$-ième coordonnée, mettre 1 si $a_i \in B$ et 0 sinon.
+\end{itemize}
+Ainsi n'importe quel sous-ensemble est identifié avec un \textbf{unique} $n$-uplet de l'ensemble $\{0;1\}$, ainsi d'apr\`es la propriété sur la cardinalité on a $\# \{0;1\}^n =2^n$ sous ensemble d'un ensemble à $n$.  
+\section{Permutations}
+
+Le Père Noël a offert à ma petite cousine un jeu de cubes
+où sont inscrits les lettres de l'alphabet.\\
+
+Très pédagogue, je lui donne d'abord les trois cubes A, B et C.
+Combien de " mots " de 3 lettres peut-elle alors former~? Et si
+je lui en donne quatre~? vingt-six~? trente-deux~?\\
+
+
+Moralité~: avec un ensemble \textit{(non ordonné)} $\{a,b,c\}$ de
+trois éléments, je peux former $3\times 2\times 1$ listes
+\textit{(ordonnées)}, comme par exemple $(a,b,c)$, $(b,a,c)$,
+$(c,b,a)$, etc.
+
+Je peux donc \textit{permuter} 3 cubes de $3\times 2\times 1$
+manières différentes.
+
+\begin{defn}[factorielle]
+  Soit $n$ un entier naturel non nul. Le nombre $n\times(n-1)\times\cdots\times2\times1$ est appelé \textbf{factorielle n}. On
+note
+$$n!=n\times(n-1)\times\cdots\times2\times1$$
+Conventionnellement, $0!=1$.
+\end{defn}
+
+
+
+D'après notre étude, nous pouvons donc dire maintenant que~:
+
+
+\begin{thm}[nombre de permutations]
+  Le nombre de \textbf{permutations} d'un ensemble contenant $n$ éléments est $n!$.
+\end{thm}
+
+
+\begin{exemple}[]
+  \begin{enumerate}
+  \item il y a trente-deux chaises dans une salle.
+\textit{Dénombrer} toutes les manières possibles pour les 30 élèves
+de $TS_4$ d'occuper les chaises de la salle~;
+\item Combien y a-t-il d'annagrammes du mot ZO\'E~? du mot ANA~?
+  \end{enumerate}
+\end{exemple}
+
+
+\section{Combinaisons}
+
+Il n'y a pas assez de gagnants au loto. Les règles en sont donc
+modifiées. Il s'agit maintenant de trouver 3 numéros parmi 5.
+Combien y a-t-il de grilles (combinaisons) possibles~?
+
+Par exemple, on pourrait dire que j'ai cinq manières de choisir le
+premier numéro, quatre choix pour le deuxième et trois choix pour
+le troisième, donc il y a $5\times 4\times 3$ grilles différentes.\\
+
+Posons une petite définition pour clarifier les débats. Donnons en
+fait un nom à une grille du loto, c'est à dire à un sous-ensemble
+(une partie) contenant $k$ éléments d'un plus grand ensemble
+contenant $n$ éléments.
+
+\begin{defn}[combinaison]
+  Soit $n$ et $k$ deux entiers naturels et $E$ un ensemble contenant $n$ éléments. Un sous-ensemble de $E$ contenant $k$
+éléments est appelé une \textbf{combinaison} de $k$ éléments de $E$ ou encore une $k$\textbf{-combinaison} d'éléments de
+\unboldmath${E}$.
+\end{defn}
+
+
+Or ce qui nous intéresse, c'est le nombre de ces combinaisons,
+donc introduisons une notation~:
+\subsection{Nombre de sous ensemble à $k$ éléments parmis un ensemble à $n$ éléments}
+\begin{defn}[nombre de combinaisons]
+   Le nombre de sous ensemble à $k$ éléments (\textit{ appelé aussi parfois $k$-combinaisons}) parmi un ensemble à $n$ éléments est $\co{k}{n}$. On le prononcera le nombre de combinaison de $k$ parmis $n$
+  \vspace{3mm}
+\end{defn}
+
+Revenons à notre mini-loto. Considérons une grille quelconque
+(c'est à dire une 3-combinaison de l'ensemble des 5 numéros)~: par
+exemple $\{2,4,5\}$. Nous  avons vu dans le paragraphe précédent
+qu'il y a $3!$ facons d'ordonner ces nombres. Finalement, il y a
+$\co{3}{5} \times 3!$ suites de 3 nombres ordonnées. Or nous en
+avons comptées $5\times 4\times 3$ tout à l'heure. Nous en
+déduisons finalement que
+$$\co{3}{5}  =\dfrac{5\times 4\times 3}{3!}$$
+
+Il est alors aisé de généraliser la formule suivante~:
+
+
+\begin{prop}[]
+  $$\co{k}{n}=\dfrac{n(n-1)(n-2)(n-3)\cdots(n-k)}{k!}$$
+\end{prop}
+
+
+
+Nous pouvons formuler cette propriété plus synthétiquement. En
+effet~:
+
+
+
+
+\begin{thm}[]
+   $$\co{k}{n}=\dfrac{n!}{k!(n-k)!}$$
+\end{thm}
+
+\begin{demo}
+\begin{eqnarray*}
+  {\co{k}{p}}&=&\dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}\times
+\dfrac{(n-k)(n-k-1)(n-k-2)\times\cdots\times 2\times
+1}{(n-k)(n-k-1)(n-k-2)\times\cdots\times 2\times
+1}\\
+&=&\dfrac{n!}{k!(n-k)!}
+\end{eqnarray*}
+\end{demo}
+
+
+\begin{prop}
+$\sum^n_{k=1} \co{k}{n} =2^n$
+\end{prop}
+
+\begin{demo}
+
+On sait que le nombre total de sous-ensemble d'un ensemble $n$ éléments est $2^n$, de plus le nombre de sous-ensemble à $k$ éléments parmi un ensemble à $n$ éléments est égal à $\co{k}{n}$. \\ 
+
+Mais le nombre total de sous-ensemble d'un ensemble $n$ éléments ($2^n$) est la somme de tous les sous-ensembles à $1$ élément parmi un ensemble à $n$ éléments $(\co{1}{n})$, à $2$ éléments parmi un ensemble à $n$ éléments  $(\co{2}{n})$, ... , à $n$ éléments parmi un ensemble à $n$ éléments  $ (\co{n}{n})$. 
+
+Autrement dit, 
+
+$$ 2^n= \co{1}{n} + \co{2}{n} + \cdots +  \co{n}{n} $$
+
+ou encore 
+$$\sum^n_{k=1}  \co{k}{n} = 2^n $$
+\end{demo}
+ \newpage
+\section{Triangle de Pascal - Binôme de Newton}
+
+\subsection{Raisonnement calculatoire}
+
+À l'aide des formules précédentes, établissez que~:
+
+
+\begin{prop}[Symétrie]
+$$\co{k}{n}=\co{{n-k}}{n}$$
+\end{prop}
+
+
+\'Etablissez, toujours par le calcul, la relation suivante, dite \textbf{Relation de Pascal} même si les mathématiciens chinois l'avaient
+mise en évidence avant lui~:
+
+
+\begin{prop}[Relation de \textsc{Pascal}]
+   $$\co{k}{n}=\co{{k}}{{n-1}}+\co{{k-1}}{{n-1}}$$
+\end{prop}
+
+\begin{demo}
+\begin{align*}
+\co{{k}}{{n-1}}+\co{{k-1}}{{n-1}} &=\dfrac{(n-1)!}{(n-1-k)!k!}+\dfrac{(n-1)!}{(n-k)!k-1!}\\
+& = \dfrac{(n-k)(n-1)!}{(n-k)!k!}+\dfrac{k(n-1)!}{(n-k)!k!} \\
+& = \dfrac{(n-k)(n-1)! + k(n-1)!}{(n-k)!k!} \\
+& = \dfrac{(n-k + k)(n-1)!}{(n-k)!k!} \\
+& =\dfrac{n(n-1)!}{(n-k)!k!} \\
+& =\dfrac{n!}{(n-k)!k!}\\
+ & =:\co{k}{n} \; \text{par définition}
+\end{align*}
+d'où 
+$$\co{k}{n}=\co{{k}}{{n-1}}+\co{{k-1}}{{n-1}}$$
+
+\end{demo}
+
+
+
+Cette relation permet de calculer les coefficients binomiaux de proche en proche, ce qui s'avère fort utile car la fonction factorielle
+croît extrêmement rapidement et dépasse vite les capacités d'une calculatrice de poche.
+
+Ainsi, la procédure suivante permet de calculer les coefficients binomiaux assez rapidement avec
+
+% \Prog{XCAS}
+
+%\begin{lstlisting}
+%combi(p,n):={
+ %si p=0 alors 1; 
+ %sinon si p>n alors 0;
+    %   sinon combi(p,n-1)+combi(p-1,n-1);
+      % fsi
+% fsi
+%}:;
+%\end{lstlisting}
+
+
+%Mais que viennent faire les deux conditions : \texttt{si p=0} et \texttt{si p>n}~?
+\newpage
+\subsection{Raisonnement ensembliste}
+
+Si je forme un groupe de 3 élèves dans la classe, j'obtiens du même coup un groupe de 26 élèves puisque vous êtes 29.
+
+Si l'on compte le nombre de parties A ayant $p$ éléments dans un ensemble E, il revient au même de compter le nombre de parties
+complémentaires de A. En quoi ce raisonnement nous permet-il d'obtenir une des formules précédentes~?
+
+
+
+
+Considérons la classe de TS4 et ses 30 élèves. Je veux dénombrer les groupes de trois élèves. On peut distinguer deux types de
+groupes~:
+
+\begin{itemize}
+\item ceux qui ne vous contiennent pas : il faut donc former des groupes de 3 avec les 22 élèves restant : ça fait combien~?
+\item ceux qui vous contiennent : on vous ajoute aux groupes de 2 formés avec les 22 élèves restant. Ça fait combien~?
+\end{itemize}
+
+
+
+Tenez   un  raisonnement   similaire   pour  établir   la  relation   de
+\textsc{Pascal}.
+
+
+
+\subsection{Formule du binôme de \textsc{Newton}}
+
+Sir Isaac  n'a pas  fait que dormir  sous un  pommier. Il a  par exemple
+établi que~:
+
+
+\begin{thm}[Formule du binôme de \textsc{Newton}]
+   Soit $a$ et $b$ des nombres réels ou complexes et $n$ un entier naturel non nul, alors
+$$(a+b)^n=\sum_{k=0}^n\co{k}{n}a^kb^{n-k}=a^n+\co{1}{n}a^{n-1}b+\cdots+\co{{n-1}}{n}ab^{n-1}+b^n$$
+\end{thm}
+
+
+On peut prouver cette formule par récurrence en remarquant que $(a+b)^{k+1}=a(a+b)^k+b(a+b)^k$ et en
+utilisant la relation de Pascal au bon moment.\\ 
+
+Cette formule nous permet donc d'obtenir de nouveaux " produits remarquables ", à conditions de connaître les coefficients binomiaux.
+
+Testez la formule aux rangs 2, 3, 4, 5. Disposez vos résultats dans un tableau en n'écrivant que les coefficients et conjecturer le
+triangle de \textsc{Pascal}...
+
+\begin{center}
+\begin{tabular}{>{$}l<{$}|*{7}{c}}
+\multicolumn{1}{l}{$k$} &&&&&&&\\\cline{1-1} 
+0 &1&&&&&&\\
+1 &1&1&&&&&\\
+2 &1&2&1&&&&\\
+3 &1&3&3&1&&&\\
+4 &1&4&6&4&1&&\\
+5 &1&5&10&10&5&1&\\
+6 &1&6&15&20&15&6&1\\\hline
+\multicolumn{1}{l}{} &0&1&2&3&4&5&6\\\cline{2-8}
+\multicolumn{1}{l}{} &\multicolumn{7}{c}{$n$}
+\end{tabular}
+\end{center}
+\begin{comment}
+
+\begin{center}
+\includegraphics[height=8cm]{triangle}
+\end{center}
+
+
+
+
+\modeexercice % entre en mode exercice
+\section{EXERCICES}
+
+
+\begin{listeexercices}
+
+  \begin{exercice}[Coefficients binômiaux]
+    \begin{enumerate}
+    \item Donnez une expression simple de $\binom{n}{0}$, de $\binom{n}{1}$, de $\binom{n}{n}$, de $\binom{n}{n-1}$. Utilisez des
+simplifications pour calculer à la main $\binom{20}{3}$.
+
+\item On donne $\binom{13}{5}=1287$ et $\binom{13}{6}=1716$. Calculez alors à la main $\binom{13}{8}$ et $\binom{14}{9}$
+    \end{enumerate}
+    
+  \end{exercice}
+
+
+  \begin{exercice}[Une vieille connaissance]
+    
+Donnez une nouvelle démonstration très rapide de la formule bien connue : $(1+x)^n>1+nx$
+
+  \end{exercice}
+
+
+  \begin{exercice}[Nombre de parties]
+    
+Combien y a-t-il de parties d'un ensemble ayant $n$ éléments~?
+
+  \end{exercice}
+
+
+  \begin{exercice}[Bac avec ROC]
+    
+
+\begin{enumerate} \item \textbf{Démonstration de cours.} Démontrer que, pour tous entiers naturels
+$n$ et $k$ tels que $1 \leqslant  k < n$, on a :
+
+\[\binom{n-1}{k - 1} + \binom{n - 1}{k} = \binom{n}{k}.\]
+
+\item En déduire que pour tous entiers naturels $n$ et $k$ tels que $2 \leqslant k <
+n - 1$, on a :
+\[\binom{n-2}{k-2} + 2 \binom{n-2}{k-1} + \binom{n-2}{k} =
+\binom{n}{k}.\]
+
+\item On considère deux entiers naturels $n$ et $k$ tels que $2 \leqslant k <
+n - 1$. On dispose d'une urne contenant $n$ boules indiscernables au toucher. Deux des boules sont rouges, les autres sont blanches.
+
+On tire au hasard et simultanément $k$ boules de l'urne. On appelle A l'évènement « au moins une boule rouge a été tirée ».
+
+\begin{enumerate} \item Exprimer en fonction de $n$ et de $k$ la probabilité
+de l'évènement $\overline{\text{A}}$, contraire de A.
+
+En déduire la probabilité de A.
+
+ \item Exprimer d'une autre manière la probabilité de l'évènement A et
+montrer, à l'aide la formule obtenue à la question \textbf{2.}, que l'on retrouve le même résultat.
+
+\end{enumerate}
+
+\end{enumerate}
+  \end{exercice}
+
+
+
+
+  \begin{exercice}
+    Calulez $\ds\int_{\efr{\pi}{6}}^{\efr{\pi}{3}}\sin^5t \mathrm{d}t$
+
+  \end{exercice}
+
+
+  \begin{exercice}[exercice grec]
+    \begin{center}\includegraphics[width=0.7\linewidth]{ouzo}\end{center}
+
+ Périclès est goutteur d'olives dans une usine grecque. Un
+matin, il goutte cent olives au hasard et les replace dans le réservoir.
+
+L'après-midi, l'ouzo de l'apéritif lui a fait perdre la mémoire. Il goutte à nouveau cent olives dans le même réservoir. Douze d'entre
+elles avaient déjà été mâchées.
+
+On note $A$ l'événement \og il y a douze olives mâchées parmi les cent choisies \fg{} et $B_n$ l'événement \og il y a $n$ olives dans le
+réservoir \fg{}.
+
+On considère la fonction $f$ définie pour les entiers supérieurs à cent  par
+$f(n)=\bbp_{B_n}(A)$ et la suite $(u_n)$ définie pour les entiers
+supérieurs à 100 par
+$u_n=f(n+1)/f(n)$.
+\been \item Comparez $u_n$ à 1.
+\jok{$u_n=\fr{\binom{100}{12}\binom{n-100}{88}\binom{n+1}{100}}{\binom{100}{12}\binom{n-99}{88}\binom{n}{100}}$}
+ \item Montrez que la fonction $f$ atteint un maximum sur $[\![100,+\infty[\![$. \item On appelle
+\textsl{maximum de vraissemblance} $m$ la valeur de $n$ correspondant à ce maximum. Déterminez $m$. \een
+\begin{flushright}\rotatebox{180}{Réponse~: $m=833$}\end{flushright}
+  \end{exercice}
+
+
+\end{listeexercices}
+
+
+\modenormal
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "/home/moi/Lycee/TS/2009_10/PolyTs/PolyTs.tex"
+%%% End: 
+\end{comment}
+
+
+
+\chapter{Géométrie euclidienne} 
+
+
+
+
+\section{Construisons le produit scalaire}\label{ps}\index{produit scalaire |( }
+
+\subsection{À la recherche d'une définition}
+
+Vous avez remarqué au moment de l'étude de la fonction exponentielle que
+son  mode de  construction  n'était  pas unique  :  certains partent  de
+l'équation différentielle  $y'=y$, d'autres de  l'équation fonctionnelle
+$f(x+y)=f(x)\times f(y)$, etc.
+\begin{comment}  d'autres encore de la suite  de terme général
+$(1+\fr{x}{n})^n$               ou               même              de
+$\sum_{n=0}^{+\infty}\fr{x^n}{n!}$...
+\end{comment}
+
+Pourtant, tous construisent la même
+fonction,  car  ces définitions  s'avèrent  équivalentes.  La nature  du
+problème  étudié,  le  niveau  d'enseignement,  etc. incitent  alors  à
+préférer l'une ou l'autre des définitions. \\
+
+C'est encore le cas pour le produit scalaire. Nous choisirons la méthode
+la  plus adaptée  au  programme  de terminale  et  n'utiliserons que  le
+théorème de  Pythagore en  admettant que l'on  peut munir  l'Espace d'un
+repère orthonormé. 
+
+\begin{defn}[ Produit scalaire dans l'Espace]
+ Soient $\ve{u}$ et $\ve{v}$ de coordonnées
+respectives $(x,y,z)$ et $(x', y', z')$  dans un repère orthonormé
+de l'Espace.\\
+
+On appelle produit scalaire de $\ve{u}$ et $\ve{v}$  que l'on note
+$\ve{u}\cdot\ve{v}$ le réel
+
+$$\ve{u}\cdot\ve{v} = xx'+yy'+zz'$$
+
+\end{defn}
+
+
+Cette définition est déroutante : elle dépend du choix d'un repère : y aurait-il un produit scalaire par repère, ce qui pourrait s'avérer fort gênant~! Nous allons en fait nous assurer que cette définition en est bien une, c'est à dire qu'elle ne dépend pas du choix du repère.\\
+
+Tout d'abord, un petit dessin :
+
+\begin{center}
+\includegraphics{../Figures/geo3d.1} 
+\end{center}
+
+Soit $\ve{OM}$ un représentant du vecteur $\ve{u}$. Nous pouvons
+calculer  $OM^2$, c'est à dire le carré de  la norme du vecteur
+$\ve{u}$ en fonction de $x$, $y$ et $z$.\\
+
+D'après le  théorème de Pythagore :\\
+
+$OM^2=OM'^2+z^2$ et d'autre part, $OM'^2=x^2+y^2$. Finalement on
+obtient que $OM^2=x^2+y^2+z^2$.
+
+Cette formule permet surtout de
+prouver, avec un minimum de sens de l'observation, que
+
+
+
+\begin{prop}[ Norme et produit
+scalaire]
+$$\ve{u}\cdot\ve{u}=\nor{\ve{u}}^2$$
+\end{prop}
+
+
+
+Vous aurez remarqué qu'il n'est pas fait mention de repère dans
+cette propriété et qu'elle est donc indépendante du repère choisi.
+
+Intéressons-nous maintenant à $\nor{\ve{u}+\ve{v}}^2$
+
+\begin{eqnarray*}
+\nor{\ve{u}+\ve{v}}^2 &=& (x+x')^2+(y+y')^2+(z+z')^2\\
+                    &=&
+                    x^2+y^2+z^2+x'^2+y'^2+z'^2+2(xx'+yy'+zz')\\
+                    &=&
+                    \nor{\ve{u}}^2+\nor{\ve{v}}^2+2(\ve{u}\cdot\ve{v})
+\end{eqnarray*}
+
+Je vous laisse le soin d'obtenir une formule similaire en
+remplaçant $\ve{v}$ par son opposé.
+
+
+
+\begin{prop}[Expression du produit scalaire en fonction de la norme]\label{psnorme}
+  \begin{eqnarray*} \ve{u}\cdot\ve{v} &=&
+\fr{1}{2}\pa{\nor{\ve{u}+\ve{v}}^2-\nor{\ve{u}}^2-\nor{\ve{v}}^2}\\
+&=& \fr{1}{2}\pa{\nor{\ve{u}}^2+\nor{\ve{v}}^2-\nor{\ve{u}-\ve{v}}^2}
+\end{eqnarray*}
+\end{prop}
+
+
+
+
+Ces expressions peuvent paraître déroutantes car très compliquées, voire
+inexploitables. \\
+ Cependant, elles  offrent  \textbf{ un énorme  avantage} :  elles
+prouvent que le  produit scalaire ne dépend pas  des coordonnées et donc
+de  la  base  choisie.  Nous  pouvons  donc  utiliser  sans  retenue  la
+définition qui  en est  bien une finalement.
+
+Notez de  plus que cette dernière  formulation est valable  dans le Plan
+comme  dans  l'Espace  car  la  démonstration  est  indépendante  de  la
+\og dimension\fg{}    choisie,  ce   qui  améliore   encore   son  \og champs
+d'action\fg{} .  
+
+
+
+Toujours  grâce  à  cette   propriété,  nous  pouvons  prouver  que  les
+propriétés suivantes sont vraies quelque soit la base choisie 
+
+\begin{prop}[Propriétés de bilinéarité et de
+symétrie]
+\begin{itemize}
+\item $\ve{u}\cdot\ve{v}=\ve{v}\cdot\ve{u}$ 
+\item $(\pa{\alpha\ve{u}}\cdot\ve{v}=\ve{u}\cdot\pa{\al\ve{v}}=\al\pa{\ve{u}\cdot\ve{v}}\qquad\text{avec
+}\quad \al\in\bbr$
+\item $\ve{u}\cdot\pa{\ve{v}+\ve{w}}=\ve{u}\cdot\ve{v}+\ve{u}\cdot\ve{w}$
+\end{itemize}
+\end{prop}
+
+
+\newpage
+
+\subsection{Produit scalaire et cosinus}
+
+Nous   allons   maintenant   interpréter  géométriquement   le   produit
+scalaire.   Considérons   deux   vecteurs   $\ve{u}$  et   $\ve{v}$   de
+représentants $\ve{OA}$ et $\ve{OB}$ 
+
+
+
+\begin{center}
+\includegraphics{../Figures/geo3d.2} 
+\end{center}
+
+
+Nous  allons   essayer  de  prouver   le  résultat  vu  en   première  :
+$\ps{u}{v}=OH\times OB$ à partir de la propriété sur les normes. \\
+
+Le thèorème de Pythagore permet d'écrire d'une part que $OH^2+AH^2=OA^2$ et d'autre part que $(OB-OH)^2+AH^2=AB^2$. \\ 
+
+On élimine $AH^2$ pour obtenir 
+$$                                                               OB\times
+OH=\fr{1}{2}\pa{OA^2+OB^2-AB^2}=\fr{1}{2}\pa{\nor{\ve{u}}^2+\nor{\ve{v}}^2-\nor{\ve{u}-\ve{v}}^2}=\ve{u}\cdot\ve{v} $$ 
+
+\textit{(On obtiendrait d'ailleurs un résultat similaire si $H$ était \og de
+l'autre côté\fg{}  de $O$, en transformant $OH$ en $-OH$, puisque
+dans ce cas $HB=OB+OH$.)}\\
+
+
+
+
+Ici un problème se pose : on sait que $OB=\nor{\ve{v}}$ mais comment
+interpréter $OH$  ? On a  envie d'écrire que  $OH=\nor{\ve{u}}\times \cos
+\theta$ comme  au collège, mais  qu'est-ce que $\theta$ ? \emph{(Pour rappel nous somme dans l'Espace et non plus dans le Plan)}. Qu'est-ce que $\cos\theta$~?  \\
+
+
+Nous allons trancher dans le vif. Considérons deux vecteurs non nuls $\ve{u}$ et $\ve{v}$. Notons 
+$$ \cos\anglevec{u}{v}=\fr{\ps{u}{v}}{\nor{\ve{u}}\times\nor{\ve{v}}} $$
+
+La définition du produit scalaire à partir des normes étant la
+même dans le Plan et l'Espace, on va pouvoir \textbf{étendre} la notion d'angle et parler de l'angle entre deux vecteurs de l'espace à partir de la même formule.\\
+
+On peut noter que deux vecteurs définissant un plan \emph{(vectoriel)},
+il est naturel d'étendre la notion d'angle de vecteurs du Plan à
+l'Espace.\\
+
+Demeure un dernier problème : le Plan était \underline{orienté}, or nous
+n'avons pas parlé d'orientation de l'Espace (et nous ne le ferons
+pas cette année). Les angles de vecteurs de l'Espace seront donc
+définis \underline{au signe près} et mesurés dans $[0,\pi]$, ce qui rejoint la
+notion d'angle géométrique vu au Collège.
+
+
+
+\begin{thm}[Produit scalaire et cosinus]\label{pscos}
+  Soient $\ve{u}$ et $\ve{v}$ deux vecteurs non nuls de l'Espace. On a
+$$ \cos\anglevec{u}{v}=\fr{\ps{u}{v}}{\nor{\ve{u}}\times\nor{\ve{v}}} $$
+avec $ \anglevec{u}{v}$ l'unique antécédent de
+$\fr{\ps{u}{v}}{\nor{\ve{u}}\times\nor{\ve{v}}}  $ par la
+fonction cosinus dans $[0,\pi]$.
+\end{thm}
+
+On retrouve de cette manière la formule bien connue $\ps{u}{v}=\nor{\ve{u}}\times\nor{\ve{v}}\times\cos\theta$.
+
+
+\subsection{Produit scalaire et orthogonalité}\index{orthogonalité}
+
+Nous allons maintenant aborder la notion qui a motivé
+l'introduction du produit scalaire en Terminale, à savoir
+\underline{l'orthogonalité de deux vecteurs}.
+%, et nous allons, par la même
+%occasion, être confrontés une nouvelle fois au problème de la
+%poule et de l'\oe uf.
+
+
+ Considérons la figure suivante :
+
+\begin{center}
+\includegraphics{../Figures/geo3d.3} 
+\end{center}
+
+
+Si $(AB)\bot(BC)$, alors le théorème de Pythagore assure que
+$\nor{\ve{u}+\ve{v}}^2=\nor{\ve{u}}^2+\nor{\ve{v}}^2$.\\
+
+Or $\ve{u}\cdot\ve{v} =
+\fr{1}{2}\pa{\nor{\ve{u}+\ve{v}}^2-\nor{\ve{u}}-\nor{\ve{v}}}$, donc
+$\ve{u}\cdot\ve{v}=0$.\\
+
+
+
+Inversement, si $\ve{u}\cdot\ve{v}=0$, alors
+$\nor{\ve{u}+\ve{v}}^2=\nor{\ve{u}}^2+\nor{\ve{v}}^2$ et la réciproque
+du théorème de Pythagore assure que $(AB)\bot (AC)$.\\
+
+Finalement on a le théorème suivant:
+
+
+\begin{thm}[Produit scalaire et orthogonalité]
+  Soient deux vecteurs $\ve{u}$ et $\ve{v}$ non nuls et trois points
+$O$, $A$ et $B$ tels que $\ve{u}=\ve{OA}$ et $\ve{v}=\ve{OB}$. Les
+trois propositions suivantes sont équivalentes :
+
+\begin{itemize}
+\item[$\bullet$] $(OA)$ et $(OB)$ sont perpendiculaires
+\item[$\bullet$] $\ve{u}\cdot\ve{v}=0$
+\item[$\bullet$] $\ve{u}$ et $\ve{v}$ sont orthogonaux. On notera $\ve{u}\bot\ve{v}$.
+\end{itemize}
+
+Par souci de cohérence, on dira que le vecteur nul est orthogonal
+à tout vecteur.
+\end{thm}
+
+
+Vous noterez que ces résultats sont cohérents avec la définition
+du cosinus.
+
+%\index{produit scalaire |) }
+\section{Applications du produit scalaire}
+
+\begin{comment}
+\subsection{Affine $ \leftrightharpoons $ Vectoriel}
+
+Avant  d'aller plus  loin, commençons  par parler  des limites  de notre
+exposé. Dans  l'enseignement secondaire, vous n'avez  travaillé que dans
+des  espaces \textsl{affines},  c'est  à dire,  grossièrement, avec  des
+ensembles  de  points~:~droites, cercles,  segments  de droites,  angles
+géométriques,  etc. Or  vous découvrirez  l'an prochain  la  géométrie à
+partir d'espaces \textsl{vectoriels},  c'est à dire, grossièrement, avec
+des  ensembles stables  par  combinaison linéaire  comme l'ensemble  des
+vecteurs du Plan~:~si $\ve{u}$ et  $\ve{v}$ sont des vecteurs du Plan et
+$\la$  et $\mu$  des réels,  alors $\la\ve{u}+\mu\ve{v}$  est  encore un
+vecteur du  plan. Ensuite, vous  définirez les espaces affines  à partir
+des  espaces vectoriels\footnote{Ces  structures dépassent  largement la
+  Géométrie~:~vous découvrirez par  exemple que l'ensemble des solutions
+  d'une  équation différentielle  linéaire du  second ordre  sans second
+  membre a une structure d'espace vectoriel de dimension 2 et l'ensemble
+  des solutions  d'une équation différentielle linéaire  du second ordre
+  avec  second membre  a une  structure d'espace  affine de  dimension 2
+  comme un plan dans l'Espace \og géométrique\fg{}  du lycée.} 
+
+Nous ne pouvons bien sûr  pas suivre ce cheminement. Nous nous appuirons
+donc  sur les  résultats \og affines\fg{}   vus au  lycée et  au  collège et
+n'évoquerons les espaces vectoriels qu'à titre d'exercice. 
+
+Il est malgré  tout très important de bien  distinguer ces deux domaines
+et  nous  ferons souvent  des  appels  intuitifs  à ces  notions.   Ayez
+cependant bien  en tête que  nous travaillerons principalement  dans des
+espaces affines  et que le recours  aux outils vectoriels  doit se faire
+avec prudence. 
+
+\end{comment}
+
+\subsection{Droites orthogonales}
+
+\begin{defn}[Droites orthogonales]
+  Soit $\DR$ une droite de vecteur directeur $\ve{u}$ et $\Delta$ une droite de vecteur directeur $\ve{v}$. \\
+On dira que les droites  $\DR$ et $\Delta$ sont \textbf{orthogonales} et
+on notera $\DR\bot\Delta$ si  et seulement si $\ve{u}\bot\ve{v}$ c'est à
+dire si et seulement si $\ps{u}{v}=0$
+\end{defn}
+
+\begin{center}
+\includegraphics{../Figures/geo3z.1} 
+\end{center}
+
+
+
+
+\subsection{Droites et plans orthogonaux}
+
+
+\begin{defn}[Orthogonalité d'une droite et d'un plan]
+  Soit $\DR$ une droite de vecteur directeur $\ve{u}$ et $\PR$ un plan de vecteurs directeurs $\ve{v_1}$ et $\ve{v_2}$.\\
+On dira que $\DR$ et $\PR$ sont orthogonaux et on notera $\DR\bot\PR$ si et seulement si $\ve{u}\bot\ve{v_1}$ et $\ve{u}\bot\ve{v_2}$ c'est à dire si et seulement si $\ps{u}{v_1}=0$ et $\ps{u}{v_2}=0$
+\end{defn}
+
+\begin{center}
+\includegraphics{../Figures/geo3z.2} 
+\end{center}
+
+Notez bien  que, comme dans le  cas des droites,  l'orthogonalité est en
+fait  une  propriété  vectorielle.  On  peut  néanmoins  en  donner  une
+formulation équivalente en faisant intervenir des points~: 
+
+\begin{prop}[]
+  $\DR\bot\PR$ si et  seulement si, pour tous points M  et N de $\PR$
+  on a $\ps{u}{MN}=0$
+\end{prop}
+
+En  effet, $\ve{v_1}$  et $\ve{v_2}$  étant des  vecteurs  directeurs de
+$\PR$,    il    existe   deux    réels    $x$    et    $y$   tels    que
+$\ve{MN}~=~x~\ve{v_1}~+~y~\ve{v_2}$ et donc 
+$$ \ps{u}{MN}=\ve{u}\cdot\pa{x\ve{v_1}+y\ve{v_2}}=x\ps{u}{v_1}+y\ps{u}{v_2}=0 $$
+
+Notez qu'on  retrouve la  définition 3 en  prenant $x=1$ et  $y=0$, puis
+$x=0$ et $y=1$. 
+
+\subsection{Vecteur normal à un plan}\index{vecteur normal} 
+
+La direction d'une droite est  déterminée par la donnée d'un vecteur. Le
+problème pour un  plan, c'est qu'on a besoin a  priori de deux vecteurs,
+ce qui  est doublement plus compliqué  et qui gène  le mathématicien qui
+vise  toujours la  simplicité. 
+C'est  ici  que l'intuition vectorielle vient  nous sauver~:~si  un plan a  deux directions,  il n'a
+\textbf{qu'une seule  \og direction orthogonale\fg{}} et  donc la direction  du plan
+sera \textbf{entièrement determinée}  par la donnée d'un vecteur  orthogonal à la
+direction du plan, qu'on appelera \textbf{vecteur normal} au plan.  
+
+%Nous ne nous  lancerons pas dans une preuve  artificielle à notre niveau
+%et qui sera  simple avec les outils que  vous découvrirez l'an prochain,
+%mais nous nous contenterons de cette approche intuitive. 
+
+\begin{defn}[Vecteur  normal à un plan]
+  \'Etant donné  un plan $\PR$, on
+  appelera \textbf{vecteur normal} à  $\PR$ tout vecteur directeur d'une
+  droite orthogonale à $\PR$
+\end{defn}
+
+%je n'ai toujours pas retrouvé mon ordinateur portable
+
+
+
+
+
+
+\begin{center}
+\includegraphics{../Figures/geo3z.3} 
+\end{center}
+
+
+Nous admettrons alors les résultats suivants :
+
+
+\begin{thm}[Détermination d'un plan à l'aide d'un vecteur normal]
+  Soit $\PR$ un plan, A un point de $\PR$ et $\ve{n}$ un vecteur normal à $\PR$, alors le point M appartient à $\PR$ si et seulement si $\ps{AM}{n}=0$.\\
+
+
+Réciproquement, si A est un point quelqconque et $\ve{n}$ un vecteur non nul, alors l'ensemble des points M tels que $\ps{AM}{n}=0$ est un plan.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+\subsection{Distance d'un point à un plan}
+
+\begin{defn}[Distance d'un point à  un plan]
+  Soit M un  point, $\PR$ un
+  plan.  On appelle distance  de M  à $\PR$  la distance  MH, avec  H le
+  projeté orthogonal de M sur $\PR$
+\end{defn}
+
+
+%Vous pouvez  commencer, pour vous  échauffer, par montrer à  l'aide d'un
+%dessin  et d'un petit  raisonnement utilisant  un théorème  connu depuis
+%fort  longtemps,  que  MH est  en  fait  le  minimum des  distances  MN,
+%$N\in\PR$. 
+
+
+
+Il reste à exprimer cette distance MH. On suppose connu le plan $\PR$ et
+donc  un point  quelconque A  de  $\PR$ et  un de  ses vecteurs  normaux
+$\ve{n}$. 
+
+%\break
+
+Aidons-nous alors du dessin suivant :
+
+\begin{center}
+\includegraphics{../Figures/geo3z.4} 
+\end{center}
+
+
+Cela  doit   maintenant  devenir  un   réflexe  :  qui   dit  projection
+orthogonale, dit  produit scalaire, donc la distance  MH devrait pouvoir
+s'exprimer en fonction de $\ps{AM}{n}$. 
+
+Or on obtient successivement
+
+\begin{align*}
+\ps{AM}{n}&= \pa{\ve{AH}+\ve{HM}}\cdot\ve{n}\\
+                   &= \ps{AH}{n}+\ps{HM}{n}\\
+                   &=\ps{HM}{n}\\
+                   &=\pm d(M,\PR)\times \nor{\ve{n}}
+\end{align*}
+
+Le signe étant choisis selon les sens respectifs de $\ve{HM}$ et $\ve{n}$ \emph{(positif s'il est dans le même sens et négatif sinon) }. Le problème, c'est qu'on ne les connait pas a priori. Mais ce n'est plus un problème si on cache les signes sous une valeur absolue, puisque c'est la distance \emph{ donc positive } qui nous intéresse.
+
+
+
+Ainsi, $\abv{\ps{AM}{n}}=d(M,\PR)\times \nor{\ve{n}}$ et donc 
+
+
+\begin{thm}[Calcul de la distance d'un point à un plan]
+  Soit $\PR$ un plan passant par le point A et de vecteur normal $\ve{n}$ et soit M un point quelconque. Alors
+$$ d(M,\PR)=\fr{\abv{\ps{AM}{n}}}{\nor{\ve{n}}} $$
+\end{thm}
+
+
+\subsection{Plans parallèles}
+
+Voici une utilisation bien pratique de la notion de vecteur normal~:
+
+\begin{prop}[Plans parallèles]
+  Deux plans sont parallèles si et seulement si leurs vecteurs normaux sont colinéaires.
+\end{prop}
+
+
+\begin{center}
+\includegraphics{../Figures/geo3z.5} 
+\end{center}
+
+
+\subsection{Plans perpendiculaires}
+
+En voici une autre souvent utile en exercice~:
+
+
+\begin{prop}[Plans perpendiculaires]
+  Deux plans sont perpendiculaires si et seulement si leurs vecteurs normaux sont orthogonaux.
+\end{prop}
+
+
+
+
+
+\begin{center}
+\includegraphics{../Figures/geo3z.6} 
+\end{center}
+Remarquez en particulier que $\ve{n_1}$ et un vecteur directeur de $\PR_2$ et $\ve{n_2}$ un vecteur directeur de~$\PR_1$.
+
+%\break
+\newpage
+\section{Géométrie analytique}
+
+\subsection{Représentation paramétrique d'un plan}
+
+Soit $\PR$ un plan passant  par $A$ de coordonnées $(x_A,y_A,z_A)$ et de
+vecteurs       directeurs       $\ve{u}      \coordpp{a}{b}{c}$       et
+$\ve{u'}\coordpp{a'}{b'}{c'}$. Alors un point M de coordonnées $(x,y,z)$
+appartient  à $\PR$ si,  et seulement  s'il existe  deux réels  $\la$ et
+$\mu$ tels que $$ \ve{AM}=\la\ve{u}+\mu\ve{v} $$ 
+c'est à dire, en appliquant cette relation  aux coordonnées
+
+\begin{center}
+$$\begin{cases}
+x =x_A+\la a+\mu a'\\
+y =y_A+\la b+\mu b'\\
+z =z_A+\la c+\mu c'
+\end{cases}$$
+\end{center}
+
+C'est ce qu'on appelle une représentation paramétrique du plan $\PR$. Il
+est également  utile de retrouver les éléments  caractéristiques du plan
+(~un   point  et   deux  vecteurs   directeurs~)  à   partir   de  cette
+représentation. 
+
+
+
+\subsection{\'Equation cartésienne d'un plan}
+
+On utilise plus  couramment une équation cartésienne de  plan. En effet,
+nous avons vu qu'un plan  était entièrement déterminé par la donnée d'un
+point et d'un vecteur normal.  
+
+Soit donc $\PR$  un plan passant par $A$  de coordonnées $(x_A,y_A,z_A)$
+et de vecteur normal $\ve{n}\coordpp{a}{b}{c}$.  
+Alors M de coordonnées $(x,y,z)$  appartient à $\PR$ si, et seulement si
+$\ve{AM}\bot\ve{n}$, c'est à dire 
+
+\begin{center}
+\begin{align*}
+\ps{AM}{n}&=a(x-x_A)+b(y-y_A)+c(z-z_A)\\
+                    &=ax+by+cz-(ax_A+by_A+cy_A)\\
+                    &=0
+\end{align*}
+\end{center}
+
+C'est à dire encore, en posant $d=ax_A+by_A+cz_A$
+
+
+\begin{prop}[Équation cartésienne d'un plan]
+  $$M(x,y,z)\in\PR \ssi ax+by+cz=d \text{ avec  } \ve{n}\coordpp{a}{b}{c}
+\text{ un vecteur normal à } \PR $$
+\end{prop}
+
+
+
+
+
+
+\newpage
+
+\subsection{Représentation paramétrique d'une droite}
+
+Quant aux droites, nous n'avons guère le choix~:~un point M appartient à
+la  droite $\DR$  passant par  A  de coordonnées  $(x_A,y_A,z_A)$ et  de
+vecteur  directeur $\ve{u}$  de coordonnées  $\coordpp{a}{b}{c}$  si, et
+seulement s'il existe un réel $\la$ tel que 
+
+$$ \ve{AM}=\la\ve{u} $$
+
+c'est à dire si, et seulement si
+
+\begin{center}
+$ \begin{cases}
+x =x_A+\la a\\
+y =y_A+\la b\\
+z =z_A+\la c
+\end{cases}$
+\end{center}
+
+Notez  bien que  $\la$  est  le paramètre  de  la représentation  (~d'où
+l'appellation~), mais aurait pu porter tout autre nom. 
+
+
+
+
+
+
+
+\subsection{Sphères}
+
+
+\begin{defn}[Sphère]
+  
+Une sphère de centre $C$ et de  rayon $r$ est l'ensemble des points M de
+l'espace vérifiant~:
+
+$$\Vert \ve{CM} \Vert =r$$
+\end{defn}
+
+
+
+Analytiquement, dans un repère orthonormé, nous écrirons~:
+
+
+$$(x-x_C)^2+(y-y_C)^2+(z-z_C)^2=r^2$$
+
+
+
+
+
+\section{Barycentres}
+
+\subsection{Quelques rappels}
+
+
+
+
+\begin{defn}[Barycentre]
+  Soient $A_1,\ A_2\,...,\,A_n$ $n$ points distincts du plan ou de l'espace. Soient $\al_1,\ \al_2\,...,\,\al_n$ $n$ réels tels que $\al_1+\al_2+\cdots+\al_n\neq 0$, alors on appelle barycentre des points $A_1,\ A_2\,...,\,A_n$ affectés des coefficients $\al_1,\ \al_2\,...,\,\al_n$ le point G défini par 
+$$\al_1\ve{GA_1}+\al_2\ve{GA_2}+\cdots+\al_n\ve{GA_n}=\ve{0}$$
+\end{defn}
+
+
+\c Ca, vous connaissez par c\oe ur. Il est maintenant utile de connaître la manipulation suivante:\\
+ pour exprimer G en fonction de points connus. Soit donc M un tel point (en général O, l'origine du repère), alors
+
+$$\al_1\pa{\ve{GM}+\ve{MA_1}}+\al_2\pa{\ve{GM}+\ve{MA_2}}+\cdots+\al_n\pa{\ve{GM}+\ve{MA_n}}=\ve{0}$$
+ puis, finalement, en regroupant astucieusement les termes, on obtient~:
+
+
+ \begin{thm}[Fonction vectorielle de Leibniz]
+   $$\ve{MG}=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1\ve{GA_1}+\al_2\ve{GA_2}+\cdots+
+\al_n\ve{GA_n}}$$
+ \end{thm}
+
+
+En particulier, en prenant $M=O$, on obtient 
+$$\begin{cases}x_G=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1 x_{A_1}+\al_2x_{A_2}+\cdots+\al_nx_{A_n}}\\
+y_G=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1 y_{A_1}+\al_2y_{A_2}+\cdots+\al_n y_{A_n}}\\
+z_G=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1 z_{A_1}+\al_2z_{A_2}+\cdots+\al_nz_{A_n}}
+\end{cases}$$
+
+
+\subsection{Quelques nouveautés}
+
+%Nous commenterons en classe les résultats suivants~:
+
+
+\begin{thm}[Caractérisations barycentriques des droites et des plans]
+  \begin{itemize}
+  \item[$\bullet$]  La droite (AB) est l'ensemble des barycentres des points A et B.
+\item[$\bullet$] Le segment $[A;B]$ est l'ensemble des barycentres de A et B affectés de coefficients positifs.
+\item[$\bullet$] Soient A, B et C trois points non alignés. Le plan (ABC) est l'ensemble des barycentres des points A, B et C
+  \end{itemize}
+\end{thm}
+
+
+
+Ce chapitre  est assez riche en  cours, mais surtout  en applications de
+ces résultats~:~les  exercices qui suivent peuvent  donc être considérés
+comme faisant partie intégrante du cours. 
+
+\chapter{Suites numériques}
+
+\section{Généralités}
+\subsection{Définition}
+\begin{defn}
+Une suite est une fonction définie sur $\N$. Une suite numérique est une suite à valeurs dans $\R$.
+
+ L'image de $n$ par une suite $u$ se note $u_{n}$ et est appelé terme de rang $n$ de la suite. Une suite $u$ est aussi notée $\suite[u]$.\\
+ 
+Autrement dit, 
+\begin{center}
+$\begin{array}{ccccc}
+u & : & \mathbb{N} & \to & \mathbb{R} \\
+ & & n & \mapsto & u_n\\
+\end{array}$
+\end{center}
+\end{defn}
+
+\begin{rem}
+On peut aussi définir une suite à partir d'un certain rang.
+\end{rem}
+
+\begin{exemple}
+\begin{enumerate}
+\item $u$ définie sur $\N$ par $u_{n}=\dfrac{1}{n+2}$.
+\hspace{2em} $u_0=\dfrac{1}{2}$, $u_1=\dfrac{1}{3}$, $u_2=\dfrac{1}{4}$, ...
+\item $v$ définie pour tout $n\se3$ par $v_{n}=\dfrac{1}{n-2}$
+\hspace{2em} $v_3=1$, $v_4=\dfrac{1}{2}$, $v_5=\dfrac{1}{3}$, ...
+\end{enumerate}
+\end{exemple}
+
+
+\subsection{Comment générer une suite}
+Selon le contexte les termes d'une suite peuvent être définis de différentes façons.
+\subsubsection*{Explicitement en fonction du rang}
+\begin{itemize}
+
+
+\item Toute fonction définie sur $[0~;~+\infty[$ (ou sur un intervalle de la forme $[a~;~+\infty[$) permet de définir une suite.
+\end{itemize}
+\begin{exemple}
+Calculer les premiers termes de la suite définie sur $\N$ par $u_{n}=2n^2-5n-1$.
+\begin{itemize}
+\item $u_0=2\times0^2-5\times0-1=-1$ ; $u_1=2\times1^2-5\times1-1=-4$ ;
+\item $u_2=2\times2^2-5\times2-1=-3$ ; $u_3=2\times3^2-5\times3-1=2$ ;
+\item $u_4=2\times4^2-5\times4-1=11$
+\end{itemize}
+\end{exemple}
+
+\begin{rem} 
+Les propriétés des nombres entiers permettent aussi de définir explicitement des suites qui ne peuvent pas être obtenues simplement par une fonction définie sur $\R$.
+\end{rem}
+\begin{exemple}
+Calculer les premiers termes des suites $\suite[u]$ et $\suitep[v]$ où $u_{n}=(-1)^{n}$ et $v_{n}$ est le nombre de diviseurs de $n$.
+
+\begin{itemize}
+
+\item $u_0=1$ ; $u_1=-1$ ; $u_2=1$ ; $u_3=-1$ ; ...
+\vspace*{1.5ex}
+\item $v_1=1$ ; $v_2=2$ ; $v_3=2$ ; $v_4=3$ ; $v_5=2$ ; $v_6=4$ ...
+\end{itemize}
+\end{exemple}
+
+\subsubsection*{Par récurrence}
+Une suite peut aussi être définie par son premier terme (ou ses premiers termes) et par une relation permettant de calculer chaque terme en fonction du précédent (ou des précédents).
+
+\begin{exemple}
+Calculer les premiers termes des suites ci-dessous définies sur $\N$.\\
+
+$u$ est définie par
+$
+\left\{\begin{array}{l}
+u_0=-6\\
+u_{n+1}=-\dfrac{1}{2}u_{n}-1 \quad \text{pour tout }n\se0
+\end{array}
+\right.
+$
+
+\begin{itemize}
+\item $u_1=-\dfrac{1}{2}u_0-1=-\dfrac{1}{2}\times(-6)-1=2$ ; $u_2=-\dfrac{1}{2}u_1-1=-\dfrac{1}{2}\times2-1=-2$
+\item $u_3=-\dfrac{1}{2}u_2-1=-\dfrac{1}{2}\times(-2)-1=0$ ; $u_4=-\dfrac{1}{2}u_3-1=-\dfrac{1}{2}\times0-1=-1$
+\end{itemize}
+
+$v$ est définie par
+$
+\left\{\begin{array}{l}
+v_0=1\; ; \; v_1=1\\
+v_{n+2}=v_{n+1}+v_{n} \quad \text{pour tout }n\se0
+\end{array}
+\right.
+$
+
+\begin{itemize}
+\item $v_2=v_1+v_0=1+1=2$ ; $v_3=v_2+v_1=2+1=3$ ;
+\item $v_4=v_3+v_2=3+2=5$ ; $v_5=v_4+v_3=5+3=8$ ;
+\item  $v_6=v_5+v_4=8+5=13$
+\end{itemize}
+
+$w$ est définie par
+$w_0=3
+\quad
+\text{et}
+\quad
+\begin{cases}
+w_{n+1}=\dfrac{w_{n}}{2}&\text{si $w_n$ est pair}\\
+w_{n+1}=3w_{n}+1&\text{si $w_n$ est impair}
+\end{cases}
+$
+
+
+\begin{itemize}
+\item $w_1=3\times w_0 + 1 = 3\times3 +1 = 10$ ; $w_2=\dfrac{w_1}{2}=\dfrac{10}{2}=5$ ; \item $w_3=3\times w_2 + 1 = 3\times5 +1 = 16$ ; $w_4=\dfrac{w_3}{2}=\dfrac{16}{2}=8$ ; \item $w_5=\dfrac{w_4}{2}=\dfrac{8}{2}=4$ ; $w_6=\dfrac{w_5}{2}=\dfrac{4}{2}=2$
+\end{itemize}
+\end{exemple}
+\newpage
+\section{Sens de variation}
+\subsection{Définition}
+Une suite étant une fonction, les définitions restent les mêmes :
+
+%\begin{tabular}{||l}
+%$u$ est croissante (strict. croissante) si $n<p \Longrightarrow u_{n}\ie u_{p} \;(n<p \Longrightarrow u_{n}< u_{p})$\\
+%$u$ est décroissante (strict. décroissante) si $n<p \Longrightarrow u_{n}\se u_{p} \;(n<p \Longrightarrow u_{n}> u_{p})$
+%\end{tabular}
+
+Cependant, les propriétés des nombres entiers permettent d'établir les résultats suivants :
+
+\begin{prop}
+$u$ est croissante si et seulement si pour tout entier $n$, $u_{n}\ie u_{n+1}$
+\par $u$ est décroissante si et seulement si pour tout entier $n$, $u_{n}\se u_{n+1}$
+\end{prop}
+
+\begin{rem}
+\begin{itemize}
+\item Ne pas mélanger $u_{n+1}$ et $u_{n}+1$
+\item Dans la pratique, pour déterminer le sens de variation d'une suite, on s'intéresse au signe de la différence $u_{n+1}-u_{n}$.
+\item Dans le cas où tous les termes de la suite sont strictement positifs, on peut aussi comparer le quotient $\dfrac{u_{n+1}}{u_{n}}$ à 1.
+\end{itemize}
+\end{rem}
+
+\begin{exemple}
+Déterminer le sens de variation des suites suivantes :
+ $u$ est définie sur $\N$ par $u_{n}=3n+(-1)^{n}$.
+ Étudions la différence $u_{n+1}-u_{n}$ :
+ $$\forall n\in\N, u_{n+1}-u_{n}=3(n+1)+(-1)^{n+1}-3n-(-1)^{n}=3-2\times(-1)^{n}>0$$
+ La suite $\suite[u]$ est donc croissante.
+\end{exemple}
+
+\begin{exemple}
+$v$ est définie sur $\N$ par 
+$\left\{\begin{array}{l}
+v_0=2\\
+v_{n+1}=-v_{n}^2+v_{n} \quad \text{pour tout } n\in\N
+\end{array}\right.$
+
+ Étudions la différence $v_{n+1}-v_{n}$ :
+ Pour tout $n\in\N$, $v_{n+1}-v_{n}=-v_{n}^2+v_{n}-v_{n}=-v_{n}^2<0$
+ La suite $\suite{v}$ est donc décroissante.
+\end{exemple}
+
+\begin{exemple}
+$w$ est définie sur $\N^{*}$ par $w_{n}=\dfrac{2^{n}}{n}$.
+
+
+Les termes de la suite sont strictement positifs, on étudie donc le quotient $\dfrac{w_{n+1}}{w_{n}}$.
+ Pour tout $n\in\N^{*}$, $\dfrac{w_{n+1}}{w_{n}} = \dfrac{\dfrac{2^{n+1}}{n+1}}{\dfrac{2^{n}}{n}} = \dfrac{2^{n+1}}{2^{n}}\times\dfrac{n}{n+1} = \dfrac{2n}{n+1}$
+ Pour tout $n\se 1$, $2n\se n+1$ donc $\dfrac{w_{n+1}}{w_{n}}\se 1$.
+ La suite $\suitep{w}$ est donc décroissante.
+
+\end{exemple}
+
+
+\subsection{Propriété}
+\begin{prop}
+Soit $f$ une fonction définie sur $\mathbb{R}_+$ et $u$ la suite définie sur $\N$ par $u_{n}=f(n)$.
+\begin{itemize}
+
+
+\item Si $f$ est croissante sur $\mathbb{R}_+$ alors $u$ est croissante.
+\item Si $f$ est décroissante sur $\mathbb{R}_+$ alors $u$ est décroissante.
+\end{itemize}
+\end{prop}
+
+
+\section{Limites}
+\subsection{Suites convergentes}
+\begin{defn}
+Une suite $u$ converge vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient aussi tous les termes de la suite à partir d'un certain rang.
+\par On dit alors que $u$ est convergente et on note $\limn u_{n}=l$
+\end{defn}
+
+On peut formuler la définition comme suit :
+\begin{itemize}
+\item $u$ converge vers $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite sauf un nombre fini.
+\item $u$ converge vers $\ell$ si pour tout intervalle ouvert $I$ contenant $\ell$, il existe un entier $n_{0}$ tel que $n\se n_0\Longrightarrow u_n\in I$.
+\end{itemize}
+
+\vspace{2ex}
+\begin{prop}
+Si une suite converge alors sa limite est unique.
+\end{prop}
+
+\begin{demo}
+Soit $u$ une suite convergente. Supposons qu'elle admette deux limites distinctes $\ell$ et $\ell'$ avec $\ell<\ell'$ sans perdre de généralité.\\
+
+Soit $d$ un réel positif inférieur à $\dfrac{\ell'-\ell}{2}$.
+
+On pose $I=]\ell-d~;~\ell+d[$ et $I'=]\ell'-d~;~\ell'+d[$.
+
+On a $d<\dfrac{\ell'-\ell}{2}$ donc $2d<\ell'-\ell$ soit $d+d<\ell'-\ell$.
+
+On en déduit que $\ell+d<\ell'-d$.\\
+
+Ainsi, $I$ et $I'$ sont deux intervalles disjoints et ils contiennent respectivement $\ell$ et $\ell'$.
+
+Si $u$ converge vers $\ell$, l'intervalle $I$ contient tous les termes de la suite à partir d'un rang $n_{0}$.
+
+Si $u$ converge vers $\ell'$, l'intervalle $I'$ contient tous les termes de la suite à partir d'un rang $n_{1}$.
+
+Ainsi pour tout $n$ supérieur à $n_{0}$ et $n_{1}$, $u_{n}$ doit appartenir à la fois à $I$ et $I'$ ce qui est impossible car ces intervalles sont disjoints. \\
+
+\underline{ $u$ ne peut pas admettre deux limites distinctes. La limite d'une suite est unique.}
+\end{demo}
+
+\subsubsection{Lien entre variation et convergence de suite}
+\begin{thm}
+Toute suite $ \suite[u]$ croissante majorée \emph{(ou décroissante minorée)} converge.
+converge.
+\end{thm}
+\newpage
+
+\subsection{Suites divergentes}
+Une suite divergente est une suite qui n'est pas convergente.
+\subsubsection*{Suites de limite infinie}
+\begin{defn}
+Une suite $u$ a pour limite $+\infty$ si tout intervalle ouvert de la forme $]A~;~+\infty[$ contient tous les termes de la suite à partir d'un certain rang.
+\par On dit alors que $u$ diverge vers $+\infty$ et on note $\limn u_{n}=+\infty$
+\par On définit de la même façon une suite qui diverge vers $-\infty$
+\end{defn}
+
+\subsubsection{Lien entre variation et divergence de suite}
+\begin{thm} 
+Toute suite croissante \emph{(resp. décroissante)} non majorée \emph{(resp. minorée)} tend vers $+ \infty $ \emph{(resp. $-\infty$)}
+\end{thm}
+
+\begin{demo}
+Soit $\suite[u]$ une suite croissante non majorée, donc pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que $u_{n_0}>A$. Puisque $\suite[u]$ est croissante on a pour tout entier $n>n_0$, $u_n \se u_{n_0}$ or $u_{n_0}>A$ donc on a nécéssairement $u_n > A$. 
+
+Autrement dit, pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que, pour tout $n\se n_0$, $u_n>A$. Ce qui est exactement la définition d'une suite divergente vers $+ \infty$
+
+\end{demo}
+
+\begin{thm} 
+Toute suite $\suite[u]$ minorée par une suite $\suite[v]$ divergente est elle-même \emph{( la suite $u$ ) } divergente.
+\end{thm}
+
+\begin{demo}
+Puisque la suite $\suite[v]$ est divergente on a donc que pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que, pour tout $n\se n_0$, $v_n>A$. \\
+
+De plus on sait que pour tout $n \in \mathbb{N}$ on a $u_n \se v_n$ et donc ce résultat reste valable aussi pour tout $n\se n_0$ et donc 
+$$\text{Pour tout} n\se n_0\;  u_n \se v_n > A $$
+
+Autrement dit, pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que, pour tout $n\se n_0$, $u_n>A$. Ce qui est exactement la définition d'une suite divergente vers $+ \infty$.
+
+\end{demo}
+
+\subsubsection*{Suites qui n'ont pas de limite}
+Une suite n'est pas nécessairement convergente ou divergente vers l'infini. Il existe des suites qui n'ont pas de limite. Elles sont aussi appelées suites divergentes.
+
+\begin{exemple}
+% \begin{itemize}
+% \item 
+$u$ définie sur $\N$ par $u_{n}=(-1)^{n}$.
+
+%\item 
+$v$ définie sur $\N$ par $v_{n}=n\sin(n)$.
+%\end{itemize}
+\end{exemple}
+
+%\subsection{Propriétés}
+%\begin{prop}
+%Soit $f$ une fonction définie sur $[0~;~+\infty[$ et soit $u$ la suite définie sur $\N$ par $u_{n}=f(n)$.
+%\par Si $\limpinf{x}f(x)=\ell$ alors $\limn u_{n}=\ell$.
+%\par Si $\limpinf{x}f(x)=+\infty$ alors $\limn u_{n}=+\infty$.
+%\end{prop}
+
+%Conséquence : Toutes les propriétés vues sur les limites de fonctions s'appliquent aux suites définies par $u_{n}=f(n)$.% En particulier les limites usuelles, les règles de calcul sur la somme, le produit...
+\begin{comment}
+\begin{ex}
+Déterminer la limite de la suite $u$ définie sur $\N$ par $u_{n}=\dfrac{-2n^{2}+n}{3n^{2}+1}$.
+\end{ex}
+
+\begin{repex}
+Pour tout $n>0$, $u_{n}=\dfrac{-2n^{2}+n}{3n^{2}+1}=\dfrac{n^2\left( -2+\dfrac{1}{n} \right)}{n^2\left( 3+\dfrac{1}{n^2} \right)}=\dfrac{ -2+\dfrac{1}{n}}{3+\dfrac{1}{n^2}}$
+\par $\left.\begin{array}{l}
+\limn -2+\dfrac{1}{n}=-2\\
+\limn 3+\dfrac{1}{n^2}=3
+\end{array}\right\}$
+donc $\limn u_{n}=-\dfrac{2}{3}$
+\end{repex}
+\end{comment}
+
+\subsection{Théorème des gendarmes}
+
+\begin{prop}
+On considère trois suites $u$, $v$ et $w$ et un réel $\ell$.
+\par Si \quad
+$\left\{\begin{array}{l}
+\limn u_{n}=\limn w_{n}=\ell \\
+u_{n} \ie v_{n} \ie w_{n} \quad \text{à partir d'un certain rang}
+\end{array}\right.
+$
+\qquad alors \quad $\limn v_{n}=\ell$.
+\end{prop}
+
+\begin{demo}
+Soit $I$ un intervalle ouvert contenant $\ell$.
+\par $u$ converge vers $\ell$ donc $I$ contient tous ses termes à partir d'un certain rang $n_{0}$.
+\par $w$ converge vers $\ell$ donc $I$ contient tous ses termes à partir d'un certain rang $n_{1}$.
+\par À partir d'un certain rang $n_{2}$, $u_{n} \ie v_{n} \ie w_{n}$.
+\par Ainsi, pour tout $n$ supérieur à la fois à $n_{0}$, $n_{1}$ et $n_{2}$, tous les termes de $v$ appartiennent à $I$.
+\par Conclusion : $v$ converge vers $\ell$.
+\end{demo}
+
+\newpage
+\begin{exemple}
+Déterminer la limite de la suite $u$ définie sur $\N^{*}$ par $u_{n}=2+\dfrac{(-1)^{n}}{n}$
+\end{exemple}
+
+\begin{align*}
+\text{Pour tout } n \in \N \quad
+&-1 \ie (-1)^n \ie 1 \\
+&-\dfrac{1}{n} \ie \dfrac{(-1)^{n}}{n} \ie \dfrac{1}{n}\\
+&2-\dfrac{1}{n} \ie 2+\dfrac{(-1)^{n}}{n} \ie 2+\dfrac{1}{n}\\
+&2-\dfrac{1}{n} \ie u_n \ie 2+\dfrac{1}{n}
+\end{align*}
+$\left.\begin{array}{l}
+\limn 2-\dfrac{1}{n}=2\\
+\limn 2+\dfrac{1}{n}=2
+\end{array}\right\}$
+donc, d'après le théorème des gendarmes, $\limn u_n=2$
+
+
+\section{Suites arithmétiques}
+\subsection{Définition}
+\begin{defn}
+Soit $\suite[u]$ une suite et $r$ un réel.
+ 
+On dit qu'une suite $\suite[u]$ est une suite arithmétique de raison $r$ si pour tout entier naturel $n$ : \[u_{n+1}=u_n+r\]
+\end{defn}
+
+\begin{exemple}
+La suite des nombres impairs est une suite arithmétique de raison 2.
+
+Les suites $u$ et $v$ définies sur $\N$ par $u_n=3n-4$ et $v_n=n^2+2$ sont-elles arithmétiques ?
+
+\begin{itemize}
+\item Pour tout $n$, $u_{n+1}-u_n=3(n+1)-4-(3n-4)=3n+3-4-3n+4=3$.
+
+La suite $u$ est donc arithmétique de raison 3.
+
+\item $v_0=2$, $v_1=3$, $v_2=6$ ainsi $v_1=v_0+1$ et $v_2=v_1+3$
+
+La suite $v$ n'est donc pas arithmétique.
+\end{itemize}
+\end{exemple}
+
+\vspace{2ex}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Si $r>0$ alors $u$ est strictement croissante.
+\par Si $r=0$ alors $u$ est constante.
+\par Si $r<0$ alors $u$ est strictement décroissante.
+\end{prop}
+
+\begin{demo}
+Pour tout $n$, $u_{n+1}-u_n=r$
+donc si  $r>0$ alors $u$ est strictement croissante, si $r=0$ alors $u$ est constante et si $r<0$ alors $u$ est strictement décroissante.
+\end{demo}
+\subsection{Expression de $u_n$ en fonction de $n$}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Pour tous entiers naturels $n$ et $p$ : \[u_n=u_p+(n-p)r\]
+\par En particulier, pour tout entier naturel $n$ : \[u_n=u_0+nr\]
+\end{prop}
+
+\begin{demo}
+On suppose $n>p$. On a : 
+$u_{n}-u_{n-1}=r$ ; \hfill $u_{n-1}-u_{n-2}=r$ ; \hfill \dots \hfill $u_{p+2}-u_{p+1}=r$ ; \hfill $u_{p+1}-u_{p}=r$ \\
+En additionnant toutes ces égalités, on obtient :
+\[u_{n}-u_{p}=(n-p)r\]
+soit \[u_n=u_p+(n-p)r\]
+\end{demo}
+
+\subsection{Somme de termes consécutifs}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Pour tout entier naturel $n$ :
+\[u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}=(n+1)\times \dfrac{u_{0}+u_{n}}{2}\]
+\end{prop}
+
+\begin{rem}
+On a aussi $u_{1}+u_2 \cdots + u_{n-1}+u_{n}=n\times \dfrac{u_{1}+u_{n}}{2}$
+\end{rem}
+
+\begin{demo}
+\par Posons $S=u_0+u_1+ \cdots +u_n$
+\par On a ainsi $2S=(u_0+u_n)+(u_1+u_{n-1})+(u_2+u_{n-2})+ \cdots +(u_{n-1}+u_1)+(u_n+u_0)$
+\par Or, pour tout $k\ie n$, $u_k+u_{n-k}=u_0+kr+u_0+(n-k)r=u_0+u_0+nr=u_0+u_n$.
+\par On a donc : $2S=(n+1)\times (u_0+u_n)$
+\par Donc $S=(n+1)\times \dfrac{u_{0}+u_{n}}{2}$
+\end{demo}
+
+\newpage
+
+\begin{exemple}
+\underline{Déterminer la somme des $n$ premiers entiers naturels.}
+
+La suite des entiers naturels est la suite arithmétique $\suitep[g]$ de raison 1 telle que $g_1=1$
+\begin{equation*}
+g_{1}+g_2 \cdots + g_{n-1}+g_{n}=n\times \dfrac{g_{1}+g_{n}}{2}=n\times \dfrac{g_{1}+g_{1}+(n-1)r}{2}=n\times\dfrac{1+(1+(n-1))}{2}=\dfrac{n(n+1)}{2}
+\end{equation*}
+
+\underline{Déterminer la somme des $n$ premiers nombres pairs.}
+
+La suite des nombres pairs est la suite arithmétique $\suite[p]$ de raison 2 telle que $p_0=0$
+\begin{equation*}
+p_{0}+p_1 \cdots + p_{n-1}+p_{n}=n\times \dfrac{p_{1}+p_{n}}{2}=n\times \dfrac{p_{1}+p_{1}+(n+1)r}{2}=n\times\dfrac{0+0+(n+1)2}{2}=n(n+1)
+\end{equation*}
+
+
+\underline{Déterminer la somme des $n$ premiers nombres impairs.}
+
+La suite des nombres impairs est la suite arithmétique $\suitep[i]$ de raison 2 telle que $i_1=1$
+\begin{equation*}
+i_{1}+i_2 \cdots + i_{n-1}+i_{n}=n\times \dfrac{i_{1}+i_{n}}{2}=n\times \dfrac{i_{1}+i_{1}+(n-1)r}{2}=n\times\dfrac{2+2n-2}{2}=n^2
+\end{equation*}
+\end{exemple}
+
+\newpage
+
+\subsection*{Application}
+Pour finir cette exemple, voici une application de ces résultats, avec deux formules élégantes. 
+
+ \paragraph*{Soit $n \in \N$ pair}
+ 
+$n$ est égal à $p_{\frac{n}{2}}=n$, donc le  $\dfrac{n}{2}$ entier pair par définition de $p$.
+\par Par suite il vient que $n-1$ est un entier impair, il est égal à $i_{\frac{n}{2}}=n$, donc le  $\dfrac{n}{2}$ entier impair par définition de $i$.
+
+Ainsi on a les équations suivantes:
+$$1+2+3+\cdots+(n-1)+n$$
+$$\Longleftrightarrow i_1+ p_1+ i_2 + \cdots + i_{\frac{n}{2}} + p_{\frac{n}{2}}$$
+quitte à réarranger les termes de la somme on a:
+$$\Longleftrightarrow (p_1+p_2+\cdots+p_{\frac{n}{2}}) + (i_1+ i_2 + \cdots + i_{\frac{n}{2}})$$
+$$\Longleftrightarrow (\dfrac{n}{2}(\dfrac{n}{2}+1))+ ( (\dfrac{n}{2})^2)$$
+
+d'autre part: 
+$$1+2+3+\cdots+(n-1)+n=\dfrac{n(n+1)}{2}$$
+d'où 
+$$\dfrac{n(n+1)}{2} =\dfrac{n}{2}(\dfrac{n}{2}+1) +  (\dfrac{n}{2})^2 $$
+Cette formule nous dit simplement que la somme des entiers naturel $1+2+3+\cdots+n$ est égale à la somme de tous les entiers pairs et de tous les entiers impairs contenu dans $\{1;2;3;...;n\}$.
+
+
+Avec nos suites on peut dire que $$g_{2n}=p_{n}+i_{n}$$
+
+\paragraph*{Soit $n \in \N$ impair}
+
+Si $n$ est impair, il est égal à $i_{\frac{n+1}{2}}$, donc le  $\dfrac{n+1}{2}$ entier impair par définition de $i$.
+\par Par suite il vient que $n-1$ est un entier pair, il est égal à $p_{\frac{n-1}{2}}=n$, donc le  $\dfrac{n}{2}$ entier pair par définition de $i$.
+
+Ainsi on a les équations suivantes:
+$$1+2+3+\cdots+(n-1)+n$$
+$$\Longleftrightarrow i_1+ p_1+ i_2 + \cdots + p_{\frac{n-1}{2}} + i_{\frac{n+1}{2}}$$
+quitte à réarranger les termes de la somme on a:
+$$\Longleftrightarrow (p_1+p_2+\cdots+p_{\frac{n-1}{2}}) + (i_1+ i_2 + \cdots + i_{\frac{n+1}{2}})$$
+$$\Longleftrightarrow (\dfrac{n-1}{2}(\dfrac{n-1}{2}+1))+ ( (\dfrac{n+1}{2})^2)$$
+d'où 
+$$\dfrac{n(n+1)}{2} =\dfrac{n-1}{2}(\dfrac{n-1}{2}+1) +  (\dfrac{n+1}{2})^2 $$
+
+Avec nos suites on peut dire que $$g_{2n+1}=p_{n}+i_{n+1}$$
+\newpage
+
+\section{Suites géométriques}
+\subsection{Définition}
+\begin{defn}
+Soit $\suite[u]$ une suite et $q$ un réel.
+\par On dit qu'une suite $\suite[u]$ est une suite arithmétique de raison $q$ si pour tout entier naturel $n$ : \[u_{n+1}=q\times u_n\]
+\end{defn}
+
+Remarque : Si $q\neq0$ et $u_{0}\neq0$ alors pour tout $n\in\N$, $u_{n}\neq0$.
+
+\begin{exemple}
+\par La suite des puissances de 2 est la suite géométrique de premier terme 1 et de raison 2.
+\par Les suites $u$ et $v$ définies sur $\N$ par $u_n=-4\times 3^{n}$ et $v_n=n^2+1$ sont-elles géométriques ?
+
+
+Pour tout $n$, $\dfrac{u_{n+1}}{u_n}=\dfrac{-4\times 3^{n+1}}{-4\times 3^{n}}=3$.
+\par La suite $u$ est donc géométrique de raison 3.
+\par $v_0=1$, $v_1=2$, $v_2=5$ ainsi $v_1=2\times v_0$ et $v_2=2,5\times v_1$
+\par La suite $v$ n'est donc pas géométrique.
+\end{exemple}
+\subsection{Expression de $u_n$ en fonction de $n$}
+\begin{prop}
+Soit $\suite[u]$ une suite géométrique de raison $q$.
+\par Pour tous entiers naturels $n$ et $p$ : \[u_n=u_p\times q^{n-p}\]
+\par En particulier, pour tout entier naturel $n$ : \[u_n=u_0\times q^{n}\]
+\end{prop}
+
+\begin{demo}
+\par On suppose $n>p$. On a : \\
+\par $\dfrac{u_{n}}{u_{n-1}}=q$ ; \hspace{2em} $\dfrac{u_{n-1}}{u_{n-2}}=q$ ; \hspace{2em} \dots \hspace{2em} $\dfrac{u_{p+2}}{u_{p+1}}=q$ ; \hspace{2em} $\dfrac{u_{p+1}}{u_{p}}=q$
+\par En multipliant toutes ces égalités, on obtient :
+\par $\dfrac{u_{n}}{u_{p}}=q^{n-p}$ soit $u_n=u_p\times q^{n-p}$
+\end{demo}
+
+\newpage
+\begin{prop}
+Soit $\suite[u]$ une suite géométrique de raison $q\neq0$.
+\par Si $q>1$ alors 
+$\left\{\begin{tabular}{@{}l}
+si $u_0>0$, $u$ est strictement croissante.\\
+si $u_0<0$, $u$ est strictement décroissante.
+\end{tabular}\right.$
+\par Si $q=1$ alors $u$ est constante.
+\par Si $0<q<1$ alors 
+$\left\{\begin{tabular}{@{}l}
+si $u_0>0$, $u$ est strictement décroissante.\\
+si $u_0<0$, $u$ est strictement croissante.
+\end{tabular}\right.$
+\par Si $q<0$ alors $u$ n'est pas monotone.
+\end{prop}
+
+\begin{demo}
+\par Pour tout $n$, $u_{n+1}-u_{n}=u_0\times q^{n+1}-u_0\times q^{n}=u_0\times q^{n}(q-1)$
+\par Le signe de $u_{n+1}-u_{n}$ s'obtient donc en fonction du signe de $u_0$, du signe de $q^{n}$ et du signe de $q-1$.
+\end{demo}
+
+\subsection{Somme de termes consécutifs}
+\begin{prop}
+Soit $q$ un réel différent de 1.
+\par Pour tout entier naturel $n$ :
+\[ 1 + q + q^{2} + \cdots + q^{n-1} + q^{n} = \dfrac{1-q^{n+1}}{1-q} \]
+\par Soit $\suite[u]$ une suite géométrique de raison $q\neq 1$.
+\par Pour tout entier naturel $n$ :
+\[u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}=u_{0}\times\dfrac{1-q^{n+1}}{1-q} \]
+\end{prop}
+
+\begin{demo}
+\par Posons $S=1 + q + q^{2} + \cdots + q^{n-1} + q^{n}$. On a alors $qS=q + q^{2} + q^{3} + \cdots + q^{n} + q^{n+1}$
+\par Ainsi, $S-qS=1-q^{n+1}$
+\par D'où : $S=\dfrac{1-q^{n+1}}{1-q}$
+\end{demo}
+
+\begin{exemple}
+Déterminer la somme des $n$ premières puissances de 2 ($1+2+2^2+\cdots+2^{n-1}$).
+
+
+\par La suite des puissances de 2 est la suite géométrique de raison 2 et telle que $u_0=1$
+\par Ainsi, $u_{0}+u_{1}+ \cdots+u_{n-1}=u_{0}\times\dfrac{1-q^{n}}{1-q}=1\times\dfrac{1-2^n}{1-2}=2^n-1$
+
+\end{exemple}
+
+\subsection{Limite d'une suite géométrique}
+Pour déterminer la limite d'une suite géométrique, il suffit de déterminer la limite des suites du type $(q^n)$ où $q \in \mathbb{R}$.
+
+Pour cela on va s'aider d'une inégalité bien connue, l'inégalité de Bernouilli.
+
+\begin{prop}[l'inégalité de Bernouilli]
+Pour tout entier $n > 1$ et tout réel $x$ non nul et supérieur ou égal à $-1$.
+\end{prop}
+
+\begin{demo}
+Soit un réel $x \in [-1;0[ \cup ]0;+ \infty[ $. Montrons l'inégalité pour tout entier $n > 1$, par récurrence sur $n$.\\
+
+\underline{Initialisation : }
+$(1+x)^{2}=1+2x+x^{2}>1+2x$ donc la propriété est vraie pour n = 2.\\
+
+\underline{Hérédité :} supposons (hypothèse de récurrence) que 
+$(1+x)^{k}>1+kx$ et montrons que la propriété est vraie au rang suivant $k + 1$, c'est-à-dire montrons que $ (1+x)^{k+1}>1+(k+1)x$.\\
+
+En multipliant les deux membres de l'inégalité de l'hypothèse de récurrence par $(1 + x)$ (qui par hypothèse est positif ou nul) on obtient : 
+$$(1+x)^{k+1}=(1+x)^{k}(1+x)\geq (1+kx)(1+x)=1+(k+1)x+kx^{2}>1+(k+1)x$$\\
+
+\underline{Conclusion : } la propriété est vraie au rang 2 et elle est héréditaire donc vraie pour tout entier $n \se 2 $
+\end{demo}
+
+On peut maintenant déduire la divergence de la suite $(q^n)$ quand $q>1$.
+
+\begin{thm}
+Soit la suite $(q^n)$ quand $q>1$ est divergente.
+\end{thm}
+
+\begin{demo}
+Soit $q>1$ ainsi il existe un $x>0$ tel que $q= 1+x$, donc étudier la divergence de $q^n$ revient à étudier la divergence de $(1+x)^n$. Or d'après l'inégalité de Bernouilli  on a:
+
+$$(1+x)^n\se 1+nx $$
+
+Or pour $x>0$ la suite $(1+nx)$ est divergente, on conclut grâce au théorème 3.
+
+\end{demo}
+
+\begin{thm}
+Soit la suite $(q^n)$ quand $\vert q \vert <1$ est convergente vers 0.
+\end{thm}
+
+\begin{demo}
+Soit $0<q<1$ alors il existe un $q'>1$ tel que $q=\dfrac{1}{q'}$. Par suite, $q^n=\dfrac{1}{q'^n}$ or par le théorème précédent, $(q'^n)$ est divergente vers $+ \infty$. Par composé de limite, on obtient que la suite $(q^n)$ tend vers $0$.
+
+Soit $-1<q<0$ alors pour tout $n \ie 0$ on a $q^n\ie \vert q^n \vert $ et aussi $-q^n\ie \vert q^n \vert $ ce qui revient aussi à dire
+
+$$ - \vert q^n \vert \ie q^n \ie \vert q^n$$
+
+ Or $\vert q^n \vert = \vert q \vert^n$ et donc 
+ 
+ $$-  \vert q \vert^n \ie q^n \ie \vert q \vert^n$$
+ 
+ On conclut rapidement puisque la suite $(\vert q \vert^n)$ tend vers 0 d'après le cas où  $0<q<1$ et avec le théorème des gendarmes.
+
+\end{demo}
+
+
+\subsection{Application: la limite de l'exponentielle}
+
+On peut définir aussi $e^x:=  \limn (1+\dfrac{x}{n})^n$, par l'inégalité de Bernouilli, on sait que 
+$(1+y)^n>1+ny$ et pour n'importe quelle quantité $y \in [-1;0[ \cup ]0;+ \infty[ $. on sait que si $x>0$ alors $\dfrac{x}{n}$ ainsi l'inégalité s'applique avec $y=\dfrac{x}{n}$.
+
+d'où $(1+\dfrac{x}{n})^n \se 1+x$ ainsi en passant à la limite quand $n$ tend vers $+ \infty$ on obtient 
+$$e^x \se 1+x$$  pour $x>0$
+en passant maintenant à la limite quand $x$ tend vers $ + \infty$ alors la limite en $+ \infty$ de l'exponentielle est $+ \infty$
+
+on sait que $e^{-x}=\dfrac{1}{e^x}$, on conclut rapidement de ce fait sur la limite de l'exponentielle en $- \infty$ 
+
+\begin{comment}
+\newpage
+
+\section{Exercices}
+\subparagraph*{Exercice 1}
+Soit $u_0=1000$ et  $u_{n+1}=1,04u_n$.
+%Alors, $u_0=1000$, \\
+%$u_1=1,04\tm u_0=1,04\tm 1000=1040$, \\
+%$u_2=1,04\tm u_1=1,04\tm 1040=1081,6$,  \\
+%$u_3=1,04\tm u_2= \ \dots$ \\
+%$u_{50}=1,04 u_{49}$
+Donner $u_0$, $u_1$, $u_2$, $u_3$, $u_{10}$ et $u_{50}$
+
+\subparagraph*{Exercice 2}
+
+
+Soit la fonction $f$ définie sur $\R$ par $f:x\mapsto 3x-2$. 
+\begin{enumerate}
+\item On définie la suite $(u_n)$ par $u_0=1$ et  $u_{n+1}=f(u_n)$. 
+  Calculer $u_1$, $u_2$, $u_{10}$, $u_{100}$ et $u_{1000}$. 
+
+\item On définie la suite $(v_n)$ par $v_0=2$ et  $v_{n+1}=f(v_n)$. 
+  Calculer $v_1$, $v_2$, $v_{10}$, $v_{100}$ et $v_{1000}$. 
+\end{enumerate}
+
+\subparagraph*{Exercice 3}
+\begin{enumerate}
+\item Soit la suite arithmétique $\suite[u]$ de premier terme $u_0 = -5$ et de raison $r = 2$. Calculer $u_{3002}$.
+\item Soit la suite arithmétique $\suite[v]$ de premier terme $v_2 = 1200$ et de raison  $r = -10$. Calculer $v_{25}$. À partir de quel rang la suite est-elle négative ?
+\end{enumerate}
+
+\subparagraph*{Exercice 4}
+Soit $\suite[u]$ une suite arithmétique telle que $u_{10} = -70$ et $u_{25} = 80$.
+Calculer la raison $r$ de cette suite, puis calculer $u_0$ et$u_{1212}$.
+
+\subparagraph*{Exercice 5} 
+Soit  $\suite[v]$ la suite géométrique de premier terme $u_0 = 0,2$ et de raison $q =\dfrac14$.
+Calculer $u_4$ et $u_{20}$.
+\subparagraph*{Exercice 6} On utilise une feuille de papier, d'épaisseur $e = 0, 5 mm$, que l’on replie successivement en deux. Quelle est l’épaisseur de la feuille après le premier pliage ? après le deuxième ? après le $n$-ième ? Combien de fois faudrait-il replier cette feuille en deux pour obtenir une épaisseur supérieure à $300 m$ ?
+
+\end{comment}
+
+\chapter{Limites}
+\section{Limites d'une fonction en l'infini}
+\subsection{Limite r\'eelle en l'infini, asymptote horizontale}
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle de la forme $[A~;~+\infty[$.
+On dit que $f$ tend vers $\ell$ lorsque $x$ tend vers $+\infty$ si tout intervalle ouvert contenant $\ell$ contient aussi toutes les valeurs de $f(x)$ pour $x$ suffisamment grand.
+
+On note $ \limpinf f(x)=\ell$.
+\end{prop}
+
+\begin{minipage}{9cm}
+\begin{rem}
+On peut d\'efinir de m\^eme $ \limminf f(x)$.
+\end{rem}
+
+\begin{exemple}
+Soit $f$ la fonction d\'efinie sur $[1~;~+\infty[$ par $f(x)=1+\dfrac{1}{x}$. D\'emontrer que $\limpinf f(x)=1$.
+\end{exemple}
+
+
+Soit $a\in\R$.
+\begin{align*}
+f(x)\in ]1-a~;~1+a[ &\Leftrightarrow 1-a < 1+\dfrac{1}{x} < 1+a\\
+& \Leftrightarrow -a < \dfrac{1}{x} < a\\
+& \Leftrightarrow x>\dfrac{1}{a} \quad \text{car $x$ est positif.}
+\end{align*}
+
+Ainsi pour $x>\dfrac{1}{a}$, $f(x)\in~ ]1-a~;~1+a[$ donc $\limpinf f(x)=1$.
+
+\end{minipage}
+\hfill
+\begin{minipage}{5.9cm}
+\begin{center}
+\includegraphics{../Figures/CoursLimitesFigures.1}
+\end{center}
+\end{minipage}
+
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle de la forme $[A~;~+\infty[$ et $\calc$ sa courbe repr\'esentative dans un rep\`ere.
+Si $ \limpinf f(x)=\ell$ ou si  $ \limminf f(x)=\ell$, on dit que la droite d'\'equation $y=\ell$ est asymptote à $\calc$.
+\end{prop}
+
+\subsection{Limites usuelles du type $ \frac{1}{x^\alpha}$ en l'infini}
+\begin{prop}
+$\limpinf \dfrac{1}{x}=0$ ;\hfill
+$\limminf \dfrac{1}{x}=0$ ; \hfill $\limpinf \dfrac{1}{x^{2}}=0$ ; \hfill $\limminf \dfrac{1}{x^{2}}=0$ ; \hfill $\limpinf \dfrac{1}{\sqrt{x}}=0$.
+\end{prop}
+
+\subsection{Limite infinie en l'infini}
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle de la forme $[A~;~+\infty[$.
+On dit que $f$ tend vers $+\infty$ lorsque $x$ tend vers $+\infty$ si tout intervalle de la forme $]M~;~+\infty[$ contient toutes les valeurs de $f(x)$ pour $x$ suffisamment grand.
+
+On note $ \limpinf f(x)=+\infty$.
+\end{prop}
+
+\begin{minipage}{9cm}
+\begin{rem}
+On peut d\'efinir de m\^eme $\limpinf f(x)=-\infty$...
+\end{rem}
+
+\begin{exemple}
+Soit $f$ la fonction d\'efinie sur $[1~;~+\infty[$ par $f(x)=x^{2}+3$. D\'emontrer que $\limpinf f(x)=+\infty$.
+\end{exemple}
+
+
+Soit $M\in\R$.
+\begin{align*}
+f(x)>M &\Leftrightarrow x^{2}+3>M \Leftrightarrow x^{2}>M-3\\
+& \Leftrightarrow x>\sqrt{M-3} \quad \text{pour $M>3$.}
+\end{align*}
+
+Ainsi pour $x>\sqrt{M-3}$, $f(x)>M$ donc $\limpinf f(x)=+\infty$.
+
+\end{minipage}
+\hfill
+\begin{minipage}{5.9cm}
+\begin{center}
+\includegraphics{../Figures/CoursLimitesFigures.2}
+\end{center}
+\end{minipage}
+\subsection{Limites usuelles du type $ x^\alpha $ en l'infini}
+\begin{prop}
+$\limpinf x=+\infty$ ; \hfill
+$\limminf x=-\infty$ ;\hfill $\limpinf x^{2}=+\infty$ ; \hfill $\limminf x^{2}=+\infty$; \hfill $\limpinf \sqrt{x}=+\infty$.
+\end{prop}
+\newpage
+
+\section{Limite d'une fonction en un point}
+\subsection{Limite r\'eelle en un point}
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle $I$ et $a\in I$.
+On dit que $f$ tend vers $L$ lorsque $x$ tend vers $a$ si tout intervalle ouvert contenant $L$ contient aussi toutes les valeurs de $f(x)$ pour $x$ suffisamment proche de $a$.
+
+On note $\limite[x]{a}f(x)=L$.
+\end{prop}
+
+\begin{rem}
+$\limite[x]{a}f(x)=L\Leftrightarrow\limite{h}{0}f(a+h)=L$
+\end{rem}
+
+\begin{exemple}
+$\limo[x]x=0$ ; \hspace{2em} $\limo[x]x^{2}=0$ ; \hspace{2em} $\limo[x]\dfrac{(1+x)^{2}-1}{x}=2$.
+\end{exemple}
+
+\subsection{Limite infinie en un point, asymptote verticale}
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle $I$ et $a\in I$.
+On dit que $f$ tend vers $+\infty$ lorsque $x$ tend vers $a$ si tout intervalle de la forme $]M~;~+\infty[$ contient toutes les valeurs de $f(x)$ pour $x$ suffisamment proche de $a$.
+
+On note $\limite[x]{a}f(x)=+\infty$.
+\end{prop}
+
+\begin{minipage}{9cm}
+
+\begin{rem}
+On peut d\'efinir de m\^eme $\limite[x]{a}f(x)=-\infty$.
+\end{rem}
+
+\begin{exemple}
+Soit $f$ la fonction d\'efinie sur $\R^{*}$ par $f(x)=\dfrac{1}{x^{2}}$. D\'emontrer que $\limo[x]f(x)=+\infty$.
+\end{exemple}
+
+
+Soit $M\in\R$
+\begin{align*}
+f(x)>M&\Leftrightarrow\dfrac{1}{x^{2}}>M\Leftrightarrow x^{2}<\dfrac{1}{M}\\
+&\Leftrightarrow -\dfrac{1}{\sqrt{M}}<x<\dfrac{1}{\sqrt{M}}
+\end{align*}
+Ainsi pour $-\dfrac{1}{\sqrt{M}}<x<\dfrac{1}{\sqrt{M}}$, $f(x)>M$ donc $\limo[x]f(x)=+\infty$.
+
+\end{minipage}
+\hfill
+\begin{minipage}{5cm}
+\begin{center}
+\includegraphics{../Figures/CoursLimitesFigures.3}
+\end{center}
+\end{minipage}
+\newpage
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle $I$ et $a\in I$. Soit $\calc$ sa courbe repr\'esentative dans un rep\`ere.
+
+Si $\limite[x]{a}f(x)=+\infty$ ou $\limite[x]{a}f(x)=-\infty$, on dit que la droite d'\'equation $x=a$ est asymptote à $\calc$.
+\end{prop}
+
+\subsection{Limites usuelles  du type $ \frac{1}{x^\alpha}$ en 0}
+\begin{prop}
+$\ds \lim_{_{x>0}^{x \to 0}} \dfrac{1}{x}=+\infty$ ;\hfill $\ds \lim_{_{x<0}^{x \to 0}} \dfrac{1}{x}=-\infty$ ;\hfill
+$\limo[x]\dfrac{1}{x^{2}}=+\infty$ ; \hfill $\limo[x]\dfrac{1}{\sqrt{x}}=+\infty$
+\end{prop}
+
+
+\section{Asymptotes obliques}
+\begin{prop}
+Soit $f$ une fonction d\'efinie sur un intervalle de la forme $[A~;~+\infty[$ et $\calc$ sa courbe repr\'esentative dans un rep\`ere. Soient $a$ et $b$ deux r\'eels avec $a\neq0$.\\
+
+Si $\limpinf (f(x)-(ax+b))=0$ (resp. $\limminf (f(x)-(ax+b))=0$), on dit que la droite d'\'equation $y=ax+b$ est asymptote oblique à la courbe $\calc$ en $+\infty$ (resp. en $-\infty$).
+\end{prop}
+
+\begin{minipage}{8cm}
+
+\underline{Interpr\'etation graphique :}\\
+
+Le point $M$ a pour coordonn\'ees $(x;f(x))$ et le point $N$ a pour coordonn\'ees $(x;ax+b)$.
+
+La distance $MN$ est donc \'egale à \[\left|f(x)-(ax+b)\right|\]
+Ainsi, si $\limpinf (f(x)-(ax+b))=0$ alors la longueur $MN$ tend vers 0.
+
+La courbe \og se rapproche \fg{} de la droite et tend à \og suivre la direction \fg{} de la droite.
+\end{minipage}
+\hfill
+\begin{minipage}{6.9cm}
+\begin{center}
+\includegraphics{../Figures/CoursLimitesFigures.4}
+\end{center}
+\end{minipage}
+
+\begin{exemple}
+Soit $f$ la fonction d\'efinie sur $\R^{*}$ par $f(x)=2x-1+\dfrac{1}{x^{2}}$ et soit $\calc$ sa courbe repr\'esentative. Soit $d$ la droite d'\'equation $y=2x-1$.
+
+D\'emontrer que $d$ est asymptote à $\calc$ en $+\infty$.
+\end{exemple}
+
+
+Pour tout $x \neq 0$, $f(x)-(2x-1)=\dfrac{1}{x^{2}}$.
+
+Or $\limpinf \dfrac{1}{x^{2}}=0$.
+
+Ainsi, $d$ est asymptote à $\calc$ en $+\infty$.
+
+\newpage
+\section{Op\'erations sur les limites}
+Dans les tableaux suivants, $a$ d\'esigne un nombre r\'eel, $+\infty$ ou $-\infty$.
+\subsection{Somme de fonctions}
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|lc|c|c|c|c|c|c|} \hline
+Si & $\limite[x]{a}f(x)=$ & $\ell$ & $\ell$ & $\ell$ & $+\infty$ & $+\infty$ & $-\infty$ \\ \hline
+et & $\limite[x]{a}g(x)=$ & $\ell'$ & $+\infty$ & $-\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\ \hline
+alors & $\limite[x]{a}f(x)+g(x)=$ & $\ell+\ell'$& $+\infty$ & $-\infty$ & $+\infty$ & ??? & $-\infty$ \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{rem}
+??? signifie que l'on ne peut pas conclure. Cela ne signifie pas que la limite n'existe pas mais simplement qu'on ne peut pas la trouver directement. On parle de \og forme ind\'etermin\'ee \fg.
+\end{rem}
+
+\begin{exemple}
+D\'eterminer $\limpinf x^{2}+\dfrac{1}{x}$.
+\end{exemple}
+
+
+$\left\lbrace
+\begin{array}{l}
+\limpinf x^{2}=+\infty \\
+\limpinf \dfrac{1}{x}=0
+\end{array}
+\right.$
+donc $\limpinf x^{2}+\dfrac{1}{x}=+\infty$
+
+
+\subsection{Produit par une constante}
+$k$ d\'esigne un nombre r\'eel diff\'erent de 0.
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|lc|c|c|c|c|c|} \hline
+Si & $\limite[x]{a}f(x)=$ & $\ell$ & $+\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\ \hline
+et &  &  & $k>0$ & $k<0$ & $k>0$ & $k<0$ \\ \hline
+alors & $\limite[x]{a}kf(x)=$ & $k\ell$ & $+\infty$ & $-\infty$ & $-\infty$ & $+\infty$ \\ \hline
+\end{tabular}
+\end{center}
+
+\subsection{Produit de fonctions}
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|lc|c|c|c|c|c|c|} \hline
+Si & $\limite[x]{a}f(x)=$ & $\ell$ & $\ell\neq0$ & 0 & $+\infty$ & $+\infty$ & $-\infty$ \\ \hline
+et & $\limite[x]{a}g(x)=$ & $\ell'$ & $\pm\infty$ & $\pm\infty$ & $+\infty$ & $-\infty$ & $-\infty$ \\ \hline
+alors & $\limite[x]{a}f(x)\times g(x)=$ & $\ell\times \ell'$ & $\pm\infty$ & ??? & $+\infty$ & $-\infty$ & $+\infty$ \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{rem}
+$\pm\infty$ signifie $+\infty$ ou $-\infty$. Dans le cas de la troisi\`eme ligne, c'est la r\`egle des signes d'un produit qui permet de conclure.
+\end{rem}
+
+\begin{exemple}
+D\'eterminer $\limpinf \left(\dfrac{1}{x}-1\right)(x^{2}+2)$.
+\end{exemple}
+
+
+$\left\lbrace
+\begin{array}{l}
+\limpinf \dfrac{1}{x}-1=-1 \\
+\limpinf x^{2}+2=+\infty
+\end{array}
+\right.$
+donc $\limpinf \left(\dfrac{1}{x}-1\right)(x^{2}+2)=-\infty$
+
+
+\subsection{Quotient de fonctions}
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|lc|c|c|c|c|c|c|} \hline
+Si & $\limite[x]{a}f(x)=$ & $\ell$ & $\ell$ & $\ell\neq0$ & 0 & $\pm\infty$ & $\pm\infty$ \\ \hline
+et & $\limite[x]{a}g(x)=$ & $\ell'\neq0$ & $\pm\infty$ & 0 & 0 & $\ell'$ & $\pm\infty$ \\ \hline
+alors & $\limite[x]{a}\dfrac{f(x)}{g(x)}=$ & $\dfrac{\ell}{\ell'}$ & 0 & $\pm\infty$ & ??? & $\pm\infty$ & ??? \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{exemple}
+D\'eterminer $\limite[x]{1}\dfrac{-3x+2}{(x-1)^{2}}$.
+\end{exemple}
+
+
+$\left\lbrace
+\begin{array}{l}
+\limite[x]{1}-3x+2=-1 \\
+\limite[x]{1}(x-1)^{2}=0^{+}
+\end{array}
+\right.$
+donc $\limite[x]{1}\dfrac{-3x+2}{(x-1)^{2}}=-\infty$
+
+\subsection{Exemple d'\'etude d'une forme ind\'etermin\'ee}
+Soit $f$ la fonction d\'efinie sur $\R$ par $f(x)=x^{2}-3x+5$.
+
+\'etudier les limites de $f$ en $+\infty$ et $-\infty$.
+
+
+$\left\lbrace
+\begin{array}{l}
+\limminf x^{2}=+\infty \\
+\limminf -3x+5=+\infty
+\end{array}
+\right.$
+donc $\limminf f(x)=+\infty$
+
+Pour tout $x\neq0$, $f(x)=x^{2}\left(1-\dfrac{3}{x}+\dfrac{5}{x^{2}}\right)$
+
+$\left\lbrace
+\begin{array}{l}
+\limpinf \dfrac{3}{x}=0\\
+\limpinf \dfrac{5}{x^{2}}=0
+\end{array}
+\right.$
+donc $\limpinf 1-\dfrac{3}{x}+\dfrac{5}{x^{2}}=1$
+
+De plus, $\limpinf x^{2}=+\infty$
+
+Ainsi $\limpinf f(x)=+\infty$.
+
+\newpage
+\section{Fonction exponentielle : Croissances comparées}
+On sait que l'exponentielle est une fonction qui tend vers $+ \infty$ quand $x$ tend vers $+ \infty$, et ceux très rapidement.  Il s'agit de caractériser un peu ce très rapidement, du moins de dire que la fonction exponentielle crois bien plus vite que $x^n$. Pour cela on va étudier la forme indéterminée $\limpinf \dfrac{e^x}{x^n} $. 
+
+\begin{thm}
+$$ \text{Pour tout} \; n \in \mathbb{N}, \;\;\limpinf \dfrac{e^x}{x^n}= +\infty$$
+\end{thm} 
+
+\begin{demo}
+Pour tout entier naturel $n$, on pose la fonction $f_n: x \mapsto \dfrac{e^x}{x^{n+1}}$, définie sur $]0;+ \infty[$. \\
+
+$f_n$ est dérivable sur $]0;+ \infty[$ et $f_n'(x)=\dfrac{e^x x^{n+1}-(n+1)e^x x^n} {x^{2n+1}}$ et l'on a  $f'_n(x)=\dfrac{(x-n-1)e^x}{x^{n+2}}$
+
+On remarque que: 
+
+\begin{itemize}
+\item[$\bullet$] $f_n'(x)$ s'annule pour $x=n+1$ et donc $f_n(n+1)=\dfrac{e^{n+1}}{(n+1)^{n+1}}$ est donc soit un maximum ou un minimum de la fonction $f_n$.
+\item[$\bullet$] Si $x\in ]0; n+1[$ alors $f_n'(x)<0$ donc $f_n$ est strictement décroissante sur $ [0; n+1]$
+\item[$\bullet$] Si $x\in ]n+1;+ \infty$ alors $f_n'(x)>0$ donc $f_n$ est strictement croissante sur $ [n+1;+ \infty[$.\\
+\end{itemize}
+
+On déduit alors que $f_n$ admet un minimum en $x=n+1$.\\
+
+Ainsi pour tout $x>0$, $\dfrac{e^{n+1}}{(n+1)^{n+1}} \ie \dfrac{e^x}{x^{n+1}}$. Puisque $x>0$ on peut multiplier cette inégalité par $x$ en conservant l'ordre, d'où
+
+$$\dfrac{xe^{n+1}}{(n+1)^{n+1}} \ie \dfrac{e^x}{x^{n}}$$
+
+Or $\limpinf \dfrac{xe^{n+1}}{(n+1)^{n+1}} = + \infty$ donc on a nécéssairement $\limpinf  \dfrac{e^x}{x^{n}} = + \infty$ d'après la dernière inégalité.
+
+\end{demo}
+
+
+\chapter{Dérivation des fonctions}
+\section{Généralités}
+\subsection{Limite en 0}
+\begin{defn}
+Soit $f$ une fonction définie sur un intervalle $I$ contenant 0 et $L \in \R$.
+
+On dit que $f(x)$ tend vers $L$ quand $x$ tend vers 0 si on peut rendre $f(x)$ aussi proche de $L$ que l'on veut pour $x$ suffisamment proche de zéro. On note : $\limo[h] f(x)=L$
+\end{defn}
+
+\begin{exemple}
+$\ds \limo[x]x^{2}=0$ \hspace{1em} $\ds \limo[x]x+1=1$ \hspace{1em} $\ds \limo[x]\sqrt{x}+x-2=-2$...
+
+Déterminer la limite en 0 de $\dfrac{x^{2}-2x}{3x}$.
+\end{exemple}
+
+
+Pour tout $x\neq 0$, $\dfrac{x^{2}-2x}{3x}=\dfrac{x-2}{3}$ donc $\ds \limo[x]\dfrac{x^{2}-2x}{3x}=-\dfrac{2}{3}$.
+
+%
+\subsection{Nombre dérivé}
+\begin{defn}
+Soit $f$ une fonction définie sur un intervalle $I$. Soit $a \in I$ et $h \neq 0$ tel que $a+h \in I$.
+
+On appelle taux de variation de $f$ entre $a$ et $h$ le réel $\dfrac{f(a+h)-f(a)}{h}$.
+
+On dit que $f$ est dérivable en $a$ si, lorsque $h$ tend vers 0, le taux de variation de $f$ entre $a$ et $h$ tend vers un réel $L$ autrement dit si $\ds \lim_{h\rightarrow 0}\dfrac{f(a+h)-f(a)}{h}=L$.
+
+Ce réel $L$ est appelé nombre dérivé de $f$ en $a$ et se note $f'(a)$.
+\end{defn}
+
+\begin{exemple}
+Démontrer que la fonction $f : x \longmapsto x^{2}$ est dérivable en 2 et calculer $f'(2)$.
+
+Démontrer que la fonction $g : x \longmapsto \sqrt{x}$ n'est pas dérivable en 0.
+\end{exemple}
+
+
+Pour tout $h\neq 0$, $\dfrac{f(2+h)-f(2)}{h}=\dfrac{(2+h)^{2}-4}{h}=\dfrac{h^{2}+4h}{h}=h+4$
+
+Ainsi $\ds \limo[h]\dfrac{f(2+h)-f(2)}{h}=4$.
+
+$f$ est donc dérivable en 2 et $f'(2)=4$.
+
+Pour tout $h\neq 0$, $\dfrac{g(0+h)-g(0)}{h}=\dfrac{\sqrt{h}}{h}=\dfrac{1}{\sqrt{h}}$.
+
+Or, $\dfrac{1}{\sqrt{h}}$ n'a pas de limite finie lorsque $h$ tend vers 0 donc $g$ n'est pas dérivable en 0.
+
+
+\subsection{Interprétation graphique}
+\begin{prop}
+Soit $f$ une fonction définie sur $I$ et $C_{f}$ sa représentation graphique dans un repère. Soit $a\in I$.
+
+Si $f$ est dérivable en $a$ alors $f'(a)$ est le coefficient directeur de la tangente à $C_{f}$ au point
+$A(a;f(a))$. L'équation de cette tangente est alors : $y=f'(a)(x-a)+f(a)$.
+\end{prop}
+
+\begin{minipage}{9cm}
+\underline{Illustration :} soit $A(a;f(a))\in C_{f}$.\par Soit $h \neq 0$ et $M(a+h;f(a+h))\in C_{f}$.
+
+Le quotient $\dfrac{f(a+h)-f(a)}{h}$ représente le coefficient directeur de la droite $(AM)$. Lorsque $h$ tend vers 0, $M$ se rapproche de $A$ et la droite $(AM)$ tend à se confondre avec la tangente à $C_{f}$ en $A$.
+\end{minipage}
+\hfill
+\begin{minipage}{5.6cm}
+\begin{center}
+\includegraphics{../Figures/CoursDerivationFigures.1}
+\end{center}
+\end{minipage}
+%\newpage
+
+\begin{demo}
+Soit $T$ la tangente à la courbe au point $A$.
+Son coefficient directeur est $f'(a)$ donc l'équation réduite de $T$ est de la forme $y=f'(a)x+b$.
+
+$A\in T$ donc $f(a)=f'(a)a+b$ donc $b=f(a)-af'(a)$.
+
+L'équation de $T$ est donc $y=f'(a)x+f(a)-af'(a)$ soit $y=f'(a)(x-a)+f(a)$.
+\end{demo}
+
+\subsection{Approximation affine}
+\begin{prop}
+Soit $f$ une fonction définie sur $I$ et dérivable en $a\in I$.
+\begin{itemize}
+\item Il existe une fonction $\varphi$ telle que pour tout réel $h$ avec $a+h\in I$ :
+\[f(a+h)=f(a)+hf'(a)+h\varphi(h)\hspace{2em}\text{et}\hspace{2em}\limo[h]\varphi(h)=0\]
+\item La fonction $h \longmapsto f(a)+hf'(a)$ est une approximation affine de $f$ pour $h$ proche de 0.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+Pour $h\neq 0$, on pose $\varphi(h)=\dfrac{f(a+h)-f(a)}{h}-f'(a)$.
+
+$f$ est dérivable en $a$ donc lorsque $h$ tend vers 0, $\varphi(h)$ tend vers $f'(a)-f'(a)=0$.
+
+De plus, $h\varphi(h)=f(a+h)-f(a)+hf'(a)$ soit $f(a+h)=f(a)+hf'(a)+h\varphi(h)$
+\end{demo}
+
+\newpage
+\section{Calculs de dérivées}
+\subsection{Fonction dérivée}
+\begin{defn}
+Soit $f$ une fonction défine sur un intervalle $I$.
+\begin{itemize}
+\item Si, pour tout $x$ de $I$, $f$ est dérivable en $x$, on dit que $f$ est dérivable sur $I$.
+\item La fonction définie sur $I$ par $x \longmapsto f'(x)$ est appelée fonction dérivée de $f$. Cette fonction est notée $f'$.
+\end{itemize}
+\end{defn}
+
+\subsection{Dérivées usuelles}
+\subsubsection*{Fonctions constantes}
+\begin{prop}
+
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=k$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=0$.
+
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a$ et $h\neq 0$, 
+\[\dfrac{f(a+h)-f(a)}{h}=\dfrac{k-k}{h}=0\]
+
+$f$ est donc dérivable en $a$ et $f'(a)=0$.
+\end{demo}
+
+\subsubsection*{Fonctions affines}
+\begin{prop}
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=mx+p$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=m$.
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a$ et $h\neq 0$,
+\[\dfrac{f(a+h)-f(a)}{h}=\dfrac{m(a+h)+p-ma-p}{h}=\dfrac{mh}{h}=m\]
+
+$f$ est donc dérivable en $a$ et $f'(a)=m$
+\end{demo}
+
+\subsubsection*{Fonction carré}
+\begin{prop}
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=x^{2}$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=2x$.
+
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a$ et $h\neq 0$,
+\[\dfrac{f(a+h)-f(a)}{h}=\dfrac{(a+h)^{2}-a^{2}}{h}=\dfrac{2ah+h^{2}}{h}=2a+h\]
+
+De plus, $2a+h$ tend vers $2a$ lorsque $h$ tend vers 0.
+$f$ est donc dérivable en $a$ et $f'(a)=2a$.
+\end{demo}
+
+\subsubsection*{Fonctions puissances}
+\begin{prop}
+Soit $n$ un entier tel que $n \se 1$.
+
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=x^{n}$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=nx^{n-1}$.
+
+\end{prop}
+
+\begin{demo}
+On rappel que $(x+h)^n=\sum^n_{k=0} C^k_n x^{n-k}h^k$, avec $ C^k_n \in \N$ le nombre de combinaison de $k$ parmi $n$ où $C^k_n=\dfrac{n!}{(n-k)!k!}$.\\
+
+Par suite,  soit $f$ est la fonction définie sur $\R$ par :  $f(x)=x^{n}$, on a alors 
+$$\dfrac{f(x+h)-f(x)}{h}=\dfrac{(x+h)^n -x^n }{h}=\dfrac{\sum^n_{k=0} C^k_n x^{n-k}h^k -x^n}{h}= \dfrac{x^n+nx^{n-1}h+\sum^n_{k=2} C^k_n x^{n-k}h^k -x^n}{h}$$
+En développant les deux premiers termes de la somme on obtient alors
+$$\dfrac{x^n+nx^{n-1}h+\sum^n_{k=2} C^k_n x^{n-k}h^k -x^n}{h}=\dfrac{nx^{n-1}h+\sum^n_{k=2} C^k_n x^{n-k}h^k}{h}$$
+puis en divisant chaque terme par $h$ l'on a:
+$$nx^{n-1}+ \dfrac{\sum^n_{k=2} C^k_n x^{n-k}h^k}{h}=nx^{n-1}+\sum^n_{k=2} C^k_n x^{n-k}h^{k-1}$$
+Or ici $k\se2$ donc $k-1\se1$ ainsi le facteur $h$ apparait au moins une fois dans chacun des termes. Ainsi pour tout $k\se2$,  $\limo[h] C^k_n x^{n-k}h^{k-1} = 0$ et donc en sommant pour $k$ allant de $2$ à $n$ on obtient
+$$\limo[h]  \sum^n_{k=2} C^k_n x^{n-k}h^{k-1}=0$$
+Il s'ensuit que 
+$$ \limo[h] \dfrac{f(x+h)-f(x)}{h}=\limo[h] \dfrac{(x+h)^n -x^n }{h}= \limo nx^{n-1}+\sum^n_{k=2} C^k_n x^{n-k}h^{k-1} = nx^{n-1} $$
+\end{demo}
+
+\subsubsection*{Fonction inverse}
+\begin{prop}
+
+Si $f$ est la fonction définie sur $]-\infty;0[~\cup~]0;+\infty[$ par :  $f(x)=\dfrac{1}{x}$ \\
+alors $f$ est dérivable sur $]-\infty;0[$ et sur $]0;+\infty[$ et pour tout $x\neq 0$ :  $f'(x)=-\dfrac{1}{x^{2}}$
+
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a\neq 0$ et $h\neq 0$, \[\dfrac{f(a+h)-f(a)}{h}=\dfrac{\dfrac{1}{a+h}-\dfrac{1}{a}}{h}=\dfrac{a-(a+h)}{ha(a+h)}=\dfrac{-1}{a(a+h)}\]
+
+Or $\dfrac{-1}{a(a+h)}$ tend vers $-\dfrac{1}{a^{2}}$ lorsque $h$ tend vers 0.
+
+$f$ est donc dérivable en $a$ et $f'(a)=-\dfrac{1}{a^{2}}$
+\end{demo}
+
+\subsubsection*{Fonction racine carrée}
+\begin{prop}
+
+Si $f$ est la fonction définie sur $[0~;~+\infty[$ par :  $f(x)=\sqrt{x}$ \\
+alors $f$ est dérivable sur $]0~;~+\infty[$ et pour tout réel $x>0$ :  $f'(x)=\dfrac{1}{2\sqrt{x}}$.
+
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a>0$ et $h\neq 0$ tel que $a+h>0$,
+\begin{multline*}
+\dfrac{f(a+h)-f(a)}{h}=\dfrac{\sqrt{a+h}-\sqrt{a}}{h}=\dfrac{(\sqrt{a+h}-\sqrt{a})(\sqrt{a+h}+\sqrt{a})}{h(\sqrt{a+h}+\sqrt{a})}\\
+=\dfrac{a+h-a}{h(\sqrt{a+h}+\sqrt{a})}=\dfrac{1}{\sqrt{a+h}+\sqrt{a}}
+\end{multline*}
+Or, lorsque $h$ tend vers 0, $\dfrac{1}{\sqrt{a+h}+\sqrt{a}}$ tend vers $\dfrac{1}{2\sqrt{a}}$
+
+$f$ est donc dérivable en $a$ et $f'(a)=\dfrac{1}{2\sqrt{a}}$
+\end{demo}
+
+\subsubsection*{Fonctions trigonométriques}
+\begin{prop}
+Les fonctions sinus et cosinus sont dérivables sur $\R$ et pour tout réel $x$ :
+\[\sin'(x)=\cos(x)\hspace{2em}\text{et}\hspace{2em}\cos'(x)=-\sin(x)\]
+\end{prop}
+
+Résultat admis.
+
+\subsection{Opérations sur les fonctions et dérivées}
+$u$ et $v$ désignent deux fonctions dérivables sur un intervalle $I$ et $\lambda$ un réel.
+
+\begin{prop}
+La fonction $u+v$ est dérivable sur $I$ et  $(u+v)'=u'+v'$.\\
+La fonction $\lambda u$ est dérivable sur $I$ et  $(\lambda u)'=\lambda u'$.
+\end{prop}
+
+\begin{demo}
+Pour tout $a\in I$ et $h\neq 0$ tel que $a+h\in I$ :
+
+\begin{align*}
+\dfrac{(u+v)(a+h)-(u+v)(a)}{h}&=\dfrac{u(a+h)+v(a+h)-u(a)-v(a)}{h}\\
+&=\dfrac{u(a+h)-u(a)}{h}+\dfrac{v(a+h)-v(a)}{h}
+\end{align*}
+
+dont la limite est $u'(a)+v'(a)$ lorsque $h$ tend vers 0.
+
+\[\dfrac{(\lambda u)(a+h)-(\lambda u)(a)}{h}=\dfrac{\lambda u(a+h)-\lambda u(a)}{h}=\lambda \dfrac{u(a+h)-u(a)}{h}\]
+
+dont la limite est $\lambda u'(a)$ lorsque $h$ tend vers 0.
+\end{demo}
+
+\begin{exemple}
+Calculer la dérivée de la fonction $f$ définie sur $]0~;~+\infty[$ par $f(x)=3x^{2}+\dfrac{1}{3x}-5\sqrt{x}+2$
+\end{exemple}
+
+
+$f$ est dérivable sur $]0~;~+\infty[$ car elle est la somme de fonctions dérivables sur $]0~;~+\infty[$
+
+et, pour tout $x\in]0~;~+\infty[$, $f'(x)=3\times 2x+\dfrac{1}{3}\times \left(-\dfrac{1}{x^{2}}\right)-5\times \dfrac{1}{2\sqrt{x}}$ ainsi :
+\[f'(x)=6x-\dfrac{1}{3x^{2}}-\dfrac{5}{2\sqrt{x}}\]
+
+
+\vspace*{2ex}
+\begin{prop}
+La fonction $uv$ est dérivable sur $I$ et  $(uv)'=u'v+uv'$.\\
+La fonction $u^{2}$ est dérivable sur $I$ et  $(u^{2})'=2uu'$.
+
+\end{prop}
+
+\begin{demo}
+Pour tout $a\in I$ et $h\neq 0$ tel que $a+h\in I$ :
+\begin{align*}
+\dfrac{(uv)(a+h)-(uv)(a)}{h}&=\dfrac{u(a+h)v(a+h)-u(a)v(a+h)+u(a)v(a+h)-u(a)v(a)}{h}\\
+&=\underbrace{\dfrac{u(a+h)-u(a)}{h}}_{\text{tend vers } u'(a)}\times v(a+h)+\underbrace{\dfrac{v(a+h)-v(a)}{h}}_{\text{tend vers } v'(a)}\times u(a)
+\end{align*}
+
+dont la limite est $u'(a)v(a)+v'(a)u(a)$ lorsque $h$ tend vers 0.
+
+Ainsi $uv$ est dérivable et $(uv)'=u'v+uv'$.
+\end{demo}
+
+\begin{exemple}
+Calculer la dérivée de la fonction $f$ définie sur $\R$ par $f(x)=(x^{2}+1)(x^{5}+2)$
+\end{exemple}
+
+
+$f(x)=u(x)v(x)$ avec $u(x)=x^{2}+1$ et $v(x)=x^{5}+2$.
+
+$f$ est donc dérivable sur $\R$ en tant que produit de fonctions dérivables sur $\R$ et
+\[f'(x)=2x(x^{5}+2)+5x^{4}(x^{2}+1)\]
+
+
+\begin{prop}
+Si $v$ ne s'annule pas sur $I$
+
+La fonction $\dfrac{1}{v}$ est dérivable sur $I$ et  $\left(\dfrac{1}{v}\right)'=-\dfrac{v'}{v^{2}}$\\
+La fonction $\dfrac{u}{v}$ est dérivable sur $I$ et  $\left(\dfrac{u}{v}\right)'=\dfrac{u'v-uv'}{v^{2}}$
+\end{prop}
+
+\begin{demo}
+Pour tout $a\in I$ et $h\neq 0$ tel que $a+h\in I$ :
+\[\dfrac{\dfrac{1}{v(a+h)}-\dfrac{1}{v(a)}}{h}=\dfrac{v(a)-v(a+h)}{hv(a+h)v(a)}=-\dfrac{v(a+h)-v(a)}{h}\times \dfrac{1}{v(a)v(a+h)}\]
+
+dont la limite est $-v'(a)\times \dfrac{1}{(v(a))^{2}}$ lorsque $h$ tend vers 0.
+
+Ainsi $\dfrac{1}{v}$ est dérivable et $\left(\dfrac{1}{v}\right)'=-\dfrac{v'}{v^{2}}$
+
+De plus \[\left(\dfrac{u}{v}\right)'=\left(u\times \dfrac{1}{v}\right)'=u'\times \dfrac{1}{v}+u\times \left(-\dfrac{v'}{v^{2}}\right)=\dfrac{u'v-uv'}{v^{2}}\]
+\end{demo}
+
+\begin{exemple}
+Déterminer la dérivée de la fonction $f$ définie sur $]2~;~+\infty[$ par $f(x)=\dfrac{3}{2x-4}$ et de la fonction $g$ définie sur $\R$ par $g(x)=\dfrac{3x+5}{2x^{2}+1}$
+\end{exemple}
+
+
+Pour tout $x\in]2~;~+\infty[$, $f(x)=\lambda\times \dfrac{1}{u(x)}$ avec $\lambda=3$ et $u(x)=2x-4$.
+
+$f$ est donc dérivable sur $]2~;~+\infty[$ et $f(x)=3\times \left(-\dfrac{2}{(2x-4)^{2}}\right)=\dfrac{-6}{(2x-4)^{2}}$.
+
+Pour tout réel $x$ , $g(x)=\dfrac{u(x)}{v(x)}$ avec $u(x)=3x+5$ et $v(x)=2x^{2}+1$.
+
+$g$ est donc dérivable sur $\R$ et \[g(x)=\dfrac{3(2x^{2}+1)-4x(3x+5)}{(2x^{2}+1)^{2}}=\dfrac{-6x^2-20x+3}{(2x^{2}+1)^{2}}\]
+
+
+\begin{prop}
+% Soit $f$ une fonction définie et dérivable sur un intervalle $I$. Soient $a$ et $b$ deux réels.
+% 
+% Soit $J$ l'intervalle formé des réels $x$ tels que $ax+b$ appartient à $I$.
+% 
+% La fonction $g$ définie par $g(x)=f(ax+b)$ est dérivable sur $J$ et :
+% 
+% \hspace*{2cm} pour tout $x\in J$, $g'(x)=af'(ax+b)$.
+Soit $f$ une fonction définie et dérivable sur un intervalle $J$ et $u$ une fonction définie et dérivable sur un intervalle $I$ telle que, pour tout $x$ de $I$, $u(x)\in J$.
+
+La fonction $f \circ u$ est dérivable et, pour tout réel $x$ de $I$ : \[(f\circ u)'(x)=u'(x)\times f'(u(x))\]
+\end{prop}
+
+
+\begin{demo}
+Soit $f$ une fonction définie et dérivable sur un intervalle $J$ et $u$ une fonction définie et dérivable sur un intervalle $I$ telle que, pour tout $x$ de $I$, $u(x)\in J$.
+
+$$\dfrac{f\circ u (x+h) - f\circ u (x)}{h} = \dfrac{f\circ u (x+h) - f\circ u (x)}{h} \times \underbrace{\dfrac{u(x+h)-u(x)}{u(x+h)-u(x)}}_{=1} $$
+ 
+ Puisque le produit est commutatif on a en commutant les dénominateurs l'équation suivante. 
+ 
+$$\dfrac{f\circ u (x+h) - f\circ u (x)}{h} = \dfrac{f\circ u (x+h) - f\circ u (x)}{u(x+h)-u(x)} \times \dfrac{u(x+h)-u(x)}{h} $$
+
+Or la limite quand $h$ tend vers 0 de  $\dfrac{f\circ u (x+h) - f\circ u (x)}{u(x+h)-u(x)}$ existe car $f$ est dérivable sur l'intervalle $J$ et  $u(x)\in J$ et vaut $f'(u(x))$ par définition.\\
+
+De même, la limite quand $h$ tend vers 0 de  $\dfrac{u(x+h)-u(x)}{h}$ existe car $u$ est dérivable sur l'intervalle $I$ et $x\in I$ et vaut $u'(x)$ par définiton.\\
+
+Par suite la limite quand $h$ tend vers 0 de  $\dfrac{f\circ u (x+h) - f\circ u (x)}{u(x+h)-u(x)} \times \dfrac{u(x+h)-u(x)}{h}$ existe et vaut $f'(u(x)) \times u'(x) = u'(x)\times f'(u(x))$. \\ 
+
+Autrement dit, la limite quand $h$ tend vers 0 de  $\dfrac{f\circ u (x+h) - f\circ u (x)}{h}$ existe et est égale à $u'(x)\times f'(u(x))$. \\
+
+Ce qui équivaut encore à dire,
+
+ $$ (f\circ u)'(x)=u'(x)\times f'(u(x))$$
+
+
+\end{demo}
+
+
+
+\begin{exemple}
+Calculer la dérivée de la fonction $g$ définie sur $\R$ par $g(x)=\cos\left(2x+\dfrac{\pi}{3}\right)$.
+\end{exemple}
+
+
+Pour tout réel $x$, $g(x)=f\circ u (x)$ avec $u(x)=2x+\dfrac{\pi}{3}$ et $f(x)=\cos(x)$.
+
+$g$ est donc dérivable sur $\R$ et $g'(x)=-2\sin\left(2x+\dfrac{\pi}{3}\right)$
+
+
+\begin{defn}
+Soit $f$ une fonction définie et dérivable sur un intervalle $J$, on dit que $f$ est deux fois dérivable sur $J$ si la dérivée de $f'$ existe sur $J$. 
+\end{defn}
+
+
+\section{Applications de la dérivation aux variations de fonctions}
+\subsection{Dérivée et variations}
+\begin{prop}
+Soit $f$ une fonction dérivable sur un intervalle $I$.
+\begin{itemize}
+\item $f$ est croissante sur $I$ si et seulement si pour tout $x$ de $I$, $f'(x)\se 0$.
+\item $f$ est constante sur $I$ si et seulement si pour tout $x$ de $I$, $f'(x)=0$.
+\item $f$ est décroissante sur $I$ si et seulement si pour tout $x$ de $I$, $f'(x)\ie 0$.
+\end{itemize}
+\end{prop}
+
+Propriété admise.
+
+\begin{rem}
+on utilise souvent les résultats suivants.
+\begin{itemize}
+\item Si, pour tout $x$ de $I$, $f'(x)>0$ alors $f$ est strictement croissante sur $I$.
+\item Si, pour tout $x$ de $I$, $f'(x)<0$ alors $f$ est strictement décroissante sur $I$.
+\end{itemize}
+\end{rem}
+
+\begin{exemple}
+Étudier les variations de la fonction $f$ définie sur $\R$ par $f(x)=x^{3}+2x$.
+\end{exemple}
+
+
+$f$ est dérivable sur $\R$ et pour tout $x\in \R$, $f'(x)=3x^{2}+2>0$.
+
+La fonction $f$ est donc strictement croissante sur $\R$.
+
+
+\subsection{Extremum local}
+\begin{prop}
+Soit $f$ une fonction définie sur un intervalle $I$ et $x_{0}\in I$.
+
+On dit que $f(x_{0})$ est un maximum local (respectivement minimum local) de $f$ si l'on peut trouver un intervalle ouvert $J$ inclus dans $I$ et contenant $x_{0}$ tel que pour tout $x\in J$, $f(x)\ie f(x_{0})$ (respectivement $f(x)\se f(x_{0})$).
+\end{prop}
+
+\begin{minipage}{7.5cm}
+\begin{exemple}
+Une fonction est représentée ci-contre.
+
+Son minimum est $-2$
+
+Son maximum est 2.
+
+$-1$ et $-2$ sont des minimums locaux
+
+1 et 2 sont des maximums locaux.
+\end{exemple}
+\end{minipage}
+\hfill
+\begin{minipage}{6.5cm}
+\begin{center}
+\includegraphics{../Figures/CoursDerivationFigures.2}
+\end{center}
+\end{minipage}
+
+\begin{prop}
+Soit $f$ une fonction dérivable sur un intervalle $I$ et $x_{0}\in I$.
+
+Si $f(x_{0})$ est un extremum local de $f$ alors $f'(x_{0})=0$.
+\end{prop}
+
+
+\begin{minipage}{7.5cm}
+\begin{rem}
+ La réciproque de cette propriété est fausse, voir le contre-exemple sur la figure çi contre.
+\end{rem}
+\end{minipage}
+\hfill
+\begin{minipage}{6.5cm}
+\begin{center}
+\includegraphics{../Figures/coursderivation3.1}
+\end{center}
+\end{minipage}
+
+\begin{prop}
+Soit $f$ une fonction dérivable sur un intervalle $I$ et $x_{0}\in I$.
+
+Si $f'$ s'annule en changeant de signe en $x_{0}$ alors $f(x_{0})$ est un extremum local de $f$.
+\end{prop}
+
+
+\begin{defn}
+Soit $f$ une fonction définie et dérivable sur un intervalle $J$, on dit que $f$ est deux fois dérivable sur $J$ si la dérivée de $f'$ existe sur $J$. 
+\end{defn}
+
+\newpage
+
+\section{Applications de la dérivation aux fonctions convexes}
+\subsection{Convexité $ \leftrightharpoons$ Concavité}
+
+\begin{defn}
+\begin{itemize}
+\item[$\bullet$] Une fonction $f$, définie, dérivable (donc continue) sur un intervalle $I$ est convexe sur $I$ si sa courbe représentative est entièrement située au-dessus de chacune de ses tangentes.\\
+
+\item[$\bullet$] Une fonction $f$, définie, dérivable (donc continue) sur un intervalle $I$ est concave sur $I$ si sa courbe représentative est entièrement située en-dessous de chacune de ses tangentes.
+\end{itemize}
+\end{defn}
+
+\begin{prop}
+Soit $f$ une fonction définie et deux fois dérivable sur un intervalle $J$ alors les trois propositions sont équivalentes: 
+
+\begin{itemize}
+\item[$\bullet$] La fonction $f$ est convexe.
+\item[$\bullet$]  La courbe représentative $C_f$ est entièrement située au-dessus de chacune de ses tangentes.
+\item[$\bullet$]  La fonction dérivé $f'$ est croissante sur $J$.
+\item[$\bullet$] La dérivée seconde $f''$ est positive.
+\end{itemize}
+
+On peut trouver de manière analogue des propriétés sur la concavité.
+
+\begin{itemize}
+\item[$\bullet$] La fonction $f$ est concave.
+\item[$\bullet$]  La courbe représentative $C_f$ est entièrement située en-dessous de chacune de ses tangentes.
+\item[$\bullet$]  La fonction dérivé $f'$ est décroissante sur $J$.
+\item[$\bullet$] La dérivée seconde $f''$ est négative.
+\end{itemize}
+
+\end{prop}
+
+\subsection{Point d'inflexion}
+
+Certaines fonctions sont convexes sur un intervalle puis concaves sur un autre intervalle \emph{(ou inversement)}. On cherche à savoir à partir de quels $x$ il y a un changement entre convexité et concavité. Pour cela on remarque qu'une fonction continue ne peut changer entre convexité et concavité que quand la courbe représentative coupe la tangente. \\
+
+\emph{Effectivement, supposons que notre fonction soit convexe et qu'elle devienne concave à partir d'un certain $x$, alors forcément la courbe représentative est au dessus de ses tangentes avant $x$, si elle devient concave alors forcément la courbe représentative est en desous de ses tangentes  après $x$, donc elle coupe nécéssaire la tangente en $x$.}
+
+\begin{defn}
+Un point d’inflexion est un point où la courbe représentative d’une fonction coupe sa tangente (et donc change de convexité).
+\end{defn}
+
+\begin{prop}[Lien avec la dérivé seconde]
+Soit $f$ une fonction définie sur $I$, deux fois dérivable sur $I$ et soit $a \in I$.
+Si $f''$ s’annule pour $a$ et change de signe, alors la courbe graphique de $f$ admet un point d’inflexion de coordonnées $(a ; f(a))$.
+\end{prop}
+
+\newpage
+\section{Applications de la convexité à l'analyse}
+\subsection{Inégalité de Jensen}
+
+
+\begin{thm}[Inégalité de Jensen]
+Soit $f$ une fonction convexe sur un intervalle $I$. Pour tout $(x_1,x_2, \cdots , x_n) \in I^n $ et $(\lambda_1,\lambda_2, \cdots , \lambda_n) \in ]0;1]^n $ tel que $\sum_{i=1}^n \lambda_i =1$, on a
+
+$$f(\sum_{i=1}^{n} \lambda_i x_i) \ie \sum_{i=1}^n \lambda_i f(x_i)$$
+\end{thm}
+
+\begin{demo}
+On procède par récurrence sur $\mathbb{N}*$, soient I un intervalle, et $f : I \longrightarrow \mathbb{R}$ 
+convexe, $(x_1,x_2, \cdots , x_n) \in I^n $ et $(\lambda_1,\lambda_2, \cdots , \lambda_n) \in ]0;1]^n $ tel que $\sum_{i=1}^n \lambda_i =1$.\\
+
+\textbf{Initialisation :} Si $n=1$ on a trivialement $f(\lambda x_1)\ie \lambda_1f(x_1)$ car ici $\lambda_1=1$.\\
+
+\textbf{Hérédité : }On suppose ici que le résultat est vrai au rang $n \in \mathbb{N}^*$ fixé, montrons que ceci entraine l’inégalité pour le rang $n + 1$. On pose $T_n = \sum_{i=1}^n \lambda_i x_i $ et $S_n=\sum_{i=1}^n \lambda_i$  tels que $\dfrac{T_n}{S_n} \in I$ et $S_n + \lambda_{n+1} =1$.\\
+
+On sait que 
+$$f(\sum_{i=1}^{n+1} \lambda_i x_i =f( \sum_{i=1}^{n} \lambda_i x_i + \lambda_{n+1} x_{n+1} ) = f(T_n+ \lambda_{n+1} x_{n+1} )$$
+
+Par convexité de $f$ on  a
+$$f(S_n\dfrac{Tn}{Sn} + \lambda_{n+1} x_{n+1} ) \ie S_n f( \dfrac{T_n}{S_n}) + \lambda_{n+1} f(x_{n+1})$$ 
+par hypothèse de récurrence on a alors,
+
+$$ S_n f( \dfrac{T_n}{S_n}) + \lambda_{n+1} f(x_{n+1}) \ie S_n \sum_{i=1}^n \dfrac{\lambda_i x_i}{S_n} +  \lambda_{n+1} f(x_{n+1})$$
+
+d'où l'inégalité suivante, 
+
+$$f(\sum_{i=1}^{n} \lambda_i x_i) \ie \sum_{i=1}^n \lambda_i f(x_i)$$
+
+\end{demo}
+
+Ce théorème peut donner un résultat aussi sur les fonctions concaves rapidement puisque si $f$ est concave alors $-f$ est convexe. 
+
+Ainsi l'on obtient un corrolaire de ce théorème.
+
+\begin{cor}[Inégalité de Jensen pour les fonctions concaves]
+Soit $f$ une fonction concave sur un intervalle $I$. Pour tout $(x_1,x_2, \cdots , x_n) \in I^n $ et $(\lambda_1,\lambda_2, \cdots , \lambda_n) \in ]0;1]^n $ tel que $\sum_{i=1}^n \lambda_i =1$, on a
+
+$$f(\sum_{i=1}^{n} \lambda_i x_i) \se \sum_{i=1}^n \lambda_i f(x_i)$$
+\end{cor}
+
+\newpage
+
+\subsection{Inégalité arithmético-géométrique }
+
+Une inégalité bien connu en mathématique est l'inégalité arithmético-géométrique. Le but étant de comparer ces deux quantités pour des réels strictements positifs. Pour rappel, la moyenne arithmétique est pour des réels $x_1,x_2, \cdots , x_n$ est $\dfrac{x_1+x_2+\cdots+x_n}{n}$, et la moyenne géométriques est $\sqrt[n]{x_1x_2\cdots x_n}$.
+
+\begin{thm}[Inégalité arithmético-géométrique]
+Soit  $x_1,x_2, \cdots , x_n$ des réels strictements positifs alors 
+$$\sqrt[n]{x_1x_2\cdots x_n} \ie \dfrac{x_1+x_2+\cdots+x_n}{n} $$
+\end{thm}
+
+\begin{demo}
+On sait que $ln$ est une fonction concave, \emph{$ln''=(\dfrac{1}{x})'=\dfrac{-1}{x^2}$}  Posons $\lambda_1=\lambda_2=\cdots=\dfrac{1}{n}$ tel que $\sum_{i=1}^{n} \lambda_i =1$. En appliquant notre corrolaire on a donc 
+
+$$\dfrac{1}{n} ln(x_1) + \dfrac{1}{n} ln(x_2) + \cdots +\dfrac{1}{n} ln(x_n) \ie ln( \dfrac{1}{n}x_1 +\dfrac{1}{n}x_2 + \cdots + \dfrac{1}{n}x_n )$$
+
+Or d'après les propriétés élémentaires sur le logarithme cette inégalité est équivalente à
+
+$$ln(\sqrt[n]{x_1x_2\cdots x_n}) \ie ln( \dfrac{x_1+x_2+\cdots+x_n}{n} )$$
+
+L'exponentielle étant une fonction \emph{strictement} croissante, on peut l'appliquer à cette inégalité en conservant l'ordre et donc 
+
+$$\sqrt[n]{x_1x_2\cdots x_n} \ie \dfrac{x_1+x_2+\cdots+x_n}{n} $$
+
+qui est l'inégalité recherchée.
+\end{demo}
+
+
+
+\chapter{Continuité}
+\section{Fonction continue en un point, sur un intervalle}
+
+\begin{defn}
+ Soit $f$ une fonction définie sur un intervalle  $I$ et $a$ un nombre réel de $I$.
+\begin{itemize}
+ \item[$\bullet$] La fonction $f$ est dite \emph{continue en $a$} si elle admet en $a$ une limite égale à $f(a)$, c'est  à dire si $\lim_{x\rightarrow a}f(x)=f(a)$.
+\item[$\bullet$] $f$ est dite \emph{continue sur $I$} si elle est continue en tout réel $a\in I$.
+\end{itemize}
+\end{defn}
+
+\begin{exemple}
+ Ci-dessous la fonction $f$, définie par $f(x)=(x+2)(x-1)(x+3)$ sur $\mathbb{R}$, est continue sur $]-\infty;+\infty[$ alors que la fonction $g$ définie sur $]-\infty;-1]$ par $g(x)=f(x)$ et sur $]-1;+\infty[$ par $g(x)=f(x)-1$ n'est pas continue en $-1$.
+%% Graphique manquant
+\end{exemple}
+
+
+\begin{prop}
+ Si $f$ est une fonction définie sur un intervalle $I$ et dérivable en un réel $a\in I$, alors $f$ est continue en $a$. En particulier, si $f$ est dérivable sur $I$, alors $f$ est continue sur $I$.
+\end{prop}
+
+\begin{rem}
+ La réciproque n'est pas vraie comme le montre le contre exemple de la fonction racine carré en 0.
+\end{rem}
+
+
+\begin{prop}[continuité des fonctions de référence]
+\begin{itemize}
+ \item[$\bullet$] $x\mapsto \exp(x)$, les fonctions polynômes et la fonction valeur absolue sont continues sur $]-\infty;+\infty[$ ;
+\item[$\bullet$] $x\mapsto \sqrt{x}$ est continue sur $[0;+\infty[$ (alors qu'elle n'est dérivable que sur $]0;+\infty[)$ ;
+\item[$\bullet$] la fonction inverse est continue sur $]-\infty;0[$ et sur $]0;+\infty[$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+ \'A l'exception du cas de la fonction racine carré et de la valeur absolue, la dérivabilité de chacune des fonctions suffit pour assurer la continuité.\\
+Pour ce qui concerne la fonction racine carré, elle est dérivable donc continue sur $]0;+\infty[$. En outre $\sqrt{0}=0$ et pour tout $x$ réel tel que $0<x<1$, on sait que $0\leq\sqrt{x}\leq x$. Donc de $\lim_{x\rightarrow 0}x=0$ on déduit $\lim_{x\rightarrow 0}\sqrt{x}=0$ d'où la continuité en 0. Démonstration analogue pour la fonction valeur absolue.
+\end{demo}
+
+\section{Fonction dérivable $ \Longrightarrow $ fonction continue }
+
+\begin{prop}
+Soit $f$ une fonction dérivable en $a$ alors $f$ est continue en $a$.
+\end{prop}
+
+\begin{demo}
+Soit $f$ une fonction dérivable en $a$, alors le nombre $f'(a)$ existe, par suite $\limite{a} (x-a)f'(a)= 0$  nécéssairement.
+
+D'autre part $f'(a)= \limite{a} \dfrac{f(x)-f(a)}{x-a}$
+
+D'où
+ $$\limite{a} (x-a)f'(a) = \limite{a} (x-a)  \limite{a} \dfrac{f(x)-f(a)}{x-a} =  \limite{a} (x-a) \dfrac{f(x)-f(a)}{x-a} = \limite{a} f(x)-f(a)$$
+ 
+Donc $\limite{a} f(x)-f(a)=\limite{a} (x-a)f'(a)  =0$.
+ 
+
+
+\end{demo}
+
+\section{Théorème des valeurs intermédiaires}
+
+\subsection{Théorème des valeurs intermédiaires}
+
+\begin{thm}[Théorème des valeurs intermédiaires, admis]
+ Soit $f$ une fonction continue sur un intervalle $I$ et soit $[a;b]$ un intervalle inclus dans $I$. Alors, pour tout réel $k$ compris entre $f(a)$ et $f(b)$, il existe au moins un réel $c$ de l'intervalle $[a;b]$ tel que $f(x)=k$, c'est  à dire que $f$ prend au moins une fois toutes les valeurs intermédiaires entre $f(a)$ et $f(b)$.
+\end{thm}
+
+
+
+\begin{rem}
+ Avec les hypothèses précédentes, si O est compris entre $f(a)$ et $f(b)$, alors il existe \emph{au moins} un réel $c$ tel que $f(c)=0$. \\
+
+ $f(a)$ n'est pas nécessairement inférieur à $f(b)$.
+\end{rem}
+
+
+\begin{prop}
+ Soit $f$ une fonction continue \emph{strictement monotone} sur un intervalle $[a;b]$.Alors, pour tout $k$ compris entre $f(a)$ et $f(b)$, il existe \emph{un unique} réel $c\in[a;b]$ tel que $f(c)=k$.
+\end{prop}
+
+\begin{demo}[cas où $f$ est strictement croissante]
+ Le théorème des valeurs intermédiaires permet d'affirmer qu'il existe au moins un réel $c$ de $[a;b]$ tel que $f(c)=k$.\par
+Si $c'$ est un autre réel de $[a;b]$ tel que $c'<c$, $f$ strictement croissante implique que $f(c')<f(c)$ donc $f(c')\neq k$.\\
+De même, si $c'$ est un autre réel de $[a;b]$ tel que $c'>c$, $f$ strictement croissante implique $f(c')>f(c)$ donc $f(c')\neq k$.
+\end{demo}
+
+\begin{rem}{Cas particulier de l'équation $f(x)=0$}
+ Si $f$ est une fonction continue et strictement monotone sur $[a;b]$ telle que $f(a)\times f(b)<0$, alors l'équation $f(x)=0$ admet une unique solution sur $[a;b]$.
+\end{rem}
+
+\subsection{Généralisation à des intervalles quelconques}
+
+\begin{prop}
+Le théorème des valeurs intermédiaires admet les généralisations suivantes :
+
+\begin{itemize}
+\item[$\bullet$] Si $I=[a;+\infty[$ et $\lim_{x\rightarrow +\infty}f(x)=+\infty$ alors pour tout réel $k\geq f(a)$, l'équation $f(x)=k$ admet une solution dans l'intervalle $[a;+\infty[$.
+\item[$\bullet$] Si $I=[a;b[$ et $\lim_{x\rightarrow b}f(x)=l$ alors pour tout réel $k$ compris entre $f(a)$ et $l$ l'équation $f(x)=k$ admet une solution dans $[a;b[$.
+\item[$\bullet$] Si $I=[-\infty;b[$, $\lim_{x\rightarrow -\infty}f(x)=l$ et $\lim_{x\rightarrow b}f(x)=-\infty$ alors pour tout réel $k<l$, l'équation $f(x)=k$ admet une solution dans l'intervalle $]-\infty;b[$.
+\end{itemize}
+\end{prop}
+
+\begin{center}
+\begin{tabular}{ccc}
+ \begin{minipage}{6cm}
+  \begin{tabular}{|c|ccccc|}
+   \hline
+  $x$ & $a$ & & $c$ & & $+\infty$ \\
+   \hline
+   &  & &  & & $+\infty$ \\
+
+  & & & & $\nearrow$ &  \\
+
+  $f$ & & & $k$ &  & \\
+
+  & & $\nearrow$ & & & \\
+
+  & $f(a)$ & & & & \\
+\hline
+  \end{tabular}
+ \end{minipage}
+&
+ \begin{minipage}{6cm}
+  \begin{tabular}{|c|ccccc|}
+   \hline
+  $x$ & $a$ & & $c$ & & $b$ \\
+   \hline
+   &  & &  &  & $l$ \\
+
+  & & & & $\nearrow$ &   \\
+
+  $f$ & & & $k$ &  & \\
+
+  & & $\nearrow$ & & &  \\
+
+  & $f(a)$ & & & &  \\
+\hline
+  \end{tabular}
+ \end{minipage}
+&
+ \begin{minipage}{6cm}
+  \begin{tabular}{|c|ccccc|}
+   \hline
+  $x$ & $-\infty$ & & $c$ & & $b$ \\
+   \hline
+   & $l$ & &  & &  \\
+
+  & & $\searrow$ & & &   \\
+
+  $f$ & & & $k$ &  &  \\
+
+  & &  & & $\searrow$ &  \\
+
+  & & & &   & $-\infty$  \\
+\hline
+  \end{tabular}
+ \end{minipage}
+\end{tabular}
+\end{center}
+
+\section{Application de la continuité de fonction}
+\subsection{Convergence de suite et continuité de fonction}
+\begin{thm}[Image d’une suite convergente par une fonction continue] 
+Si $f$ est une fonction continue en $l$, limite d’une suite $\suite[u]$, alors la suite $(f(u_n))$ est définie à partir d'un certain rang et  converge vers $f(l)$.
+
+\end{thm}
+
+\begin{demo}
+On sait que $f$ est continue en $l$, c'est à dire que, pour toute précision demandé $\epsilon >0$ il existe $\eta_{\epsilon}>0$ tel que pour tout nombre $x$ $\eta_{\epsilon}$-proche de $l$ on a le nombre $f(x)$ qui est $\epsilon$-proche de $f(l)$.\\
+
+D'autre part, $u_n$ converge vers $l$, autrement dit pour n'importe qu'elle précision demandé $\epsilon'>0$ il existe un rang $N_{\epsilon'}$ à partir du quel $u_n$ est $\epsilon'$-proche de $l$.\\
+
+Posons $\epsilon'=\eta_{\epsilon}$, ainsi par définition de $\epsilon'$ on a pour tout $n\se  N_{\epsilon'}$ $u_n$ est $\eta_{\epsilon}$-proche de $l$. Par définition de $\eta_{\epsilon}$ on sait alors que  $f(u_n)$ est $\epsilon$-proche de $f(l)$, et ceux  pour tout $n\se  N_{\epsilon'}$.\\
+
+D'où la convergence de la suite $f(u_n)$ vers $f(l)$.
+\end{demo}
+
+\begin{prop}
+Soient $I \subset \mathbb{R}$ un intervalle, $f : I \longrightarrow I$ une fonction continue et $\suite[u]$ une suite définie par récurrence par $u_0 \in I $ et $u_{n+1}=f(u_n)$ pour tout $n \in \mathbb{N}*$ et convergeant $l \in I$.\\
+
+Alors $l$ est un point fixe de $f$, c'est à dire que $f(l)=l$.
+
+\end{prop}
+
+\begin{demo}
+La convergence de $\suite[u]$ vers $l$ implique deux choses : la première est que la suite $(u_{n+1})_{n\in \mathbb{N}}$ converge aussi vers $l$,
+ et la seconde est que $(f(u_n))_{n\in \mathbb{N}}$ converge vers $f(l)$ d'après le théorème précédent, par continuité de $f$ en $l$.
+ 
+  Or $u_{n+1} = f(u_n)$, et on en déduit par unicité de la limite que $l = f(l)$.
+\end{demo}
+
+
+\chapter{Logarithme népérien}
+
+
+\section{Des fonctions vérifiant $f(a \times b)=f(a)+
+f(b)$}
+
+ Historiquement, le logarithme népérien a été pour la
+première fois mis en évidence par l'\'Ecossais John
+\textsc{Napier} (en français Jean Néper..) au tout début du
+$XVII^{e}$ siècle. Afin de faciliter la vie des astronomes,
+navigateurs, financiers de l'époque qui étaient confrontés à des
+calculs...astronomiques, John rechercha une fonction qui puisse
+transformer des produits très compliqués à calculer en sommes plus
+abordables. Il a donc été amené à résoudre une \textit{équation
+fonctionnelle}, $i.e.$ il a recherché les fonctions $f$ vérifiant
+$f(a\times b)=f(a)+f(b)$
+
+\begin{comment}
+Il a pu alors établir des Tables de logarithmes, complétées au fil
+des ans par des potes mathématiciens (nous verrons comment ils ont
+pu se débrouiller en exercice). À partir de deux nombres $a$ et
+$b$, on lit sur les Tables leurs logarithmes $\ln a$ et $\ln b$;
+on calcule facilement $\ln a+ \ln b$ qui est égal à $\ln ab$, puis
+on cherche sur les Tables le nombre qui admet pour logarithme $\ln
+ab$ et qui est bien sûr $ab$.
+
+\end{comment}
+\begin{comment}
+\subsection{Existe-t-il des primitives de x $\mapsto$ 1/x~?}
+
+Autre problème~: nous connaissons des primitives des fonctions qui
+à $x$ associent respectivement $x^2$, $x^1$, $x^0$, $x^{-2}$,
+$x^{-3}$, etc. Vous avez tout de suite remarqué que nous avons
+oublié quelqu'un~: quelles peuvent être les primitives de la
+fonction qui à $x$ associe $x^{-1}=1/x$~? Une rapide enquête
+mathématique nous conduit à trouver qu'il s'agit en fait de
+fonctions vérifiant l'équation fonctionnelle du copain John. Nous
+le verifierons là encore en exercice, et c'était l'approche au
+programme jusqu'à l'année dernière.
+
+\subsection{Quelle est la réciproque de la fonction
+exponentielle~?}
+
+
+Cette  année, comme  d'habitude, nous  roulons pour  le  nucléaire. Nous
+avons  déjà   défini  une  fonction   obéissant  à  la   \textsl{loi  de
+décomposition radioactive}, à savoir  la fonction exponentielle. Mais de
+nouveaux  problèmes  se posent  au  moment  de  construire de  nouvelles
+centrales~:  dans  combien  de   milliards  d'années  les  habitants  de
+Tchernobyl ne  risqueront plus d'attraper  un cancer de la  thyroïde en
+ingérant les légumes irradiés de  leurs potagers. Le Physicien est alors
+amené à résoudre  une équation d'inconnue $y$ du  type $e^y=32$ Quel est
+donc  ce  $y$  dont  l'exponentielle vaut  32~?  Fabrice  \textsc{Couenne},
+célèbre physicien du  $XXI^e$ siècle, vous a déjà  donné la réponse~: on
+l'appelle $\ln 32$.
+
+\end{comment}
+%Voici un extrait des tables de logarithmes publiées au début du XVII%\eme
+%siècle par John \textsc{Napier} himself :
+
+%\begin{center}
+%\vspace{-1cm}
+%\includegraphics[width=0.7\linewidth]{napier_logtable}
+%\end{center}
+
+
+% 
+
+%
+%Plus généralement, nous allons voir si le mécanisme qui à $e^y$
+%associe $y$ est une fonction et si oui découvrir ses propriétés
+%qui seront bien sûr celle du logarithme de John.
+%
+%
+%
+
+\vspace{0.5cm}
+\section{Fonction réciproque et théorème de la bijection}
+Survolons donc la notion de \textit{fonction réciproque}. La
+fonction exponentielle est continue et strictement croissante de
+$\mathbb{R}$ vers $]0,+\infty[$. Donc, d'après notre bon vieux
+\textsl{théorème de LA valeur intermédiaire} (appelé en d'autres
+temps théorème de la bijection),  pour tout $x\in]0,+\infty[$, il
+existe un unique réel $y$ tel que $\exp(y)=x$. Compte tenu de
+l'existence et de l'unicité de ce réel, on peut donc
+\textit{définir} une fonction qui à tout $x$ dans $]0,+\infty[$
+associe l'unique réel $y$ tel que $\exp(y)=x$.\\
+ 
+ C'est la fonction
+réciproque de la fonction exponentielle, on la note $ln$ (logarithme
+népérien)
+\begin{center}ln~:
+\begin{tabular}{l} $]0,+\infty[\to\mathbb{R}$\\
+$ x\mapsto \ln x$
+\end{tabular}
+\end{center}
+
+%Après ça, tout coule de source...
+
+
+
+
+
+
+
+\section{Construction du logarithme népérien}
+
+
+\begin{thm}[définition du logarithme népérien]
+    La fonction exponentielle admet une
+fonction réciproque défine sur $]0,+\infty[$ et à valeurs dans
+$\bbr$ appelée fonction logarithme népérien. On note $\ln x$
+l'image d'un réel strictement positif par cette fonction.
+Alors,
+\[\text{pour tout } x>0,\ e^{\ln x}=x \quad \text{et}\quad \text{pour tout réel }
+x,\ \ln e^x=x\] 
+    \end{thm}
+    
+
+\section{Conséquence sur la représentation graphique}
+\begin{center}
+\includegraphics{../Figures/expo.1}    
+\end{center}
+    
+\section{Variation du logarithme népérien}
+
+\begin{prop}[sens de variation]
+   La fonction ln est dérivable sur
+$]0,+\infty[$ et $\ln'(x)=\dfrac{1}{x}$ pour tout $x\in]0,+\infty[$. \\ On
+en déduit que la fonction ln est strictement croissante sur
+$]0,+\infty[$.
+    \end{prop}
+
+\begin{demo}
+Formellement, on a $f \circ f^{-1} (x) = x$, dérivons cette relation, 
+on obtient alors $(f^{-1})' (x) f'\circ f^{-1} (x)  =1 $ autrement dit, 
+$(f^{-1})'(x) =\dfrac{1}{f' \circ f^{-1} (x)}$.
+
+Posons $f(x)=e^x$ alors $f^{-1} (x) = ln x$ et $f'(x)=e^x$, par suite 
+$f'\circ f^{-1} (x)=e^{lnx}=x$ d'où $ln x ' =\dfrac{1}{x}$.
+
+Ainsi, si la fonction $ln$ est dérivable elle vaut nécéssairement $\dfrac{1}{x}$.
+
+\end{demo}
+
+
+\section{Propriétés du logarithme népérien}
+
+\begin{prop}[relation fondamentale]
+    Pour tout $a>0$ et tout $b>0$, on a
+$$\ln ab = \ln a+\ln b$$
+De plus $$\ln1=0$$
+    \end{prop}
+
+
+
+
+\begin{prop}[propriétés algébriques]
+    $$\ln (1/a)=-\ln a \qquad
+\quad\ln(a/b)=\ln a-\ln b\qquad \quad\ln a^p=p\ln a\quad
+\text{avec } p\in\mathbb{Q}$$
+    \end{prop}
+\section{Limites du logarithme népérien et croissances comparées}
+
+
+\begin{prop}[limite à l'infini]
+     $$\limpinf  \ln x=+\infty$$
+    \end{prop}
+
+
+\begin{prop}[croissances comparées]
+D'une part~:
+
+    $$\limpinf \dfrac{\ln x}{x}=0$$
+
+Plus généralement, pour tout entier naturel $n$ non nul $$\limpinf\fr{\ln x}{x^n}=0\quad \limpinf \fr{e^x}{x^n}=+\infty\quad
+\limite{0}x^n\ln x=0\quad \limite{-\infty}x^ne^x=0$$
+
+\end{prop}
+
+\begin{demo}[preuve de $ \limite{0} x ln(x)$ ]
+On sait que, $$ x ln(x) = \dfrac{1}{x} (- ln( \dfrac{1}{x} )) $$ 
+ainsi, 
+$$ \limite{0} x ln(x)= \limite{0} \dfrac{1}{x} (- ln( \dfrac{1}{x} ))$$
+En posant $t=\dfrac{1}{x}$   on a quand $x$ tend vers 0 \emph{(à droite)} $t$ qui tend vers $+ \infty$, d'où, 
+ $$ \limite{0} x ln(x)=\limite{0} \dfrac{1}{x} (- ln( \dfrac{1}{x} )) =- \limpinf \dfrac{ln(t)}{t} = 0^- $$ 
+ 
+ 
+\end{demo}
+
+\begin{prop}[limite en zéro et taux de variation]
+    $$\limite{0}\frac{\ln(x+1)}{x}=1$$
+    \end{prop}
+
+
+
+\section{Logarithmes et exponentielles d'autres bases}
+
+
+\begin{defn}[puissance réelle (exponentielles de base quelconque)]
+    Pour tout réel $a>0$ et pour tout réel $b$, on pose $a^b=e^{b\ln a}$
+    
+    \vspace{3mm}
+    \end{defn}
+  
+
+\begin{defn}[logarithme décimal]
+    La fonction $\log\ :\ x\mapsto \fr{\ln x}{\ln 10}$ définie pour $x>0$ est appelée \textbf{fonction logarithme décimal}
+    \end{defn}
+  
+\chapter{Trigonom\'etrie}
+\section{Lignes trigonom\'etriques}
+
+\subsection{Cosinus et Sinus}
+\subsubsection*{Rappels}
+\begin{minipage}{10cm}
+Soit $\oij$ un rep\`ere orthonormal direct (c'est-à-dire tel que $(\vect{\imath},\vect{\jmath})=\frac{\pi}{2}+2k\pi$), $\calc$ le cercle trigonom\'etrique de centre $O$.
+\par $A$ et $B$ sont les points tels que $\vect{OA}=\vect{\imath}$ et $\vect{OB}=\vect{\jmath}$.
+
+\vspace{1ex}
+\begin{defn}
+Pour tout r\'eel $x$, il existe un unique point $M$ de $\calc$ tel que $x$ soit une mesure de l'angle $(\vect{\imath},\vect{OM})$.
+\par $\cos x$ est l'abscisse de $M$ dans $\oij$.
+\par $\sin x$ est l'ordonn\'ee de $M$ dans $\oij$.
+\end{defn}
+\end{minipage}
+\hfill
+\begin{minipage}{4cm}
+\includegraphics[scale=1.3]{../Figures/CoursTrigoFigures.1}
+\end{minipage}
+
+\subsubsection*{Propri\'et\'es imm\'ediates}
+\begin{prop}
+Pour tout $x\in\R$ :
+
+\begin{tabular}{*{3}{m{0.3\linewidth}}}
+$-1\ie \cos x \ie 1$ \par $-1\ie \sin x \ie 1$ & $\cos(x+2k\pi)=\cos x$ \par $\sin(x+2k\pi)=\sin x$ & $\cos^2 x+\sin^2x=1$
+\end{tabular}
+\end{prop}
+
+\begin{demo}
+$M$ appartient au cercle $\calc$ dont une \'equation cart\'esienne est $x^2 + y^2 = 1$. Les coordonn\'ees de M sont $(\cos x;\sin x)$ et v\'erifient l?\'equation de $\calc$ d'o\`u le r\'esultat.
+\end{demo}
+
+
+
+\subsubsection*{Cosinus et sinus d'un angle orient\'e de vecteurs}
+Soit $(\vect{u},\vect{v})$ un angle orient\'e et $x$ une de ses mesures. Les autres mesures de $(\vect{u},\vect{v})$ sont donc de la forme $x+2k\pi$. Or $\cos(x+2k\pi)=\cos x$ et $\sin(x+2k\pi)=\sin x$. On a donc la d\'efinition suivante :
+
+\vspace{1ex}
+\begin{defn}
+Le cosinus (resp. le sinus) d'un angle orient\'e de vecteurs est le cosinus (resp. le sinus) d'une quelconque de ses mesures.
+\end{defn}
+
+\newpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Angles associ\'es}
+L'utilisation de sym\'etries dans le cercle trigonom\'etrique permet d'\'etablir :% les relations suivantes :
+
+\vspace{1ex}
+\begin{prop}
+Pour tout r\'eel $x$,
+
+\vspace{1ex}
+$\sysd{\cos(-x)=\cos x}{\sin(-x)=-\sin x}$ \hfill $\sysd{\cos(x+\pi)=-\cos x}{\sin(x+\pi)=-\sin x}$ \hfill $\sysd{\cos(\pi-x)=-\cos x}{\sin(\pi-x)=\sin x}$
+
+\hfill $\sysd{\cos\left(\dfrac{\pi}{2}-x\right)=\sin x}{\sin\left(\dfrac{\pi}{2}-x\right)=\cos x}$ \hfill $\sysd{\cos\left(\dfrac{\pi}{2}+x\right)=-\sin x}{\sin\left(\dfrac{\pi}{2}+x\right)=\cos x}$ \hfill\phantom{.}
+
+\end{prop}
+
+\includegraphics{../Figures/CoursTrigoFigures.2} \hfill \includegraphics{../Figures/CoursTrigoFigures.3}
+
+\subsection{Valeurs particuli\`eres}
+À l'aide de consid\'erations g\'eom\'etriques, on peut obtenir les valeurs suivantes :
+
+\renewcommand{\arraystretch}{3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+$x$ & 0 & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ & $\pi$ \\ \hline
+$\cos(x)$ & 1 & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & 0 & -1 \\ \hline
+$\sin(x)$ & 0 & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ & 1 & 0 \\ \hline
+\end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}
+\subsection{Formules d'addition}
+\begin{prop}
+Quels que soient les nombres r\'eels $a$ et $b$,\\
+
+\vspace{-1ex}
+\begin{minipage}{0.48\linewidth}
+\begin{equation}
+\cos(a-b)=\cos a \cos b + \sin a \sin b
+\end{equation}
+\begin{equation}
+\cos(a+b)=\cos a \cos b - \sin a \sin b
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.48\linewidth}
+\begin{equation}
+\sin(a-b)=\sin a \cos b - \cos a \sin b
+\end{equation}
+\begin{equation}
+\sin(a+b)=\sin a \cos b + \cos a \sin b
+\end{equation}
+\end{minipage}
+\end{prop}
+
+\begin{demo}
+\underline{\'equation (1.1)}: Soit $\oij$ un rep\`ere orthonormal, $\calc$ le cercle trigonom\'etrique de centre $O$ et $A$ et $B$ les points de $\calc$ tels que $(\vect{\imath},\vect{OA})=a$ et $(\vect{\imath},\vect{OB})=b$. 
+
+\par Calculons de deux façons diff\'erentes le produit scalaire $\vect{OA}.\vect{OB}$\\
+
+\begin{itemize}
+\item $\vect{OA}.\vect{OB}=OA\times OB\times\cos(\vect{OA},\vect{OB})$
+\par Or $(\vect{OA},\vect{OB})=(\vect{OA},\vect{\imath})+(\vect{\imath},\vect{OB})+2k\pi=-a+b+2k\pi$ et $OA=OB=1$
+\par Ainsi $\vect{OA}.\vect{OB}=1\times1\times\cos(b-a)=\cos(a-b)$
+\item Les coordonn\'ees de $\vect{OA}$ sont $\cp{\cos a}{\sin a}$ et les coordonn\'ees de $\vect{OB}$ sont $\cp{\cos b}{\sin b}$
+\par On a donc : $\vect{OA}.\vect{OB}=\cos a \cos b + \sin a \sin b$
+\end{itemize}
+
+\underline{Conclusion }: $\cos(a-b)=\cos a \cos b + \sin a \sin b$\\
+
+\underline{\'equation (1.2)}: $\cos(a+b)=\cos(a-(-b))=\cos a \cos (-b) + \sin a \sin (-b)=\cos a \cos b - \sin a \sin b$\\
+
+\underline{\'equation (1.3) }: $\sin(a-b)=\cos\left( \dfrac{\pi}{2}-(a-b) \right)=\cos\left( \left(\dfrac{\pi}{2}-a \right)+b\right) = \cos\left(\dfrac{\pi}{2}-a \right)\cos b-\sin\left(\dfrac{\pi}{2}-a \right)\sin b = \sin a \cos b - \cos a \sin b$ \\
+
+\underline{\'equation (1.4) }: $\sin(a+b)=\sin(a-(-b))=\sin a \cos (-b) - \cos a \sin (-b) = \sin a \cos b + \cos a \sin b$
+\end{demo}
+
+
+%%%%%%%%%%%%%%%%%%AJOUT AVRIL 2008%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Formules de duplication}
+\begin{prop}
+Quel que soit le r\'eel $x$,
+\begin{align}
+ \cos(2x)&=\cos^2x-\sin^2x=2\cos^2x-1=1-2\sin^2x\label{cos2x} \\
+ \sin(2x)&=2\sin x\cos x\label{sin2x}
+\end{align}
+\end{prop}
+
+\begin{demo}
+(\ref{cos2x}) : Quel que soit le r\'eel $x$,
+ \[\cos(2x)=\cos(x+x)=\cos x\cos x-\sin x\sin x=\cos^2x-\sin^2x\]
+En utilisant les relations $\sin^2x=1-\cos^2x$ et $\cos^2x=1-\sin^2x$, on obtient successivement :
+\[\cos(2x)=2\cos^2x-1\quad\text{puis}\quad\cos(2x)=1-2\sin^2x\]
+(\ref{sin2x}) : Quel que soit le r\'eel $x$,
+ \[\sin(2x)=\sin(x+x)=\sin x\cos x+\cos x\sin x=2\sin x\cos x\]
+
+\end{demo}
+
+\section{R\'esolution d'\'equations}
+\begin{prop}
+Quels que soient les r\'eels $a$ et $b$,
+
+%\begin{equation*}
+ $\cos a=\cos b \Leftrightarrow
+   \left|\text{ou }
+     \begin{array}{@{}l}
+	 a=b+k\times2\pi \\
+	 a=-b+k\times2\pi
+     \end{array}
+   \right.$
+     \hfill et\hfill
+ $\sin a=\sin b \Leftrightarrow
+   \left|\text{ou }
+     \begin{array}{@{}l}
+	 a=b+k\times2\pi \\
+	 a=\pi-b+k\times2\pi
+     \end{array}
+   \right.$
+%\end{equation*}
+\end{prop}
+
+\begin{exemple}
+R\'esoudre dans $]-\pi~;~\pi[$ l'\'equation $\sin\left(x-\frac{\pi}{3}\right)=\frac{1}{2}$
+\end{exemple}
+\begin{align*}
+\sin\left(x+\frac{\pi}{3}\right)=\frac{1}{2} &\Leftrightarrow \sin\left(x-\frac{\pi}{3}\right)=\sin \frac{\pi}{6}\\
+&\Leftrightarrow
+    \left|\text{ou }
+     \begin{array}{@{}l}
+	 x-\frac{\pi}{3}=\frac{\pi}{6}+k\times2\pi \\
+	 x-\frac{\pi}{3}=\pi-\frac{\pi}{6}+k\times2\pi
+     \end{array}
+   \right.\\
+&\Leftrightarrow
+    \left|\text{ou }
+     \begin{array}{@{}l}
+	 x=\frac{\pi}{2}+k\times2\pi \\
+	 x=\frac{7\pi}{6}+k\times2\pi
+     \end{array}
+   \right.
+\end{align*}
+Sur l'intervalle $]-\pi~;~\pi[$, on a $\cals=\{\frac{\pi}{2};-\frac{5\pi}{6}\}$
+
+%%%%%%%%%%%%%%%%%%FIN AJOUT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Rep\'erage polaire}
+\subsection{Coordonn\'ees polaires d'un point}
+\begin{minipage}{11cm}
+Soit $\oij$ un rep\`ere orthonormal direct. Si $M$ est un point distinct du point $O$ alors $M$ peut-\^etre rep\'er\'e par l'angle $\theta=(\vect{\imath},\vect{OM})$ et la longueur $r=OM$.
+\par R\'eciproquement, la donn\'ee d'un couple $(r;\theta)$ avec $r>0$ et $\theta\in\R$ d\'etermine un seul point $M$ tel que $\theta=(\vect{\imath},\vect{OM})$ et $r=OM$.
+\end{minipage}
+\hfill
+\begin{minipage}{3.2cm}
+\includegraphics[scale=1.3]{../Figures/CoursTrigoFigures.4}
+\end{minipage}
+
+%\vspace{1ex}
+\begin{defn}
+Pour tout point $M$ distinct de $O$, un couple $(r;\theta)$ tel que $\theta=(\vect{\imath},\vect{OM})$ et $r=OM$ est appel\'e couple de coordonn\'ees polaires de $M$ dans le rep\`ere polaire $(O,\vect{\imath})$.
+\end{defn}
+
+
+\subsection{Lien entre coordonn\'ees cart\'esiennes et polaires}
+Soit $\oij$ un rep\`ere orthonormal direct.
+
+\begin{prop}
+Si $M$ est un point ayant pour coordonn\'ees cart\'esiennes $(x;y)$ dans le rep\`ere $\oij$ et pour coordonn\'ees polaires $(r;\theta)$ alors :
+\begin{center}
+$r=\sqrt{x^{2}+y^{2}}$ \qquad  ; \qquad $x=r\cos \theta$ \qquad ; \qquad $y=r\sin \theta$
+\end{center}
+\end{prop}
+
+\begin{demo}
+Notons $\calc$ le cercle trigonom\'etrique de centre $O$. La demi-droite $[OM)$ coupe $\calc$ en $N$. On a donc $\vect{OM}=r\vect{ON}$.
+\par $N\in\calc$ donc ses coordonn\'ees cart\'esiennes sont $(\cos \theta ; \sin \theta)$. Celles de $M$ sont donc $(r\cos \theta ; r\sin \theta)$.
+\par Par unicit\'e des coordonnées, $x=r\cos \theta$ et $y=r\sin \theta$.
+
+De plus $OM^{2}=x^{2}+y^{2}$ et $OM=r$ donc $r^{2}=x^{2}+y^{2}$.
+\end{demo}
+
+
+\section{Etude de fonctions trigonométriques }
+\subsection{Ensemble de définition, périodicité et parité }
+\begin{prop}
+Les fonction sinus et cosinus sont définies, continues, $2\pi$-périodiques et dérivables sur $\mathbb{R}$.
+\begin{itemize}
+\item[$\bullet$] La fonction cosinus est paire. Sa courbe est donc symétrique par rapport à l?axe des ordonnées en repère orthogonal.
+\item[$\bullet$] La fonction sinus est impaire. Sa courbe est donc symétrique par rapport à l?origine du repe?re.
+ \end{itemize}
+\end{prop}
+\subsubsection{Courbes représentatives}
+\begin{center}
+\includegraphics{../Figures/trigo.1}\\
+\vspace{1cm}
+\includegraphics{../Figures/trigo.2}
+\end{center}
+\subsection{Dérivées et variation de fonctions trigonométriques  }
+
+\begin{thm}
+Pour tout $x \in \mathbb{R}$, $\sin'(x)=cos(x)$ $\cos'(x)=- \sin(x)$
+\end{thm}
+
+%\begin{tikzpicture}
+  % \tkzTabInit{$x$ /1, $-\sin(x)$ /1, $\cos(x)$ /1.5} {$-\pi$ , $0$, $\pi$}
+  % \tkzTabLine{, +, 0, -, } 
+  % \tkzTabVar{+/ 1, 1, -/ -1}
+ %  \tkzTabIma{1}{3}{2}{$1$}
+%\end{tikzpicture}
+
+\subsubsection{Tableau de variation}
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $\cos(x)$ / 1, $\sin(x)$ / 1.5}{$-\pi$, $-\dfrac{\pi}{2}$, 0,$\dfrac{\pi}{2}$, $\pi$}
+   \tkzTabLine{, -, z,,+, , z,- }
+   \tkzTabVar{+/ 0 ,-/ -1, R/ ,+/ 1 , -/ 0,}
+   \tkzTabIma{2}{4}{3}{$0$}
+\end{tikzpicture}
+
+\vspace{5mm} 
+ 
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $- \sin(x)$ / 1, $\cos(x)$ / 1.5}{$-\pi$, $-\dfrac{\pi}{2}$, 0,$\dfrac{\pi}{2}$, $\pi$}
+   \tkzTabLine{, +,,+ ,z, -, ,- }
+   \tkzTabVar{-/ -1 , R/, +/ 1 ,R/  , -/ -1,}
+ \tkzTabIma{1}{3}{2}{$0$}
+  \tkzTabIma{3}{5}{4}{$0$}
+\end{tikzpicture}
+
+\end{center}
+
+
+\chapter{Primitives et équations différentielles}
+\section{Primitives}
+
+\begin{defn}
+On s'interesse à l'équation fonctionnelle $y'=f$ sur un certain intervalle $I$, on souhaite résoudre cette équation en $y$, c'est à dire toutes les fonctions dérivables telles que leurs dérivés soit égales à $f$ en tout point de $I$. Une solution de cette équation est appelée \underline{primitive} de la fonction $f$.
+\end{defn}
+
+On va se poser plusieurs questions, la première portant sur l'existence de solutions? Sous quels condition? La seconde porte sur l'unicité d'une solution? Si non, combien en existent-ils?
+
+\subsection{Existence}
+\begin{thm}[admis]
+Soit $f$ une fonction continue sur un intervalle $I$, alors $f$ admet une primitive sur $I$
+\end{thm}
+
+\subsection{Unicité}
+
+\begin{thm}
+Si $f$ admet une primitive sur un intervalle $I$, alors $f$ admet une infinité de primitive sur $I$.
+\end{thm}
+
+\begin{thm}[Caractérisation des primitives]
+Soit $F$ et $\overline{F}$ deux primitives de $f$ alors $F$ et  $\overline{F}$  diffèrent d'une constante.
+\end{thm}
+
+\begin{demo}
+Soit $H=F-\overline{F}$, alors $H$ est dérivable car somme de fonctions dérivable, et donc l'on a une suite d'égalité de fonction
+$$H'=F'-\overline{F}'=f-f=0$$  
+Ainsi la dérivé de $H$ est nulle, autrement dit $H$ n'a pas de variation, elle est donc constante, notons cette constante $K$.
+
+Alors on a pour tout $x\in I$ $F(x)-\overline{F}'(x)=K$. 
+\end{demo}
+
+Ainsi pour une fonction $f$ donnée, nous avons "juste" à trouver une seule primitive de $f$ pour toute les trouver.
+
+\subsection{Problème dit: de Cauchy}
+Un moyen de "fixé" une primitive pour parler d'unicité est d'imposer une condition supplémentaire, comme de fixer l'image d'un point de $I$ par la primitive.
+
+\begin{thm}{Problème de cauchy}
+Soit $k$ un réel et $f$ une fonction continue sur un intervalle $I$ et $t_0\in I$, alors il existe une unique primitive $F$ tel que $F(t_0)=k$.
+\end{thm}
+
+
+\begin{demo}
+Soit $k$ un réel et $f$ une fonction continue sur un intervalle $I$ et $t_0\in I$
+
+\underline{Existence:} 
+D'après le théorème 1, il existe une primitive $F$ sur $I$, on pose $G$ une fonction définie sur $I$ telle que $G(x)=F(x)-F(t_0)+k$ alors on remarque que $G'=f$ et que $G(t_0)=F(t_0)$.
+
+ \underline{Unicité:}
+Supposons par l'absurde, qu'il existe $H$ une primitive de $f$ telle que $H(t_0)=k$ avec $H\neq G$.\\
+
+Par le théorème 3, pour tout $x \in I$ $H(x)-G(x)=a$, avec $a \neq 0$ nécéssairement puisque $H\neq G$. Or $H(t_0)-G(t_0)=k-k=0$ ce qui est absurde. 
+\end{demo}
+\newpage
+
+\subsection{Primitives des fonctions usuellles}
+
+\renewcommand\arraystretch{2}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+% after \\ : \hline or \cline{col1-col2} \cline{col3-col4} ...
+ Fonction $f$     &Fonction primitive $F$& Intervalle   \\
+ \hline
+ \rule[-2.5ex]{0pt}{6ex}
+$x^n$, $n\in{\mathbb N}$  &$\displaystyle\frac{x^{n+1}}{n+1}$&${\mathbb R}$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}
+$\displaystyle\frac{1}{x}$ &$\ln\vert x\vert$&$]-\infty,0[$ ou $]0,+\infty[$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}
+$\displaystyle\frac{1}{x^n}=x^{-n}$, $n\in{\mathbb N}\setminus\{0,1\}$  &$\displaystyle\frac{x^{-n+1}}{1-n}=\frac{1}{(1-n)x^{n-1}}$&$]-\infty,0[$ ou $]0,+\infty[$  \\
+\hline
+\rule[-2.5ex]{0pt}{6ex}
+$x^{\alpha}$, $\alpha>0$  &$\displaystyle\frac{x^{\alpha+1}}{\alpha+1}$&$]0,+\infty[$  \\
+ \hline\hline
+ $e^x$   &$e^x$&${\mathbb R}$  \\
+ \hline\hline
+ $\cos x$    &$\sin x$&${\mathbb R}$  \\
+ \hline
+ $\sin x$     &$-\cos x$&${\mathbb R}$  \\
+  \hline
+\rule[-2.5ex]{0pt}{6ex}  $1+\tan^2( x)= \displaystyle\frac{1}{\cos^2(x)}$&$\tan x$ &$]-\frac{\pi}{2}+k\pi;\frac{\pi}{2}+k\pi[$ avec $k\in{\mathbb Z}$  \\
+ \hline
+  \hline
+ $\cosh x$    &$\sinh x$&${\mathbb R}$  \\
+ \hline
+ $\sinh x$   &$\cosh x$&${\mathbb R}$  \\
+ \hline
+ \rule[-2.5ex]{0pt}{6ex}  $1-\tanh^2(x)= \displaystyle\frac{1}{\cosh^2(x)}$&$\tanh x$&${\mathbb R}$  \\
+ \hline\hline
+\rule[-2.5ex]{0pt}{6ex}     $-\displaystyle \displaystyle\frac{1}{\sqrt{1-x^2}}$&$\arccos x$ &$]-1,1[$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}   $\displaystyle\frac{1}{\sqrt{1-x^2}}$& $\arcsin x$ &$]-1,1[$  \\
+ \hline
+\rule[-2.5ex]{0pt}{6ex}     $\displaystyle\frac{1}{1+x^2}$& $\arctan x$&${\mathbb R}$  \\
+ \hline
+\end{tabular}
+\end{center}
+
+\newpage
+\textbf{Bref historique :} C'est au début du  XVII\up{ème} siècle, avec le calcul différentiel et intégral de Newton et
+Leibniz, qu'apparut la notion d'équations différentielles.
+
+Elles sont issues de problèmes de géométrie et de
+mécanique. Au début du XVIII\up{ème}  siècle les méthodes classiques de résolution de certaines équations
+(linéaires et de Bernouilli notamment) furent découvertes.
+
+Avec le développement de la mécanique, la résolution des équations différentielles devient une branche
+importante des mathématiques (grâce à Euler, Lagrange, Laplace ?).
+
+
+Une \underline{équation différentielle} est une équation liant une fonction et sa ou ses dérivée(s).\\
+\underline{Résoudre} une telle équation signifie déterminer toutes les fonctions qui satisfont à l'égalité.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Équations différentielles d'ordre 1}
+
+\begin{defn}
+Soient $a$, $b$ et $c$ trois fonctions
+définies sur un intervalle $I$ de $\R$ et $y$ la fonction inconnue, définie et dérivable sur l'intervalle $I$.
+On suppose de plus que la fonction $a$ ne s'annule pas sur l'intervalle $I$. \\
+On appelle \underline{équation différentielle linéaire du premier
+ordre} toute équation du type :
+$$(E):a(x)y'(x)+b(x)y(x) =c(x).$$
+
+\end{defn}
+
+On se posera quelques questions sur l'existence, l'unicité de solution comme pour la notion de primitive.
+
+
+\begin{tabular}{||l}
+Voici le genre d'exercice type que l'on rencontrera. \\
+
+On considère l'équation différentielle $(E):y'-2y=xe^x$ où $y$ est une fonction de la variable réelle $x$, \\
+définie et dérivable sur $\R$, et $y'$ la fonction dérivée de $y$. \\
+1. Déterminer les solutions définies sur $\R$ de l'équation différentielle $(E_0):y'-2y=0$. \\
+2. Soit $g$ la fonction définie sur $\R$ par $g(x)=(-x-1)e^x$. \\
+\hspace*{0.3cm} Démontrer que la fonction $g$ est une solution particulière de l'équation différentielle $(E)$. \\
+3. En déduire l'ensemble des solutions de l'équation différentielle $(E)$. \\
+4. Déterminer la solution $f$ de l'équation différentielle $(E)$ qui vérifie la condition initiale $f(0)=0$. \\
+\end{tabular}
+
+
+
+\begin{exemple}
+Dans cet exemple, les fonctions $a$, $b$ et $c$ sont définies sur $\R$ par :
+\begin{itemize}
+   \item $a(x)=1$, $b(x)=-2$ et $c(x)=xe^x$.
+\end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\subsection{Solution générale de l'équation sans second membre}
+
+Soit $(E_0):a(x)y'(x)+b(x)y(x)=0$, cette équation est appelée équation différentielle sans second membre, ou encore équation homogène associée à $(E)$. \\
+$a$ étant une fonction ne s'annulant pas, on peut encore écrire 
+$$(E_0):y'(x)+\dfrac{b(x)}{a(x)}y(x)=0$$.
+
+\begin{thm}
+   $a$ et $b$ étant des fonctions dérivables sur $I$ avec $a$ ne s'annulant pas sur $I$, l'ensemble des solutions de l'équation différentielle $(E_0):y'(x)+\dfrac{b(x)}{a(x)}y(x)=0$ est l'ensemble des fonctions $y$ définies sur $I$ par $y(x)=ke^{-G(x)}$ où $k$ est une constante réelle et $G$ une primitive de le fonction $\gamma(x)=\dfrac{b(x)}{a(x)}$. \\ 
+   
+ On note encore  l'ensemble des solutions de l'équation homogène associé à $(E)$ l'ensemble $\cals_h=\{  ke^{-G(x)} \vert k\in \mathbb{R} \}$.
+  
+\end{thm}
+\subsection{Applications : les équations différentielles du type $y'-ay=0$ }
+
+Soit $a$ une constantes non nulles, alors soit l'équation homogène $(E_0): y'-ay=0 $. \\
+
+Une primitive de la fonction constante $\gamma$ définie par $\gamma(x)=-a$ est $G(x)=-ax$. \\
+
+L'ensemble des solutions à l'équation homogène $(E_0): y'-ay=0 $,\\
+ noté $\cals_h$ est égal à $\{Ke^{ax} \vert  K\in \mathbb{R} \; \text{quelconque} \}$
+
+
+
+\begin{exemple}
+Dans l'exemple type, on souhaite résoudre $(E_0):y'(x)-2y(x)=0$. \\
+On a $\gamma(x)=-2$ et donc $G(x)=-2x$. La solution générale est alors du type $y_0(x)=ke^{2x}$.
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Solution particulière de l'équation différentielle $(E)$}%
+
+\begin{defn}
+On appelle \underline{solution particulière} de l'équation différentielle $a(x)y'(x)+b(x)y(x)= c(x)$ toute fonction $y$ vérifiant cette équation.
+\end{defn}
+
+Dans les sujets, toutes les indications permettant d'obtenir une solution particulière sont en générales données. Bien souvent, une fonction est proposée et il suffit de vérifier que c'est une solution particulière de $(E)$, c'est à dire de remplacer les "$y$" par la fonction proposée dans l'équation homogène (sans second membre), et de vérifier que l'on obtient bien le second membre.\\
+
+Sinon, il est vivement conseillé d'apprendre la méthode de la variation de la constante, méthode très efficace quand il s'agit de trouver une solutions particulière.
+
+\begin{exemple}
+Dans l'exemple, on nous demande de montrer que la fonction $g$ est une solution particulière de $(E)$ :
+\begin{itemize}
+   \item Calcul de la dérivée : \\
+   \hspace*{0.3cm} $g(x)=(-x-1)e^x$ donc $g'(x) =(-1)e^x+(-x-1)e^x =(-x-2)e^x$.
+   \item Remplacement dans l'équation homogène : \\
+   \hspace*{0.3cm} $g'(x)-2g(x) =(-x-2)e^x-2(-x-1)e^x =(-x-2+2x+2)e^x = xe^x$.
+   \item $g$ est donc bien une solution particulière de $(E)$.
+\end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Les équations différentielles du type $y'-ay=b$ }
+
+Soit $a$ une constantes non nulles, alors soit l'équation homogène $(E): y'-ay=b $. \\
+
+\underline{Résolution de l'équation homogène:}\\
+
+Concidérons l'équation homogène $(E_0): y'-ay=0 $ associée à l'équation $(E)$.\\
+
+Une primitive de la fonction constante $\gamma$ définie par $\gamma(x)=-a$ est $G(x)=ax$. \\
+
+L'ensemble des solutions à l'équation homogène $(E_0): y'-ay=0 $ noté $\cals_0$ est égal à $\{Ke^{ax} \vert  K\in \mathbb{R} \; \text{quelconque} \}$
+
+Reste à déterminer une solution particulière, on posera dorénavant $K$ comme étant une fonction et non une constante.\\
+
+Cette méthode présentée çi-dessous se nomme \textbf{la variation de la constante}, elle porte très bien son nom.\\
+
+\underline{Détermination d'une solution particulière:}\\
+
+Supposons que $F(x)=K(x)e^{ax}$ soit solution de l'équation différentielle $(E): y'-ay=b$. \\
+
+D'une part, $F'(x)=K'(x)e^{ax}+aK(x)e^{ax}$, on remarque alors que $F'(x)=K'(x)e^{ax}+aF(x)$, ce qui est équivalent à l'équation $F'(x)-aF(x)=K'(x)e^{ax}$.\\
+
+D'autre part, $F$ est solution de $(E): y'-ay=b$ donc $F'(x)-aF(x)=b$. \\
+
+On a donc nécéssairement $K'(x)e^{ax}=b$  autrement dit $K'(x)=be^{-ax}$ donc  nécéssairement $K(x)=- \dfrac{b}{a}e^{-ax} + \alpha $ où $\alpha \in \mathbb{R}$. \\
+
+Par exemple, si $\alpha=0$ la fonction $y_p(x)=-\dfrac{b}{a}$ est une solution particulière . \\
+
+
+\underline{Résolution de l'équation générale:}\\
+
+En remplacant $K(x)$ par l'expression précédente on détermine  l'ensemble des solutions générales à $(E): y'-ay=b $ noté $\cals_G$ est égal à $\{ \alpha e^{ax} + \dfrac{b}{a}   \vert  \alpha \in \mathbb{R} \; \text{quelconque} \}$.
+
+ 
+
+ 
+
+
+
+
+
+
+\subsection{Ensemble des solutions d'une équation différentielle}
+
+\begin{thm}
+Les solutions d'une équation différentielle sont de la forme $y(x)=y_0(x)+y_p(x)$ où $y_0$ est la solution de l'équation sans second membre $(E_0)$ et $y_p$ une solution particulière de l'équation complète $(E)$.
+\end{thm}
+
+\begin{exemple}
+Dans notre exemple, on a $y_0(x)=ke^{-2x}$ et $y_p(x)=g(x)=(-x-1)e^x$. \\
+Donc, la solution de l'équation $(E)$ est : $y(x)=ke^{-2x}+(-x-1)e^x$.
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Problème de Cauchy, unicité de la solution sous condition initiale}
+
+\begin{thm}[Théorème de Cauchy-Lipschitz dans un cas particulier, admis]
+Soient $a$, $b$ et $c$ trois fonctions continues, une équation différentielle linéaire du premier ordre du type $(E):a(x)y'(x)+b(x)y(x) =c(x)$ possède une unique solution $y$ vérifiant une condition initiale du type $y(A)=B$, avec $A \in I$ et $B\in \mathbb{R}$
+\end{thm}
+
+\begin{demo}[De l'unicité]
+Supposons qu'il existe deux solutions différentes $F_1$ et $F_2$ à l'équation différentielle $(E):a(x)y'(x)+b(x)y(x) =c(x)$ telle que  $y(A)=B$.\\
+
+Par le principe de superposition, $F_1-F_2$ est solution de l'équation homogène 
+
+$$(E_0): a(x)y'(x)+b(x)y(x) =0 $$ 
+
+Or les solutions de cette équation $ (E_0)$ sont connues et ont pour forme $Ke^{-G(x)}$ avec $K \in \mathbb{R}$ et $G$ une primitive de $\dfrac{b(x)}{a(x)}$  d'où $F_1(x) -F_2(x) = Ke^{-G(x)}$.
+Pour finir on sait que $F_1-F_2(A)=F_1(A)-F_2(A) = B-B=0$ donc $Ke^{-G(A)}=0$. Or une exponentielle ne s'annule en aucun point donc $K$ est nécéssairement nul.
+On en déduit alors que $F_1(x) -F_2(x) = 0$ et ceux pour tout $x \in I$, ce qui est absurde puisque les deux solutions sont supposés différentes.
+
+\end{demo}
+
+\begin{exemple}
+Dans l'exemple, on recherche la solution $f$ de $(E)$ vérifiant $f(0)=0$. \\
+\begin{itemize}
+   \item On a alors : $f(0)=0 \Longleftrightarrow ke^{-2\times0}+(-0-1)e^0=0 \Longleftrightarrow k-1=0 \Longleftrightarrow k=1$.
+   \item Soit $f(x)=e^{-2x}+(-x-1)e^x$.
+\end{itemize}
+\end{exemple}
+
+\newpage
+\section{Courbe représentative des solutions}
+
+\subsection{Des équations différentielles du type $ y'-ay=0$ }
+Si $a>0$ les solutions on l'allure d'une exponentielle croissante, si $a<0$ elles ont l'allure d'une exponentielle décroissante.\\
+
+\begin{minipage}{7cm}
+\includegraphics[scale=0.8] {../Figures/diff.1}
+\end{minipage}
+\hfill
+\begin{minipage}{7cm} 
+\includegraphics[scale=0.8]{../Figures/diff.2}
+\end{minipage}
+
+\subsection{Des équations différentielles du type $ y'-ay=b$ }
+Ce sont les mêmes courbes translatés de $\pm \dfrac{b}{a}$
+
+\begin{minipage}{7cm}
+\includegraphics[scale=0.8] {../Figures/diff.3}
+\end{minipage}
+\hfill
+\begin{minipage}{7cm} 
+\includegraphics[scale=0.8]{../Figures/diff.4}
+\end{minipage}
+
+\newpage
+
+
+\section{Équations différentielles d'ordre 2 à coefficients constants}
+
+\begin{defn}
+Soient $a\neq0$, $b$ et $c$ trois constantes réelles, $d$ une fonction dérivable sur $I$ et $y$ la fonction inconnue, définie et deux fois dérivable sur $I$. \\
+On appelle \underline{équation différentielle linéaire du second
+ordre à coefficients constants} toute équation du type
+$$(E):ay''(x)+by'(x)+cy(x) =d(x).$$
+\end{defn}
+
+
+Tout comme les équations différentielles d'ordre 1, nous allons travailler sur un exemple.
+
+
+\begin{tabular}{||l}
+On considère l'équation différentielle $(E):y''-2y'+y=8e^x$ où $y$ est une fonction de la variable réelle $x$, \\
+définie et deux fois dérivable sur $\R$, $y'$ la fonction dérivée de $y$ et $y''$ sa fonction dérivée seconde. \\
+1. Déterminer les solutions définies sur $\R$ de l'équation différentielle $(E_0):y''-2y'+y =0$. \\
+2. Soit $h$ la fonction définie sur $\R$ par $h(x)=4x^2e^x$. \\
+   \hspace{0.3cm} Démontrer que la fonction $h$ est une solution particulière de l'équation différentielle $(E)$. \\
+3. En déduire l'ensemble des solutions de l'équation différentielle $(E)$. \\
+4. Déterminer la solution $f$ de l'équation différentielle $(E)$ qui vérifie les conditions initiales \\
+   \hspace{0.3cm} $f(0)=-4$ et $f'(0)=-4$. \\
+\end{tabular}
+
+\begin{exemple}
+Dans cet exemple, on a :
+\begin{itemize}
+   \item $a=1$, $b=-2$, $c=1$ et $d(x)=4x^2e^x$.
+\end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Solution générale de l'équation sans second membre}
+
+\begin{thm}
+On considère l'équation différentielle sans second membre $(E_0):ay''+by'+cy= 0$ \\
+d'équation caractéristique associée $ar^2+br+c= 0$. \\
+Le tableau ci-dessous donne les solutions de $(E_0)$ en fonction du discriminant $\Delta =b^2-4ac$ : (dans tous les cas, $a$ et $b$ sont des constantes réelles quelconque).
+\begin{center}
+\begin{tabular}{c|c|c}
+   & Solutions de l'équation caractéristique associée & Solution générale de $(E_0)$ \\
+   \hline
+   $\Delta> 0$ & 2 racines réelles & $y(x)= Ae^{r_1x}+Be^{r_2x}$ \\
+   & $r_1 =\dfrac{-b-\sqrt{\Delta}}{2a}$ et $r_2 =\dfrac{-b+\sqrt{\Delta}}{2a}$ & \\
+   \hline
+   $\Delta= 0$ & une racine double réelle & $y(x)=(Ax+B)e^{rx}$ \\
+   & $r =-\dfrac{b}{2a}$ & \\
+   \hline
+   $\Delta< 0$ & 2 racines complexes conjuguées & $y(x)= e^{\alpha x}[A\cos(\beta x)+B\sin(\beta x)]$ \\
+   & $\alpha+i\beta$ et $\alpha-i\beta$ où $\alpha =\dfrac{-b}{2a}$ et $\beta  =\dfrac{\sqrt{-\Delta }}{2a}$ & \\
+\end{tabular}
+\end{center}
+\end{thm}
+
+\begin{exemple}
+   Résolution de l'équation différentielle $(E_0):y''+\omega^2y=0$ :
+   \begin{itemize}
+      \item L'équation caractéristique de $(E_0)$ est $r^2+\omega^2 =0$ de discriminant $\Delta =-4\omega^2 <0$. \\
+      \hspace*{0.3cm} Les solutions de cette équation sont $0+i\omega$ et $0-i\omega$.
+      \item Les solutions de $(E_0)$ sont du type $y(x)= e^{0\times x}[A\cos(\omega x)+B\sin(\omega x)] = A\cos(\omega x)+B\sin(\omega x)$.
+      \item On remarque que l'on retrouve le résultat étudié en terminale !
+   \end{itemize}
+\end{exemple}
+
+\begin{exemple}
+   Résolution de l'équation différentielle $(E_0):2y''-5y'-3y=0$ :
+   \begin{itemize}
+      \item L'équation caractéristique de $(E_0)$ est $2r^2-5r-3 =0$ de discriminant $\Delta =49 >0$. \\
+      \hspace*{0.3cm} Les solutions de cette équation sont $r_1 =-\dfrac12$ et $r_2 =3$.
+      \item Les solutions de $(E_0)$ sont donc du type $y_0(x) =Ae^{\frac12x}+Be^{3x}$
+   \end{itemize}
+\end{exemple}
+
+
+\begin{exemple}
+Dans l'exemple, on souhaite résoudre $(E_0):y''-2y'+y =0$.
+\begin{itemize}
+      \item L'équation caractéristique de $(E_0)$ est $r^2-2r+1 =0$ de discriminant $\Delta =0$. \\
+      \hspace*{0.3cm} L'équation admet donc une solution double $r =1$.
+      \item Les solutions de $(E_0)$ sont donc du type $y(x) =(Ax+B)e^x$.
+   \end{itemize}
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Solution particulière de l'équation différentielle $(E)$}
+
+\begin{defn}
+On appelle solution particulière de l'équation différentielle $ay''(x)+by'(x)+cy(x)= d(x)$ toute fonction $y$ vérifiant cette équation.
+\end{defn}
+
+Dans les sujets, toutes les indications permettant d'obtenir une solution particulière sont en générales données. Bien souvent, une fonction est proposée et il suffit de vérifier que c'est une solution particulière de $(E)$, c'est à dire de remplacer les "$y$" par la fonction proposée dans l'équation homogène (sans second membre), et de vérifier que l'on obtient bien le second membre
+
+\begin{exemple}
+Dans l'exemple, on nous demande de montrer que la fonction $h$ est une solution particulière de $(E)$.
+\begin{itemize}
+   \item Calcul de la dérivée première : \\
+   \hspace*{0.3cm} $h(x)=4x^2e^x$ donc $h'(x) =8xe^x+4x^2e^x =(8x+4x^2)e^x$.
+   \item Calcul de la dérivée seconde : \\
+   \hspace*{0.3cm} $h''(x) =(8+8x)e^x+(8x+4x^2)e^x =(8+16x+4x^2)e^x$.
+   \item Remplacement dans l'équation homogène : \\
+   \hspace*{0.3cm} $h''(x)-2h'(x)+h(x) =(8+16x+4x^2)e^x -2(8x+4x^2)e^x +4x^2e^x = (8+16x+4x^2-16x-8x^2+4x^2)e^x =8e^x$.
+   \item $h$ est donc bien une solution particulière de $(E)$.
+\end{itemize}
+\end{exemple}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ensemble des solutions d'une équation différentielle}
+
+\begin{thm}
+Les solutions d'une équation différentielle sont de la forme $y(x)=y_0(x)+y_p(x)$ où $y_0$ est la solution de l'équation sans second membre et $y_p$ une solution particulière de l'équation complète.
+\end{thm}
+
+\begin{exemple}
+Dans notre exemple, on a $y_0(x) =(Ax+B)e^x$ et $y_p(x)=h(x)=4x^2e^x$. \\
+Donc, la solution de l'équation $(E)$ est : $y(x) =(Ax+B)e^x+4x^2e^x =(4x^2+Ax+B)e^x$.
+\end{exemple}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Unicité de la solution sous conditions initiales}
+
+\begin{thm}
+Une équation différentielle linéaire à coefficients constants du second ordre $(E)$ possède une unique solution vérifiant deux conditions initiales.
+\end{thm}
+
+\begin{exemple}
+Dans l'exemple, on recherche la solution $f$ de $(E)$ vérifiant $f(0) =-4$ et $f'(0) =-4$.
+\begin{itemize}
+   \item Première condition initiale : \\
+   \hspace*{0.3cm} $f(0) =-4 \Longleftrightarrow (4\times0^2+A\times0+B)e^0 =-4 \Longleftrightarrow B =-4$.
+   \item Calcul de la dérivée : \\
+   \hspace*{0.3cm} $f'(x) =(8x+A)e^x+(4x^2+Ax+B)e^x =(4x^2+8x+Ax+A+B)e^x$.
+   \item Deuxième condition initiale : \\
+   \hspace*{0.3cm} $f'(0) =-4 \Longleftrightarrow (4\times0^2+8\times0+A\times0+A+B)e^0 =-4 \Longleftrightarrow A+B =-4 \Longleftrightarrow A =0$.
+   \item Conclusion : 
+   \hspace*{0.3cm} $f(x) =(4x^2-4)e^x$.
+\end{itemize}
+\end{exemple}
+
+\chapter{Intégration}
+
+\section{Intégrale d'une fonction continue et positive sur un intervalle}
+
+\begin{defn}
+ Soit $f$ une fonction continue et positive sur un intervalle $[a;b]$ et $\mathcal{C}$ sa courbe représentative dans un repère $(O;\vec{i};\vec{j})$. ortogonal.
+On appelle \emph{intégrale} de $a$ à $b$ de la fonction $f$ la mesure de l'aire en unité d'aire de la partie $\mathcal{A}$ du plan délimitée par l'axe des abscisses, les droites d'équations $x=a$ et $x=b$ et la courbe $\mathcal{C}$.\\
+On note $\int_{a}^{b}f(t)dt$ cette aire.
+\end{defn}
+
+\begin{center}
+\includegraphics[scale=1.5]{../Figures/int.1}
+\end{center}
+
+\begin{rem}
+ \begin{itemize}
+  \item[$\bullet$] Pour toute fonction continue et positive sur $[a;b]$, on a $\int_{a}^{b}f(t)dt\geq 0$ ;
+  \item[$\bullet$] Si $b=a$, on a $\int_{a}^{a}f(t)dt=0$ ;
+ \end{itemize}
+\end{rem}
+\newpage
+\begin{prop}[Relation de Chasles]
+ Soit $f$ une fonction continue et positive sur un intervalle $I=[a;b]$ et $c$ un réel de $I$. Alors :
+$$\int_{a}^{c}f(x)\,dx+\int_{c}^{b}f(x)\,dx=\int_{a}^{b}f(x)\,dx$$
+\end{prop}
+
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/int.2}
+\end{center}
+
+
+\begin{prop}[Propriété de conservation de l'ordre]
+Soient $f$ et $g$ deux fonctions continues et positives sur $[a;b]$ telles que pour tout $x\in[a;b]$, $f(x)\leq g(x)$.\\
+Alors $\int_{a}^{b}f(x)\, dx\leq\int_{a}^{b}g(x)\, dx$
+\end{prop}
+
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/int.3}
+\end{center}
+
+\newpage
+
+\begin{defn}
+On appelle \emph{valeur moyenne} de $f$ sur $[a;b]$, le réel $$\mu=\frac{1}{b-a}\int_{a}^{b}f(x)\ dx$$
+\end{defn}
+
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/int2.1}
+\end{center}
+
+
+\begin{rem}
+Si $f$ est positive sur $[a;b]$, la valeur moyenne s'interprète géométriquement comme la hauteur du rectangle de côté $b-a$ et de même aire que l'aire de la partie du plan comprise entre la courbe de la fonction, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$.
+\end{rem}
+
+
+\section{Primitives d'une fonction continue sur un intervalle}
+
+
+\begin{defn}
+Soit $f$ une fonction continue sur un intervalle $I$. Une fonction $F$ dérivable sur un intervalle $I$ et  de dérivée $F'=f$ est appelée \emph{primitive} de $f$ sur $I$.
+\end{defn}
+
+\begin{exemple}
+ $F:x\mapsto \frac{x^2}{2}$ est une primitive de $f:x\mapsto x$ car $F'(x)=x$ pour tout réel $x$.
+\end{exemple}
+
+
+\begin{prop}
+ Soit $f$ une fonction admettant une primitive $F$ sur un intervalle $I$. Alors $f$ admet une infinité de primitives : $G$ est une primitive de $f$ si et seulement si il existe un réel $k$ tel que pour tout réel $x$, $G(x)=F(x)+k$.
+\end{prop}
+
+\begin{demo}
+Si $F$ et $G$ sont deux primitives de $f$ sur $I$ alors $(F-G)'=F'-G'=f-f=0$ donc $F-G$ est une constante $k$.
+\end{demo}
+
+\begin{exemple}
+ $F_1:x\mapsto \frac{x^2}{2}-4$ et $F_2:x\mapsto \frac{x^2}{2}+2,5$ sont deux primitives de $x\mapsto x$.
+\end{exemple}
+
+
+
+\begin{prop}
+ Soit $f$ une fonction admettant une primitive $F$ sur un intervalle $I$. Soit $a$ appartenant à $I$ et $b$ un réel. Alors il existe une et une seule primitive $G$ telle que $G(a)=b$.
+\end{prop}
+
+\begin{demo}
+On a vu qu'il existe une constante $k$ telle que pour tout $x\in I$, $G(x)=F(x)+k$. D'où $G(a)=b$ si et seulement si $F(a)+k=b$ c'est à dire $k=b-F(a)$.
+\end{demo}
+
+
+\begin{exemple}
+ Il existe une unique primitive $F$ de $x\mapsto x$ sur $\mathbb{R}$ telle que $F(1)=2$. En effet, on a vu que les primitives sont de la forme $x\mapsto \frac{x^2}{2}+k$ où $k$ est un réel. $F(1)=2$ impose donc $\frac{1}{2}+k=2$ d'où $k=\frac{3}{2}$.
+\end{exemple}
+
+
+\begin{thm}
+ Toute fonction $f$ continue sur un intervalle $I$ admet des primitives sur $I$.
+\end{thm}
+
+\section{Calcul de primitives}
+
+\subsection{Primitives de fonctions de référence}
+
+\begin{exemple}
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+  \hline
+$f$ définie sur $I$ par & primitives $F$ de $f$ sur $I$  & intervalle $I$ \\
+\hline
+$0$ & $C\in \mathbb{R}$ & $\mathbb{R}$\\
+\hline
+$1$ & $x+C,\, C\in\mathbb{R}$ & $\mathbb{R}$\\
+\hline
+$x$ & $\frac{x^2}{2}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$x^2$ & $\frac{x^3}{3}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$x^n$, $n\in\mathbb{N^{*}}$ & $\frac{x^{n+1}}{n+1}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$\\
+\hline
+$\frac{1}{2\sqrt{x}}$ & $\sqrt{x}+C,\, C\in\mathbb{R}$ & $]0;+\infty[$ \\
+\hline
+$\frac{1}{x}$ & $\ln (x)+C,\, C\in\mathbb{R}$& $]0;+\infty[$ \\
+\hline
+$\frac{1}{x^2}$ & $-\frac{1}{x}+C,\, C\in\mathbb{R}$ & $]-\infty;0[$ ou $]0;+\infty[$\\
+\hline
+$\frac{1}{x^n}$, $n\in\mathbb{N}$ & $-\frac{1}{(n-1)x^{n-1}}+C, C\in\mathbb{R}$ & $]-\infty;0[$ ou $]0;+\infty[$ \\
+\hline
+$\sin (x)$  & $-\cos (x)+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$\cos (x)$ & $\sin (x)+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\ 
+\hline
+$e^{x}$ &  $e^{x}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{exemple}
+
+
+\subsection{Primitives de fonctions composées}
+
+\begin{exemple}
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+  \hline
+$f$ définie sur $I$ par & Primitives $F$ de $f$ sur $I$ & intervalle $I$ \\
+\hline
+$u'u$ & $\frac{1}{2}u^2+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$u'u^n, n\in\mathbb{N}$ & $\frac{1}{n+1}u^{n+1}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$\frac{u'}{u^2}$ & $-\frac{1}{u}+C,\, C\mathbb{R}$ & $I$ tel que $u$ ne s'annule pas sur $I$ \\
+\hline
+$\frac{u'}{u^n}$ & $-\frac{1}{(n-1)u^{n-1}}+C,\, C\in\mathbb{R}$ & $I$ tel que $u$ ne s'annule pas sur $I$ \\
+\hline
+$u'e^u$ & $e^u+C,\,C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$\frac{u'}{\sqrt{u}}$ & 2$\sqrt{u}+C,\, C\in\mathbb{R}$ & $I$ tel que $u>0$ \\
+\hline
+$\frac{u'}{u}$ & $\ln u+C,\, C\in \mathbb{R}$ & $I$ tel que $u>0$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{exemple}
+\subsection{Lien entre intégrale et primitives}
+
+
+\begin{thm}
+ Soit $f$ une fonction continue et positive sur un intervalle $[a;b]$. La fonction $F$ définie sur $[a;b]$ par $F(x)=\int_{a}^{x}f(t)dt$ est dérivable sur $[a;b]$ et a pour dérivée $f$. $F$ est donc l'unique primitive de $f$ qui s'annule en $a$.
+\end{thm}
+
+\begin{demo}[cas où $f$ est croissante]
+Pour tout $x_0\in [a;b]$, $F(x)$ est l'aire sous la courbe $\mathcal{C}$ entre $a$ et $x_0$. Soit $h>0$ tel que $x_0+h$ appartient à $[a;b]$. On a $F(x_0+h)=\int_{a}^{x_0+h}f(t)dt$.\\
+$F(x_0+h)-F(x_0)$ est l'aire sous la courbe comprise entre l'axe $(Ox)$ et les droites d'équation $x=x_0$ et $x=x_0+h$.\\
+Cette aire est comprise entre l'aire du rectangle de hauteur $f(x_0)$ et de largeur $h$ et l'aire du rectangle de hauteur $f(x_0+h)$ et de largeur $h$.\\
+D'où $$h\times f(x_0)\leq F(x_0+h)-F(x_0)\leq h\times f(x_0+h)$$
+et $$f(x_0)\leq\frac{F(x_0+h)-F(x_0)}{h}\leq f(x_0+h)$$.
+Or $f$ est continue en $x_0$ d'où $\lim_{h\rightarrow 0,h>0}f(x_0+h)=f(x_0)$ et d'après le théorème des gendarmes,
+$$\lim_{h\rightarrow 0,h>0}\frac{F(x_0+h)-F(x_0)}{h}=f(x_0)$$
+Par le même raisonnement on montre que $$\lim_{h\rightarrow 0,h<0}\frac{F(x_0+h)-F(x_0)}{h}=f(x_0)$$
+
+ce qui montre que $F$ est dérivable en $x_0$ de nombre dérivé $f(x_0)$ et ceci pour tout $x_0$ de $[a;b]$.
+\end{demo}
+
+\newpage
+
+
+\begin{prop}
+ Si $f$ est continue et positive sur un intervalle $[a;b]$ alors
+$$\int_{a}^{b}f(t)dt=F(b)-F(a)$$
+où $F$ est une primitive quelconque de $f$ sur $[a;b]$. On note alors :
+$$\int_{a}^{b}f(t)dt=[F(x)]_{a}^{b}$$
+\end{prop}
+
+
+\begin{exemple}
+$\int_{1}^{2}x^2dx=[\frac{x^3}{3}]_{1}^{2}=\frac{2^3}{3}-\frac{1}{3}=\frac{8}{3}-\frac{1}{3}=\frac{7}{3}$.
+\end{exemple}
+
+
+
+
+\section{Intégrale d'une fonction de signe quelconque}
+
+
+\begin{thm}
+Toute fonction continue sur un intervalle $I=[a;b]$ admet une primitive sur $I$.
+\end{thm}
+
+
+\begin{thm}[et définition]
+ Pour toute fonction $f$ continue sur un intervalle $I$ et pour tous les réels $a$ et $b$ de $I$, on définit l'intégrale de $a$ à $b$ de $f$ par $$\int_{a}^{b}f(t)dt=F(b)-F(a)$$
+ où $F$ est une primitive de $f$ sur $[a;b]$.
+\end{thm}
+
+\begin{demo}
+Soit $F_1$ et $F_2$ deux primitives de $f$. Alors il existe un réel $C$ tel que $F_2=F_1+C$. $F_2(b)-F_2(a)=F_1(b)+C-(F_1(a)+C)=F_1(b)-F_1(a)$.
+\end{demo}
+
+
+\begin{rem}
+On note aussi $\int_{a}^{b}f(x)dx=F(b)-F(a)=[F(x)]_{a}^{b}$.
+\end{rem}
+
+\begin{exemple}
+$\int_{0}^{1}\frac{-5x}{x^2+3}dx=\int_{0}^{1}\frac{-5}{2}\frac{2x}{x^2+3}dx=[\frac{-5}{2}\ln(x^2+3)]_0^{1}$\\
+$=\frac{-5}{2}\ln(1^2+3)-\frac{-5}{2}\ln(0^2+3)=\frac{-5}{2}\ln(4)-\frac{-5}{2}\ln(3)$
+$=\frac{-5}{2}\ln(\frac{4}{3})$
+\end{exemple}
+
+\newpage
+
+
+\begin{thm}
+ Soit $f$ une fonction continue sur un intervalle $[a;b]$. La fonction $F$ définie sur $[a;b]$ par $F(x)=\int_{a}^{x}f(t)dt$ est dérivable sur $[a;b]$ et a pour dérivée $f$.
+\end{thm}
+
+
+\begin{prop}{Relation de Chasles}
+ Soit $f$ une fonction continue sur $I$ et $a$, $b$ et $c$ trois réels de $I$. Alors :
+$$\int_{a}^{b}f(x)\,dx+\int_{b}^{c}f(x)\,dx=\int_{a}^{c}f(x)\,dx$$
+\end{prop}
+
+\begin{demo}
+ Soit $F$ une primitive de $f$. On a
+\begin{align*} \int_{a}^{b}f(x)\,dx+\int_{b}^{c}f(x)\,dx&=F(b)-F(a)+F(c)-F(b)\\
+ &=F(c)-F(a)\\
+ &=\int_{a}^{c}f(x)\,dx
+\end{align*}
+\end{demo}
+
+
+\begin{cor}[Conséquences]
+Avec les mêmes hypothèses que précédemment, 
+\begin{itemize}
+\item[$\bullet$] $\int_{a}^{a}f(x)\,dx=0$
+ \item[$\bullet$] $\int_{b}^{a}f(x)\,dx=-\int_{a}^{b}f(x)\,dx$
+
+ \end{itemize}
+\end{cor}
+
+\begin{demo}
+D'une part, $\int_{a}^{a}f(x)\,dx=F(a)-F(a)=0$ et d'autre part, 
+$\int_{a}^{b}f(x)\,dx+\int_{b}^{a}f(x)\,dx=\int_{a}^{a}f(x)\,dx$ d'où les deux résultats.
+\end{demo}
+
+
+
+\begin{prop}{Linéarité de l'intégrale}
+Soient $f$ et $g$ deux fonctions continues sur un intervalle $[a;b]$ et $k$ un réel. Alors
+$$\int_{a}^{b}(f(x)+g(x))\,dx=\int_{a}^{b}f(x)\,dx+\int_{a}^{b}g(x)\,dx$$
+et
+$$\int_{a}^{b}kf(x)\, dx=k\int_{a}^{b}f(x)\,dx$$
+\end{prop}
+
+\begin{demo}
+Soient $F$ et $G$ des primitives de $f$ et $g$ respectivement.\\
+Alors $F+G$ est une primitive de $f+g$ car $(F+G)'=F'+G'=f+g$\\
+et on a $\int_{a}^{b}(f(x)+g(x))\,dx=(F+G)(b)-(F+G)(a)=F(b)+G(b)-F(a)-G(a)=F(b)-F(a)+G(b)-G(a)=\int_{a}^{b}f(x)\,dx+\int_{a}^{b}g()x\,dx$.
+
+\noindent De même, $kF$ est une primitive de $kf$ et $\int_{a}^{b}kf(x)\,dx=kF(b)-kF(a)=k(F(b)-F(a))=k\int_{a}^{b}f(x)\,dx$
+\end{demo}
+
+
+
+
+\begin{prop}[Positivité de l'intégrale]
+Soit $f$ une fonction continue sur un intervalle $[a;b]$.
+\begin{itemize}
+ \item[$\bullet$] Si pour tout réel $x$ de $I$, $f(x)\geq 0$, alors $\int_{a}^{b}f(x)\,dx\geq 0$ ;
+\item[$\bullet$] si pour tout réel $x$ de $[a;b]$, $f(x)\leq g(x)$, alors $\int_{a}^{b}f(x)\,dx\leq \int_{a}^{b}g(x)\,dx$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\begin{itemize}
+\item[$\bullet$] Si $f$ est positive, alors, $\int_{a}^{b}f(x)\,dx$ est l'aire de la partie de plan comprise entre les droites d'équation $x=a$, $x=b$, $y=0$ et la courbe $\mathcal{C}_{f}$ donc est positive.
+\item[$\bullet$] Si pour tout $x$ réel de $[a;b]$, $f(x)\leq g(x)$ implique $g(x)-f(x)\geq 0$ c'est à dire que $g-f$ est positive. D'où $\int_{a}^{b}(g(x)-f(x))\,dx\geq 0$ d'après le point précédent ce qui s'écrit encore $\int_{a}^{b}g(x)\,dx\geq\int_{a}^{b}f(x)\,dx$.
+\end{itemize}
+\end{demo}
+
+
+
+\begin{prop}
+\begin{itemize}
+\item[$\bullet$] Si $f$ est continue sur $[a;b]$, l'aire exprimée en unités d'aire de la surface plane délimitée par la courbe $\mathcal{C}_f$, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$ est égale à $-\int_{a}^{b}f(x)dx$.
+\item[$\bullet$] Si $f$ et $g$ sont deux fonctions continues positives sur $[a;b]$ telles que $f\leq g$, alors l'aire, exprimée en unités d'aire, de la surface comprise entre les deux courbes $\mathcal{C}_f$ et $\mathcal{C}_g$ et les droites d'équation $x=a$ et $x=b$ est égale à $\int_{a}^{b}g(x)-f(x)dx$.
+\end{itemize}
+\end{prop}
+
+%\begin{center}
+%\includegraphics[width=5cm]{integrationCoursFigAireTS.png}
+%\end{center}
+\section{Intégrations par parties} 
+
+
+\begin{prop}[Intégration par parties]
+  Si $u$ et $v$ sont deux fonction dérivables sur $[a,b]$ de dérivées $u'$ et $v'$ continues sur $[a,b]$, alors $(uv)'=u'v+uv'$ soit encore $u'v=(uv)'-uv'$  et donc
+
+$$ \ds\int_a^bu'(x)v(x)d x=[uv]_a^b-\int_a^bu(x)v'(x)d x $$
+\end{prop}
+
+\begin{demo}
+ Si $u$ et $v$ sont deux fonction dérivables sur $[a,b]$ de dérivées $u'$ et $v'$ alors la fonction $uv$ est dérivable et de dérivé 
+ $$(uv)'=u'v+v'u$$
+ qui est aussi équivalent à  l'équation $$ u'v=(uv)'-v'u $$
+En intégrant cette équation entre $a$ et $b$ on obtient le résultat voulu
+$$ \ds\int_a^bu'(x)v(x)d x=[uv]_a^b-\int_a^bu(x)v'(x)d x $$
+\end{demo}
+
+\chapter{Schéma de Bernouilli, Loi binomiale}
+
+
+\section{Loi de Bernoulli}
+
+
+\begin{defn}
+Soit $p$ un nombre réel tel que $p\in[0;1]$. Soit $X$ une variable aléatoire. On dit que $X$ suit une loi de Bernoulli de paramètre $p$ si :
+\begin{itemize}
+ \item[$\bullet$] $X$ prend pour seules valeurs 1 (\og{}succès\fg{}) et 0 (\og{}échec\fg{}) ;
+\item[$\bullet$] $P(X=1)=p$ et $P(X=0)=1-p$.
+\end{itemize}
+\end{defn}
+
+
+\begin{prop}
+ Soit $X$ une variable aléatoire qui suit la loi de Bernoulli de paramètre $p$.
+\begin{itemize}
+ \item[$\bullet$] $E(X)=p$ ;
+\item[$\bullet$] $V(X)=p(1-p)$.
+\end{itemize}
+\end{prop}
+
+
+\begin{demo}
+ D'une part, $E(X)=0\times P(X=0)+1\times P(X=1)=0\times (1-p)+1\times p = p$. \par
+\noindent En outre, $V(X)=P(X=0)\times (0-E(X))^2+P(X=1)\times (1-E(X))^2=(1-p)p^2+p(1-p)^2=p(1-p)(p+1-p)=p(1-p)$
+\end{demo}
+
+
+\section{Schéma de Bernoulli}
+
+
+\begin{defn}
+Deux expériences sont dites indépendantes si le résultat de l'une n'influence pas le résultat de l'autre.
+\end{defn}
+
+
+\begin{exemple}
+il y a indépendance lorsqu'on lance deux fois de suite une pièce de monnaie.
+\end{exemple}
+
+
+\begin{defn}
+La répétition d'une expérience aléatoire suivant une loi de Bernoulli de paramètre $p$, ceci $n$ fois de manière indépendante, constitue \emph{un schéma de Bernoulli} de paramètres $n$ et $p$.
+\end{defn}
+
+
+\begin{prop}
+Dans un schéma de Bernoulli, la probabilité d'une liste de résultats est le produit des probabilités de chaque résultat
+\end{prop}
+
+
+\begin{exemple}[de savoir faire]
+\begin{itemize}
+\item[$\bullet$] Construire un arbre représentant un schéma de Bernoulli de paramètres donnés\\
+On contrôle la qualité d'un produit sur une chaîne de production. On prélève 3 produits au hasard. On suppose que les prélèvements sont indépendants. Statistiquement, chaque produit a une probabilité $p=0,05$ d'être défectueux.\\
+On a donc un schéma de Bernoulli de paramètres $p=0,05$ et $n=3$.\\
+
+%\begin{center}
+ %\includegraphics[width=6cm]{arbre.png}
+%\end{center}
+\item[$\bullet$] Calculer la probabilité d'un événement représenté par un chemin sur un arbre pondéré\\
+
+Sur l'arbre ci-dessus représentant un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$, la probabilité d'avoir les deux premières expériences qui donnent un succès et la dernière qui donne un échec est $P(SS\bar{S})=0,05^2\times 0,95\approx 0,002$\\
+
+soit 0,2 \% de chances d'avoir deux produits défectueux sur les trois prélevés.
+\end{itemize}
+\end{exemple}
+
+
+\section{Loi binomiale}
+
+
+
+\begin{defn}[Définition et propriété]
+Soient $n$ et $k$ deux entiers naturels avec $k\leq n$. On note $\binom{n}{k}$ (on dit \og{}$k$ sous $n$\fg{}) le nombre de manières d'obtenir $k$ succès et $n-k$ échecs pour $n$ répétitions indépendantes de la même expérience de Bernoulli. 
+\end{defn}
+
+
+\begin{exemple}{Exemple}
+%\begin{center}
+ %\includegraphics[width=8cm]{arbre.png}
+%\end{center}
+
+\noindent $\binom{3}{3}=1$ : il y a une seule manière d'obtenir 3 succès lors de la répétition de 3 épreuves identiques indépendantes.\\
+$\binom{3}{2}=3$ : il y a trois manières d'obtenir 2 succès et un échec lors de la répétition de 3 épreuves identiques indépendantes ($SSE$ ; $SES$ ; $ESS$).
+\end{exemple}
+
+\begin{defn}
+On considère une épreuve de Bernoulli de paramètre $p\in [0;1]$. On répète $n$ fois ($n\geq 1$) cette expérience indépendamment et on note $X$ la variable aléatoire qui compte le nombre de succés. On dit alors que la variable aléatoire $X$ suit une loi \emph{binomiale} de paramètres $n$ et $p$ et on note $X\sim \mathcal{B}(n;p)$.
+\end{defn}
+
+
+\begin{prop}
+ Si $X$ est une variable aléatoire qui suit une loi binomiale de paramètres $n$ et $p$, alors la probabilité d'obtenir $k$ succès avec $k\in\{0;1;2;...;n\}$ est $P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$.
+\end{prop}
+
+\begin{demo}
+Il y a $\binom{n}{k}$ manières d'obtenir $k$ succès dans $n$ répétitions d'expériences identiques et indépendantes. La probabilité de chacune de ces événements qui sont évidemment incompatibles est $p^k(1-p)^{n-k}$ d'où le résultat.
+\end{demo} 
+
+
+\begin{exemple}[de savoir faire]
+Calculer la probabilité de $P(X=k)$ où $X$ suit une loi binomiale à partir d'un arbre pondéré.\\
+On considère le problème précédent de test des produits d'une chaîne de production. Les prélèvements étant supposés indépendants les uns des autres, l'expérience constitue un schéma de Bernoulli de paramètres $n=3$ et $p=0,05$. La variable aléatoire $X$ qui compte le nombre de succès suit la loi binomiale de paramètres $n=3$ et $p=0,05$.\\
+On a $P(X=2)=P(SS\bar{S}\cap S\bar{S}S\cap \bar{S}SS)$\\
+ car trois chemins permettent d'obtenir deux succès c'est à dire deux objets défectueux.\\
+D'où $P(X=2)=P(SS\bar{S})+P(S\bar{S}S)+P(\bar{S}SS)$\\
+donc $P(X=2)=0,05^2\times 0,95+0,95\times 0,05\times 0,95+0,95\times 0,05^2=3\times 0,05^2\times 0,95=0,007$\\
+soit une probabilité très faible de 0,007 d'avoir deux produits défectueux.
+\end{exemple}
+
+\begin{rem}[Calcul pratique de $P(X=k)$ et $P(X\leq k)$]
+Soit $X$ une variable aléatoire de paramètres $n$ et $p$. Pour $k$ allant de 0 à $n$, pour calculer $P(X=k)$ ou $P(X\leq k)$, on utilise une calculatrice :
+\begin{itemize}
+\item[$\bullet$] Sur Texas instrument : aller dans le menu \fbox{2nd}\fbox{distrib}, choisir \fbox{binomFdp} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $P(X=k)$ et choisir \fbox{binomFRép} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $P(X\leq k)$.
+\item[$\bullet$] Sur Casio : aller dans le menu \fbox{STAT} puis \fbox{DIST} puis \fbox{BINM}. Sélectionner alors \fbox{Bpd} puis \fbox{Var} pour variable, puis entrer alors $k$  dans la ligne \og{}x\fg{}, $n$ dans la ligne \og{}numtrial\fg{} et $p$ dans la ligne \og{}p\fg{} puis aller sur \og{}execute\fg{} pour valider et calculer ainsi $P(X=k)$. Pour le calcul de  $P(X\leq k)$, on utilisera \fbox{Bcd} au lieu de \fbox{Bpd}.
+\end{itemize}
+\end{rem}
+
+
+\section{Coefficients binomiaux}
+
+
+\begin{prop}[Triangle de Pascal]
+ Le triangle de Pascal, du nom de Blaise Pascal, mathématicien français du XVII\up{e} siècle qui le\og{}redécouvra\fg{} en Occident (car il était connu avant en Orient et au Moyen-Orient) est une disposition permettant de visualiser et de calculer les coefficients binomiaux et qui s'appuie sur la formule précédente.
+\begin{center}
+ \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+  $\binom{0}{0}=1$ & & & & &\\
+\hline
+$\binom{1}{0}=1$ & $\binom{1}{1}=1$ & & & &\\
+\hline
+$\binom{2}{0}=1$ & $\binom{2}{1}=2$ & 1 & & &\\
+\hline
+$\binom{3}{0}=1$ & $\binom{3}{1}=3$ & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+ 
+\end{center} 
+
+Explication de la construction : le nombre de la ligne $n$ et de la colonne $k$ est le coefficient binomial $\binom{n-1}{k-1}$. Il est obtenu en ajoutant le nombre situé au dessus (ligne $n-1$ et colonne $k$) au nombre de la colonne et de la ligne précédente (ligne $n-1$ et colonne $k-1$).\\
+Par exemple, $\binom{3}{1}=3$ est la somme de $\binom{2}{1}=2$ et de $\binom{2}{0}=1$.
+\begin{center}
+ \begin{tabular}{|c|c|c|c|c|c|}
+\hline
+  1 & & & & &\\
+\hline
+1 & 1 & & & &\\
+\hline
+1 & 2 & 1 & & &\\
+\hline
+1 & 3 & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+\end{center}
+\end{prop}
+
+
+
+\chapter{Probabilit\'es}
+\section{Introduction}
+\subsection{Exp\'erience al\'eatoire}
+\begin{defn}
+Une exp\'erience dont on connaît les issues (les r\'esultats) est appel\'ee exp\'erience al\'eatoire si on ne peut pas pr\'evoir ni calculer l'issue qui sera r\'ealis\'ee.
+
+L'ensemble des r\'esultats possibles d'une exp\'erience al\'eatoire (aussi appel\'es \'eventualit\'es) est appel\'e univers de l'exp\'erience. On le note souvent $\Omega$. Le nombre de ses \'el\'ements est appel\'e cardinal et se note $\text{Card}\ \Omega$.
+\end{defn}
+
+\begin{exemple}
+jeu de Pile ou Face, nombre obtenu suite au lancer d'un d\'e, nombre tir\'e au sort dans une loterie, couleur de la prochaine voiture qui passera dans la rue, vingt et uni\`eme mot d'un livre choisi au hasard...
+\end{exemple}
+
+\subsection{Loi de probabilit\'e}
+\begin{defn}
+D\'efinir une loi de probabilit\'e sur un univers $\Omega=\{x_1,x_2,\ldots,x_n\}$ c'est associer à chaque \'eventualit\'e $x_i$ un nombre $p_i$ positif ou nul, appel\'e probabilit\'e de l'\'eventualit\'e $x_i$, tel que $p_1 + p_2 + \cdots + p_n=1$.
+\end{defn}
+
+Cons\'equence : Pour tout $i$, $p_i\ie 1$.
+
+\subsection{Mod\'elisation - Loi des grands nombres}
+\begin{defn}
+Mod\'eliser une exp\'erience al\'eatoire d'univers $\Omega$ c'est choisir une loi de probabilit\'e sur $\Omega$ qui repr\'esente le \og mieux possible \fg{} la situation.
+\end{defn}
+
+\newpage
+\begin{minipage}{9cm}
+\begin{exemple}
+On consid\`ere la roue de loterie suivante. L'exp\'erience consiste à faire tourner la roue et à noter le nombre sur lequel elle s'arr\^ete. D\'efinir une loi de probabilit\'e permettant de mod\'eliser l'exp\'erience.
+\end{exemple}
+
+
+L'univers est $\Omega=\{1;2;3;4;5;6\}$
+
+On associe à l'\'eventualit\'e 1 la probabilit\'e $p_1=\dfrac{45}{360}=\dfrac{1}{8}$. On fait de m\^eme pour les autres \'eventualit\'es. 
+
+On obtient le tableau suivant :
+
+\vspace{1ex}
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+\'eventualit\'e & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+Probabilit\'e & $\dfrac{1}{8}$ & $\dfrac{1}{4}$ & $\dfrac{1}{8}$ & $\dfrac{1}{12}$ & $\dfrac{1}{3}$ & $\dfrac{1}{12}$ \\ \hline
+\end{tabular}
+\renewcommand{\arraystretch}{1}
+\end{center}
+
+\end{minipage}
+\hfill
+\begin{minipage}{5cm}
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/CoursProbasFigures.1}
+\end{center}
+\end{minipage}
+
+\vspace{3ex}
+Toutes les exp\'eriences ne sont pas aussi simples à mod\'eliser que le lancer d'un d\'e \'equilibr\'e. Cependant, pour construire ou valider un mod\`ele, on dispose du r\'esultat th\'eorique ci-dessous appel\'e \og Loi des grands nombres \fg{} :
+
+%\vspace{1ex}
+\begin{prop}
+On consid\`ere une exp\'erience d'univers $\Omega$ qui suit une loi de probabilit\'e $P$. La fr\'equence d'obtention de chaque r\'esultat $x_i$ lorsqu'on r\'ealise $n$ fois l'exp\'erience tend vers la probabilit\'e de $x_i$ lorsque $n$ devient grand.
+\end{prop}
+
+\begin{exemple}
+Si l'on r\'ealise un tr\`es grand nombre de fois l'exp\'erience pr\'ec\'edente (la roue de loterie), la fr\'equence d'obtention de \og 1 \fg{} va se rapprocher de $\dfrac{1}{8}$, la fr\'equence d'obtention de \og 2 \fg{} va se rapprocher de $\dfrac{1}{4}$, la fr\'equence d'obtention de \og 3 \fg{} va se rapprocher de $\dfrac{1}{8}$...
+
+Si, lors du lancer d'un d\'e, les fr\'equences d'apparition de chacune des faces ne se rapprochent pas de $\dfrac{1}{6}$, il est vraisemblable que le d\'e ne soit pas correctement \'equilibr\'e.
+\end{exemple}
+%
+\newpage
+\section{Vocabulaire des \'ev\`enements}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$.
+\subsection{D\'efinitions}
+
+\begin{defn}
+On appelle \'ev\`enement toute partie de $\Omega$.
+
+Un \'ev\`enement \'el\'ementaire est un \'ev\`enement qui ne contient qu'un seul \'el\'ement.
+
+L'univers $\Omega$ contient tous les r\'esultats possibles, on l'appelle \'ev\`enement certain.
+
+L'ensemble vide $\varnothing$ ne contient aucun r\'esultat, on l'appelle \'ev\`enement impossible.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer la liste des \'eventualit\'es des \'ev\`enements suivants
+\begin{multicols}{2}
+$A$ : \og On obtient un nombre pair \fg
+
+$B$ : \og On obtient un nombre sup\'erieur ou \'egal à 3 \fg
+
+$C$ : \og On obtient un multiple de 5 \fg
+
+$D$ : \og On obtient un nombre n\'egatif \fg.
+\end{multicols}
+\end{exemple}
+
+\begin{multicols}{2}
+$A=\{2~;~4~;~6\}$
+
+$B=\{3~;~4~;~5~;~6\}$
+
+$C=\{5\}$
+
+$D=\varnothing$
+
+\end{multicols}
+
+%\vspace{3em}
+\subsection{Intersection - R\'eunion}
+\begin{minipage}{11.1cm}
+$A$ et $B$ sont deux \'ev\`enements de $\Omega$.
+
+%\vspace{1ex}
+\begin{defn}
+On appelle intersection de $A$ et $B$ l'\'ev\`enement not\'e $A\cap B$ compos\'e des \'eventualit\'es qui appartiennent à la fois à $A$ et à $B$.
+
+Si $A\cap B=\varnothing$, on dit que $A$ et $B$ sont incompatibles.
+
+On appelle r\'eunion de $A$ et $B$ l'\'ev\`enement not\'e $A\cup B$ compos\'e des \'eventualit\'es qui appartiennent à $A$ ou à $B$ (c'est-à-dire qui appartiennent à au moins l'un des deux).
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'ecrire par une phrase et d\'eterminer les \'eventualit\'es des \'ev\`enements $A\cap B$, $A\cup B$, $A\cap C$, $B\cup C$.
+\end{exemple}
+\end{minipage}
+\hfill
+\begin{minipage}{3.8cm}
+\begin{center}
+\includegraphics{../Figures/CoursProbasFigures.2}
+\par
+\includegraphics{../Figures/CoursProbasFigures.3}
+\end{center}
+\end{minipage}
+
+
+\begin{itemize}
+\item[$\bullet$]  $A \cap B$ : \og On obtient un nombre pair et sup\'erieur ou \'egal à 3. \fg
+
+\hspace{6em} $A \cap B = \{4~;~6\}$
+
+\item[$\bullet$]  $A\cup B$ : \og On obtient un nombre pair ou sup\'erieur ou \'egal à 3. \fg
+
+\hspace{6em} $A\cup B = \{2~;~3~;~4~;~5~;~6\}$
+
+\item[$\bullet$]  $A\cap C$ : \og On obtient un nombre pair et multiple de 5. \fg
+
+\hspace{6em} $A\cap C = \varnothing$
+
+\item[$\bullet$]  $B\cup C$ : \og On obtient un nombre sup\'erieur ou \'egal à 3 ou multiple de 5. \fg
+
+\hspace{6em} $B\cup C =  \{3~;~4~;~5~;~6\}$
+\end{itemize}
+
+
+%\vspace{4em}
+\subsection{\'ev\`enement contraire}
+\begin{minipage}{10cm}
+$A$ est un \'ev\`enement de $\Omega$.
+
+%\vspace{1ex}
+\begin{defn}
+On appelle contraire de $A$ l'\'ev\`enement not\'e $\barre{A}$ constitu\'e de toutes les \'eventualit\'es qui n'appartiennent pas à $A$.
+\end{defn}
+\end{minipage}
+\hfill
+\begin{minipage}{4.5cm}
+\begin{center}
+\includegraphics{../Figures/CoursProbasFigures.4}
+\end{center}
+\end{minipage}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'ecrire par une phrase et d\'eterminer les \'eventualit\'es des \'ev\`enements $\barre{A}$, $\barre{B}$, $\barre{C}$.
+\end{exemple}
+
+
+\begin{itemize} 
+\item[$\bullet$] $\barre{A}$ : \og On obtient un nombre impair. \fg
+
+\hspace{6em} $\barre{A} = \{1~;~3~;~5\}$
+
+\item[$\bullet$] $\barre{B}$ : \og On obtient un nombre strictement inf\'erieur à 3. \fg
+
+\hspace{6em} $\barre{B} = \{1~;~2\}$
+
+\item[$\bullet$]  $\barre{C}$ : \og On obtient un nombre qui n'est pas multiple de 5. \fg
+
+\hspace{6em} $\barre{C} = \{1~;~2~;~3~;~4~;~6\}$
+\end{itemize}
+
+
+\section{Calcul des probabilit\'es}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$ muni d'une loi de probabilit\'e.
+\subsection{Probabilit\'e d'un \'ev\`enement}
+\begin{defn}
+Soit $A$ un \'ev\`enement de $\Omega$. On appelle probabilit\'e de $A$ la somme des probabilit\'es des \'eventualit\'es qui le composent. On la note $P(A)$.
+\end{defn}
+
+Cons\'equences :
+
+$P(\varnothing)=0$ \hspace{2em} $P(\Omega)=1$ \hspace{2em} Pour tout \'ev\`enement $A$, $0\ie P(A)\ie1$.
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer $P(A)$, $P(B)$ et $P(C)$.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$] $P(A)=P(\{2\})+P(\{4\})+P(\{6\}) = \dfrac{1}{4} + \dfrac{1}{12} + \dfrac{1}{12} = \dfrac{5}{12}$
+\item[$\bullet$] $P(B)=P(\{3\})+P(\{4\})+P(\{5\})+P(\{6\}) = \dfrac{1}{8} + \dfrac{1}{12} + \dfrac{1}{3} + \dfrac{1}{12} = \dfrac{5}{8}$
+\item [$\bullet$] $P(B)=P(\{5\}) = \dfrac{1}{3}$
+\end{itemize}
+
+
+\subsection{Propri\'et\'es}
+\begin{prop}
+Quels que soient les \'ev\`enements $A$ et $B$ de $\Omega$ :
+
+\begin{tabular}{l@{\hspace{3.5ex}}l}
+ \textbullet Si $A\cap B=\varnothing$ alors $P(A\cup B)=P(A)+P(B)$ &\textbullet $P(\barre{A})=1-P(A)$ \\
+ \textbullet $P(A\cup B)=P(A)+P(B)-P(A\cap B)$ &\textbullet Si $A\subset B$ alors $P(A)\ie P(B)$
+\end{tabular}
+
+% \begin{itemize}
+% \item Si $A\cap B=\varnothing$ alors $P(A\cup B)=P(A)+P(B)$.
+% \item $P(A\cup B)=P(A)+P(B)-P(A\cap B)$
+% \item $P(\barre{A})=1-P(A)$
+% \item Si $A\subset B$ alors $P(A)\ie P(B)$
+% \end{itemize}
+\end{prop}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+D\'eterminer $P(A\cup C)$, $P(A\cap B)$, $P(A\cup B)$, $P(\barre{A})$ et $P(\barre{C})$.
+\end{exemple}
+
+
+\begin{itemize}
+\item $A\cap C = \varnothing$ donc $P(A\cup C) = P(A)+P(C)= \dfrac{5}{12}+\dfrac{1}{3} = \dfrac{3}{4}$
+\item $A \cap B = \{4~;~6\}$ donc $P(A\cap B) = P(\{4\})+P(\{6\}) = \dfrac{1}{12}+\dfrac{1}{12} = \dfrac{1}{6}$
+\item $P(A\cup B) = P(A)+P(B)-P(A\cap B) = \dfrac{5}{12}+\dfrac{5}{8}-\dfrac{1}{6} = \dfrac{7}{8}$
+\item $P(\barre{A}) = 1-P(A) = 1-\dfrac{5}{12} = \dfrac{7}{12}$
+\quad et \quad $P(\barre{C}) = 1-P(C) = 1-\dfrac{1}{3} = \dfrac{2}{3}$
+\end{itemize}
+
+
+%\vspace{5em}
+\subsection{Loi \'equir\'epartie}
+\begin{defn}
+On dit que $P$ est une loi \'equir\'epartie si toutes les \'eventualit\'es ont la m\^eme probabilit\'e. Cette probabilit\'e est alors \'egale à $\dfrac{1}{\text{Card}\ \Omega}$
+\end{defn}
+
+\begin{exemple}
+On lance un d\'e \'equilibr\'e et on s'int\'eresse au nombre obtenu. D\'efinir une loi de probabilit\'e permettant de mod\'eliser l'exp\'erience.
+\end{exemple}
+
+
+$\Omega=\{1;2;3;4;5;6\}$. Le fait que le d\'e soit bien \'equilibr\'e justifie le choix de la loi \'equir\'epartie. On obtient donc le tableau suivant :
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|} \hline
+\'eventualit\'e & 1 & 2 & 3 & 4 & 5 & 6 \\ \hline
+Probabilit\'e & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ & $\dfrac{1}{6}$ \\ \hline
+\end{tabular}
+\end{center}
+
+
+\vspace{1ex}
+Soit $A$ un \'ev\`enement de $\Omega$.
+
+\begin{prop}
+Si $P$ est une loi \'equir\'epartie alors 
+\[P(A)=\dfrac{\text{Card}\ A}{\text{Card}\ \Omega}=\dfrac{\text{Nombre de cas favorables}}{\text{Nombre total de cas}}\]
+\end{prop}
+
+\begin{exemple}
+Dans le cas du lancer de d\'e \'equilibr\'e, d\'eterminer les probabilit\'es de $A$ : \og On obtient un nombre pair \fg, $B$ : \og On obtient un nombre sup\'erieur ou \'egal à 3 \fg{} et $C$ : \og On obtient un multiple de 5 \fg
+\end{exemple}
+
+
+$P(A)=\dfrac{\text{Card}\ A}{\text{Card}\ \Omega}=\dfrac{3}{6}=\dfrac{1}{2}$
+\hfill
+$P(B)=\dfrac{\text{Card}\ B}{\text{Card}\ \Omega}=\dfrac{4}{6}=\dfrac{2}{3}$
+\hfill
+$P(C)=\dfrac{\text{Card}\ C}{\text{Card}\ \Omega}=\dfrac{1}{6}$
+
+
+\section{Param\`etres d'une loi de probabilit\'e}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega=\{x_1;x_2;\ldots;x_n\}$ dont les \'eventualit\'es sont des nombres r\'eels. $\Omega$ est muni d'une loi de probabilit\'e $P$. On pose $p_i=P(x_i)$.
+
+\begin{defn}
+On appelle esp\'erance de la loi de probabilit\'e le r\'eel $\mu$ d\'efini par :
+\[\mu=p_1x_1+\cdots+p_n x_n=\sum_{i=1}^n p_ix_i\]
+C'est la moyenne des $x_i$ avec les coefficients $p_i$.\\
+
+On appelle variance de la loi de probabilit\'e le r\'eel $V$ d\'efini par :
+\[V= p_1(x_1-\mu)^2+\dots+p_n(x_n-\mu)^2=\sum_{i=1}^np_i(x_i-\mu)^2=\left( \sum_{i=1}^np_ix_i^2\right)-\mu^2\]
+
+On appelle \'ecart-type de la loi de probabilit\'e le r\'eel $\sigma$ d\'efini par $\sigma=\sqrt{V}$
+\end{defn}
+
+\begin{exemple}
+On reprend la situation de la roue de loterie.
+
+D\'eterminer l'esp\'erance, la variance et l'\'ecart-type de la loi de probabilit\'e.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$] Esp\'erance : $\mu=\frac{1}{8}\times1 + \frac{1}{4}\times2 + \frac{1}{8}\times3 + \frac{1}{12}\times4 + \frac{1}{3}\times5 + \frac{1}{12}\times6 = \frac{3}{24}+\frac{12}{24} + \frac{9}{24} + \frac{8}{24} + \frac{40}{24} + \frac{12}{24} = \frac{84}{24} = \frac{7}{2}$
+\item[$\bullet$] Variance : $V = \frac{1}{8}\times\left( 1-\frac{7}{2} \right)^2 + \frac{1}{4}\times\left( 2-\frac{7}{2} \right)^2 + \frac{1}{8}\times\left( 3-\frac{7}{2} \right)^2 + \frac{1}{12}\times\left( 4-\frac{7}{2} \right)^2 + \frac{1}{3}\times\left( 5-\frac{7}{2} \right)^2 + \frac{1}{12}\times\left( 6-\frac{7}{2} \right)^2 = \frac{1}{8}\times\left( -\frac{5}{2} \right)^2 + \frac{1}{4}\times\left( -\frac{3}{2} \right)^2 + \frac{1}{8}\times\left( -\frac{1}{2} \right)^2 + \frac{1}{12}\times\left( \frac{1}{2} \right)^2 + \frac{1}{3}\times\left(\frac{3}{2}  \right)^2 + \frac{1}{12}\times\left(\frac{5}{2}  \right)^2 = \frac{25}{32} + \frac{9}{16} + \frac{1}{32} + \frac{1}{48} + \frac{9}{12} + \frac{25}{48} = \frac{8}{3}$
+\item[$\bullet$] \'ecart-type : $\sigma = \sqrt{V} = \sqrt{\frac{8}{3}} \simeq 1,63$
+\end{itemize}
+
+
+
+\section{Variables al\'eatoires}
+On consid\`ere une exp\'erience al\'eatoire d'univers $\Omega$ muni d'une loi de probabilit\'e $P$.
+\subsection{D\'efinitions}
+\begin{defn}
+Une variable al\'eatoire $X$ sur $\Omega$ est une fonction de $\Omega$ dans $\R$. $X$ associe donc à toute \'eventualit\'e de $\Omega$ un unique r\'eel.
+\end{defn}
+
+Remarque : On utilise les variables al\'eatoires quand on s'int\'eresse plus à un nombre associ\'e au r\'esultat de l'exp\'erience (par ex. un gain...) qu'au r\'esultat lui-m\^eme.
+
+\begin{exemple}
+On lance trois fois une pièce de monnaie et on s'int\'eresse au côt\'e sur lequel elle tombe.
+
+%On appelle $X$ la variable aléatoire qui à chaque éventualité associe le nombre de fois où pile apparaît.
+%Déterminer l'univers $\Omega$ de cette expérience puis d'écrire $X$.
+\end{exemple}
+
+
+En notant $P$ et $F$ les r\'esultats possibles d'un lancer, on obtient : 
+\[\Omega = \{PPP,PPF,PFP,PFF,FPP,FPF,FFP,FFF\}\]
+
+$X$ est la fonction d\'efinie sur $\Omega$ par :
+\begin{align*}
+X(PPP)&=0 & X(PPF)&=1 & X(PFP)&=1 & X(PFF)&=2\\
+X(FPP)&=1 & X(FPF)&=2 & X(FFP)&=2 & X(FFF)&=3
+\end{align*}
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$ et soit $x\in\R$. L'\'ev\`enement form\'e des \'eventualit\'es $\omega_i$ de $\Omega$ telles que $X(\omega_i)=x$ se note $(X=x)$.
+\vspace{2mm}
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer l'ensemble $(X=2)$.
+\end{exemple}
+
+
+Avec les notations pr\'ec\'edentes, on a : $(X=2)=\{PFF,FPF,FFP\}$
+
+
+\subsection{Loi de probabilit\'e d'une variable al\'eatoire}
+\begin{defn}
+Soit $X$ une variable al\'eatoire sur $\Omega$. On appelle $\Omega'=\{x_1,x_2,\ldots,x_n\}$ l'ensemble des valeurs prises par $X$. On peut d\'efinir sur $\Omega'$ une loi de probabilit\'e en associant à chaque valeur $x_i$ la probabilit\'e de l'\'ev\`enement $(X=x_i)$. Cette loi est appel\'ee loi de probabilit\'e de la variable al\'eatoire $X$.
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer la loi de probabilit\'e de $X$.
+\end{exemple}
+
+
+La loi de probabilit\'e $P$ sur $\Omega$ est une loi \'equir\'epartie. On a donc :
+\begin{align*}
+P(X=0)&=P(\{PPP\})=\dfrac{1}{8} & P(X=1)&=P(\{PPF,PFP,FPP)\}=\dfrac{3}{8} \\
+P(X=2)&=P(\{PFF,FPF,FFP)\}=\dfrac{3}{8} & P(X=3)&=P(\{FFF\})=\dfrac{1}{8}
+\end{align*}
+
+On peut aussi r\'esumer ceci sous forme de tableau :
+
+\begin{center}
+\renewcommand{\arraystretch}{3}
+\begin{tabular}{|c|c|c|c|c|} \hline
+$x_i$ & 0 & 1 & 2 & 3 \\ \hline
+$P(X=x_i)$ & $\dfrac{1}{8}$ & $\dfrac{3}{8}$ & $\dfrac{3}{8}$ & $\dfrac{1}{8}$ \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+\subsection{Param\`etres d'une variable al\'eatoire}
+\begin{defn}
+L'esp\'erance, la variance, l'\'ecart-type d'une variable al\'eatoire sont respectivement l'esp\'erance, la variance, l'\'ecart-type de sa loi de probabilit\'e.
+
+Si $X$ prend les valeurs $x_1,x_2,\ldots x_n$ et si on pose $p_i=P(X=x_i)$, on a :
+
+$E(X)=\ds\sum_{i=1}^np_ix_i ;\hfill V(X)=\ds\sum_{i=1}^np_i(x_i-E(X))^2=\sum_{i=1}^np_ix_i^2-(E(X))^2 ;
+\hfill \sigma(X)=\sqrt{V(X)}$
+\end{defn}
+
+\begin{exemple}
+On reprend la situation pr\'ec\'edente.
+
+D\'eterminer l'esp\'erance, la variance et l'\'ecart-type de $X$.
+\end{exemple}
+
+
+\begin{itemize}
+\item[$\bullet$]  Esp\'erance : $E(X)=\dfrac{1}{8}\times0 + \dfrac{3}{8}\times1 + \dfrac{3}{8}\times2 + \dfrac{1}{8}\times3 = \dfrac{12}{8} = \dfrac{3}{2}$
+\item[$\bullet$]  Variance : $V(X) = \dfrac{1}{8}\times\left( 0-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 1-\dfrac{3}{2} \right)^2 + \dfrac{3}{8}\times\left( 2-\dfrac{3}{2} \right)^2 + \dfrac{1}{8}\times\left( 3-\dfrac{3}{2} \right)^2 = \dfrac{1}{8}\times\dfrac{9}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{3}{8}\times\dfrac{1}{4} + \dfrac{1}{8}\times\dfrac{9}{4} = \dfrac{24}{32} = \dfrac{3}{4}$
+\item[$\bullet$]  \'ecart-type : $\sigma(X) = \sqrt{V(X)} = \sqrt{\dfrac{3}{4}} = \dfrac{\sqrt{3}}{2} \simeq 0,87$
+\end{itemize}
+
+\subsection{Somme de variable aléatoire}
+
+\begin{defn}
+Soit $X$ et $Y$ deux variables aléatoires définies sur $\Omega$, on définie la variable aléatoire $X+Y$ définie sur $\Omega$ qui à tout élément $\omega \in \Omega$ lui associe $X(\omega)+Y(\omega)$.
+\end{defn}
+
+\subsection{Multiplication de variable aléatoire par un réel}
+\begin{defn}
+Soit $X$ une variable aléatoire définie sur $\Omega$ et $a\in \mathbb{R}$, on définie la variable aléatoire $aX$ définie sur $\Omega$ qui à tout élément $\omega \in \Omega$ lui associe $aX(\omega)$.
+\end{defn}
+\subsection{Liens entre opérations sur les variables aléatoires et ses paramètres}
+
+\subsubsection{Espérance et les opérations sur les variables aléatoires}
+\begin{prop}[Linéarité de l'espérance]
+$E(aX+Y)=aE(X)+E(Y)$
+\end{prop}
+
+\begin{demo}%[Cas où $\Omega$ est fini]
+
+$$E(aX+Y)=\ds\sum_{i=1}^nP(\{\omega_1\})(aX(\omega_1) + Y(\omega_1) ) = \ds\sum_{i=1}^nP(\{\omega_1\})aX(\omega_1) + P(\{\omega_1\})Y(\omega_1) $$
+
+$$=\ds\sum_{i=1}^n P(\{\omega_1\})aX(\omega_1) + \sum_{i=1}^n (\{\omega_1\})Y(\omega_1) $$
+$$= \ds a\sum_{i=1}^n P(\{\omega_1\})X(\omega_1) + \sum_{i=1}^n (\{\omega_1\})Y(\omega_1) =aE(X)+E(Y)$$ 
+%\end{demo}
+
+
+\end{demo}
+\section{Indépendance de deux variables aléatoires}
+
+\begin{defn}
+Soit $X,Y$ deux variables aléatoires, on dit que $X$ et $Y$ sont indépendantes si $P(X\in A, Y\in B)= P(X\in A) P(Y\in B)$ et ceux pour tout évènement $A,B$
+\end{defn}
+
+\begin{prop}[Espérance d'un produit de variable aléatoire indépendance]
+
+Soit $XY$ la variable aléatoire produit, on suppose que $X$,$Y$ sont indépendantes entre elles, alors on a $$E(XY)=E(X)E(Y)$$
+
+
+\end{prop}
+
+
+\subsubsection{Variance et les opérations sur les variables aléatoires}
+ 
+\begin{prop}[Quadraticité de la variance]
+$V(aX)=a^2V(X)$
+\end{prop}
+ 
+ \begin{demo}
+ $V(aX)=\ds\sum_{i=1}^nP(\{\omega_1\})(aX(\omega_i) )^2 = \ds\sum_{i=1}^nP(\{\omega_1\})
+ a^2X(\omega_i) )^2 =a\ds\sum_{i=1}^nP(\{\omega_1\}) X(\omega_i) )^2=a^2V(X)$
+ \end{demo}
+ 
+\begin{prop}[Indépendance et variance de somme de variable aléatoire]
+Soit $X+Y$ deux vairables aléatoires indépendante. alors $V(X+Y)=V(X)+V(Y)$ 
+\end{prop}
+
+
+\section{Application à la loi binomiale}
+
+Pour rappel si $X_1,X_2,\cdots X_n$ sont des variables aléatoires indépendantes qui suivent une loi de Bernouilli de paramètre $p$ alors $X_1+X_2+\cdots + X_n$ est une variable aléatoire qui suit une loi Binomiale de paramètre $\calb(n,p)$.
+
+Ainsi soit $Z$ une variable aléatoire qui suit une loi Binomiale de paramètre $\calb(n,p)$ alors $E(Z)=E(X_1+X_2+\cdots + X_n)=E(X_1)+E(X_2)+\cdots +E(X_n)=p+p+\cdots+p=np$.
+
+De même pour la variance $V(Z)=V(X_1+X_2+\cdots + X_n)=V(X_1)+V(X_2)+\cdots +V(X_n)=p(1-p)+p(1-p)+\cdots+p(1-p)=np(1-p)$.
+
+On peut donc déduire aussi l'écart-type $\sigma(Z)=\sqrt{np(1-p)}$.
+
+\section{Liste de variable aléatoire indépendante suivant la même loi}
+
+\begin{defn}
+Un échantillon de taille $n$  d'une loi de probabilité est la donnée d'une liste de $n$ variables aléatoires indépendantes $(X_1,X_2,\cdots X_n)$.
+\end{defn}
+
+\begin{prop}[Somme de variable aléatoire indépendante ]
+Soit $S_n=X_1+X_2+\cdots+X_n$ alors $E(S_n)=nE(X_1)$ $V(S_n)=nV(X_1)$ et $\sigma(S_n)=\sqrt{n}\sigma{X_1}$.
+\end{prop}
+
+\begin{demo}
+$E(S_n)=E(X_1+X_2+\cdots+X_n)=E(X_1)+E(X_2)+\cdots +E(X_n)=E(X_1)+E(X_1)+\cdots +E(X_1)=nE(X_1)$\\
+
+$V(S_n)=V(X_1+X_2+\cdots + X_n)=V(X_1)+V(X_2)+\cdots +V(X_n)=V(X_1)+V(X_1)+\cdots +V(X_1)=nV(X_1)$
+\end{demo}
+
+\begin{prop}[Moyenne de variable aléatoire indépendante]
+Soit $\dfrac{S_n}{n}=\dfrac{X_1+X_2+\cdots+X_n}{n}$ alors $E(\dfrac{S_n}{n})=E(X_1)$ $V(\dfrac{S_n}{n})=\dfrac{V(X_1)}{n}$ et $\sigma(\dfrac{S_n}{n})=\dfrac{\sigma(X_1)}{\sqrt{n}}$.
+\end{prop}
+
+\begin{demo}
+$E(\dfrac{S_n}{n})=\dfrac{E(S_n)}{n}=\dfrac{nE(X_1)}{n}=E(X_1)$\\
+
+$V(\dfrac{S_n}{n})=\dfrac{V(S_n)}{n^2}=\dfrac{nV(X_1)}{n^2}=\dfrac{V(X_1)}{n}$
+\end{demo}
+
+\section{Inégalités de variables aléatoires et lois des grands nombres}
+
+\subsection{Inégalité de Bienaymé-Tchebychev}
+\begin{prop} 
+Soit $X$ une variable aléatoire réelle qui admet $\mu$ comme espérance et de variance $V(X)$ alors on a pour tout nombre $\delta$ 
+
+$$P(\vert X-\mu \vert \se \delta)=\dfrac{V(X)}{\delta^2}$$
+
+\end{prop}
+
+
+\subsection{Inégalité de concentration}
+ On applique l'inégalité de Bienaymé-Tchebychev à la variable aléatoire $M_n=\dfrac{S_n}{n}$ on obtient alors l'inégalité dite de concentration
+ 
+\begin{prop} 
+Soit $$M_n=\dfrac{S_n}{n}$$ une variable aléatoire réelle qui admet $\mu$ comme espérance et de variance $V(X)$ alors on a pour tout nombre $\delta$ 
+
+$$P(\vert M_n-\mu \vert \se \delta)=\dfrac{V(X)}{n \delta^2}$$
+\end{prop}
+\section{Loi des grands nombres}
+\begin{thm}[Loi \emph{faible} des grands nombres]
+Soit $X_1,X_2,\cdots X_n$ des variables aléatoires indépendantes qui suivent une même loi. On note $M_n$ la moyenne des variables aléatoire $X_1,X_2,\cdots X_n$. \\
+
+Alors quand $n$ est grand la variable aléatoire converge vers une constante qui est $E(X_1)$. Autrement dit, pour tout $\epsilon>0$
+$$ \limn P(\vert M_n - E(X_1) \vert > \epsilon) = 0$$
+\end{thm}
+
+ 
+ 
+\end{document}

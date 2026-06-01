@@ -1,0 +1,852 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\un}{\suite}
+\newcommand{\eit}{e^{it}}
+\newcommand{\eimt}{e^{imt}}
+\newcommand{\vn}{\suite[v]}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\cro}[1]{[#1]}
+\newcommand{\abs}[1]{\vert #1 \vert}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Suites numériques}
+
+\section{Généralités}
+\subsection{Définition}
+\begin{defn}
+Une suite est une fonction définie sur $\N$. Une suite numérique est une suite à valeurs dans $\R$.
+
+ L'image de $n$ par une suite $u$ se note $u_{n}$ et est appelé terme de rang $n$ de la suite. Une suite $u$ est aussi notée $\suite[u]$.\\
+ 
+Autrement dit, 
+\begin{center}
+$\begin{array}{ccccc}
+u & : & \mathbb{N} & \to & \mathbb{R} \\
+ & & n & \mapsto & u_n\\
+\end{array}$
+\end{center}
+\end{defn}
+
+\begin{rem}
+On peut aussi définir une suite à partir d'un certain rang.
+\end{rem}
+
+\begin{exemple}
+\begin{enumerate}
+\item $u$ définie sur $\N$ par $u_{n}=\dfrac{1}{n+2}$.
+\hspace{2em} $u_0=\dfrac{1}{2}$, $u_1=\dfrac{1}{3}$, $u_2=\dfrac{1}{4}$, ...
+\item $v$ définie pour tout $n\se3$ par $v_{n}=\dfrac{1}{n-2}$
+\hspace{2em} $v_3=1$, $v_4=\dfrac{1}{2}$, $v_5=\dfrac{1}{3}$, ...
+\end{enumerate}
+\end{exemple}
+
+
+\subsection{Comment générer une suite}
+Selon le contexte les termes d'une suite peuvent être définis de différentes façons.
+\subsubsection*{Explicitement en fonction du rang}
+\begin{itemize}
+
+
+\item Toute fonction définie sur $[0~;~+\infty[$ (ou sur un intervalle de la forme $[a~;~+\infty[$) permet de définir une suite.
+\end{itemize}
+\begin{exemple}
+Calculer les premiers termes de la suite définie sur $\N$ par $u_{n}=2n^2-5n-1$.
+\begin{itemize}
+\item $u_0=2\times0^2-5\times0-1=-1$ ; $u_1=2\times1^2-5\times1-1=-4$ ;
+\item $u_2=2\times2^2-5\times2-1=-3$ ; $u_3=2\times3^2-5\times3-1=2$ ;
+\item $u_4=2\times4^2-5\times4-1=11$
+\end{itemize}
+\end{exemple}
+
+\begin{rem} 
+Les propriétés des nombres entiers permettent aussi de définir explicitement des suites qui ne peuvent pas être obtenues simplement par une fonction définie sur $\R$.
+\end{rem}
+\begin{exemple}
+Calculer les premiers termes des suites $\suite[u]$ et $\suitep[v]$ où $u_{n}=(-1)^{n}$ et $v_{n}$ est le nombre de diviseurs de $n$.
+
+\begin{itemize}
+
+\item $u_0=1$ ; $u_1=-1$ ; $u_2=1$ ; $u_3=-1$ ; ...
+\vspace*{1.5ex}
+\item $v_1=1$ ; $v_2=2$ ; $v_3=2$ ; $v_4=3$ ; $v_5=2$ ; $v_6=4$ ...
+\end{itemize}
+\end{exemple}
+
+\subsubsection*{Par récurrence}
+Une suite peut aussi être définie par son premier terme (ou ses premiers termes) et par une relation permettant de calculer chaque terme en fonction du précédent (ou des précédents).
+
+\begin{exemple}
+Calculer les premiers termes des suites ci-dessous définies sur $\N$.\\
+
+$u$ est définie par
+$
+\left\{\begin{array}{l}
+u_0=-6\\
+u_{n+1}=-\dfrac{1}{2}u_{n}-1 \quad \text{pour tout }n\se0
+\end{array}
+\right.
+$
+
+\begin{itemize}
+\item $u_1=-\dfrac{1}{2}u_0-1=-\dfrac{1}{2}\times(-6)-1=2$ ; $u_2=-\dfrac{1}{2}u_1-1=-\dfrac{1}{2}\times2-1=-2$
+\item $u_3=-\dfrac{1}{2}u_2-1=-\dfrac{1}{2}\times(-2)-1=0$ ; $u_4=-\dfrac{1}{2}u_3-1=-\dfrac{1}{2}\times0-1=-1$
+\end{itemize}
+
+$v$ est définie par
+$
+\left\{\begin{array}{l}
+v_0=1\; ; \; v_1=1\\
+v_{n+2}=v_{n+1}+v_{n} \quad \text{pour tout }n\se0
+\end{array}
+\right.
+$
+
+\begin{itemize}
+\item $v_2=v_1+v_0=1+1=2$ ; $v_3=v_2+v_1=2+1=3$ ;
+\item $v_4=v_3+v_2=3+2=5$ ; $v_5=v_4+v_3=5+3=8$ ;
+\item  $v_6=v_5+v_4=8+5=13$
+\end{itemize}
+
+$w$ est définie par
+$w_0=3
+\quad
+\text{et}
+\quad
+\begin{cases}
+w_{n+1}=\dfrac{w_{n}}{2}&\text{si $w_n$ est pair}\\
+w_{n+1}=3w_{n}+1&\text{si $w_n$ est impair}
+\end{cases}
+$
+
+
+\begin{itemize}
+\item $w_1=3\times w_0 + 1 = 3\times3 +1 = 10$ ; $w_2=\dfrac{w_1}{2}=\dfrac{10}{2}=5$ ; \item $w_3=3\times w_2 + 1 = 3\times5 +1 = 16$ ; $w_4=\dfrac{w_3}{2}=\dfrac{16}{2}=8$ ; \item $w_5=\dfrac{w_4}{2}=\dfrac{8}{2}=4$ ; $w_6=\dfrac{w_5}{2}=\dfrac{4}{2}=2$
+\end{itemize}
+\end{exemple}
+\newpage
+\section{Sens de variation}
+\subsection{Définition}
+Une suite étant une fonction, les définitions restent les mêmes :
+
+%\begin{tabular}{||l}
+%$u$ est croissante (strict. croissante) si $n<p \Longrightarrow u_{n}\ie u_{p} \;(n<p \Longrightarrow u_{n}< u_{p})$\\
+%$u$ est décroissante (strict. décroissante) si $n<p \Longrightarrow u_{n}\se u_{p} \;(n<p \Longrightarrow u_{n}> u_{p})$
+%\end{tabular}
+
+Cependant, les propriétés des nombres entiers permettent d'établir les résultats suivants :
+
+\begin{prop}
+$u$ est croissante si et seulement si pour tout entier $n$, $u_{n}\ie u_{n+1}$
+\par $u$ est décroissante si et seulement si pour tout entier $n$, $u_{n}\se u_{n+1}$
+\end{prop}
+
+\begin{rem}
+\begin{itemize}
+\item Ne pas mélanger $u_{n+1}$ et $u_{n}+1$
+\item Dans la pratique, pour déterminer le sens de variation d'une suite, on s'intéresse au signe de la différence $u_{n+1}-u_{n}$.
+\item Dans le cas où tous les termes de la suite sont strictement positifs, on peut aussi comparer le quotient $\dfrac{u_{n+1}}{u_{n}}$ à 1.
+\end{itemize}
+\end{rem}
+
+\begin{exemple}
+Déterminer le sens de variation des suites suivantes :
+ $u$ est définie sur $\N$ par $u_{n}=3n+(-1)^{n}$.
+ Étudions la différence $u_{n+1}-u_{n}$ :
+ $$\forall n\in\N, u_{n+1}-u_{n}=3(n+1)+(-1)^{n+1}-3n-(-1)^{n}=3-2\times(-1)^{n}>0$$
+ La suite $\suite[u]$ est donc croissante.
+\end{exemple}
+
+\begin{exemple}
+$v$ est définie sur $\N$ par 
+$\left\{\begin{array}{l}
+v_0=2\\
+v_{n+1}=-v_{n}^2+v_{n} \quad \text{pour tout } n\in\N
+\end{array}\right.$
+
+ Étudions la différence $v_{n+1}-v_{n}$ :
+ Pour tout $n\in\N$, $v_{n+1}-v_{n}=-v_{n}^2+v_{n}-v_{n}=-v_{n}^2<0$
+ La suite $\suite{v}$ est donc décroissante.
+\end{exemple}
+
+\begin{exemple}
+$w$ est définie sur $\N^{*}$ par $w_{n}=\dfrac{2^{n}}{n}$.
+
+
+Les termes de la suite sont strictement positifs, on étudie donc le quotient $\dfrac{w_{n+1}}{w_{n}}$.
+ Pour tout $n\in\N^{*}$, $\dfrac{w_{n+1}}{w_{n}} = \dfrac{\dfrac{2^{n+1}}{n+1}}{\dfrac{2^{n}}{n}} = \dfrac{2^{n+1}}{2^{n}}\times\dfrac{n}{n+1} = \dfrac{2n}{n+1}$
+ Pour tout $n\se 1$, $2n\se n+1$ donc $\dfrac{w_{n+1}}{w_{n}}\se 1$.
+ La suite $\suitep{w}$ est donc décroissante.
+
+\end{exemple}
+
+
+\subsection{Propriété}
+\begin{prop}
+Soit $f$ une fonction définie sur $\mathbb{R}_+$ et $u$ la suite définie sur $\N$ par $u_{n}=f(n)$.
+\begin{itemize}
+
+
+\item Si $f$ est croissante sur $\mathbb{R}_+$ alors $u$ est croissante.
+\item Si $f$ est décroissante sur $\mathbb{R}_+$ alors $u$ est décroissante.
+\end{itemize}
+\end{prop}
+
+
+\section{Limites}
+\subsection{Suites convergentes}
+\begin{defn}
+Une suite $u$ converge vers un réel $\ell$ si tout intervalle ouvert contenant $\ell$ contient aussi tous les termes de la suite à partir d'un certain rang.
+\par On dit alors que $u$ est convergente et on note $\limn u_{n}=l$
+\end{defn}
+
+On peut formuler la définition comme suit :
+\begin{itemize}
+\item $u$ converge vers $\ell$ si tout intervalle ouvert contenant $\ell$ contient tous les termes de la suite sauf un nombre fini.
+\item $u$ converge vers $\ell$ si pour tout intervalle ouvert $I$ contenant $\ell$, il existe un entier $n_{0}$ tel que $n\se n_0\Longrightarrow u_n\in I$.
+\end{itemize}
+
+\vspace{2ex}
+\begin{prop}
+Si une suite converge alors sa limite est unique.
+\end{prop}
+
+\begin{demo}
+Soit $u$ une suite convergente. Supposons qu'elle admette deux limites distinctes $\ell$ et $\ell'$ avec $\ell<\ell'$ sans perdre de généralité.\\
+
+Soit $d$ un réel positif inférieur à $\dfrac{\ell'-\ell}{2}$.
+
+On pose $I=]\ell-d~;~\ell+d[$ et $I'=]\ell'-d~;~\ell'+d[$.
+
+On a $d<\dfrac{\ell'-\ell}{2}$ donc $2d<\ell'-\ell$ soit $d+d<\ell'-\ell$.
+
+On en déduit que $\ell+d<\ell'-d$.\\
+
+Ainsi, $I$ et $I'$ sont deux intervalles disjoints et ils contiennent respectivement $\ell$ et $\ell'$.
+
+Si $u$ converge vers $\ell$, l'intervalle $I$ contient tous les termes de la suite à partir d'un rang $n_{0}$.
+
+Si $u$ converge vers $\ell'$, l'intervalle $I'$ contient tous les termes de la suite à partir d'un rang $n_{1}$.
+
+Ainsi pour tout $n$ supérieur à $n_{0}$ et $n_{1}$, $u_{n}$ doit appartenir à la fois à $I$ et $I'$ ce qui est impossible car ces intervalles sont disjoints. \\
+
+\underline{ $u$ ne peut pas admettre deux limites distinctes. La limite d'une suite est unique.}
+\end{demo}
+
+\subsubsection{Lien entre variation et convergence de suite}
+\begin{thm}
+Toute suite $ \suite[u]$ croissante majorée \emph{(ou décroissante minorée)} converge.
+converge.
+\end{thm}
+\newpage
+
+\subsection{Suites divergentes}
+Une suite divergente est une suite qui n'est pas convergente.
+\subsubsection*{Suites de limite infinie}
+\begin{defn}
+Une suite $u$ a pour limite $+\infty$ si tout intervalle ouvert de la forme $]A~;~+\infty[$ contient tous les termes de la suite à partir d'un certain rang.
+\par On dit alors que $u$ diverge vers $+\infty$ et on note $\limn u_{n}=+\infty$
+\par On définit de la même façon une suite qui diverge vers $-\infty$
+\end{defn}
+
+\subsubsection{Lien entre variation et divergence de suite}
+\begin{thm} 
+Toute suite croissante \emph{(resp. décroissante)} non majorée \emph{(resp. minorée)} tend vers $+ \infty $ \emph{(resp. $-\infty$)}
+\end{thm}
+
+\begin{demo}
+Soit $\suite[u]$ une suite croissante non majorée, donc pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que $u_{n_0}>A$. Puisque $\suite[u]$ est croissante on a pour tout entier $n>n_0$, $u_n \se u_{n_0}$ or $u_{n_0}>A$ donc on a nécéssairement $u_n > A$. 
+
+Autrement dit, pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que, pour tout $n\se n_0$, $u_n>A$. Ce qui est exactement la définition d'une suite divergente vers $+ \infty$
+
+\end{demo}
+
+\begin{thm} 
+Toute suite $\suite[u]$ minorée par une suite $\suite[v]$ divergente est elle-même \emph{( la suite $u$ ) } divergente.
+\end{thm}
+
+\begin{demo}
+Puisque la suite $\suite[v]$ est divergente on a donc que pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que, pour tout $n\se n_0$, $v_n>A$. \\
+
+De plus on sait que pour tout $n \in \mathbb{N}$ on a $u_n \se v_n$ et donc ce résultat reste valable aussi pour tout $n\se n_0$ et donc 
+$$\text{Pour tout} n\se n_0\;  u_n \se v_n > A $$
+
+Autrement dit, pour tout $A>0$ fixé, il existe un rang $n_0 \in \mathbb{N}$ tel que, pour tout $n\se n_0$, $u_n>A$. Ce qui est exactement la définition d'une suite divergente vers $+ \infty$.
+
+\end{demo}
+
+\subsubsection*{Suites qui n'ont pas de limite}
+Une suite n'est pas nécessairement convergente ou divergente vers l'infini. Il existe des suites qui n'ont pas de limite. Elles sont aussi appelées suites divergentes.
+
+\begin{exemple}
+% \begin{itemize}
+% \item 
+$u$ définie sur $\N$ par $u_{n}=(-1)^{n}$.
+
+%\item 
+$v$ définie sur $\N$ par $v_{n}=n\sin(n)$.
+%\end{itemize}
+\end{exemple}
+
+%\subsection{Propriétés}
+%\begin{prop}
+%Soit $f$ une fonction définie sur $[0~;~+\infty[$ et soit $u$ la suite définie sur $\N$ par $u_{n}=f(n)$.
+%\par Si $\limpinf{x}f(x)=\ell$ alors $\limn u_{n}=\ell$.
+%\par Si $\limpinf{x}f(x)=+\infty$ alors $\limn u_{n}=+\infty$.
+%\end{prop}
+
+%Conséquence : Toutes les propriétés vues sur les limites de fonctions s'appliquent aux suites définies par $u_{n}=f(n)$.% En particulier les limites usuelles, les règles de calcul sur la somme, le produit...
+\begin{comment}
+\begin{ex}
+Déterminer la limite de la suite $u$ définie sur $\N$ par $u_{n}=\dfrac{-2n^{2}+n}{3n^{2}+1}$.
+\end{ex}
+
+\begin{repex}
+Pour tout $n>0$, $u_{n}=\dfrac{-2n^{2}+n}{3n^{2}+1}=\dfrac{n^2\left( -2+\dfrac{1}{n} \right)}{n^2\left( 3+\dfrac{1}{n^2} \right)}=\dfrac{ -2+\dfrac{1}{n}}{3+\dfrac{1}{n^2}}$
+\par $\left.\begin{array}{l}
+\limn -2+\dfrac{1}{n}=-2\\
+\limn 3+\dfrac{1}{n^2}=3
+\end{array}\right\}$
+donc $\limn u_{n}=-\dfrac{2}{3}$
+\end{repex}
+\end{comment}
+
+\subsection{Théorème des gendarmes}
+
+\begin{prop}
+On considère trois suites $u$, $v$ et $w$ et un réel $\ell$.
+\par Si \quad
+$\left\{\begin{array}{l}
+\limn u_{n}=\limn w_{n}=\ell \\
+u_{n} \ie v_{n} \ie w_{n} \quad \text{à partir d'un certain rang}
+\end{array}\right.
+$
+\qquad alors \quad $\limn v_{n}=\ell$.
+\end{prop}
+
+\begin{demo}
+Soit $I$ un intervalle ouvert contenant $\ell$.
+\par $u$ converge vers $\ell$ donc $I$ contient tous ses termes à partir d'un certain rang $n_{0}$.
+\par $w$ converge vers $\ell$ donc $I$ contient tous ses termes à partir d'un certain rang $n_{1}$.
+\par À partir d'un certain rang $n_{2}$, $u_{n} \ie v_{n} \ie w_{n}$.
+\par Ainsi, pour tout $n$ supérieur à la fois à $n_{0}$, $n_{1}$ et $n_{2}$, tous les termes de $v$ appartiennent à $I$.
+\par Conclusion : $v$ converge vers $\ell$.
+\end{demo}
+
+\newpage
+\begin{exemple}
+Déterminer la limite de la suite $u$ définie sur $\N^{*}$ par $u_{n}=2+\dfrac{(-1)^{n}}{n}$
+\end{exemple}
+
+\begin{align*}
+\text{Pour tout } n \in \N \quad
+&-1 \ie (-1)^n \ie 1 \\
+&-\dfrac{1}{n} \ie \dfrac{(-1)^{n}}{n} \ie \dfrac{1}{n}\\
+&2-\dfrac{1}{n} \ie 2+\dfrac{(-1)^{n}}{n} \ie 2+\dfrac{1}{n}\\
+&2-\dfrac{1}{n} \ie u_n \ie 2+\dfrac{1}{n}
+\end{align*}
+$\left.\begin{array}{l}
+\limn 2-\dfrac{1}{n}=2\\
+\limn 2+\dfrac{1}{n}=2
+\end{array}\right\}$
+donc, d'après le théorème des gendarmes, $\limn u_n=2$
+
+
+\section{Suites arithmétiques}
+\subsection{Définition}
+\begin{defn}
+Soit $\suite[u]$ une suite et $r$ un réel.
+ 
+On dit qu'une suite $\suite[u]$ est une suite arithmétique de raison $r$ si pour tout entier naturel $n$ : \[u_{n+1}=u_n+r\]
+\end{defn}
+
+\begin{exemple}
+La suite des nombres impairs est une suite arithmétique de raison 2.
+
+Les suites $u$ et $v$ définies sur $\N$ par $u_n=3n-4$ et $v_n=n^2+2$ sont-elles arithmétiques ?
+
+\begin{itemize}
+\item Pour tout $n$, $u_{n+1}-u_n=3(n+1)-4-(3n-4)=3n+3-4-3n+4=3$.
+
+La suite $u$ est donc arithmétique de raison 3.
+
+\item $v_0=2$, $v_1=3$, $v_2=6$ ainsi $v_1=v_0+1$ et $v_2=v_1+3$
+
+La suite $v$ n'est donc pas arithmétique.
+\end{itemize}
+\end{exemple}
+
+\vspace{2ex}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Si $r>0$ alors $u$ est strictement croissante.
+\par Si $r=0$ alors $u$ est constante.
+\par Si $r<0$ alors $u$ est strictement décroissante.
+\end{prop}
+
+\begin{demo}
+Pour tout $n$, $u_{n+1}-u_n=r$
+donc si  $r>0$ alors $u$ est strictement croissante, si $r=0$ alors $u$ est constante et si $r<0$ alors $u$ est strictement décroissante.
+\end{demo}
+\subsection{Expression de $u_n$ en fonction de $n$}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Pour tous entiers naturels $n$ et $p$ : \[u_n=u_p+(n-p)r\]
+\par En particulier, pour tout entier naturel $n$ : \[u_n=u_0+nr\]
+\end{prop}
+
+\begin{demo}
+On suppose $n>p$. On a : 
+$u_{n}-u_{n-1}=r$ ; \hfill $u_{n-1}-u_{n-2}=r$ ; \hfill \dots \hfill $u_{p+2}-u_{p+1}=r$ ; \hfill $u_{p+1}-u_{p}=r$ \\
+En additionnant toutes ces égalités, on obtient :
+\[u_{n}-u_{p}=(n-p)r\]
+soit \[u_n=u_p+(n-p)r\]
+\end{demo}
+
+\subsection{Somme de termes consécutifs}
+\begin{prop}
+Soit $\suite[u]$ une suite arithmétique de raison $r$.
+\par Pour tout entier naturel $n$ :
+\[u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}=(n+1)\times \dfrac{u_{0}+u_{n}}{2}\]
+\end{prop}
+
+\begin{rem}
+On a aussi $u_{1}+u_2 \cdots + u_{n-1}+u_{n}=n\times \dfrac{u_{1}+u_{n}}{2}$
+\end{rem}
+
+\begin{demo}
+\par Posons $S=u_0+u_1+ \cdots +u_n$
+\par On a ainsi $2S=(u_0+u_n)+(u_1+u_{n-1})+(u_2+u_{n-2})+ \cdots +(u_{n-1}+u_1)+(u_n+u_0)$
+\par Or, pour tout $k\ie n$, $u_k+u_{n-k}=u_0+kr+u_0+(n-k)r=u_0+u_0+nr=u_0+u_n$.
+\par On a donc : $2S=(n+1)\times (u_0+u_n)$
+\par Donc $S=(n+1)\times \dfrac{u_{0}+u_{n}}{2}$
+\end{demo}
+
+\newpage
+
+\begin{exemple}
+\underline{Déterminer la somme des $n$ premiers entiers naturels.}
+
+La suite des entiers naturels est la suite arithmétique $\suitep[g]$ de raison 1 telle que $g_1=1$
+\begin{equation*}
+g_{1}+g_2 \cdots + g_{n-1}+g_{n}=n\times \dfrac{g_{1}+g_{n}}{2}=n\times \dfrac{g_{1}+g_{1}+(n-1)r}{2}=n\times\dfrac{1+(1+(n-1))}{2}=\dfrac{n(n+1)}{2}
+\end{equation*}
+
+\underline{Déterminer la somme des $n$ premiers nombres pairs.}
+
+La suite des nombres pairs est la suite arithmétique $\suite[p]$ de raison 2 telle que $p_0=0$
+\begin{equation*}
+p_{0}+p_1 \cdots + p_{n-1}+p_{n}=n\times \dfrac{p_{1}+p_{n}}{2}=n\times \dfrac{p_{1}+p_{1}+(n+1)r}{2}=n\times\dfrac{0+0+(n+1)2}{2}=n(n+1)
+\end{equation*}
+
+
+\underline{Déterminer la somme des $n$ premiers nombres impairs.}
+
+La suite des nombres impairs est la suite arithmétique $\suitep[i]$ de raison 2 telle que $i_1=1$
+\begin{equation*}
+i_{1}+i_2 \cdots + i_{n-1}+i_{n}=n\times \dfrac{i_{1}+i_{n}}{2}=n\times \dfrac{i_{1}+i_{1}+(n-1)r}{2}=n\times\dfrac{2+2n-2}{2}=n^2
+\end{equation*}
+\end{exemple}
+
+\newpage
+
+\subsection*{Application}
+Pour finir cette exemple, voici une application de ces résultats, avec deux formules élégantes. 
+
+ \paragraph*{Soit $n \in \N$ pair}
+ 
+$n$ est égal à $p_{\frac{n}{2}}=n$, donc le  $\dfrac{n}{2}$ entier pair par définition de $p$.
+\par Par suite il vient que $n-1$ est un entier impair, il est égal à $i_{\frac{n}{2}}=n$, donc le  $\dfrac{n}{2}$ entier impair par définition de $i$.
+
+Ainsi on a les équations suivantes:
+$$1+2+3+\cdots+(n-1)+n$$
+$$\Longleftrightarrow i_1+ p_1+ i_2 + \cdots + i_{\frac{n}{2}} + p_{\frac{n}{2}}$$
+quitte à réarranger les termes de la somme on a:
+$$\Longleftrightarrow (p_1+p_2+\cdots+p_{\frac{n}{2}}) + (i_1+ i_2 + \cdots + i_{\frac{n}{2}})$$
+$$\Longleftrightarrow (\dfrac{n}{2}(\dfrac{n}{2}+1))+ ( (\dfrac{n}{2})^2)$$
+
+d'autre part: 
+$$1+2+3+\cdots+(n-1)+n=\dfrac{n(n+1)}{2}$$
+d'où 
+$$\dfrac{n(n+1)}{2} =\dfrac{n}{2}(\dfrac{n}{2}+1) +  (\dfrac{n}{2})^2 $$
+Cette formule nous dit simplement que la somme des entiers naturel $1+2+3+\cdots+n$ est égale à la somme de tous les entiers pairs et de tous les entiers impairs contenu dans $\{1;2;3;...;n\}$.
+
+
+Avec nos suites on peut dire que $$g_{2n}=p_{n}+i_{n}$$
+
+\paragraph*{Soit $n \in \N$ impair}
+
+Si $n$ est impair, il est égal à $i_{\frac{n+1}{2}}$, donc le  $\dfrac{n+1}{2}$ entier impair par définition de $i$.
+\par Par suite il vient que $n-1$ est un entier pair, il est égal à $p_{\frac{n-1}{2}}=n$, donc le  $\dfrac{n}{2}$ entier pair par définition de $i$.
+
+Ainsi on a les équations suivantes:
+$$1+2+3+\cdots+(n-1)+n$$
+$$\Longleftrightarrow i_1+ p_1+ i_2 + \cdots + p_{\frac{n-1}{2}} + i_{\frac{n+1}{2}}$$
+quitte à réarranger les termes de la somme on a:
+$$\Longleftrightarrow (p_1+p_2+\cdots+p_{\frac{n-1}{2}}) + (i_1+ i_2 + \cdots + i_{\frac{n+1}{2}})$$
+$$\Longleftrightarrow (\dfrac{n-1}{2}(\dfrac{n-1}{2}+1))+ ( (\dfrac{n+1}{2})^2)$$
+d'où 
+$$\dfrac{n(n+1)}{2} =\dfrac{n-1}{2}(\dfrac{n-1}{2}+1) +  (\dfrac{n+1}{2})^2 $$
+
+Avec nos suites on peut dire que $$g_{2n+1}=p_{n}+i_{n+1}$$
+\newpage
+
+\section{Suites géométriques}
+\subsection{Définition}
+\begin{defn}
+Soit $\suite[u]$ une suite et $q$ un réel.
+\par On dit qu'une suite $\suite[u]$ est une suite arithmétique de raison $q$ si pour tout entier naturel $n$ : \[u_{n+1}=q\times u_n\]
+\end{defn}
+
+Remarque : Si $q\neq0$ et $u_{0}\neq0$ alors pour tout $n\in\N$, $u_{n}\neq0$.
+
+\begin{exemple}
+\par La suite des puissances de 2 est la suite géométrique de premier terme 1 et de raison 2.
+\par Les suites $u$ et $v$ définies sur $\N$ par $u_n=-4\times 3^{n}$ et $v_n=n^2+1$ sont-elles géométriques ?
+
+
+Pour tout $n$, $\dfrac{u_{n+1}}{u_n}=\dfrac{-4\times 3^{n+1}}{-4\times 3^{n}}=3$.
+\par La suite $u$ est donc géométrique de raison 3.
+\par $v_0=1$, $v_1=2$, $v_2=5$ ainsi $v_1=2\times v_0$ et $v_2=2,5\times v_1$
+\par La suite $v$ n'est donc pas géométrique.
+\end{exemple}
+\subsection{Expression de $u_n$ en fonction de $n$}
+\begin{prop}
+Soit $\suite[u]$ une suite géométrique de raison $q$.
+\par Pour tous entiers naturels $n$ et $p$ : \[u_n=u_p\times q^{n-p}\]
+\par En particulier, pour tout entier naturel $n$ : \[u_n=u_0\times q^{n}\]
+\end{prop}
+
+\begin{demo}
+\par On suppose $n>p$. On a : \\
+\par $\dfrac{u_{n}}{u_{n-1}}=q$ ; \hspace{2em} $\dfrac{u_{n-1}}{u_{n-2}}=q$ ; \hspace{2em} \dots \hspace{2em} $\dfrac{u_{p+2}}{u_{p+1}}=q$ ; \hspace{2em} $\dfrac{u_{p+1}}{u_{p}}=q$
+\par En multipliant toutes ces égalités, on obtient :
+\par $\dfrac{u_{n}}{u_{p}}=q^{n-p}$ soit $u_n=u_p\times q^{n-p}$
+\end{demo}
+
+\newpage
+\begin{prop}
+Soit $\suite[u]$ une suite géométrique de raison $q\neq0$.
+\par Si $q>1$ alors 
+$\left\{\begin{tabular}{@{}l}
+si $u_0>0$, $u$ est strictement croissante.\\
+si $u_0<0$, $u$ est strictement décroissante.
+\end{tabular}\right.$
+\par Si $q=1$ alors $u$ est constante.
+\par Si $0<q<1$ alors 
+$\left\{\begin{tabular}{@{}l}
+si $u_0>0$, $u$ est strictement décroissante.\\
+si $u_0<0$, $u$ est strictement croissante.
+\end{tabular}\right.$
+\par Si $q<0$ alors $u$ n'est pas monotone.
+\end{prop}
+
+\begin{demo}
+\par Pour tout $n$, $u_{n+1}-u_{n}=u_0\times q^{n+1}-u_0\times q^{n}=u_0\times q^{n}(q-1)$
+\par Le signe de $u_{n+1}-u_{n}$ s'obtient donc en fonction du signe de $u_0$, du signe de $q^{n}$ et du signe de $q-1$.
+\end{demo}
+
+\subsection{Somme de termes consécutifs}
+\begin{prop}
+Soit $q$ un réel différent de 1.
+\par Pour tout entier naturel $n$ :
+\[ 1 + q + q^{2} + \cdots + q^{n-1} + q^{n} = \dfrac{1-q^{n+1}}{1-q} \]
+\par Soit $\suite[u]$ une suite géométrique de raison $q\neq 1$.
+\par Pour tout entier naturel $n$ :
+\[u_{0}+u_{1}+ \cdots + u_{n-1}+u_{n}=u_{0}\times\dfrac{1-q^{n+1}}{1-q} \]
+\end{prop}
+
+\begin{demo}
+\par Posons $S=1 + q + q^{2} + \cdots + q^{n-1} + q^{n}$. On a alors $qS=q + q^{2} + q^{3} + \cdots + q^{n} + q^{n+1}$
+\par Ainsi, $S-qS=1-q^{n+1}$
+\par D'où : $S=\dfrac{1-q^{n+1}}{1-q}$
+\end{demo}
+
+\begin{exemple}
+Déterminer la somme des $n$ premières puissances de 2 ($1+2+2^2+\cdots+2^{n-1}$).
+
+
+\par La suite des puissances de 2 est la suite géométrique de raison 2 et telle que $u_0=1$
+\par Ainsi, $u_{0}+u_{1}+ \cdots+u_{n-1}=u_{0}\times\dfrac{1-q^{n}}{1-q}=1\times\dfrac{1-2^n}{1-2}=2^n-1$
+
+\end{exemple}
+
+\subsection{Limite d'une suite géométrique}
+Pour déterminer la limite d'une suite géométrique, il suffit de déterminer la limite des suites du type $(q^n)$ où $q \in \mathbb{R}$.
+
+Pour cela on va s'aider d'une inégalité bien connue, l'inégalité de Bernouilli.
+
+\begin{prop}[l'inégalité de Bernouilli]
+Pour tout entier $n > 1$ et tout réel $x$ non nul et supérieur ou égal à $-1$.
+\end{prop}
+
+\begin{demo}
+Soit un réel $x \in [-1;0[ \cup ]0;+ \infty[ $. Montrons l'inégalité pour tout entier $n > 1$, par récurrence sur $n$.\\
+
+\underline{Initialisation : }
+$(1+x)^{2}=1+2x+x^{2}>1+2x$ donc la propriété est vraie pour n = 2.\\
+
+\underline{Hérédité :} supposons (hypothèse de récurrence) que 
+$(1+x)^{k}>1+kx$ et montrons que la propriété est vraie au rang suivant $k + 1$, c'est-à-dire montrons que $ (1+x)^{k+1}>1+(k+1)x$.\\
+
+En multipliant les deux membres de l'inégalité de l'hypothèse de récurrence par $(1 + x)$ (qui par hypothèse est positif ou nul) on obtient : 
+$$(1+x)^{k+1}=(1+x)^{k}(1+x)\geq (1+kx)(1+x)=1+(k+1)x+kx^{2}>1+(k+1)x$$\\
+
+\underline{Conclusion : } la propriété est vraie au rang 2 et elle est héréditaire donc vraie pour tout entier $n \se 2 $
+\end{demo}
+
+On peut maintenant déduire la divergence de la suite $(q^n)$ quand $q>1$.
+
+\begin{thm}
+Soit la suite $(q^n)$ quand $q>1$ est divergente.
+\end{thm}
+
+\begin{demo}
+Soit $q>1$ ainsi il existe un $x>0$ tel que $q= 1+x$, donc étudier la divergence de $q^n$ revient à étudier la divergence de $(1+x)^n$. Or d'après l'inégalité de Bernouilli  on a:
+
+$$(1+x)^n\se 1+nx $$
+
+Or pour $x>0$ la suite $(1+nx)$ est divergente, on conclut grâce au théorème 3.
+
+\end{demo}
+
+\begin{thm}
+Soit la suite $(q^n)$ quand $\vert q \vert <1$ est convergente vers 0.
+\end{thm}
+
+\begin{demo}
+Soit $0<q<1$ alors il existe un $q'>1$ tel que $q=\dfrac{1}{q'}$. Par suite, $q^n=\dfrac{1}{q'^n}$ or par le théorème précédent, $(q'^n)$ est divergente vers $+ \infty$. Par composé de limite, on obtient que la suite $(q^n)$ tend vers $0$.
+
+Soit $-1<q<0$ alors pour tout $n \ie 0$ on a $q^n\ie \vert q^n \vert $ et aussi $-q^n\ie \vert q^n \vert $ ce qui revient aussi à dire
+
+$$ - \vert q^n \vert \ie q^n \ie \vert q^n$$
+
+ Or $\vert q^n \vert = \vert q \vert^n$ et donc 
+ 
+ $$-  \vert q \vert^n \ie q^n \ie \vert q \vert^n$$
+ 
+ On conclut rapidement puisque la suite $(\vert q \vert^n)$ tend vers 0 d'après le cas où  $0<q<1$ et avec le théorème des gendarmes.
+
+\end{demo}
+
+
+\subsection{Application: la limite de l'exponentielle}
+
+On peut définir aussi $e^x:=  \limn (1+\dfrac{x}{n})^n$, par l'inégalité de Bernouilli, on sait que 
+$(1+y)^n>1+ny$ et pour n'importe quelle quantité $y \in [-1;0[ \cup ]0;+ \infty[ $. on sait que si $x>0$ alors $\dfrac{x}{n}$ ainsi l'inégalité s'applique avec $y=\dfrac{x}{n}$.
+
+d'où $(1+\dfrac{x}{n})^n \se 1+x$ ainsi en passant à la limite quand $n$ tend vers $+ \infty$ on obtient 
+$$e^x \se 1+x$$  pour $x>0$
+en passant maintenant à la limite quand $x$ tend vers $ + \infty$ alors la limite en $+ \infty$ de l'exponentielle est $+ \infty$
+
+on sait que $e^{-x}=\dfrac{1}{e^x}$, on conclut rapidement de ce fait sur la limite de l'exponentielle en $- \infty$ 
+
+\begin{comment}
+\newpage
+
+\section{Exercices}
+\subparagraph*{Exercice 1}
+Soit $u_0=1000$ et  $u_{n+1}=1,04u_n$.
+%Alors, $u_0=1000$, \\
+%$u_1=1,04\tm u_0=1,04\tm 1000=1040$, \\
+%$u_2=1,04\tm u_1=1,04\tm 1040=1081,6$,  \\
+%$u_3=1,04\tm u_2= \ \dots$ \\
+%$u_{50}=1,04 u_{49}$
+Donner $u_0$, $u_1$, $u_2$, $u_3$, $u_{10}$ et $u_{50}$
+
+\subparagraph*{Exercice 2}
+
+
+Soit la fonction $f$ définie sur $\R$ par $f:x\mapsto 3x-2$. 
+\begin{enumerate}
+\item On définie la suite $(u_n)$ par $u_0=1$ et  $u_{n+1}=f(u_n)$. 
+  Calculer $u_1$, $u_2$, $u_{10}$, $u_{100}$ et $u_{1000}$. 
+
+\item On définie la suite $(v_n)$ par $v_0=2$ et  $v_{n+1}=f(v_n)$. 
+  Calculer $v_1$, $v_2$, $v_{10}$, $v_{100}$ et $v_{1000}$. 
+\end{enumerate}
+
+\subparagraph*{Exercice 3}
+\begin{enumerate}
+\item Soit la suite arithmétique $\suite[u]$ de premier terme $u_0 = -5$ et de raison $r = 2$. Calculer $u_{3002}$.
+\item Soit la suite arithmétique $\suite[v]$ de premier terme $v_2 = 1200$ et de raison  $r = -10$. Calculer $v_{25}$. À partir de quel rang la suite est-elle négative ?
+\end{enumerate}
+
+\subparagraph*{Exercice 4}
+Soit $\suite[u]$ une suite arithmétique telle que $u_{10} = -70$ et $u_{25} = 80$.
+Calculer la raison $r$ de cette suite, puis calculer $u_0$ et$u_{1212}$.
+
+\subparagraph*{Exercice 5} 
+Soit  $\suite[v]$ la suite géométrique de premier terme $u_0 = 0,2$ et de raison $q =\dfrac14$.
+Calculer $u_4$ et $u_{20}$.
+\subparagraph*{Exercice 6} On utilise une feuille de papier, d'épaisseur $e = 0, 5 mm$, que l’on replie successivement en deux. Quelle est l’épaisseur de la feuille après le premier pliage ? après le deuxième ? après le $n$-ième ? Combien de fois faudrait-il replier cette feuille en deux pour obtenir une épaisseur supérieure à $300 m$ ?
+\end{comment}
+
+
+
+\section{Suite récurente linéaire d'ordre 1}
+
+\begin{defn}
+La suite $\un$ est définie par une \textbf{relation de récurrence linéaire d'ordre 1}, si pour tout $n\in\N$, on a $u_{n+1}=au_n + b$, avec $a$ et $b$ deux réels.\\
+Ces suites sont aussi dites \textbf{arithmético-géométriques}.
+\end{defn}
+
+\begin{rem}
+Cas particuliers :
+\begin{itemize}
+	\item Si $b = 0$, alors on a $u_{n+1}=au_n$. C'est une suite géométrique de raison $a$.
+	\item Si $a = 1$, alors on a $u_{n+1}=u_n+b$. C'est une suite arithmétique de raison $b$.
+\end{itemize}
+\end{rem}
+
+\begin{thm}[Expression explicite d'une suite arithmético-géométrique]
+Soit $\un$ une suite récurente linéaire d'ordre 1. Si $a\neq1$ alors  $$u_n = a^n \pa{u_0-\cfrac{b}{1-a}} + \cfrac{b}{1-a}.$$ 
+\end{thm}
+
+%dem par récurrence
+% On verra deux démonstrations qui ont chacune leur importance pour le point de vue qu'elles utilisent :\\
+% \cadre{Méthode}{Le raisonnement par récurrence}
+% {Le raisonnement par récurrence est constitué de deux étapes :
+% \begin{itemize}
+% 	\item On établit la propriété au rang $p$. (Souvent $p = 0$). On \textbf{initialise} le raisonnement.
+% 	\item On suppose que pour tout $n ( n\geq p )$, la propriété est vraie et on la démontre au rang $n + 1$. \textbf{itération}
+% \end{itemize}}
+% 
+% \dem{
+% Observons les premiers termes :\\
+% 	$u_1 = au_0 + b.$\\
+% 	$u_2 = au_1 + b = a(au_0+b) + b = a^2u_0 + b(1+a) .$\\
+% 	$u_3 = au_2 + b = a(a^2u_0+b(1+a))+ b = a^3u_0 + b(1+a+a^2).$\\
+% On pense alors que $u_n = a^n u_0 + b(1+a+a^2+\cdots +a^{n-1})$. Il reste à le démontrer par récurrence.\\
+% On l'a déjà vérifié au rang $n = 1$.\\
+% Supposons la propriété vraie jusqu'au rang $n\geq 1$. Il faut démontrer la propriété au rang $n+1$.\\
+% On sait que $u_{n+1} = au_n + b$. \\
+% On utilise alors l'hypothèse de récurrence $u_n = a^n u_0 + b(1+a+a^2+\cdots +a^{n-1})$.\\
+% Ainsi $u_{n+1} = a\cro{a^n u_0 + b(1+a+a^2+\cdots +a^{n-1})}+b.$\\
+% Donc $u_{n+1} = a^{n+1} u_0 + b(1+a+a^2+\cdots +a^{n})$.\\
+% On a ainsi bien démontrée l'hypothèse au rang $n+1$.\\
+% Donc pour tout $n\in N^*$, on a $u_n = a^n u_0 + b(1+a+a^2+ \cdots +a^{n-1})$.\\
+% De plus, on reconnaît la somme d'une suite géométrique et donc,\textbf{pour $a\neq 1$},  $1 + a + a^2 + \cdots + a^{n–1} =\cfrac{1-a^n}{1-a}$.\\
+% On obtient alors l'expression de $u_n$ pour $a\neq1$, $u_n = a^n \pa{u_0-\cfrac{b}{1-a}}+ \cfrac{b}{1-a}$.}
+
+\begin{demo}
+Supossons que la limite de la suite $\un$ existe et notons la $l$.\\
+Comme $u_{n+1} = au_n + b$, on a par passage à la limite $l=al+b$ d'où \textbf{si la limite existe}, elle vaut $l=\cfrac{b}{1-a}$ avec nécessairement $a\neq1$. (Si $a=1$, la suite $\un$ est arithmétique et diverge).\\
+On considère alors la suite $\vn$ définie par $v_n=u_n-l=u_n-\cfrac{b}{1-a}$.\\
+Cette nouvelle suite est géométrique. En effet :\\
+$v_{n+1}=u_{n+1}-\cfrac{b}{1-a}=au_n+b-\cfrac{b}{1-a}=a\pa{v_n+\cfrac{b}{1-a}}+b-\cfrac{b}{1-a}=av_n$.\\
+On en déduit que $v_n=a^nv_0=a^n\pa{u_0-\cfrac{b}{1-a}}$ et par suite :
+$$u_n = a^n \pa{u_0-\cfrac{b}{1-a}}+ \cfrac{b}{1-a}.$$
+Cette démonstration est très souvent utilisée dans les exercices.
+\end{demo}
+
+
+
+
+
+\begin{thm}[Convergence]
+De la forme explicite d'une suite récurente linéaire d'ordre 1, on déduit :
+	\begin{itemize}
+	\item Si $a = 1$, alors la suite est arithmétique et diverge .
+	\item Si $a\neq1$ et $u_0 =\cfrac{b}{1-a}$ , alors la suite est constante (et donc converge).
+	\item Si $a\neq 1$ et $u_0\neq \cfrac{b}{1-a}$, alors la suite converge vers $\cfrac{b}{1-a}$ si $\abs{a}<1$ et elle diverge si $\abs{a}>1$.
+\end{itemize}
+
+\end{thm}
+
+
+% Rep grap? d'une suite $u_n=f(n)$
+% \exe{On considère la suite $\un$ définie par $u_0=1$ et $u_{n+1}=0,5u_n+1$.\\
+% Dans un repère, on trace le représentations graphiques de la fonction $f(x)=0,5x+1$ et la droite d'équayion $y=x$.\\
+% $u_1=0.5\times u_0+1=f(u_0)$ donc on cherche l'ordonnée sur $\Co_f$ du point d'abscisse $u_0$.\\
+% De même,$u_2=0,5u_1+1=f(u_1)$. on reporte $u_1$ sur l'axe des abscisses grace à la droite d'équation $y=x$ puis on cherche l'ordonnée du point d'abscisse $u_1$.
+% $$\psset{unit=3cm}
+% \begin{pspicture}(-0.5,-0.5)(3,3)
+% \psplot{-0.25}{3}{x}
+% \psplot{-0.25}{3}{0.5 x mul 1 add}
+% \psaxes[labels=none]{->}(3,3)
+% \rput[t](1,-0.25){$u_0$}\rput[t](1.5,-0.25){$u_1$}\rput[t](1.75,-0.25){$u_2$}\rput[t](1.875,-0.25){$u_3$}
+% \rput[r](0,1.5){$u_1$}\rput[r](0,1.75){$u_2$}\rput[r](0,1.875){$u_3$}
+% \psline[linestyle=dashed, linecolor=rouge](1,0)(1,1.5)(1.5,1.5)(1.5,1.75)(1.75,1.75)(1.75,1.875)(1.875,1.875)%trait rouge
+% \psline[linestyle=dashed](0,1.5)(1,1.5)\psline[linestyle=dashed](0,1.75)(1.5,1.75)\psline[linestyle=dashed](0,1.875)(1.75,1.875)%triat horizontaux noirs
+% \psline[linestyle=dashed](1.5,0)(1.5,1.5)\psline[linestyle=dashed](1.75,0)(1.75,1.75)\psline[linestyle=dashed](1.875,0)(1.875,1.875)%traits verticaux noirs
+% 
+% \end{pspicture}$$
+% On remarque que le suite converge vers le point 2, intersection de $y=x$ et $y=0.5x+1$ (c'est à dire solution de $0.5x+1=0.5$)}
+% 
+
+
+\section{Suites récurrentes linéaires d'ordre 2}
+\begin{defn}
+La suite $\un$ est définie par une \textbf{relation de récurrence linéaire d'ordre 2}, si pour tout $n\in\N$, on a $u_{n+2} = Au_{n+1} + Bu_n$, avec $A$ et $B$ deux réels non nuls.\\
+Cette relation peut aussi s'écrire sous la forme $au_{n+2}+bu_{n+1}+cu_n=0$.
+\end{defn}
+
+\begin{defn}[équation caractéristique]
+On appelle \textbf{équation caractéristique} de cette suite l'équation $ar^2+br+c=0$.\\
+On note $\Delta$, le \textbf{discriminant} qui a pour valeur $\Delta=b^2-4ac$.
+\end{defn}
+
+\begin{thm}
+\begin{itemize}
+\item Si $\Delta>0$ alors l'équation caractéristique admet deux solutions réelles distinctes $r_1$ et $r_2$ et $u_n = C_1 r_1^n + C_2 r_2^n$, où $C_1$ et $C_2$ sont deux réels ;
+\item Si $\Delta=0$, alors l'équation caractéristique admet une solution double $r$ et $u_n = r^n(C_1n+C_2)$ , où $C_1$ et $C_2$ sont deux réels ;
+\item Si $\Delta < 0$, alors l'équation caractéristique admet deux solutions complexes conjugués $r\eit$ et $r\eimt$ et $ u_n = r^n\cro{C_1\cos(n\theta)+C_2\sin(n\theta)} $, où $C_1$ et $C_2$ sont deux réels.
+\end{itemize}
+Les réels $C_1$ et $C_2$ sont à déterminer en fonction des valeurs initiales.
+\end{thm}
+
+\begin{rem}
+L'analogie avec les équations différentielles de deuxième ordre est plus qu'à remarquer.
+\end{rem}
+
+\begin{demo}
+la démonstration complète de ce théorème nécessite des notions que nous ne connaissons pas encore. On peut néammoins en comprendre les bases.\\
+On cherche des solutions sous la forme $r^n$.\\
+Si une telle solution existe alors nécéssairement, on a $r^{n+2}+Ar^{n+1}+Br^n=0$ d'où par factorisation $r^n(r^2+Ar+B)=0$.\\
+Pour avoir un produit nul, il faut avoir $r=0$ ou $r^2+Ar+B=0$.\\
+On a repéré un type de solution. Le reste de la démonstration consiste à montrer que toutes les solutions sont formées à partir de celle-ci.
+\end{demo}
+
+\end{document}

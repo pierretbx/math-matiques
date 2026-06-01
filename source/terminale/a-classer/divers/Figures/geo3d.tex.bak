@@ -1,0 +1,200 @@
+input latexmp;
+input repere;
+%input newcourbes; 
+%input couleur;
+angle_radius=8pt;
+ 
+def mark_rt_angle(expr a, b, c) =
+  draw ((0,1)--(1,1)--(1,0))
+       zscaled (angle_radius*unitvector(a-b)) shifted b;
+enddef;
+
+%vardef f(expr x)=e**x enddef;
+
+repere(-5,5,1cm,-3,6,1cm);
+ %path Cf;
+ picture p;
+ %Cf:=courbefonc(f,-5,2.1,100);
+ %p:=tangente(Cf,0.5);
+ %draw axes.llft(1,0);
+% draw Cf;
+ %fin;
+
+% coordonnées d'un point dans un repere de l'espace 
+numeric u; 
+pair t,s,q; 
+u = 1cm; 
+
+%definitions de l'origine et des vecteurs de base 
+ t=(1u,0u); 
+ s=(0u,1u); 
+ q=(-0.5u,-0.5u); 
+ z0 = (0,0); 
+ z1= z0 shifted t; 
+ z2 = z0 shifted s; 
+ z3 = z0 shifted q; 
+
+%construction du point M 
+z4 = z0 shifted 4t; 
+z5 = z0 shifted 4s; 
+z6 = z0 shifted 4q; 
+
+
+z7= 3.5*t+2.5*q; 
+label.bot(btex $M'$ etex, z7); 
+z8 = 3.5*t ; 
+z9 = 2.5*q ;
+
+z10 = z7 shifted 3s; 
+
+ z11 = z10 shifted z0-z7; 
+ path p;
+ p:=z0--z7--z10--z11--cycle;
+ fill p withcolor gris;
+ 
+ %trace de l'origine et des vecteurs de base 
+dotlabel.lft(btex $O$ etex, z0); 
+label.bot(btex $\overrightarrow{j}$ etex, z1); 
+label.lft(btex $\overrightarrow{i}$ etex, z3); 
+label.lft(btex $\overrightarrow{k}$ etex, z2); 
+
+
+
+%trace des axes 
+ drawarrow z0--z1 withpen pencircle scaled 1bp; 
+ drawarrow z0--z2 withpen pencircle scaled 1bp; 
+  drawarrow z0--z3 withpen pencircle scaled 1bp; 
+
+
+ drawarrow z0--z4 ; 
+ drawarrow z0--z5 ; 
+ drawarrow z0--z6 ; 
+
+draw z7--z8 dashed evenly; 
+draw z7--z9 dashed evenly; 
+label.top(btex $y$ etex, z8); 
+label.lft(btex $x$ etex, z9); 
+
+draw z7--z10 dashed evenly; 
+label.rt(btex $M$ etex, z10); 
+
+draw z11--z10 dashed evenly; 
+label.lft(btex $z$ etex, z11); 
+drawarrow z0--z10 withpen pencircle  withcolor rouge; 
+drawarrow z0--z7withpen pencircle withcolor rouge; 
+fin;
+
+repere(-5,5,1cm,-3,6,1cm);
+numeric u; 
+u = 1cm; 
+ pair o,a,b,h;
+ o:=origin;
+ a:=(2u,3u);
+ b:=(3u,0);
+ h:=(2u,0);
+ drawarrow o--b  scaled 1bp withcolor rouge;
+ drawarrow o--a  scaled 1bp withcolor bleu;
+ drawarrow b--a;
+
+ draw h--a dashed evenly;
+
+ %draw symbole_ortho(b,h,a,0.25u);
+  
+ %mark_angleg(b,o,a,0,0.45u);
+
+%drawarrow quartercircle scaled 0.8u cutafter ( o -- a ); 
+drawarrow quartercircle scaled 0.8u cutafter ( o -- a ); 
+mark_rt_angle(a, h, o);
+%label.urt(btex $ \theta $ etex, 0.3*dir 15) ;
+
+
+
+ label.lft(btex $\overrightarrow{u}$ etex, 0.5*(o+a));
+ label.rt(btex $\overrightarrow{u}-\overrightarrow{v}$ etex, 0.5*(a+b));
+ label.bot(btex $\overrightarrow{v}$ etex, 0.5*(o+b));
+ label.urt(btex $H$ etex, h);
+label.rt(btex $\theta$ etex, (0.35u, 0.35u));
+ label.top(btex $A$ etex, a);
+ label.lrt(btex $B$ etex, b);
+ label.llft(btex $O$ etex, o);	
+ fin;
+ 
+repere(-5,7,1cm,-3,6,1cm); 
+numeric u;
+u:=0.8cm;
+pair a,b,c;
+
+a:=origin;
+b:=(6u,0);
+c:=(6u,3u);
+
+drawarrow a--b  scaled 1bp withcolor bleu;
+drawarrow a--c  scaled 1bp  withcolor violet;
+drawarrow b--c  scaled 1bp  withcolor rouge;
+
+
+label.bot(btex $\overrightarrow{u}$ etex, 0.5*(a+b))withcolor bleu;
+label.rt(btex $\overrightarrow{v}$ etex, 0.5*(c+b))withcolor rouge;
+label.ulft(btex $\overrightarrow{u}+\overrightarrow{v}$ etex, 0.5*(a+c))withcolor violet;
+label.llft(btex $A$ etex, a);
+label.lrt(btex $B$ etex, b);
+label.urt(btex $C$ etex,c);
+ 
+fin;
+
+
+
+%droites orthogonales 
+repere(-5,7,1cm,-3,6,1cm); 
+ numeric u;
+ pair t,r,zz,ZZ;
+ transform T,S;
+ u= 1cm;
+ t=(2u,3u); r=(0u,2u);
+ T = identity shifted t;
+ S = identity shifted r;
+
+ %les droites perpendiculaires en I
+ z0=(0u,0u);
+ transform T;
+ z1 = z0 transformed T;
+ zz:= 0.25*z1;
+ ZZ:= 0.25*z2;
+ transform S;
+ z2 = z0 transformed S;
+ draw z0--z1 withcolor bleu;
+ draw z0--z2 withcolor bleu;
+ drawarrow z0--zz withcolor bleu withpen pencircle scaled 1.6bp;
+ drawarrow z0--ZZ withcolor bleu withpen pencircle scaled 1.6bp;
+ label.bot(btex $I$ etex, z0) ;
+ label.lft(btex $\overrightarrow{u}$ etex, 0.5*(z0+ZZ)) withcolor bleu;
+ label.rt(btex $\overrightarrow{v}$ etex, 0.5*(z0+zz)) withcolor bleu;
+
+
+ %marquage de l'angle droit
+%transform Z;
+ %z3 =0.1[z0,z1];
+% z4=0.1[z0,z2];
+ %z5=z3 shifted z4-z0;
+ %draw z3--z5;
+ %draw z4--z5;
+
+ %droites d et delta
+% pair zzz, ZZZ;
+% z6=(0u,-1u);
+% z7 = z6 transformed T;
+ %zzz:=zz shifted (0,-1u);
+ %drawarrow z6--zzz withcolor bleu withpen pencircle scaled 1.6bp;
+ %label.rt(btex $\overrightarrow{v}$ etex, 0.5*(z6+zzz)) withcolor bleu;
+ %draw z7--z6 withcolor bleu;
+% label.bot(btex $\Delta$ etex, z7) withcolor bleu;
+% z8=(-1u,-1u);
+% z9= z8 transformed S;
+ %ZZZ:=ZZ shifted(-u,-u);
+% drawarrow z8--ZZZ withcolor bleu withpen pencircle scaled 1.6bp;
+% label.lft(btex $\overrightarrow{u}$ etex, 0.5*(z8+ZZZ)) withcolor bleu;
+ %label.lft(btex $\cald$ etex, z9) withcolor bleu;
+ %draw z9--z8 withcolor bleu;
+ fin;
+ 
+end

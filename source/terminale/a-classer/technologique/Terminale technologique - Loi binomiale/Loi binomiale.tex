@@ -1,0 +1,492 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{pascaltriangle}
+%%% Figures
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{multicol}
+\usepackage{tikz}
+%%%Affichage 
+\newcommand{\ds}{\displaystyle}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+%\TeacherModeOff
+\TeacherModeOn
+\begin{document}
+%\tableofcontents
+\setcounter{chapter}{7}
+\chapter{Loi Binomiale}
+\section{Loi de Bernoulli}
+
+\begin{defn}
+Une épreuve de Bernoulli de paramètre $p$ (réel compris entre 0 et 1) est une expérience aléatoire comportant deux issues, \gap*{le succès} ou \gap*{l'échec}.
+\end{defn}
+
+\begin{defn}
+Soit $p$ un nombre réel tel que $p\in[0;1]$. Soit $X$ une variable aléatoire. On dit que $X$ suit \gap*{une loi de Bernoulli} de paramètre $p$ si :
+\begin{itemize}
+ \item[$\bullet$] $X$ prend pour seules valeurs 1 (\og{}succès\fg{}) et 0 (\og{}échec\fg{}) ;
+\item[$\bullet$] $\mathbb{P}(X=1)=p$ et $\mathbb{P}(X=0)=1-p$.
+\end{itemize}
+\end{defn}
+
+\begin{prop}
+ Soit $X$ une variable aléatoire qui suit la loi de Bernoulli de paramètre $p$, alors $\mathbb{E}(X)=p$.
+\end{prop}
+
+\begin{demo}
+ $$\mathbb{E}(X)=0\times \mathbb{P}(X=0)+1\times \mathbb{P}(X=1)=0\times (1-p)+1\times p = p$$
+\end{demo}
+
+\begin{exemple}
+Supposons que nous voulions calculer la probabilité de sortir un as d'un jeu de cartes en utilisant une épreuve de Bernoulli. 
+La probabilité de sortir un as est de $\frac{4}{52}$ (4 as sur 52 cartes) et chaque essai est indépendant. 
+Si l'on tire un as, l'épreuve est réussie $(X = 1)$ et si ce n'est pas le cas, l'épreuve échoue $(X = 0)$. 
+La probabilité de réussir l'épreuve est donc de  $\frac{4}{52}$, celle d'échouer est de $1-\frac{4}{52}=\frac{48}{52}$.
+
+\end{exemple}
+
+\section{Factorielle, triangle de Pascal et coefficients binomiaux}
+\subsection{Factorielle}
+\begin{defn}
+Soit $n\in \N$ on note $n!$ qui se lit \og $n$ factorielle \fg{} le nombre suivant.
+$$n!=1\times2\times3\times\cdots\times n$$
+avec pour convention $0!=1$ et $1!=1$ 
+\end{defn}
+
+\begin{exemple}
+Calculer $2!;\ 3!$ $4!$
+\begin{multicols}{3}
+\begin{itemize}
+\item[$\bullet$]$2!=1\times2=2$
+\item[$\bullet$]$3!=1\times2\times3=6$
+\item[$\bullet$]$4!=1\times2\times3\times4=24$
+\end{itemize}
+\end{multicols}
+\end{exemple}
+
+\begin{prop}
+Pour tout $n \in \N$ on a $(n+1)!=n!\times(n+1)$
+\end{prop}
+
+\subsection{Coefficients binomiaux}
+
+\begin{defn}[Définition et propriété]
+Soient $n$ et $k$ deux entiers naturels avec $k\leq n$. On note $\binom{n}{k}$ (on dit \og{}$k$ parmi $n$\fg{}) le nombre de manières d'obtenir $k$ \gap*{succès} et $n-k$ \gap*{échecs} pour $n$ répétitions indépendantes de la même épreuve de Bernoulli. \\
+
+De plus  $$\binom{n}{k}=\dfrac{n!}{k!(n-k)!}$$
+\end{defn}
+
+\begin{exemple}
+Calculer $\binom{4}{3}$,$\binom{5}{3}$,$\binom{n}{0}$,$\binom{n}{1}$,$\binom{n}{n-1}$,$\binom{n}{n}$
+\end{exemple}
+
+\begin{multicols}{3}
+\begin{itemize}
+\item[$\bullet$]$\binom{4}{3}=4$
+\item[$\bullet$]$\binom{5}{3}=10$
+\item[$\bullet$]$\binom{n}{0}=1$
+\item[$\bullet$]$\binom{n}{1}=n$
+\item[$\bullet$]$\binom{n}{n-1}=n$
+\item[$\bullet$]$\binom{n}{n}=1$
+\end{itemize}
+\end{multicols}
+
+\begin{rem}[Calcul pratique de $\binom{n}{k}$] Calcul de $\binom{10}{3}$:
+\begin{itemize}
+\item Sur TI : 10 \fbox{MATH} (se déplacer à droite de l'écran) puis \fbox{PRB}  \fbox{3} (Combinaison) puis taper le 3 final pour obtenir à l'écran \og 10 Combinaison 3 \fg{} puis 120 en exécutant.
+
+\item Sur Casio: \fbox{OPTN(F6)}  puis \fbox{PROB(F3)}. Le choix nCr apparaît en bas de l'écran. On tape ensuite 10 \fbox{nCr} 3 puis \fbox{EXE} pour obtenir 120 
+\end{itemize}
+\end{rem}
+\subsection{Triangle de Pascal}
+
+
+\begin{prop}[Triangle de Pascal]
+ Le triangle de Pascal, du nom de Blaise Pascal, mathématicien français du XVII\up{e} siècle qui le\og{}redécouvra\fg{} en Occident (car il était connu avant en Orient et au Moyen-Orient) est une disposition permettant de visualiser et de calculer les coefficients binomiaux et qui s'appuie sur la formule précédente.
+\begin{center}
+ \begin{tabular}{|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+\hline
+  $\binom{0}{0}=1$ & & & & &\\
+\hline
+$\binom{1}{0}=1$ & $\binom{1}{1}=1$ & & & &\\
+\hline
+$\binom{2}{0}=1$ & $\binom{2}{1}=2$ & 1 & & &\\
+\hline
+$\binom{3}{0}=1$ & $\binom{3}{1}=3$ & 3 & 1 & & \\
+\hline
+1 & 4 & 6 & 4 & 1 &\\
+\hline
+1 & 5 & 10 & 10 & 5 & 1\\
+\hline
+ \end{tabular}
+ 
+\end{center} 
+
+\end{prop} 
+
+\begin{rem}
+Explication de la construction : le nombre de la ligne $n$ et de la colonne $k$ est le coefficient binomial $\binom{n-1}{k-1}$. Il est obtenu en ajoutant le nombre situé au dessus (ligne $n-1$ et colonne $k$) au nombre de la colonne et de la ligne précédente (ligne $n-1$ et colonne $k-1$).\\
+Par exemple, $\binom{3}{1}=3$ est la somme de $\binom{2}{1}=2$ et de $\binom{2}{0}=1$.
+%\begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|}
+%\hline
+%  1 & & & & &\\
+%\hline
+%1 & 1 & & & &\\
+%\hline
+%1 & 2 & 1 & & &\\
+%\hline
+%1 & 3 & 3 & 1 & & \\
+%\hline
+%1 & 4 & 6 & 4 & 1 &\\
+%\hline
+%1 & 5 & 10 & 10 & 5 & 1\\
+%\hline
+% \end{tabular}
+%\end{center}
+
+\begin{center}
+\pascal[binom,shape=rt]{6}
+\pascal[shape=rt]{6}
+\end{center}
+
+En particulier on a pour tout $n \in \mathbb{N}^*$ et pour tout $k \in \mathbb{N}$ tel que $0< k \leq n$,
+
+$$ \binom{n}{k}+ \binom{n}{k+1}= \binom{n+1}{k+1}$$
+\end{rem}
+
+\section{Loi Binomiale}
+
+\begin{defn}
+On considère une épreuve de Bernoulli de paramètre $p\in [0;1]$. On répète $n$ fois ($n\geq 1$) cette expérience indépendamment et on note $X$ la variable aléatoire qui compte le nombre de succès. On dit alors que la variable aléatoire $X$ suit une loi \gap*{\emph{binomiale}} de paramètres \gap*{n} et  \gap*{p} et on note $X\sim \mathcal{B}(n;p)$.
+\end{defn}
+
+
+\begin{prop}
+ Si $X$ est une variable aléatoire qui suit une loi binomiale de paramètres $n$ et $p$, alors la probabilité d'obtenir $k$ succès avec $k\in\{0;1;2;...;n\}$ est 
+$$\mathbb{P}(X=k)=\binom{n}{k}p^k(1-p)^{n-k}$$
+\end{prop}
+
+\begin{exemple}
+Supposons que vous lanciez une pièce de monnaie 10 fois. La probabilité de faire face (notée $p$) est de $0,5$ et la probabilité de faire pile ($1-p$) est également de $0,5$. Utilisons la formule de la loi binomiale pour calculer la probabilité de faire face exactement 5 fois parmi les 10 lancés :
+
+$$\mathbb{P}(X=5) = \binom{10}{5} \times 0.5^5 \times 0.5^{10-5} = 252 \times 0.03125 \times 0.03125 = 0.2373046875$$
+
+Dans cet exemple, $n = 10$ est le nombre total de lancers, $X = 5$ est le nombre de résultats positifs souhaités et $p = 0,5$ est la probabilité de succès (obtenir face).
+\end{exemple}
+
+\begin{prop}
+Soit $X\sim \mathcal{B}(n;p)$, alors $E(X)=np$
+\end{prop}
+
+\begin{exemple}
+Dans l'exemple précédent, $n = 10$ et $p = 0,5$ donc $\mathbb{E}(X)=10\times 0,5=5$. Ce nombre représente ce que l'on peut espérer de $X$ \gap*{en moyenne}. C'est la valeur limite que l'on obtiendrai en faisant la moyenne des valeurs de $X$ si l'on répète l'expérience une infinité de fois.
+\end{exemple}
+
+
+\begin{prop}
+Soit $X\sim \mathcal{B}(n;p)$, alors $\mathbb{P}(X>k)=1-\mathbb{P}(X\leq k)$ ou $\mathbb{P}(X \geq k)=1-\mathbb{P}(X<k)$ avec $k\in\{0;1;\cdots;n\}$
+\end{prop}
+
+\begin{exemple}
+Un fabricant de jouets fabrique des ballons de basket qui ont une probabilité de 0,8 de ne pas être défectueux. Si on en prend 20 au hasard, combien y a-t-il de chances qu'il y ait au moins un ballon défectueux ?\\
+
+La probabilité de ne pas avoir un ballon défectueux est de $0,8$, et donc, la probabilité d'avoir un ballon non défectueux est de $0,2$. On cherche à calculer la probabilité qu'il y ait au moins un ballon défectueux, c'est à dire la probabilité d'avoir 1; 2; ...; ou 20 ballons défectueux.\\
+
+On peut utiliser la formule de la loi binomiale pour calculer la probabilité de chaque nombre de ballons défectueux et ensuite les additionner mais cela va très vite devenir lourd en calcul.\\
+$$\mathbb{P}(X \geq 1)= \mathbb{P}(X=1)+\mathbb{P}(X=2)+\cdots+\mathbb{P}(X=20)$$
+ On utilise la formule suivante pour économiser des calculs:\\
+$$\mathbb{P}(X \geq 1) = 1 - \mathbb{P}(X < 1)= 1- \mathbb{P}(X=0)$$
+On peut utiliser la formule de la loi binomiale pour calculer $\mathbb{P}(X = 0)$:\\
+$$\mathbb{P}(X = 0) = 1 \times (0,2)^0 \times (0,8)^{20} = 1 \times 1 \times (0,8)^{20} = 0,08589934592$$
+On peut maintenant calculer la probabilité qu'il y ait au moins un ballon défectueux:
+$$\mathbb{P}(X \geq 1) = 1 - \mathbb{P}(X = 0) = 1 - 0,08589934592 = 0,91410065408$$
+Donc, il y a environ 91,41\% de chances qu'il y ait au moins un ballon défectueux parmi les 20 ballons pris au hasard.
+\end{exemple}
+
+
+\begin{rem}[Calcul pratique de $\mathbb{P}(X=k)$ et $\mathbb{P}(X\leq k)$]
+Soit $X$ une variable aléatoire de paramètres $n$ et $p$. Pour $k$ allant de 0 à $n$, pour calculer $\mathbb{P}(X=k)$ ou $\mathbb{P}(X\leq k)$, on utilise une calculatrice :
+\begin{itemize}
+\item[$\bullet$] Sur Texas instrument : aller dans le menu \fbox{2nd}\fbox{distrib}, choisir \fbox{binomFdp} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $\mathbb{P}(X=k)$ et choisir \fbox{binomFRép} et taper \fbox{n}\fbox{,}\fbox{p}\fbox{,}\fbox{k}\fbox{)} pour calculer $\mathbb{P}(X\leq k)$.
+\item[$\bullet$] Sur Casio : aller dans le menu \fbox{STAT} puis \fbox{DIST} puis \fbox{BINM}. Sélectionner alors \fbox{Bpd} puis \fbox{Var} pour variable, puis entrer alors $k$  dans la ligne \og{}x\fg{}, $n$ dans la ligne \og{}numtrial\fg{} et $p$ dans la ligne \og{}p\fg{} puis aller sur \og{}execute\fg{} pour valider et calculer ainsi $\mathbb{P}(X=k)$. Pour le calcul de  $\mathbb{P}(X\leq k)$, on utilisera \fbox{Bcd} au lieu de \fbox{Bpd}.
+\end{itemize}
+\end{rem}
+
+\newpage
+
+\section{Exercices}
+
+\begin{exocor}
+Dresser le triangle de Pascal jusqu'à $n=10$.
+\end{exocor}
+
+\begin{exocor}
+Soit $X$ un variable aléatoire discrète telle que $X\sim \mathcal{B}(3;0,6)$.
+
+\begin{enumerate}
+\item Calculer $\mathbb{P}(X=0);\mathbb{P}(X=1);\mathbb{P}(X=2);\mathbb{P}(X=3)$.
+\item Calculer $\mathbb{E}(X)$
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Déterminer ou calculer les coefficients binomiaux suivants.
+\begin{multicols}{7}
+\begin{enumerate}
+\item $\binom{3}{2}$
+\item $\binom{4}{1}$
+\item $\binom{4}{3}$
+\item $\binom{17}{0}$
+\item $\binom{15}{15}$
+\item $\binom{10}{3}$
+\item $\binom{10}{4}$
+\item $\binom{10}{5}$
+\item $\binom{10}{6}$
+\item $\binom{10}{7}$
+\item $\binom{n}{0}$
+\item $\binom{n}{1}$
+\item $\binom{n}{n}$
+\item $\binom{n}{n-1}$
+\end{enumerate}
+\end{multicols}
+\end{exocor}
+
+\begin{exocor}
+Une entreprise fabrique des pièces de machines, dont 10\% sont défectueuses. On prélève au hasard 20 pièces.
+
+\begin{enumerate}
+\item Quelle est la probabilité qu'exactement 2 pièces soient défectueuses ?
+\item Quelle est la probabilité qu'au plus 2 pièces soient défectueuses ?
+\item Quelle est la probabilité qu'au moins 2 pièces soient défectueuses ?
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+L'arracheur de dents arrache les dents de ses patients au hasard. Les clients ont une dent malade parmi
+les trente-deux qu'ils possèdent avant l'intervention des tenailles du praticien.
+
+\begin{enumerate}
+\item On considère les dix premiers clients : calculer la probabilité pour qu'aucun de ces dix patients n'y laisse la dent malade.
+\item On considère les dix premiers clients : calculer la probabilité pour qu’au moins un de ces clients y laisse la dent malade.
+\item Combien doit-il traiter de personnes pour extraire au moins une dent malade avec une probabilité
+supérieure à 0,6 ?
+\end{enumerate} 
+\end{exocor}
+
+\begin{exocor}
+Une entreprise dispose d’un parc de 60 ordinateurs neufs ; la probabilité que l’un d’entre eux tombe en panne sur une période d’une année est de 0,1 (période de garantie) ; la panne de l’un des ordinateurs n’affecte pas les autres machines du parc.
+
+Quelle est la probabilité que moins de 4 appareils tombent en panne durant l’année ? 
+\end{exocor}
+
+\begin{exocor}
+Une chenille processionnaire descend le long d’un grillage. À chaque épissure, elle prend la maille de droite une fois sur trois, celle de gauche deux fois sur trois. Elle descend ainsi quatre niveaux.
+\begin{enumerate}
+\item Construire un arbre de probabilité correspondant à la situation.
+\item Quelle est la probabilité que la chenille ait pris trois fois la maille de droite sur les quatre
+niveaux ?
+\item Quelle est la probabilité que la chenille ait pris trois fois la maille de gauche sur les quatre
+niveaux ? 
+\end{enumerate}
+\end{exocor}
+\newpage
+\section{Corrigés}
+\begin{corrige}
+\pascal[binom,shape=rt]{11}
+\pascal[shape=rt]{11}
+\end{corrige}
+
+\begin{corrige}
+Soit $X \sim \mathcal{B}(3;0,6)$
+\begin{enumerate}
+\item $$\mathbb{P}(X=0)=\binom{3}{0}(0,6)^0(0,4)^3=0,064$$
+$$\mathbb{P}(X=1)=\binom{3}{1}(0,6)^1(0,4)^2=0,288$$
+$$\mathbb{P}(X=2)=\binom{3}{2}(0,6)^2(0,4)^1=0,432$$
+$$\mathbb{P}(X=3)=\binom{3}{3}(0,6)^3(0,4)^0=0,216$$
+\item $$\mathbb{E}(X)=np=3\times 0,6=1,8$$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{multicols}{7}
+\begin{enumerate}
+\item $3$
+\item $4$
+\item $4$
+\item $1$
+\item $1$
+\item $120$
+\item $210$
+\item $252$
+\item $210$
+\item $120$
+\item $1$
+\item $n$
+\item $1$
+\item $n$
+\end{enumerate}
+\end{multicols}
+\end{corrige}
+
+\begin{corrige}
+On sait que la proportion de pièces défectueuses est $p=0.1$. On peut donc modéliser le nombre de pièces défectueuses sur un échantillon de taille $n=20$ par une loi binomiale de paramètres $n$ et $p$.
+
+\begin{enumerate}
+\item Probabilité d'avoir exactement 2 pièces défectueuses.
+
+La probabilité d'obtenir exactement $k$ succès dans une série de $n$ essais indépendants de probabilité de succès $p$ est donnée par la formule de la loi binomiale :
+
+
+où $\binom{n}{k}=\frac{n!}{k!(n-k)!}$ est le nombre de façons de choisir $k$ éléments parmi $n$.
+
+Dans notre cas, on cherche la probabilité d'avoir exactement 2 pièces défectueuses, c'est-à-dire $k=2$. On a donc :
+
+$P(X=2)=\binom{20}{2}(0,1)^2(0,9)^{18}=0,285$
+
+La probabilité d'avoir exactement 2 pièces défectueuses est de 0,285.
+
+\item Probabilité d'avoir au plus 2 pièces défectueuses.
+
+La probabilité d'avoir au plus 2 pièces défectueuses correspond à la somme des probabilités d'avoir 0, 1 ou 2 pièces défectueuses :
+
+$$P(X=2) = P(X=0)+P(X=1)+P(X=2)$$
+$$P(X=2) =\binom{20}{0}(0.1)^0(0.9)^{20}+\binom{20}{1}(0.1)^1(0.9)^{19}+\binom{20}{2}(0.1)^2(0.9)^{18}= 0.676$$
+
+La probabilité d'avoir au plus 2 pièces défectueuses est de 0,676.
+
+\item Probabilité d'avoir au moins 2 pièces défectueuses.
+
+La probabilité d'avoir au moins 2 pièces défectueuse est égale à
+
+$$P(X\geq 2) = 1-P(X<2) $$
+$$P(X\geq 2)=1-P(X\leq 1)$$ 
+$$P(X\geq 2)= 1-(P(X=0)+P(X=1)) $$
+$$P(X\geq 2)= 1-(\binom{20}{0}(0.1)^0(0.9)^{20}+\binom{20}{1}(0.1)^1(0.9)^{19})$$
+$$P(X\geq 2)=0,609$$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+
+
+\item On peut envisager l'épreuve qui est d'arracher une dent au hasard à un client avec un succès (arracher la dent malade) de probabilité 1/32 ; on considérer que l'on répète cette épreuve de manière indépendante 10 fois et que $X$ compte le nombre de dents malades
+arrachées à bon escient. X suit la donc la  loi binomiale $\mathcal{B}(10;\dfrac{1}{32})$.
+
+$$\mathbb{P}(X=0)=\binom{10}{0}(\dfrac{1}{32})^0(\dfrac{31}{32})^10\approx 0,728$$
+
+\item $$\mathbb{P}(X \geq 1)= 1 - \mathbb{P}(X<1)=1-\mathbb{P}(X=0)\approx 0,272$$
+
+\item On pose $Y_n \sim  \mathcal{B}(n;\dfrac{1}{32})$, on cherche $n\in \mathbb{N}$ le nombre de personne nécessaire tel que 
+
+$$\mathbb{P}(Y_n \geq 1)\geq 0,6$$ 
+$$\Longleftrightarrow 1-\mathbb{P}(Y_n=0)\geq 0,6$$
+$$\Longleftrightarrow \mathbb{P}(Y_n=0)\leq 0,4$$
+$$\Longleftrightarrow \binom{n}{0}(\dfrac{1}{32})^0(\dfrac{31}{32})^n \leq 0,4$$
+$$\Longleftrightarrow (\dfrac{31}{32})^n \leq 0,4$$
+$$\Longleftrightarrow Log((\dfrac{31}{32})^n) \leq Log(0,4)$$
+$$\Longleftrightarrow nLog(\dfrac{31}{32})\leq Log(0,4)$$
+$$\Longleftrightarrow n(Log(31)-Log(32)) \leq Log(0,4)$$
+$$\Longleftrightarrow n\geq \dfrac{Log(0,4)}{(Log(31)-Log(32))}$$
+$$\Longrightarrow n \geq 28,86$$
+$$\Longrightarrow n \geq 29$$
+
+à partir de 29 patients il y a 60\% de chance que l'arracheur de dents retire une dent malade parmi les 29 dents retirées.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+On note $X$ le nombre d'ordinateur en panne dans le parc, le fait que "la panne de l’un des ordinateurs n’affecte pas les autres machines du parc" nous indique l'indépendance entre les épreuves. Puisque les épreuves sont identiques on a $X \sim \mathcal{B}(60;0,1)$, par suite on trouve $\mathbb{P}(X \leq 4)=0,271$ à l'aide de la calculatrice.
+\end{corrige}
+
+\begin{corrige}
+Soit $X$ la variable qui compte le nombre de fois où la chenille prend la maille de droite. Ainsi $X\sim \mathcal{B}(4;\dfrac{1}{3})$
+
+\begin{enumerate}
+\item Un arbre pondéré pouvant représenter la situation, \\
+ 
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+			\tikzstyle{level 1}=[level distance=3cm, sibling distance=8cm]
+			\tikzstyle{level 2}=[level distance=3cm, sibling distance=4cm]
+			\tikzstyle{level 3}=[level distance=3cm, sibling distance=2cm]
+			\tikzstyle{level 4}=[level distance=3cm, sibling distance=1cm]
+			
+			\node{}[grow=right]
+			child{node{$\bar{D}$}
+				child{node{$\bar{D}$}
+						child{node{$\bar{D}$}
+									child{node{$\bar{D}$}}
+									child{node{$D$}}}
+						child{node{$D$}
+									child{node{$\bar{D}$}}
+									child{node{$D$}}}
+														}
+				child{node{$D$}
+						  child{node{$\bar{D}$}
+									child{node{$\bar{D}$}}
+							    	child{node{$D$}}}
+						  child{node{$D$}
+						  			child{node{$\bar{D}$}}
+									child{node{$D$}}}
+														}
+				edge from parent node[below]{$\dfrac{2}{3}$}}
+			child{node{$D$}
+				child{node{$\bar{D}$}
+						child{node{$\bar{D}$} 
+									child{node{$\bar{D}$}}
+							    	child{node{$D$}}}
+						child{node{$D$}
+									child{node{$\bar{D}$}}
+							    	child{node{$D$}}}
+							    	}
+				child{node{$D$}
+						  child{node{$\bar{D}$}
+						  			child{node{$\bar{D}$}}
+							    	child{node{$D$}}}
+						  child{node{$D$}
+						  			child{node{$\bar{D}$}}
+							    	child{node{$D$}}
+							    	}
+							    						}
+				edge from parent node[above]{$\dfrac{1}{3}$}};
+\end{tikzpicture}	
+\end{center}
+
+
+\item On cherche $\mathbb{P}(X=3)=\binom{4}{3}(\dfrac{1}{3})^3(\dfrac{2}{3})^1\approx 0,099$
+\item Si l'on cherche la probabilité que la chenille ait pris trois fois la maille de gauche, cela revient à déterminer la probabilité que la chenille ait pris une fois la maille de droite. On cherche donc $\mathbb{P}(X=1)=\binom{4}{1}(\dfrac{1}{3})^1(\dfrac{2}{3})^3\approx 0,40$
+\end{enumerate}
+\end{corrige}
+
+%https://ent2d.ac-bordeaux.fr/disciplines/mathematiques/wp-content/uploads/sites/3/2017/09/ex_loi_bin.pdf
+\end{document}

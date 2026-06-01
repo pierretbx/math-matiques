@@ -1,0 +1,388 @@
+%A compiler en XELATEX sinon pas d'arbre de proba
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage[french]{babel}
+%%% Couleurs
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%%%%%%Les symboles
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{eurosym}
+%%% Ensemble de nombre
+\newcommand{\R}{\mathbb{R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+%%% Tableau
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+%%% Figures
+\usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+%%%Affichage
+\newcommand{\ds}{\displaystyle}
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+\TeacherModeOff
+%\TeacherModeOn
+
+\begin{document}
+
+\chapter{Probabilités conditionnelles}
+\section{Notion de probabilité conditionnelle}
+
+
+\begin{defn}
+Pour tout événement $A$ non impossible et tout événement $B$, on appelle \gap*{probabilité conditionnelle} de $B$ sachant $A$ et notée $\mathbb{P}(B)$ le nombre $$\mathbb{P}_A(B)=\frac{\mathbb{P}(A\cap B)}{\mathbb{P}(A)}$$
+
+\emph{Il mesure la chance que $B$ se réalise sachant que $A$ est déjà réalisé.}
+\end{defn}
+
+\begin{exemple}
+Lors d'un sondage, 50\% des personnes interrogées déclarent pratiquer un sport régulièrement et 75\% des
+personnes interrogées déclarent aller au cinéma régulièrement. De plus, 40\% des personnes déclarent faire du sport et aller au cinéma régulièrement. On interroge à nouveau une de ces personnes au hasard et on considère les événements \og{}la personne interrogée pratique un sport régulièrement\fg{} et \og{}la personne interrogée va au cinéma régulièrement\fg{} que l'on notent $S$ et $C$ respectivement.
+On cherche à calculer la probabilité que la personne pratique un sport régulièrement sachant qu'elle va régulièrement au cinéma.
+
+On a $\mathbb{P}(C)=0,75$ et $\mathbb{P}(S\cap C)=0,4$. Donc $\mathbb{P}_C(S)=\frac{\mathbb{P}(S\cap C)}{\mathbb{P}(C)}=\frac{0,4}{0,75}\approx 0,53$.
+\end{exemple}
+
+
+\begin{prop}
+Soient $A$ et $B$ deux événements non impossibles d'un univers donné. La connaissance de la probabilité d'un événement $B$ et de la probabilité conditionnelle d'un événements $A$ sachant $B$ permet de retrouver la probabilité $\mathbb{P}(A\cap B)$ de l'intersection de $A$ et $B$ avec la formule $$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}_A(B)$$.
+\end{prop}
+
+
+\begin{prop}
+Pour tous les événements $A$ et $B$ tels que $\mathbb{P}(A)\neq 0$ :
+\begin{itemize}
+\item[$\bullet$] $\mathbb{P}_A(A)=1$ ;
+\item[$\bullet$] $\mathbb{P}_A(\bar{B})=1-\mathbb{P}_A(B)$ ;
+\item[$\bullet$] Si $A$ et $B$ sont des événements incompatibles (c'est à dire ne pouvant pas se réaliser simultanément ou encore tels que $A\cap B=\emptyset$) alors $\mathbb{P}_A(B)=0$.
+\end{itemize}
+\end{prop}
+
+\subsection{Arbres pondérés}
+
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$\bar{A}$}
+    child {node {$\bar{B}$} edge from parent node[below]{$\mathbb{P}_{\bar{A}}(\bar{B})$}}
+    child {node {$B$} edge from parent node[above]{$\mathbb{P}_{\bar{A}}(B)$}}
+    edge from parent node[below]{$\mathbb{P}(\bar{A})$}}
+  child{node {$A$}
+    child {node {$\bar{B}$} edge from parent node[below]{$\mathbb{P}_{A}(\bar{B})$}}
+    child {node {$B$}  edge from parent node[above]{$\mathbb{P}_{A}(B)$}}
+    edge from parent node[above]{$\mathbb{P}(A)$}};
+\end{tikzpicture}
+\end{center}
+\begin{defn}
+Le schéma ci-dessus est appelé \gap*{arbre pondéré} ou \emph{arbre à probabilités}. Il comporte 4 \gap*{chemins} : $A\cap B$, $A\cap \bar{B}$, $\bar{A}\cap B$ et $\bar{A}\cap \bar{B}$. Un \gap*{noeud} est un point d'où partent plusieurs \gap*{branches}.
+\end{defn}
+
+
+
+\begin{prop}
+Dans un \emph{arbre pondéré} ou \emph{arbre à probabilités} comme ci-dessus,
+\begin{itemize}
+\item[$\bullet$] La somme des probabilités portées sur les branches issues d'un même noeud est égale à 1, par exemple, 
+$$\mathbb{P}_A(B)+\mathbb{P}_A(\bar{B})=1$$
+\item[$\bullet$] la probabilité d'un chemin est le produit des probabilités portées par ses branches 
+$$\mathbb{P}(A\cap B)=\mathbb{P}(A) \times \mathbb{P}_A(B)$$
+\end{itemize}
+\end{prop}
+
+
+\section{Partitions et formule des probabilités totale}
+
+\begin{defn}
+ Soient $A_1$, $A_2$, ..., $A_n$ pour $n\geq 1$ des parties non vides d'un ensemble $E$. On dit que $A_1$, $A_2$, ..., $A_n$ forment \emph{une partition} de $E$ si les deux conditions suivantes sont vérfiées 
+\begin{itemize}
+ \item[$\bullet$] $A_1\cup A_2\cup ... \cup A_n=E$ ;
+\item[$\bullet$] pour tout $i\in \{1;2;...;n\}$ et tout $j\in\{1;2;...;n\}$ avec $i\neq j$, on a $A_i\cap A_j=\emptyset$.
+\end{itemize}
+\end{defn}
+
+%\begin{center}
+ %\includegraphics[width=5cm]{probabilitescoursTSimgpartition.png}
+%\end{center}
+
+
+\begin{thm}[Formule des probabilités totales]
+ Si $A_1$, $A_2$, ..., $A_n$ forment une partition d'un univers $E$, alors pour tout événement $A$ de l'univers $E$ :
+$$\mathbb{P}(B)=\mathbb{P}(B\cap A_1)+\mathbb{P}(B\cap A_2)+...+\mathbb{P}(B\cap A_n)$$
+ou encore
+$$\mathbb{P}(B)=\mathbb{P}(A_1)\mathbb{P}_{A_1}(B)+\mathbb{P}(A_2)\mathbb{P}_{A_2}(B)+...+\mathbb{P}(A_n)\mathbb{P}_{A_n}(B)$$
+En particulier, pour tout événement $B$,
+$$\mathbb{P}(B)=\mathbb{P}(A)\mathbb{P}_{A}(B)+\mathbb{P}(\bar{A})\mathbb{P}_{\bar{A}}(B)$$
+\end{thm}
+
+\begin{defn}
+Sur l'arbre pondéré du paragraphe précédent, la probabilité d'un événement est la somme des probabilités des chemins qui le compose (par exemple, $\mathbb{P}(B)=\mathbb{P}(A\cap B)+\mathbb{P}(\bar{A}\cap B)$).
+\end{defn}
+
+
+
+\section{Indépendance d'événements}
+
+\begin{defn}
+On dit que deux événements $A$ et $B$ sont \emph{indépendants} lorsque $$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$$
+\end{defn}
+\begin{rem}
+Si $\mathbb{P}(A)\neq 0$ alors deux événements $A$ et $B$ sont indépendants si et seulement si $\mathbb{P}_A(B)=\mathbb{P}(B)$ si et seulement si $\mathbb{P}_B(A)=\mathbb{P}(A)$ avec $\mathbb{P}(B)\neq 0$, ce qui signifie que la probabilité que l'un des deux événements se réalise ne dépend pas de la probabilité que l'autre se réalise.
+\end{rem} 
+
+\begin{exemple}
+On tire au hasard une carte d'un jeu de 32 cartes. On appelle $A$ l'événement \og{}on tire un as\fg{}, $T$ l'événement \og{}on tire un  trèfle\fg{} et $N$ l'événement \og{}on tire une carte noire\fg{}. On a $\mathbb{P}(A)=\frac{4}{32}=\frac{1}{8}$, $\mathbb{P}(T)=\frac{8}{32}=\frac{1}{8}$ et $\mathbb{P}(N)=\frac{16}{32}=\frac{1}{2}$.
+
+ D'une part $A\cap T$ est l'événement \og{}on tire l'as de trèfle\fg{} et $\mathbb{P}(A)\mathbb{P}(T)=\frac{1}{8}\times \frac{1}{4}=\frac{1}{32}$ qui est bien égal à $\mathbb{P}(A\cap T)$ ce qui montre que $A$ et $T$ sont indépendants. 
+ 
+ D'autre part, $T\cap N$ est l'événement \og{}on tire un trèfle et une carte noire\fg{} dont la probabilité est $\frac{1}{4}$ mais on a $\mathbb{P}(T)\mathbb{P}(N)=\frac{1}{4}\frac{1}{2}=\frac{1}{8}\neq \mathbb{P}(T\cap N)$ ce qui confirme que les événements $T$ et $N$ ne sont évidemment pas indépendants.
+ 
+\end{exemple}
+
+
+
+\begin{prop}
+Si $A$ et $B$ sont deux événements indépendants, alors $\bar{A}$ et $B$ sont aussi indépendants.
+\end{prop}
+
+\begin{demo}[Preuve]
+Si $A$ et $B$ sont indépendants dans un univers $E$ alors $\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B)$. $\bar{A}$ et $B$ sont indépendants si et seulement si $\mathbb{P}(\bar{A}\cap B)=\mathbb{P}(\bar{A})\mathbb{P}(B)$. Or $\mathbb{P}(B)=\mathbb{P}(\bar{A}\cap B)+\mathbb{P}(A\cap B)$ d'après la formule des probabilités totales. D'où $\mathbb{P}(\bar{A}\cap B)=\mathbb{P}(B)-\mathbb{P}(A\cap B)=\mathbb{P}(B)-\mathbb{P}(A)\mathbb{P}(B)$ par indépendance de $A$ et $B$. Donc $\mathbb{P}(\bar{A}\cap B)=(1-\mathbb{P}(A))\mathbb{P}(B)=\mathbb{P}(\bar{A})\mathbb{P}(B)$. D'où l'indépendance de $\bar{A}$ et $B$.
+\end{demo}
+
+\vfill
+
+\newpage
+\section{Exercices}
+
+\subsection{Probabilités conditionnelles}
+\begin{exocor}
+On choisit un jour de l’année. On considère les événements :
+
+\begin{itemize}
+\item P: \og  le jour choisi a été pluvieux \fg{} ;
+\item V: \og le jour choisi a été venté \fg{} .
+\end{itemize}
+
+Pour chacune des informations suivantes, indiquer si elle
+correspond ou non à une probabilité conditionnelle et donner la notation correspondante.
+
+\begin{enumerate}
+\item Dans l’année, 40\% des jours sont pluvieux.
+\item 66\% des jours pluvieux sont ventés.
+\item Parmi les jours non ventés, 22\% sont pluvieux.
+\item 49\% des jours dans l’année n’ont été ni ventés ni pluvieux.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Dans une population, on choisit au hasard une personne
+et on considère les événements suivants :
+
+\begin{itemize}
+\item F: \og la personne choisie est une femme \fg{} ;
+\item H: \og la personne choisie est un homme \fg{} ;
+\item R: \og la personne choisie est retraitée \fg{}.
+\end{itemize}
+
+Traduire chacune des informations suivantes par une probabilité conditionnelle.
+
+\begin{enumerate}
+\item Parmi les femmes, 25 \% sont retraitées.
+\item Un tiers des hommes sont retraités.
+\item Chez les personnes retraitées, 45 \% sont des femmes.
+\item Lorsqu’on interroge un homme, la probabilité pour que ce ne soit pas un retraité est 67 \%.
+\item Parmi les personnes non retraitées, 55 \% sont des
+femmes.
+\end{enumerate}
+\end{exocor}
+
+\begin{exocor}
+Pour ses révisions, un élève utilise des annales de mathématiques. Dans ces annales, 10\% des exercices sont des QCM, 22\% des exercices ont des questions sur les probabilités et 4\% sont des QCM qui ont des questions sur les
+probabilités. 
+
+On définit les événements suivants :
+
+\begin{itemize}
+\item Q \og  l’exercice choisi est un QCM\fg{} ;
+\item R \og  l’exercice choisi a des questions sur les probabilités \fg{}.
+\end{itemize}
+
+\begin{enumerate}
+\item Donner $\mathbb{P}(Q)$; $\mathbb{P}(R)$; $\mathbb{P}(Q\cap R)$.
+\item Calculer $\mathbb{P}_Q(R)$ et $\mathbb{P}_R(Q)$ et préciser par une phrase à quoi correspond chacune de ces probabilités.
+\end{enumerate}
+\end{exocor}
+
+\vfill
+\subsection{Arbres pondérés}
+\begin{exocor}
+Un site de vente par correspondance propose 2400 jeux
+vidéos dont 1296 sont des jeux pour console, le reste étant
+des jeux pour ordinateur. Un tiers des jeux pour console sont des jeux d’action et 25 \% des jeux pour ordinateur sont des jeux d’action. On
+choisit au hasard un jeu proposé par le site. On définit les
+événements
+\begin{itemize}
+\item C: \og le jeu est pour console \fg{}; 
+\item O: \og  le jeu est pour ordinateur \fg{}; 
+\item A: \og le jeu est un jeu d’action \fg{}. 
+\end{itemize}
+
+\begin{enumerate}
+\item En utilisant les informations de l’énoncé, déterminer la
+valeur de $\mathbb{P}(C)$; $\mathbb{P}(O)$; $\mathbb{P}_O(A)$; $\mathbb{P}_C(A)$.
+\item Représenter cette situation à l’aide d’un arbre pondéré et
+placer sur cet arbre chacune des probabilités déterminées à la question 1.
+\item Calculer $\mathbb{P}_O(\bar{A})$; $\mathbb{P}_C(\bar{A})$ et compléter l’arbre pondéré.
+\end{enumerate}
+\end{exocor}
+
+
+\begin{exocor}
+Un chalutier se rend sur sa zone de pêche. La probabilité qu’un banc de poissons soit sur cette zone est 0,7. Le chalutier est équipé d’un sonar pour détecter la présence d’un banc de poissons. Si un banc est présent, le sonar indique la présence du banc dans 80\% des cas. S’il n’y a pas de banc de poissons dans la zone de pêche, le sonar indique néanmoins la présence d’un banc dans 5\% des cas. On définit les événements suivants :
+
+\begin{itemize}
+\item B : \og il y a un banc de poissons sur la zone \fg{};
+\item S :\og le sonar indique l’existence d’un banc \fg{}.
+\end{itemize}
+
+\begin{enumerate}
+\item Recopier et compléter l’arbre ci-dessous.
+\item Déterminer la probabilité qu’il y ait un banc de poissons et qu’il soit détecté par le sonar.
+\item Calculer la probabilité qu’il n’y ait pas de banc de poisson mais que le sonar en détecte un.
+\item Le sonar détecte un banc. Quelle est la probabilité qu’il se trompe ?
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$\bar{B}$}
+    child {node {$\bar{S}$} edge from parent node[below]{$\cdots$}}
+    child {node {$S$} edge from parent node[above]{$\cdots$}}
+    edge from parent node[below]{$\cdots$}}
+  child{node {$B$}
+    child {node {$\bar{S}$} edge from parent node[below]{$\cdots$}}
+    child {node {$S$}  edge from parent node[above]{$\cdots$}}
+    edge from parent node[above]{$0,7$}};
+\end{tikzpicture}
+\end{center}
+\end{exocor}
+
+\newpage
+\section{Corrigés}
+\begin{corrige}
+\begin{enumerate}
+\item Non ce n'est pas une probabilité conditionnelle  $\mathbb{P}(P)=0,4$
+\item Oui, $\mathbb{P}_P(V)=0,66$
+\item Oui, $\mathbb{P}_{\bar{V}}(P)=0,22$
+\item Non ce n'est pas une probabilité conditionnelle $\mathbb{P}(\bar{V}\cap\bar{P})$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $\mathbb{P}_F(R)=0,25$
+\item $\mathbb{P}_H(R)=\dfrac{1}{3}$
+\item $\mathbb{P}_R(F)=0,45$
+\item $\mathbb{P}_H(\bar{R})=0,67$
+\item $\mathbb{P}_{\bar{R}}(F)=0,55$
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $\mathbb{P}(Q)=0,1$; $\mathbb{P}(R)=0,22$; $\mathbb{P}(Q \cap R)=0,04$
+\item $$\mathbb{P}_Q(R)=\dfrac{\mathbb{P}(Q\cap R)}{\mathbb{P}(Q)}=\dfrac{0,04}{0,1}=0,4$$
+
+La probabilité que l'exercice choisi a des questions sur les probabilités sachant que l'exercice choisi est un QCM est de 40\%.
+
+ $$\mathbb{P}_R(Q)=\dfrac{\mathbb{P}(Q\cap R)}{\mathbb{P}(R)}=\dfrac{0,04}{0,22}=0,0088$$
+La probabilité que l'exercice choisi est un QCM sachant que l'exercice choisi a des questions sur les probabilités est de 0,88\%.
+\end{enumerate}
+\end{corrige}
+
+\begin{corrige}
+\begin{enumerate}
+\item $\mathbb{P}(C)=\dfrac{1296}{2400}$; $\mathbb{P}(O)=\dfrac{2400-1296}{2400}=\dfrac{1104}{2400}$; $\mathbb{P}_O(A)=0,25$; $\mathbb{P}_C(A)=\dfrac{1}{3}$
+\item Arbre pondéré
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$O$}
+    child {node {$\bar{A}$} edge from parent node[below]{$0,75$}}
+    child {node {$A$} edge from parent node[above]{$0,25$}}
+    edge from parent node[below]{$\dfrac{1104}{2400}$}}
+  child{node {$C$}
+    child {node {$\bar{A}$} edge from parent node[below]{$\dfrac{2}{3}$}}
+    child {node {$A$}  edge from parent node[above]{$\dfrac{1}{3}$}}
+    edge from parent node[above]{$\dfrac{1296}{2400}$}};
+\end{tikzpicture}
+\end{center}
+
+\item $\mathbb{P}_O(\bar{A})=1-\mathbb{P}_O(A)=0,75$; $\mathbb{P}_C(\bar{A})=1-\dfrac{1}{3}$
+
+\end{enumerate}
+\end{corrige}
+
+
+\begin{corrige}
+\begin{enumerate}
+\item Arbre pondéré
+\begin{center}
+\begin{tikzpicture}[
+    level 1/.style={level distance=3cm, sibling distance=3cm},
+    level 2/.style={level distance=3cm, sibling distance=2cm},
+    grow=right,
+  ]
+  \coordinate                   % joli sommet de l'arbre
+  child {node {$\bar{B}$}
+    child {node {$\bar{S}$} edge from parent node[below]{$0,95$}}
+    child {node {$S$} edge from parent node[above]{$0,05$}}
+    edge from parent node[below]{$0,3$}}
+  child{node {$B$}
+    child {node {$\bar{S}$} edge from parent node[below]{$0,2$}}
+    child {node {$S$}  edge from parent node[above]{$0,8$}}
+    edge from parent node[above]{$0,7$}};
+\end{tikzpicture}
+\end{center}
+
+\item $\mathbb{P}(B \cap S)=0,7 \times 0,8 =0,56$
+\item $\mathbb{P}(\bar{B} \cap S)=0,3 \times 0,05 =0,015$
+\item $$\mathbb{P}_S(\bar{B})=\dfrac{\mathbb{P}(S\cap \bar{B})}{\mathbb{P}(S)}=\dfrac{0,015}{\mathbb{P}(S)}$$
+
+De plus, $\mathbb{P}(S)=\mathbb{P}(\bar{B} \cap S)+\mathbb{P}(B \cap S)=0,015 +0,7 \times 0,95=0,015+0,665=0,68$ donc, $\mathbb{P}_S(\bar{B})=\dfrac{0,015}{0,68}\approx 0,022$. La probabilité que le sonar détecte un banc de poisson à tort est de 2,2\%.
+ 
+
+\end{enumerate}
+\end{corrige}
+
+
+
+\end{document}

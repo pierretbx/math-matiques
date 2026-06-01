@@ -1,0 +1,79 @@
+%!PS
+%%BoundingBox: -23 -70 183 180 
+%%Creator: MetaPost
+%%CreationDate: 2006.11.25:1841
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 0.9 0 0 setrgbcolor
+newpath -22.54591 153.14001 moveto
+-22.31635 -62.14012 lineto
+16.99306 129.12589 lineto
+ closepath fill
+ 0.8 0 0 setrgbcolor
+newpath -22.31635 -62.14012 moveto
+16.99306 129.12589 lineto
+80.372 -69.72464 lineto
+ closepath fill
+ 0.9 0 0 setrgbcolor
+newpath 16.99306 129.12589 moveto
+80.372 -69.72464 lineto
+143.60417 140.86847 lineto
+ closepath fill
+ 0.8 0 0 setrgbcolor
+newpath 80.372 -69.72464 moveto
+143.60417 140.86847 lineto
+182.54576 -43.14017 lineto
+ closepath fill
+ 0.9 0 0 setrgbcolor
+newpath 143.60417 140.86847 moveto
+182.54576 -43.14017 lineto
+182.3162 172.13997 lineto
+ closepath fill
+ 0.7 0 0 setrgbcolor
+newpath 79.62785 179.72449 moveto
+-22.54591 153.14001 lineto
+16.99306 129.12589 lineto
+143.60417 140.86847 lineto
+182.3162 172.13997 lineto
+ closepath fill
+ 0 setgray 0 0.5 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinejoin 10 setmiterlimit
+newpath -22.54591 153.14001 moveto
+-22.31635 -62.14012 lineto
+16.99306 129.12589 lineto
+ closepath stroke
+newpath -22.31635 -62.14012 moveto
+16.99306 129.12589 lineto
+80.372 -69.72464 lineto
+ closepath stroke
+newpath 16.99306 129.12589 moveto
+80.372 -69.72464 lineto
+143.60417 140.86847 lineto
+ closepath stroke
+newpath 80.372 -69.72464 moveto
+143.60417 140.86847 lineto
+182.54576 -43.14017 lineto
+ closepath stroke
+newpath 143.60417 140.86847 moveto
+182.54576 -43.14017 lineto
+182.3162 172.13997 lineto
+ closepath stroke
+newpath 79.62785 179.72449 moveto
+-22.54591 153.14001 lineto
+16.99306 129.12589 lineto
+143.60417 140.86847 lineto
+182.3162 172.13997 lineto
+ closepath stroke
+ [3 3 ] 0 setdash 1 setlinecap
+newpath 182.54576 -43.14017 moveto
+143.00679 -19.12604 lineto
+16.39568 -30.86862 lineto
+-22.31635 -62.14012 lineto stroke
+newpath -22.54591 153.14001 moveto
+16.39568 -30.86862 lineto
+79.62785 179.72449 lineto
+143.00679 -19.12604 lineto
+182.3162 172.13997 lineto stroke
+showpage
+%%EOF

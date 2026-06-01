@@ -1,0 +1,489 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{tkz-tab}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+%% ----------------------------------------------------------------------------
+%\ThisURCornerWallPaper{0.18}{icones/3pop.png}
+%\maketitle
+%\setcounter{tocdepth}{2} 
+%\tableofcontents
+%\vspace{-2cm}
+\chapter{La fonction exponentielle}
+
+On cherche les fonctions $f$ dérivables sur $\R$ telles que 
+$\displaystyle \left\{
+\begin{array}{rcl} f(0)&=&1\\
+f'&=&f
+\end{array}
+\right.$
+
+\section{Définition de la fonction exponentielle}
+\subsection{Théorème et définition}
+
+\begin{thm}\label{cauchy-lip}
+Il {\em existe} (admis) une {\em unique} fonction $f$ définie et dérivable sur $\R$ telle que
+$f(0)=1$ et $f'=f$. 
+
+Cette fonction est appelée exponentielle et notée $\exp$.
+\end{thm}
+
+%Deux points à montrer :
+%\begin{itemize}
+%\item Existence. (admise)
+%\item Unicité.
+%\end{itemize}
+
+
+\subsection{Unicité}
+
+Pour démontrer l'unicité d'une telle fonction nous allons avoir besoin d'un
+résultat intermédiaire :
+
+\begin{lemme}
+Si $f$ est une fonction dérivable sur $\R$ telle que $f(0)=1$ et $f'=f$, alors
+\begin{enumerate}
+\item Pour tout $x \in \R$, $f(x) \times f(-x) = 1$.
+\item La fonction $f$ ne s'annule pas sur $\R$, elle est même strictement positive.
+\end{enumerate}
+\end{lemme}
+
+\begin{demo}[ Lemme 1 ]
+\begin{enumerate}
+\item Pour tout $x\in \R$, on pose $\phi(x) = f(x) f(-x)$. La fonction $\phi$
+  est définie et dérivable sur $\R$. De plus $\phi$ est un produit de la forme
+  $u \times v$, où $v$ est une fonction composée:
+\[ \phi'(x) = f'(x) f(-x) + f(x) f'(-x) \times (-1) = f(x) f(-x) - f(x) f(-x)
+= 0\]
+ Ainsi $\phi$ est constante. Or $\phi(0) = f(0) f(-0) = 1 \times 1 = 1$. Donc,
+ pour tout $x \in \R$, 
+\[ f(x) f(-x) = \phi(x) = \phi(0) = 1\]
+\item \begin{itemize}
+\item[$\bullet$] Raisonnons par l'absurde : soit $a\in \R$ tel que $f(a) = 0$.
+Alors $\phi(a) = f(a) f(-a) = 0 \times f(-a) = 0$. Mais, d'après ci-dessus,
+$\phi(a) = 1$. Ce qui est absurde.
+
+\item[$\bullet$] Pour montrer que $f>0$, raisonnons aussi par l'absurde : soit $a\in \R$ tel
+que $f(a) <0$. 
+
+La fonction $f$ est dérivable donc continue sur $\R$, $f(0) = 1>0$ et $f(a)
+<0$, donc, d'après le théorème des valeurs intermédiaires, il existe $b$
+compris entre $0$ et $a$ tel que $f(b)=0$. Ce qui est impossible d'après
+ci-dessus. Donc $f(x)>0$ pour tout $x\in \R$.
+\end{itemize}
+\end{enumerate}
+\end{demo}
+
+\begin{demo}[ de l'unicité ]
+Soit $f$ et $g$ qui conviennent\footnote{Début classique de la plus part des 
+  démonstrations d'unicité.}. Posons $\phi = \dfrac{f}{g}$. La fonction $\phi$
+est définie et dérivable sur $\R$ (car $g(x) \neq 0$ pour tout $x\in \R$,
+d'après le lemme). Vu que $f'=f$ et $g'=g$, il vient
+\[ \phi' = \dfrac{f'g-fg'}{g^2} = \dfrac{fg-fg}{g^2} = 0 \]
+Donc $\phi$ est constante et comme $\phi(0) = \dfrac{f(0)}{g(0)} = \dfrac{1}{1} =1$, pour tout
+$x\in \R$ $\phi(x) = 1$. C'est-à-dire $\dfrac{f}{g} = 1$, d'où $f=g$. Il y a donc
+unicité.
+\end{demo}
+
+\subsection{Propriétés de la fonction exponentielle}
+\begin{prop}\label{propfdt}
+\begin{enumerate}
+\item La fonction $\exp$ est dérivable sur $\R$, et pour tout $x\in \R$,
+  $\exp'(x) = exp(x)$.
+\item $\exp(0) = 1$
+\item Pour tout $x \in \R$, $\exp(-x) = \frac1{\exp(x)}$
+\item Pour tout $x \in \R$, $\exp(x) >0$
+\item Pour tout $x \in \R$ et tout $y \in \R$, $\exp(x+y) = \exp(x) \exp(y)$
+\item Pour tout $x \in \R$ et tout $y \in \R$, $\exp(x-y) = \frac{\exp(x)}{\exp(y)}$
+\item Pour tout $x \in \R$ et tout $n \in \Z$, $\exp(nx) = (\exp(x))^n$
+\end{enumerate}
+\end{prop}
+\begin{demo}
+\begin{enumerate}
+\item Par définition.
+\item Par définition.
+\item Lemme 1, point 1.
+\item Lemme 1, point 2: pour tout $x\in \R$, $\exp(x) \exp(-x) =
+  1$ donc $\exp(-x) = \frac1{\exp(x)}$. 
+\item On procède comme lors de la démonstration du lemme \ref{unicite}, point
+  2. Soit $y\in \R$ fixé.
+
+La fonction définie par $\phi_y(x) = \exp(x+y) \exp(-x)$ est définie et
+dérivable pour tout $x\in \R$. De plus
+\begin{align*}
+\phi_y'(x) &= \exp'(x+y)\exp(-x) + \exp(x+y)\exp'(-x)\times (-1)\\  
+&=\exp(x+y)\exp(-x) - \exp(x+y) \exp(-x) = 0
+ \end{align*}
+ Ainsi $\phi_y$ est constante. Or $\phi_y(0) = \exp(0+y)\exp(-0) = \exp(y)$. 
+ 
+ Donc,
+ pour tout $x \in \R$, 
+\[ \exp(x+y) \exp(-x) = \phi_y(x) = \phi_y(0) = \exp(y)\]
+Par suite, d'après le point 3, pour tout $x \in \R$, $\exp(x+y) = \frac1{\exp(-x)}
+\exp(y) = \exp(x) \exp(y)$
+
+\item Conséquence des points 5 et 4.
+\item Récurrence.
+\end{enumerate}
+\end{demo}
+
+\subsection{Le nombre $e$ et la notation puissance}
+
+Les résultats précédents montrent que la fonction $\exp$ possède les
+propriétés algébriques des puissances.
+
+\begin{defn}
+On note $e$ le nombre $\exp(1)$ :
+\[ e = \exp(1) \]
+\end{defn}
+\begin{rem}
+$e \simeq 2{,}718 $. On peut d'ailleurs obtenir cette approximation
+avec la méthode d'Euler.
+\end{rem}
+
+Recherche d'une notation simplifiée : Pour tout $n \in \N$,
+\begin{eqnarray*}
+  \exp (n ) &=&\exp(n\times 1) = (\exp(1))^n = e^n \hspace{4cm} \text{(d'après
+    la propriété \ref{propfdt}.7)}\\
+  \exp (-n) &=&\frac1{\exp(n)} = \frac1{e^n} = e^{-n}\hspace{5.63cm} \text{(d'après
+    la propriété \ref{propfdt}.7)}\\
+\end{eqnarray*}
+
+\begin{rem}
+Pour tout $x\in \R$ on note $\exp(x) =e^x$.
+\end{rem}
+
+\section{Étude de la fonction exponentielle}
+\subsection{Sens de variation}
+\begin{prop}
+La fonction $\exp$ est strictement croissante sur $\R$
+\end{prop}
+\begin{demo}
+Pour tout $x\in \R$, $\exp'(x) = exp(x) >0$ (propriété \ref{propfdt}.4)
+\end{demo}
+
+\subsection{Tableau de variation}
+
+\begin{center}
+\begin{tikzpicture}
+\tkzTabInit[lgt=1.2,espcl=7]
+ {$x$       /.8,
+  $\exp$    /3}
+ {$-\infty$,$+\infty$}
+\tkzTabVar{-/ $0$,+/$+\infty$}
+\end{tikzpicture}
+\end{center}
+Pour la preuve des limites aux bornes, voir le paragraphe \ref{limites}. Les
+preuves devront être connues.
+
+\begin{prop}
+
+\begin{itemize}
+\item Asymptote: $\lim_{x\to -\infty} \exp(x) = 0$ donc $y=0$ est une
+  asymptote à la courbe $C_{\exp}$ au voisinage de $-\infty$.
+\item Équation de la tangente à $C{\exp}$ en $x=0$: 
+$ y = \exp'(0) (x-0) + \exp(0) = 1\times x +1 = x+1$
+\item Position de $C_{\exp}$ par rapport à sa tangente en $x=0$\\
+Il faut étudier le signe de $\phi(x) = e^x - (x+1)$ sur $\R$. La fonction
+$\phi$ est dérivable, et $\phi'(x) = e^x-1$. Or pour tout $x \in \R$, 
+
+%\begin{tabular}[t]{@{\hspace{0pt}}p{.2\linewidth}p{.8\linewidth}@{\hspace{0pt}}}
+%$ \begin{array}{rcl}
+%\phi'(x) \geq 0 &\Longleftrightarrow& e^x \geq 1 \\
+%&\Longleftrightarrow& e^x \geq e^0\\ 
+%&\Longleftrightarrow& x \geq 0\\
+%\end{array} $ &
+%\begin{tikzpicture}[baseline=(current bounding box.north)]
+%\path[use as bounding box] (-2,-3.5) rectangle (-1,-1);
+%\tkzTabInit[lgt=1.2,espcl=3]
+ %{$x$       /.8,
+ % $\phi'(x)$/.8,
+ % $\phi$    /1.5}
+ %{$-\infty$,$0$,$+\infty$}
+%\tkzTabLine{ , - , z , +, }
+%\tkzTabVar{+/ $ $,-/$0$,+/$ $}
+%\end{tikzpicture}
+%\end{tabular}
+Donc, pour tout $x\in \R$, $\phi(x) \geq 0$, c'est-à-dire $C_{\exp}$ est
+au-dessus de sa tangente.
+\item Équation de la tangente à $C_{\exp}$ en $x=1$. \\
+Par définition, $\exp(1) = e$ et $\exp'(1) = \exp(1) = e$. Donc 
+\[y = exp'(1) (x-1) +\exp(1) = e(x-1) + e = ex\]
+\end{itemize}
+\end{prop}
+
+\subsection{Représentation graphique}
+\begin{center}
+\shorthandoff{:}                                                                
+\begin{tikzpicture}[>=stealth,scale=1]
+% bornes
+\def\xmin{-5}
+\def\xmax{5}
+\def\ymin{-1}
+\def\ymax{6}
+% Axes & co.
+  \draw[step=1cm,dotted] (\xmin,\ymin) grid (\xmax,\ymax);
+% \filldraw [gray] (0,0) circle (.1cm) node[below left, black] {$O$};
+ \draw[->,thick] (\xmin.3,0) -- node[at end,below] {$x$} (\xmax.8,0);
+ \draw[->,thick] (0,\ymin.3) -- node[at end,left] {$f(x)$} (0,\ymax.8);
+\foreach \x in {\xmin,...,-1,1,2,...,\xmax}
+ \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below] {$\x$};
+   % valeur particulière
+ \draw[yshift=2.7182818cm] (2pt,0pt) -- (-2pt,0pt) node[left] {$e$};
+   % Zéro
+ \draw[xshift=0 cm] (0pt,1pt) -- (0pt,-1pt) node[below left] {$0$};
+\foreach \y in {\ymin,...,-1,1,2,...,\ymax}
+  \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left] {$\y$};
+\clip (\xmin.3,\ymin.3) rectangle (\xmax.5,\ymax.5);
+% courbe 
+\draw[blue,line width=1.4pt,smooth,domain=\xmin.3:2] plot (\x,{exp(\x)});
+%node[] {$\cC_{\exp}$};
+\draw[line width=1.2pt] (-2.5,-1.5) -- (3,4) node[right,at end] {$T_0$};
+\draw[line width=1.2pt] (-.2,-.2*2.7182818) -- (2.1,2.1*2.7182818) node[right,
+at end] {$T_1$};
+\draw[dashed] (0,2.7182818cm) -- (1,2.7182818cm) -- (1,0);
+\end{tikzpicture}
+\end{center}
+\shorthandon{:}                                                                
+\subsection{Résolution d'équations et d'inéquations}
+
+\begin{prop}\label{resolution}
+Pour tout réel $a$ et $b$,
+\[ 
+\begin{array}{rcl}
+e^a=e^b&\Longleftrightarrow&a=b\\
+e^a>e^b&\Longleftrightarrow&a>b\\
+\end{array}
+\]
+\end{prop}
+
+\begin{demo}
+La fonction $\exp$ est strictement croissante.
+\end{demo}
+%\newpage
+\subsection{Limites en l'infini}\label{limites}
+\begin{prop}\label{Lim}
+\begin{enumerate}
+\item $\lim_{x \to +\infty} e^x= + \infty$.
+\item $\lim_{x \to -\infty} e^x = 0$.
+\end{enumerate}
+\end{prop}
+\begin{demo}
+\begin{enumerate}
+\item D'après ci-dessus, pour tout $x \in \R$, $e^x \geq x+1$. Or $\lim_{x \to
+    + \infty} x+1 = +\infty$. 
+
+Donc, par comparaison, 
+$\lim_{x \to +\infty} e^x= + \infty$.
+\item La propriété précédente entraîne $\lim_{x \to +\infty} \frac1{e^x}
+  =0$. 
+
+De plus $\frac1{e^x} = e^{-x}$ et $\lim_{x \to -\infty} -x =
+  +\infty$. Donc, par composition des limites,   
+$\lim_{x \to -\infty} e^x = 0$.
+\end{enumerate}
+\end{demo}
+
+\section{Applications}
+\subsection{Fonctions composées du type $e^u$}
+C'est un cas particulier de fonction composée à connaître {\em
+  impérativement}.
+
+\begin{prop}\label{DerExpU}
+Soit $u$ une fonction définie et dérivable sur un intervalle $I$. Alors
+\[\left(e^u\right)' = u' e^u\]
+\end{prop}
+\begin{demo}
+Posons $v=\exp$. Puisque $v'=\exp$, la formule de dérivation des fonctions
+composées s'écrit 
+$f'= (v \circ u)' = u' \times (v'\circ u) = u'e^u$.
+\end{demo}
+
+\begin{exemple}
+Étudier la fonction définie par $f(x) = e^{-x}$ pour tout $x\in \R$.
+\end{exemple}
+La fonction $u$ définie sur $\R$ par $u(x) = -x$ a pour dérivée $u'(x) =
+-1$. Pour tout $x \in \R$, $f(x)= \exp(u(x))$, donc, d'après la propriété
+\ref{DerExpU}, $f'(x) = u'(x) \exp(u(x)) = -1 \times \exp(-x) = -e^{-x}$. 
+
+\newpage
+\subsection{Croissance comparée}
+\begin{prop}\label{CroissComp} ~
+\vspace{-.5cm}
+\begin{enumerate}
+\item $\lim_{x \to +\infty} \dfrac{e^x}{x}= + \infty$.
+\item $\lim_{x \to -\infty} x e^x = 0$.
+\end{enumerate}
+\end{prop}
+
+
+\begin{demo} La démonstration est du même type que celle de la propriété
+  \ref{Lim}. 
+\begin{enumerate}
+\item Pour calculer la limite, nous allons minorer $e^x/x$ (pour
+  $x>0$) par une fonction qui tend vers $+\infty$ en $+\infty$. 
+Plus précisément, montrons que, pour tout $x >0$,
+\[ \frac{x}2 \leq \frac{e^x}{x} \]
+Le « $1/2$ » est décoratif, pour simplifier les calculs (voir plus
+bas). Simplifions cette inégalité.
+\[ \frac{x}2 \leq \frac{e^x}{x} 
+\Longleftrightarrow
+x^2 \leq 2 e^x 
+\Longleftrightarrow
+0 \leq 2 e^x -x^2
+\qquad \qquad \text{($x$ est positif ici !)}\]
+
+
+
+Pour tout $x \geq 0$, posons $\phi(x) = 2e^x -x^2$, et étudions son signe. La
+fonction $\phi$ est dérivable (deux fois) sur $\R_+$ et, pour tout $x\geq 0$,
+\[ \phi'(x) = 2e^x -2x \qquad \text{et} \qquad \phi''(x) = 2e^x - 2  =
+2(e^x-1) \]
+D'après la proposition \ref{resolution}, $\phi''(x) > 0$ pour tout $x>0$ (d'où
+l'intérêt du « $1/2$ »). 
+
+Donc $\phi'$ est strictement croissante et $\phi'(x) > \phi'(0)=2>0$ pour tout $x >0$.
+
+Ainsi $\phi$ est elle aussi strictement croissante et $\phi(x) >
+\phi(0)=2>0$. On en déduit que pour tout $x>0$, 
+\[ \frac{x}2 \leq \frac{e^x}{x} \]
+Or $\lim_{x \to +\infty} x/2 = +\infty$, donc, par comparaison, $\lim_{x \to
+  +\infty} \dfrac{e^x}{x} = +\infty$.
+
+En conclusion, $\lim_{x \to +\infty} \dfrac{e^x}{x} = + \infty$.
+\item 
+$\lim_{x \to - \infty} x e^x = \lim_{x \to +\infty} -xe^{-x}$. 
+Or, pour tout $x>0$,
+\[ -xe^{-x} = -\frac{x}{e^x} = - \frac1{\frac{e^x}x}
+\]
+Et $\lim_{x \to +\infty} \dfrac{e^x}{x} = + \infty$, donc $\lim_{x \to -\infty} x e^x = 0$.
+\end{enumerate}
+\end{demo}
+
+  
+Un corollaire de cette propriété est la généralisation suivante:
+
+\begin{prop} Pour tout $n\in \N$,
+%\vspace{-.5cm}
+\begin{enumerate}
+\item $\lim_{x \to +\infty} \dfrac{e^x}{x^n}= + \infty$.
+\item $\lim_{x \to -\infty} x^n e^x = 0$.
+\end{enumerate}
+\end{prop}
+
+\begin{demo}
+On suppose $n \geq 1$, sinon le résultat découle immédiatement de la propriété
+\ref{Lim}. Montrons le {\bf 1)}, le second point se montrant de la même façon
+qu'en \ref{CroissComp}.
+
+Pour tout $x\in ]0;+\infty[$, on définie les fonction suivantes:
+\[ f(x) = \frac{e^x}{x^n} \qquad \qquad \text{et}  \qquad \qquad
+g(x) = \frac{e^x}{x}\]
+Or, pour tout $x>0$,  $f(x)= \left(\dfrac{e^{x/n}}{x}\right)^n=
+\left(\dfrac{e^{x/n}}{x/n}\right)^n\times \left(\dfrac1n\right)^n =C_n (g(x/n))^n$,
+où $C_n>0$ est une constante fixée (puisque $n$ est fixé). De plus, d'après les
+limites usuelles et la proposition \ref{CroissComp},
+\[ \lim_{x \to + \infty} x/n = +\infty \qquad\qquad  \lim_{x \to +\infty} g(x) =
++\infty \qquad\qquad  \lim_{x \to + \infty} x^n = + \infty \]
+Donc, par composition des limites $\lim_{x \to +\infty} \frac{e^x}{x^n}=
+\lim_{x \to +\infty} f(x) = + \infty$
+\end{demo}
+\end{document}

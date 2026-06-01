@@ -1,0 +1,300 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usetikzlibrary{patterns}
+
+\newcommand{\norme}[1]{\left\Vert #1\right\Vert}
+%\newcommand{\vect}[1][2]{\left( \begin{array}{c} #1 \\ #2 \end{array} \right)}
+
+
+
+\begin{document}
+
+\chapter*{Repérage dans le plan et géométrie vectorielle}
+\section{Repère}
+
+Pour repérer un point sur une droite il nous faut un point appelé origine, noté O, et un autre point $I$ pour fixer une unité, noter $\overrightarrow{i}$.\\
+ 
+Malheureusement pour repérer un point dans le plan cela ne suffit plus, il faut donc rajouter un second point $J$ de manière à ce que O,I,J ne soient pas alignés. Cela permet de fixer une seconde unité noter $\overrightarrow{j}$. 
+
+\begin{defn}
+
+Ainsi, un repère dans le plan sera défini  avec trois points non alignés O,I,J  de la manière suivante : \\ 
+ 
+ \begin{center}
+(point origine O; premier vecteur unité $\overrightarrow{OI}$; second vecteur unité $\overrightarrow{OJ}$).
+\end{center}
+
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{yqyqyq}{rgb}{0.5019607843137255,0.5019607843137255,0.5019607843137255}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+
+\begin{center}
+
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-7.815704502508512,2.1103752106710294) rectangle (4.449697965292878,11.914538380609823);
+\draw [line width=1.6pt,dash pattern=on 1pt off 1pt,color=yqyqyq,domain=-7.815704502508512:4.449697965292878] plot(\x,{(--40.4346--5.26*\x)/3.58});
+\draw [line width=1.2pt,dash pattern=on 1pt off 1pt,color=yqyqyq,domain=-7.815704502508512:4.449697965292878] plot(\x,{(--35.0706--1.22*\x)/6.44});
+\draw [->,line width=1pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=dtsfsf] (-4.57,4.58) -- (-0.99,9.84);
+\draw [->,line width=1pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,color=dtsfsf] (-4.57,4.58) -- (1.87,5.8);
+\begin{scriptsize}
+\draw [fill=rvwvcq] (-4.57,4.58) circle (2.5pt);
+\draw[color=rvwvcq] (-4.399775806682538,4.209232443999008) node {$O$};
+\draw [fill=rvwvcq] (1.87,5.8) circle (2.5pt);
+\draw[color=rvwvcq] (-1.8680616566745257,4.767395297289877) node {$\overrightarrow{i}$};
+\draw[color=rvwvcq] (2.0680616566745257,6.167395297289877) node {$I$};
+\draw [fill=rvwvcq] (-0.99,9.84) circle (2.5pt);
+\draw[color=rvwvcq] (-3.8680616566745257,6.67395297289877) node {$\overrightarrow{j}$};
+\draw[color=rvwvcq] (-0.6015397774277781,9.520445276351052) node {$J$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{defn}
+
+\newpage
+
+\subsection{Les types de repères}
+\subsubsection{Les repères orthogonaux}
+
+\begin{defn}
+
+On dit qu’un repère est orthogonal si les deux vecteurs $\overrightarrow{OI}$ et $\overrightarrow{OJ}$ sont orthogonaux, c'est à dire si les droites $(OI)$ et $(OJ)$ et sont perpendiculaires entre elles, par souci de définition on ne dit pas que  $\overrightarrow{OI}$ et $\overrightarrow{OJ}$ sont perpendiculaires mais orthogonaux.
+
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\begin{center}
+
+\begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-5.434566183724683,-5.608541577911772) rectangle (3.7706491592577573,5.2539138431853445);
+\draw[line width=1.2pt,fill=black,fill opacity=0.10000000149011612] (-2.572736663221266,-1.1869522617289991) -- (-2.7219142613829557,-0.9043101758589039) -- (-3.004556347253051,-1.053487774020594) -- (-2.855378749091361,-1.336129859890689) -- cycle; 
+\draw [line width=1pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-5.434566183724683:3.7706491592577573] plot(\x,{(-6.727752430322505-1.8895082087871287*\x)/0.9972764509784016});
+\draw [line width=1pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-5.434566183724683:3.7706491592577573] plot(\x,{(--0.32297364682392704--0.9972764509784016*\x)/1.8895082087871287});
+\draw [->,line width=0.5pt,color=dtsfsf] (-2.855378749091361,-1.336129859890689) -- (-3.8526552000697625,0.5533783488964397);
+\draw [->,line width=0.5pt,color=dtsfsf] (-2.855378749091361,-1.336129859890689) -- (2.3490927707321236,1.4107737324675433);
+\begin{scriptsize}
+\draw [fill=rvwvcq] (-3.8526552000697625,0.5533783488964398) circle (1pt);
+\draw[color=rvwvcq] (-3.7396615583801256,0.8546947267354721) node {$J$};
+\draw [fill=rvwvcq] (-2.855378749091361,-1.336129859890689) circle (1pt);
+\draw[color=rvwvcq] (-3.1822262593779156,-1.7955730204089803) node {$O$};
+\draw [fill=rvwvcq] (2.3490927707321236,1.4107737324675433) circle (1pt);
+\draw[color=rvwvcq] (2.467455825103942,1.7134464035767143) node {$I$};
+\draw[color=black] (-2.013869495888383,-1.3545199181377544) node {$90\textrm{\degre}$};
+\end{scriptsize}
+\end{tikzpicture}
+
+\end{center}
+
+\end{defn}
+
+\subsubsection{Les repères orthonormés}
+
+\begin{defn}
+
+On dit qu’un repère est orthonormé si les deux vecteurs $\overrightarrow{OI}$ et $\overrightarrow{OJ}$ sont orthogonaux et de \underline{même longueur égale à 1}.
+
+
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+
+\begin{center}
+
+
+\begin{tikzpicture}[scale=2,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-3.670529295548654,-2.234194336196214) rectangle (-0.5673649472701079,1.1455360189530768);
+\draw[line width=1.6pt,fill=black,fill opacity=0.10000000149011612] (-2.755942198915861,-1.3355654492219167) -- (-2.756506609584633,-1.2361288990464163) -- (-2.855943159760133,-1.2366933097151886) -- (-2.855378749091361,-1.336129859890689) -- cycle; 
+\draw [line width=1pt,dash pattern=on 1pt off 1pt,color=wrwrwr] (-2.8629627405558336,-2.234194336196214) -- (-2.8629627405558336,1.1455360189530768);
+\draw [line width=1pt,dash pattern=on 1pt off 1pt,color=wrwrwr,domain=-3.670529295548654:-0.5673649472701079] plot(\x,{(-1.255552069064158--0.005399275266637638*\x)/0.9512316752093166});
+\draw [->,line width=1pt,color=dtsfsf] (-2.855378749091361,-1.336129859890689) -- (-2.8607780243579986,-0.3848981846813724);
+\draw [->,line width=1pt,color=dtsfsf] (-2.855378749091361,-1.336129859890689) -- (-1.901510231562689,-1.3307156176734252);
+\draw (-2.4330136037880257,-1.3951211967070003) node[anchor=north west] {OI = 1};
+\draw (-3.57397281807161,-0.7857384697036609) node[anchor=north west] {OJ = 1};
+\begin{scriptsize}
+\draw [fill=rvwvcq] (-2.8607780243579986,-0.38489818468137244) circle (0.5pt);
+\draw[color=rvwvcq] (-2.7544248169017094,-0.2888571692240148) node {$J$};
+\draw [fill=rvwvcq] (-2.855378749091361,-1.336129859890689) circle (0.5pt);
+\draw[color=rvwvcq] (-2.94161380286389,-1.4363709589530515) node {$O$};
+\draw [fill=rvwvcq] (-1.901510231562689,-1.3307156176734252) circle (0.5pt);
+\draw[color=rvwvcq] (-1.8681626914503142,-1.2357441757984347) node {$I$};
+\draw[color=black] (-2.6050477959931433,-1.2169939380444859) node {$90\textrm{\degre}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\end{defn}
+
+\section{Coordonnées d’un point dans un repère}
+\begin{defn}
+Soit un repère (O;  $\overrightarrow{OI}$; $\overrightarrow{OJ}$), on souhaite repérer un point $A$ dans le plan on écrit alors: 
+$$x_A \overrightarrow{OI} +y_A \overrightarrow{OJ}=\overrightarrow{OA}$$
+
+Alors \underline{dans ce repère} le point $A$ a pour coordonnées $(x_A;y_A)$.\\
+\end{defn}
+
+Dans la suite du cours on se donne un repère orthonormé $ (O; \overrightarrow{OI}; \overrightarrow{OJ} )$, on notera $\overrightarrow{OI}=\overrightarrow{i}$ et $\overrightarrow{OJ}=\overrightarrow{j}$.
+
+On appelle $(\overrightarrow{i};\overrightarrow{j})$ une \underline{base orthonormée}.
+
+\section{Coordonnées des vecteurs dans une base orthonormée}
+
+\begin{prop}
+
+Tout vecteur $\overrightarrow{u}$ du plan  s’écrit  $\overrightarrow{u}=x_u \overrightarrow{i} + y_u \overrightarrow{j}$  où $(x_u;y_u)$ sont appelées les coordonnées du vecteur $\overrightarrow{u}$ dans la base $(\overrightarrow{i};\overrightarrow{j})$. On note $\overrightarrow{u} \left( \begin{array}{c}
+x_u \\
+y_u 
+\end{array} \right)
+$
+
+\end{prop}
+
+\underline{Remarque}: $\overrightarrow{0}$ a pour coordonnées $\left( \begin{array}{c}
+0 \\
+0 
+\end{array} \right)$.
+
+\begin{prop} 
+
+Soient $\overrightarrow{u} \left( \begin{array}{c}
+x_u \\
+y_u 
+\end{array} \right)$ et $\overrightarrow{v} \left( \begin{array}{c}
+x_v \\
+y_v 
+\end{array} \right)$ deux vecteurs du plan dans la base  $(\overrightarrow{i};\overrightarrow{j})$ et $k \in \mathbb{R}$.\\
+Alors le vecteur $\overrightarrow{u}+ \overrightarrow{v}$ a pour coordonnées $\left( \begin{array}{c}
+x_u+x_v \\
+y_u+y_v 
+\end{array} \right)$ dans le base $(\overrightarrow{i};\overrightarrow{j})$.
+
+Le vecteur $k\overrightarrow{u}$ a pour coordonnées $\left( \begin{array}{c}
+k x_u \\
+k y_u 
+\end{array} \right)$. 
+\end{prop}
+
+\begin{prop}
+
+On considère deux points du plan $A=(x_A;y_A)$ et $B=(x_B;y_B)$, alors les coordonnées du vecteur $\overrightarrow{AB}$ sont $\left( \begin{array}{c}
+x_B - x_A \\
+y_B - y_A 
+\end{array} \right)$.
+
+\end{prop}
+
+\newpage
+
+\subsection{Comment savoir si deux vecteurs sont colinéaires}
+
+\begin{defn}
+On définit le déterminant de deux vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ comme la quantité égale à $x_u y_v - y_u x_v $, notée $det(\overrightarrow{u}, \overrightarrow{v})$. Elle \underline{représente au signe près}, l’aire du parallélogramme formée par $\overrightarrow{u}$ et $\overrightarrow{v}$.  
+\end{defn}
+
+\begin{thm}
+Deux vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ sont colinéaires si et seulement si leur \underline{déterminant} est nul.
+\end{thm}
+
+\begin{demo}
+Soit $\overrightarrow{u} \left( \begin{array}{c}
+x_u \\
+y_u 
+\end{array} \right)$,
+$\overrightarrow{v} \left( \begin{array}{c}
+x_v \\
+y_v 
+\end{array} \right)$ deux vecteurs \emph{(supposés non nul)} tel que $det(\overrightarrow{u}, \overrightarrow{v})=x_u y_v - y_u x_v$.\\
+
+$\Longleftarrow$ Soit $det(\overrightarrow{u}, \overrightarrow{v})=0$.
+\begin{itemize}
+\item Si $y_u=0$ on a $y_v x_u =0$ or $\overrightarrow{u} \neq \overrightarrow{0}$ donc $x_u \neq 0$, par suite $y_v=0$. \\
+Posons $\lambda=\frac{x_v}{x_u}$, alors $$\lambda \overrightarrow{u}\left( \begin{array}{c}
+\lambda x_u \\
+\lambda y_u 
+\end{array} \right) = \left( \begin{array}{c}
+\frac{x_v}{x_u} \times x_u \\
+\frac{x_v}{x_u} \times  0
+\end{array} \right) = \left( \begin{array}{c}
+x_v \\
+0
+\end{array} \right) = \left( \begin{array}{c}
+x_v \\
+y_v
+\end{array} \right) = \overrightarrow{v} \; \rm{ d'o\grave{u}} \; \lambda \overrightarrow{u} =\overrightarrow{v}  .$$
+
+\item Posons $x_v= x_u \lambda$ alors en remplaçant $x_v$ dans $x_u y_v - y_u x_v =0 $ on obtient, 
+$$ x_u y_v - y_u x_u \lambda = 0 $$
+en factorisant par $x_u$ on a, 
+$$x_u ( y_v -y_u \lambda) =0.$$
+On simplifie par $x_u$ \emph{(qui est \underline{non nul})},
+$$y_v-y_u\lambda=0$$
+qui est encore équivalent à
+$$y_v=y_u \lambda.$$
+Or,  $$x_v= x_u \lambda$$
+
+par suite on conclut, $$\overrightarrow{v}= \lambda \overrightarrow{u}.$$ \\
+
+\end{itemize}
+
+$\Longrightarrow$ Soit $\overrightarrow{u}$ et $\overrightarrow{v}$ colinéaires. 
+
+C'est à dire qu'il existe $\lambda \in \mathbb{R}$ tel que $\overrightarrow{v}=\lambda \overrightarrow{u}$ alors on a $x_v=x_u \lambda$ et $y_v= y_u \lambda$ alors $$det(\overrightarrow{u}, \overrightarrow{v})=x_u y_v - y_u x_v = x_u y_u \lambda - y_u x_u \lambda = 0$$
+
+
+
+\end{demo}
+
+\underline{Remarque}: dès que l’on constate que les coordonnées de $\overrightarrow{u}$ et $\overrightarrow{v}$ sont proportionnelles, c'est à dire que $\overrightarrow{u}=k \overrightarrow{v}$ avec $k \in \mathbb{R}$, on peut dire qu’ils sont colinéaires.
+
+\newpage
+
+\section{Milieu d’un segment et norme de vecteur}
+
+\subsection{Milieu d’un segment}
+Soient $A=(x_A;y_A)$ et $B=(x_B;y_B)$ deux points du plan et $\overrightarrow{u}\left( \begin{array}{c}
+x_u \\
+y_u 
+\end{array} \right)$
+
+\begin{prop}
+Le point M est le milieu du segment $[AB]$ a pour coordonnées $x_M=\frac{x_A+x_B}{2}$ et  $y_M=\frac{y_A+y_B}{2}$.
+\end{prop}
+
+\subsection{Norme}
+
+\begin{defn}
+
+On appelle \underline{norme} de $\overrightarrow{u}$ la longueur du vecteur $\overrightarrow{u}$, c’est donc un nombre réel \underline{positif}, noté $\norme{\overrightarrow{u}}$.
+\vspace{4mm}
+
+\end{defn}
+
+ 
+\begin{prop}
+$$AB=\norme{\overrightarrow{AB}}=\sqrt{(x_B-x_A)^2+(y_B-y_A)^2}$$
+$$\norme{\overrightarrow{u}}=\sqrt{x_{u}^2+y_{u}^2}$$
+\end{prop}
+
+%Ce qu'il faut savoir faire la leçon: 
+%-Savoir si des points sont alignés
+
+
+\end{document}

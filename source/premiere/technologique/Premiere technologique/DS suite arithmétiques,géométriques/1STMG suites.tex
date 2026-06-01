@@ -1,0 +1,256 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8x]{inputenc}    
+\usepackage[T1]{fontenc}
+\usepackage[francais,bloc]{automultiplechoice}    
+% [nowatermark] pour enlever le texte "PROJET" et le pied de page
+\usepackage{multicol}
+\usepackage{fancyhdr,amssymb,amsmath}
+
+
+%===================
+\begin{document}
+%===================
+
+%%% On répartie les quesitons dans différents groupes.
+% ---------------------------------
+%%% Questions groupe : "catégorie1"
+%----------------------------------
+\element{categorie1}{
+  \begin{question}{calcul littéral 1}    
+% Question ouverte   
+Développer et réduire l'expression suivante $(2x-1)^2$  
+   
+   \AMCOpen{lines=2,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points     
+  \end{question}
+}
+
+%
+\element{categorie1}{
+  \begin{question}{calcul littéral 2}  
+% Question ouverte  
+Développer et réduire l'expression suivante $(2x-4)(-x+3)$  
+   \AMCOpen{lines=2,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+
+
+
+
+% ---------------------------------
+%%% Questions groupe : "catégorie2"
+%----------------------------------
+\element{categorie2}{
+  \begin{question}{calcul littéral 3}  
+% Question ouverte  
+Factoriser l'expression suivante  $(2x-2)(4+5x)+(2x-2)(-x+7)$
+   \AMCOpen{lines=2,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+
+\element{categorie2}{
+  \begin{question}{calcul littéral 4}  
+% Question ouverte  
+Factoriser l'expression suivante  $(x-2)(4+6x)+(x-2)(-5x+7)$
+   \AMCOpen{lines=2,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points         
+  \end{question}
+}
+% ---------------------------------
+%%% Questions groupe : "catégorie3"
+%----------------------------------
+
+
+
+
+
+\element{categorie3}{
+  \begin{question}{calcul terme ari }  
+% Question simple à réponse unique    
+Soit $(V_n)$ une suite arithmétique telle que $V_5=2$ et de raison $6$, déterminer $V_7$.  
+
+     \begin{reponseshoriz}\bareme{b=1,m=-0.5,e=-0.5,v=0}
+      \bonne{$V_7=14$}
+      \mauvaise{$V_7=72$}
+      \mauvaise{$V_7=-10$}
+      \mauvaise{$V_7=\dfrac{1}{18}$}
+    \end{reponseshoriz} 
+  \end{question}
+% b = 1 : une bonne réponse rapporte 1 point
+% m = -0.5 : une mauvaise réponse retire 0.5 point
+% e = -0.5 : une réponse incohérente retire 0.5 point
+% v = 0 : 0 point si aucune réponse  
+}
+
+
+\element{categorie3}{
+  \begin{question}{Calcul terme geo}  
+% Question simple à réponse unique    
+Soit $(U_n)$ une suite géométrique telle que $U_5=2$ et de raison $6$, déterminer $U_7$. 
+
+     \begin{reponseshoriz}\bareme{b=1,m=-0.5,e=-0.5,v=0}
+      \mauvaise{$U_7=52$}
+      \bonne{$U_7=72$}
+      \mauvaise{$U_7=\dfrac{1}{3}$}
+      \mauvaise{$U_7=12$}
+    \end{reponseshoriz} 
+  \end{question}
+% b = 1 : une bonne réponse rapporte 1 point
+% m = -0.5 : une mauvaise réponse retire 0.5 point
+% e = -0.5 : une réponse incohérente retire 0.5 point
+% v = 0 : 0 point si aucune réponse  
+}
+
+\element{categorie3}{
+  \begin{question}{variation ari}  
+% Question simple à réponse unique    
+Soit $(W_n)$ une suite arithmétique telle que $W_0=-2$ et de raison $6$, on dit que les variations de $(W_n)$ sont sur $\mathbb{N}$.
+
+     \begin{reponseshoriz}\bareme{b=1,m=-0.5,e=-0.5,v=0}
+      \mauvaise{décroissante}
+      \bonne{strictement croissante}
+      \mauvaise{strictement décroissante}
+      \mauvaise{constante}
+    \end{reponseshoriz} 
+  \end{question}
+% b = 1 : une bonne réponse rapporte 1 point
+% m = -0.5 : une mauvaise réponse retire 0.5 point
+% e = -0.5 : une réponse incohérente retire 0.5 point
+% v = 0 : 0 point si aucune réponse  
+}
+
+
+\element{categorie3}{
+  \begin{question}{Variation geo}  
+% Question simple à réponse unique    
+Soit $(Z_n)$ une suite géométrique telle que $Z_0=-2$ et de raison $6$, déterminer les variations de $(Z_n)$.
+     \begin{reponseshoriz}\bareme{b=1,m=-0.5,e=-0.5,v=0}
+      \mauvaise{croissante}
+      \bonne{strictement décroissante}
+      \mauvaise{strictement croissante}
+      \mauvaise{constante}
+    \end{reponseshoriz} 
+  \end{question}
+% b = 1 : une bonne réponse rapporte 1 point
+% m = -0.5 : une mauvaise réponse retire 0.5 point
+% e = -0.5 : une réponse incohérente retire 0.5 point
+% v = 0 : 0 point si aucune réponse  
+}
+
+
+\element{categorie4}{
+  \begin{question}{Probleme}    
+% Question ouverte   
+Le nombre de bactéries présentent dans un organisme suite à une infection est modélisé par $U_{n+1}=U_n\times 1.1$ avec $U_0=10000$ le nombre de bactérie au départ et où $n$ représente le nombre d'heure écoulé.
+
+\begin{enumerate}
+\item Calculer $U_1$ et $U_2$.
+\item Quelle est la nature de la suite $(U_n)$ ? Précisez sa raison.
+\item Calculer le nombre de bactérie présente dans l'organisme au bout de dix heures.
+\item Au bout de combien d'heures le nombre de bactérie aura, pour la première fois, doublé ?
+\item Au bout de combien d'heures le nombre de bactérie aura, pour la première fois, triplé ?
+\end{enumerate}
+
+   \AMCOpen{lines=10,dots=false}{\wrongchoice{NA}\scoring{0}\wrongchoice{AB}\scoring{1}\wrongchoice{B}\scoring{2}\correctchoice{TB}\scoring{3}}
+% AB rapporte 1 point
+% B rapporte 2 points
+% TB rapporte 3 points     
+  \end{question}
+}
+
+%-------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% fin des questions %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% fabrication des copies%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\exemplaire{18}{    
+
+%%% debut de l'entête des copies :    
+	%%% première ligne
+
+	\begin{minipage}{1\linewidth}
+	  \centering\large\bf DS 1STMG sur les suites arithmétiques et géométriques 
+	\end{minipage}
+
+	%%% codage des numéros d'étudiants sur 2 chiffres par les candidats et encadré d'écriture manuelle des noms.
+	\vspace*{3mm}
+	{\setlength{\parindent}{0pt}\AMCcode{etu}{2}\hspace*{\fill}
+	\begin{minipage}[b]{12cm}
+	 \hspace*{5mm}
+  	  Codez votre numéro ci contre chiffre par chiffre, puis complétez l'encadré.
+     \vspace{3ex}
+
+	 \hfill\champnom{\fbox{
+	 \begin{minipage}{1\linewidth}
+		\vspace*{3mm}
+		NOM - Prénom - Classe :
+		\vspace*{3mm}
+	 \end{minipage}
+	    }
+	   }
+	\hfill\vspace{1ex}
+% texte de présentation 
+\begin{center}\em
+
+Durée : 55 minutes.
+
+  Aucun document n'est autorisé. La calculatrice est autorisée.
+  Les questions faisant apparaître le symbole \multiSymbole{} peuvent
+  présenter une ou plusieurs bonnes réponses. Les autres ont une unique bonne réponse.
+  Les réponses fausses ou incohérentes retirent des points.
+
+\end{center}
+
+	\end{minipage}\hspace*{\fill}
+	}
+
+\vspace{4ex}
+
+%%% Fin de l'entête
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Composition des QCM
+%%% On mélange des questions par groupe
+% On efface le {tout} précédent
+\cleargroup{tout}
+
+% On mélange par "catégorie", et on prélève aléatoirement [n] questions 
+% du lot {categorie-k} vers la copie complète {tout}
+% puis on restitue la copie.
+% Si on met [0], toutes les questions sont prises.
+\melangegroupe{categorie1}\copygroup[1]{categorie1}{tout}
+\melangegroupe{categorie2}\copygroup[1]{categorie2}{tout}
+\melangegroupe{categorie3}\copygroup[0]{categorie3}{tout}
+\melangegroupe{categorie4}\copygroup[0]{categorie4}{tout}
+
+\restituegroupe{tout}
+
+% Saut d'une page si le sujet comporte un nombre impair de pages.
+% Ainsi il est possible d'imprimer les sujets en recto-verso.
+
+\AMCcleardoublepage    
+
+%%% Fin de la création des questionnaires
+
+}
+% Fin de exemplaires{k}{ 
+
+\end{document}
+

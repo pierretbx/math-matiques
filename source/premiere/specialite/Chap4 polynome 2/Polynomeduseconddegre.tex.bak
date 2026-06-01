@@ -1,0 +1,384 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Polynômes du second degré}
+\section{Généralités sur les polynômes}
+\subsection{Définition}
+\begin{defn}
+On appelle fonction polynôme toute fonction $f$ définie sur $\R$ par :
+\[f(x)=\sum^n_{i=0} a_ix^i = a_0+a_1x+\cdots+a_nx^n \]
+où $a_{0}$, $a_{1}$, $\ldots$, $a_{n}$ sont des réels donnés.
+\end{defn}
+
+\begin{exemple}
+$x\mapsto -x^{3}-5x^{2}+7x-1$ est un polynôme. $x\mapsto \dfrac{x^{4}-4}{x^{2}+2}$ n'est pas un polynôme.
+\end{exemple}%
+
+\subsection{Propriétés (admises)}
+\begin{prop}
+\begin{enumerate}
+\item Soit $P$ le polynôme défini par $P(x)=\poly{a}{n}$.
+
+$P$ est le polynôme nul $\Longleftrightarrow$ $a_{0}=a_{1}=\cdots=a_{n}=0$.
+\item Soient $P$ et $Q$ les polynômes définis par $P(x)=\poly{a}{n}$ et $Q(x)=\poly{b}{p}$ avec $a_{n}\neq0$ et $b_{p}\neq0$.
+\[P=Q\Longleftrightarrow\left\lbrace
+\begin{array}{l}
+n=p \\
+a_{0}=b_{0}\,;\, a_{1}=b_{1}\,;\,\cdots \,a_{n}=b_{n}
+\end{array}
+\right.\]
+\end{enumerate}
+\end{prop}
+Conséquence : L'écriture d'un polynôme est unique.
+
+\begin{exemple}
+Si, pour tout $x\in\R$, $ax^3+bx^2+cx+d=2x^3-x+2$ alors $a=2$, $b=0$, $c=-1$ et $d=1$.
+\end{exemple}
+%
+\subsection{Degré}
+\begin{defn}
+Soit $P$ un polynôme défini par $P(x)=\poly[a]$ avec $a_{n}\neq0$.
+
+Le nombre $n$ est appelé degré de $P$.
+\end{defn}
+
+\begin{exemple}
+$x\mapsto -x^{3}-5x^{2}+7x-1$ est un polynôme de degré 3.
+$x\mapsto 3x-x^{5}$ est un polynôme de degré 5.
+\end{exemple}%
+
+\subsection{Racines d'une fonction}
+\begin{defn}
+Soit $f$ une fonction. On appelle racine de $f$ toute solution de l'équation $f(x)=0$.
+\vspace{5mm}
+\end{defn}
+
+\begin{exemple}
+1 est une racine de $x\mapsto -x^{3}-5x^{2}+7x-1$. 0 est une racine de $x\mapsto 3x-x^{5}$.
+\end{exemple}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Polynômes du second degré}
+Dans tout le paragraphe, $P$ désigne un polynôme défini par $P(x)=ax^{2}+bx+c$ avec $a\neq0$.
+\subsection{Forme canonique}
+\begin{prop}[Propriété et définition]
+Il existe des réels $\alpha$ et $\beta$ tels que :
+\begin{center}
+Pour tout $x\in\R$, $P(x)=a\left((x+\alpha)^{2}+\beta\right)$.
+\end{center}
+Cette écriture est appelée forme canonique de $P$.
+\end{prop}
+
+Remarque : On appelle parfois forme canonique l'écriture de $P$ sous la forme
+\[P(x)=a(x+\alpha)^{2}+\gamma\]
+
+\begin{demo}
+\begin{align*}
+P(x)&=ax^{2}+bx+c=a\left(x^{2}+\dfrac{b}{a}x+\dfrac{c}{a}\right)=a\left(\left(x+\dfrac{b}{2a}\right)^{2}-\dfrac{b^{2}}{4a^{2}}+\dfrac{c}{a}\right)\\
+&=a\left(\left(x+\dfrac{b}{2a}\right)^{2}+\dfrac{-b^{2}+4ac}{4a^{2}}\right)
+\end{align*}
+\end{demo}
+
+\begin{exemple}
+Écrire la forme canonique du polynôme défini par $P(x)=2x^{2}+4x+6$.
+\end{exemple}
+
+
+$P(x)=2x^{2}+4x+6=2\left(x^{2}+2x+3\right)=2\left((x+1)^{2}-1+3\right)=2\left((x+1)^{2}+2\right)$
+
+
+\subsection{Discriminant}
+\begin{defn}
+On appelle discriminant de $P$ le réel $\Delta$ défini par $\Delta=b^{2}-4ac$.
+\vspace{5mm}
+\end{defn}
+
+\begin{exemple}
+Calculer le discriminant du polynôme défini par $P(x)=2x^{2}+4x+6$.
+\end{exemple}
+
+
+$\Delta=4^{2}-4\times 2\times 6=16-48=-32$.
+
+
+\subsection{Racines}
+\begin{prop}
+Les racines de $P$ peuvent être déterminée de la façon suivante :
+\begin{itemize}
+\item Si $\Delta<0$ alors $P$ n'a pas de racine réelle.
+\item Si $\Delta=0$ alors $P$ admet une racine réelle : $-\dfrac{b}{2a}$.
+\item Si $\Delta>0$ alors $P$ admet deux racines réelles : $\dfrac{-b-\sqrt{\Delta}}{2a}$ et $\dfrac{-b+\sqrt{\Delta}}{2a}$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\[P(x)=a\left(\left(x+\dfrac{b}{2a}\right)^{2}+\dfrac{-b^{2}+4ac}{4a^{2}}\right)=a\left(\left(x+\dfrac{b}{2a}\right)^{2}-\dfrac{\Delta}{4a^{2}}\right)\]
+\begin{itemize}
+\item Si $\Delta<0$ alors $\left(x+\dfrac{b}{2a}\right)^{2}-\dfrac{\Delta}{4a^{2}}>0$ donc pour tout $x$, $P(x)\neq0$.
+\item Si $\Delta=0$ alors $P(x)=a\left(x+\dfrac{b}{2a}\right)^{2}$ donc $P(x)=0\Longleftrightarrow x=-\dfrac{b}{2a}$.
+\item Si $\Delta>0$ alors $P(x)=a\left(\left(x+\dfrac{b}{2a}\right)-\dfrac{\sqrt{\Delta}}{2a}\right)\left(\left(x+\dfrac{b}{2a}\right)+\dfrac{\sqrt{\Delta}}{2a}\right)$
+
+donc
+\begin{align*}
+P(x)=0&\Longleftrightarrow\left(x+\dfrac{b}{2a}\right)-\dfrac{\sqrt{\Delta}}{2a}=0 \quad \text{ou} \quad \left(x+\dfrac{b}{2a}\right)+\dfrac{\sqrt{\Delta}}{2a}=0\\
+&\Longleftrightarrow x=\dfrac{-b+\sqrt{\Delta}}{2a} \quad \text{ou} \quad x=\dfrac{-b+\sqrt{\Delta}}{2a}
+\end{align*}
+
+\end{itemize}
+\end{demo}
+
+\begin{exemple}
+Déterminer les racines de $P$ et $Q$ définis par
+ \[P(x)=2x^{2}+4x+6 \quad \text{et} \quad Q(x)=-x^{2}-2x+1\]
+\end{exemple}
+
+Pour $P$ : $\Delta=-32<0$ donc $P$ n'a pas de racine.
+
+Pour $Q$ : $\Delta=(-2)^{2}-4\times (-1)\times 1=4+4=8>0$ donc $Q$ admet deux racines :
+\begin{align*}
+x_{1}&=\dfrac{-(-2)-\sqrt{8}}{2\times (-1)}=\dfrac{2-2\sqrt{2}}{-2}=-1+\sqrt{2}\\
+x_{2}&=\dfrac{-(-2)+\sqrt{8}}{2\times (-1)}=\dfrac{2+2\sqrt{2}}{-2}=-1-\sqrt{2}
+\end{align*}
+
+
+
+\subsection{Relation de Viète}
+\begin{prop}
+Si $P$ admet deux racines $x_{1}$ et $x_{2}$ alors 
+$\left\lbrace 
+\begin{array}[c]{l}
+r_{1}+r_{2}=-\dfrac{b}{a} \\
+r_{1}r_{2}=\dfrac{c}{a}
+\end{array}
+\right.$
+\end{prop}
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{demo}
+\begin{align*}
+x_{1}+x_{2}&=\dfrac{-b-\sqrt{\Delta}}{2a}+\dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{-2b}{2a}=-\dfrac{b}{a}\\
+x_{1}x_{2}&=\dfrac{-b-\sqrt{\Delta}}{2a}\times \dfrac{-b+\sqrt{\Delta}}{2a}=\dfrac{(-b)^{2}-\Delta}{4a^{2}}=\dfrac{b^{2}-b^{2}+4ac}{4a^{2}}=\dfrac{4ac}{4a^{2}}=\dfrac{c}{a}
+\end{align*}
+\end{demo}%
+
+\subsection{Factorisation}
+\begin{prop}
+\begin{itemize}
+\item Si $\Delta<0$ alors $P$ ne peut pas être factorisé.
+\item Si $\Delta=0$ alors $P(x)=a\left(x+\dfrac{b}{2a}\right)^{2}$
+\item Si $\Delta>0$ alors $P(x)=a(x-x_{1})(x-x_{2})$ où $x_{1}$ et $x_{2}$ sont les racines de $P$.
+\end{itemize}
+\end{prop}
+
+%\ifthenelse{\value{version}=0}{\newpage}{}
+\begin{demo}
+Le premier résultat s'obtient en remarquant que si $P$ pouvait se factoriser, on aurait deux facteurs du premier degré auquel cas l'équation $P(x)=0$ admettrait au moins une solution, ce qui est contradictoire avec le résultat obtenu précédemment.
+
+Les deux autres résultats ont été obtenus dans le cours de la démonstration précédente.
+\end{demo}
+
+\begin{exemple}
+Factoriser $P$ et $Q$ définis par
+ \[P(x)=2x^{2}+4x+6 \quad \text{et} \quad Q(x)=-x^{2}-2x+1\]
+\end{exemple}
+
+
+Pour $P$ : $\Delta=-32<0$ donc $P$ ne peut pas se factoriser.
+
+Pour $Q$ : Les racines sont $-1+\sqrt{2}$ et $-1+\sqrt{2}$ donc $P(x)=-(x+1-\sqrt{2})(x+1+\sqrt{2})$.
+
+%
+\subsection{Signe}
+\begin{prop}
+\begin{itemize}
+\item Si $\Delta<0$ alors
+\begin{tabular}[c]{|c|ccc|} \hline
+$x$ & $-\infty$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & \\ \hline
+\end{tabular}
+\item Si $\Delta=0$ alors
+\begin{tabular}[c]{|c|ccccc|} \hline
+$x$ & $-\infty$ &  & $-\frac{b}{2a}$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & $0$ & Signe de $a$ & \\ \hline
+\end{tabular}
+\item Si $\Delta>0$ alors
+
+\vspace{1ex}
+\begin{tabular}[c]{|c|ccccccc|} \hline
+$x$ & $-\infty$ &  & $x_{1}$ &  & $x_{2}$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & $0$ & Signe de $-a$ & $0$ & Signe de $a$ & \\ \hline
+\end{tabular}
+
+\vspace{1ex}
+\hspace*{1cm}où $x_{1}$ et $x_{2}$ sont les racines de $P$ et $x_{1}<x_{2}$
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\begin{itemize}
+\item Si $\Delta<0$ alors $\left(x+\dfrac{b}{2a}\right)^{2}-\dfrac{\Delta}{4a^{2}}>0$ donc $P(x)$ est  du signe de $a$.
+\item Si $\Delta=0$ alors $P(x)=a\left(x+\dfrac{b}{2a}\right)^{2}$ qui est du signe de $a$ sauf pour $-\dfrac{b}{2a}$.
+\item Si $\Delta>0$ alors $P(x)=a(x-r_{1})(x-r_{2})$ où $r_{1}$ et $r_{2}$ sont les racines de $P$. On peut donc dresser le tableau de signe suivant :
+
+\end{itemize}
+\vspace{1ex}
+\begin{tabular}[c]{|c|ccccccc|} \hline
+$x$ & $-\infty$ &  & $x_{1}$ &  & $x_{2}$ &  & $+\infty$ \\ \hline
+$a$ &  & Signe de $a$ &  & Signe de $a$ &  & Signe de $a$ & \\ \hline
+$x-x_{1}$ &  & $-$ & 0 & $+$ &  & $+$ & \\ \hline
+$x-x_{2}$ &  & $-$ &  & $-$ & 0 & $+$ & \\ \hline
+Signe de $P(x)$ &  & Signe de $a$ & 0 & Signe de $-a$ & 0 & Signe de $a$ & \\ \hline
+\end{tabular}
+
+\vspace{1ex}
+\end{demo}
+
+\begin{exemple}
+Déterminer le tableau de signe de $P$ et $Q$ définis par
+ \[P(x)=2x^{2}+4x+6 \quad \text{et} \quad Q(x)=-x^{2}-2x+1\]
+\end{exemple}
+
+
+Pour $P$ : $\Delta>0$ donc
+
+\begin{center}
+\begin{tabular}[c]{|c|ccc|} \hline
+$x$ & $-\infty$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & + & \\ \hline
+\end{tabular}
+\end{center}
+
+Pour $Q$ : Les racines sont $-1-\sqrt{2}$ et $-1+\sqrt{2}$ et de plus $-1<0$ donc
+
+\vspace{1ex}
+\begin{center}
+\begin{tabular}[c]{|c|ccccccc|} \hline
+$x$ & $-\infty$ &  & $-1-\sqrt{2}$ &  & $-1+\sqrt{2}$ &  & $+\infty$ \\ \hline
+Signe de $P(x)$ &  & $-$ & 0 & $+$ & 0 & $-$ & \\ \hline
+\end{tabular}
+\end{center}
+
+%
+\subsection{Représentation graphique}
+\begin{prop}
+Soit $\oij$ un repère du plan.
+
+La représentation graphique de $P$ est l'image par la translation de vecteur $\vect{u}\cp{-\frac{b}{2a}}{-\frac{\Delta}{4a}}$ de la parabole représentant la fonction $x\mapsto ax^{2}$.
+L'axe de sym\'etrie d'une parabole repr\'esentative d'une fonction polyn\^ome du second degr\'e  du type $P(x)=ax^2+bx+c$ est $x=\dfrac{-b}{2a}$.
+C'est donc une parabole de sommet $S\left(-\frac{b}{2a};P(-\frac{b}{2a})\right)$.
+\end{prop}
+Illustration :
+\begin{center}
+ \begin{tabular}{|c|c|c|c|}
+   \hline
+    & $\Delta >0$ & $\Delta =0$ & $\Delta <0$  \\
+   \hline
+   Factorisation de $P(x)$ & $a(x-x_{1})(x-x_{2})$ & $a(x-x_{0})^{2}$ &
+   pas de factorisation  \\
+   \hline
+   Équation $P(x)=0$ & $2$ solutions $x_{1}$ et $x_{2}$ & une solution $x_{0}$ & pas de solution\\ \hline
+   \rule[0pt]{0pt}{2.2cm} \raisebox{1.1cm}[0pt][0pt]{$a>0$} & \includegraphics[scale=0.7]{CoursSecondDegFigures.1} & \includegraphics[scale=0.7]{CoursSecondDegFigures.2}
+   & \includegraphics[scale=0.7]{CoursSecondDegFigures.3} \\
+   \hline
+   \rule[0pt]{0pt}{2.2cm} \raisebox{1.1cm}[0pt][0pt]{$a<0$} & \includegraphics[scale=0.7]{CoursSecondDegFigures.4} & \includegraphics[scale=0.7]{CoursSecondDegFigures.5} &  \includegraphics[scale=0.7]{CoursSecondDegFigures.6} \\
+   \hline
+  \end{tabular}
+  \end{center}
+
+\end{document}

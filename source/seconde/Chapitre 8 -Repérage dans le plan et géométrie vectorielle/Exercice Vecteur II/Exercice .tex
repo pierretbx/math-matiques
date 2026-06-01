@@ -1,0 +1,178 @@
+\documentclass[french]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{pstricks}
+\pgfplotsset{compat=newest}
+\usepackage{geometry}
+\geometry{hmargin=2cm,vmargin=2cm}
+
+
+\begin{document}
+%\twocolumn
+\begin{center}
+\underline{\textbf{Repérage dans le plan et géométrie vectorielle}}
+\end{center}
+\section{Repérage dans le plan}
+\section*{Exercice 1}
+\begin{enumerate}
+
+
+\item Dans le repère $(O,\overrightarrow{i},\overrightarrow{j})$ lire les coordonnées des vecteurs nommés de $\overrightarrow{a}$ à $\overrightarrow{h}$.
+\item Parmis les vecteurs de $\overrightarrow{a}$ à $\overrightarrow{h}$, choissisez 3 vecteurs de votre choix et écrire une égalité de la forme $\overrightarrow{z}= x\overrightarrow{i}+y\overrightarrow{j}$ pour chacun des vecteurs choisis.
+\item Représenter les vecteurs $\overrightarrow{u} \left( \begin{array}{c}
+-3\\
+4
+\end{array} \right)$, $\overrightarrow{v} \left( \begin{array}{c}
+0\\
+5
+\end{array} \right)$, $\overrightarrow{w} \left( \begin{array}{c}
+-2\\
+2
+\end{array} \right)$.
+\item Calculer les coordonnées des vecteurs suivants: $2\overrightarrow{a}, -3\overrightarrow{f}, \overrightarrow{c} + 2\overrightarrow{h}, -\overrightarrow{d}+4\overrightarrow{b}$
+
+\end{enumerate}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+grid style=dashed,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-8.34871263733203,
+xmax=7.027770942492273,
+ymin=-2.4895189365633157,
+ymax=5.907482643356319,
+xtick={-8,-7,...,7},
+ytick={-2,-1,...,5},]
+\clip(-8.34871263733203,-2.4895189365633157) rectangle (7.027770942492273,5.907482643356319);
+\draw [->,line width=0.5pt] (0,0) -- (1,0);
+\draw [->,line width=0.5pt] (0,0) -- (0,1);
+\draw [->,line width=0.5pt] (1,1) -- (1,3);
+\draw [->,line width=0.5pt] (-5,2) -- (-3,4);
+\draw [->,line width=0.5pt] (-3,-1) -- (-1,-1);
+\draw [->,line width=0.5pt] (-5,-1) -- (-7,1);
+\draw [->,line width=0.5pt] (-7,2) -- (-1,1);
+\draw [->,line width=0.5pt] (-3,2) -- (2,4);
+\draw [->,line width=0.5pt] (2,-1) -- (3,1);
+\draw [->,line width=0.5pt] (4,1) -- (3,-1);
+\begin{scriptsize}
+\draw [fill=xdxdff] (0,0) circle (1pt);
+\draw[color=xdxdff] (-0.21599436894058222,-0.11697557170762482) node {$O$};
+\draw[color=black] (0.4807525432702065,-0.20496269391088714) node {$\overrightarrow{i}$};
+\draw[color=black] (-0.09586559097320485,0.4956811959259967) node {$\overrightarrow{j}$};
+\draw[color=black] (1.1294479442940442,2.0333295539084193) node {$\overrightarrow{h}$};
+\draw[color=black] (-4.132192530677084,3.222604455785449) node {$\overrightarrow{a}$};
+\draw[color=black] (-1.9578616494675538,-1.3140444288368518) node {$\overrightarrow{b}$};
+\draw[color=black] (-6.042240100358384,0.415301420509783784) node {$\overrightarrow{c}$};
+\draw[color=black] (-3.9519993637260185,1.6969689755997643) node {$\overrightarrow{d}$};
+\draw[color=black] (-0.5283291916557634,3.222604455785449) node {$\overrightarrow{e}$};
+\draw[color=black] (2.3187228461710805,0.2073721288042924) node {$\overrightarrow{f}$};
+\draw[color=black] (3.59208789262528,-0.2130785940815262) node {$\overrightarrow{g}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+\section{Coordonnées de vecteurs}
+
+\section*{Exercice 2}
+Dans un repère, on se donne les points $A(5;8),B(3;2)$ et $C(2;9)$.
+
+\begin{enumerate}
+\item Calculer les coordonnées des vecteur $\overrightarrow{AB}, \overrightarrow{BC}$ et $\overrightarrow{AC}$
+\item Calculer les coordonnées du vecteur $\overrightarrow{AB}+\overrightarrow{BC}$
+\item Pouvait-on s'attendre à ce résultat ? Justifiez.
+\end{enumerate}
+
+\section*{Exercice 3}
+Dans un repère, on se donne un vecteur $\overrightarrow{u} \left( \begin{array}{c}
+1\\
+3
+\end{array} \right)$ et un point $A(2;0)$. Déterminer les coordonnées du point $M$ tel que $\overrightarrow{AM}=\overrightarrow{u}$
+
+\section{Déterminant et colinéarité}
+\section*{Exercice 4}
+À l'aide du déterminant, déterminer si les vecteurs $\overrightarrow{u}$ et $\overrightarrow{v}$ sont colinéaire entre eux.
+
+\begin{enumerate}
+\item  $\overrightarrow{u} \left( \begin{array}{c}
+-3\\
+4
+\end{array} \right)$ et $\overrightarrow{v} \left( \begin{array}{c}
+0\\
+5
+\end{array} \right)$
+
+\item  $\overrightarrow{u} \left( \begin{array}{c}
+0\\
+2
+\end{array} \right)$ et $\overrightarrow{v} \left( \begin{array}{c}
+0\\
+5
+\end{array} \right)$
+
+
+
+\item  $\overrightarrow{u} \left( \begin{array}{c}
+3\\
+2
+\end{array} \right)$ et $\overrightarrow{v} \left( \begin{array}{c}
+\dfrac{15}{2}\\
+5
+\end{array} \right)$
+
+\item  $\overrightarrow{u} \left( \begin{array}{c}
+x\\
+y
+\end{array} \right)$ et $\overrightarrow{v} \left( \begin{array}{c}
+y\\
+x
+\end{array} \right)$
+
+\end{enumerate}
+\section{Longueurs, milieux et géométrie}
+\section*{Exercice 5}
+On considère les vecteurs  $\overrightarrow{u} \left( \begin{array}{c}
+-3\\
+2
+\end{array} \right)$ et $\overrightarrow{v} \left( \begin{array}{c}
+9\\
+6
+\end{array} \right)$
+Démontrer qu'ils sont colinéaires et calculer leurs normes.
+
+\section*{Exercice 6}
+Dans le repère $(O,\overrightarrow{i},\overrightarrow{j})$ de l'exercice 1, calculer la norme des vecteurs nommés de $\overrightarrow{a}$ à $\overrightarrow{h}$.
+
+\section*{Exercice 7}
+Dans un repère orthonormé, on se donne les points $A(	-3;2)$, $B(3;1)$, $C(5;2)$, et $D(0;-4)$. Calculer la longeur AB, CD et BC.
+
+
+\section*{Execice 8}
+Dans un repère orthonormé, on se donne les points $A(	-3;4)$, $B(0;2)$, $C(4;4)$. Calculer les coordonnées du point K milieu de [AB], L milieu de [BC] et M milieu de [AC].
+
+\section*{Exercice 9}
+Dans un repère orthonormé, on considère les points $A(1;0), B(0;2)$ et $C(4;4)$. 
+\begin{enumerate}
+\item Faire une figure
+\item Déterminer la nature du triangle ABC.
+\item Déterminer les coordonnées du point D tel que ABCD soit un parallélogramme.
+\item Déterminer les coordonnées du centre du parallélogramme ABCD.
+\item Calculer la longueur de ses diagonales.
+\end{enumerate}
+
+\section*{Exercice 10}
+Dans un repère, on se donne les points $A(1;-1)$, $B(0,5;1,5)$, $C(x;4)$. On veut que les points A,B et C soient alignés, notre objectif est de déterminer $x$.
+\begin{enumerate}
+\item Que doivent respecter les vecteurs $\overrightarrow{AB}$ et $\overrightarrow{BC}$ pour que ABC soient alignés?
+\item Déterminer $x$ pour que ABC soient alignés.
+\end{enumerate}
+
+\end{document}

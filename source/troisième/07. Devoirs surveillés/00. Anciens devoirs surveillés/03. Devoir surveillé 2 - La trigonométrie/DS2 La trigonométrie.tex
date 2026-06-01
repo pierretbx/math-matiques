@@ -1,0 +1,126 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\pagestyle{empty}
+\newpage
+\section*{La trigonométrie}
+\addcontentsline{toc}{section}{La trigonométrie}
+
+\noindent \textit{Il sera tenu compte dans la notation de la propreté ainsi que de la justification apportée à chacune des réponses.}
+
+\noindent \textit{Le barème est donné à titre indicatif. Il pourra être modifié ultérieurement.}
+
+\noindent \textit{L'usage de la calculatrice est \textbf{interdite}.} \hfill \textit{Durée : 55 minutes}
+
+\medskip
+\paragraph{Question de cours}: \hfill \textbf{2 points}
+
+\begin{enumerate}
+\item Donner votre définition du coté adjacent à un angle.
+\item Donner votre définition de la tangente d'un angle aigu.
+\end{enumerate}
+
+\medskip
+\paragraph{Exercice 2}: Extrait du brevet des collèges (Amérique du Sud 2019) \hfill \textbf{10 points}
+
+\medskip
+Un silo à grains permet de stocker des céréales. Un ascenseur permet d'acheminer le blé dans le silo. L'ascenseur est soutenu par un pilier.
+
+\begin{center}
+\includegraphics[scale=0.35]{../40.Image/DS2-Fig1.png}
+\end{center}
+
+On modélise l'installation par la figure ci-dessous qui n'est pas réalisée à l'échelle :
+
+\begin{minipage}{8cm}
+\begin{itemize}[label=$\bullet~~$]
+\item Les points $C$, $E$ et $M$ sont alignés.
+\item Les points $C$, $F$, $H$ et $P$ sont alignés.
+\item Les droites $(EF)$ et $(MH)$ sont perpendiculaires à la droite $(CH)$.
+\item $CH =8,50$m et $CF = 2,50$m.
+\item Hauteur du cylindre: $HM = 20,40$ m.
+\item Diamètre du cylindre: $HP = 4,20$ m.
+\end{itemize}
+\end{minipage}
+\begin{minipage}{8cm}
+\includegraphics[scale=0.35]{../40.Image/DS2-Fig2.png}
+\end{minipage}
+
+\vspace{0,7cm}
+
+\textbf{Les quatre questions suivantes sont indépendantes.}
+
+\medskip
+
+\begin{enumerate}
+\item Quelle est la longueur $CM$ de l'ascenseur à blé ?
+\item Quelle est la hauteur $EF$ du pilier ?
+\item Quelle est la mesure de l'angle $\widehat{\text{HCM}}$ entre le sol et l'ascenseur à blé ? On donnera une valeur approchée au degré près.
+\item Un mètre-cube de blé pèse environ $800$~kg.
+
+Quelle masse maximale de blé peut-on stocker dans ce silo ? On donnera la réponse à une tonne près.
+\end{enumerate}
+
+\medskip
+
+\begin{tabularx}{\linewidth}{|X|}\hline
+Rappels :\\
+\hspace{1.2cm}$\bullet~~$1 tonne = \np{1000}~kg\\
+\hspace{1.2cm}$\bullet~~$ volume d'un cylindre de rayon $R$ et de hauteur $h$ : $\pi \times R^2 \times h$\\ \hline
+\end{tabularx}
+
+\medskip
+\paragraph{Exercice 3}: Extrait de la feuille d'exercice Trigonométrie \hfill \textbf{4 points}
+
+\medskip
+\noindent $RAT$ est un triangle rectangle en $T$ tel que $\widehat{RAT}=56$\degre et $RT=2,7$cm. 
+\begin{enumerate}
+\item Calcule l'arrondi au dixième de la longueur $TA$.
+\item En déduire la valeur de la longueur $RA$.
+\end{enumerate}
+
+\medskip
+\paragraph{Exercice 4}: Extrait de la Brevet de collège (Nouvelle Calédonie 2019) \hfill \textbf{4 points}
+
+\medskip
+
+\noindent Laura a créé trois variables puis elle a réalisé le script ci-dessous.
+
+
+\begin{multicols}{2}
+~\vfill
+
+\begin{center}
+Créer une variable
+
+\medskip
+
+\begin{scratch}
+\blockvariable{Étape 1}
+\blockvariable{Étape 2}
+\blockvariable{$x$}
+\end{scratch}
+\end{center}
+
+\vfill~
+
+\columnbreak
+
+\begin{scratch}
+\blockinit{Quand \greenflag est cliqué}
+\blocksensing{demander \txtbox{valeur de $x$ ?} et attendre}
+\blockvariable{mettre{\selectmenu{$x$} à \boolsensing{réponse}}}
+\blockvariable{mettre{\selectmenu{Étape 1}} à \ovaloperator{\ovalvariable{$x$}  + \ovalnum{4}}}
+\blockvariable{mettre{\selectmenu{Étape 2}} à \ovaloperator{\ovalnum{2} *\ovalvariable{$x$} - \ovalnum{3}}}
+\blocklook{dire{\ovaloperator{{\txtbox{Le résultat est\phantom{ab}}}\ovalvariable{~Étape 1} * \ovalvariable{Étape 2} }}}
+\end{scratch}
+\end{multicols}
+
+\begin{enumerate}
+\item Vérifier que si la valeur de $x$ est 5 alors le résultat est $63$.
+\item  Quel résultat obtient-on si la valeur de $x$ est $- 3$ ?
+\item  Parmi les expressions suivantes, recopier celle qui correspond au programme de calcul donné par le script.
+
+\[A = (x + 4) \times (2x - 3)\qquad  B = x + 4 \times 2x - 3\qquad  C = x + 4 \times (2x - 3)\]
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,205 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\setcounter{chapter}{10}
+\chapter{Théorème de Thalès}
+
+\section{Les différentes formes du théorème des milieux}
+
+\subsection{Montrer que des droites sont parallèles}
+
+\begin{prop}
+Si, dans un triangle, une droite passe par les milieux de deux côtés du triangle alors elle est parallèle au troisième côté.
+\end{prop}
+
+\begin{ex}
+Soit la figure codée ci-dessous. Démontre que la droite $(MN)$ est parallèle à la droite $(OL)$.
+
+\noindent \begin{minipage}{6cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.5,0.5) rectangle (6.5,5.5);
+\draw [line width=1.2pt] (2.,5.)-- (1.,1.);
+\draw [line width=1.2pt] (1.,1.)-- (6.,3.);
+\draw [line width=1.2pt] (6.,3.)-- (2.,5.);
+\draw [line width=1.2pt] (2.,5.)-- (1.5,3.);
+\draw [line width=1.2pt] (1.856715675015987,4.0145521375021795) -- (1.66268717498692,4.063059262509446);
+\draw [line width=1.2pt] (1.83731282501308,3.9369407374905534) -- (1.643284324984013,3.9854478624978205);
+\draw [line width=1.2pt] (6.,3.)-- (3.5,2.);
+\draw [line width=1.2pt] (4.861417202906231,2.4368635850198026) -- (4.787139067635411,2.6225589231968542);
+\draw [line width=1.2pt] (4.78713906763541,2.407152330911474) -- (4.71286093236459,2.592847669088526);
+\draw [line width=1.2pt] (4.712860932364589,2.3774410768031458) -- (4.638582797093769,2.563136414980198);
+\draw [line width=1.2pt] (3.5,2.)-- (1.,1.);
+\draw [line width=1.2pt] (2.361417202906231,1.4368635850198024) -- (2.2871390676354113,1.6225589231968542);
+\draw [line width=1.2pt] (2.28713906763541,1.4071523309114742) -- (2.21286093236459,1.5928476690885258);
+\draw [line width=1.2pt] (2.212860932364589,1.377441076803146) -- (2.138582797093769,1.5631364149801976);
+\draw [line width=1.2pt] (1.,1.)-- (1.5,3.);
+\draw [line width=1.2pt] (1.143284324984013,1.9854478624978202) -- (1.33731282501308,1.9369407374905536);
+\draw [line width=1.2pt] (1.16268717498692,2.0630592625094466) -- (1.356715675015987,2.01455213750218);
+\draw [line width=1.2pt] (1.5,3.)-- (3.5,2.);
+\begin{scriptsize}
+\draw [color=blue] (2.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.34,5.29) node {\large{$L$}};
+\draw [color=blue] (1.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.78,1.45) node {\large{$B$}};
+\draw [color=blue] (6.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.14,3.45) node {\large{$O$}};
+\draw [color=blue] (1.5,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.24,3.51) node {\large{$N$}};
+\draw [color=blue] (3.5,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.74,1.77) node {\large{$M$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{11cm}
+\noindent\grandscarreaux{\linewidth}{4.6cm}
+\end{minipage}
+\end{ex}
+
+\subsection{Calculer une longueur connaissant des milieux}
+
+\begin{prop}[Droite des milieux]
+Si, dans un triangle , un segment joignant les milieux de deux côtés alors sa longueur est égale à la moitié de celle du troisième côté.
+\end{prop}
+
+\begin{ex} 
+On donne la figure codée ci-dessous. Calcule la longueur $JK$.
+
+\noindent \begin{minipage}{6cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=1.1]
+\clip(1.,2.5) rectangle (6.5,6.5);
+\draw [line width=1.2pt] (1.32,2.74)-- (4.08,5.92);
+\draw [line width=1.2pt] (4.08,5.92)-- (5.86,3.38);
+\draw [line width=1.2pt] (5.86,3.38)-- (1.32,2.74);
+\draw [line width=1.2pt] (1.32,2.74)-- (2.7,4.33);
+\draw [line width=1.2pt] (1.9468269756892325,3.5569424510211074) -- (2.040613258279448,3.4755430359428074);
+\draw [line width=1.2pt] (1.9793867417205524,3.5944569640571937) -- (2.073173024310768,3.5130575489788933);
+\draw [line width=1.2pt] (5.86,3.38)-- (4.97,4.65);
+\draw [line width=1.2pt] (5.392658453461184,3.9386864019659784) -- (5.494356532688054,4.009955134652526);
+\draw [line width=1.2pt] (5.364150960386565,3.979365633656727) -- (5.465849039613436,4.050634366343274);
+\draw [line width=1.2pt] (5.3356434673119475,4.020044865347475) -- (5.437341546538817,4.091313598034022);
+\draw [line width=1.2pt] (4.97,4.65)-- (4.08,5.92);
+\draw [line width=1.2pt] (4.5026584534611835,5.208686401965979) -- (4.604356532688054,5.279955134652526);
+\draw [line width=1.2pt] (4.474150960386566,5.249365633656727) -- (4.575849039613435,5.320634366343274);
+\draw [line width=1.2pt] (4.445643467311947,5.290044865347475) -- (4.547341546538817,5.361313598034022);
+\draw [line width=1.2pt] (4.08,5.92)-- (2.7,4.33);
+\draw [line width=1.2pt] (3.453173024310768,5.103057548978893) -- (3.3593867417205527,5.184456964057193);
+\draw [line width=1.2pt] (3.4206132582794484,5.065543035942807) -- (3.326826975689233,5.146942451021107);
+\draw [line width=1.2pt] (2.7,4.33)-- (4.97,4.65);
+\begin{scriptsize}
+\draw [color=blue] (1.32,2.74)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.3,3.2) node {\large{$A$}};
+\draw [color=blue] (4.08,5.92)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.9420866681982685,6.204560915486393) node {\large{$D$}};
+\draw [color=blue] (5.86,3.38)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.1,3.6587834909438595) node {\large{$N$}};
+\draw [color=blue] (2.7,4.33)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.5388044780845793,4.652257607838506) node {\large{$J$}};
+\draw [color=blue] (4.97,4.65)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.4,4.503236490304309) node {\large{$K$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{11cm}
+\noindent\grandscarreaux{\linewidth}{3.8cm}
+\end{minipage}
+\end{ex}
+
+\vspace{-3mm}
+\subsection{Montrer qu'un point est le milieu d'un segment}
+
+\begin{prop}
+Si, dans un triangle, une droite passe par le milieu d'un côté et est parallèle à un deuxième côté alors elle passe par le milieu du troisième côté.
+\end{prop}
+
+\begin{ex} Soit $TOR$ un triangle tel que $M$ soit le milieu du côté $[RO]$. 
+
+\noindent La parallèle à $(TR)$ passant par $M$ coupe le côté $[OT]$ en $N$. Démontre que $N$ est le milieu du côté $[OT]$.
+
+\noindent\grandscarreaux{\linewidth}{4.8cm}
+\end{ex}
+
+\section{Proportionnalité des longueurs dans le triangle}
+
+\subsection{Énoncé}
+
+\vspace{-1cm}
+\noindent \begin{minipage}{11.5cm}
+\vspace{5mm}
+\begin{prop}[Théorème de Thalès]
+Si, dans un triangle $ABC$, $M$ est un point de la demi-droite $[AB)$, $N$ est un point de la demi-droite $[AC$) et les droites $(MN)$ et $(BC)$ sont parallèles alors $$\dfrac{AM}{AB}=\dfrac{AN}{AC} =\dfrac{MN}{BC}$$
+\end{prop}
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{6cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(2.,3.) rectangle (9.,10.);
+\draw [line width=1.2pt,domain=2.:9.] plot(\x,{(-2.434--5.2*\x)/2.94});
+\draw [line width=1.2pt,domain=2.:9.] plot(\x,{(--45.978-4.12*\x)/2.62});
+\draw [line width=1.2pt,domain=2.:9.] plot(\x,{(--17.8072--1.08*\x)/5.56});
+\draw [line width=1.2pt,domain=2.:9.] plot(\x,{(--29.48683558833749--1.08*\x)/5.56});
+\begin{scriptsize}
+\draw [color=blue] (2.56,3.7)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (2.42,4.39) node {\large{$B$}};
+\draw [color=blue] (5.5,8.9)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (5.48,9.6) node {\large{$A$}};
+\draw [color=blue] (8.12,4.78)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (8.26,5.37) node {\large{$C$}};
+\draw [color=blue] (3.8942034996468964,6.059815713661178)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (3.74,6.71) node {\large{$M$}};
+\draw [color=blue] (6.931015928886098,6.649700142362318)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (7.04,7.39) node {\large{$N$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+
+\begin{rmq} 
+Lorsque ce théorème s'applique, le tableau suivant est un tableau de proportionnalité.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{7cm}|*{3}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{lightgray!40}{Longueurs des côtés du triangle $ABC$} & $AB$ & $AC$ & $BC$ \\\hline
+\cellcolor{lightgray!40}{Longueurs des côtés du triangle $AMN$} & $AM$ & $AN$ & $MN$ \\\hline
+\end{tabularx}
+\end{center}
+\end{rmq}
+
+\subsection{Calcul d'une longueur avec des rapports égaux}
+
+\begin{ex}
+Sur la figure suivante, les droites $(OL)$ et $(TE)$ sont parallèles. $O$ et $L$ appartiennent respectivement aux demi-droites $[HT)$ et $[HL)$. 
+
+\medskip
+\noindent On donne $HE=5$cm, $HL=2$cm, $TE=7$cm et $HO=3$cm. Calcule les longueurs $HT$ et $OL$.
+
+\medskip
+\noindent \begin{minipage}{6cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=1.1]
+\clip(1.,2.5) rectangle (6.5,6.5);
+\draw [line width=1.2pt] (1.32,2.74)-- (4.08,5.92);
+\draw [line width=1.2pt] (4.08,5.92)-- (5.86,3.38);
+\draw [line width=1.2pt] (5.86,3.38)-- (1.32,2.74);
+\draw [line width=1.2pt] (1.32,2.74)-- (2.7,4.33);
+\draw [line width=1.2pt] (5.86,3.38)-- (4.97,4.65);
+\draw [line width=1.2pt] (4.97,4.65)-- (4.08,5.92);
+\draw [line width=1.2pt] (4.08,5.92)-- (2.7,4.33);
+\draw [line width=1.2pt] (2.7,4.33)-- (4.97,4.65);
+\begin{scriptsize}
+\draw [color=blue] (1.32,2.74)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.3,3.2) node {\large{$T$}};
+\draw [color=blue] (4.08,5.92)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.9420866681982685,6.204560915486393) node {\large{$H$}};
+\draw [color=blue] (5.86,3.38)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.1,3.6587834909438595) node {\large{$E$}};
+\draw [color=blue] (2.7,4.33)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.5388044780845793,4.652257607838506) node {\large{$O$}};
+\draw [color=blue] (4.97,4.65)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.4,4.503236490304309) node {\large{$L$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{10.8cm}
+\noindent\grandscarreaux{\linewidth}{4.8cm}
+\end{minipage}
+\end{ex}
+\end{document}

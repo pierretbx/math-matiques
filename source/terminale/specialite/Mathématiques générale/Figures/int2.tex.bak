@@ -1,0 +1,114 @@
+input latexmp;
+input repere;
+%input courbes;
+input couleur;
+%input geo;
+
+
+verbatimtex%&latex 
+\documentclass[12pt]{article} 
+\usepackage{mathrsfs} 
+\newcommand{\PR}{\mathscr{P}}
+\newcommand{\DR}{\mathscr{D}}
+%\usepackage{preambule}
+\begin{document} 
+etex 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
+%   I N T E G    F O N C T I O N     D e     L A       B O R N E                       S U P
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+
+\beginfig(1);
+  numeric xmin, xmax, ymin, ymax, N;
+
+  ux:=1cm;  uy:=1cm;
+  xmin := -.5 ; xmax := 9;
+  ymin := -1.5 ; ymax := 3;
+
+
+  pair d,h;
+  d:=(.1*ux,0);
+  h:=(0,.1*uy);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Définitions des axes et labels associés
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  vardef axes =
+   drawarrow (xmin*ux,0) -- (ux*xmax,0) ; % axe des x
+   drawarrow (0,ymin*uy) -- (0,uy*ymax); % axe des y
+   label.rt(btex $x$ etex,(xmax*ux,0)); % label de l'axe des x
+   label.urt(btex $y$ etex,(0,ymax*uy)); % label de l'axe des y
+  enddef;
+
+
+pair A,B; A:=(-0.5*ux,-uy); B:=(7*ux,3*uy);
+
+path C; C:=A{dir10}..B{dir10};
+
+pair     a,b; a:=A yscaled 0; b:=B yscaled 0;
+
+
+pair M,m; M:= point .8 of C; m:=M yscaled 0;
+
+path U; U:=(0,0)--(5*ux,0);
+
+pair X; X:= C intersectionpoint U;
+
+label.bot(btex $a$ etex,X);
+pair I,i; i:=(\xpart m, (\ypart M)/2.5); I:=(\xpart X, (\ypart M)/2.5);
+%label.bot(btex $I$ etex,I);
+%label.bot(btex $i$ etex,i);
+
+
+path V,K,W; V:=M--m; K:=m--X; W:=buildcycle(C,V,K);
+path Y,Z; Y:=A--a--X; Z:=buildcycle(C,reverse Y);
+
+fill W withcolor orpas; 
+path p;
+p:=I--i--m--X--cycle;
+fill p withcolor bleu;
+draw X--I--i--m dashed evenly;
+%fill buildcycle(I,i,m,X) withcolor bleu;
+%fill Z withcolor bleu;
+%%%%%%%%%%%%%%%%%%%%
+% tracés
+%%%%%%%%%%%%%%%%%%%%
+
+axes;
+pickup  pencircle scaled 1bp;
+draw C withcolor noir; label.rt(btex $y=f(x)$ etex,B shifted d)withcolor 0.3white;
+
+%draw (A--a)  withcolor 0.3white; 
+%draw (B--b)  withcolor 0.3white;
+
+%draw a--(a shifted h); label.top(btex $a$ etex,a shifted h);
+% draw (b shifted h)--(b shifted -h); label.bot(btex $t$ etex,b shifted -h);
+
+draw (M--m)  withcolor 0.3white;
+draw (X shifted h)--(X shifted -h); 
+
+ draw (m shifted h)--(m shifted -h); label.bot(btex $b$ etex,m shifted -h);
+pair u; u:=(0, \ypart I);
+draw u--I dashed evenly;
+draw (u shifted d)--(u shifted -d);
+label.lft(btex $\mu$ etex,u shifted -d);
+
+
+ %draw projectionaxes(I,LaTeX("$1$"),LaTeX("$e$")) dashed evenly;
+%label.rt(btex $\displaystyle\int_a^bf(t)dt$ etex, (X+m)/2 shifted (-0.31ux,0.75*uy));
+
+
+
+
+endfig;
+
+end

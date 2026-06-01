@@ -1,0 +1,213 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.81, 0.09, 0.13}
+\newpage
+\setcounter{chapter}{13}
+\chapter{Statistiques}
+
+\vspace{-2mm}
+\section{Effectif et fréquence d'une série statistique}
+
+\vspace{-2mm}
+\begin{dft}[Effectif]
+L'effectif d'une valeur dans une série statistique est le nombre de fois où cette valeur apparaît.
+
+\medskip
+\noindent L'effectif total est la somme de tous les effectifs.
+\end{dft}
+
+\begin{ex}
+Faisons une série de dix lancers de \href{https://fr.piliapp.com/random/coin/}{pièce de monnaie} et notons les résultats obtenus :
+
+\vspace{-2mm}
+\noindent \begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.5]
+\clip(0.5,0.7) rectangle (30.5,3.3);
+\draw [line width=1pt] (2.,2.) circle (1.cm);
+\draw [line width=1pt] (5.,2.) circle (1.cm);
+\draw [line width=1pt] (8.,2.) circle (1.cm);
+\draw [line width=1pt] (23.,2.) circle (1.cm);
+\draw [line width=1pt] (11.,2.) circle (1.cm);
+\draw [line width=1pt] (20.,2.) circle (1.cm);
+\draw [line width=1pt] (14.,2.) circle (1.cm);
+\draw [line width=1pt] (17.,2.) circle (1.cm);
+\draw [line width=1pt] (26.,2.) circle (1.cm);
+\draw [line width=1pt] (29.,2.) circle (1.cm);
+\draw [line width=1.2pt] (11.,2.) circle (1.2226201372462346cm);
+\draw [line width=1.2pt] (5.,2.) circle (1.2226201372462338cm);
+\draw [line width=1.2pt] (8.,2.) circle (1.2226201372462346cm);
+\draw [line width=1.2pt] (14.,2.) circle (1.2226201372462346cm);
+\draw [line width=1.2pt] (2.,2.) circle (1.2226201372462342cm);
+\draw [line width=1.2pt] (17.,2.) circle (1.2226201372462329cm);
+\draw [line width=1.2pt] (29.,2.) circle (1.2226201372462329cm);
+\draw [line width=1.2pt] (20.,2.) circle (1.2226201372462329cm);
+\draw [line width=1.2pt] (26.,2.) circle (1.2226201372462329cm);
+\draw [line width=1.2pt] (23.,2.) circle (1.2226201372462329cm);
+\end{tikzpicture}
+\end{center}
+
+\noindent\grandscarreaux{\linewidth}{0.8cm}
+\end{ex}
+
+\begin{dft}[Fréquence]
+
+\noindent \begin{minipage}{9cm}
+La fréquence d'une valeur est le quotient de l'effectif de cette valeur par
+l'effectif total.
+\end{minipage} 
+\begin{minipage}{7cm}
+$$\text{Fréquence} = \dfrac{\text{Effectif}}{\text{Effectif total}}$$
+\end{minipage} 
+\end{dft}
+
+\begin{rmq}
+Une fréquence est souvent exprimé en pourcentage.
+\end{rmq}
+
+\begin{ex}
+En reprenant la série obtenu dans l'exemple 1, déterminons les fréquences de Pile et de Face.
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{ex}
+
+\vspace{-2mm}
+\section{Moyenne d'une série statistique}
+
+\vspace{-2mm}
+\begin{dft}
+Pour calculer la moyenne $M$ d'une série statistique, on additionne toutes les valeurs du caractère de la série puis on divise la somme obtenue par le nombre de valeurs de la série.
+
+\medskip
+\noindent Si $x_1$, $x_2$, $\dots$, $x_p$ représentent les valeurs du caractère de la série, on a alors : 
+
+\vspace{-0.9cm}
+\begin{flushright}
+$M=\dfrac{x_1 + x_2 + \dots + x_p}{p} \hspace{7mm}$
+\end{flushright}
+
+\end{dft}
+
+\begin{meth}[Déterminer une moyenne]
+On cherche à déterminer la moyenne de nouveau cas de SARS-COV-2 pour la semaine du $23$ janvier au $30$ janvier.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|p{3cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+\cellcolor{titlecolor!20}{Jour} & $23/01$ & $24/01$ & $25/01$ & $26/01$ & $27/01$ & $28/01$ & $29/01$ \\\hline
+\cellcolor{titlecolor!20}{Nombre de cas} & $\np{23 924}$ &	$\np{18 436}$ &	$\np{4 240}$ &	$\np{22 086}$ & $\np{26 916}$ & $\np{23 770}$ & $\np{22 858}$ \\\hline
+\end{tabularx}
+\end{center}
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{meth}
+
+\vspace{-2mm}
+\section{Médiane}
+
+\vspace{-2mm}
+\begin{dft}
+On appelle médiane $m$ d'une série statistique dont les valeurs sont ordonnées, tout nombre qui partage cette série en deux sous séries de même effectif.
+\end{dft}
+
+\begin{meth}[Déterminer une médiane]
+Voici le temps consacré, en minutes, au petit-déjeuner par $16$ personnes.
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{|*{16}{>{\centering \arraybackslash}X|}}
+\hline
+$16$ & $12$ & $1$ & $9$ & $17$ & $19$ & $13$ & $10$ & $4$ & $8$ & $7$ & $8$ & $14$ & $12$ & $14$ & $9$\\\hline
+\end{tabularx}
+\end{center}
+
+\noindent Détermine une valeur médiane de cette série statistique.
+
+\medskip
+\textbf{Étape 1 :} Ranger les valeurs dans l'ordre croissant :
+
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+
+\medskip
+\textbf{Étape 2 :} Déterminer la médiane de la série
+
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{meth}
+
+\vspace{-2mm}
+\section{Tableaux et diagrammes}
+
+\vspace{-2mm}
+\begin{ex}
+Voici les notes obtenues à un contrôle dans une classe de $30$ élèves : 
+
+\vspace{-5mm}
+$$2-3-3-4-5-6-6-7-7-7-8-8-8-8-8-9-9-9-9-9-9-10-10-11-11-11-13-13-15-16$$     
+
+\noindent On peut représenter cette série par un tableau d'effectifs, et le compléter par la distribution des fréquences : 
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}   
+\begin{tabular}{|p{2.5cm}|*{15}{C{0.4}|}}
+\hline       
+\cellcolor{titlecolor!20}{Notes} & & & & & & & & & & & & & & & \\ \hline
+\cellcolor{titlecolor!20}{Effectif} & & & & & & & & & & & & & & & \\ \hline
+\cellcolor{titlecolor!20}{Fréquence en $\%$} & & & & & & & & & & & & & & & \\ \hline
+\end{tabular}
+\end{center}
+
+\noindent Ou à l'aide d'un diagramme en bâton : 
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{axis}[x=0.7cm,y=0.7cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-0.8,xmax=20.0,ymin=-0.15,ymax=6.6,
+xtick={-0.0,1.0,...,19.0},ytick={-0,1,...,6},
+xlabel=Note obtenue,
+ylabel=Nombres d'élèves,]
+\clip(-1.45,-0.19366197183098635) rectangle (17.,6.6);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{ex}
+
+\end{document}
+
+\noindent On peut représenter cette série par un tableau d'effectifs, et le compléter par la distribution des fréquences : 
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}   
+\begin{tabular}{|c|*{15}{C{0.4}|}}
+\hline       
+Notes &  $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ & $11$ & $12$ & $13$ & $14$ & $15$ & $16$  \\\hline
+Effectif & $1$ & $2$ & $1$ & $1$ & $2$ & $3$ & $5$ & $6$ & $2$ & $3$ & $0$ & $2$ & $0$ & $1$ & $1$  \\ \hline
+Fréquence en \% & $3$ & $7$ & $3$ & $3$ & $7$ & $10$ & $17$ & $20$ & $7$ & $10$ & $0$ & $7$ & $0$ & $3$ & $3$ \\ \hline
+\end{tabular}
+\end{center}
+
+\noindent Ou à l'aide d'un diagramme en bâton : 
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{axis}[x=0.7cm,y=0.7cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-0.8,xmax=20.0,ymin=-0.15,ymax=6.6,
+xtick={-0.0,1.0,...,19.0},ytick={-0,1,...,6},
+xlabel=Note obtenue,
+ylabel=Nombres d'élèves,]
+\clip(-1.45,-0.19366197183098635) rectangle (17.,6.6);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (1.75,0.) rectangle (2.25,1.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (2.75,0.) rectangle (3.25,2.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (3.75,0.) rectangle (4.25,1.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (4.75,0.) rectangle (5.25,1.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (5.75,0.) rectangle (6.25,2.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (6.75,0.) rectangle (7.25,3.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (7.75,0.) rectangle (8.25,5.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (8.75,0.) rectangle (9.25,6.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (9.75,0.) rectangle (10.25,2.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (10.75,0.) rectangle (11.25,3.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (11.75,0.) rectangle (12.25,0.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (12.75,0.) rectangle (13.25,2.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (13.75,0.) rectangle (14.25,0.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (14.75,0.) rectangle (15.25,1.);
+\draw[line width=0.8pt,color=blue,fill=blue,fill opacity=0.3] (15.75,0.) rectangle (16.25,1.);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{ex}

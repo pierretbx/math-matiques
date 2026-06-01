@@ -1,0 +1,286 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.12, 0.56, 1.0}
+\newpage
+\setcounter{chapter}{18}
+\chapter{Algorithme et programmation}
+
+\section{Algorithmes}
+
+\begin{defn}
+Un \textbf{algorithme} est une suite d'instructions claires et ordonnées qui permet de résoudre un problème ou d'effectuer une tâche.
+\end{defn}
+
+\begin{exemple}
+Une recette de cuisine, un programme de construction en géométrie ou les consignes d'un programme de calcul sont des algorithmes.
+\end{exemple}
+
+\begin{meth}[Lire un algorithme]
+Pour comprendre un algorithme, on repère :
+\begin{enumerate}
+\item les informations de départ ;
+\item les instructions effectuées dans l'ordre ;
+\item le résultat obtenu à la fin.
+\end{enumerate}
+\end{meth}
+
+\begin{exemple}
+On considère l'algorithme suivant :
+\begin{center}
+\begin{tabular}{|p{9cm}|}
+\hline
+Choisir un nombre.\\
+Ajouter $5$.\\
+Multiplier le résultat par $2$.\\
+Afficher le résultat.\\
+\hline
+\end{tabular}
+\end{center}
+
+Si on choisit le nombre $3$, on obtient successivement $3$, puis $8$, puis $16$. Le résultat affiché est donc $16$.
+\end{exemple}
+
+\begin{rem}
+Dans un algorithme, l'ordre des instructions est important. Changer l'ordre peut changer le résultat.
+\end{rem}
+
+\section{Variables et affectations}
+
+\begin{defn}
+Une \textbf{variable} est une case mémoire à laquelle on donne un nom et dans laquelle on stocke une information.
+\end{defn}
+
+\begin{defn}
+\textbf{Affecter} une valeur à une variable signifie placer une valeur dans cette variable.
+\end{defn}
+
+\begin{exemple}
+L'instruction
+\[
+\texttt{mettre score à 10}
+\]
+signifie que la variable \texttt{score} contient la valeur $10$.
+
+\medskip
+Après l'instruction
+\[
+\texttt{mettre score à score + 3}
+\]
+la variable \texttt{score} contient la valeur $13$.
+\end{exemple}
+
+\begin{rem}
+Une variable peut contenir un nombre, un texte, une réponse ou une valeur qui change pendant l'exécution du programme.
+\end{rem}
+
+\section{Programmer avec Scratch}
+
+\begin{defn}
+\textbf{Scratch} est un environnement de programmation visuelle. On construit un programme en assemblant des blocs.
+\end{defn}
+
+\begin{defn}
+Un \textbf{script} est un ensemble de blocs Scratch attachés les uns aux autres. Il décrit ce que doit faire le lutin.
+\end{defn}
+
+\begin{exemple}
+Le script suivant demande le prénom de l'utilisateur puis affiche un message.
+
+\begin{center}
+\begin{scratch}
+\blockinit{quand le drapeau vert est cliqué}
+\blocksensing{demander \ovalnum{Quel est ton prénom ?} et attendre}
+\blocklook{dire \ovaloperator{Bonjour} \ovalsensing{réponse}}
+\end{scratch}
+\end{center}
+\end{exemple}
+
+\begin{meth}[Construire un programme Scratch]
+Pour construire un programme Scratch, on peut suivre les étapes suivantes :
+\begin{enumerate}
+\item choisir l'évènement qui lance le script ;
+\item ajouter les instructions dans l'ordre ;
+\item utiliser des variables si une information doit être conservée ;
+\item tester le programme et corriger les erreurs.
+\end{enumerate}
+\end{meth}
+
+\section{Programmes de calcul}
+
+\begin{exemple}
+On veut traduire le programme de calcul suivant dans Scratch.
+\begin{center}
+\begin{tabular}{|p{8cm}|}
+\hline
+Choisir un nombre.\\
+Ajouter $7$.\\
+Afficher le résultat.\\
+\hline
+\end{tabular}
+\end{center}
+
+On peut utiliser une variable appelée \texttt{nombre}.
+
+\begin{center}
+\begin{scratch}
+\blockinit{quand le drapeau vert est cliqué}
+\blocksensing{demander \ovalnum{Choisis un nombre} et attendre}
+\blockvariable{mettre \ovalvariable{nombre} à \ovalsensing{réponse}}
+\blockvariable{mettre \ovalvariable{nombre} à \ovaloperator{\ovalvariable{nombre} + \ovalnum{7}}}
+\blocklook{dire \ovalvariable{nombre}}
+\end{scratch}
+\end{center}
+\end{exemple}
+
+\begin{meth}[Tester un programme de calcul]
+Pour tester un programme de calcul :
+\begin{enumerate}
+\item on choisit un nombre simple ;
+\item on effectue les instructions à la main ;
+\item on compare avec le résultat donné par le programme.
+\end{enumerate}
+\end{meth}
+
+\begin{exemple}
+Si le programme précédent est testé avec le nombre $5$, alors la variable \texttt{nombre} contient d'abord $5$, puis $12$. Le programme doit donc dire $12$.
+\end{exemple}
+
+\section{Conditions}
+
+\begin{defn}
+Une \textbf{condition} est une question dont la réponse est soit vraie, soit fausse.
+\end{defn}
+
+\begin{exemple}
+Les phrases suivantes sont des conditions :
+\begin{itemize}
+\item le nombre est plus grand que $10$ ;
+\item la réponse est égale à $0$ ;
+\item le score est inférieur à $20$.
+\end{itemize}
+\end{exemple}
+
+\begin{defn}
+Une instruction \textbf{si ... alors} permet d'exécuter des blocs seulement lorsqu'une condition est vraie.
+\end{defn}
+
+\begin{exemple}
+Le script suivant teste si un nombre est positif.
+
+\begin{center}
+\begin{scratch}
+\blockinit{quand le drapeau vert est cliqué}
+\blocksensing{demander \ovalnum{Choisis un nombre} et attendre}
+\blockvariable{mettre \ovalvariable{nombre} à \ovalsensing{réponse}}
+\blockif{si \booloperator{\ovalvariable{nombre} > \ovalnum{0}} alors}
+{
+\blocklook{dire \ovalnum{Le nombre est positif}}
+}
+\end{scratch}
+\end{center}
+\end{exemple}
+
+\begin{rem}
+Dans Scratch, les conditions ont souvent une forme hexagonale. Elles se placent dans les blocs de contrôle comme \texttt{si ... alors}.
+\end{rem}
+
+\section{Boucles}
+
+\begin{defn}
+Une \textbf{boucle} permet de répéter plusieurs fois les mêmes instructions.
+\end{defn}
+
+\begin{defn}
+Une boucle \textbf{répéter} exécute des instructions un nombre de fois fixé à l'avance.
+\end{defn}
+
+\begin{exemple}
+Le script suivant permet de dessiner un carré si le stylo est en position d'écriture.
+
+\begin{center}
+\begin{scratch}
+\blockinit{quand le drapeau vert est cliqué}
+\blockrepeat{répéter \ovalnum{4} fois}
+{
+\blockmove{avancer de \ovalnum{100}}
+\blockmove{tourner de \ovalnum{90} degrés}
+}
+\end{scratch}
+\end{center}
+\end{exemple}
+
+\begin{meth}[Reconnaître une boucle utile]
+On utilise une boucle lorsqu'une même action doit être répétée plusieurs fois. Par exemple, pour tracer un carré, on répète quatre fois :
+\begin{center}
+avancer puis tourner de $90^\circ$.
+\end{center}
+\end{meth}
+
+\begin{exemple}
+Pour tracer un triangle équilatéral, on répète trois fois :
+\begin{center}
+avancer puis tourner de $120^\circ$.
+\end{center}
+\end{exemple}
+
+\section{Coordonnées dans Scratch}
+
+\begin{defn}
+La scène de Scratch est repérée par deux coordonnées :
+\begin{itemize}
+\item l'abscisse $x$, qui indique le déplacement horizontal ;
+\item l'ordonnée $y$, qui indique le déplacement vertical.
+\end{itemize}
+Le point de coordonnées $(0;0)$ est au centre de la scène.
+\end{defn}
+
+\begin{center}
+\begin{tikzpicture}[x=0.025cm,y=0.025cm,>=latex]
+\draw[step=40,gray!35,very thin] (-240,-180) grid (240,180);
+\draw[->,thick] (-250,0)--(255,0) node[right] {$x$};
+\draw[->,thick] (0,-190)--(0,195) node[above] {$y$};
+\node[below left] at (0,0) {$0$};
+\fill[alizarin] (120,80) circle (4);
+\node[above right] at (120,80) {$(120;80)$};
+\fill[olivine] (-160,-80) circle (4);
+\node[below left] at (-160,-80) {$(-160;-80)$};
+\end{tikzpicture}
+\end{center}
+
+\begin{exemple}
+L'instruction suivante place le lutin au point de coordonnées $(100;-50)$.
+
+\begin{center}
+\begin{scratch}
+\blockmove{aller à x: \ovalnum{100} y: \ovalnum{-50}}
+\end{scratch}
+\end{center}
+\end{exemple}
+
+\begin{rem}
+Augmenter $x$ déplace le lutin vers la droite. Diminuer $x$ le déplace vers la gauche. Augmenter $y$ le déplace vers le haut. Diminuer $y$ le déplace vers le bas.
+\end{rem}
+
+\section{Erreurs et débogage}
+
+\begin{defn}
+Un \textbf{bug} est une erreur dans un programme. \textbf{Déboguer} signifie chercher et corriger cette erreur.
+\end{defn}
+
+\begin{meth}[Déboguer un programme]
+Pour corriger un programme, on peut :
+\begin{enumerate}
+\item lire les blocs dans l'ordre ;
+\item tester avec une valeur simple ;
+\item vérifier les variables ;
+\item modifier un bloc puis tester à nouveau.
+\end{enumerate}
+\end{meth}
+
+\begin{exemple}
+Si un programme de calcul doit ajouter $5$ mais qu'il soustrait $5$, le résultat obtenu sera faux. Le bug vient de l'opération utilisée dans le bloc.
+\end{exemple}
+
+\end{document}

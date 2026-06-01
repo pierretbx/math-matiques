@@ -1,0 +1,28 @@
+verbatimtex
+%&latex
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{color}
+\newcommand{\vect}[1]{\overrightarrow{#1\rule{0.1em}{0ex}}}\newcommand{\calc}{\mathscr{C}}
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex $\ell$ etex ;
+latexmp_picture[2]:= btex $C_f$ etex ;
+latexmp_picture[3]:= btex $M$ etex ;
+latexmp_picture[4]:= btex $C_f$ etex ;
+latexmp_picture[5]:= btex $M$ etex ;
+latexmp_picture[6]:= btex $a$ etex ;
+latexmp_picture[7]:= btex $C_f$ etex ;
+latexmp_picture[8]:= btex $x$ etex ;
+latexmp_picture[9]:= btex $f(x)$ etex ;
+latexmp_picture[10]:= btex $x$ etex ;
+latexmp_picture[11]:= btex $f(x)$ etex ;
+latexmp_picture[12]:= btex $ax+b$ etex ;
+latexmp_picture[13]:= btex $M$ etex ;
+latexmp_picture[14]:= btex $P$ etex ;
+latexmp_picture[15]:= btex $C_f$ etex ;

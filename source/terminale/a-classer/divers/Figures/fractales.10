@@ -1,0 +1,186 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -567 -1 567 328 
+%%HiResBoundingBox: -566.95027 -0.02267 566.95027 327.3359 
+%%Creator: MetaPost 1.9991
+%%CreationDate: 2020.03.28:2142
+%%Pages: 1
+%%DocumentResources: procset mpost-minimal
+%%DocumentSuppliedResources: procset mpost-minimal
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset mpost-minimal
+/bd{bind def}bind def/fshow {exch findfont exch scalefont setfont show}bd
+/fcp{findfont dup length dict begin{1 index/FID ne{def}{pop pop}ifelse}forall}bd
+/fmc{FontMatrix dup length array copy dup dup}bd/fmd{/FontMatrix exch def}bd
+/Amul{4 -1 roll exch mul 1000 div}bd/ExtendFont{fmc 0 get Amul 0 exch put fmd}bd
+/ScaleFont{dup fmc 0 get Amul 0 exch put dup dup 3 get Amul 3 exch put fmd}bd
+/SlantFont{fmc 2 get dup 0 eq{pop 1}if Amul FontMatrix 0 get mul 2 exch put fmd}bd
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+%%Page: 1 1
+ 0 0 0 setrgbcolor 0 0.04251 dtransform truncate idtransform setlinewidth pop
+ [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 566.92902 0 moveto
+524.9362 0 lineto
+503.93979 36.36694 lineto
+482.94145 0 lineto
+440.94864 0 lineto stroke
+newpath 440.94864 0 moveto
+419.95222 36.36694 lineto
+440.94879 72.73389 lineto
+398.95486 72.73557 lineto
+377.95845 109.10251 lineto stroke
+newpath 377.95845 109.10251 moveto
+356.96011 72.73557 lineto
+314.96616 72.73724 lineto
+335.96082 36.36694 lineto
+314.96248 0 lineto stroke
+newpath 314.96248 0 moveto
+272.96967 0 lineto
+251.97325 36.36694 lineto
+230.97491 0 lineto
+188.9821 0 lineto stroke
+newpath 188.9821 0 moveto
+167.98569 36.36696 lineto
+188.98227 72.73392 lineto
+146.98833 72.73557 lineto
+125.99191 109.10252 lineto stroke
+newpath 125.99191 109.10252 moveto
+146.9885 145.46948 lineto
+188.98158 145.46935 lineto
+167.98605 181.83809 lineto
+188.98264 218.20505 lineto stroke
+newpath 188.98264 218.20505 moveto
+146.98868 218.20671 lineto
+125.99313 254.57549 lineto
+104.99278 218.20836 lineto
+62.99883 218.21002 lineto stroke
+newpath 62.99883 218.21002 moveto
+42.00241 254.57698 lineto
+62.999 290.94394 lineto
+21.00505 290.94559 lineto
+0.00864 327.31255 lineto stroke
+newpath 0.00864 327.31255 moveto
+-20.9897 290.94559 lineto
+-62.98367 290.94725 lineto
+-41.98898 254.57698 lineto
+-62.98732 218.21002 lineto stroke
+newpath -62.98732 218.21002 moveto
+-104.98128 218.21169 lineto
+-125.97682 254.58046 lineto
+-146.97717 218.21335 lineto
+-188.97113 218.21501 lineto stroke
+newpath -188.97113 218.21501 moveto
+-167.97646 181.84474 lineto
+-188.97678 145.47763 lineto
+-146.98082 145.4728 lineto
+-125.98615 109.10252 lineto stroke
+newpath -125.98615 109.10252 moveto
+-146.98448 72.73557 lineto
+-188.97845 72.73723 lineto
+-167.98376 36.36696 lineto
+-188.9821 0 lineto stroke
+newpath -188.9821 0 moveto
+-230.97491 0 lineto
+-251.97133 36.36694 lineto
+-272.96967 0 lineto
+-314.96248 0 lineto stroke
+newpath -314.96248 0 moveto
+-335.9589 36.36694 lineto
+-314.96233 72.73389 lineto
+-356.95625 72.73557 lineto
+-377.95267 109.10251 lineto stroke
+newpath -377.95267 109.10251 moveto
+-398.951 72.73557 lineto
+-440.94496 72.73724 lineto
+-419.9503 36.36694 lineto
+-440.94864 0 lineto stroke
+newpath -440.94864 0 moveto
+-482.94145 0 lineto
+-503.93787 36.36694 lineto
+-524.9362 0 lineto
+-566.92902 0 lineto stroke
+newpath -566.92902 0 moveto
+-545.9326 12.12221 lineto
+-524.93622 -0.00015 lineto
+-524.93524 24.24498 lineto
+-503.93883 36.36719 lineto stroke
+newpath -503.93883 36.36719 moveto
+-482.94244 24.24481 lineto
+-482.94257 0.00017 lineto
+-461.94511 12.1219 lineto
+-440.94873 -0.00047 lineto stroke
+newpath -440.94873 -0.00047 moveto
+-440.94774 24.24466 lineto
+-419.95027 36.36638 lineto
+-440.94675 48.4909 lineto
+-440.94576 72.73604 lineto stroke
+newpath -440.94576 72.73604 moveto
+-419.94934 84.85825 lineto
+-398.95296 72.73589 lineto
+-398.95198 96.98102 lineto
+-377.95557 109.10323 lineto stroke
+newpath -377.95557 109.10323 moveto
+-356.95918 96.98085 lineto
+-356.9593 72.7362 lineto
+-335.96185 84.85794 lineto
+-314.96547 72.73557 lineto stroke
+newpath -314.96547 72.73557 moveto
+-314.96559 48.49094 lineto
+-335.96217 36.36873 lineto
+-314.9657 24.24518 lineto
+-314.96582 0.00055 lineto stroke
+newpath -314.96582 0.00055 moveto
+-293.96837 12.12227 lineto
+-272.9719 -0.00124 lineto
+-272.96996 24.24452 lineto
+-251.9725 36.36624 lineto stroke
+newpath -251.9725 36.36624 moveto
+-230.97612 24.24387 lineto
+-230.97624 -0.00078 lineto
+-209.97879 12.12096 lineto
+-188.9824 -0.00142 lineto stroke
+newpath -188.9824 -0.00142 moveto
+-188.98141 24.24371 lineto
+-167.98395 36.36543 lineto
+-188.98041 48.48996 lineto
+-188.97942 72.73509 lineto stroke
+newpath -188.97942 72.73509 moveto
+-167.98196 84.8568 lineto
+-146.9855 72.73328 lineto
+-146.98354 96.97905 lineto
+-125.98608 109.10075 lineto stroke
+newpath -125.98608 109.10075 moveto
+-146.98254 121.2253 lineto
+-146.98058 145.47108 lineto
+-167.97998 133.35037 lineto
+-188.97644 145.47491 lineto stroke
+newpath -188.97644 145.47491 moveto
+-188.97545 169.72005 lineto
+-167.97798 181.84177 lineto
+-188.97444 193.9663 lineto
+-188.97345 218.21143 lineto stroke
+newpath -188.97345 218.21143 moveto
+-167.97704 230.33363 lineto
+-146.98065 218.21127 lineto
+-146.97968 242.4564 lineto
+-125.98326 254.57861 lineto stroke
+newpath -125.98326 254.57861 moveto
+-104.98688 242.45624 lineto
+-104.987 218.2116 lineto
+-83.98955 230.33333 lineto
+-62.99316 218.21095 lineto stroke
+newpath -62.99316 218.21095 moveto
+-62.99217 242.45609 lineto
+-41.9947 254.5778 lineto
+-62.99118 266.70233 lineto
+-62.99019 290.94746 lineto stroke
+newpath -62.99019 290.94746 moveto
+-41.99377 303.06967 lineto
+-20.99739 290.94731 lineto
+-20.99641 315.19244 lineto
+0 327.31465 lineto stroke
+showpage
+%%EOF

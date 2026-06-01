@@ -1,0 +1,251 @@
+input latexmp;
+input repere;
+%input courbes;
+input couleur;
+%input geo;
+
+
+verbatimtex%&latex 
+\documentclass[12pt]{article} 
+\usepackage{mathrsfs} 
+\newcommand{\PR}{\mathscr{P}}
+\newcommand{\DR}{\mathscr{D}}
+%\usepackage{preambule}
+\begin{document} 
+etex 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
+%   I N T E G    F O N C T I O N     D e     L A       B O R N E                       S U P
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+
+\beginfig(1);
+  numeric xmin, xmax, ymin, ymax, N;
+
+  ux:=1cm;  uy:=1cm;
+  xmin := -.5 ; xmax := 9;
+  ymin := -1.5 ; ymax := 3;
+
+
+  pair d,h;
+  d:=(.1*ux,0);
+  h:=(0,.1*uy);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Définitions des axes et labels associés
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  vardef axes =
+   drawarrow (xmin*ux,0) -- (ux*xmax,0) ; % axe des x
+   drawarrow (0,ymin*uy) -- (0,uy*ymax); % axe des y
+   label.rt(btex $x$ etex,(xmax*ux,0)); % label de l'axe des x
+   label.urt(btex $y$ etex,(0,ymax*uy)); % label de l'axe des y
+  enddef;
+
+
+pair A,B; A:=(-0.5*ux,-uy); B:=(7*ux,3*uy);
+
+path C; C:=A{dir10}..B{dir10};
+
+pair     a,b; a:=A yscaled 0; b:=B yscaled 0;
+
+
+pair M,m; M:= point .8 of C; m:=M yscaled 0;
+
+path U; U:=(0,0)--(5*ux,0);
+
+pair X; X:= C intersectionpoint U;
+
+label.bot(btex $a$ etex,X);
+
+path V,K,W; V:=M--m; K:=m--X; W:=buildcycle(C,V,K);
+path Y,Z; Y:=A--a--X; Z:=buildcycle(C,reverse Y);
+
+fill W withcolor orpas; %fill Z withcolor bleu;
+%%%%%%%%%%%%%%%%%%%%
+% tracés
+%%%%%%%%%%%%%%%%%%%%
+
+axes;
+pickup  pencircle scaled 1bp;
+draw C withcolor noir; label.rt(btex $y=f(x)$ etex,B shifted d)withcolor 0.3white;
+
+%draw (A--a)  withcolor 0.3white; 
+%draw (B--b)  withcolor 0.3white;
+
+%draw a--(a shifted h); label.top(btex $a$ etex,a shifted h);
+% draw (b shifted h)--(b shifted -h); label.bot(btex $t$ etex,b shifted -h);
+
+draw (M--m)  withcolor 0.3white;
+draw (X shifted h)--(X shifted -h); 
+
+ draw (m shifted h)--(m shifted -h); label.bot(btex $b$ etex,m shifted -h);
+
+label.rt(btex $\displaystyle\int_a^bf(t)dt$ etex, (X+m)/2 shifted (-0.31ux,0.75*uy));
+
+
+
+
+endfig;
+
+\beginfig(2);
+  numeric xmin, xmax, ymin, ymax, N;
+
+  ux:=1cm;  uy:=1cm;
+  xmin := -.5 ; xmax := 9;
+  ymin := -1.5 ; ymax := 3;
+
+
+  pair d,h;
+  d:=(.1*ux,0);
+  h:=(0,.1*uy);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Définitions des axes et labels associés
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  vardef axes =
+   drawarrow (xmin*ux,0) -- (ux*xmax,0) ; % axe des x
+   drawarrow (0,ymin*uy) -- (0,uy*ymax); % axe des y
+   label.rt(btex $x$ etex,(xmax*ux,0)); % label de l'axe des x
+   label.urt(btex $y$ etex,(0,ymax*uy)); % label de l'axe des y
+  enddef;
+
+
+pair A,B; A:=(-0.5*ux,-uy); B:=(7*ux,3*uy);
+
+path C; C:=A{dir10}..B{dir10};
+
+pair     a,b; a:=A yscaled 0; b:=B yscaled 0;
+
+
+pair M,m; M:= point .8 of C; m:=M yscaled 0;
+
+path U; U:=(0,0)--(5*ux,0);
+
+pair X; X:= C intersectionpoint U;
+
+label.bot(btex $a$ etex,X shifted -h);
+pair K; K= (X+m)/1.8;  label.bot( btex $c$ etex, K shifted -h);
+
+pair W; W=(0,100);
+path O; O:=K--(K shifted W);
+pair R; R:= C intersectionpoint O;
+
+
+path V,L,W; V:=M--m; L:=m--X; W:=buildcycle(C,O,L);
+path Y,Z; Y:=A--a--X; Z:=buildcycle(C,V,L);
+
+fill Z withcolor bleu;fill W withcolor orpas; 
+%%%%%%%%%%%%%%%%%%%%
+% tracés
+%%%%%%%%%%%%%%%%%%%%
+
+axes;
+pickup  pencircle scaled 1bp;
+draw C withcolor noir; label.rt(btex $y=f(x)$ etex,B shifted d)withcolor 0.3white;
+draw (K--R)  withcolor 0.3white;
+
+%draw (A--a)  withcolor 0.3white; 
+%draw (B--b)  withcolor 0.3white;
+
+%draw a--(a shifted h); label.top(btex $a$ etex,a shifted h);
+% draw (b shifted h)--(b shifted -h); label.bot(btex $t$ etex,b shifted -h);
+
+draw (M--m)  withcolor 0.3white;
+
+ draw (m shifted h)--(m shifted -h); 
+ label.bot(btex $b$ etex,m shifted -h);
+ draw (K shifted h)--(K shifted -h); 
+  draw (X shifted h)--(X shifted -h); 
+
+
+
+%label.rt(btex $\display;style\int_a^bf(t)dt$ etex, (X+m)/2 shifted (-0.31ux,0.75*uy));
+
+
+
+
+endfig;
+
+
+\beginfig(3);
+  numeric xmin, xmax, ymin, ymax, N;
+
+  ux:=1cm;  uy:=1cm;
+  xmin := -.5 ; xmax := 9;
+  ymin := -1.5 ; ymax := 3;
+
+
+  pair d,h;
+  d:=(.1*ux,0);
+  h:=(0,.1*uy);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Définitions des axes et labels associés
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  vardef axes =
+   drawarrow (xmin*ux,0) -- (ux*xmax,0) ; % axe des x
+   drawarrow (0,ymin*uy) -- (0,uy*ymax); % axe des y
+   label.rt(btex $x$ etex,(xmax*ux,0)); % label de l'axe des x
+   label.urt(btex $y$ etex,(0,ymax*uy)); % label de l'axe des y
+  enddef;
+
+
+pair A,B,S,Q; A:=(-0.5*ux,-uy); B:=(7*ux,3*uy);Q:=(-0.5*ux,0); S:=(7*ux,4*uy);
+
+path C; C:=A{dir10}..B{dir10};
+path P; P:=Q{dir8}..S{dir8};
+
+pair     a,b; a:=A yscaled 0; b:=B yscaled 0;
+
+
+pair M,m; M:= point .8 of C; m:=M yscaled 0;
+pair N,n; N:= point .8 of P; n:=N yscaled 0;
+path U; U:=(0,0)--(5*ux,0);
+
+pair X; X:= C intersectionpoint U;
+path v; v:=X--(X shifted (0,100));
+label.bot(btex $a$ etex,X shifted -h);
+pair x; x:=P intersectionpoint v;
+path l,j,k; l:=X--x; j:=N--n;
+draw l; draw j;
+path L; L:=buildcycle(P,j,l);
+path V,K,W; V:=M--m; K:=m--X; W:=buildcycle(C,V,K);
+path Y,Z; Y:=A--a--X; Z:=buildcycle(C,reverse Y);
+path L; L:=buildcycle(P,j,K,l);
+fill L withcolor bleu;
+fill W withcolor orpas; 
+%%%%%%%%%%%%%%%%%%%%
+% tracés
+%%%%%%%%%%%%%%%%%%%%
+
+axes;
+pickup  pencircle scaled 1bp;
+draw P withcolor noir;
+draw C withcolor noir; label.rt(btex $y=f(x)$ etex,B shifted d)withcolor 0.3white;
+label.rt(btex $y=g(x)$ etex,B shifted (0.1*ux,1*uy))withcolor 0.3white;
+
+%draw (A--a)  withcolor 0.3white; 
+%draw (B--b)  withcolor 0.3white;
+
+%draw a--(a shifted h); label.top(btex $a$ etex,a shifted h);
+% draw (b shifted h)--(b shifted -h); label.bot(btex $t$ etex,b shifted -h);
+
+draw (M--m)  withcolor 0.3white;
+draw (X shifted h)--(X shifted -h); 
+
+ draw (m shifted h)--(m shifted -h); label.bot(btex $b$ etex,m shifted -h);
+
+%label.rt(btex $\displaystyle\int_a^bf(t)dt$ etex, (X+m)/2 shifted (-0.31ux,0.75*uy));
+
+
+
+
+endfig;
+
+end

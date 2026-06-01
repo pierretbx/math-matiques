@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>(TeX au Collège) Geometriesyr16.mp</title>
+<link href="/syracuse/s2/css/syracuse-std.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="/syracuse/s2/img/favicon-syracuse-01.ico" type="image/x-icon" />
+<link href="/syracuse/s2/css/mp-standard.css" rel="stylesheet" type="text/css" />
+<link href="/syracuse/s2/css/texpng.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/syracuse/s2/js/syracuse.js"></script>
+</head>
+<body>
+<div id="bandeau">
+  <div class="web">TeX au Collège</div>
+  <div class="titre">Geometriesyr16.mp</div>
+  <div class="navigation">
+   <span class="nav"><a href="/syracuse/poulecl/college/">Les classes</a> / <a href="/syracuse/poulecl/Divers/">Les productions</a> / <a href="/syracuse/poulecl/brevet/">Le Brevet</a> / <a href="/syracuse/poulecl/contributions/">Les contributions</a> / <a href="/syracuse/poulecl/nouveau/">Les nouveautés</a></span>
+  </div>
+</div>
+<div id="contenu">
+<div align="center"><img alt="geometriesyr16" src="images-2.png" /></div>
+<h2>Introduction</h2>
+<p style="text-align:justify;">Ce fichier est une nouvelle évolution de la série <i>geometriesyr</i>. C'est une série de fichiers de macros pour MetaPost; macros destinées à faciliter le tracé de figures géométriques. Après la version 15 qui a apporté <i>le dessin à main levée</i>, cette nouvelle version apporte, outre quelques macros supplémentaires de dessin, un module qui permet <i>la géométrie spatiale</i>.</p><p style="text-align:justify;" class="note">On ne trouvera ici qu'une présentation de la partie <i>géométrie spatiale</i>. Pour les autres parties, reportez-vous <a href="/syracuse/poulecl/docs/">ici</a>.</p><p style="text-align:justify;">Cette idée fait bien évidemment suite à celle sur le tracé à main levée. De quel autre type de tracés avais-je besoin ? Les quelques solides étudiés en collège, l'utilisation de théorèmes <i>fondamentaux</i> dans ces solides,... tout ça m'a amené à me pencher sur le problème.</p><p style="text-align:justify;">Je ne souhaitais pas devoir régler tout moi même, ou alors utiliser un subterfuge pour obtenir, finalement, une figure qui ne respecte pas forcément les régles de représentation de la géométrie spatiale.</p><p style="text-align:justify;">Mais quelles règles respecter ? Je me suis alors rappelé que <i>Manuel Luque</i> avait conseillé de lire <i>Graphismes scientifiques sur ordinateur</i> de <i>Raymond Dony</i>. Lecture très instructive car elle m'a permi de mettre en place les diverses projections sur l'écran (projection perspective ou parallèle) et de commencer à créer quelques images (on pourra aller voir les différents albums sur la géométrie dans l'espace <a href="/syracuse/poulecl/albums/">sur cette page</a>).</p><p style="text-align:justify;" class="note">03/10/2006: Suite à une remarque de Didier Aldebert, voici une précision &mdash le paramètre pour changer de projection est <code>typerepre</code> qui prendra les valeurs <code>proj</code> (pour la projection perspective; valeur par défaut) et <code>persp</code> (pour la projection parallèle). Attention, c'est un type <code>string</code> donc on codera <code>typerepre:="persp";</code>.</p><p style="text-align:justify;"> Mais il manquait quelque chose : les intersections entre droites, entre droites et plans, entre plans. J'ai alors utilisé le module Metapost de géométrie dans l'espace de <i>Denis Roegel</i>. Je n'ai eu qu'à l'adapter à ma programmation des méthodes de <i>R. Dony</i>. Je n'ai donc que peu de mérites; tout avait déjà été fait.</p>
+
+<h2>Distribution</h2>
+<p>[ <a href="distrib/geometriesyr16.tgz">Archive à télécharger</a> ]</p><p style="text-align:justify;">L'installation de l'archive doit se faire dans un endroit approprié de l'arborescence <code>TeX</code>, par exemple <code>$texmf/metapost/</code>.</p>
+
+<h2>Carte de référence</h2>
+<p>Avant de débuter la présentation, les commandes de <code>geometriesyr16</code> étant nombreuses, cette carte ne sera pas inutile.</p><div class="texpng_bandeau"><b><u>Carte de référence &mdash Géométriesyr16.mp.</u></b><br /><b>Fichier (La)TeX</b> : <a href="memogeometriesyr16.tex">memogeometriesyr16.tex</a> (9.5 Ko)<br /><b>Fichier PDF</b> : <a href="memogeometriesyr16.pdf">memogeometriesyr16.pdf</a> (70.2 Ko)<br /><b>Auteur : </b> Christophe Poulain</div>
+<div class="texpng_pages"><a href="memogeometriesyr16/?page=1"><img src="memogeometriesyr16/image001.jpg" alt="Prévisualisation page 1"/></a><a href="memogeometriesyr16/?page=2"><img src="memogeometriesyr16/image002.jpg" alt="Prévisualisation page 2"/></a></div>
+<p class="note"> Elle a été construite avec le package <code>leaflet</code>.</p>
+
+<h2>Généralités</h2>
+
+<h3>Environnement général de la figure.</h3><p style="text-align:justify;">Le but secondaire de cet ensemble de macros était que le tracé spatial s'inclue naturellement dans l'écriture des autres types de tracés faits avec <i>geometriesyr15.mp</i>. Donc il est fait appel aux mêmes fichiers que ce dernier et également au fichier <i>donymodule.mp</i> qui contient toutes les routines nécessaires aux différents calculs à effectuer dans le cadre du tracé spatial.</p><p style="text-align:justify;"> Aux macros <code>figure(xa,xb,ya,yb)</code> - <code>fin</code> et <code>figuremainlevee(xa,xb,ya,yb)</code> - <code>finespace</code> vient s'ajouter maintenant <code>figureespace(xa,xb,ya,yb)</code> - <code>finespace</code>. Cela permet, comme les autres, d'inclure le schéma à l'intérieur d'un cadre (Je dois avouer que dans le cas d'un tracé spatial, les dimensions du cadre sont, <i>a priori</i>, difficiles à envisager.) dont le sommet inférieur gauche a pour coordonnées <code>(xa,ya)</code> et le sommet supérieur droit <code>(xb,yb)</code>. J'ai conservé la possibilité de pouvoir moduler, au sein du même fichier, plusieurs types de tracés différents et éventuellement alternés. </p>
+
+<h3> Particularité des figures spatiales</h3><p style="text-align:justify;"> Dans le cas du tracé spatial, les points mathématiques doivent être définis comme des <i>couleurs</i>. Par exemple <code>color A; A=(0,0,0)</code>; point <code>A</code> dont on accèdera aux composantes avec les commandes <code>redpart(A)</code>, <code>greenpart(A)</code>, <code>bluepart(A)</code>.</p><p style="text-align:justify;">Une autre différence est, <i>avant le moindre tracé</i>, l'appel à la macro</p><p class="code">Initialisation(5,30,20,500)</p><p style="text-align:justify;">Elle définit la position de l'oeil de l'observateur. En peu de mots, cet exemple signifie que <code>(5,30,20)</code> représente les coordonnées sphériques de l'observateur dans le repère objet; 500 représente la distance à l'écran.</p><p> À noter également que les macros ou paramètres d'affichage de <i>geometriesyr15</i></p><p class="code">marque_p;pointe(A,B,C);nomme.pos(A);</p><p>sont compatibles avec le tracé spatial.</p>
+
+
+<h2>Objets mathématiques</h2>
+
+<h3>Points</h3><p style="text-align:justify;"> Comme déjà signalé, les <i>points</i> doivent être définis comme des <i>couleurs</i>.</p><p style="text-align:justify;"> La macro <code>Projette(A)</code> permet de récupérer les coordonnées de projection (sur l'écran) d'un point <code>A</code> de l'espace.</p><p> Seule la commande</p><p class="code">iso(A,B,C,...);</p><p>pour obtenir l'isobarycentre des points de l'espace <code>A</code>, <code>B</code>, <code>C</code>,... a été adapté au tracé spatial.</p><p>On dispose de définitions propres à la 3e dimension :</p><ul><li><b>Intersection de deux droites</b><code>(AB)</code> et <code>(CD)</code> par la macro <p class="code">IntersectionDroite(A,B,C,D)</p></li><li><b>Intersection d'un plan</b><code>(ABC)</code> et <b>d'une droite</b><code>(DE)</code> (un test est fait pour justifier l'existence) par la macro <p class="code">IntersectionPlanDroite(A,B,C,D,E)</p></li><li><b>Projection orthogonale d'un point</b><code>A</code><b>sur un plan</b><code>(BCD)</code> avec la macro <p class="code">ProjectionsurPlan(A,B,C,D)</p></li></ul>
+
+<h3>Cercles</h3><p style="text-align:justify;"> Pour un dessin de géométrie dans l'espace, la seule façon d'obtenir un cercle avec ce package est d'utiliser la macro </p><p class="code"> cercles(A,B,O,C,D)</p><p style="text-align:justify;"> Cela correspond au tracé du cercle de centre <code>A</code> et passant par <code>B</code><i> dans le plan</i><code>(OCD)</code> où les vecteurs OC et OD sont des vecteurs <i>orthogonaux</i>. Ils seront ensuite normés par la macro. </p>
+
+<h3>Droites</h3><p style="text-align:justify;"> Les constructions classiques sont disponibles :</p><p class="code"> trace segment(A,B); trace demidroite(A,B); trace droite(A,B);</p><p style="text-align:justify;">On dispose aussi d'une construction propre à la géométrie spatiale</p><p class="code">IntersectionPlanPlan(A,B,C,D,E,F)</p><p style="text-align:justify;"> qui, je crois, porte bien son nom pour obtenir l'intersection (un test est fait pour vérifier l'existence) des plans <code>(ABC)</code> et <code>(DEF)</code>.</p>
+
+<h3>Autres objets</h3><p style="text-align:justify;">On peut utiliser l'addition de couleurs pour la translation et une commande telle <code>2[A,O]</code> pour obtenir le symétrique de <code>A</code> par rapport au point <code>O</code>.</p><p style="text-align:justify;">Voici la liste des codages disponibles, ils sont tous à utiliser avec la commande <code>trace</code>. Ce ne sont pas les seuls mais, actuellement, ce sont les seuls compatibles avec le tracé spatial. <ul><li><b>Angle droit</b> : <code>codeperp(A,B,C,5)</code> produit un angle droit en <code>B</code> avec pour épaisseur 5.</li><li><b>Deux longueurs égales</b> : <code>codesegments(A,B,C,D,n)</code> code les segments <code>[AB]</code> et <code>[CD]</code> avec le codage d'ordre <code>n</code> : 1, 2, 3 pour autant de traits; 4 pour la croix et 5 pour le cercle.</li><li><b>Longueurs égales</b> : <code>Codelongueur(A,B,C,D,...,n)</code> code les segments <code>[AB]</code>, <code>[CD]</code>,... avec le codage d'ordre <code>n</code> : 1, 2, 3 pour autant de traits; 4 pour la croix et 5 pour le cercle. Le nombre de lettres présentes dans l'appel de la macro doit être pair. L'ordre dans l'appel n'a pas d'importance, on aurait pu taper <code>Codelongueur(n,A,B,C,D,...)</code>.</li></ul></p><p style="tex-align:justify;"> L'hachurage est toujours présent et seules les macros <code>appelation(A,B,2mm,btex nom etex)</code> et <code>cotationmil(A,B,2mm,10,btex nom etex)</code> ont été adaptées.</p><p style="tex-align:justify;">Il existe aussi les macros <code>Cube(A,B,C,D,E,F,G,H)</code> et <code>Pave(A,B,C,D,E,F,G,H)(6,4,3)</code> pour tracer, avec gestion des faces cachées (par défaut le paramètre <code>pointilles</code> est <code>"oui"</code>), un cube et un pavé droit en indiquant la profondeur (6 unités), la largeur (4 unités) et la hauteur (3 unités)</p>
+
+
+<h2>Développements</h2>
+<p style="tex-align:justify;"> Il faudrait implanter les coordonnées sphériques, les arcs de cercles, quelques solides supplémentaires (pyramide, polygones réguliers), le dessin de plan, et certainement d'autres choses auxquelles je ne pense pas.</p><p style="text-align:justify;" class="note"><b>04/10/2006</b> Suite à une demande de Didier Aldebert, création de la macro <code>ProjectionsurDroite</code> qui permet d'obtenir le projeté orthogonal d'un point sur une droite. Cette macro est disponible dans l'exemple 9.</p>
+
+<h2>Exemples</h2>
+<ul><li><a href="exemples/exemple1/">Tracer un cube, un pavé, un tetraèdre régulier.</a></li><li><a href="exemples/exemple2/">Tracer une grille, des axes.</a></li><li><a href="exemples/exemple3/">Intersection de deux plans dans un cube.</a></li><li><a href="exemples/exemple4/">Section d'un tetraèdre par un plan.</a></li><li><a href="exemples/exemple5/">Explication de la construction de la section d'un tétraèdre par un plan.</a></li><li><a href="exemples/exemple6/">Section d'une sphère par un plan. (09/10/2006: ajout d'une autre section.)</a></li><li><a href="exemples/exemple7/">Représentation géographique.</a></li><li><a href="exemples/exemple8/">Eclairage et ombres.</a></li><li><a href="exemples/exemple9/">Image pour un cours sur la perspective centrale.</a></li><li><a href="exemples/exemple10/">Contribution d'un utilisateur du package.</a></li></ul>
+
+</div>
+<div id="menu">
+  
+  <p>Site</p>
+  <a href="/syracuse/">Accueil</a>
+  <a href="/syracuse/liste/">Liste de diffusion</a>
+  <a href="/syracuse/melusine/">Mélusine</a>
+  <a href="/syracuse/recherche/">Recherche</a>
+  <p>Formats</p>
+  <a href="/syracuse/bbgraf/">JPS (BBgraf)</a>
+  <a href="/syracuse/exemples/">(La)TeX</a>
+  <a href="/syracuse/metapost/">MetaPost</a>
+  <a href="/syracuse/postscript/">PostScript</a>
+  <a href="/syracuse/pstricks/">PSTricks</a>
+  <a href="/syracuse/swf/">SWF (swftools)</a>
+  <p>Bases</p>
+  <a href="/syracuse/bases/">Les bases</a>
+  <a href="/lab/brevet">Brevet des collèges</a>
+  <a href="/lab/cp">Base Collège</a>
+  <a href="/lab/bjps">Base JPS</a>
+  <p>Moulinettes</p>
+  <a href="/syracuse/texmelu/">TeXMélu</a>
+  <a href="/syracuse/texpng/">TeXPNG</a>
+  <a href="/syracuse/scripts/exp2rpn/">exp2rpn</a>
+  <p>Nous et vous...</p>
+  <a href="/syracuse/mluque/">Manuel Luque</a>
+  <a href="/syracuse/texpng/david/">David Nivaud</a>
+  <a href="/syracuse/poulecl/">Christophe Poulain</a>
+  <!-- <a href="#">Jean-Michel Sarlat</a> -->
+  <a href="/syracuse/texpng/jpv/">Jean-Paul Vignault</a>
+  <p>Logiciels</p>
+  <a href="/syracuse/bc/">Gnu BC</a>
+  <a href="/syracuse/gd/">Librairie GD</a>
+  <a href="/syracuse/gnuplot/">Gnuplot</a>
+  <a href="/syracuse/maxima/">Maxima</a>
+  <a href="/syracuse/pari/">Pari GP</a>
+  <p>Divers</p>
+  <a href="/syracuse/astronomie/">Astronomie</a>
+  <p>&nbsp;</p>
+  <img src="/syracuse/s2/img/EMF2002.png" alt="Espace Mend&egrave;s France" />
+</div>
+<div id="pied">
+    <a href="http://jigsaw.w3.org/css-validator/validator?uri=http://melusine.eu.org/syracuse/poulecl/geometriesyr16/index.xml"><img style="width:6px;height:6px;border:0;" src="/syracuse/s2/img/carrevert.gif" alt="Validation CSS" /></a>
+    <a href="http://validator.w3.org/check?uri=http://melusine.eu.org/syracuse/poulecl/geometriesyr16/index.xml"><img style="width:6px;height:6px;border:0;" src="/syracuse/s2/img/carrerouge.gif" alt="Validation XHTML" /></a> 
+    &mdash; <b>Christophe Poulain</b> &mdash; Dernière modification : 31 octobre 2006 (0.12s - 1730943 - mardi 19 d&eacute;cembre 2006)
+</div>
+</body></html>

@@ -1,0 +1,67 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2cm]{geometry}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\livretTitre}{Livret de mathématiques - Troisième}
+\newcommand{\modeLivret}{\ifavecexercices Leçons et exercices\else Leçons\fi}
+
+\newcommand{\chapitre}[4]{%
+  \setcounter{chapter}{#1-1}%
+  \includepdf[
+    pages=-,
+    pagecommand={},
+    addtotoc={1,chapter,1,{#2},ch:#1}
+  ]{#3}%
+  \ifavecexercices
+    \IfFileExists{#4}{%
+      \includepdf[
+        pages=-,
+        pagecommand={},
+        addtotoc={1,section,2,{Exercices},ex:#1}
+      ]{#4}%
+    }{}%
+  \fi
+}
+
+\newcommand{\partiecours}[3]{%
+  \includepdf[
+    pages=-,
+    pagecommand={},
+    addtotoc={1,section,2,{#2},part:#1}
+  ]{#3}%
+}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{4cm}
+  {\Huge\bfseries \livretTitre\par}
+  \vspace{1.5cm}
+  {\Large \modeLivret\par}
+  \vfill
+  {\large Année de troisième\par}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\chapitre{01}{Chapitre 1 - Arithmétique}{livret_assets/ch01_cours.pdf}{livret_assets/ch01_exercices.pdf}
+\chapitre{02}{Chapitre 2 - Théorème de Thalès}{livret_assets/ch02_cours.pdf}{livret_assets/ch02_exercices.pdf}
+\chapitre{03}{Chapitre 3 - Calculs numériques}{livret_assets/ch03_cours.pdf}{livret_assets/ch03_exercices.pdf}
+\chapitre{04}{Chapitre 4 - Statistiques}{livret_assets/ch04_cours.pdf}{livret_assets/ch04_exercices.pdf}
+\chapitre{05}{Chapitre 5 - Trigonométrie}{livret_assets/ch05_cours.pdf}{livret_assets/ch05_exercices.pdf}
+\chapitre{06}{Chapitre 6 - Notions de fonctions}{livret_assets/ch06_cours.pdf}{livret_assets/ch06_exercices.pdf}
+\chapitre{07}{Chapitre 7 - Expressions algébriques}{livret_assets/ch07_cours.pdf}{livret_assets/ch07_exercices.pdf}
+\chapitre{08}{Chapitre 8 - Espace}{livret_assets/ch08a_cours.pdf}{livret_assets/ch08_exercices.pdf}
+\partiecours{08b}{Espace - Sections de solides}{livret_assets/ch08b_cours.pdf}
+\chapitre{09}{Chapitre 9 - Factorisation et équations}{livret_assets/ch09_cours.pdf}{livret_assets/ch09_exercices.pdf}
+\chapitre{10}{Chapitre 10 - Probabilités}{livret_assets/ch10_cours.pdf}{livret_assets/ch10_exercices.pdf}
+\chapitre{11}{Chapitre 11 - Fonctions linéaires}{livret_assets/ch11_cours.pdf}{livret_assets/ch11_exercices.pdf}
+\chapitre{12}{Chapitre 12 - Triangles semblables}{livret_assets/ch12_cours.pdf}{livret_assets/ch12_exercices.pdf}
+
+\end{document}

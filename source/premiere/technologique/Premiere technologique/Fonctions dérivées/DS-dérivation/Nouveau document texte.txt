@@ -1,0 +1,8 @@
+pdflatex --shell-escape -synctex=1 -interaction=nonstopmode %.tex | C:\Users\Pierre\AppData\Local\Programs\Python\Python311\python.exe "C:\Users\Pierre\AppData\Local\Programs\MiKTeX\tex\latex\pythontex\pythontex.py" %.tex | pdflatex --shell-escape -synctex=1 -interaction=nonstopmode %.tex
+
+
+
+
+latex --shell-escape -synctex=1 -interaction=nonstopmode %.tex|python C:\Users\Pierre\AppData\Local\Programs\MiKTeX\scripts\pythontex\pythontex.py %.tex|latex --shell-escape -synctex=1 -interaction=nonstopmode %.tex
+
+

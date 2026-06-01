@@ -1,0 +1,54 @@
+verbatimtex
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+etex;
+
+input repere.mp;
+
+beginfig(1)
+ vardef f(expr x)= 0.5*((x-1)**2)+0.5 enddef;
+ repere(-1.5,4,1cm,-1,4,1cm);
+ path Cf,p;
+ p:= ((-1,-0.625) -- (4,1.875)) xscaled _Ux yscaled _Uy;
+ Cf:=courbe(f,-1,4,40); 
+ axes;
+ origine;
+ draw Cf;
+ draw p;
+ pair A,B,C;
+ A:=pointc(1.5,f(1.5));
+ B:=pointc(3.5,f(3.5));
+ C:=pointc(2.5,f(2.5));
+ draw A withpen pencircle scaled 3bp;
+ draw droite(A,B) dashed evenly;
+ draw droite(A,C) dashed evenly;
+ draw B withpen pencircle scaled 2bp;
+ draw C withpen pencircle scaled 2bp;
+ projetepoint(A);
+ projetepoint(B);
+ label.bot(btex $a$ etex,(1.5*_Ux,0));
+ label.bot(btex $a+h$ etex,(3.5*_Ux,0));
+ label.lft(btex $f(a)$ etex,(0,f(1.5)*_Uy));
+ label.lft(btex $f(a+h)$ etex,(0,f(3.5)*_Uy));
+ cadrer
+endfig;
+
+beginfig(2)
+ %vardef f(expr x)= 0.5*((x-1)**2)+0.5 enddef;
+ repere(-5,4.9,0.6cm,-3,2.9,0.6cm);
+ path Cf,p;
+ p:= ((-5,-2)..(-4,0)..(-3,1){1,0}..(-1,-1){1,0}..(0,1)..(1,2){1,0}..(2,1)..(4,0)) xscaled _Ux yscaled _Uy;
+ %Cf:=courbe(f,-1,4,40); 
+ %fill buildcycle(Cf,reverse p) withcolor red+green;
+ %papiermilli;
+ %quadrillage(1,1);
+ axes;
+ origine;
+ marque_grad(1,1);
+ %valeurs_grad(1,1);
+ %draw Cf;
+ draw p;
+ cadrer
+endfig;
+end

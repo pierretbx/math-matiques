@@ -1,0 +1,83 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\begin{center}
+\huge{ Devoir surveillé VIII}
+\end{center}
+%\title{Devoir surveillé V}
+
+\section*{Série statistique}
+
+\begin{enumerate}
+\item Donner une liste de 5 valeurs pour laquelle la médiane vaut 12 et la moyenne vaut 10.
+
+\item Donner une liste de 10 valeurs pour laquelle la médiane est identique au premier quartile.
+\item Donner deux séries distinctes comportant chacune 6 valeurs, ayant la même valeur médiane et les mêmes quartiles Q1 et Q3 mais dont l’une a 120 pour valeur maximale, alors que l’autre a 12 pour valeur maximale. \\
+\end{enumerate}
+ 
+\section*{Étude de salaire}
+
+On considère la série suivante qui correspond à la répartition des salaires mensuels en euros dans une entreprise.
+
+\begin{center}
+   \begin{tabular}{| l || c | c | c | c | c |}
+     \hline
+     Salaires mensuels & 1 000 & 1 200 & 1 300 & 1 500 &  5000 \\ \hline
+     Effectifs & 11 & 9 & 14 & 4 & 1 \\ 
+     \hline
+   \end{tabular}
+ \end{center}
+
+\begin{enumerate}
+\item Calculer le salaire moyen et le salaire médian au sein de cette entreprise.
+
+\item Déterminer les quartiles Q1 et Q3 en expliquant la démarche.
+Interpréter concrètement la valeur trouvée pour Q3.
+
+\item Pour vous recruter, le directeur de l’entreprise vous présente la valeur du salaire moyen. Est-ce un indicateur pertinent ici ? Expliquer.
+
+\end{enumerate}
+
+
+\section*{Extractions de données et interprétations}
+Dans une maternité, on a relevé les masses \textit{(en kg)} à la naissance de 103 bébés nés en avril 2019.
+
+
+\begin{center}
+   \begin{tabular}{| l || c | c | c | c | c |}
+     \hline
+     Masse & 2,5 & 2,6 & 3 & 3,1 & 5 \\ \hline
+     Effectif & 4 & 3 & 9 & 7 & 1 \\ \hline
+	  Effectif cumulés & & & & & \\ \hline
+	  Fréquence cumulées & & & & & \\
+ 
+     \hline
+   \end{tabular}
+ \end{center}
+
+\begin{enumerate}
+\item Recopier le tableau et complèter les cases vides.
+\item Par simple lecture ou calcul mental, combien de bébés pesaient moins de 3kg ? Plus de 3,1kg ? 
+\item Quelle est la fréquence des bébés ne dépassant pas 3,1 kg ?
+\item Quel est le pourcentage de bébés pesant plus de 2,5 kg et moins de 3,2 kg ? 
+\end{enumerate}
+
+\end{document}

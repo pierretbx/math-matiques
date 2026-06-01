@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+
+\begin{document}
+
+\centering\textbf{Devoir Surveill\'e de Math\'ematiques - Statistiques et Probabilit\'es}\\
+\vspace{0.5cm}
+
+\noindent\textbf{Nom :} \underline{\hspace{5cm}} \hfill \textbf{Pr\'enom :} \underline{\hspace{5cm}} \\
+\textbf{Classe :} \underline{\hspace{5cm}}\\
+\vspace{1cm}
+
+\centering\textit{\textbf{Chaque question vaut 1 point. La pr\'esentation et la rigueur seront \'egalement \'evalu\'ees. Calculatrice interdite.}}
+
+\section*{Partie 1 : Automatismes}
+
+\subsection*{Exercice 1 : Calculs simples}
+Calculer les expressions suivantes sans calculatrice :
+
+\begin{enumerate}
+    \item $3 \times (5 + 2)$
+    \item $\dfrac{4 + 2 \times 3}{2}$
+    \item $7^2 - 4^2$
+    \item $(12 + 8) \div 4$
+    \item $\dfrac{3}{4} + \dfrac{1}{2}$ (Donner le r\'esultat sous forme de fraction irr\'eductible)
+\end{enumerate}
+
+\vspace{0.5cm}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{6cm}
+\end{tcolorbox}
+
+\section*{Partie 2 : Fr\'equences marginales et conditionnelles}
+
+\subsection*{Exercice 2 : Analyse d'un tableau de fr\'equences}
+
+Dans une classe de 30 \`eleves, 12 sont des filles. Parmi elles, 8 aiment les math\'ematiques. Au total, 18 \`eleves aiment les math\'ematiques.
+
+\begin{enumerate}
+    \item Compl\'eter le tableau ci-dessous :
+    
+    \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+                 & Aiment les maths & N'aiment pas les maths & Total \\
+    \hline
+    Filles       &                   &                         &       \\
+    \hline
+    Gar\c{c}ons   &                   &                         &       \\
+    \hline
+    Total        &                   &                         & 30    \\
+    \hline
+    \end{tabular}
+    \end{center}
+
+    \item Quelle est la fr\'equence des \textbf{gar\c{c}ons} qui \textbf{aiment} les math\'ematiques ?
+    \item Quelle est la fr\'equence des \textbf{\`eleves} qui \textbf{n'aiment pas} les math\'ematiques ?
+    \item Quelle est la fr\'equence des \textbf{filles parmi ceux qui aiment} les math\'ematiques ?
+\end{enumerate}
+
+\vspace{0.5cm}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{10cm}
+\end{tcolorbox}
+
+\section*{Partie 3 : Probabilit\'es et probabilit\'es conditionnelles}
+
+\subsection*{Exercice 3 : Probl\`eme de probabilit\'es}
+
+Dans une bo\^ite, il y a 4 boules rouges, 3 boules vertes et 3 boules bleues. On tire une boule au hasard.
+
+\begin{enumerate}
+    \item Quelle est la probabilit\'e de tirer :
+    \begin{itemize}
+        \item une boule rouge ?
+        \item une boule bleue ?
+    \end{itemize}
+    \item On sait que la boule tir\'ee n'est \textbf{pas rouge}. Quelle est la probabilit\'e qu'elle soit bleue ?
+    \item On tire une boule, on la remet, puis on tire \`a nouveau une boule. Quelle est la probabilit\'e d'obtenir deux boules de m\^eme couleur ?
+\end{enumerate}
+
+\vspace{0.5cm}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+\vspace{10cm}
+\end{tcolorbox}
+
+\end{document}

@@ -1,0 +1,84 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\pagestyle{empty}
+\noindent NOM, Prénom et classe : \dotfill
+
+\section*{Devoir surveillé 14 - Axes de symétries}
+\noindent\textit{Le soin des tracés et des justifications sera pris en compte.} \hfill \textit{Durée : 45 minutes}
+
+\medskip
+\paragraph*{Exercice 1} \hfill \textbf{5 points}
+
+\noindent Trace tous les axes de symétrie des figures suivantes lorsqu'ils existent.
+
+\begin{center}
+\begin{tabular}{cccc}
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (-1.5,-1) rectangle (1.5,1);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (-1.4,-1.4) rectangle (1.4,1.4);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (0,1.6)--(1.6,0)--(0,-1.6)--(-1.6,0)--cycle;
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (0,0) circle (1.45);
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\medskip
+\paragraph*{Exercice 2} \hfill \textbf{4 points}
+
+\noindent Complète le tableau.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|X|c|c|c|c|}
+\hline
+Figure & Rectangle & Losange & Carré & Cercle\\\hline
+Nombre d'axes de symétrie & & & & \\\hline
+\end{tabularx}
+\end{center}
+
+\medskip
+\paragraph*{Exercice 3} \hfill \textbf{5 points}
+
+\noindent Complète la figure pour que la droite $(d)$ soit un axe de symétrie.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.72,line cap=round,line join=round]
+\draw[lightgray] (-6,-3) grid (6,3);
+\draw[red,line width=1.4pt] (0,-3)--(0,3);
+\node[red,anchor=west] at (0,2.7) {$(d)$};
+\draw[blue,line width=1.2pt] (-5,-2)--(-3,2)--(-1,1)--(-2,-1)--cycle;
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\paragraph*{Exercice 4} \hfill \textbf{6 points}
+
+\noindent Parmi les droites rouges, repasse en vert celles qui sont des axes de symétrie de la figure. Explique ton choix.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-4,-3) grid (4,3);
+\fill[blue!15,draw=blue,line width=1.2pt] (0,2)--(2,0)--(0,-2)--(-2,0)--cycle;
+\draw[red,dashed,line width=1.2pt] (-3,0)--(3,0);
+\draw[red,dashed,line width=1.2pt] (0,-3)--(0,3);
+\draw[red,dashed,line width=1.2pt] (-2.6,-2.6)--(2.6,2.6);
+\draw[red,dashed,line width=1.2pt] (-3,1.2)--(3,1.2);
+\end{tikzpicture}
+\end{center}
+
+\medskip\noindent\grandscarreaux{\linewidth}{2.6cm}
+
+\end{document}

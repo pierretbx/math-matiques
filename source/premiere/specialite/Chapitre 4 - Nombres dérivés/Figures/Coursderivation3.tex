@@ -1,0 +1,34 @@
+input latexmp;
+input repere;
+
+vardef f(expr x)= (x-0.5)**3+1 enddef;
+
+repere(-2.5,3,1cm,-2,4,1cm);
+ path Cf; picture p;
+ Cf:=courbefonc(f,-2,3,50);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+% draw p;
+ pair A,B;
+ A:=_c(0.5,f(0.5));
+ B:=_c(0,1);
+ %C:=_c(2.5,f(2.5));
+ draw droite(A,B);
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,LaTeX("$x_0$"),) dashed evenly;
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+fin;
+
+
+
+repere(-5,4.9,0.6cm,-3,2.9,0.6cm);
+ path p;
+ p:= _c(-5,-2).._c(-4,0).._c(-3,1){right}.._c(-1,-1){right}.._c(0,1).._c(1,2){right}.._c(2,1).._c(4,0);
+ draw axes.llft(1,0);
+ draw p;
+fin;
+
+end

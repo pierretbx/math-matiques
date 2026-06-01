@@ -1,0 +1,160 @@
+\documentclass[french]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{pstricks}
+\pgfplotsset{compat=newest}
+\usepackage{geometry}
+\geometry{hmargin=0.7cm,vmargin=2cm}
+
+
+\begin{document}
+\twocolumn
+\begin{center}
+\underline{\textbf{Fonctions de référence}}
+\end{center}
+
+\section{La fonction carré}
+
+\section*{Exercice 1}
+Calculer, lorsque c'est possible, les antécédents des réels suivants par la fonction carré.
+\begin{enumerate}
+\item 1
+\item -16
+\item 95
+\item 25
+\end{enumerate}
+%\section*{Exercice 2}
+%Soit $f$ la fonction carré. Pour chacune des propositions suivantes indiquer si elle est vraie ou fausse. Justifier.
+%\begin{enumerate}
+%\item Tous les nombres réels ont exactement une image par $f$.
+%\item Il existe un nombre réel qui n'a pas d'antécédent par $f$.
+%\item Tous les nombres réels ont, au plus, un antécédent par $f$.
+%\item Il existe au moins un nombe réel qui a deux antécédent par $f$.
+%\end{enumerate}
+
+\section*{Exercice 2}
+Résoudre algébriquement dans $\mathbb{R}$ les équations suivantes.
+\begin{enumerate}
+\item $x^2=16$
+\item  $x^3=-3$
+\item  $x^2=15$
+\end{enumerate}
+
+
+%Comparer, sans calcul, les réels suivants. 
+%\begin{enumerate}
+%\item $(-1,22)^2$ et $(-1,21)^2$
+%\item $(\pi -1)^2$ et $(\pi +1)^2$
+%\item $(\sqrt{2}-4)^2$  et $(\sqrt{2}-3)^2$
+%\end{enumerate}
+
+\section*{Exercice 3}
+Résoudre graphiquement dans $\mathbb{R}$ les inéquations suivantes.
+\begin{enumerate}
+\item $x^2 \leq 9$
+\item $x^2 \geq 3$ 
+\item $x^2 > 0 $
+\item $x^2 \leq -2$
+\end{enumerate}
+
+%\section*{Exercice 5}
+%Déterminer le sens de variation des fonctions suivantes.
+%\begin{enumerate}
+%\item $f$ définie sur $\mathbb{R}$ par $f(x)=\dfrac{1}{2}x^2$.
+%\item $g$ définie sur $\mathbb{R}$ par $g(x)=7x^2$.
+%\item $h$ définie sur $\mathbb{R}$ par $h(x)=-2x^2+7$.
+%\end{enumerate}
+
+
+
+\section{La fonction inverse}
+\section*{Exercice 4}
+Soit $g(x)=\dfrac{1}{x}$, déterminer graphiquement la valeur approchée des images suivantes :
+\begin{enumerate}
+\item $g(4)$
+\item $g(0,25)$
+\item $g(-3,2)$
+\item $g(\dfrac{3}{5})$
+\item $g(-\dfrac{7}{5})$ 
+
+Déterminer graphiquement la valeur approchée d'un antécédent \textit{(s'il existe)} dans les cas suivants:
+
+\item $g(x)=4$
+\item $g(x)=-0,44$
+\item $g(x)=\dfrac{2}{5}$
+\end{enumerate}
+
+\section*{Exercice 5}
+Résoudre graphiquement dans $\mathbb{R}$ les inéquations suivantes.
+\begin{enumerate}
+\item $-2 \leq \dfrac{1}{x} \leq 0$ 
+\item $1 \leq \dfrac{1}{x} \leq 2$ 
+\item $0 \leq \dfrac{1}{x} \leq 3$ 
+\item $-2 \leq \dfrac{1}{x} \leq 0$ 
+\item $4>\dfrac{1}{x} \geq -1$
+\end{enumerate}
+
+\section*{Exercice 6}
+Soit $x \in \mathbb{R}^*$, résoudre algébriquement.
+\begin{enumerate}
+\item $\dfrac{1}{x}=2$
+\item $\dfrac{1}{x}=-5$
+\item $\dfrac{3}{x}=2$
+\item $\dfrac{1}{x}=\dfrac{5}{3}$
+\item $\dfrac{1}{x}+3=2$
+\item $\dfrac{2}{x}=x$
+\item $\dfrac{7}{x}+2=5$
+\item $\dfrac{2}{x}=x$
+\end{enumerate}
+
+%\section*{Exercice 7}
+%Comparer, sans calcul, les réels suivants. 
+%\begin{enumerate}
+%\item $\dfrac{1}{2,401}$ et $\dfrac{1}{1,202}$
+%\item $\dfrac{1}{-3,1}$ et $\dfrac{1}{-3,2}$
+%\item $\dfrac{1}{\pi}$  et $\dfrac{1}{3,14}$
+%\end{enumerate}
+
+
+
+\section*{Exercice 7}
+Déterminer le sens de variation des fonctions suivantes et dresser le tableau de variations correspondant.
+\begin{enumerate}
+\item $f$ définie sur $\mathbb{R}^*$ par $f(x)=\dfrac{1}{x}+3$.
+\item $g$ définie sur $\mathbb{R}^*$ par $g(x)=-\dfrac{2}{x}$
+\end{enumerate}
+
+\section{La fonction cube et racine carrée}
+\section*{Exercice 8}
+Calculer les images des nombres suivants par la fonction cube.
+
+\begin{enumerate}
+\item $\sqrt{2}$
+\item $-\dfrac{3}{4}$
+\item $10^3$
+\item $\dfrac{\sqrt{5}}{3}$
+\end{enumerate}
+
+\section*{Exercice 9}
+
+Comparer, sans calcul, les réels suivants.
+\begin{enumerate}
+\item $\sqrt{\dfrac{1}{2}}$ et $\sqrt{\dfrac{1}{3}}$.
+\item $\sqrt{2,001}$ et $ \sqrt{2,01}$.
+\item  $\sqrt{\pi}$ et $\sqrt{3}$.
+\end{enumerate}
+
+\section*{Exercice 10}
+Résoudre dans $\mathbb{R}_+$ les équations suivantes.
+\begin{enumerate}
+\item $\sqrt{x} = 2$ 
+\item $\sqrt{x} = 3$
+\item $-\sqrt{x} = -\dfrac{3}{4}$ 
+\end{enumerate}
+\end{document}

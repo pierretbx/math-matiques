@@ -1,0 +1,17 @@
+verbatimtex
+%&latex
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage[e]{esvect}
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage[french]{babel}
+\newcommand{\vect}[1]{\vv{#1}}\newcommand{\calc}{\mathscr{C}}\newcommand{\calp}{\mathscr{P}}\DecimalMathComma
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex }$ etex ;
+latexmp_picture[2]:= btex }$ etex ;

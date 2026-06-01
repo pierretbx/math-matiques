@@ -1,0 +1,17 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{array,tabularx}
+\usepackage{tikz}
+\geometry{margin=1.6cm}
+\pagestyle{empty}
+\newcommand{\ligne}{\par\vspace{0.55cm}\noindent\dotfill\par}
+\newcommand{\carreaux}[1]{\begin{center}\begin{tikzpicture}\draw[step=0.5cm,gray!35,very thin] (0,0) grid (17,#1);\end{tikzpicture}\end{center}}
+\newenvironment{exercice}[2]{\paragraph{Exercice #1 \hfill #2 points}\mbox{}\par}{\medskip}
+\begin{document}
+\begin{center}\Large\bfseries Devoir surveillé 14 - Statistiques\end{center}
+\vspace{2mm}
+\begin{exercice}{1}{4}Donner les définitions d'effectif, d'effectif total, de fréquence et de moyenne.\end{exercice}\begin{exercice}{2}{5}Voici une série : $9; 12; 8; 15; 12; 10; 12; 14; 8; 10$. Construire le tableau d'effectifs et calculer la fréquence de $12$.\end{exercice}\begin{exercice}{3}{5}Calculer la moyenne et la médiane de la série précédente.\end{exercice}\begin{exercice}{4}{6}Dans un club, $18$ élèves font du foot, $12$ du basket, $9$ de l'athlétisme et $6$ du tennis. Représenter les effectifs par un diagramme en bâtons.\carreaux{5}\end{exercice}\end{document}

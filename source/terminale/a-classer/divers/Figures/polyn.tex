@@ -1,0 +1,651 @@
+input latexmp;
+%input geometriesyr16;
+%input repere;
+input courbes;
+input couleur;
+input geo;
+
+
+verbatimtex
+%&latex 
+\documentclass[12pt]{article} 
+\usepackage{mathrsfs} 
+\usepackage{amsmath,amsfonts,amssymb}
+\newcommand{\PR}{\mathscr{P}}
+\newcommand{\DR}{\mathscr{D}}
+%\usepackage{preambule}
+\begin{document} 
+etex 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
+%   I N T E G    F O N C T I O N     D e     L A       B O R N E                       S U P
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+ beginfig(1)
+
+
+
+ numeric u ;
+ u=4.5cm;
+ drawarrow (-1.2*u,0)--(1.2*u,0);
+ drawarrow (0,-1.2*u)--(0,1.2*u);
+ draw fullcircle scaled 9cm withpen pencircle scaled 1bp withcolor orpas;
+ drawoptions(dashed evenly);
+ % path t[] ;
+%  t[1]=(u,0)--(cosd(60)*u,sind(60)*u)--(0,0);
+%  draw t[1] withcolor rose;
+%  for k=2 upto 6 : t[k]=t[1] rotatedaround ((0,0),60*(k-1));
+%    draw t[k] withcolor rose;
+%  endfor;
+ % path c[] ;
+%  c1 =(cosd(60)*u,-sind(60)*u)--(cosd(60)*u,sind(60)*u) ;
+%  draw c1 dashed evenly withcolor rose;
+%  c2 = c1 shifted (-u,0) ;
+%  draw c2 dashed evenly withcolor rose;
+%  z[1]=(u,0);
+%  for l=2 upto 6:
+%    z[l]=z[1] rotatedaround ((0,0),60(l-1));
+%  endfor;
+%  drawoptions();
+%  dotlabel.lrt(btex $0$ etex,(u,0));
+%  label.lrt(btex $1 \over2$ etex,(u/2,0))withcolor rose;
+%  label.lrt(btex $- {1 \over 2}$ etex,(-u/2,0))withcolor rose;
+%  dotlabel.llft(btex $\pi$ etex,(-u,0));
+
+%  label.urt(btex {${\pi \over 3}$} etex, z[2])withcolor rose;
+%  label.ulft(btex {${2\pi \over 3}$} etex,z[3])withcolor rose;
+%  label.llft(btex {$-{2\pi \over 3}$} etex,z[5])withcolor rose;
+%  label.lrt(btex {$-{\pi \over 3}$} etex,z[6])withcolor rose;
+%  label.llft(btex ${\sqrt{3} \over 2}$ etex,(0,sqrt(3)*u/2))withcolor rose;
+%  label.ulft(btex $-{\sqrt{3} \over 2}$ etex,(0,-sqrt(3)*u/2))withcolor rose;
+
+  drawoptions(dashed evenly);
+  path p[] ;
+  p[1]=(0,0)--(cosd(60)*u,sind(60)*u)--(u,0)--cycle;
+  draw p[1] withcolor  bleu_m;
+  for k=2 upto 6 : p[k]=p[1] rotatedaround ((0,0),60*(k-1));
+    draw p[k] withcolor bleu_m;
+  endfor;
+  path s[] ;
+ % s1 =(-cosd(30)*u,sind(30)*u)--(cosd(30)*u,sind(30)*u) ;
+%  draw s1 dashed evenly withcolor  bleu_m;
+  %s2 = s1 shifted (0,-u) ;
+  %draw s2 dashed evenly withcolor bleu_m;
+dotlabel.urt(btex $1$ etex,(u,0));
+dotlabel.urt(btex $i$ etex,(0,u));
+dotlabel.llft(btex $-1$ etex,(-u,0));
+dotlabel.llft(btex $-i$ etex,(0,-u));
+dotlabel.urt(btex $ $ etex,(0,0));
+label.urt(btex $0$ etex,(0.05*u,0));
+
+
+
+  pair y[];
+  y[1]=(cosd(60)*u,sind(60)*u);
+  for l=2 upto 6:
+    y[l]=y[1] rotatedaround ((0,0),60(l-1));
+  endfor;
+  drawoptions();
+  label.urt(btex $e^{i{\pi \over 3}}$ etex,y[1])withcolor bleu_m;
+  label.ulft(btex $e^{i{2\pi \over 3}}$ etex, y[2])withcolor bleu_m;
+  label.ulft(btex $e^{i{\pi}}$ etex,y[3])withcolor bleu_m;
+  label.llft(btex $e^{i{4\pi \over 3}}$ etex,y[4])withcolor bleu_m;
+  label.lrt(btex $e^{i{5\pi \over 3}}$ etex,y[5])withcolor bleu_m;
+  label.lrt(btex $e^{i{6\pi \over 3}}$ etex,y[6])withcolor bleu_m;
+  %label.llft(btex ${\sqrt{3} \over 2}$ etex,(sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.lrt(btex $-{\sqrt{3} \over 2}$ etex,(-sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.llft(btex ${1 \over 2}$ etex,(0,u/2))withcolor bleu_m;
+  %label.llft(btex $-{1 \over 2}$ etex,(0,-u/2))withcolor bleu_m;
+
+%  drawoptions(dashed evenly);
+
+%  path r[] ;
+%  r[1]=(cosd(45)*u,-sind(45)*u)--(cosd(45)*u,sind(45)*u)--(0,0);
+%  draw r[1] withcolor blue;
+%  for k=2 upto 4 : r[k]=r[1] rotatedaround ((0,0),90*(k-1));
+%    draw r[k] withcolor blue;
+%  endfor;
+
+%  pair w[];
+%  w[1]=(u,0);
+%  for n=2 upto 8:
+%    w[n]=w[1] rotatedaround ((0,0),45(n-1));
+%  endfor;
+%  drawoptions();
+%  label.urt(btex ${\pi \over 4}$ etex, w[2])withcolor blue;
+%  dotlabel.urt(btex ${\pi \over 2}$ etex,w[3]);
+%  label.ulft(btex ${3\pi \over 4}$ etex,w[4])withcolor blue;
+% dotlabel.llft(btex ${\pi}$ etex,w[5]);
+%  label.llft(btex $-{3\pi \over 4}$ etex,w[6])withcolor blue;
+%  label.llft(btex $-{\pi \over 2}$ etex,w[7]);
+%  label.lrt(btex $-{\pi \over 4}$ etex,w[8])withcolor blue;
+%  label.ulft(btex ${\sqrt{2} \over 2}$ etex,(sqrt(2)*u/2,0))withcolor blue;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(-sqrt(2)*u/2,0))withcolor blue;
+%  label.lrt(btex ${\sqrt{2} \over 2}$ etex,(0,sqrt(2)*u/2))withcolor blue ;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(0,-sqrt(2)*u/2))withcolor blue;
+
+ endfig;
+
+beginfig(2)
+
+
+
+ numeric u ;
+ u=4.5cm;
+ drawarrow (-1.2*u,0)--(1.2*u,0);
+ drawarrow (0,-1.2*u)--(0,1.2*u);
+ draw fullcircle scaled 9cm withpen pencircle scaled 1.3bp withcolor orpas;
+ drawoptions(dashed evenly);
+ % path t[] ;
+%  t[1]=(u,0)--(cosd(60)*u,sind(60)*u)--(0,0);
+%  draw t[1] withcolor rose;
+%  for k=2 upto 6 : t[k]=t[1] rotatedaround ((0,0),60*(k-1));
+%    draw t[k] withcolor rose;
+%  endfor;
+ % path c[] ;
+%  c1 =(cosd(60)*u,-sind(60)*u)--(cosd(60)*u,sind(60)*u) ;
+%  draw c1 dashed evenly withcolor rose;
+%  c2 = c1 shifted (-u,0) ;
+%  draw c2 dashed evenly withcolor rose;
+%  z[1]=(u,0);
+%  for l=2 upto 6:
+%    z[l]=z[1] rotatedaround ((0,0),60(l-1));
+%  endfor;
+%  drawoptions();
+%  dotlabel.lrt(btex $0$ etex,(u,0));
+%  label.lrt(btex $1 \over2$ etex,(u/2,0))withcolor rose;
+%  label.lrt(btex $- {1 \over 2}$ etex,(-u/2,0))withcolor rose;
+%  dotlabel.llft(btex $\pi$ etex,(-u,0));
+
+%  label.urt(btex {${\pi \over 3}$} etex, z[2])withcolor rose;
+%  label.ulft(btex {${2\pi \over 3}$} etex,z[3])withcolor rose;
+%  label.llft(btex {$-{2\pi \over 3}$} etex,z[5])withcolor rose;
+%  label.lrt(btex {$-{\pi \over 3}$} etex,z[6])withcolor rose;
+%  label.llft(btex ${\sqrt{3} \over 2}$ etex,(0,sqrt(3)*u/2))withcolor rose;
+%  label.ulft(btex $-{\sqrt{3} \over 2}$ etex,(0,-sqrt(3)*u/2))withcolor rose;
+
+%   drawoptions(dashed evenly);
+%   path p[] ;
+%   p[1]=(0,u)--(cosd(30)*u,sind(30)*u)--(0,0);
+%   draw p[1] withcolor  bleu_m;
+%   for k=2 upto 6 : p[k]=p[1] rotatedaround ((0,0),60*(k-1));
+%     draw p[k] withcolor bleu_m;
+%   endfor;
+%   path s[] ;
+%   s1 =(-cosd(30)*u,sind(30)*u)--(cosd(30)*u,sind(30)*u) ;
+%   draw s1 dashed evenly withcolor  bleu_m;
+%   s2 = s1 shifted (0,-u) ;
+%   draw s2 dashed evenly withcolor bleu_m;
+
+%   pair y[];
+%   y[1]=(cosd(30)*u,sind(30)*u);
+%   for l=2 upto 6:
+%     y[l]=y[1] rotatedaround ((0,0),60(l-1));
+%   endfor;
+%   drawoptions();
+%   label.urt(btex ${\pi \over 6}$ etex,y[1])withcolor bleu_m;
+%   dotlabel.urt(btex ${\pi \over 2}$ etex, y[2])withcolor bleu_m;
+%   label.ulft(btex ${5\pi \over 6}$ etex,y[3])withcolor bleu_m;
+%   label.llft(btex $-{5\pi \over 6}$ etex,y[4])withcolor bleu_m;
+%   label.llft(btex $-{\pi \over 2}$ etex,y[5])withcolor bleu_m;
+%   label.lrt(btex $-{\pi \over 6}$ etex,y[6])withcolor bleu_m;
+%   label.llft(btex ${\sqrt{3} \over 2}$ etex,(sqrt(3)*u/2,0))withcolor bleu_m;
+%   label.lrt(btex $-{\sqrt{3} \over 2}$ etex,(-sqrt(3)*u/2,0))withcolor bleu_m;
+%   label.llft(btex ${1 \over 2}$ etex,(0,u/2))withcolor bleu_m;
+%   label.llft(btex $-{1 \over 2}$ etex,(0,-u/2))withcolor bleu_m;
+
+  drawoptions(dashed evenly);
+
+  path r[] ;
+  r[1]=(cosd(45)*u,-sind(45)*u)--(cosd(45)*u,sind(45)*u)--(0,0);
+  draw r[1] withcolor blue;
+  for k=2 upto 4 : r[k]=r[1] rotatedaround ((0,0),90*(k-1));
+    draw r[k] withcolor blue;
+  endfor;
+
+  pair w[];
+  w[1]=(u,0);
+  for n=2 upto 8:
+    w[n]=w[1] rotatedaround ((0,0),45(n-1));
+  endfor;
+  drawoptions();
+  label.urt(btex ${\pi \over 4}$ etex, w[2])withcolor blue;
+  dotlabel.urt(btex ${\pi \over 2}$ etex,w[3]);
+  label.ulft(btex ${3\pi \over 4}$ etex,w[4])withcolor blue;
+ dotlabel.llft(btex ${\pi}$ etex,w[5]);
+  label.llft(btex $-{3\pi \over 4}$ etex,w[6])withcolor blue;
+  label.llft(btex $-{\pi \over 2}$ etex,w[7]);
+  label.lrt(btex $-{\pi \over 4}$ etex,w[8])withcolor blue;
+  label.ulft(btex ${\sqrt{2} \over 2}$ etex,(sqrt(2)*u/2,0))withcolor blue;
+  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(-sqrt(2)*u/2,0))withcolor blue;
+  label.lrt(btex ${\sqrt{2} \over 2}$ etex,(0,sqrt(2)*u/2))withcolor blue ;
+  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(0,-sqrt(2)*u/2))withcolor blue;
+
+ endfig;
+
+beginfig(3)
+
+
+
+numeric u ;
+u=4.5cm;
+drawarrow (-1.2*u,0)--(1.2*u,0);
+drawarrow (0,-1.2*u)--(0,1.2*u);
+draw fullcircle scaled 9cm withpen pencircle scaled 1.3bp withcolor orpas;
+drawoptions(dashed evenly);
+path t[] ;
+t[1]=(u,0)--(cosd(60)*u,sind(60)*u)--(0,0);
+draw t[1] withcolor rose;
+for k=2 upto 6 : t[k]=t[1] rotatedaround ((0,0),60*(k-1));
+  draw t[k] withcolor rose;
+endfor;
+path c[] ;
+c1 =(cosd(60)*u,-sind(60)*u)--(cosd(60)*u,sind(60)*u) ;
+draw c1 dashed evenly withcolor rose;
+c2 = c1 shifted (-u,0) ;
+draw c2 dashed evenly withcolor rose;
+z[1]=(u,0);
+for l=2 upto 6:
+  z[l]=z[1] rotatedaround ((0,0),60(l-1));
+endfor;
+drawoptions();
+dotlabel.lrt(btex $0$ etex,(u,0));
+label.lrt(btex $1 \over2$ etex,(u/2,0))withcolor rose;
+label.lrt(btex $- {1 \over 2}$ etex,(-u/2,0))withcolor rose;
+dotlabel.llft(btex $\pi$ etex,(-u,0));
+
+label.urt(btex {${\pi \over 3}$} etex, z[2])withcolor rose;
+label.ulft(btex {${2\pi \over 3}$} etex,z[3])withcolor rose;
+label.llft(btex {$-{2\pi \over 3}$} etex,z[5])withcolor rose;
+label.lrt(btex {$-{\pi \over 3}$} etex,z[6])withcolor rose;
+label.llft(btex ${\sqrt{3} \over 2}$ etex,(0,sqrt(3)*u/2))withcolor rose;
+label.ulft(btex $-{\sqrt{3} \over 2}$ etex,(0,-sqrt(3)*u/2))withcolor rose;
+
+drawoptions(dashed evenly);
+path p[] ;
+p[1]=(0,u)--(cosd(30)*u,sind(30)*u)--(0,0);
+draw p[1] withcolor  bleu_m;
+for k=2 upto 6 : p[k]=p[1] rotatedaround ((0,0),60*(k-1));
+  draw p[k] withcolor bleu_m;
+endfor;
+path s[] ;
+s1 =(-cosd(30)*u,sind(30)*u)--(cosd(30)*u,sind(30)*u) ;
+draw s1 dashed evenly withcolor  bleu_m;
+s2 = s1 shifted (0,-u) ;
+draw s2 dashed evenly withcolor bleu_m;
+
+pair y[];
+y[1]=(cosd(30)*u,sind(30)*u);
+for l=2 upto 6:
+  y[l]=y[1] rotatedaround ((0,0),60(l-1));
+endfor;
+drawoptions();
+label.urt(btex ${\pi \over 6}$ etex,y[1])withcolor bleu_m;
+dotlabel.urt(btex ${\pi \over 2}$ etex, y[2]);
+label.ulft(btex ${5\pi \over 6}$ etex,y[3])withcolor bleu_m;
+label.llft(btex $-{5\pi \over 6}$ etex,y[4])withcolor bleu_m;
+label.llft(btex $-{\pi \over 2}$ etex,y[5])withcolor bleu_m;
+label.lrt(btex $-{\pi \over 6}$ etex,y[6])withcolor bleu_m;
+label.llft(btex ${\sqrt{3} \over 2}$ etex,(sqrt(3)*u/2,0))withcolor bleu_m;
+label.lrt(btex $-{\sqrt{3} \over 2}$ etex,(-sqrt(3)*u/2,0))withcolor bleu_m;
+label.llft(btex ${1 \over 2}$ etex,(0,u/2))withcolor bleu_m;
+label.llft(btex $-{1 \over 2}$ etex,(0,-u/2))withcolor bleu_m;
+
+drawoptions(dashed evenly);
+
+path r[] ;
+r[1]=(cosd(45)*u,-sind(45)*u)--(cosd(45)*u,sind(45)*u)--(0,0);
+draw r[1] withcolor blue;
+for k=2 upto 4 : r[k]=r[1] rotatedaround ((0,0),90*(k-1));
+  draw r[k] withcolor blue;
+endfor;
+
+pair w[];
+w[1]=(u,0);
+for n=2 upto 8:
+  w[n]=w[1] rotatedaround ((0,0),45(n-1));
+endfor;
+drawoptions();
+label.urt(btex ${\pi \over 4}$ etex, w[2])withcolor blue;
+dotlabel.urt(btex ${\pi \over 2}$ etex,w[3]);
+label.ulft(btex ${3\pi \over 4}$ etex,w[4])withcolor blue;
+dotlabel.llft(btex ${\pi}$ etex,w[5]);
+label.llft(btex $-{3\pi \over 4}$ etex,w[6])withcolor blue;
+label.llft(btex $-{\pi \over 2}$ etex,w[7]);
+label.lrt(btex $-{\pi \over 4}$ etex,w[8])withcolor blue;
+label.ulft(btex ${\sqrt{2} \over 2}$ etex,(sqrt(2)*u/2,0))withcolor blue;
+label.urt(btex $-{\sqrt{2} \over 2}$ etex,(-sqrt(2)*u/2,0))withcolor blue;
+label.lrt(btex ${\sqrt{2} \over 2}$ etex,(0,sqrt(2)*u/2))withcolor blue ;
+label.urt(btex $-{\sqrt{2} \over 2}$ etex,(0,-sqrt(2)*u/2))withcolor blue;
+
+endfig;
+
+
+beginfig(4)
+
+
+
+ numeric u ;
+ u=4.5cm;
+ drawarrow (-1.2*u,0)--(1.2*u,0);
+ drawarrow (0,-1.2*u)--(0,1.2*u);
+ draw fullcircle scaled 9cm withpen pencircle scaled 1bp withcolor orpas;
+ drawoptions(dashed evenly);
+ % path t[] ;
+%  t[1]=(u,0)--(cosd(60)*u,sind(60)*u)--(0,0);
+%  draw t[1] withcolor rose;
+%  for k=2 upto 6 : t[k]=t[1] rotatedaround ((0,0),60*(k-1));
+%    draw t[k] withcolor rose;
+%  endfor;
+ % path c[] ;
+%  c1 =(cosd(60)*u,-sind(60)*u)--(cosd(60)*u,sind(60)*u) ;
+%  draw c1 dashed evenly withcolor rose;
+%  c2 = c1 shifted (-u,0) ;
+%  draw c2 dashed evenly withcolor rose;
+%  z[1]=(u,0);
+%  for l=2 upto 6:
+%    z[l]=z[1] rotatedaround ((0,0),60(l-1));
+%  endfor;
+%  drawoptions();
+%  dotlabel.lrt(btex $0$ etex,(u,0));
+%  label.lrt(btex $1 \over2$ etex,(u/2,0))withcolor rose;
+%  label.lrt(btex $- {1 \over 2}$ etex,(-u/2,0))withcolor rose;
+%  dotlabel.llft(btex $\pi$ etex,(-u,0));
+
+%  label.urt(btex {${\pi \over 3}$} etex, z[2])withcolor rose;
+%  label.ulft(btex {${2\pi \over 3}$} etex,z[3])withcolor rose;
+%  label.llft(btex {$-{2\pi \over 3}$} etex,z[5])withcolor rose;
+%  label.lrt(btex {$-{\pi \over 3}$} etex,z[6])withcolor rose;
+%  label.llft(btex ${\sqrt{3} \over 2}$ etex,(0,sqrt(3)*u/2))withcolor rose;
+%  label.ulft(btex $-{\sqrt{3} \over 2}$ etex,(0,-sqrt(3)*u/2))withcolor rose;
+
+  drawoptions(dashed evenly);
+  path p[] ;
+  p[1]=(0,0)--(cosd(90)*u,sind(90)*u)--(u,0)--cycle;
+  draw p[1] withcolor  bleu_m;
+  for k=2 upto 4 : p[k]=p[1] rotatedaround ((0,0),90*(k-1));
+    draw p[k] withcolor bleu_m;
+  endfor;
+  path s[] ;
+ % s1 =(-cosd(30)*u,sind(30)*u)--(cosd(30)*u,sind(30)*u) ;
+%  draw s1 dashed evenly withcolor  bleu_m;
+  %s2 = s1 shifted (0,-u) ;
+  %draw s2 dashed evenly withcolor bleu_m;
+dotlabel.urt(btex $1$ etex,(u,0));
+dotlabel.urt(btex $i$ etex,(0,u));
+dotlabel.llft(btex $-1$ etex,(-u,0));
+dotlabel.llft(btex $-i$ etex,(0,-u));
+dotlabel.urt(btex $ $ etex,(0,0));
+label.urt(btex $0$ etex,(0.05*u,0));
+
+
+
+  pair y[];
+  y[1]=(cosd(90)*u,sind(90)*u);
+  for l=2 upto 4:
+    y[l]=y[1] rotatedaround ((0,0),90(l-1));
+  endfor;
+  drawoptions();
+  label.ulft(btex $e^{i{\pi \over 2}}$ etex,y[1])withcolor bleu_m;
+  label.ulft(btex $e^{i\pi}$ etex, y[2])withcolor bleu_m;
+  label.lrt(btex $e^{i{3\pi \over 2}}$ etex,y[3])withcolor bleu_m;
+  label.lrt(btex  $e^{i{4\pi \over 2}}$ etex,y[4])withcolor bleu_m;
+  %label.lrt(btex $- {\pi \over 3}$ etex,y[5])withcolor bleu_m;
+  %label.lrt(btex $0$ etex,y[6])withcolor bleu_m;
+  %label.llft(btex ${\sqrt{3} \over 2}$ etex,(sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.lrt(btex $-{\sqrt{3} \over 2}$ etex,(-sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.llft(btex ${1 \over 2}$ etex,(0,u/2))withcolor bleu_m;
+  %label.llft(btex $-{1 \over 2}$ etex,(0,-u/2))withcolor bleu_m;
+
+%  drawoptions(dashed evenly);
+
+%  path r[] ;
+%  r[1]=(cosd(45)*u,-sind(45)*u)--(cosd(45)*u,sind(45)*u)--(0,0);
+%  draw r[1] withcolor blue;
+%  for k=2 upto 4 : r[k]=r[1] rotatedaround ((0,0),90*(k-1));
+%    draw r[k] withcolor blue;
+%  endfor;
+
+%  pair w[];
+%  w[1]=(u,0);
+%  for n=2 upto 8:
+%    w[n]=w[1] rotatedaround ((0,0),45(n-1));
+%  endfor;
+%  drawoptions();
+%  label.urt(btex ${\pi \over 4}$ etex, w[2])withcolor blue;
+%  dotlabel.urt(btex ${\pi \over 2}$ etex,w[3]);
+%  label.ulft(btex ${3\pi \over 4}$ etex,w[4])withcolor blue;
+% dotlabel.llft(btex ${\pi}$ etex,w[5]);
+%  label.llft(btex $-{3\pi \over 4}$ etex,w[6])withcolor blue;
+%  label.llft(btex $-{\pi \over 2}$ etex,w[7]);
+%  label.lrt(btex $-{\pi \over 4}$ etex,w[8])withcolor blue;
+%  label.ulft(btex ${\sqrt{2} \over 2}$ etex,(sqrt(2)*u/2,0))withcolor blue;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(-sqrt(2)*u/2,0))withcolor blue;
+%  label.lrt(btex ${\sqrt{2} \over 2}$ etex,(0,sqrt(2)*u/2))withcolor blue ;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(0,-sqrt(2)*u/2))withcolor blue;
+
+ endfig;
+
+beginfig(5)
+
+
+
+ numeric u ;
+ u=4.5cm;
+ drawarrow (-1.2*u,0)--(1.2*u,0);
+ drawarrow (0,-1.2*u)--(0,1.2*u);
+ draw fullcircle scaled 9cm withpen pencircle scaled 1bp withcolor orpas;
+ drawoptions(dashed evenly);
+ % path t[] ;
+%  t[1]=(u,0)--(cosd(60)*u,sind(60)*u)--(0,0);
+%  draw t[1] withcolor rose;
+%  for k=2 upto 6 : t[k]=t[1] rotatedaround ((0,0),60*(k-1));
+%    draw t[k] withcolor rose;
+%  endfor;
+ % path c[] ;
+%  c1 =(cosd(60)*u,-sind(60)*u)--(cosd(60)*u,sind(60)*u) ;
+%  draw c1 dashed evenly withcolor rose;
+%  c2 = c1 shifted (-u,0) ;
+%  draw c2 dashed evenly withcolor rose;
+%  z[1]=(u,0);
+%  for l=2 upto 6:
+%    z[l]=z[1] rotatedaround ((0,0),60(l-1));
+%  endfor;
+%  drawoptions();
+%  dotlabel.lrt(btex $0$ etex,(u,0));
+%  label.lrt(btex $1 \over2$ etex,(u/2,0))withcolor rose;
+%  label.lrt(btex $- {1 \over 2}$ etex,(-u/2,0))withcolor rose;
+%  dotlabel.llft(btex $\pi$ etex,(-u,0));
+
+%  label.urt(btex {${\pi \over 3}$} etex, z[2])withcolor rose;
+%  label.ulft(btex {${2\pi \over 3}$} etex,z[3])withcolor rose;
+%  label.llft(btex {$-{2\pi \over 3}$} etex,z[5])withcolor rose;
+%  label.lrt(btex {$-{\pi \over 3}$} etex,z[6])withcolor rose;
+%  label.llft(btex ${\sqrt{3} \over 2}$ etex,(0,sqrt(3)*u/2))withcolor rose;
+%  label.ulft(btex $-{\sqrt{3} \over 2}$ etex,(0,-sqrt(3)*u/2))withcolor rose;
+
+  drawoptions(dashed evenly);
+  path p[] ;
+  p[1]=(cosd(120)*u,sind(120)*u)--(u,0);
+  draw p[1] withcolor  bleu_m;
+  for k=2 upto 3 : p[k]=p[1] rotatedaround ((0,0),120*(k-1));
+    draw p[k] withcolor bleu_m;
+  endfor;
+  path s[] ;
+ % s1 =(-cosd(30)*u,sind(30)*u)--(cosd(30)*u,sind(30)*u) ;
+%  draw s1 dashed evenly withcolor  bleu_m;
+  %s2 = s1 shifted (0,-u) ;
+  %draw s2 dashed evenly withcolor bleu_m;
+dotlabel.urt(btex $1$ etex,(u,0));
+dotlabel.urt(btex $i$ etex,(0,u));
+dotlabel.llft(btex $-1$ etex,(-u,0));
+dotlabel.llft(btex $-i$ etex,(0,-u));
+dotlabel.urt(btex $ $ etex,(0,0));
+label.urt(btex $0$ etex,(0.05*u,0));
+
+
+
+  pair y[];
+  y[1]=(cosd(120)*u,sind(120)*u);
+  for l=2 upto 3:
+    y[l]=y[1] rotatedaround ((0,0),120(l-1));
+  endfor;
+  drawoptions();
+  label.ulft(btex $e^{i{2\pi \over 3}}$ etex,y[1])withcolor bleu_m;
+  label.llft(btex $e^{i{4\pi \over 3}}$ etex, y[2])withcolor bleu_m;
+  label.lrt(btex $e^{i{6\pi \over 3}}$ etex,y[3])withcolor bleu_m;
+%  label.lrt(btex  $e^{i{4\pi \over 2}}$ etex,y[4])withcolor bleu_m;
+  %label.lrt(btex $- {\pi \over 3}$ etex,y[5])withcolor bleu_m;
+  %label.lrt(btex $0$ etex,y[6])withcolor bleu_m;
+  %label.llft(btex ${\sqrt{3} \over 2}$ etex,(sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.lrt(btex $-{\sqrt{3} \over 2}$ etex,(-sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.llft(btex ${1 \over 2}$ etex,(0,u/2))withcolor bleu_m;
+  %label.llft(btex $-{1 \over 2}$ etex,(0,-u/2))withcolor bleu_m;
+
+%  drawoptions(dashed evenly);
+
+%  path r[] ;
+%  r[1]=(cosd(45)*u,-sind(45)*u)--(cosd(45)*u,sind(45)*u)--(0,0);
+%  draw r[1] withcolor blue;
+%  for k=2 upto 4 : r[k]=r[1] rotatedaround ((0,0),90*(k-1));
+%    draw r[k] withcolor blue;
+%  endfor;
+
+%  pair w[];
+%  w[1]=(u,0);
+%  for n=2 upto 8:
+%    w[n]=w[1] rotatedaround ((0,0),45(n-1));
+%  endfor;
+%  drawoptions();
+%  label.urt(btex ${\pi \over 4}$ etex, w[2])withcolor blue;
+%  dotlabel.urt(btex ${\pi \over 2}$ etex,w[3]);
+%  label.ulft(btex ${3\pi \over 4}$ etex,w[4])withcolor blue;
+% dotlabel.llft(btex ${\pi}$ etex,w[5]);
+%  label.llft(btex $-{3\pi \over 4}$ etex,w[6])withcolor blue;
+%  label.llft(btex $-{\pi \over 2}$ etex,w[7]);
+%  label.lrt(btex $-{\pi \over 4}$ etex,w[8])withcolor blue;
+%  label.ulft(btex ${\sqrt{2} \over 2}$ etex,(sqrt(2)*u/2,0))withcolor blue;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(-sqrt(2)*u/2,0))withcolor blue;
+%  label.lrt(btex ${\sqrt{2} \over 2}$ etex,(0,sqrt(2)*u/2))withcolor blue ;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(0,-sqrt(2)*u/2))withcolor blue;
+
+ endfig;
+ 
+ beginfig(6)
+
+
+
+ numeric u ;
+ u=4.5cm;
+ drawarrow (-1.2*u,0)--(1.2*u,0);
+ drawarrow (0,-1.2*u)--(0,1.2*u);
+ draw fullcircle scaled 9cm withpen pencircle scaled 1bp withcolor orpas;
+ drawoptions(dashed evenly);
+ % path t[] ;
+%  t[1]=(u,0)--(cosd(60)*u,sind(60)*u)--(0,0);
+%  draw t[1] withcolor rose;
+%  for k=2 upto 6 : t[k]=t[1] rotatedaround ((0,0),60*(k-1));
+%    draw t[k] withcolor rose;
+%  endfor;
+ % path c[] ;
+%  c1 =(cosd(60)*u,-sind(60)*u)--(cosd(60)*u,sind(60)*u) ;
+%  draw c1 dashed evenly withcolor rose;
+%  c2 = c1 shifted (-u,0) ;
+%  draw c2 dashed evenly withcolor rose;
+%  z[1]=(u,0);
+%  for l=2 upto 6:
+%    z[l]=z[1] rotatedaround ((0,0),60(l-1));
+%  endfor;
+%  drawoptions();
+%  dotlabel.lrt(btex $0$ etex,(u,0));
+%  label.lrt(btex $1 \over2$ etex,(u/2,0))withcolor rose;
+%  label.lrt(btex $- {1 \over 2}$ etex,(-u/2,0))withcolor rose;
+%  dotlabel.llft(btex $\pi$ etex,(-u,0));
+
+%  label.urt(btex {${\pi \over 3}$} etex, z[2])withcolor rose;
+%  label.ulft(btex {${2\pi \over 3}$} etex,z[3])withcolor rose;
+%  label.llft(btex {$-{2\pi \over 3}$} etex,z[5])withcolor rose;
+%  label.lrt(btex {$-{\pi \over 3}$} etex,z[6])withcolor rose;
+%  label.llft(btex ${\sqrt{3} \over 2}$ etex,(0,sqrt(3)*u/2))withcolor rose;
+%  label.ulft(btex $-{\sqrt{3} \over 2}$ etex,(0,-sqrt(3)*u/2))withcolor rose;
+
+  drawoptions(dashed evenly);
+  path p[] ;
+  p[1]=(cosd(72)*u,sind(72)*u)--(u,0);
+  draw p[1] withcolor  bleu_m;
+  for k=2 upto 5 : p[k]=p[1] rotatedaround ((0,0),72*(k-1));
+    draw p[k] withcolor bleu_m;
+  endfor;
+  path s[] ;
+ % s1 =(-cosd(30)*u,sind(30)*u)--(cosd(30)*u,sind(30)*u) ;
+%  draw s1 dashed evenly withcolor  bleu_m;
+  %s2 = s1 shifted (0,-u) ;
+  %draw s2 dashed evenly withcolor bleu_m;
+dotlabel.urt(btex $1$ etex,(u,0));
+dotlabel.urt(btex $i$ etex,(0,u));
+dotlabel.llft(btex $-1$ etex,(-u,0));
+dotlabel.llft(btex $-i$ etex,(0,-u));
+dotlabel.urt(btex $ $ etex,(0,0));
+label.urt(btex $0$ etex,(0.05*u,0));
+
+
+
+  pair y[];
+  y[1]=(cosd(72)*u,sind(72)*u);
+  for l=2 upto 5:
+    y[l]=y[1] rotatedaround ((0,0),72(l-1));
+  endfor;
+  drawoptions();
+  label.urt(btex $e^{i{2\pi \over 5}}$ etex,y[1])withcolor bleu_m;
+  label.ulft(btex $e^{i{4\pi \over 5}}$ etex, y[2])withcolor bleu_m;
+  label.llft(btex $e^{i{6\pi \over 5}}$ etex,y[3])withcolor bleu_m;
+  label.lrt(btex  $e^{i{8\pi \over 5}}$ etex,y[4])withcolor bleu_m;
+  label.lrt(btex $e^{i{10\pi \over 5}}$ etex,y[5])withcolor bleu_m;
+  %label.lrt(btex $0$ etex,y[6])withcolor bleu_m;
+  %label.llft(btex ${\sqrt{3} \over 2}$ etex,(sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.lrt(btex $-{\sqrt{3} \over 2}$ etex,(-sqrt(3)*u/2,0))withcolor bleu_m;
+  %label.llft(btex ${1 \over 2}$ etex,(0,u/2))withcolor bleu_m;
+  %label.llft(btex $-{1 \over 2}$ etex,(0,-u/2))withcolor bleu_m;
+
+%  drawoptions(dashed evenly);
+
+%  path r[] ;
+%  r[1]=(cosd(45)*u,-sind(45)*u)--(cosd(45)*u,sind(45)*u)--(0,0);
+%  draw r[1] withcolor blue;
+%  for k=2 upto 4 : r[k]=r[1] rotatedaround ((0,0),90*(k-1));
+%    draw r[k] withcolor blue;
+%  endfor;
+
+%  pair w[];
+%  w[1]=(u,0);
+%  for n=2 upto 8:
+%    w[n]=w[1] rotatedaround ((0,0),45(n-1));
+%  endfor;
+%  drawoptions();
+%  label.urt(btex ${\pi \over 4}$ etex, w[2])withcolor blue;
+%  dotlabel.urt(btex ${\pi \over 2}$ etex,w[3]);
+%  label.ulft(btex ${3\pi \over 4}$ etex,w[4])withcolor blue;
+% dotlabel.llft(btex ${\pi}$ etex,w[5]);
+%  label.llft(btex $-{3\pi \over 4}$ etex,w[6])withcolor blue;
+%  label.llft(btex $-{\pi \over 2}$ etex,w[7]);
+%  label.lrt(btex $-{\pi \over 4}$ etex,w[8])withcolor blue;
+%  label.ulft(btex ${\sqrt{2} \over 2}$ etex,(sqrt(2)*u/2,0))withcolor blue;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(-sqrt(2)*u/2,0))withcolor blue;
+%  label.lrt(btex ${\sqrt{2} \over 2}$ etex,(0,sqrt(2)*u/2))withcolor blue ;
+%  label.urt(btex $-{\sqrt{2} \over 2}$ etex,(0,-sqrt(2)*u/2))withcolor blue;
+
+ endfig;
+
+
+
+
+end

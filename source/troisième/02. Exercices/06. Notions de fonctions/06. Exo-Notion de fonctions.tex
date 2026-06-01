@@ -1,0 +1,252 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+\pagestyle{empty}
+\newpage
+\section*{Notion de fonction}
+\addcontentsline{toc}{section}{Notion de fonction}
+
+\begin{ex}
+On considère le programme de calcul :
+
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{10cm}{|X|}
+\hline
+$\bullet$ Choisis un nombre ;\\
+$\bullet$ Multiplie le nombre choisi par lui même ;\\
+$\bullet$ Soustrais le triple du nombre choisi au produit obtenu.\\\hline
+\end{tabularx}
+
+\begin{enumerate}[font=\color{exer1}]
+\item En notant $x$ le nombre choisi au départ, détermine la fonction $f$ qui, à $x$, fait correspondre le résultat obtenu avec ce programme.
+\item Applique ce programme de calcul avec le nombre $-2$. Traduis ce calcul par une phrase contenant le mot \og image \fg{} puis par une égalité.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Traduis chacune des phrases suivantes par une correspondance de la forme $x \mapsto$ \dots
+\begin{enumerate}[font=\color{exer1}]
+\item Pour calculer l'image d'un nombre $x$, on le multiplie par 2 puis on ajoute $3$ au résultat.
+\item Pour calculer l'image d'un nombre $x$, on calcule son carré puis on soustrait $4$ au résultat.
+\item Pour calculer l'image d'un nombre $x$ non nul, on multiple l'inverse de ce nombre par $-9$.
+\item Pour calculer l'image d'un nombre $x$ non nul, on calcule la somme de ce nombre et de $3$ puis on divise le résultat par le nombre $x$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Traduis chaque phrase par une égalité.
+\begin{enumerate}[font=\color{exer1}]
+\item Par la fonction $g$, $-5,3$ est l'image de $6$.
+\item $2,5$ a pour image $4,2$ par la fonction $f$.
+\item L'image de $3$ par la fonction $h$ est $7$.
+\item Par la fonction $p$, $-4$ a pour image $– 6,5$.
+\item L'image de $5$ par la fonction $m$ est nulle.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Réalise le tableau de valeurs de la fonction $g$ telle que $g(x)=-3x^2+4$ pour les valeurs entières de $x$ comprises entre $-6$ et $6$.
+\end{ex}
+
+\begin{ex}
+Voici un tableau de valeurs correspondant à une fonction $g$.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{exer1!20}}p{1cm}|*{7}{>{\centering \arraybackslash}X|}}
+\hline
+$x$ & $-0,5$ & $-0,1$ & $0$ & $0,5$ & $1$ & $2$ & $8$\\\hline
+$g(x)$ & $0,5$ & $2$ & $1$ & $0,5$ & $2$ & $8$ & $128$\\\hline
+\end{tabularx}
+\end{center}
+Recopie et complète les égalités suivantes.
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{17cm}{*{6}{>{\arraybackslash}X}}
+\item $g(-0,1)= \dots ~\dots$ &
+\item $g(\dots ~\dots)=1$ &
+\item $g(0,5)=\dots ~\dots$ &
+\item $g(\dots ~\dots)=8$ &
+\item $g(8)=\dots ~\dots$ &
+\item $g(\dots ~\dots)=2$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+On considère la fonction $h$ définie par $h(x)=-5x^2+1$. Calcule.
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{6}{>{\arraybackslash}X}}
+\item $h(-2)$ &
+\item $h(2)$ &
+\item $h(10^2)$ &
+\item $h(4\sqrt{5})$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Soit un tableau de valeurs d'une fonction $f$.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{exer1!20}}p{1cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+$x$ & $-4$ & $-2$ & $-1$ & $1$ & $4$\\\hline
+$f(x)$ & $1$ & $2$ & $4$ & $-4$ & $-1$\\\hline
+\end{tabularx}
+\end{center}
+
+Dans chaque cas, indique d'après le tableau, l'antécédent du nombre donné par la fonction $f$.
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{6}{>{\arraybackslash}X}}
+\item $4$ &
+\item $2$ &
+\item $-4$ &
+\item $-1$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Ce graphique représente une fonction $k$.
+
+\vspace{-8mm}
+\noindent \begin{minipage}{10cm}
+
+\vspace{10mm}
+Recopie et complète le tableau suivant.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{exer1!20}}p{1cm}|*{4}{>{\centering \arraybackslash}X|}}
+\hline
+$x$ & $-1,25$ & & $-1$ & \\\hline
+$k(x)$ & & $1,5$ & & $1,25$\\\hline
+\end{tabularx}
+\end{center}
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.5cm,y=1.5cm,scale=1]
+\begin{axis}[x=1.5cm,y=1.5cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-1.6,xmax=1.6,ymin=-0.4,ymax=2.8,xtick={-1.5,-1.0,...,1.5},ytick={-0.0,0.5,...,2.5},]
+\clip(-1.6,-0.4) rectangle (1.6,2.8);
+\draw[line width=2.pt,color=blue,smooth,samples=100,domain=-1.6:1.6] plot(\x,{0.75*(\x)^(3)+1.5});
+\begin{scriptsize}
+\draw[color=blue] (-1.3,1) node {\large{$k$}};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\vspace{-3mm}
+\begin{ex}
+Soit un tableau de valeurs d'une fonction $f$.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{exer1!20}}p{1cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$ \\\hline
+$f(x)$ & $1$ & $-2$ & $-1,5$ & $2$ & $3$ \\\hline
+\end{tabularx}
+\end{center}
+Avec ce tableau de valeurs, construis la représentation graphique de la fonction $f$.
+\end{ex}
+
+\begin{ex}
+Ce graphique représente une fonction $h$.
+
+\vspace{-5mm}
+\begin{minipage}{8.5cm}
+
+\vspace{5mm}
+\begin{enumerate}[font=\color{exer1}]
+\item Quelle est l'image de $0$ par la fonction $h$ ?
+\item Quels nombres ont pour image $0$ par la fonction $h$ ?
+\item Donne une valeur approchée de :
+\begin{enumerate}[font=\color{exer1}]
+\item l'image de $4$ par la fonction $h$ ;
+\item l'image de $-3$ par la fonction $h$.
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\begin{axis}[x=1.3cm,y=1.0cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-2.3,xmax=2.3,ymin=-1.7,ymax=4.5,xtick={-2.0,-1.0,...,2.0},ytick={-1.0,0.0,...,4.0},]
+\clip(-2.3,-1.7) rectangle (2.3,4.5);
+\draw[line width=2.pt,color=blue,smooth,samples=100,domain=-2.3:2.3] plot(\x,{((\x)+1)*((\x)-1)});
+\begin{scriptsize}
+\draw[color=blue] (-1.5,3.5) node {\large{$h$}};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\vspace{-5mm}
+\begin{ex}
+Une station a mesuré la hauteur des marées le $20$ \\décembre $2011$ à Saint-Malo. On obtient le graphique suivant.
+
+\begin{minipage}{8cm}
+\begin{center}
+\includegraphics[scale=0.5]{06. Exo-Notion de fonction 1.png}
+\end{center}
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{enumerate}[font=\color{exer1}]
+\item Décris par une phrase la fonction $M$ représentée sur ce graphique.
+\item A quelle heure, la marée a-t-elle été la plus haute ? La plus basse ? Traduis chaque réponse par une égalité du type \og $M(\dots ~\dots)= \dots ~\dots$ \fg{}.
+\item A quelle(s) heure(s), la marée a été à $6$m ? 
+
+Traduis ta réponse par une phrase avec le langage des fonctions.
+\item Quelle est la hauteur d'eau à $5$h ?
+\end{enumerate}
+\end{minipage}
+
+\begin{enumerate}[font=\color{exer1}]
+\setcounter{enumi}{4}
+\item Un navire a un tirant d'eau de $6$m. Dans quelle(s) tranche(s) horaire(s), peut-il manœuvrer à Saint-Malo sachant qu'il lui faut une marge de $2$m pour ne pas toucher le fond. (Tirant d'eau hauteur de la partie immergée du bateau.)
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Dans chaque cas, explique pourquoi il n'existe pas de fonction qui, à $x$, associe $y$.
+\begin{enumerate}[font=\color{exer1}]
+\begin{minipage}{8cm}
+\item
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{exer1!20}}p{1cm}|*{6}{>{\centering \arraybackslash}X|}}
+\hline
+$x$ & $-2$ & $1$ & $0$ & $2$ & $-1$ & $1$ \\\hline
+$y$ & $-4$ & $3$ & $-3$ & $5$ & $2$ & $4$ \\\hline
+\end{tabularx}
+\end{center}
+\end{minipage}
+\begin{minipage}{8cm}
+\item
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{axis}[x=1.0cm,y=1.0cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-2.4,xmax=2.4,ymin=-1.6,ymax=1.6,xtick={-2,-1,0,1,2},ytick={-1,0,1},]
+\clip(-2.4,-1.6) rectangle (2.4,1.6);
+\draw [rotate around={0.:(0.,0.)},line width=2.pt,color=blue] (0.,0.) ellipse (2.23606797749979cm and 1.4142135623730951cm);
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+
+\end{ex}
+\end{document}

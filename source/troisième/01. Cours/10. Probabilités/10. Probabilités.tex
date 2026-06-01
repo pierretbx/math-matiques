@@ -1,0 +1,223 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{9}
+\chapter{Probabilités}
+
+\section{Expériences aléatoire}
+
+\begin{ex}
+\begin{enumerate}
+\item On lance \href{https://fr.piliapp.com/random/coin/}{une pièce de monnaie} et on regarde la face supérieure.
+\item On lance \href{https://fr.piliapp.com/random/dice/}{un dé à six faces} et on regarde le nombre de points inscrits sur la face du dessus.
+\item On fait tourner \href{https://fr.piliapp.com/random/wheel/}{une roue marquée} sur ses secteurs de couleurs différentes et on regarde le secteur marqué.
+\end{enumerate}
+\end{ex}
+
+\begin{defn}
+Une expérience (lancé un dé par exemple) est aléatoire lorsqu'elle a plusieurs résultats (pile ou face) et \textbf{que l'on ne peut pas prévoir, à priori, quel résultat se produira .}
+
+\medskip
+\noindent Les résultats possibles d'une expérience s'appelle des issues.
+\end{defn}
+
+\begin{ex}
+On s'intéresse aux situations décrites dans l'\textbf{Exemple 1}.
+
+\medskip \noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{ex}
+
+\section{Vocabulaire}
+
+\begin{defn}
+Un évènement est constitué par plusieurs issues d'une même expérience aléatoire .
+\end{defn}
+
+\begin{ex}
+Lors du lancer d'un \href{https://fr.piliapp.com/random/dice/}{dé équilibré à six faces}, on étudie l'événement « obtenir un nombre pair ».
+
+\medskip
+\noindent Cet événement est réalisé par les issues : $2$ ; $4$ et $6$.
+\end{ex}
+
+\begin{rem}
+Un événement élémentaire est un événement réalisé par une seule issue.
+\end{rem}
+
+\begin{ex}
+Toujours lors du lancer du dé décrit ci-dessus, citons un événement élémentaire ...
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+... et un événement qui n'est pas élémentaire.
+
+\medskip \noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{ex}
+
+\begin{defn}
+L'événement contraire d'un événement $A$, noté $\overline{A}$, est celui qui se réalise lorsque l'événement $A$ n'a pas lieu.
+\end{defn}
+
+\begin{ex} Lors du lancer du dé précédemment décrit, on considère l'événement $A$ : \og Obtenir un multiple de 3 \fg{}
+
+\medskip
+\noindent Il est réalisé \dotfill
+
+\medskip
+\noindent L'événement contraire à $A$, noté $\overline{A}$ est \dotfill
+
+\medskip
+\noindent Il est réalisé \dotfill
+\end{ex}
+
+\section{Notion de probabilité}
+
+\begin{defn}
+Lorsque l'on effectue un très grand nombre de fois une expérience aléatoire (de façon indépendante et dans les mêmes conditions), la fréquence de réalisation d'un événement, se rapproche d'un nombre que l'on appelle probabilité de cet événement.
+\end{defn}
+
+\begin{ex}
+Soit $A$ l'événement \href{https://fr.piliapp.com/random/coin/}{\og j'obtiens pile au lancer d'une pièce de monnaie \fg{}}.
+
+\medskip
+\noindent La probabilité pour que $A$ se réalise est \dotfill
+
+\medskip
+\noindent On note : \dotfill
+\end{ex}
+
+\begin{prop}
+La probabilité d'un évènement est un nombre compris entre $0$ et $1$ qui exprime « la chance qu'a un évènement de se produire ».
+\end{prop}
+
+\begin{ex}
+Dire que la probabilité d'un évènement est de $0,8$ signifie que cet évènement a $8$ chances sur $10$ ou $80 \%$ de chance de se produire.
+\end{ex}
+
+\begin{rem}
+\begin{enumerate}
+\item[•] Un événement est impossible lorsqu'il ne peut pas se produire.
+
+\noindent La probabilité d'un événement impossible est égale à $0$.
+\item[•] Un événement est certain lorsqu'il se réalise toujours.
+
+\noindent La probabilité d'un événement certain est égale à $1$.
+\end{enumerate}
+\end{rem}
+
+\begin{prop}
+La somme des probabilités de tous les événements élémentaires est égale à 1.
+\end{prop}
+
+\begin{prop}
+Soit $A$ un événement, on note $\overline{A}$ son événement contraire. Nous avons : $$p(\overline{A}) = 1 - p(A)$$
+\end{prop}
+
+\begin{ex}
+On tourne une \href{https://fr.piliapp.com/random/wheel/}{roue bien équilibrée}. Notons l'évènement $A$ : \og Le chiffre $1$ sort \fg{}. 
+
+\noindent Déterminons la probabilités de $A$ et de $\overline{A}$.
+
+\medskip \noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{ex}
+
+\section{Équiprobabilité}
+
+\begin{defn}
+Si tous les événements élémentaires ont la même probabilité d'être réalisés, on dit qu'il y a équiprobabilité.
+\end{defn}
+
+\begin{prop}
+Dans une situation d'équiprobabilité, la probabilité d'un événement est égale au quotient du nombre d'issues favorables par le nombre d'issues possibles.
+$$\textrm{Probabilité d'un évènement A} \quad = \quad \dfrac{\textrm{Nombre d'issues favorables à }A}{\textrm{Nombre total d'issues}}$$
+\end{prop}
+
+\begin{ex}
+On lance \href{https://fr.piliapp.com/random/dice/}{un dé équilibré à $6$ faces}. Quelle est la probabilité de l'événement $A$ : \og obtenir un multiple de $3$ ou de $5$ \fg{} ?
+
+\medskip
+\noindent $A$ est réalisé par les issues $3$, $5$ ou $6$ et la situation étant équiprobable, chaque face à $1$ chance sur $6$ de sortir.
+
+\medskip \noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{ex}
+
+\section{Représentation des événements} 
+
+\noindent \begin{minipage}{8cm}
+\noindent \textbf{Arbres des possibles}
+
+On lance une pièce de monnaie trois fois de suite, on peut schématiser cette expérience par un arbre :
+
+\begin{center}
+% Racine à Gauche, développement vers la droite
+\begin{tikzpicture}[xscale=1,yscale=1,scale=0.6]
+% Styles (MODIFIABLES)
+\tikzstyle{fleche}=[-,>=latex,thick]
+\tikzstyle{noeud}=[fill=white]
+\tikzstyle{feuille}=[fill=white]
+\tikzstyle{etiquette}=[midway,above]
+\tikzstyle{etiquette1}=[midway,below]
+% Dimensions (MODIFIABLES)
+\def\DistanceInterNiveaux{2}
+\def\DistanceInterFeuilles{1}
+% Dimensions calculées (NON MODIFIABLES)
+\def\NiveauA{(0)*\DistanceInterNiveaux}
+\def\NiveauB{(1.6666666666666665)*\DistanceInterNiveaux}
+\def\NiveauC{(3)*\DistanceInterNiveaux}
+\def\NiveauD{(4)*\DistanceInterNiveaux}
+\def\InterFeuilles{(-1)*\DistanceInterFeuilles}
+% Noeuds (MODIFIABLES : Styles et Coefficients d'InterFeuilles)
+\node[noeud] (R) at ({\NiveauA},{(3.5)*\InterFeuilles}) {};
+\node[noeud] (Ra) at ({\NiveauB},{(1.5)*\InterFeuilles}) {\large{$P$}};
+\node[noeud] (Raa) at ({\NiveauC},{(0.5)*\InterFeuilles}) {\large{$P$}};
+%\node[feuille] (Raaa) at ({\NiveauD},{(0)*\InterFeuilles}) {\large{$P$}};
+%\node[feuille] (Raab) at ({\NiveauD},{(1)*\InterFeuilles}) {\large{$F$}};
+\node[noeud] (Rab) at ({\NiveauC},{(2.5)*\InterFeuilles}) {\large{$F$}};
+%\node[feuille] (Raba) at ({\NiveauD},{(2)*\InterFeuilles}) {\large{$P$}};
+%\node[feuille] (Rabb) at ({\NiveauD},{(3)*\InterFeuilles}) {\large{$F$}};
+\node[noeud] (Rb) at ({\NiveauB},{(5.5)*\InterFeuilles}) {\large{$F$}};
+\node[noeud] (Rba) at ({\NiveauC},{(4.5)*\InterFeuilles}) {\large{$P$}};
+%\node[feuille] (Rbaa) at ({\NiveauD},{(4)*\InterFeuilles}) {\large{$P$}};
+%\node[feuille] (Rbab) at ({\NiveauD},{(5)*\InterFeuilles}) {\large{$F$}};
+\node[noeud] (Rbb) at ({\NiveauC},{(6.5)*\InterFeuilles}) {\large{$F$}};
+%\node[feuille] (Rbba) at ({\NiveauD},{(6)*\InterFeuilles}) {\large{$P$}};
+%\node[feuille] (Rbbb) at ({\NiveauD},{(7)*\InterFeuilles}) {\large{$F$}};
+% Arcs (MODIFIABLES : Styles)
+\draw[fleche] (R)--(Ra);
+\draw[fleche] (Ra)--(Raa);
+%\draw[fleche] (Raa)--(Raaa);
+%\draw[fleche] (Raa)--(Raab);
+\draw[fleche] (Ra)--(Rab);
+%\draw[fleche] (Rab)--(Raba);
+%\draw[fleche] (Rab)--(Rabb);
+\draw[fleche] (R)--(Rb);
+\draw[fleche] (Rb)--(Rba);
+%\draw[fleche] (Rba)--(Rbaa);
+%\draw[fleche] (Rba)--(Rbab);
+\draw[fleche] (Rb)--(Rbb);
+%\draw[fleche] (Rbb)--(Rbba);
+%\draw[fleche] (Rbb)--(Rbbb);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{6.8cm}
+\textbf{Tableaux à doubles entrées}
+
+On jette deux dés à quatre faces (tétraèdre régulier) et on regarde le résultat obtenu :
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|*{5}{c|}}
+\hline 
+\rowcolor{lightgray!50}& \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\\hline
+\cellcolor{lightgray!50}{\textbf{1}} & $\left\lbrace 1; 1 \right\rbrace$ & $\left\lbrace 2 ; 1 \right\rbrace$ & $\left\lbrace 3 ; 1 \right\rbrace$ & $\left\lbrace 4 ; 1 \right\rbrace$ \\\hline
+\cellcolor{lightgray!50}{\textbf{2}} & $\left\lbrace 1; 2 \right\rbrace$ & $\left\lbrace 2 ; 2 \right\rbrace$ & $\left\lbrace 2 ; 3 \right\rbrace$ & $\left\lbrace 2 ; 4 \right\rbrace$ \\\hline 
+\cellcolor{lightgray!50}{\textbf{3}} & $\left\lbrace 3 ; 1 \right\rbrace$ & $\left\lbrace 3 ; 2 \right\rbrace$ & $\left\lbrace 3 ; 3 \right\rbrace$ & $\left\lbrace 3 ; 4 \right\rbrace$ \\\hline 
+\cellcolor{lightgray!50}{\textbf{4}} & $\left\lbrace 4 ; 1 \right\rbrace$ & $\left\lbrace 4 ; 2 \right\rbrace$ & $\left\lbrace 4 ; 3 \right\rbrace$ & $\left\lbrace 4 ; 4 \right\rbrace$ \\\hline 
+\end{tabular}
+\end{center}
+\end{minipage}
+
+\end{document}

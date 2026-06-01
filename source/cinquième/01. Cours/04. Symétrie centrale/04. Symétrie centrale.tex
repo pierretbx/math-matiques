@@ -1,0 +1,324 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+
+\newpage
+\setcounter{chapter}{3}
+\chapter{Symétrie centrale}
+
+\vspace{-2mm}
+\section{Symétrie axiale, rappel}
+
+\vspace{-2mm}
+\subsection{Aspect graphique de la symétrie}
+
+\vspace{-15mm}
+\noindent \begin{minipage}[b]{10.5cm}
+\begin{defn}
+Deux figures sont symétriques par rapport à une droite (d) si elles se superposent parfaitement par pliage suivant cette droite.
+\end{defn}
+\end{minipage}
+\begin{minipage}[b]{6cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.4]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (1.5,3.5) grid (10.5,11.5);
+\clip(1.5,3.5) rectangle (10.5,11.5);
+\fill[line width=1.2pt,color=blue,fill=blue,fill opacity=0.2] (2.,10.) -- (5.,10.) -- (5.,9.) -- (3.,9.) -- (3.,8.) -- (4.,8.) -- (4.,7.) -- (3.,7.) -- (3.,5.) -- (2.,5.) -- cycle;
+\fill[line width=1.2pt,color=red,fill=red,fill opacity=0.15000000596046448] (7.,10.) -- (10.,10.) -- (10.,5.) -- (9.,5.) -- (9.,7.) -- (8.,7.) -- (8.,8.) -- (9.,8.) -- (9.,9.) -- (7.,9.) -- cycle;
+\draw [line width=1.2pt,color=blue] (2.,10.)-- (5.,10.);
+\draw [line width=1.2pt,color=blue] (5.,10.)-- (5.,9.);
+\draw [line width=1.2pt,color=blue] (5.,9.)-- (3.,9.);
+\draw [line width=1.2pt,color=blue] (3.,9.)-- (3.,8.);
+\draw [line width=1.2pt,color=blue] (3.,8.)-- (4.,8.);
+\draw [line width=1.2pt,color=blue] (4.,8.)-- (4.,7.);
+\draw [line width=1.2pt,color=blue] (4.,7.)-- (3.,7.);
+\draw [line width=1.2pt,color=blue] (3.,7.)-- (3.,5.);
+\draw [line width=1.2pt,color=blue] (3.,5.)-- (2.,5.);
+\draw [line width=1.2pt,color=blue] (2.,5.)-- (2.,10.);
+\draw [line width=1.2pt,color=red] (7.,10.)-- (10.,10.);
+\draw [line width=1.2pt,color=red] (10.,10.)-- (10.,5.);
+\draw [line width=1.2pt,color=red] (10.,5.)-- (9.,5.);
+\draw [line width=1.2pt,color=red] (9.,5.)-- (9.,7.);
+\draw [line width=1.2pt,color=red] (9.,7.)-- (8.,7.);
+\draw [line width=1.2pt,color=red] (8.,7.)-- (8.,8.);
+\draw [line width=1.2pt,color=red] (8.,8.)-- (9.,8.);
+\draw [line width=1.2pt,color=red] (9.,8.)-- (9.,9.);
+\draw [line width=1.2pt,color=red] (9.,9.)-- (7.,9.);
+\draw [line width=1.2pt,color=red] (7.,9.)-- (7.,10.);
+\draw [line width=1pt] (6.,3.5) -- (6.,11.5);
+\begin{scriptsize}
+\draw[color=black] (6.8,10.7) node {\large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\noindent \begin{minipage}{10.5cm}
+\begin{defn}
+Le symétrique d'un point $A$ par rapport à une droite $(d)$ est le point $M$ tel que la droite $(d)$ soit la médiatrice du segment $[AM]$ :
+\begin{enumerate}
+\item[•] $(d)$ soit la perpendiculaire au segment $[AM]$
+\item[•] la droite $(d)$ coupe le segment $[AM]$ en son milieu.
+\end{enumerate}
+\end{defn}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(-2.,-1.) rectangle (5.,4.);
+\draw [line width=1.2pt,color=red,domain=-2.:5.] plot(\x,{(-11.7914--5.96*\x)/-1.62});
+\draw[line width=1.2pt,color=purple,fill=purple,fill opacity=0.1] (2.1894095887962464,0.8412824721224696) -- (2.0781271166737767,1.2506920609187162) -- (1.6687175278775301,1.1394095887962465) -- (1.78,0.73) -- cycle; 
+\draw [line width=1.2pt] (-1.2,-0.08)-- (1.78,0.73);
+\draw [line width=1.2pt] (0.2102751809805625,0.42768375349741516) -- (0.27322605351256357,0.1960867162809177);
+\draw [line width=1.2pt] (0.30677394648743644,0.4539132837190823) -- (0.36972481901943755,0.22231624650258483);
+\draw [line width=1.2pt] (1.78,0.73)-- (4.76,1.54);
+\draw [line width=1.2pt] (3.1902751809805627,1.2376837534974152) -- (3.2532260535125634,1.0060867162809177);
+\draw [line width=1.2pt] (3.2867739464874366,1.2639132837190823) -- (3.3497248190194377,1.0323162465025848);
+\begin{scriptsize}
+\draw [color=blue] (-1.2,-0.08)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (-1.46,0.51) node {\large{$A$}};
+\draw [color=blue] (4.76,1.54)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (4.74,2.29) node {\large{$M$}};
+\draw[color=red] (1.54,3.33) node {\large{$(d)$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-2mm}
+\begin{meth}[Tracer du symétrique d'un point]
+
+\vspace{-8mm}
+\noindent \renewcommand{\arraystretch}{1.5}\begin{tabular}{p{5cm}|p{6cm}|p{4.5cm}}
+\arrayrulecolor{white}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.35]
+\clip(1.5,3.5) rectangle (12.5,11.5);
+\draw [line width=1.2pt,color=red,domain=1.5:12.5] plot(\x,{(--66.-4.*\x)/6.});
+\draw [shift={(8.,9.)},line width=1.2pt,color=orange]  plot[domain=2.755129533827375:5.5605616990494635,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\draw [shift={(9.923076923076923,4.384615384615385)},line width=1.2pt,color=blue]  plot[domain=3.054787968479363:3.2195592874213355,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\draw [shift={(3.,9.)},line width=1.2pt,color=blue]  plot[domain=4.969097310818075:5.195925467410262,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\coordinate (A) at (8,9) ;
+\coordinate (B) at (1.73,5.5) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw[color=red] (2.5,11) node {\Large{$(d)$}};
+\draw [color=black] (8.,9.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (8.3,9.7) node {\Large{$P$}};
+%\draw [color=purple] (4.923076923076923,4.384615384615385)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=purple] (4.444245610375904,4.981959720679335) node {\Large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.35]
+\clip(1.5,3.5) rectangle (12.5,11.5);
+\draw [line width=1.2pt,color=red,domain=1.5:12.5] plot(\x,{(--66.-4.*\x)/6.});
+\draw [shift={(8.,9.)},line width=1.2pt,dash pattern=on 3pt off 3pt]  plot[domain=2.755129533827375:5.5605616990494635,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(9.923076923076923,4.384615384615385)},line width=1.2pt,color=blue]  plot[domain=3.054787968479363:3.2195592874213355,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(3.,9.)},line width=1.2pt,color=blue]  plot[domain=4.969097310818075:5.195925467410262,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\coordinate (A) at (3,9) ;
+\coordinate (B) at (5.5,2.2) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw[color=red] (2.5,11) node {\Large{$(d)$}};
+\draw [color=black] (8.,9.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (8.3,9.7) node {\Large{$P$}};
+%\draw [color=purple] (4.923076923076923,4.384615384615385)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=purple] (4.444245610375904,4.981959720679335) node {\Large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.35]
+\clip(1.5,3.5) rectangle (12.5,11.5);
+\draw [line width=1.2pt,color=red,domain=1.5:12.5] plot(\x,{(--66.-4.*\x)/6.});
+\draw [shift={(8.,9.)},line width=1.2pt,dash pattern=on 3pt off 3pt]  plot[domain=2.755129533827375:5.5605616990494635,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(9.923076923076923,4.384615384615385)},line width=1.2pt,color=blue]  plot[domain=3.054787968479363:3.2195592874213355,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(3.,9.)},line width=1.2pt,color=blue]  plot[domain=4.969097310818075:5.195925467410262,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\coordinate (A) at (6.66,4.12) ;
+%\coordinate (B) at (1.6,12.5) ;
+%\Compas{A}{B}
+\begin{scriptsize}
+\draw[color=red] (2.5,11) node {\Large{$(d)$}};
+\draw [color=black] (8.,9.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (8.3,9.7) node {\Large{$P$}};
+\draw [color=purple] (4.923076923076923,4.384615384615385)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=purple] (4,4.981959720679335) node {\Large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}\\\arrayrulecolor{lightgray}
+On trace un \textcolor{orange}{arc de cercle de centre $P$} qui coupe l'axe en deux points. & De l'autre coté de la droite $(d)$, on trace \textcolor{blue}{deux arcs de cercle} de même rayon et de centres les deux points précédents. & Ces deux arcs se coupent en un point qui est le point \textcolor{purple}{$S$}.
+\end{tabular}
+\end{meth}
+
+\vspace{-2mm}
+\begin{prop}
+Le symétrie par rapport à une droite $(d)$ conserve les propriétés des figures (alignement, parallélisme, perpendicularité, longueurs, angles, aires, ...)
+
+\medskip
+\noindent La symétrique d'un point qui appartient à l'axe de symétrie $(d)$ est lui-même. On dit que ce point est invariant.
+\end{prop}
+
+\vspace{-2mm}
+\subsection{La médiatrice}
+
+\begin{defn}
+La médiatrice d'un segment est la droite perpendiculaire à ce segment et passant par son milieu
+\end{defn}
+
+\begin{rem}
+
+\vspace{-4.5mm} \hspace{3cm}La médiatrice d'un segment est un axe de symétrie de ce segment.
+\end{rem}
+
+\begin{prop}
+Si un point appartient à la médiatrice d'un segment, alors il est à égale distance des extrémités de ce segment.
+\end{prop}
+
+\begin{prop}
+Si un point est à égale distance des extrémités d'un segment, alors il appartient à la médiatrice du segment
+\end{prop}
+
+\section{La symétrie centrale}
+
+\vspace{-2mm}
+\subsection{Symétrique d'une figure}
+
+\vspace{-2mm}
+\begin{defn}
+Deux figures sont symétriques par rapport à un point si ces deux figures se superposent lorsqu'on effectue un demi tour autour de ce point. Ce point est le \textbf{centre de symétrie}
+\end{defn}
+
+\vspace{-2mm}
+\subsection{Symétrique d'un point}
+
+\vspace{-7mm}
+\noindent \begin{minipage}{10.5cm}
+\begin{defn}
+Le symétrique d'un point $M$ par rapport a un point $O$ est le point $M'$ tel que le point $O$ est le milieu du segment $[MM']$
+\end{defn}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\clip(-2.,-0.5) rectangle (5.,2.5);
+\draw [line width=1.2pt] (-1.2,-0.08)-- (1.78,0.73);
+\draw [line width=1.2pt] (0.2102751809805625,0.42768375349741516) -- (0.27322605351256357,0.1960867162809177);
+\draw [line width=1.2pt] (0.30677394648743644,0.4539132837190823) -- (0.36972481901943755,0.22231624650258483);
+\draw [line width=1.2pt] (1.78,0.73)-- (4.76,1.54);
+\draw [line width=1.2pt] (3.1902751809805627,1.2376837534974152) -- (3.2532260535125634,1.0060867162809177);
+\draw [line width=1.2pt] (3.2867739464874366,1.2639132837190823) -- (3.3497248190194377,1.0323162465025848);
+\begin{scriptsize}
+\draw [color=blue] (-1.2,-0.08)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (-1.46,0.51) node {\large{$A$}};
+\draw [color=blue] (4.76,1.54)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (4.74,2.29) node {\large{$M$}};
+\draw[color=red] (1.78,0.73)-- ++(-3.0pt,-3.0pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=red] (1.92,1.3) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-2mm}
+\section{Propriétés de la symétrie centrale}
+
+\vspace{-2mm}
+\subsection{Figures simple}
+
+\vspace{-16mm}
+\noindent \begin{minipage}{12cm}
+\begin{prop}
+Par la symétrie centrale, le symétrique d'une droite est une droite parallèle.
+\end{prop}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-3.5,0.) rectangle (2.,6.);
+\draw [line width=1.2pt,domain=-3.5:2.] plot(\x,{(--16.108--1.4*\x)/3.44});
+\begin{scriptsize}
+\draw [color=red] (-0.96,2.7)-- ++(-3pt,-3pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=red] (-1.4,2.47) node {\large{$O$}};
+\draw [color=blue] (-2.66,3.6)-- ++(-2.5pt,-2.5pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (-2.98,4.21) node {\large{$A$}};
+\draw [color=blue] (0.78,5.)-- ++(-2.5pt,-2.5pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (0.94,5.67) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-12mm}
+\noindent \begin{minipage}{7cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-3.5,0.) rectangle (2.,6.);
+\draw [line width=1.2pt] (-2.66,3.6)-- (0.78,5.);
+\begin{scriptsize}
+\draw [color=red] (0.5,3.2)-- ++(-3pt,-3pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=red] (1,2.7) node {\large{$O$}};
+\draw [color=blue] (-2.66,3.6)-- ++(-2.5pt,-2.5pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (-2.98,4.21) node {\large{$A$}};
+\draw [color=blue] (0.78,5.)-- ++(-2.5pt,-2.5pt) -- ++(6.0pt,6.0pt) ++(-6.0pt,0) -- ++(6.0pt,-6.0pt);
+\draw[color=blue] (0.94,5.67) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{9.5cm}
+\begin{prop}
+Par la symétrie centrale, le symétrique d'un segment est un segment de même longueur
+\end{prop}
+\end{minipage}
+
+\vspace{-10mm}
+\noindent \begin{minipage}{11cm}
+\begin{prop}
+Par la symétrie centrale, le symétrique d'un cercle est un cercle de même rayon.
+\end{prop}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(-4.5,0.) rectangle (4.,6.);
+\draw [line width=1.2pt,dash pattern=on 4pt off 4pt] (-2.66,3.6)-- (-3.02,5.12);
+\draw [line width=1.2pt] (-2.66,3.6) circle (1.5620499351813306cm);
+\begin{scriptsize}
+\draw [color=red] (-0.14,3.3)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=red] (-0.58,3.07) node {\large{$O$}};
+\draw [color=blue] (-2.66,3.6)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=blue] (-3.2,3.83) node {\large{$A$}};
+\draw [color=blue] (-3.02,5.12)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=blue] (-2.86,5.6) node {\large{$B$}};
+\draw[color=black] (-4.2,4.71) node {\large{$\mathcal{C}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-10mm}
+\subsection{Propriétés de conservation}
+
+\begin{prop}
+La symétrie par rapport au point $O$ conserve les propriétés des figures (alignement, parallélisme, perpendicularité, longueurs, angles, aires, ...)
+
+\medskip
+\noindent Le centre $O$ de la symétrie est le seul point qui a pour symétrique lui-même. On dit que ce point est invariant.
+\end{prop}
+
+\vspace{-3mm}
+\section{Centre de symétrie}
+
+\vspace{-2mm}
+\begin{defn}
+Une figure possède un centre de symétrie si son symétrique par rapport à ce centre est la figure elle-même.
+\end{defn}
+
+\vspace{-2mm}
+\begin{defn}
+Paver un plan, c'est recouvrir une surface à l'aide de plusieurs motifs identiques ou différent.
+\end{defn}
+\end{document}

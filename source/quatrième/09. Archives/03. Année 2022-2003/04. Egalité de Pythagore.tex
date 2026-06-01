@@ -1,0 +1,201 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{3}
+\chapter{Égalité de Pythagore}
+
+\section{Vocabulaire}
+
+\begin{dft}
+Dans un triangle rectangle, l'hypoténuse est le \dotfill
+
+\medskip
+\noindent \dotfill
+\end{dft}
+
+\begin{ex}
+Sur le dessin suivant :
+
+\vspace{-8mm}
+\noindent \begin{minipage}{10cm}
+\vspace{5mm}
+\begin{enumerate}
+\item[•] le triangle$ ABC$ est \dotfill\medskip
+\item[•] le côté $[BC]$ est \dotfill
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,1.5) rectangle (5.5,5.5);
+%\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.4242640687119286,2.) -- (1.4242640687119286,2.4242640687119286) -- (1.,2.4242640687119286) -- (1.,2.) -- cycle; 
+\draw [line width=1.2pt] (1.,5.)-- (1.,2.);
+\draw [line width=1.2pt] (1.,2.)-- (5.,2.);
+\draw [line width=1.2pt] (5.,2.)-- (1.,5.);
+\begin{scriptsize}
+\draw [color=blue] (1.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.64,5.1) node {\large{$B$}};
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.66,1.83) node {\large{$A$}};
+\draw [color=blue] (5.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.3,1.85) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\vspace{-5mm}
+\section{Propriété du triangle rectangle}
+
+\begin{prop}[Théorème de Pythagore]
+Si un triangle est rectangle, alors le carré de \dotfill
+
+\medskip
+\noindent \dotfill
+\end{prop}
+
+\begin{ex}
+
+\begin{minipage}{10cm}
+Le triangle $ABC$ est rectangle en $A$.
+
+\noindent L'hypoténuse de ce triangle est le côté $[BC]$, on a donc l'égalité :
+
+\medskip\medskip\medskip\medskip
+\noindent \dotfill
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,1.5) rectangle (5.5,5.5);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.4242640687119286,2.) -- (1.4242640687119286,2.4242640687119286) -- (1.,2.4242640687119286) -- (1.,2.) -- cycle; 
+\draw [line width=1.2pt] (1.,5.)-- (1.,2.);
+\draw [line width=1.2pt] (1.,2.)-- (5.,2.);
+\draw [line width=1.2pt] (5.,2.)-- (1.,5.);
+\begin{scriptsize}
+\draw [color=blue] (1.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.64,5.1) node {\large{$B$}};
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.66,1.83) node {\large{$A$}};
+\draw [color=blue] (5.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.3,1.85) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\begin{voc}
+Dans le triangle $ABC$ rectangle en $A$, l'égalité \dotfill
+
+\medskip
+\noindent \dotfill
+\end{voc}
+
+\begin{rmq}
+Dans un triangle rectangle, l'égalité de Pythagore permet de calculer la longueur d'un côté connaissant les longueurs des deux autres côtés.
+\end{rmq}
+
+\begin{ex}
+Le triangle $EFG$ est rectangle en $E$, donc on a l'égalité de Pythagore :
+
+\noindent \begin{minipage}{7cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.9]
+\clip(-1,1.5) rectangle (5.5,5.5);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.1] (1.4242640687119286,2.) -- (1.4242640687119286,2.4242640687119286) -- (1.,2.4242640687119286) -- (1.,2.) -- cycle; 
+\draw [line width=1.2pt] (1.,5.)-- (1.,2.);
+\draw [line width=1.2pt] (1.,2.)-- (5.,2.);
+\draw [line width=1.2pt] (5.,2.)-- (1.,5.);
+\begin{scriptsize}
+\draw [color=blue] (1.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.64,5.1) node {\large{$G$}};
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.66,1.83) node {\large{$E$}};
+\draw [color=blue] (5.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.3,1.85) node {\large{$F$}};
+\draw[color=black] (0.2,3.5) node {\large{$3.5$cm}};
+\draw[color=black] (3.2,1.7) node {\large{$4$cm}};
+\draw[color=black] (3.5,4) node {\large{$?$  cm}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{9.6cm}
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{minipage}
+\end{ex}
+
+\section{Comment reconnaître un triangle rectangle}
+
+\begin{prop}[Réciproque du théorème de Pythagore]
+Pour déterminer si un triangle est rectangle ou non, on compare le carré de la longueur de son plus grand côté avec la somme des carrés des longueurs de ses deux autres côtés.
+\begin{enumerate}
+\item[•]Si ces deux nombres sont égaux, on a l'égalité de Pythagore, donc le triangle est rectangle.
+\item[•]Sinon, on n'a pas l'égalité de Pythagore, donc le triangle n'est pas rectangle.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+On veut savoir si le triangle $NOP$ est rectangle.
+
+\noindent \begin{minipage}{7cm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-0.7,1.) rectangle (5.7,5.7);
+\draw [line width=1.2pt] (1.,5.)-- (-0.1,1.56);
+\draw [line width=1.2pt] (-0.1,1.56)-- (5.,2.);
+\draw [line width=1.2pt] (5.,2.)-- (1.,5.);
+\begin{scriptsize}
+\draw [color=blue] (1.,5.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.64,5.1) node {\large{$B$}};
+\draw [color=blue] (-0.1,1.56)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (-0.44,1.39) node {\large{$A$}};
+\draw[color=black] (0.1,3.55) node {\large{$5$cm}};
+\draw [color=blue] (5.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.42,1.85) node {\large{$C$}};
+\draw[color=black] (2.52,1.4) node {\large{$8$cm}};
+\draw[color=black] (3.24,3.93) node {\large{$7$cm}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{9.6cm}
+\noindent\grandscarreaux{\linewidth}{4cm}
+\end{minipage}
+\end{ex}
+
+\section{Racine carrée d'un nombre}
+
+\begin{dft}
+$\sqrt{a}$ est le nombre positif qui a pour carré $a$.
+\end{dft}
+
+\medskip
+\noindent $a$ est un carré, donc un nombre positif, ainsi $\sqrt{-5}$ n'existe pas.
+\medskip
+
+\noindent Quelques valeurs exactes à connaître :
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{|>{\columncolor{lightgray!50}}p{2cm}|*{13}{>{\centering \arraybackslash}X|}}
+\hline
+$a$&0&1&4&9&16&25&36&49&64&81&100&121&144\\\hline
+$\sqrt{a}$&0&1&2&3&4&5&6&7&8&9&10&11&12\\\hline
+\end{tabularx}
+\end{center}
+
+\begin{rmq}
+Tous les nombres $a$ figurant dans ce tableau sont des carrés parfaits. Plus généralement, on appellera carré parfait les nombres dont la racine carrée est un entier.
+
+\medskip
+\noindent Mais une racine carrée ne peut pas toujours s'écrire sous forme d'un entier, d'un décimal ou d'une fraction.
+\end{rmq}
+
+\end{document}

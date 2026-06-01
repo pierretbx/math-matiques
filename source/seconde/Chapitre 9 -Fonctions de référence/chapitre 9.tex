@@ -1,0 +1,414 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots,pgfkeys}
+
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+\pgfplotsset{compat=newest}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+ \setcounter{chapter}{8}
+\chapter{Fonctions de référence}
+\textit{Nous allons voir quelques fonctions dites de référence, elles sont appelées ainsi car on les rencontre souvent en mathématique. On essayera le plus possible de donner un sens et une interprétation géométrique à ces fonctions de référence. } \\
+
+Dans la suite pour chaque fonction, voici la manière dont on va procéder.\\
+
+On donnera d'abord une interprétation géométrique dans le cas de nombres positifs ou strictement positifs, on définira alors un ensemble de définition, son expression algébrique, une représentation graphique, et on terminera par ses variations. 
+
+\section{La fonction carré}
+Soit un carré $c$ de coté $x$, où $x \in \mathbb{R}_+^*$. Calculer l'aire de $c$.
+La fonction carré fait correspondre à la longueur du coté d'un carré \underline{son aire}.
+
+\begin{defn}
+La fonction carré est la fonction $f$ qui à tout $x \mathbb{R}$ lui associe son carré $x^2$, son expression algébrique est donnée par $f(x)=x^2$.\\
+\end{defn}
+
+\underline{Remarque} : l'interprétation géométrique de cette fonction se limite à des nombres positif.\\
+
+Une représentation graphique de la fonction $f(x)=x^2$:
+\begin{center}
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-8.825997451899342,
+xmax=8.268938843535377,
+ymin=-3.168961451287969,
+ymax=10.64880656329535,
+xtick={-8,-7,...,8},
+ytick={-3,-2,...,10},]
+\clip(-8.825997451899342,-3.168961451287969) rectangle (8.268938843535377,10.64880656329535);
+\draw[line width=2pt,color=qqwuqq,smooth,samples=100,domain=-8.825997451899342:8.268938843535377] plot(\x,{(\x)^(2)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (2.099920508163743,1.562565292746635) node {$f(x)=x^2$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+
+\end{center}
+
+
+
+Voici le tableau de variations de la fonction carré:
+
+
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , variation de $x^2$ / 1}{$- \infty$, $0$, $+\infty$}
+   \tkzTabVar{+/ $+\infty$, -/ $0$, +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{prop}
+La fonction carré est strictement décroissante sur $]-\infty;0]$ et strictement croissante sur $[0;+\infty[$.
+\end{prop}
+
+\begin{demo}
+
+Preuve de la stricte décroissance sur $\mathbb{R}_-$ de la fonction carré:
+
+
+Soit $a<b \leq 0$ alors $a^2 - b^2 =(a-b)(a+b) > 0 $ ici $a+b < 0$ car $a<b \leq 0$ et $a-b <0$ car $a<b$. Donc $a^2>b^2$.\\
+
+Preuve de la stricte croissance sur $\mathbb{R}_+$ de la fonction carré:
+
+Soit $0<a<b$ alors $a^2 - b^2 =(a-b)(a+b) < 0 $ ici $a+b > 0$ car $0<a<b$ et $a-b <0$ car $a<b$. Donc $a^2<b^2$.
+
+\end{demo}
+
+
+\begin{prop}
+La fonction carré est \underline{paire} car symétrique par rapport à l'axe des ordonnées.
+\end{prop}
+
+\subsection*{Comparaison}
+Soient $a,b \in D_f$, le but est de pouvoir comparer $f(a),f(b)$.
+\subsubsection*{Cas 1: si $a<b<0$}
+Alors $a^2>b^2$, car la fonction est \underline{décroissante} sur $\mathbb{R}_-$. Exemple, si $a=-3$ et $b=-2$ alors $a^2=(-3)^2=9$ et $b^2=(-2)^2=4$ donc $a^2 > b^2$.
+\subsubsection*{Cas 2: si  $0<a<b$}
+Alors $a^2<b^2$,car la fonction est \underline{croissante} sur $\mathbb{R}_+$. Exemple, si $a=4$ et $b=5$ alors $a^2=4^2=16$ et $b^2=5^2=25$ donc $a^2 < b^2$.
+\subsubsection*{Cas 3: si $a<0<b$}
+On compare les nombres $-a$ et $b$ avec le cas 2, car la fonction est \underline{paire}. Exemple, si $a=-4$ et $b=2$ alors comme la fonction est paire on a $a^2=(-4)^2=(4)^2=16$, il suffit de comparer $-a=4$ et $b=2$. Ici $b^2=5^2=25$ donc ici $a^2 < b^2$.
+
+\section{La fonction inverse}
+
+La fonction inverse est particulière on la retrouve géométriquement dans l'application du théorème de Thalès. on peut lui trouver une utilité dans l'ensemble des nombres, à tout nombre réel strictement positif $x$ on peut placer géométriquement $\frac{1}{x}$. \\
+
+Une application concrète du théorème de Thalès est un changement d'échelle, on dit entre guillemet la chose suivante " Si on dit que $x$ devient l'unité et que l'écart est respecté de manière proportionelle alors que devient $1$ ? Il deviendra en réalité exactement $\frac{1}{x}$.
+
+\begin{defn}
+La fonction inverse est la fonction $g$ définie sur $\mathbb{R}^*$ qui à tout réel $x$ \underline{non nul}, lui associe son inverse $\frac{1}{x}$. Son expression algébrique est donnée par $g(x)=\frac{1}{x}$.
+\end{defn}
+
+
+
+Une représentation graphique de la fonction $g(x)=\frac{1}{x}$, on dit que c'est une \underline{hyperbole}:
+
+\begin{center}
+
+\definecolor{wwwwww}{rgb}{0.4,0.4,0.4}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-5.455123727148933,
+xmax=5.783692296145369,
+ymin=-4.082191447362943,
+ymax=5.002098185815549,
+xtick={-5,-4,...,5},
+ytick={-4,-3,...,5},]
+\clip(-5.455123727148933,-4.082191447362943) rectangle (5.783692296145369,5.002098185815549);
+\draw[line width=1pt,color=wwwwww,smooth,samples=100,domain=-5.455123727148933:0.01] plot(\x,{1/(\x)});
+\draw[line width=1pt,color=wwwwww,smooth,samples=100,domain=0.01:5.783692296145369] plot(\x,{1/(\x)});
+\begin{scriptsize}
+\draw[color=wwwwww] (-3.9179762441423134,-0.5984104715323563) node {$g(x) = \frac{1}{x}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+
+\end{center}
+
+
+Voici le tableau de variations de la fonction inverse:
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , variation de $\frac{1}{x}$ / 1}{$- \infty$, $0$, $+\infty$}
+   \tkzTabVar{+/ $0$, -D+/ $- \infty$ / $+ \infty$, -/ $0$}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\begin{prop}
+La fonction inverse est une fonction \underline{impaire} car symétrique par rapport à l'origine
+\end{prop}
+
+\begin{prop}
+La fonction inverse est \underline{strictement décroissante} sur $\mathbb{R}^*_-$ et  \underline{strictement décroissante} sur $\mathbb{R}^*_+$.
+\end{prop}
+
+\begin{demo}
+
+Preuve de la stricte décroissance sur $\mathbb{R}^*_-$ de la fonction inverse:
+
+
+Soit $a<b < 0$ alors $\frac{1}{a} - \frac{1}{b} = \frac{b-a}{ab} $ ici $ab > 0$ car $a<b<0$ et $b-a >0$ car $a<b$. Donc $\frac{1}{a} > \frac{1}{b}$.\\
+
+Preuve de la stricte décroissance sur $\mathbb{R}^*_+$ de la fonction inverse:
+
+Soit $0<a<b$ alors  $\frac{1}{a} - \frac{1}{b} = \frac{b-a}{ab} $ ici $ab > 0$ car $a<b<0$ et $b-a >0$ car $a<b$. Donc $\frac{1}{a} > \frac{1}{b}$.
+
+\end{demo}
+
+\subsection*{Comparaison}
+Soient $a,b \in D_g$, le but est de pouvoir comparer $g(a),g(b)$.
+\subsubsection*{Cas 1: si $a<b<0$}
+Alors $\frac{1}{b} < \frac{1}{a}$, car la fonction est \underline{strictement décroissante}. Exemple, si $a=-2$ et $b=-5$ alors $\frac{1}{a}=\frac{1}{-2}=-0,5$ et $\frac{1}{b}=\frac{1}{-5}=-0,2$ donc $\frac{1}{b} < \frac{1}{a}$.
+\subsubsection*{Cas 2: si  $0<a<b$}
+Alors $\frac{1}{b}<\frac{1}{a}$, car la fonction est \underline{strictement décoissante}. Exemple, si $a=2$ et $b=5$ alors $\frac{1}{a}=\frac{1}{2}=0,5$ et $\frac{1}{b}=\frac{1}{5}=0,2$ donc $\frac{1}{b} < \frac{1}{a}$.
+\subsubsection*{Cas 3: si $a<0<b$}
+Alors $\frac{1}{a} < \frac{1}{b}$ car la fonction inverse conserve le signe du nombre de départ. Exemple, si $a=-2$ et $b=5$ alors $\frac{1}{a}=\frac{1}{-2}=-0,5$ et $\frac{1}{b}=\frac{1}{5}=0,2$ donc $\frac{1}{a} < \frac{1}{b}$.
+
+\section{La fonction cube}
+
+Soit un cube $C$ de coté $x$, où $x \in \mathbb{R}_+^*$. Calculer le volume de $C$.
+La fonction cube fait correspondre à la longueur du coté d'un cube, \underline{son volume}.
+
+\begin{defn}
+La fonction cube est la fonction $k$ qui à tout $x \in \mathbb{R}$ lui associe son cube $x^3$, son expression algébrique est donnée par $k(x)=x^3$.\\
+\end{defn}
+
+\underline{Remarque} : l'interprétation géométrique de cette fonction se limite à des nombres positifs.\\
+
+
+Une représentation graphique de la fonction $k(x)=x^3$ :
+
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{qqwwzz}{rgb}{0,0.4,0.6}
+\begin{center}
+\begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-9.27983468337517,
+xmax=10.06848950605221,
+ymin=-5.771586160109088,
+ymax=5.867586194797884,
+xtick={-8,-6,...,10},
+ytick={-6,-4,...,6},]
+\clip(-5.27983468337517,-5.771586160109088) rectangle (10.06848950605221,5.867586194797884);
+\draw[line width=2pt,color=qqwwzz,smooth,samples=100,domain=-3.27983468337517:3.06848950605221] plot(\x,{(\x)^(3)});
+\begin{scriptsize}
+\draw[color=qqwwzz] (1.688003443129001,0.5413685544497486) node {$k(x)=x^3$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+Voici le tableau de variations de la fonction cube:
+\begin{center}
+\begin{tikzpicture}
+ \tkzTabInit{$x$ / 1 , variation de $x^3$ / 1}{$- \infty$, $+\infty$}
+   \tkzTabVar{-/ $- \infty$, +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+
+
+\begin{prop}
+La fonction cube est une fonction \underline{impaire} car symétrique par rapport à l'origine.
+\end{prop}
+
+\begin{prop}
+La fonction cube est \underline{strictement croissante} sur $\mathbb{R}$. 
+\end{prop}
+
+
+\begin{demo}
+
+Preuve de la stricte croissance sur $\mathbb{R}$ de la fonction cube:\\
+
+
+Si $0\leq a<b$ alors $a^3-b^3=(a-b)(a^2+ab+b^2) $ ici $a-b< 0$ car $a<b$ et $a^2+ab+b^2>0$ car somme de nombre positif. Donc $a^3<b^3$.\\
+
+Si $a<b \leq 0$ alors $a^3-b^3=(a-b)(a^2+ab+b^2) $ ici $a-b< 0$ car $a<b$ et $a^2+ab+b^2>0$ car somme de nombre positif. Donc $a^3<b^3$.\\
+
+Si $a<0<b$ alors $a^3<0$ car la fonction cube conserve le signe, et de même $b^3>0$ donc $a^3<0<b^3$, autrement dit $a^3<b^3$.
+
+\end{demo}
+
+
+\subsection*{Comparaison}
+Soient $a,b \in D_k$, le but est de pouvoir comparer $k(a),k(b)$.
+Si $a<b$ alors $a^3<b^3$ car la fonction est \underline{strictement croissante}.
+
+
+\section{La fonction racine carrée}
+
+Soit un carré $c$ d'aire $a$, où $a \in \mathbb{R}_+^*$. Pouvez-vous donner la longueur d'un coté du carré?
+
+La fonction racine carré fait correspondre à l'aire d'un carré, \underline{la longueur d'un de ses côtés}.
+
+\begin{defn}
+La fonction racine carrée est la fonction $h$ qui à tout $x \in \mathbb{R}^+$ lui associe sa racine carrée $\sqrt{x}$, son expression algébrique est donnée par $h(x)=\sqrt{x}$.\\
+\end{defn}
+
+Une représentation graphique de la fonction $h(x)=\sqrt{x}$:
+
+\begin{center}
+
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\begin{tikzpicture}[scale=1.3,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-5.455123727148933,
+xmax=5.783692296145369,
+ymin=-1.082191447362943,
+ymax=4.002098185815549,
+xtick={-5,-4,...,5},
+ytick={-4,-3,...,5},]
+\clip(-5.455123727148933,-1.082191447362943) rectangle (5.783692296145369,4.002098185815549);
+\draw[line width=1pt,color=zzttqq,smooth,samples=100,domain=1.0456058909022446e-7:5.783692296145369] plot(\x,{sqrt((\x))});
+\begin{scriptsize}
+\draw[color=zzttqq] (1.5352476947897157,0.4221546606277794) node {$h(x) = \sqrt{x}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+
+\end{center}
+
+Voici le tableau de variations de la fonction racine carrée:
+
+\begin{center}
+\begin{tikzpicture}
+ \tkzTabInit{$x$ / 1 , variation de $\sqrt{x}$ / 1}{$0$, $+\infty$}
+   \tkzTabVar{-/ $0$, +/ $+\infty$}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+\underline{Remarque} : La fonction racine n'est ni paire ni impaire, sauriez-vous expliquer pourquoi?
+
+
+\begin{prop}
+La fonction racine carré est \underline{strictement croissante} sur $\mathbb{R}_+$. 
+\end{prop}
+
+\begin{demo}
+
+Preuve de la stricte croissance sur $\mathbb{R}_+$ de la fonction racine carrée:\\
+
+Soit $0\leq a<b$ alors $$(\sqrt{a}+\sqrt{b})(\sqrt{a}-\sqrt{b})=\sqrt{a}^2 -\sqrt{b}^2=a-b <0$$
+
+Donc soit $(\sqrt{a}+\sqrt{b})<0$ ou \emph{exclusif} $(\sqrt{a}-\sqrt{b})<0$  or  $(\sqrt{a}+\sqrt{b})>0$ donc $(\sqrt{a}-\sqrt{b})<0$ ou encore $\sqrt{a}<\sqrt{b}$.
+
+\end{demo}
+
+
+
+\subsection*{Comparaison}
+Soient $a,b \in D_h$, le but est de pouvoir comparer $h(a),h(b)$.
+Si $a<b$ Alors $\sqrt{a}<\sqrt{b}$ car la fonction est \underline{strictement croissante} sur $\mathbb{R}_+$.
+
+
+\begin{prop}
+La fonction carré et racine carrée sont réciproque partielle l'une de l'autre. si $x \in \mathbb{R}_+$ alors $\sqrt{x}^2=x$ et $\sqrt{x^2}=x$.\\
+ 
+Que se passerai t-il si $x \in \mathbb{R}_-^*$?
+\end{prop}
+
+
+\section{Position relative des courbes $y=x$, $y=x^2$ et $y=x^3$ sur $\mathbb{R}_+$}
+
+Soit $x \in \mathbb{R}_+$,\\
+
+Ici on veut savoir quand la courbe $y=x$ est au dessus de $y=x^2$ , pour cela on compare $x$ et $x^2$ ce qui revient à étudier le signe de $x-x^2$, qui équivaut en factorisant par $x$, à étudier le signe de $x(1-x)$, pour cela on utilise le tableau de signe.
+
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $x$ / 1, $1-x$ /1 , $x(1-x)$ /1}{$0$, $1$, $+\infty$}
+   \tkzTabLine{z, +  , ,+ }
+   \tkzTabLine{ ,+ , z , -, }
+   \tkzTabLine{ z, +, z , -, }
+\end{tikzpicture}
+\end{center}
+
+Ainsi la courbe $y=x$ est au dessus de $y=x^2$ quand $x \in [0;1]$ et en dessous si $x \in [1; + \infty[$.
+
+
+Ici on veut savoir quand la courbe $y=x^2$ est au dessus de $y=x^3$ , pour cela on compare $x^2$ et $x^3$ ce qui revient à étudier le signe de $x^2-x^3$, qui équivaut à étudier le signe de $x^2(1-x)$, pour cela on utilise le tableau de signe.
+
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $x^2$ / 1, $1-x$ /1 , $x^2(1-x)$ /1}{$0$, $1$, $+\infty$}
+   \tkzTabLine{z, +  , ,+ }
+   \tkzTabLine{ ,+ , z , -, }
+   \tkzTabLine{ z, +, z , -, }
+\end{tikzpicture}
+\end{center}
+
+Ainsi la courbe $y=x^2$ est au dessus de $y=x^3$ quand $x \in [0;1]$ et en dessous si $x \in [1; + \infty[$.
+
+Par suite on déduit que la courbe $y=x$ est au dessus de $y=x^3$ quand $x \in [0;1]$ et en dessous si $x \in [1; + \infty[$ avec les deux cas précédents.
+
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{center}
+\begin{tikzpicture}[scale=1.4,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-1.5757539061015227,
+xmax=6.351528339352807,
+ymin=-1.4006813077294793,
+ymax=6.6416558324339,
+xtick={-1,0,...,6},
+ytick={-1,0,...,6},]
+\clip(-1.5757539061015227,-1.4006813077294793) rectangle (6.351528339352807,6.6416558324339);
+\draw[line width=0.8pt,color=qqwuqq,smooth,samples=100,domain=0:6.351528339352807] plot(\x,{(\x)});
+\draw[line width=0.8pt,color=ccqqqq,smooth,samples=100,domain=0:3.351528339352807] plot(\x,{(\x)^(2)});
+\draw[line width=0.8pt,color=qqqqff,smooth,samples=100,domain=0:3.351528339352807] plot(\x,{(\x)^(3)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (4.5287543642490641,3.155527897241) node {$y=x$};
+\draw[color=ccqqqq] (3.0743476852544684,4.1966190096539575) node {$y=x^2$};
+\draw[color=qqqqff] (0.75702929594191227,5.3807309420414059) node {$y=x^3$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{document}

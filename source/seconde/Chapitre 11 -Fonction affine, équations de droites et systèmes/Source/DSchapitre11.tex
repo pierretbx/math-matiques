@@ -1,0 +1,85 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+ \section*{Devoir surveillé }
+Soit $(O,\overrightarrow{i},\overrightarrow{j})$ un repère orthonormé. Toutes les coordonnées seront exprimées par rapport à ce repère. \\
+
+
+1) Soit $\Delta$ une droite passant par deux points, $A=(1,2)$ et $B=(0,1)$. Déterminer un vecteur directeur de $\Delta$ et en déduire une équation cartésienne de la droite $\Delta$. \\
+
+
+2) Soit $\Delta_1 $ une droite passant par $B$ et étant dirigé par le vecteur $\overrightarrow{u} \left( \begin{array}{c}
+1 \\
+3 \\
+\end{array} \right). \\
+$
+Déterminer  une équation cartésienne de la droite $\Delta_1$.
+
+3) Soit $\Delta_3 $ une droite ayant pour équation cartésienne $x-y+1=0$. Déterminer la pente de la droite  $\Delta_3 $. \\
+
+4) Soit $\Delta_4$ une droite ayant pour équation cartésienne $-3x-y+1=0$. Déterminer l'équation réduite de cette droite et tracer la droite $\Delta_4$  dans le repère.\\
+
+5) Soit un point $C=(1000,1001)$, dire si $A,B$ et $C$ sont alignés ou non. (On rappel que $A$,$B$ et $C$ sont alignés si $C \in \Delta$) \\
+
+6) Soit $\Delta_5$ une droite d'équation réduite $y=x+3$, dire si les deux droites $\Delta_5$ et $\Delta_3 $ sont strictement parallèles, confondus ou sécantes. \\
+
+7) On suppose que les droites $\Delta_3$ et $\Delta_4$ sont sécantes. On cherche le point d'intersection $I$ de ces deux droites. Pour cela résoudre le système suivant et interpréter le résultat: \\
+
+$$
+\left \{
+\begin{array}{rcl}
+x-y+1&=&0 \\
+-3x-y+1&=&0
+\end{array}
+\right. 
+$$
+
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-7.796395588853748,
+xmax=8.608153986767181,
+ymin=-4.83064566062787,
+ymax=5.682847889614482,
+xtick={-7,-6,...,8},
+ytick={-4,-3,...,5},]
+\clip(-7.796395588853748,-4.83064566062787) rectangle (8.608153986767181,5.682847889614482);
+\draw [->,line width=0.5pt] (0,0) -- (1,0);
+\draw [->,line width=0.5pt] (0,0) -- (0,1);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0,0) circle (0.7pt);
+\draw[color=uuuuuu] (-0.19926640761063366,-0.2519556086633577) node {$O$};
+\draw[color=black] (0.5298246846391854,-0.31549904668653216) node {$\overrightarrow{i}$};
+\draw[color=black] (-0.3701027639206409,0.4448284421682512) node {$\overrightarrow{j}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{document}
+

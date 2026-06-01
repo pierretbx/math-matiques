@@ -1,0 +1,263 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{8}
+\chapter{Triangles égaux et triangles semblables}
+
+\vspace{-1mm}
+\section{Triangles égaux}
+
+\vspace{-5mm}
+\noindent \begin{minipage}{13cm}
+\begin{defn}
+Deux triangles sont égaux quand leurs côtés sont deux à deux de même longueur.
+\end{defn}
+
+\begin{prop}
+Si deux triangles sont égaux alors leurs angles sont égaux deux à deux.
+\end{prop}
+\end{minipage}
+
+\begin{rem}
+\begin{enumerate}
+\item[•]Deux triangles égaux sont superposables.
+\item[•]Si deux triangles ont un côté de même longueur et des angles adjacents à ce côté \\ deux à deux de même mesure, alors ces
+deux triangles sont égaux.
+
+\vspace{-71mm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8]
+\clip(0.3,0.8) rectangle (5.2,4.5);
+\draw[line width=1.2pt] (1.,1.) -- (2.84,3.6) -- (4.46,1.72) -- cycle;
+\draw [shift={(4.46,1.72)},line width=2.pt,color=blue,fill=blue,fill opacity=0.2] (0,0) -- (130.7515454706387:0.6) arc (130.7515454706387:191.75506275969946:0.6) -- cycle;
+\draw [shift={(2.84,3.6)},line width=2.pt,color=red,fill=red,fill opacity=0.2] (0,0) -- (-125.28674897505971:0.6) arc (-125.28674897505971:-49.2484545293613:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (11.755062759699461:0.6) arc (11.755062759699461:54.71325102494029:0.6) -- cycle;
+\draw [line width=1.2pt] (1.,1.)-- (2.84,3.6);
+\draw [line width=1.2pt] (1.81526612452894,2.3251160372832285) -- (1.9785203668699214,2.2095822657803796);
+\draw [line width=1.2pt] (1.8614796331300782,2.3904177342196204) -- (2.0247338754710595,2.2748839627167716);
+\draw [line width=1.2pt] (2.84,3.6)-- (4.46,1.72);
+\draw [line width=1.2pt] (3.806667244746344,2.4781886295536255) -- (3.614701515844188,2.4711772868103483);
+\draw [line width=1.2pt] (3.806667244746344,2.4781886295536255) -- (3.8419657289021565,2.6670113427432787);
+\draw [line width=1.2pt] (3.65,2.66) -- (3.458034271097844,2.652988657256722);
+\draw [line width=1.2pt] (3.65,2.66) -- (3.6852984841558123,2.8488227131896533);
+\draw [line width=1.2pt] (4.46,1.72)-- (1.,1.);
+\draw [line width=1.2pt] (2.8286950240195163,1.2783955133967073) -- (2.787949371901368,1.474201008297813);
+\draw [line width=1.2pt] (2.750372826059074,1.2620972525494472) -- (2.709627173940926,1.4579027474505528);
+\draw [line width=1.2pt] (2.672050628098632,1.2457989917021872) -- (2.6313049759804836,1.4416044866032929);
+\end{tikzpicture}
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.8,rotate=175]
+\clip(0.3,0.8) rectangle (5.2,4.5);
+\draw[line width=1.2pt] (1.,1.) -- (2.84,3.6) -- (4.46,1.72) -- cycle;
+\draw [shift={(4.46,1.72)},line width=2.pt,color=blue,fill=blue,fill opacity=0.2] (0,0) -- (130.7515454706387:0.6) arc (130.7515454706387:191.75506275969946:0.6) -- cycle;
+\draw [shift={(2.84,3.6)},line width=2.pt,color=red,fill=red,fill opacity=0.2] (0,0) -- (-125.28674897505971:0.6) arc (-125.28674897505971:-49.2484545293613:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (11.755062759699461:0.6) arc (11.755062759699461:54.71325102494029:0.6) -- cycle;
+\draw [line width=1.2pt] (1.,1.)-- (2.84,3.6);
+\draw [line width=1.2pt] (1.81526612452894,2.3251160372832285) -- (1.9785203668699214,2.2095822657803796);
+\draw [line width=1.2pt] (1.8614796331300782,2.3904177342196204) -- (2.0247338754710595,2.2748839627167716);
+\draw [line width=1.2pt] (2.84,3.6)-- (4.46,1.72);
+\draw [line width=1.2pt] (3.806667244746344,2.4781886295536255) -- (3.614701515844188,2.4711772868103483);
+\draw [line width=1.2pt] (3.806667244746344,2.4781886295536255) -- (3.8419657289021565,2.6670113427432787);
+\draw [line width=1.2pt] (3.65,2.66) -- (3.458034271097844,2.652988657256722);
+\draw [line width=1.2pt] (3.65,2.66) -- (3.6852984841558123,2.8488227131896533);
+\draw [line width=1.2pt] (4.46,1.72)-- (1.,1.);
+\draw [line width=1.2pt] (2.8286950240195163,1.2783955133967073) -- (2.787949371901368,1.474201008297813);
+\draw [line width=1.2pt] (2.750372826059074,1.2620972525494472) -- (2.709627173940926,1.4579027474505528);
+\draw [line width=1.2pt] (2.672050628098632,1.2457989917021872) -- (2.6313049759804836,1.4416044866032929);
+\end{tikzpicture}
+\end{flushright}
+
+\vspace{-2mm}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.5]
+\clip(0.4,0.5) rectangle (23.,6.);
+\draw[line width=1.2pt] (1.,1.) -- (4.,5.) -- (9.,3.) -- cycle;
+%\draw [shift={(9.,3.)},line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (0,0) -- (158.19859051364818:0.6) arc (158.19859051364818:194.03624346792648:0.6) -- cycle;
+\draw [shift={(4.,5.)},line width=2.pt,color=red,fill=red,fill opacity=0.2] (0,0) -- (-126.86989764584402:0.6) arc (-126.86989764584402:-21.8014094863518:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (14.036243467926477:0.6) arc (14.036243467926477:53.13010235415598:0.6) -- cycle;
+\draw [shift={(18.722698054536053,1.39719312078164)},line width=2.pt,color=red,fill=red,fill opacity=0.2] (0,0) -- (48.13010235415598:0.6) arc (48.13010235415598:153.19859051364818:0.6) -- cycle;
+%\draw [shift={(13.916036049572641,3.8253612307034217)},line width=2.pt,color=blue,fill=blue,fill opacity=0.1] (0,0) -- (-26.80140948635181:0.6) arc (-26.80140948635181:9.036243467926473:0.6) -- cycle;
+\draw [shift={(22.059905119801922,5.120504684905647)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (-170.96375653207355:0.6) arc (-170.96375653207355:-131.86989764584405:0.6) -- cycle;
+\draw [line width=1.2pt] (1.,1.)-- (4.,5.);
+\draw [line width=1.2pt] (2.396,3.028) -- (2.556,2.908);
+\draw [line width=1.2pt] (2.444,3.092) -- (2.604,2.972);
+\draw [line width=1.2pt] (4.,5.)-- (9.,3.);
+\draw [line width=1.2pt] (9.,3.)-- (1.,1.);
+\draw [line width=1.2pt] (22.059905119801922,5.120504684905647)-- (18.722698054536053,1.39719312078164);
+\draw [line width=1.2pt] (20.4924654749736,3.2218912540513185) -- (20.34353301240864,3.3553795366619528);
+\draw [line width=1.2pt] (20.439070161929344,3.1623182690253344) -- (20.29013769936438,3.2958065516359687);
+\draw [line width=1.2pt] (13.916036049572641,3.8253612307034217)-- (22.059905119801922,5.120504684905647);
+\draw [line width=1.2pt] (18.722698054536053,1.39719312078164)-- (13.916036049572641,3.8253612307034217);
+\begin{scriptsize}
+\draw [color=black] (1.,1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (0.78,1.41) node {\large{$A$}};
+\draw [color=black] (4.,5.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (4.14,5.37) node {\large{$B$}};
+\draw [color=black] (9.,3.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (9.28,2.81) node {\large{$C$}};
+%\draw [color=ududff] (11.44,3.52)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw [color=black] (22,5.1)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (22.31,5.54) node {\large{$S$}};
+\draw [color=black] (18.7,1.4)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (18.97,1) node {\large{$K$}};
+\draw [color=black] (13.9,3.8)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (14.17,4.24) node {\large{$T$}};
+\end{scriptsize}
+\end{tikzpicture}
+
+\vspace{-2mm}
+\item[•]Si deux triangles ont un angle de même mesure compris entre \\deux côtés deux à deux de même longueur, alors ces deux triangles sont égaux.
+
+\vspace{-19mm}
+\noindent \begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(0.4,0.5) rectangle (10.,6.);
+\draw[line width=1.2pt] (1.,1.) -- (4.,5.) -- (9.,3.) -- cycle;
+%\draw [shift={(9.,3.)},line width=2.pt,color=blue,fill=blue,fill opacity=0.10000000149011612] (0,0) -- (158.19859051364818:0.6) arc (158.19859051364818:194.03624346792648:0.6) -- cycle;
+%\draw [shift={(4.,5.)},line width=2.pt,color=red,fill=red,fill opacity=0.10000000149011612] (0,0) -- (-126.86989764584402:0.6) arc (-126.86989764584402:-21.8014094863518:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (14.036243467926477:0.6) arc (14.036243467926477:53.13010235415598:0.6) -- cycle;
+\draw [line width=1.2pt] (1.,1.)-- (4.,5.);
+\draw [line width=1.2pt] (2.396,3.028) -- (2.556,2.908);
+\draw [line width=1.2pt] (2.444,3.092) -- (2.604,2.972);
+\draw [line width=1.2pt] (4.,5.)-- (9.,3.);
+\draw [line width=1.2pt] (9.,3.)-- (1.,1.);
+\draw [line width=1.2pt] (5.1018649625152594,1.9223885999883736) -- (5.053357837507994,2.1164171000174408);
+\draw [line width=1.2pt] (5.024253562503633,1.9029857499854665) -- (4.975746437496368,2.0970142500145337);
+\draw [line width=1.2pt] (4.946642162492007,1.8835828999825595) -- (4.898135037484741,2.077611400011626);
+\draw [line width=1.2pt] (22.059905119801922,5.120504684905647)-- (18.722698054536053,1.39719312078164);
+\draw [line width=1.2pt] (20.4924654749736,3.2218912540513185) -- (20.34353301240864,3.3553795366619528);
+\draw [line width=1.2pt] (20.439070161929344,3.1623182690253344) -- (20.29013769936438,3.2958065516359687);
+\draw [line width=1.2pt] (13.916036049572641,3.8253612307034217)-- (22.059905119801922,5.120504684905647);
+\draw [line width=1.2pt] (17.893257528321968,4.559127139475574) -- (17.92466937103963,4.361609301959363);
+\draw [line width=1.2pt] (17.972264663328456,4.571691876562641) -- (18.003676506046116,4.374174039046429);
+\draw [line width=1.2pt] (18.05127179833494,4.584256613649707) -- (18.082683641052604,4.3867387761334955);
+\draw [line width=1.2pt] (18.722698054536053,1.39719312078164)-- (13.916036049572641,3.8253612307034217);
+\begin{scriptsize}
+\draw [color=black] (1.,1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+%\draw[color=black] (0.78,1.41) node {$A$};
+\draw [color=black] (4.,5.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+%\draw[color=black] (4.14,5.37) node {$B$};
+\draw [color=black] (9.,3.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+%\draw[color=black] (9.28,2.81) node {$C$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{10mm}
+\begin{minipage}{7.5cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6, rotate = 100]
+\clip(0.4,0.5) rectangle (10.,6.);
+\draw[line width=1.2pt] (1.,1.) -- (4.,5.) -- (9.,3.) -- cycle;
+%\draw [shift={(9.,3.)},line width=2.pt,color=blue,fill=blue,fill opacity=0.10000000149011612] (0,0) -- (158.19859051364818:0.6) arc (158.19859051364818:194.03624346792648:0.6) -- cycle;
+%\draw [shift={(4.,5.)},line width=2.pt,color=red,fill=red,fill opacity=0.10000000149011612] (0,0) -- (-126.86989764584402:0.6) arc (-126.86989764584402:-21.8014094863518:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (14.036243467926477:0.6) arc (14.036243467926477:53.13010235415598:0.6) -- cycle;
+\draw [line width=1.2pt] (1.,1.)-- (4.,5.);
+\draw [line width=1.2pt] (2.396,3.028) -- (2.556,2.908);
+\draw [line width=1.2pt] (2.444,3.092) -- (2.604,2.972);
+\draw [line width=1.2pt] (4.,5.)-- (9.,3.);
+\draw [line width=1.2pt] (9.,3.)-- (1.,1.);
+\draw [line width=1.2pt] (5.1018649625152594,1.9223885999883736) -- (5.053357837507994,2.1164171000174408);
+\draw [line width=1.2pt] (5.024253562503633,1.9029857499854665) -- (4.975746437496368,2.0970142500145337);
+\draw [line width=1.2pt] (4.946642162492007,1.8835828999825595) -- (4.898135037484741,2.077611400011626);
+\draw [line width=1.2pt] (22.059905119801922,5.120504684905647)-- (18.722698054536053,1.39719312078164);
+\draw [line width=1.2pt] (20.4924654749736,3.2218912540513185) -- (20.34353301240864,3.3553795366619528);
+\draw [line width=1.2pt] (20.439070161929344,3.1623182690253344) -- (20.29013769936438,3.2958065516359687);
+\draw [line width=1.2pt] (13.916036049572641,3.8253612307034217)-- (22.059905119801922,5.120504684905647);
+\draw [line width=1.2pt] (17.893257528321968,4.559127139475574) -- (17.92466937103963,4.361609301959363);
+\draw [line width=1.2pt] (17.972264663328456,4.571691876562641) -- (18.003676506046116,4.374174039046429);
+\draw [line width=1.2pt] (18.05127179833494,4.584256613649707) -- (18.082683641052604,4.3867387761334955);
+\draw [line width=1.2pt] (18.722698054536053,1.39719312078164)-- (13.916036049572641,3.8253612307034217);
+\begin{scriptsize}
+\draw [color=black] (1.,1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+%\draw[color=black] (0.78,1.41) node {$A$};
+\draw [color=black] (4.,5.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+%\draw[color=black] (4.14,5.37) node {$B$};
+\draw [color=black] (9.,3.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+%\draw[color=black] (9.28,2.81) node {$C$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{enumerate}
+\end{rem}
+
+\vspace{-22mm}
+\section{Triangles semblables}
+
+\vspace{-3mm}
+\begin{defn}
+Des triangles semblables ont deux angles égaux deux à deux, le troisième étant forcément égal.
+
+\medskip
+\noindent Les longueurs de leurs côtés respectifs (homologues) sont proportionnelles deux à deux.
+\end{defn}
+
+\vspace{0mm}
+\noindent \begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,0.5) rectangle (9.5,5.8);
+\draw[line width=1.2pt] (1.,1.) -- (4.,5.) -- (9.,3.) -- cycle;
+\draw [shift={(9.,3.)},line width=2.pt,color=red,fill=red,fill opacity=0.2] (0,0) -- (158.19859051364818:0.6) arc (158.19859051364818:194.03624346792648:0.6) -- cycle;
+\draw [shift={(4.,5.)},line width=2.pt,color=blue,fill=blue,fill opacity=0.2] (0,0) -- (-126.86989764584402:0.6) arc (-126.86989764584402:-21.8014094863518:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (14.036243467926477:0.6) arc (14.036243467926477:53.13010235415598:0.6) -- cycle;
+\begin{scriptsize}
+\draw [color=black] (1.,1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (0.78,1.41) node {\large{$A$}};
+\draw [color=black] (4.,5.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (4.14,5.37) node {\large{$B$}};
+\draw [color=black] (9.,3.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (9.28,2.81) node {\large{$C$}};
+\draw[color=black] (2.28,3.51) node {\large{$5$}};
+\draw[color=black] (6.56,4.41) node {\large{$6$}};
+\draw[color=black] (5.24,1.61) node {\large{$13$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.5]
+\clip(0.5,0.5) rectangle (9.5,5.8);
+\draw[line width=1.2pt] (1.,1.) -- (4.,5.) -- (9.,3.) -- cycle;
+\draw [shift={(9.,3.)},line width=2.pt,color=red,fill=red,fill opacity=0.2] (0,0) -- (158.19859051364818:0.6) arc (158.19859051364818:194.03624346792648:0.6) -- cycle;
+\draw [shift={(4.,5.)},line width=2.pt,color=blue,fill=blue,fill opacity=0.2] (0,0) -- (-126.86989764584402:0.6) arc (-126.86989764584402:-21.8014094863518:0.6) -- cycle;
+\draw [shift={(1.,1.)},line width=2.pt,color=violet,fill=violet,fill opacity=0.2] (0,0) -- (14.036243467926477:0.6) arc (14.036243467926477:53.13010235415598:0.6) -- cycle;
+\begin{scriptsize}
+\draw [color=black] (1.,1.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (0.78,1.5) node {\large{$X$}};
+\draw [color=black] (4.,5.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (4.14,5.4) node {\large{$Y$}};
+\draw [color=black] (9.,3.)-- ++(-2.5pt,0 pt) -- ++(5.0pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5.0pt);
+\draw[color=black] (9.28,2.6) node {\large{$Z$}};
+%\draw[color=black] (2.28,3.51) node {\large{$5$}};
+%\draw[color=black] (6.56,4.41) node {\large{$6$}};
+\draw[color=black] (5.24,1.61) node {\large{$10$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-4mm}
+\begin{prop}
+Les longueurs sont multipliées par un coefficient appelé $k$ :
+
+\noindent \begin{minipage}{8cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{|>{\columncolor{propcolor!20}}p{2.5cm}|*{3}{>{\centering \arraybackslash}X|}}
+\hline
+ Triangle $ABC$ & $AB$ & $BC$ & $AC$ \\\hline
+ Triangle $XYZ$ & $XY$ & $YZ$ & $XZ$ \\\hline
+\end{tabularx}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7.2cm}
+\noindent\grandscarreaux{\linewidth}{1.6cm}
+\end{minipage}
+\end{prop}
+
+\end{document}

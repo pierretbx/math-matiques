@@ -1,0 +1,181 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\section*{ALGORITHMIQUE ET PROGRAMMATION - Travaux pratiques 3}
+\addcontentsline{toc}{section}{ALGORITHMIQUE ET PROGRAMMATION - Travaux pratiques 3}
+
+\noindent \textbf{Objectif 1 :} \quad Frise Carrés
+
+\medskip
+\noindent \begin{minipage}{13.5cm}
+\begin{dinglist}{111}
+\item Crée un bloc nommé Carré qui permet de tracer un carré de côté $100$.
+\item En utilisant les blocs, écris un programme permettant de tracer la frise ci-dessous.
+\end{dinglist}
+\begin{center}
+\includegraphics[scale=0.5]{../40.Image/53.Frises_1.png}
+\end{center}
+
+\vspace{-5mm}
+\ding{226} \textit{Appelle le professeur pour la vérification}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{scratch}[scale=0.7]
+\initmoreblocks{définir \namemoreblocks{Carré}}
+\blockrepeat{répéter \ovalnum{4} fois}
+{
+\blockmove{avancer de \ovalnum{100}}
+\blockmove{tourner \turnleft{} de \ovalnum{90} degrés}
+}
+\end{scratch}
+\end{minipage}
+
+\bigskip
+\noindent \textbf{Objectif 2  :} \quad Frise Carrés espacés liés
+
+\medskip
+\noindent \begin{minipage}{9.5cm}
+\begin{dinglist}{111}
+\item Modifie le bloc Carré, puis écris un programme qui permet de tracer la frise ci-contre, composée de carrés de côtés $50$ et espacés de $20$ pixels chacun.
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\begin{center}
+\includegraphics[scale=0.35]{../40.Image/53.Frises_2.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\noindent \textbf{Objectif 3  :} \quad Frise Carrés espacés
+
+\medskip
+\noindent \begin{minipage}{9.5cm}
+\begin{dinglist}{111}
+\item Écris un programme qui permet de tracer la frise ci-contre, composée de carrés de côtés $50$ et espacés de $20$ pixels chacun.
+\end{dinglist}
+\ding{226} \textit{Appelle le professeur pour la vérification}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\begin{center}
+\includegraphics[scale=0.35]{../40.Image/53.Frises_3.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\noindent \textbf{Objectif 4 :} \quad Frise Carrés Rectangles
+
+\medskip
+\noindent \begin{minipage}{12.5cm}
+\begin{dinglist}{111}
+\item A la manière du bloc carré, crée un bloc nommé Rectangle qui permet de tracer un rectangle (vertical) de longueur $50$ et de largeur $20$.
+\item En utilisant les blocs, écris un programme permettant de tracer la frise ci-contre.
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{4cm}
+\begin{center}
+\includegraphics[scale=0.4]{../40.Image/53.Frises_4.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\noindent \textbf{Objectif 5  :} \quad Frise Carrés Triangles
+
+\medskip
+\noindent \begin{minipage}{9.5cm}
+\begin{dinglist}{111}
+\item De la même manière, écris un programme permettant de tracer la frise ci-contre avec des triangles et des carrés de côté $50$.
+\item \textit{As tu pensé à créer un bloc triangle ?}
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\begin{center}
+\includegraphics[scale=0.45]{../40.Image/53.Frises_5.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\noindent \textbf{Objectif 6  :} \quad Frise Maison
+
+\vspace{-2mm}
+\noindent \begin{minipage}{9.5cm}
+\begin{dinglist}{111}
+\item Écris un programme permettant de tracer la frise ci-contre avec des triangles et des carrés de côté $50$.
+\end{dinglist}
+\ding{226} \textit{Appelle le professeur pour la vérification}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\begin{center}
+\includegraphics[scale=0.4]{../40.Image/53.Frises_6.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\hrulefill
+\bigskip
+
+\noindent \textbf{Objectif bonus 1 :} \quad Frise Maison 2
+
+\vspace{-4mm}
+\noindent \begin{minipage}{10cm}
+\vspace{3mm}
+\begin{dinglist}{111}
+\item Modifie le programme précédent pour obtenir la frise suivante. On pourra utiliser le bloc :
+\begin{scratch}[scale=0.7]
+\blockpen{ajouter \ovalnum{1} à la taille du stylo}
+\end{scratch}
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{7cm}
+\begin{center}
+\includegraphics[scale=0.5]{../40.Image/53.Frises_7.png}
+\end{center}
+\end{minipage}
+
+\bigskip
+\noindent \begin{minipage}{7.5cm}
+\textbf{Objectif bonus 2 :} \quad Frise Maison Emboitées
+
+\medskip
+\noindent \begin{minipage}{5cm}
+\begin{dinglist}{111}
+\item Écris un programme permettant de tracer cette construction. Tu peux créer la variable :
+\begin{scratch}[scale=0.7]
+\blockvariable{coté}
+\end{scratch}
+\end{dinglist}
+\end{minipage}
+\hspace{2mm}
+\begin{minipage}{2cm}
+\begin{center}
+\includegraphics[scale=0.4]{../40.Image/53.Frises_8.png}
+\end{center}
+\end{minipage}
+\end{minipage}
+\begin{minipage}{8.5cm}
+\textbf{Objectif bonus 3 :} \quad Frise Maison Emboitées
+
+\medskip
+\noindent \begin{minipage}{4cm}
+\begin{dinglist}{111}
+\item A partir de ce motif \includegraphics[scale=0.5]{../40.Image/53.Frises_9.png}, trace :
+
+Tu peux créer le bloc :
+\begin{scratch}[scale=0.7]
+\blockmoreblocks{motif}
+\end{scratch}
+\end{dinglist}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{4cm}
+\begin{center}
+\includegraphics[scale=0.4]{../40.Image/53.Frises_10.png}
+\end{center}
+\end{minipage}
+\end{minipage}
+\end{document}

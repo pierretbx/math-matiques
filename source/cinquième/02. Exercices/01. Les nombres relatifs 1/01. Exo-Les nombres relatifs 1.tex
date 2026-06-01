@@ -1,0 +1,357 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+\pagestyle{empty}
+\newpage
+\section*{Nombres relatifs}
+\addcontentsline{toc}{section}{Nombres relatifs}
+
+\subsection*{Découvrir les nombres relatifs}
+\addcontentsline{toc}{subsection}{Découvrir les nombres relatifs}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{8cm}
+\begin{ex}
+Quelle est la température indiquée par chacun des thermomètres ?
+
+\begin{center}
+\includegraphics[scale=0.9]{../../09. Archives/03. Année 2022-2023/Exo-Nombres relatifs 1.png}
+\end{center}
+\vspace{6mm}
+\end{ex}
+\end{minipage}
+\begin{minipage}{9cm}
+\begin{ex}
+Colorie le mercure du thermomètre pour indiquer la température qui correspond.
+
+\begin{center}
+\includegraphics[scale=0.9]{../../09. Archives/03. Année 2022-2023/Exo-Nombres relatifs 2.png}
+\end{center}
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{8.5cm}{p{3mm}*{5}{>{\arraybackslash}X}}
+&
+ $17$\degre C &
+ $-1,2$\degre C &
+ $-0,5$\degre C &
+ $1,2$\degre C & 
+ $-7,5$\degre C \\
+\end{tabularx}
+\end{ex}
+\end{minipage}
+
+\begin{ex}
+Sur l'axe chronologique ci dessus, place le plus précisément possible les événements suivants :
+
+\vspace{5mm}
+\begin{center}
+\begin{tikzpicture}[x=0.015cm]  
+\draw[thick,->] (-450,0) -- (450,0);
+\foreach \x in {0,100}
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node [below] {\x};
+\foreach \x in {-400,-300,-200,-100,200,300,400}	
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+\end{center}
+
+\noindent \textbf{T} : le temple de Jérusalem est détruit en $70$ après J.-C.
+
+\noindent \textbf{J} : Jules César naît en $100$ avant J.-C.
+
+\noindent \textbf{C} : Constantin crée Constantinople en $324$ après J.-C.
+
+\noindent \textbf{A} : Alexandre le Grand meurt en $323$ avant J.-C.
+
+\end{ex}
+
+
+
+\noindent \begin{minipage}{15cm}
+\begin{ex}
+Entoure en bleu les nombres positifs et en rouge les nombres négatifs.
+
+\begin{tabularx}{\linewidth}{*{7}{>{\arraybackslash}X}}
+$+12$ & $+2$ & $\dfrac{12}{154}$ & $-17$ & $+34,2$ & $-54,7$ & $-\dfrac{128}{15}$ \\
+$-0,001$ & $\dfrac{5}{100}$ & $0$ & $12,6$ & $-1,18$ & $0,05$ & $\np{48000}$ \\
+\end{tabularx}
+\end{ex}
+
+\begin{ex}
+Complète avec le mot qui convient : 
+\begin{center}
+ \og positif \fg{} \quad \og négatif \fg{} \quad \og plus \fg{} \quad \og relatifs \fg{} \quad \og opposé \fg{} \quad\og moins \fg{}
+\end{center}
+
+\begin{enumerate}[font=\color{exer1}]
+\item $-3$; $+5$; $-9,3$; $100,7$ et $0$ sont des nombres \dotfill \medskip
+\item Le nombres $+5$ est un nombre \dotfill \medskip
+\item Il peut aussi s'écrire sans le signe \dotfill \medskip
+\item Le nombre $-5$ est un nombre \dotfill \medskip
+\item On ne peut pas supprimer le signe \dotfill \medskip
+\item $-2,7$ est  \dotfill de $+2,7$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+L'axe ci contre est gradué pour que $2$cm correspondent à $100$m. Place le mieux possible les hauteurs et profondeurs suivantes
+
+
+\noindent \textbf{M} : $200$m est environ la hauteur de la tour Montparnasse à Paris
+
+\noindent \textbf{C} : Carlos Coste, Vénézuelien, a établi en septembre $2005$ un nouveau recors mondial en apnée avec une plongée à $105$m.
+
+\noindent \textbf{T} : dans le golfe de Saint Laurent (Québec), la fosse marine de Tadoussac a une profondeur de $200$m.
+
+\noindent \textbf{B} : la butte de Montmartre domine tout Paris de ses $130$m.
+
+\noindent \textbf{R} : la profondeur de la rade de Villefranche-sur-Mer est d'environ $280$m.
+\end{ex}
+\end{minipage}
+\begin{minipage}{3cm}
+\begin{center}
+\begin{tikzpicture}[y=1cm]  
+\draw[thick,->] (0,-6.5) -- (0,4.5);
+\foreach \x in {0}
+\draw[shift={(0,\x)},color=black] (3.pt,0pt) -- (-3pt,0pt) node [left] {\x};
+\foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4}	
+\draw[shift={(0,\x)},color=black] (3.pt,0pt) -- (-3pt,0pt) ;
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\subsection*{Comparer des nombres relatifs}
+\addcontentsline{toc}{subsection}{Comparer des nombres relatifs}
+
+\begin{ex}
+Droite gradué et entiers
+\begin{enumerate}[font=\color{exer1}]
+\item Sur la droite gradué ci dessous, place les points $A(+8)$, $B(-2)$, $C(+3)$, $D(-5)$ et $E(+2)$.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm]  
+\draw[thick,->] (-6,0) -- (10,0);
+\foreach \x in {0,1}
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node [below] {\x};
+\foreach \x in {-5,-4,-3,-2,-1,2,3,4,5,6,7,8,9}	
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+\end{center}
+
+\vspace{-5mm}
+\item En examinant la position des points $A$, $B$, $C$, $D$ et $E$ sur cette droite gradué, complète par $<$ou $>$ :
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{5}{>{\arraybackslash}X}}
+\item $2 ~\dots ~ \dots ~ -2$&
+\item $+2 ~\dots ~ \dots ~ -5$&
+%\item $+3 ~\dots ~ \dots ~ +8$&
+\item $-2 ~\dots ~ \dots ~ -5$&
+\item $+8 ~\dots ~ \dots ~ -2$&
+\item $-5 ~\dots ~ \dots ~ +3$\\
+\end{tabularx}
+\end{enumerate}
+\item Range dans l'ordre croissant : $+8$, $-2$, $+3$, $-5$ et $+2$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Droite gradué et décimaux
+\begin{enumerate}[font=\color{exer1}]
+\item Sur la droite gradué, d'unité de longueur le centimètre, place les points $A(+0,8)$, $B(-2,3)$, $C(+3,5)$, $D(+5,4)$ et $E(-1,6)$.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm]  
+\draw[thick,->] (-4,0) -- (6,0);
+\foreach \x in {0,1}
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) node [below] {\x};
+\foreach \x in {,-3,-2,-1,2,3,4,5}	
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+\end{center}
+
+\vspace{-5mm}
+\item En examinant la position des points $A$, $B$, $C$, $D$ et $E$ sur cette droite gradué, range dans l'ordre décroissant : $+0,8$, $-2,3$, $+3,5$, $+5,4$ et $-1,6$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Distance à zéro.
+\begin{enumerate}[font=\color{exer1}]
+\item Complète le tableau suivant :
+\begin{center}
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{11.5cm}{|>{\columncolor{exer1!20}}p{3cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+Nombre	& $+1,5$ & $-0,5$ & $+2,7$ & $-2,8$ & $-1,3$ \\\hline
+Distance de ce nombre à zéro &  &  &  &  &  \\\hline
+\end{tabularx}
+\end{center}
+
+\item Sur l'axe gradué ci-dessous, place un point $A$ dont la distance à l'origine $O$ est de $2,5$ unités
+\begin{center}
+\begin{tikzpicture}[x=2cm]  
+\draw[thick,->] (-3.5,0) -- (3.5,0);
+\foreach \x in {0,1}
+\draw[shift={(\x,0)},color=black] (0pt,5pt) -- (0pt,-5pt) node [below] {\x};
+\foreach \x in {-3,-2,-1,2,3}
+\draw[shift={(\x,0)},color=black] (0pt,5pt) -- (0pt,-5pt) ;
+\foreach \x in {-2.5,-1.5,-0.5,0.5,1.5,2.5}	
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+\end{center}
+
+\vspace{-5mm}
+Combien de possibilité y a-t-il ?
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Complète par $<$, $>$ ou $=$
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+\item $10 ~\dots ~ \dots ~ +3$&
+%\item $-5 ~\dots ~ \dots ~ -5,0$&
+\item $-8 ~\dots ~ \dots ~ 0$&
+\item $0 ~\dots ~ \dots ~ -4$&
+\item $+3 ~\dots ~ \dots ~ 0$\\
+\item $-7 ~\dots ~ \dots ~ -8$&
+\item $+250 ~\dots ~ \dots ~ +205$&
+\item $-82 ~\dots ~ \dots ~ -83$&
+\item $-205 ~\dots ~ \dots ~ -2050$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Complète par $<$, $>$ ou $=$
+\begin{enumerate}[font=\color{exer2}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+\item $+5,34 ~\dots ~ \dots ~ +3,54$&
+\item $0,05 ~\dots ~ \dots ~ 1$&
+\item $-8,51 ~\dots ~ \dots ~ -8,5$&
+\item $11,9 ~\dots ~ \dots ~ +11,9$\\
+\item $3,14 ~\dots ~ \dots ~ -1,732$&
+\item $-9,27 ~\dots ~ \dots ~ -9,272$&
+\item $+8,64 ~\dots ~ \dots ~ -8,64$&
+%\item $-19,2 ~\dots ~ \dots ~ +9,2$&
+\item $-14,39 ~\dots ~ \dots ~ +14,4$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Barre l'intrus dans chacun des cas.
+\begin{enumerate}[font=\color{exer2}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item $-9,84 < -9,72 < -9,67 <-9,78 < -9,18$&
+\item $-2,5 < -2,498 < -2,499 <+1,54 < +1,55$\\
+\item $-10,1 > -10,02 > -10,2 >-10,22 > -10,222$&\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Ordre croissant - Ordre décroissant
+\begin{enumerate}[font=\color{exer2}]
+\item Range dans l'ordre croissant les nombres : \quad $+3$ ; $-7$ ; $-8$ ; $+7$ ; $+14$ ; $+8$ ; $-9,0$
+\item Range dans l'ordre croissant les nombres : \quad $+5,0$ ; $+2,7$ ; $-2,6$ ; $-3,1$ ; $+7,1$ ; $-8,3$ ; $-0,2$
+\item Range dans l'ordre décroissant les nombres : \quad $-10$ ; $+14$ ; $-8$ ; $-3$ ; $+4$ ; $+17$ ; $-11$
+\item Range dans l'ordre décroissant les nombres : \quad $-10,6$ ; $+14,52$ ; $-8,32$ ; $-3,8$ ; $+4,2$ ; $+14,6$ ; $-8,3$
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Complète par des nombres relatifs
+\begin{enumerate}[font=\color{exer2}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item $-6,4 < \dots ~\dots ~ < \dots ~\dots ~ < \dots ~\dots ~ < -5,8$&
+\item $-123 > \dots ~\dots ~ > -124 > \dots ~\dots ~ > -125$\\
+\item $-0.52 < \dots ~\dots ~ < \dots ~\dots ~ < \dots ~\dots ~ < -0.5$&
+\item $-6,1 > \dots ~\dots ~ > -6,2> \dots ~\dots ~ > -6,29$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Donne tous les entiers relatifs compris entre :
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{3}{>{\arraybackslash}X}}
+\item $-2$ et $5$&
+\item $-8$ et $-2$&
+\item $-15$ et $-20$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Encadre par deux entiers relatifs consécutifs.
+\begin{enumerate}[font=\color{exer1}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{3}{>{\arraybackslash}X}}
+\item $ \dots ~\dots ~ < -2,3 < \dots ~\dots ~ $&
+\item $ \dots ~\dots ~ < +4,2 < \dots ~\dots ~ $&
+\item $ \dots ~\dots ~ > +0,14 > \dots ~\dots ~ $\\
+\item $ \dots ~\dots ~ > -0,14 > \dots ~\dots ~ $&
+\item $ \dots ~\dots ~ < -0,98 < \dots ~\dots ~ $&
+\item $ \dots ~\dots ~ > -12,4 > \dots ~\dots ~ $\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Opposés
+\begin{enumerate}[font=\color{exer1}]
+\item Écris l'opposé de chaque nombres :
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{11.5cm}{|>{\columncolor{exer1!20}}p{2cm}|*{5}{>{\centering \arraybackslash}X|}}
+\hline
+Nombre	& $-2,3$ & $+7$ & $-0,6$ & $-5,2$ & $+1,4$ \\\hline
+Opposé &  &  &  &  &  \\\hline
+\end{tabularx}
+\end{center}
+
+\item Range ces nombres et leurs opposés dans l'ordre croissant.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Saïd dit : \og Je peux trouver un nombre entier relatif inférieur à $-7,1$ et supérieur à $-6,8$ \fg{} . Si Saïd dit vrai, donne un nombre qui convienne. Sinon modifie la phrase de Saïd pour qu'elle devienne vraie.
+\end{ex}
+
+\begin{ex}
+Donne tous les chiffres qui on pu être cacher par la fleur (\ding{95}) pour que les inégalités soient justes.
+\begin{enumerate}[font=\color{exer3}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item $ -105,2$\ding{95}$ < -105,24 $&
+\item $ -6052,53 > -6052,$\ding{95}$2$ \\
+\item $ +525,$\ding{95}$ > -525,7 $&
+\item $ -0,05 < -0,0$\ding{95}$1$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Complète par $<$, $>$ ou $=$
+\begin{enumerate}[font=\color{exer3}]
+\renewcommand{\arraystretch}{1}
+\begin{tabularx}{\linewidth}{*{4}{>{\arraybackslash}X}}
+\item $\dfrac{1}{3} ~\dots ~ \dots ~ -\dfrac{7}{9}$&
+\item $-\dfrac{14}{35} ~\dots ~ \dots ~ -\dfrac{2}{35}$&
+\item $-\dfrac{1}{3} ~\dots ~ \dots ~ -\dfrac{7}{9}$&
+\item $-\dfrac{3,2}{6,4} ~\dots ~ \dots ~ -\dfrac{8}{6}$\\
+\item $8+\dfrac{1}{3} ~\dots ~ \dots ~ 9-\dfrac{2}{3}$&
+\item $-\dfrac{3}{7} ~\dots ~ \dots ~ -\dfrac{3}{14}$&
+\item $-\dfrac{4,2}{2} ~\dots ~ \dots ~ -\dfrac{9,6}{3}$&
+\item $-\dfrac{6}{5} ~\dots ~ \dots ~ -\dfrac{7}{4}$\\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\end{document}

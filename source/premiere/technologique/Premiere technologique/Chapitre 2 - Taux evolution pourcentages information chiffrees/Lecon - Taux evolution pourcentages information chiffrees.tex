@@ -1,0 +1,102 @@
+\documentclass[french,11pt]{book}
+\usepackage{teach}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{eurosym}
+\newcommand{\pourcent}{\%}
+
+\begin{document}
+
+\chapter*{Taux d'evolution, pourcentages et informations chiffrees}
+
+\section*{Proportion et pourcentage}
+
+Une proportion compare une partie a un tout. Si une partie a pour effectif $p$ dans un ensemble d'effectif total $T$, alors la proportion est
+\[
+\frac{p}{T}.
+\]
+Pour l'exprimer en pourcentage, on multiplie par $100$.
+
+\begin{exemple}
+Dans une entreprise de $250$ salaries, $90$ travaillent a temps partiel. La proportion vaut
+\[
+\frac{90}{250}=0{,}36.
+\]
+Donc $36\pourcent$ des salaries travaillent a temps partiel.
+\end{exemple}
+
+\section*{Appliquer un pourcentage}
+
+Prendre $t\pourcent$ d'une quantite revient a multiplier cette quantite par $\frac{t}{100}$.
+
+\begin{exemple}
+$18\pourcent$ de $640$ vaut
+\[
+640\times\frac{18}{100}=115{,}2.
+\]
+\end{exemple}
+
+\section*{Taux d'evolution}
+
+Lorsqu'une valeur passe d'une valeur initiale $V_i$ a une valeur finale $V_f$, la variation absolue est
+\[
+V_f - V_i.
+\]
+Le taux d'evolution est
+\[
+t=\frac{V_f - V_i}{V_i}.
+\]
+Il peut s'exprimer sous forme decimale ou en pourcentage.
+
+\begin{exemple}
+Un prix passe de $80$ \euro{} a $92$ \euro{}. Le taux d'evolution vaut
+\[
+t=\frac{92-80}{80}=\frac{12}{80}=0{,}15.
+\]
+Le prix a augmente de $15\pourcent$.
+\end{exemple}
+
+\section*{Coefficient multiplicateur}
+
+Augmenter une valeur de $t\pourcent$ revient a la multiplier par
+\[
+1+\frac{t}{100}.
+\]
+Diminuer une valeur de $t\pourcent$ revient a la multiplier par
+\[
+1-\frac{t}{100}.
+\]
+
+\begin{exemple}
+Une hausse de $12\pourcent$ correspond au coefficient multiplicateur $1{,}12$.
+Une baisse de $30\pourcent$ correspond au coefficient multiplicateur $0{,}70$.
+\end{exemple}
+
+\section*{Evolutions successives}
+
+Pour plusieurs evolutions successives, on multiplie les coefficients multiplicateurs.
+
+\begin{exemple}
+Un prix augmente de $20\pourcent$ puis diminue de $10\pourcent$. Le coefficient global est
+\[
+1{,}20\times0{,}90=1{,}08.
+\]
+L'evolution globale est donc une augmentation de $8\pourcent$.
+\end{exemple}
+
+\section*{Evolution reciproque}
+
+L'evolution reciproque permet de revenir a la valeur initiale. Si le coefficient multiplicateur d'une evolution est $C$, alors le coefficient multiplicateur reciproque est
+\[
+\frac{1}{C}.
+\]
+
+\begin{exemple}
+Apres une hausse de $25\pourcent$, le coefficient est $1{,}25$. Pour revenir a la valeur initiale, il faut multiplier par
+\[
+\frac{1}{1{,}25}=0{,}8.
+\]
+Il faut donc une baisse de $20\pourcent$.
+\end{exemple}
+
+\end{document}

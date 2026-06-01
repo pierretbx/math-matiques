@@ -1,0 +1,552 @@
+% teach V1.4 (corrigé – environnements demo & exemple)
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{teach}[2018/12/20]
+
+\RequirePackage{titlesec}
+\RequirePackage{graphicx}
+\RequirePackage[table]{xcolor}
+%\RequirePackage{cellspace}
+% \setlength{\cellspacebottomlimit}{4pt}
+\RequirePackage{ifthen}
+\RequirePackage{multido}
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+  \newlist{remslist}{itemize}{1}
+  \setlist[remslist,1]{%
+        labelsep=*,
+        label=\textbullet,
+        leftmargin=16pt,
+        labelindent=0pt}
+  \newlist{exempleslist}{enumerate}{1}
+  \setlist[exempleslist,1]{%
+        labelsep=*,
+        label=\protect\fontfamily{lmss}\protect\bfseries\protect\selectfont\arabic*.,
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+  \newlist{exemplelist}{itemize}{1}
+  \setlist[exemplelist,1]{%
+        labelsep=*,
+        label=\textcolor{\teach@exemple@title@txtcolor}{\textbullet},
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+  \newlist{exlist}{enumerate}{2}
+  \setlist[exlist,1]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\arabic*.,
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+  \setlist[exlist,2]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\alph*.,
+        leftmargin=16pt,
+        labelindent=-4pt
+        }
+  \newlist{defitemize}{itemize}{1}
+  \setlist[defitemize,1]{%
+        labelsep=*,
+        label=$\blacktriangleright$,
+        leftmargin=16pt,
+        labelindent=0pt}
+  \newlist{defenumerate}{enumerate}{1}
+  \setlist[defenumerate,1]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\fcolorbox{black}{black}{\textcolor{white}{\arabic*}},
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+  \newlist{propenumerate}{enumerate}{2}
+  \setlist[propenumerate,1]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\textcolor{black}{\arabic*.},
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+  \newlist{proplist}{itemize}{1}
+  \setlist[proplist,1]{%
+        labelsep=*,
+        label=\textbullet,
+        leftmargin=16pt,
+        labelindent=0pt}
+\RequirePackage[%
+      hmargin=2.5cm,
+      vmargin=2cm
+      %,showframe,showcrop
+      ]{geometry}
+\RequirePackage{mdframed}      
+\RequirePackage{hyperref}
+\setlength{\parindent}{0pt}
+
+% Options
+
+\newif\if@euclide
+\DeclareOption{euclide}{\@euclidetrue}
+
+\newif\if@fancyhdr
+\DeclareOption{fancyhdr}{\@fancyhdrtrue}
+
+\newif\if@minitoc
+\DeclareOption{minitoc}{\@minitoctrue}
+
+\newif\if@titre
+\DeclareOption{titre}{\@titretrue}
+
+\ProcessOptions
+
+% Page de garde
+
+\if@titre
+  \RequirePackage{eso-pic}
+  \renewcommand{\maketitle}
+  {%
+    \newgeometry{margin=0cm}
+    \color{white}
+    \AddToShipoutPictureBG*{% 
+      \AtPageLowerLeft{% 
+        \put(0,0){\includegraphics{couverture.png}}
+      }
+    }
+    \thispagestyle{empty}%
+      \begin{center}       
+        \begin{minipage}{0.75\paperwidth}
+        \vspace*{7cm}
+        \begin{flushleft}
+          \fontfamily{lmss}\fontsize{50}{54}\fontseries{bx}\selectfont
+          \@title
+        \end{flushleft}
+        \par
+        \hrule height 4pt
+        \par
+        \begin{flushright}
+         \usefont{OT1}{phv}{m}{n}
+          \Large \@author
+          \par
+        \end{flushright}
+        \end{minipage}
+        \vfill
+        \includegraphics{trait.png}\\[8pt]
+        \fontfamily{lmss}\fontsize{18}{20}\selectfont\@date\\
+        \includegraphics{trait.png}\\
+        \vspace*{1.8cm}
+        \end{center}
+      \color{black}
+    \newpage
+    \restoregeometry
+  }
+\fi
+
+% Fancyhead
+
+\if@fancyhdr
+  \RequirePackage{fancyhdr}
+  \fancypagestyle{chapterstart}{% 1ère page des chapitres
+  \fancyhf{}%2
+    \fancyfoot[RO,RE]{%
+      %\vskip0.1pt
+      \fontfamily{lmss}\selectfont\thepage
+      }
+  }
+
+  \fancypagestyle{toc}{% Sommaire
+    \fancyhf{}%
+      \fancyfoot{}
+      \cfoot{\fontfamily{lmss}\selectfont\thepage}
+  }
+
+  \fancypagestyle{main}{% 
+    \fancyhf{}%
+      \fancyfoot[CO,CE]{% 
+        \fontfamily{lmss}\selectfont\thepage
+      }
+}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{main}
+\fi
+
+% Minitoc
+
+\if@minitoc
+  \RequirePackage{minitoc} 
+  \renewcommand{\mtctitle}{} 
+\fi
+
+% Définition des couleurs
+
+\if@euclide
+\newcommand{\teach@chapter@global@color}{purple}
+\newcommand{\teach@minitoc@global@color}{teal}
+\newcommand{\teach@section@title@txtcolor}{red}
+\newcommand{\teach@subsection@title@txtcolor}{red!50!orange}
+\newcommand{\teach@subsubsection@title@txtcolor}{orange!50!black}
+\newcommand{\teach@defn@title@bgcolor}{green!50!black}
+\newcommand{\teach@defn@title@txtcolor}{white}
+\newcommand{\teach@defn@body@txtcolor}{black}
+\newcommand{\teach@defn@item@textcolor}{yellow}
+\newcommand{\teach@thm@title@bgcolor}{red}
+\newcommand{\teach@thm@title@txtcolor}{white}
+\newcommand{\teach@thm@body@txtcolor}{black}
+\newcommand{\teach@demo@title@bgcolor}{gray}
+\newcommand{\teach@demo@title@txtcolor}{white}
+\newcommand{\teach@demo@body@bgcolor}{gray!20}
+\newcommand{\teach@demo@body@txtcolor}{black}
+\newcommand{\teach@prop@title@bgcolor}{red!50!orange}
+\newcommand{\teach@prop@title@txtcolor}{white}
+\newcommand{\teach@prop@body@txtcolor}{black}
+\newcommand{\teach@lemme@title@bgcolor}{white}
+\newcommand{\teach@lemme@title@txtcolor}{orange!50!red}
+\newcommand{\teach@lemme@body@txtcolor}{black}
+\newcommand{\teach@cor@title@bgcolor}{white}
+\newcommand{\teach@cor@title@txtcolor}{orange!50!red}
+\newcommand{\teach@cor@body@txtcolor}{black}
+\newcommand{\teach@exemple@title@bgcolor}{white}
+\newcommand{\teach@exemple@title@txtcolor}{blue}
+\newcommand{\teach@exemple@body@txtcolor}{black}
+\newcommand{\teach@rem@body@txtcolor}{black}
+\newcommand{\teach@rem@title@txtcolor}{orange}
+\newcommand{\teach@exo@body@txtcolor}{black}
+\newcommand{\teach@exo@title@txtcolor}{blue!50!black}
+\newcommand{\teach@exo@rule@color}{blue!50!black}
+\newcommand{\teach@memento@title@txtcolor}{purple}
+\newcommand{\teach@attention@title@txtcolor}{red}
+\setlist[exempleslist,1]{%
+        labelsep=*,
+        label=\protect\fontfamily{lmss}\protect\bfseries\protect\selectfont\textcolor{\teach@exemple@title@txtcolor}{\arabic*.},
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+\setlist[remslist,1]{%
+        labelsep=*,
+        label=\textcolor{\teach@rem@title@txtcolor}{\textbullet},
+        leftmargin=16pt,
+        labelindent=0pt}
+\setlist[exlist,1]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\textcolor{\teach@ex@title@txtcolor}{\arabic*.},
+        leftmargin=16pt,
+        labelindent=0pt
+}
+\setlist[exlist,2]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\textcolor{\teach@ex@title@txtcolor}{\alph*.},
+        leftmargin=16pt,
+        labelindent=-4pt
+}
+\setlist[defitemize,1]{%
+        labelsep=*,
+        label=\textcolor{\teach@defn@title@bgcolor}{$\blacktriangleright$},
+        leftmargin=16pt,
+        labelindent=0pt}
+\setlist[defenumerate,1]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\fcolorbox{\teach@defn@title@bgcolor}{\teach@defn@title@bgcolor}{\textcolor{\teach@defn@item@textcolor}{\arabic*}},
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+\setlist[propenumerate,1]{%
+        labelsep=*,
+        label=\protect\bfseries\protect\selectfont\textcolor{\teach@prop@title@bgcolor}{\arabic*.},
+        leftmargin=16pt,
+        labelindent=0pt
+        }
+\setlist[proplist,1]{%
+        labelsep=*,
+        label=\textcolor{\teach@prop@title@bgcolor}{\textbullet},
+        leftmargin=16pt,
+        labelindent=0pt}
+\else
+\newcommand{\teach@chapter@global@color}{black}
+\newcommand{\teach@minitoc@global@color}{black}
+\newcommand{\teach@section@title@txtcolor}{black}
+\newcommand{\teach@subsection@title@txtcolor}{black!75}
+\newcommand{\teach@subsubsection@title@txtcolor}{gray}
+\newcommand{\teach@defn@title@bgcolor}{black}
+\newcommand{\teach@defn@title@txtcolor}{white}
+\newcommand{\teach@defn@body@txtcolor}{black}
+\newcommand{\teach@defn@item@textcolor}{white}
+\newcommand{\teach@thm@title@bgcolor}{black}
+\newcommand{\teach@thm@title@txtcolor}{white}
+\newcommand{\teach@thm@body@txtcolor}{black}
+\newcommand{\teach@demo@title@bgcolor}{gray}
+\newcommand{\teach@demo@title@txtcolor}{white}
+\newcommand{\teach@demo@body@bgcolor}{gray!20}
+\newcommand{\teach@demo@body@txtcolor}{black}
+\newcommand{\teach@prop@title@bgcolor}{black}
+\newcommand{\teach@prop@title@txtcolor}{white}
+\newcommand{\teach@prop@body@txtcolor}{black}
+\newcommand{\teach@lemme@title@bgcolor}{white}
+\newcommand{\teach@lemme@title@txtcolor}{black}
+\newcommand{\teach@lemme@body@txtcolor}{black}
+\newcommand{\teach@cor@title@bgcolor}{white}
+\newcommand{\teach@cor@title@txtcolor}{black}
+\newcommand{\teach@cor@body@txtcolor}{black}
+\newcommand{\teach@exemple@title@bgcolor}{white}
+\newcommand{\teach@exemple@title@txtcolor}{black}
+\newcommand{\teach@exemple@body@txtcolor}{black}
+\newcommand{\teach@rem@body@txtcolor}{black}
+\newcommand{\teach@rem@title@txtcolor}{black}
+\newcommand{\teach@ex@body@txtcolor}{black}
+\newcommand{\teach@ex@title@txtcolor}{black}
+\newcommand{\teach@ex@rule@color}{black}
+\newcommand{\teach@memento@title@txtcolor}{black}
+\newcommand{\teach@attention@title@txtcolor}{black}
+\fi
+
+% Redéfinitions
+%---> des couleurs
+\def\redefinecolor#1#2#3#4{\expandafter\renewcommand\csname teach@#1@#2@#3\endcsname{#4}}
+%---> Des titres
+\def\teach@title@thm{Th\'eor\`eme}
+\def\teach@title@defn{D\'efinition}
+\def\teach@title@defnabr{D\'ef.}
+\def\teach@title@defns{D\'efinitions}
+\def\teach@title@defnsabr{D\'ef.}
+\def\teach@title@cor{Corollaire}
+\def\teach@title@lemme{Lemme}
+\def\teach@title@prop{Propri\'et\'e}
+\def\teach@title@dem{Démonstration}
+\def\teach@title@exemple{Exemple}
+\def\teach@title@exemples{Exemples}
+\def\teach@title@rem{Remarque}
+\def\teach@title@rems{Remarques}
+\def\teach@title@ex{Exercice}
+\def\teach@title@memento{À retenir}
+\def\teach@title@attention{Attention}
+\def\redefinetitle#1#2{\expandafter\renewcommand\csname teach@title@#1\endcsname{#2}}
+
+% Part / Chapter / Sections (inchangés)
+% ... (toute votre configuration de titres et chapitres ici, identique à l'original)
+
+% Boîtes et macro titre
+\newsavebox{\teach@box}
+\newcommand{\teach@title}{}
+
+% --- Environnements déjà OK (thm, thm*, lemme, lemme*, cor, cor*, defn, defn*, defns, defns*, rem, rems, ex, ex*, corrige, memento, attention) ---
+% (Conservez vos définitions originales inchangées.)
+
+% ======================
+%  DÉMONSTRATIONS (OK)
+% ======================
+
+\newcounter{indic@breakdemo}
+
+\newenvironment{demo}[1][]
+{%
+\ifx\hfuzz#1\hfuzz
+  \renewcommand\teach@title{\teach@title@dem}
+\else
+  \renewcommand\teach@title{\teach@title@dem~(#1)}
+\fi
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-5\tabcolsep-0.4pt}
+\color{\teach@demo@body@txtcolor}
+}
+{
+\end{minipage}
+\end{lrbox}
+\vspace{1em}
+\begin{tabular}{@{}p{1em}Sl@{}}
+\multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@demo@title@bgcolor}{\teach@demo@title@bgcolor}{\textcolor{\teach@demo@title@txtcolor}{\teach@title\ifnum\theindic@breakdemo=0\else~-- Suite\fi\strut}}} \\
+ & \cellcolor{\teach@demo@body@bgcolor}\\[-10pt]
+ & \cellcolor{\teach@demo@body@bgcolor}\usebox{\teach@box}
+\end{tabular}
+\vspace{1em}
+\setcounter{indic@breakdemo}{0}
+}
+
+% \breakdemo (inchangé fonctionnellement)
+\newcommand{\breakdemo}
+{%
+  \stepcounter{indic@breakdemo}
+  \end{minipage}
+\end{lrbox}
+\vspace{1em}
+\begin{tabular}{@{}p{1em}Sl@{}}
+\multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@demo@title@bgcolor}{\teach@demo@title@bgcolor}{\textcolor{\teach@demo@title@txtcolor}{\teach@title\strut}}} \\
+ & \cellcolor{gray!25}\\[-10pt]
+ & \cellcolor{gray!25}\usebox{\teach@box}
+\end{tabular}
+\newpage
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-5\tabcolsep-0.4pt}
+\color{\teach@demo@body@txtcolor}
+}
+
+% Version étoilée
+\mdfdefinestyle{demo}{linewidth=0pt,backgroundcolor=\teach@demo@body@bgcolor,skipabove=0.5pt,skipbelow=1em}
+\newenvironment{demo*}[1][]
+{%
+\ifx\hfuzz#1\hfuzz
+  \renewcommand\teach@title{\teach@title@dem}
+\else
+  \renewcommand\teach@title{\teach@title@dem~(#1)}
+\fi
+{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@demo@title@bgcolor}{\teach@demo@title@bgcolor}{\textcolor{\teach@demo@title@txtcolor}{\teach@title}}}
+\mdframed[style=demo]
+\color{\teach@demo@body@txtcolor}
+}
+{\endmdframed}
+
+% ======================
+%  EXEMPLES (CORRIGÉS)
+% ======================
+
+% --- helper: éviter l’imbrication de tabular, on reste sur un unique tableau 2 colonnes ---
+
+\newcounter{count@exemple}[chapter]
+\newcounter{indic@exemple@pluriel}
+
+\newenvironment{exemple}[1][]
+{%
+\setcounter{indic@exemple@pluriel}{0}
+\refstepcounter{count@exemple}
+\ifx\hfuzz#1\hfuzz
+  \renewcommand\teach@title{\teach@title@exemple~\thecount@exemple}
+\else
+  \renewcommand\teach@title{\teach@title@exemple~\thecount@exemple~(#1)}
+\fi
+\let\itemize\exemplelist
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
+\color{\teach@exemple@body@txtcolor}
+}
+{
+\end{minipage}
+\end{lrbox}
+\vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
+\begin{tabular}{|@{}Sl@{}}
+\multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
+ & \\[-10pt]
+ & \usebox{\teach@box}
+\end{tabular}\arrayrulecolor{black}
+\vspace{1em}
+}
+
+\newenvironment{exemple*}[1][]
+{%
+\setcounter{indic@exemple@pluriel}{0}
+\ifx\hfuzz#1\hfuzz
+  \renewcommand\teach@title{\teach@title@exemple}
+\else
+  \renewcommand\teach@title{\teach@title@exemple~(#1)}
+\fi
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
+\color{\teach@exemple@body@txtcolor}
+}
+{
+\end{minipage}
+\end{lrbox}
+\vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
+\begin{tabular}{|@{}Sl@{}}
+\multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
+ & \\[-10pt]
+ & \usebox{\teach@box}
+\end{tabular}\arrayrulecolor{black}
+\vspace{1em}
+}
+
+\newenvironment{exemples}[1][]
+{%
+\refstepcounter{count@exemple}
+\setcounter{indic@exemple@pluriel}{1}
+\ifx\hfuzz#1\hfuzz
+  \renewcommand\teach@title{\teach@title@exemples~\thecount@exemple}
+\else
+  \renewcommand\teach@title{\teach@title@exemples~\thecount@exemple~(#1)}
+\fi
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
+\color{\teach@exemple@body@txtcolor}
+\begin{exempleslist}
+}
+{
+\end{exempleslist}
+\end{minipage}
+\end{lrbox}
+\vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
+\begin{tabular}{|@{}Sl@{}}
+\multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
+ & \\[-10pt]
+ & \usebox{\teach@box}
+\end{tabular}\arrayrulecolor{black}
+\vspace{1em}
+}
+
+\newenvironment{exemples*}[1][]
+{%
+\setcounter{indic@exemple@pluriel}{1}
+\ifx\hfuzz#1\hfuzz
+  \renewcommand\teach@title{\teach@title@exemples}
+\else
+  \renewcommand\teach@title{\teach@title@exemples~(#1)}
+\fi
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
+\color{\teach@exemple@body@txtcolor}
+\begin{exempleslist}
+}
+{
+\end{exempleslist}
+\end{minipage}
+\end{lrbox}
+\vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
+\begin{tabular}{|@{}Sl@{}}
+\multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
+ & \\[-10pt]
+ & \usebox{\teach@box}
+\end{tabular}\arrayrulecolor{black}
+\vspace{1em}
+}
+
+% =======
+% breakex
+% =======
+
+\newcommand{\breakex}[1][]
+{%
+\ifnum\theindic@exemple@pluriel=1
+  % Fin du bloc en cours
+  \end{exempleslist}
+  \end{minipage}
+\end{lrbox}
+  % Rendu du bloc courant
+  \vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
+  \begin{tabular}{|@{}Sl@{}}
+  \multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
+   & \\[-10pt]
+   & \usebox{\teach@box}
+  \end{tabular}\par
+  % Titre mis à jour
+  \edef\tmptitle{\teach@title}
+  \renewcommand{\teach@title}{\tmptitle{} -- Suite}
+  % Reprise d’un nouveau bloc
+  \begin{lrbox}{\teach@box}
+  \begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
+  \color{\teach@exemple@body@txtcolor}
+  \restartlist{exempleslist}
+  \begin{exempleslist}[start=#1]
+\else
+  \end{minipage}
+\end{lrbox}
+  \vspace{1em}\arrayrulecolor{\teach@exemple@title@txtcolor}
+  \begin{tabular}{|@{}Sl@{}}
+  \multicolumn{2}{@{}l}{\fontfamily{lmss}\bfseries\selectfont\fcolorbox{\teach@exemple@title@txtcolor}{\teach@exemple@title@bgcolor}{\textcolor{\teach@exemple@title@txtcolor}{\teach@title\strut}}} \\
+   & \\[-10pt]
+   & \usebox{\teach@box}
+  \end{tabular}\par
+  \edef\tmptitle{\teach@title}
+  \renewcommand{\teach@title}{\tmptitle{} -- Suite}
+  \begin{lrbox}{\teach@box}
+  \begin{minipage}{\dimexpr\linewidth-2\tabcolsep+6pt}
+  \color{\teach@exemple@body@txtcolor}
+\fi
+}
+
+% -----------------
+% Le reste du pack : ex, ex*, excor, corrige, memento, attention, devoirs, compétences…
+% (vous pouvez conserver vos définitions originales inchangées)

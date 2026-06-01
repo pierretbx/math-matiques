@@ -1,0 +1,1336 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{stmaryrd}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\newcommand{\bbr}{\mathbb {R}}
+\newcommand{\bbc}{\mathbb {C}}
+\newcommand{\bbz}{\mathbb {Z}}
+\newcommand{\I}{i}
+\newcommand{\tm}{\times}
+
+\newcommand{\ofr}[2]{\dfrac{#1}{#2}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\ab}[1]{\vert #1 \vert}
+\newcommand{\nov}[1]{\Vert \overrightarrow{#1} \Vert}
+
+%\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+  \usepackage{tkz-tab}
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+  \newcommand{\bsyc}{\left\{\begin{array}{rcl}} % systï¿½e serrï¿½sur le ï¿½al
+\newcommand{\esyc}{\end{array}\right.}
+
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+%\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+\newcommand{\calr}{\mathscr{R}}
+
+
+\newcommand{\cali}{\mathscr{I}}
+\newcommand{\RR}{\calr }
+\newcommand{\CR}{\calc}
+\newcommand{\IR}{\cali }
+
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+%\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+%\newcommand{\coordpp}[3]{\begin{pmatrix}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+\newcommand{\ssi}{\Longleftrightarrow}
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+\newcommand{\un}{\suite}
+\newcommand{\eit}{e^{it}}
+\newcommand{\eimt}{e^{imt}}
+\newcommand{\vn}{\suite[v]}
+%\newcommand{\pa}[1]{(#1)}
+\newcommand{\cro}[1]{[#1]}
+\newcommand{\abs}[1]{\vert #1 \vert}
+
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\Rep}{(O;\ve{i};\ve{j})}
+\newcommand{\C}[2]{C_{#1}^{#2}}
+\newcommand{\dx}{dx}
+%\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\ud}[1]{\dfrac{#1}{2}}
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cacheg}[1]{#1}
+\newcommand{\cacheb}[1]{#1}
+\begin{document}
+
+
+\begin{titlepage}
+  \begin{sffamily}
+  \begin{center}
+    \textsc{\LARGE Mathématiques expertes}\\[2cm]
+    % Title
+    { \huge \bfseries Livret de terminal  \\[0.4cm] }
+    \HRule \\[2cm]
+    \includegraphics[scale=1]{../snow2.1}
+    \\[2cm]
+    \vfill
+    % Bottom of the page
+     \large Pierre \textsc{Thiebeaux} \\
+    {\large Année scolaire 2019 - 2020}
+  \end{center}
+  \end{sffamily}
+\end{titlepage}
+
+\tableofcontents
+
+\chapter{Les nombres complexes}
+\textit{Les  nombres  complexes  portent  bien  leur  nom  !  Ils  interviennent
+partout  : en  algèbre, en  analyse, en  géométrie, en  électronique, en
+traitement du signal,  en musique, etc. Et en plus,  ils n'ont jamais la
+même  apparence  :  tantôt  sous  forme algébrique,  tantôt  sous  forme
+trigonométrique, tantôt sous forme  exponentielle, ... Leur succès vient
+en fait de  deux propriétés : en travaillant  sur les nombres complexes,
+tout polynôme admet un nombre de racines égal à son degré et surtout ils
+permettent de calculer  facilement en dimension 2.}
+
+
+\section{Approche \og moderne\fg{}}
+
+Vous savez compter en dimension 1, c'est  à dire additionner
+et multiplier des nombres réels qu'on peut représenter sur la droite des
+réels : 
+
+\bigskip
+
+\begin{center}
+\includegraphics{../Figures/complexe.1}
+\end{center}
+
+
+Faute  d'outils  plus rigoureux, on  vous a
+présenté en classe  de seconde l'ensemble des nombres  réels comme étant
+l'ensemble des abscisses des points de la droite orientée ci-dessus. 
+
+Vous  utilisez depuis  l'école primaire  ces nombres  et  les opérations
+usuelles qui leur sont  associées, addition et multiplication, sans trop
+vous  poser  de  questions.\\
+ 
+ Rappelons  quelques  propriétés \footnote{Ces
+  propriétés donnent à $\bbr$ une structure de \textit{corps}, dont voici les propriétés.}
+  
+\begin{itemize}
+\item[$\bullet$] L'addition possède un élément neutre noté 0 : $x+0=0+x=x$.
+\item[$\bullet$] La somme de 2 réels est encore un réel.
+\item[$\bullet$] Chaque réel $x$ admet un opposé $-x$ vérifiant $x+(-x)=(-x)+x=0$.
+\item[$\bullet$]  La multiplication  possède un  élément neutre  noté 1  : $x\times
+  1=1\times x=x$ 
+\item[$\bullet$] Le produit de deux réels est encore un réel.
+\item[$\bullet$] Chaque  réel différent  de 0 admet  un inverse  $x^{-1}$ vérifiant
+  $x\times x^{-1}=x^{-1}\times x=1$ 
+\item[$\bullet$]   La   multiplication    est   distributive   sur   l'addition   :
+  $x\times(y+z)=x\times y + x\times z$. 
+\end{itemize}
+
+Tout ceci est bien naturel. Maintenant, on voudrait décoler de l'axe des
+réels  et faire  le même  travail en  dimension 2,  c'est-à-dire pouvoir
+calculer avec des couples de nombres du style $(x,y)$. Ca veut dire qu'on travaillerai maintenant sur le plan tout entier que l'on  note   $\bbr^2$  cet  ensemble  est  l'ensemble  des coordonnées des points du plan.
+
+La question est: -Est-ce qu'on peut définir une addition
+et une multiplication qui  engloberaient et généraliseraient celles vues
+dans $\bbr$ et donc nous donnerai un corps plus grand? Une sorte d'"extension de corps". 
+
+Nous allons donc adopter une tactique pour faire cela.  \'A chaque  élément  $(x,y)$ de  $\bbr^2$  nous allons  faire correspondre un nombre qu'on qualifiera de \textit{complexe}. 
+
+L'idée    vient    de   l'observation    \textit{intuitive}\footnote{Les
+  $\curvearrowright$  renvoient à une  notion extrêmement  importante et
+  rigoureuse  : la notion  d'\textit{isomorphisme}. Deux  ensembles sont
+  isomorphes lorsqu'il existe une bijection  entre les deux et que cette
+  bijection  <<~conserve~>> les  opérations. Cela  permet  de travailler
+  \textit{à  isomorphisme   près}  sur  un  ensemble   compliqué  en  le
+  remplaçant   par   un  ensemble   isomorphe   plus   approprié  à   la
+  situation.  C'est ce  qui se  passe entre  $\bbr^2$ et  $\bbc$}  : \[\og
+(x,y)\curvearrowright  x\cdot(1,0)+y\cdot (0,1)\curvearrowright x\times
+1+y\times \sqrt{-1}\curvearrowright x+y\sqrt{-1}\fg{}\]
+
+
+Nous allons même  donner un nom à ce $\sqrt{-1}$  : appelons-le $i$ pour
+qu'il fasse moins peur. Ainsi nous avons les correspondances 
+
+\begin{center}
+\begin{tabular}{ccccc}
+Le   point   M   &$\longleftrightarrow$    &   Le   couple   $(x,y)$   &
+$\longleftrightarrow$ & Le nombre complexe $x+iy$\\ 
+$\updownarrow$ & &  $\updownarrow$ & & $\updownarrow$ \\
+Le plan $\PR$  & $\longleftrightarrow$ & $\bbr^2$ &$\longleftrightarrow$
+& L'ensemble des nombres complexes 
+\end{tabular}
+\end{center}
+
+
+Pour se simplifier la vie, nous  allons donner un nom à cet ensemble des
+nombres complexes : $\bbc$\\
+
+Et  maintenant   observez  comme  les  calculs   deviennent  faciles  en
+prologeant les règles valables sur $\bbr$.
+
+$$(x+iy) + (x'+iy')= x+iy+x'+iy'=(x+x')+i(y+y')$$
+$$(x,y)+(x',y')=(x+x',y+y')$$
+$$(x+iy)\cdot(x'+iy')=xx'+ixy'+iyx'+i^2yy$$
+$$(x+iy)\cdot(x'+iy')=(xx'-yy')+i(xy'+yx')$$
+
+
+Donc nous  allons pouvoir  calculer en dimension  2 en  généralisant les
+règles de  dimension 1. Nous avons  juste ajouté ce nombre  $i$ de carré
+$-1$.   En  particulier,  tous   les  nombres  réels  sont  des  nombres
+complexes : $\bbr\subset\bbc$.  
+
+Nous allons pouvoir  associer à chacun de ces nombres  réels un point du
+plan et  donc associer  des transformations du  plan à des  calculs dans
+$\bbc$ : on va résoudre des problèmes de géométrie par le calcul. 
+ 
+
+\section{Vocabulaire et premières propriétés}
+
+
+
+
+  \begin{thm}[Ensemble $\bbc$]
+On  définit un ensemble $\bbc$ 
+\begin{itemize}
+\item[$\bullet$] muni d'une addition et d'une multiplication qui prolongent celles de $\bbr$
+\item[$\bullet$] contenant un nombre $i$ vérifiant $i^2=-1$ 
+\item[$\bullet$]  tel que chaque  élément $z$  de $\bbc$  peut s'écrire  de manière
+  \textbf{unique}  sous   la  forme   $$z=a+ib  \quad  \text{avec   }  a
+  \text{ et } b \text{ des nombres réels}$$ 
+\end{itemize}
+    
+    \end{thm}
+  
+
+
+
+\subsection{Forme algébrique}
+
+Cette écriture unique est appelée \textbf{forme algébrique} du réel $z$.
+
+Le nombre $a$ est appellé \textbf{partie réelle} de  $z$ et notée $\RR e(z)$
+
+Le nombre $b$ est appellé \textbf{partie imaginaire} de  $z$ et notée $\IR m(z)$
+
+
+  \begin{rem}
+    $\IR m(z)$ est un nombre réel.
+    \end{rem}
+  
+
+
+  
+    \begin{rem}{\`A quoi sert l'unicité de la forme algébrique ?}
+Par exemple,  après maints calculs  savants, vous arrivez au  résultat $
+2x+3y-5+i(7x-32y+1)=0$ avec $x$ et $y$  des réels.  Et bien le membre de
+gauche  est   une  forme   algébrique  puisque  de   la  forme   réel  +
+$i\cdot$réel. Or la forme algébrique de 0 est $0+i\cdot0$.  
+
+Ainsi,  une   équation  complexe   revient  à  deux   équations  réelles
+( bienvenue dans la deuxième dimension... ) et donc 
+
+$    2x+3y-5+i(7x-32y+1)=0   \Longleftrightarrow   \begin{cases}
+    2x+3y-5=0\\ 7x-32y+1=0\end{cases}$
+\end{rem}
+
+
+\begin{thm}[La formule du binôme]
+Soit $z,z'\in \bbc$ alors, 
+
+$$(z+z')^n=\sum_{k=0}^n C^k_nz^kz'^{n-k}$$
+
+\end{thm}
+
+\begin{demo}[Par récurrence sur $\mathbb{N}$]
+Initialisation:
+$$(z+z')^0=1$$
+Hérédité: supposons que $(z+z')^n=\sum_{k=0}^n C^k_nz^kz'^{n-k}$,
+$$(z+z')^{n+1}=(z+z')(z+z')^n=(z+z')\sum_{k=0}^n C^k_nz^kz'^{n-k}$$
+$$=z\sum_{k=0}^n C^k_nz^kz'^{n-k}+z'\sum_{k=0}^n C^k_nz^kz'^{n-k}$$
+$$=\sum_{k=0}^n C^k_nz^{k+1}z'^{n-k}+\sum_{k=0}^n C^k_nz^kz'^{n-(k+1)}$$
+$$=\sum_{k=1}^{n+1} C^{k-1}_nz^{k}z'^{n-k-1}+\sum_{k=0}^n C^k_nz^kz'^{n-(k-1)}$$
+$$=C^n_n z^{n+1} + \sum_{k=1}^{n} C^{k-1}_nz^{k}z'^{n-k+1} + C^0_nz'^{n+1} + \sum_{k=1}^n C^k_nz^kz'^{n-(k-1)} $$
+$$= C^0_nz'^{n+1} + C^n_n z^{n+1} + \sum_{k=1}^{n} (C^{k-1}_n +C^k_n)z^{k}z'^{n-k+1}$$
+De plus $C^{k-1}_n +C^k_n=C^k_{n+1}$ d'après la formule de Pascal, d'où
+$$=C^0_{n+1}z'^{n+1}+ \sum_{k=1}^{n} C^k_{n+1} z^{k}z'^{n+1-k} + C^{n+1}_{n+1}z^{n+1}$$ 
+
+$$=\sum_{k=0}^{n+1} C^k_{n+1} z^{k}z'^{n+1-k}$$
+Par conséquent , notre hypothése de récurence entraine le résultat au rang $n+1$.
+
+Conclusion : donc pour tout $n\in \mathbb{N}$, $$(z+z')^n=\sum_{k=0}^n C^k_nz^kz'^{n-k}$$
+
+\end{demo}
+\subsection{Le plan complexe}
+
+Nous avons vu que chaque nombre complexe peut être associé à un point du
+plan qu'on munit d'un repère $\pa{O,\ve{e_1},\ve{e_2}}$ 
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics{../Figures/complexe.2}
+\end{center}
+\end{figure}
+
+
+
+
+
+\`A tout nombre complexe $z=a+ib$ on associe le point $M$ de coordonnées
+$(a,b)$ qu'on  appelle \textbf{image} de  complexe $z=a+ib$. On  le note
+souvent $M(z)$. 
+
+Inversement, à tout point $M$ du plan de coordonnées $(a,b)$, on associe
+son \textbf{affixe} $z=a+ib$ qu'on note souvent $z_M$. 
+
+Enfin,  à  tout   vecteur  $\ve{u}=a\ve{e_1}+b\ve{e_2}$  de  coordonnées
+$(a,b)$  dans la  base $\pa{\ve{e_1},\ve{e_2}}$  est associé  une affixe
+$z_{\ve{u}}=a+ib$ 
+
+
+
+\subsection{Premiers calculs géométriques}
+
+\begin{itemize}
+
+\item[$\bullet$]  Soient   $\ve{u}$  et  $\ve{v}$  deux   vecteurs  de  coordonnées
+  respectives         $(a,b)$         et        $(a',b')$,         alors
+  $\ve{u}+\ve{v}=(a+a')\ve{e_1}+(b+b')\ve{e_2}$, donc 
+
+  
+    \begin{prop}[affixe d'une somme]
+      \[z_{\ve{u}+\ve{v}}=z_{\ve{u}}+z_{\ve{v}}\]
+      \end{prop}
+    
+
+
+
+
+\item[$\bullet$] De même, si $\la$ est un nombre réel 
+
+  
+    \begin{prop}[affixe du produit par un réel]
+      \[z_{\la \ve{u}}=\la z_{\ve{u}}\]
+      \end{prop}
+    
+
+
+\item[$\bullet$] Alors, si  $I$ est le \textbf{milieu} du segment $[A,B]$, on a
+
+
+  
+    \begin{prop}[affixe du milieu]
+      \[z_I=\ud{(z_A+z_B)}\]
+      \end{prop}
+    
+
+
+
+
+\item[$\bullet$] Pour tous points $A$ et $B$ 
+
+  
+    \begin{prop}[affixe d'un vecteur ]
+      \[z_{\ve{AB}}=z_B-z_A\]
+     \end{prop}
+    
+
+\end{itemize}
+
+
+\subsection{Conjugué d'un complexe}
+
+  \begin{defn}[Conjugué]
+    On appelle conjugué du nombre complexe $z=a+ib$ le nombre $$\cacheg{\overline{z}=a-ib}$$
+    \end{defn}
+  
+
+
+
+Géométriquement cela donne 
+
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics{../Figures/complexe.3}
+\end{center}
+\end{figure}
+
+
+
+Je vous laisse prouver les propriétés immédiates suivantes~:
+
+
+  \begin{prop}[]
+    \begin{itemize}
+\item[$\bullet$] $M(z)$ et $M'(\overline{z})$ sont symétriques par rapport à l'axe $(O,\ve{e_1})$
+\item[$\bullet$] $\overline{z_1+z_2}=\cacheg{\overline{z_1}+\overline{z_2}}$
+\item[$\bullet$] $\overline{z_1z_2}=\cacheg{\overline{z_1}\ \, \overline{z_2}}$
+\item[$\bullet$] Soit $n\in \mathbb{Z}, z\in \mathbb{C}^*$, alors $\overline{z^n}=\overline{z}^n$
+\item[$\bullet$] $\overline{\overline{z}}=\cacheg{z}$
+\item[$\bullet$] $z\in\bbr\Longleftrightarrow z=\cacheg{\overline{z}}$
+\item[$\bullet$] $z\in i\bbr\Longleftrightarrow z=\cacheg{-\overline{z}}$
+\item[$\bullet$] $\RR e(z)=\cacheg{\ud{(z+\overline{z})}}$
+\item[$\bullet$] $\IR m(z)=\cacheg{\ud{(z-\overline{z})}}$
+\item[$\bullet$] Si $z=a+ib$, alors $z\overline{z}=\cacheg{a^2+b^2}$
+\end{itemize}
+    \end{prop}
+
+\begin{demo}[$\overline{z_1z_2}=\cacheg{\overline{z_1}\ \, \overline{z_2}}$]
+Soit $z_1=x_1+iy_1$ et $z_2=x_2+iy_2$ donc $z_1z_2=x_1x_2-y_1y_2+i(x_1y_2 + x_2y_1)$ alors $\overline{z_1z_2}=\overline{x_1x_2-y_1y_2+i(x_1y_2 + x_2y_1)}=x_1x_2-y_1y_2-i(x_1y_2 + x_2y_1)$.\\
+
+D'autre part $\overline{z_1}\; \overline{z_2}=(x_1-iy_1)(x_2-iy_2)=x_1x_2-y_1y_2+i(-x_1y_2-x_2y_1)=x_1x_2-y_1y_2-i(x_1y_2 + x_2y_1)$.\\
+
+Donc $$\overline{z_1z_2}=\overline{z_1} \; \overline{z_2}$$
+\end{demo}  
+
+
+
+
+
+\subsection{\`A quoi servent les conjugués ?}
+
+
+\subsubsection{\`A montrer qu'un complexe est un réel}
+
+En  effet, si  on arrive  à montrer  que $\overline{z}=z$,  alors  on en
+conclut que $z$ est réel.\textbf{ Pourquoi~?}
+
+\subsubsection{\`A rendre réel des dénominateurs pour obtenir des formes  algébriques} 
+
+En
+effet, $$z\cdot\overline{z}=(a+ib)(a-ib)=\cacheb{a^2-(ib)^2=a^2+b^2}$$ 
+
+
+  \begin{exemple}[]
+    Ainsi, pour obtenir la forme algébrique de l'inverse de $2+i$~: 
+
+$\fr{1}{2+i}=\cacheb{\fr{1}{2+i}\times\fr{2-i}{2-i}=\fr{2+i}{4+1}=\fr{2}{5}+\fr{1}{5}i}$ 
+    \end{exemple}
+  
+
+\subsection{Conjugué de l'inverse}
+
+
+Sachant qu'un complexe non nul $z$ admet une forme algébrique $a+ib$, on
+sait maintenant trouver la forme algébrique de son inverse~:
+$$\dfrac{1}{z}=\dfrac{1}{a+ib}\times\dfrac{a-ib}{a-ib}=\dfrac{a-ib}{a^2-b^2}=\dfrac{a}{a^2-b^2}-i \dfrac{b}{a^2-b^2}$$
+et donc $\overline{\left(\dfrac{1}{z}\right)}=\dfrac{z}{z \overline{z}}=\dfrac{1}{\overline{z}}$
+
+\begin{demo}[$n\in \mathbb{Z}, \; \overline{z^n}=\overline{z}^n$ par "récurrence"]
+
+Soit $z\neq 0$
+
+Initialisation : $\overline{z^0}=\overline{1}=1$ et $ \overline{z}^0=1$
+
+
+Hérédité : supposons que $\overline{z^n}=\overline{z}^n$ alors $\overline{z^{n+1}}=\overline{z^n z}=\overline{z^n} \overline{z}$ d'après la démonstration précédante.
+Donc $\overline{z^{n+1}}=\overline{z^n}\overline{z}=\overline{z}^n \overline{z}=\overline{z}^{n+1}$
+
+
+
+Conclusion: pour tout $n \in \mathbb{N}$, on a $  \overline{z^n}=\overline{z}^n$.
+
+On prolonge le résultat sur $\mathbb{Z}$ de la manière suivante on pose $Z=1/z$
+alors $\overline{Z^n}=\overline{Z}^n$ .
+
+Puisque $\overline{\dfrac{1}{z}}=\dfrac{1}{\overline{z}}$ alors $\overline{\dfrac{1}{z^n}}=\dfrac{1}{\overline{z}^n}$ 
+
+\end{demo}
+
+\subsection{Module d'un nombre complexe}
+
+
+  \begin{defn}[Module]
+    Le module du complexe  $z$ est le réel positif noté $|z|$ tel que $$|z|=\sqrt{z\ \,\overline{z}}$$
+    \end{defn}
+  
+
+
+    \begin{rem}[]
+      \begin{itemize}
+\item[$\bullet$] Cette définition en est bien une car $z\ \,\overline{z}=a^2+b^2$ d'après notre étude sur les conjugués. 
+\item[$\bullet$] Si $a$ est un réel, $|a|=\sqrt{a\ \,\overline{a}}=\cacheg{\sqrt{aa}=\sqrt{a^2}}$ car $\overline{a}=a$. Donc le module de $a$ est bien la valeur absolue de $a$ et notre notation est cohérente.
+
+La notion de module dans $\bbc$ généralise donc celle de valeur absolue dans $\bbr$.
+\end{itemize}
+      \end{rem}
+    
+
+
+\subsubsection{Interprétation géométrique}
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics{../Figures/complexe.4}
+\end{center}
+\end{figure}
+
+
+
+
+Nous venons de voir que, si $z=a+ib$, alors 
+
+
+
+  \begin{prop}[]
+    \[|z|=\sqrt{a^2+b^2}\]
+    \end{prop}
+  
+
+
+Or,  qu'est-ce que  $\sqrt{a^2+b^2}$ si  ce  n'est la  norme du  vecteur
+$\ve{OM}$ ou encore la longueur $OM$. 
+
+
+
+  \begin{prop}[]
+    \[\ab{z_M}=\nov{OM}=OM\qquad \ab{z_{\ve{u}}}=\nov{u}\]
+    \end{prop}
+  
+
+
+
+\subsubsection{Propriétés des modules}
+
+Je vous laisse prouver les propriétés suivantes
+
+
+
+
+
+  \begin{prop}[]
+    \begin{itemize}
+\item[$\bullet$] $\ab{\overline{z}}=\cacheg{\ab{z}}$
+\item[$\bullet$] $\ab{z}=0\ssi \cacheg{ z=0}$
+\item[$\bullet$] Soit $n\in\mathbb{Z}$ alors $\ab{z^n}=\ab{z}^n$
+\item[$\bullet$] $\ab{z_1\cdot z_2}=\cacheg{\ab{z_1}\cdot\ab{z_2}}$
+\item[$\bullet$] $\left|\frac{z_1}{z_2}\right|=\dfrac{\ab{z_1}}{\ab{z_2}}$
+\item[$\bullet$] $\RR e(z)\ie \cacheg{\ab{z}}$
+\item[$\bullet$] $\IR m(z)\ie \cacheg{\ab{z}}$
+\end{itemize}
+    \end{prop}
+  
+\begin{demo}[$n\in\mathbb{Z}$, $\ab{z^n}=\ab{z}^n$ par récurrence]
+Initialisation : $\ab{z^0}=\ab{1}=1$. 
+
+Hérédité : supposons que pour $n \in \mathbb{N}$ fixé on a $\ab{z^n}=\ab{z}^n$.
+Ainsi $\ab{z^{n+1}}=\ab{z^n z}=\ab{z^n} \ab{z} = \ab{z}^n \ab{z} =\ab{z}^{n+1}$
+
+Conclusion :  pour tout $n\in\mathbb{N}$, $\ab{z^n}=\ab{z}^n$
+
+On utilise l'astuce $Z=\dfrac{1}{z}$ pour étendre le résultat sur $\mathbb{Z}$.
+\end{demo}
+
+La propriété suivante mérite une petite aide à la démonstration
+
+
+  \begin{prop}[Inégalité triangulaire]
+    $$\ab{z_1+z_2}\ie\ab{z_1}+\ab{z_2}$$
+    \end{prop}
+  
+
+
+
+C'est  à dire, pour  aller de  Dijon à  Chalon-sur-Saône, il  est plus long de
+passer par Paris que de suivre l'A31.  
+
+Pour les curieux, voici comment cela se démontre.
+
+
+Comme les deux membres de l'inégalité sont positifs, il suffit donc de comparer les carrés de chaque membre.
+
+Or
+$\ab{z_1+z_2}^2=\pa{z_1+z_2}\pa{\overline{z_1+z_2}}=(z_1+z_2)\pa{\overline{z_1}+\overline{z_2}}=\ab{z_1}^2+\pa{z_1\overline{z_2} 
++\overline{z_1}z_2}+\ab{z_2}^2$
+
+
+D'autre part $\pa{\ab{z_1}+\ab{z_2}}^2=\ab{z_1}^2+2\ab{z_1z_2}+\ab{z_2}^2$
+
+Il s'agit donc de comparer les <<~doubles produits~>>.
+
+Or                                                     $z_1\overline{z_2}
++\overline{z_1}z_2=z_1\overline{z_2}+\overline{z_1\overline{z_2}}=2\RR
+e\pa{z_1z_2}\ie 2\ab{z_1z_2}$ d'après une propriété ci-dessus. Donc 
+$$\ab{z_1+z_2}^2=\ab{z_1}^2+\pa{z_1\overline{z_2}
++\overline{z_1}z_2}+\ab{z_2}^2\ie\ab{z_1}^2+2\ab{z_1z_2}+\ab{z_2}^2=\pa{\ab{z_1}+\ab{z_2}}^2$$
+
+
+
+
+\section{R\'esolution d'\'equations du second degr\'e}
+
+\subsection{Racine carrée d'un nombre complexe}
+
+L'objet de cette section est de résoudre dans $\bbc$ l'équation $z^2=\al$
+
+\subsubsection{Racine carrée d'un nombre réel}
+
+On suppose ici que $\al$ est un réel.
+
+
+\begin{itemize}
+\item[$\bullet$] \boldmath $\al\se 0$\unboldmath : alors $z^2=\al\ssi 
+  z^2-\al=$\cacher{$(z-\sqrt{\al})(z+\sqrt{\al})=0$}.  Les 
+  solutions\footnote{LA solution si $\al=0$} 
+  sont donc \cacher{$\pm \sqrt{\al}$}
+
+
+    \begin{exemple}[]
+      On connaît : $z^2=4\ssi $\cacheb{$z=-2$} ou \cacheb{$z=2$}
+      \end{exemple}
+    
+
+
+
+\item[$\bullet$]    \boldmath   $\al<    0$\unboldmath    :   alors    $z^2=\al\ssi
+  (z-i\sqrt{-\al})(z+i\sqrt{-\al})=0$.  Les  solutions  sont  donc  $\pm
+  i\sqrt{-\al}$ 
+
+
+  
+    \begin{exemple}[]
+      C'est la nouveauté : $z^2=-4\ssi$ \cacheb{$z=-2i$} ou \cacheb{$z=2i$}
+      \end{exemple}
+    
+
+\end{itemize}
+
+
+\subsubsection{Racine carrée d'un complexe non réel}
+
+Les choses se  compliquent ! Nous allons traiter un  exemple pour ne pas
+vous faire (trop) peur.  
+
+
+  \begin{exemple}[]
+    
+Cherchons les racines carrées de $4+3i$, à savoir les nombres
+$a+ib$ tels que $(a+ib)^2=a^2-b^2+2iab=4+3i$. 
+    \end{exemple}
+  
+
+ Par unicité de la forme algébrique on obtient 
+
+$\bsyc a^2-b^2&=&4\\a^2+b^2&=&5\\2ab&=&3\esyc$
+
+Ainsi $a^2=$\cacher{$9/2$} et $b^2=$\cacher{$1/2$}, donc $a=$\cacher{$\pm3\sqrt{2}/2$} et
+$b=$\cacher{$\pm\sqrt{2}/2$}, or $2ab=3$, donc $a$ et $b$ sont \cacher{de même signe}.
+
+Les solutions sont donc \cacher{$\fr{\sqrt{2}}{2}(3+i)$} et
+\cacher{$-\fr{\sqrt{2}}{2}(3+i)$}
+
+
+
+\subsection{Résolution de ax\up{2}+bx+c=0 avec a, b   et  c  des réels} 
+
+C'est        comme       en        première      :       \[ax^2+bx+c=0\ssi
+a\Big[\big(x+\fr{b}{2a}\big)^2-\fr{b^2-4ac}{4a^2}\Big]=0\ssi
+\bigl(x+\fr{b}{2a}\bigr)^2=\fr{b^2-4ac}{(2a)^2}\] 
+
+Tout dépend donc du signe de $b^2-4ac$, puis on utilise les résultats de la section précédente.
+
+
+
+  \begin{thm}[Résolution  de \boldmath$ax^2+bx+c=0\quad \text{avec}
+    \ a,\ b \ \text{ et }\ c$ \unboldmath des réels] 
+    L'équation $ax^2+bx+c=0$ admet toujours des solutions sur $\bbc$. 
+Notons  $\Delta=b^2-4ac$  le   \textbf{discriminant}  de  l'équation  et
+$\delta$ le \emph{complexe} vérifiant $\delta^2=\Delta$.
+\begin{itemize}
+\item[$\bullet$] Si $\Delta=0$, il existe une unique solution \cacheg{$x=-\fr{b}{2a}$}
+\item[$\bullet$] Si $\Delta>0$, il existe deux solutions réelles  \cacheg{$x=\fr{-b\pm\sqrt{\Delta}}{2a}$}
+\item[$\bullet$]  Si  $\Delta<0$, il  existe  deux  solutions complexes  conjuguées
+  \cacheg{$x=\fr{-b\pm i\sqrt{-\Delta}}{2a}$} 
+\end{itemize}
+    \end{thm}
+  
+
+
+
+\section{Forme trigonométrique}
+
+\subsection{Argument d'un complexe non nul}
+
+\subsubsection{Forme trigonométrique}
+
+Vous vous  souvenez de la correspondance  entre $\bbc$ et  le Plan. Nous
+avions privilégié les coordonnées  cartésiennes d'un point. On aurait pu
+utiliser tout  aussi bien ses  \textbf{coordonnées polaires}. Le  Plan a
+cette fois besoin  d'être orienté (il le sera  implicitement à partir de
+maintenant). 
+
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics{../Figures/complexe.5}
+\end{center}
+\end{figure}
+
+
+
+Ainsi, $(r,\theta)$  étant le couple de coordonnées  polaires de l'image
+$M$  de  $z$, on  a  $z=r\cos\theta+ir\sin\theta$  déterminé de  manière
+unique, car c'est  en fait une forme algébrique  déguisée : on l'appelle
+\textbf{forme trigonométrique} du complexe $z$. 
+
+
+
+  \begin{defn}[forme trigonométrique]
+    \[z=r\pa{\cos\theta+i\sin\theta}\]
+    \end{defn}
+  
+
+
+
+
+
+\subsubsection{Congruence }
+
+Vous  rencontrerez souvent  la  notation $x\equiv  y[2\pi]$  qui se  lit
+<<~$x$ est congru à $y$  modulo 2$\pi$~>>. Elle veut simplement dire que
+$x-y$ est  un multiple de  $2\pi$, c'est-à-dire qu'il existe  un entier
+relatif $k$ tel que $x-y=k\times 2\pi$. 
+
+
+
+  \begin{rem}[congruence modulo $2\pi$]
+    \[x\equiv y[2\pi]\ssi \text{ il existe } k\in\bbz \text{ tel que } x=y+2k\pi\]
+    \end{rem}
+  
+
+
+Par      exemple,       vous      savez      que      $\fr{\pi}{3}\equiv
+\fr{4\pi}{3}[2\pi]$~:~dessinez un cercle 
+trigonométrique pour vous en convaincre.
+
+\subsubsection{Mesure d'un angle de vecteurs}
+
+Nous n'avons  pas les moyens  de définir <<~proprement~>> les  angles de
+vecteurs.  Nous n'en  avons  qu'une définition  intuitive.  Ce qui  nous
+intéresse, c'est  que $\theta$ est UNE  mesure en radians  de l'angle de
+vecteurs  $\pa{\ve{e_1},\ve{OM}}$.  UNE  mesure,  car elle  est  définie
+modulo 2$\pi$.  Et bien cette mesure  sera UN argument  du complexe $z$,
+qu'on notera $\arg z$. 
+On retiendra~:
+
+
+  \begin{prop}[argument]
+    \[\arg z\equiv \theta[2\pi]\]
+    \end{prop}
+  
+
+
+
+Par exemple, $\arg 32\equiv 0[2\pi]$, $\arg 32 i\equiv \fr{\pi}{2}[2\pi]$.
+
+\subsubsection{Des formes trigonométriques de référence}
+
+\begin{itemize}
+
+\item[$\bullet$] $1=\cos 0+i\sin 0$  donc \cacher{$|1|=1$ et $\arg(1)\equiv 0[2\pi]$}
+\item[$\bullet$]         $i=\cos\pa{\fr{\pi}{2}}+i\sin\pa{\fr{\pi}{2}}$        donc
+  \cacher{$|i|=1$ et $\arg(i)\equiv\pa{\fr{\pi}{2}}[2\pi]$} 
+\item[$\bullet$]                         $|1+i|=\sqrt{2}$                        et
+  $1+i=\sqrt{2}\pa{\fr{\sqrt{2}}{2}+i\fr{\sqrt{2}}{2}}=$\cacher{$\sqrt{2}\pa{\cos\pa{\fr{\pi}{4}}+i\sin\pa{\fr{\pi}{4}}}$} 
+donc \cacher{$\arg(1+i)\equiv\pa{\fr{\pi}{4}}[2\pi]$} 
+\item[$\bullet$]    $|\sqrt{3}+i|=2$    et    $\sqrt{3}+i=2\pa{\fr{\sqrt{3}}{2}+\ud
+    i}=$\cacher{$2\pa{\cos\pa{\fr{\pi}{6}}+i\sin\pa{\fr{\pi}{6}}}$} 
+donc \cacher{$\arg(\sqrt{3}+i)\equiv\pa{\fr{\pi}{6}}[2\pi]$} 
+\end{itemize}
+
+
+
+\subsection{Correspondance forme algébrique - forme trigonométrique} 
+
+
+Soit  $z\in\bbc$  de   forme  algébrique  $a+ib$  et   de  forme
+trigonométrique $r\pa{\cos\theta+i\sin\theta}$ alors on a d'une part~: 
+
+
+  \begin{prop}[forme algébrique connaissant la forme trigonométrique]
+$a=$\cacheg{$r\cos\theta$}$\qquad b=$\cacheg{$r\sin\theta$}    
+    \end{prop}
+  
+
+
+
+et d'autre part $r=|z|=\sqrt{a^2+b^2}$.
+
+
+
+Si $z$ est \textit{non nul},  son module $r=\sqrt{a^2+b^2}$ sera non nul
+également. Ainsi, nous pouvons écrire $z$ sous la forme 
+
+\begin{center}
+$\begin{array}{ccc}
+z&=&\sqrt{a^2+b^2}\pa{\fr{a}{\sqrt{a^2+b^2}}+\I\fr{b}{\sqrt{a^2+b^2}}}\\
+&=& r\pa{\fr{a}{\sqrt{a^2+b^2}}+\I\fr{b}{\sqrt{a^2+b^2}}}\\
+   &=& r\pa{\cos(\theta)+\I\sin(\theta)}
+\end{array}$
+\end{center}
+
+Nous en déduisons que~:
+
+
+
+  \begin{prop}[forme trigonométrique en fonction de la forme algébrique]
+$\cos(\theta)=$\cacheg{$\fr{a}{\sqrt{a^2+b^2}}$}$\qquad
+\sin(\theta)=$\cacheg{$\fr{b}{\sqrt{a^2+b^2}}$} 
+    \end{prop}
+  
+
+
+
+
+Ainsi, connaissant $a$ et $b$, on  peut obtenir le module et un argument
+de  $a+\I   b$.  On   obtiendra  une  mesure   exacte  de   $\theta$  si
+$\cos(\theta)$  et   $\sin(\theta)$  sont  des   valeurs  connues  comme
+$\ofr{1}{2}$, $\ofr{\sqrt{3}}{2}$, 1, etc. 
+
+
+
+
+  \begin{prop}[argument en fonction de la forme algébrique]
+$\tan(\theta)=\fr{\sin(\theta)}{\cos(\theta)}=\fr{\fr{b}{\sqrt{a^2+b^2}}}{\fr{a}{\sqrt{a^2+b^2}}}=$\cacheg{$\fr{b}{a}$} 
+    \end{prop}
+  
+
+
+
+
+ce qui déterminera une valeur de l'argument modulo $\pi$. 
+
+Il  suffira ensuite  de  considérer  le signe  de  $\cos(\theta)$ ou  de
+$\sin(\theta)$ pour savoir à qui on a affaire. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Opérations sur les formes trigonométriques}
+
+Soit $z=r\pa{\cos\theta+i\sin\theta}$ et $z'=r'\pa{\cos\theta'+i\sin\theta'}$,  alors 
+$$zz'=rr'\cro{\pa{\cos\theta\cos\theta'-\sin\theta\sin\theta'}+i\pa{\sin\theta\cos\theta'+\cos\theta\sin\theta'}}$$ 
+Vous qui connaissez parfaitement vos formules d'addition, vous en déduisez que 
+$$zz'=z=rr'\pa{\cos\pa{\theta+\theta'}+i\sin\pa{\theta+\theta}'}$$
+
+Ainsi, nous arrivons au résultat capital 
+
+
+  \begin{prop}[argument d'un produit]
+    $\arg(zz')=$\cacheg{$\arg(z)+\arg(z') \,[2\pi]$}
+    \end{prop}
+  
+
+
+
+
+Cela va VOUS permettre de démontrer les propriétés suivantes avec un peu d'astuce et de patience
+
+
+
+  \begin{prop}[Propriétés algébriques des arguments]
+    \begin{itemize}
+\item[$\bullet$] $\arg(zz')=$\cacheg{$\arg(z)+\arg(z') \,[2\pi]$}
+\item[$\bullet$] $\arg(z^n)=$\cacheg{$n\arg(z)\,[2\pi]$}
+\item[$\bullet$] $\arg\pa{\fr{1}{z}}=$\cacheg{$-\arg(z)\,[2\pi]$}
+\item[$\bullet$] $\arg\pa{\fr{z}{z'}}=$\cacheg{$\arg(z)-\arg(z')\,[2\pi]$}
+\item[$\bullet$] $\arg(\overline{z})=$\cacheg{$-\arg(z)\,[2\pi]$}
+\item[$\bullet$] $\arg(-z)=$\cacheg{$\pi+\arg(z)\,[2\pi]$}
+\end{itemize}
+    \end{prop}
+  
+
+
+En particulier, la formule concernant $z^n$ nous permet d'écrire
+
+
+
+  \begin{thm}[Formule de Moivre]
+    \begin{center}
+     $\pa{\cos \theta+i\sin\theta}^n= $\cacheg{$\cos(n\theta)+i\sin(n\theta)$}
+    \end{center}
+    \end{thm}
+  
+
+
+
+Nous nous rendons ainsi compte que~:
+
+
+  \begin{rem}[]
+    \begin{itemize}
+\item[$\bullet$]  Les   formes  trigonométriques  sont  adaptés   aux  produits  de
+  complexes~;
+\item[$\bullet$] Les formes algébriques sont adaptées aux sommes de complexes.
+  \end{itemize}
+    \end{rem}
+  
+
+
+
+
+
+
+Vous  serez amenés  au hasard  d'exercices  à résoudre  des équations  à
+coefficients  complexes, mais  on  n'attend de  vous aucun  savoir-faire
+particulier : vous serez guidés pas à pas. 
+
+
+\section{Les objets géométriques et les complexes}
+
+%\section{De l'objet au complexe}
+
+\subsection{Comment caract\'eriser un cercle ?}
+
+Le cercle de centre $A$ et de rayon $R$ est l'ensemble des points situés
+à la distance  $R$ de $A$. Il est facile de  traduire simplement cela en
+langage complexe... 
+
+
+  \begin{rem}[caractérisation d'un cercle]
+    \[M(z)\in\CR(A,R)\ssi \ab{z-z_A}=R\]
+    \end{rem}
+  
+
+
+
+
+\subsection{Comment caractériser un triangle isocèle ?}
+
+C'est  encore une  histoire  de distance,  donc  de module  : $ABC$  est
+isocèle de sommet principal $A$ si et seulement si $AB=AC$ donc 
+
+
+
+  \begin{rem}[triangle isocèle]
+    $ABC$     isocèle     de      sommet     principal     $A$     $\ssi
+    \ab{z_B-z_A}=\ab{z_C-z_A}\ssi \ab{\fr{z_B-z_A}{z_C-z_A}}=1$ 
+    \end{rem}
+  
+
+
+
+\subsection{Comment caractériser un triangle rectangle ?}
+
+On peut encore parler distance grâce au théorème de Pythagore 
+\[|z_C-z_B|^2=|z_B-z_A|^2+|z_C-z_A|^2\]
+
+ou angle droit : mais c'est l'angle géométrique qui nous intéresse, donc
+nous travaillerons modulo $\pi$ 
+$$\pa{\ve{AB},\ve{AC}}=\pa{\ve{AB},\ve{e_1}}+\pa{\ve{e_1},\ve{AC}}=-\pa{\ve{e_1},\ve{AB}}+\pa{\ve{e_1},\ve{AC}}=-\arg\pa{z_{\ve{AB}}}+\arg\pa{z_{\ve{AC}}}=\arg\pa{\fr{z_{\ve{AC}}}{z_{\ve{AB}}}}=\arg\pa{\fr{z_C-z_A}{z_B-z_A}} $$ 
+
+
+
+  \begin{rem}[triangle rectangle]
+    $\pa{\ve{AB},\ve{AC}}\equiv\fr{\pi}{2}\,[\pi]\ssi
+  \arg\pa{\fr{z_C-z_A}{z_B-z_A}}\equiv\fr{\pi}{2}\,[2\pi]$ 
+    \end{rem}
+  
+
+
+\newpage
+
+\subsection{Comment caractériser les différents quadrilatères ?} 
+
+
+Petite révision de collège...
+
+
+
+
+\begin{center}
+  \includegraphics[angle=90,scale=0.7]{../Figures/complexe.7}
+\end{center}
+
+
+
+qu'il vous suffira d'adapter connaissant ce qui précède.
+\newpage 
+%\subsubsection{Comment caractériser une droite ?}
+
+
+
+
+
+%\subsubsection{Comment caractériser certaines applications du plan ?}
+
+
+
+
+\section{Du complexe à l'objet}
+
+
+
+
+\subsection{Que représente $z-32+5i$ ?}
+
+ Soit $A$ le point d'affixe $32-5i$ et $M$ le point d'affixe $z$, alors
+ $z-32+5i=z_M-z_A=z_{\ve{AM}}$
+
+
+
+\subsection{Comment interpréter $\vert z-32+5i \vert =3 $ ?}
+
+D'après ce qui précède, on aboutit à $AM=3$ : il s'agit donc du cercle de centre $A$ et de rayon 3.
+
+\subsection{Comment interpréter $ \vert 32+iz \vert =5 $ ?}
+
+ $|32+iz|=|i(-32i+z)|=|i|\times|z-32i|=|z-32i|=BM$ avec $M$ le
+ point d'affixe $z$ et $B$ le point d'affixe $32i$. On retombe donc sur un cercle.
+
+
+\subsection{Comment interpréter $ \vert z-a \vert = \vert z-b \vert $ ?}
+
+Soit $M$ d'affixe $z$, $A$ d'affixe $a$ et $B$ d'affixe $b$. Alors
+l'égalité se traduit par $AM=BM$, donc $M$ est équidistant de $A$
+et $B$, donc $M$ est sur la médiatrice de $[AB]$.
+
+\subsection{Que     se     cache-t-il     derrière    le     quotient  $ \frac{z_C-z_A}{z_B-z_A} $ ?} 
+
+Il             suffit            de             remarquer            que
+$\fr{z_C-z_A}{z_B-z_A}=\fr{z_{\ve{AC}}}{z_{\ve{AB}}}$.     Donc     vous
+utiliserez le fait que \begin{itemize} 
+\item[$\bullet$] $\arg(\fr{z_C-z_A}{z_B-z_A})=(\ve{e_1},\ve{AC})-(\ve{e_1},\ve{AB})=(\ve{AB},\ve{AC})$
+\item[$\bullet$] $\left|\fr{z_C-z_A}{z_B-z_A}\right|=\fr{AC}{AB}$
+\end{itemize}
+
+
+
+Dans  d'autres  cas,  vous  serez confrontés  à  l'interprétation  d'une
+égalité du style $\fr{z_C-z_A}{z_B-z_A}=\la$ qui se traduit par 
+$z_{\ve{AC}}=\la z_{\ve{AB}}$, donc \begin{itemize} 
+\item[$\bullet$] si  $\la\in\bbr$, alors $\ve{AC}=\la\ve{AB}$  et donc $A$,  $B$ et
+  $C$ sont alignés.  
+\item[$\bullet$]  si  $\la\in  i\bbr$, $z_{\ve{AC}}=\pm|\la|iz_{\ve{AB}}$  et  donc
+  $\arg\pa{z_{\ve{AC}}}\equiv\pm\fr{\pi}{2}+\arg\pa{z_{\ve{AC}}}\,[2\pi]$
+  c'est à dire $(AC)\bot(AB)$ 
+\item[$\bullet$] si $\la=\pm i$, alors le triangle $ABC$ est isocèle et rectangle en $A$ 
+%\item[$\bullet$] si $\la=e^{\pm i\pi/3}$, alors le triangle ABC est équilatéral
+
+\end{itemize}
+
+
+
+\subsection{Comment interpréter qu'un angle de vecteurs est droit~? } 
+%$\pa{\ve{MA},\ve{MB}} $}%\
+
+On  déduit de cette relation que le triangle
+$AMB$ est  rectangle en $M$, donc  que $M$ décrit le  cercle de diamètre
+$[AB]$ privé des points $A$ et $B$. 
+
+
+\subsection{Rotation dans le plan  $ \leftrightharpoons $ Multiplication}
+
+
+Soit $z=3+2i$, alors $-1\times z=-3-2i$ et $i\times
+z=3i+2i^2=-2+3i$. Notons $M$, $M'$ et $M''$ les points
+d'\textbf{affixes} respectives $z$, $-z$ et $iz$
+
+
+
+%\begin{figure}
+%\begin{center}
+ % \includegraphics{../Figures/complexe.8}
+%\end{center}
+%\end{figure}
+
+
+Une multiplication par $i$ se traduit par un
+quart de tour, une multiplication par $-1$ se traduit par un
+demi-tour, deux multiplications successives par $i$, c'est à dire
+une multiplication par $i^2=-1$ se traduit bien par deux quarts de
+tour, $i.e.$ un demi tour.
+ \begin{center}
+\includegraphics{../Figures/complexe.8} 
+\end{center} 
+ 
+\section{Approche géométrique}
+
+% \pro 
+Si je vous dis transformation du plan, vous pensez sûrement à 
+% \tsx
+% 
+des points qui se  transforment en d'autres points et qui gardent
+plein de propriétés intéressantes : les longueurs, les angles, 
+les  alignements,  le parallélisme  se  conservent.  Il  y a  juste  une
+exception avec l'homothétie qui multiplie les longueurs. 
+
+% \pro
+C'est en  effet un résumé de vos  aventures géométriques des années
+passées. Depuis, vous avez rencontré, lors de l'étude des nombres 
+complexes  notamment,   d'autres  transformations  plus   étranges,  qui
+transforment des droites en cercles ou en tout autre chose d'ailleurs.  
+
+Nous allons nous occuper aujourd'hui d'une catégorie bien particulière de transformations, parmi bien
+d'autres,  mais   avant  il  faudrait  s'entendre  sur   ce  qu'est  une
+transformation du plan... 
+
+
+\begin{defn}[transformation du plan]
+  On dit que $f$ est une \textbf{transformation du plan} si 
+\begin{itemize}
+\item[$\bullet$] tout point du plan a une unique image par f
+\item[$\bullet$] tout point du plan admet un unique antécédent par f
+\end{itemize}
+\end{defn}
+
+
+Par exemple, une projection orthogonale n'est pas une transformation du plan selon notre définition.
+
+Un exemple très important en géométrie, que vous connaissez depuis tout
+petit (agrandissement-réduction), est l'homothétie~:
+
+\begin{defn}[homothétie]
+  Soit C un point du plan et $\lambda$ un réel non nul. \\ On appelle \textbf{homothétie de centre C et de rapport
+$\lambda$} la transformation qui à tout point M du plan associe le point M$'$ tel que $$\ve{CM'}=\lambda\ve{CM}$$
+\end{defn}
+
+
+\begin{center}
+  \includegraphics{../Figures/simi.1}
+\end{center}
+
+
+Un autre cas simple est la translation~:
+
+
+\begin{defn}[translation]
+   La \textbf{translation} de vecteur $\ve{v}$ est la transformation qui à tout point $M$ associe le point $M'$ tel que
+$$\ve{MM'}=\ve{v}$$
+\end{defn}
+
+
+\begin{center}
+  \includegraphics{../Figures/simi.2}
+\end{center}
+
+
+Nous étudierons enfin les rotations~:
+
+
+
+\begin{defn}[rotation]
+   La \textbf{rotation} de centre C et d'angle $\al$ est la transformation qui, à tout point M du plan, associe le point M$'$ tel
+que \begin{itemize}
+\item[$\bullet$] si M$\neq M'$, alors $CM=CM'$ et $(\ve{CM},\ve{CM'})=\al$
+\item[$\bullet$] si $M=C$, alors $M'=C$
+\end{itemize}
+\end{defn}
+
+
+
+\begin{center}
+  \includegraphics{../Figures/simi.3}
+\end{center}
+
+
+\newpage
+\section{Forme exponentielle d'un nombre complexe}
+
+Avant d'aller plus loin, nous allons avoir besoin d'un petit outil technique. Notons $f$ la fonction définie sur $\bbr$ par $f(x)=\cos x+\mathrm{i}\sin x$. C'est une fonction un peu spéciale puisqu'elle est définie sur $\bbr$ mais est à valeurs dans $\bbc$.\\
+
+ Que vaut $f(0)$~? $f(0)=\cos 0+\mathrm{i}\sin 0=1$ : jusqu'ici, tout va bien.
+Je vous demande à présent un petit effort d'imagination : on peut supposer que $f$ est dérivable sur $\bbr$ en considérant $i$ comme
+un coefficient quelconque et en extrapolant les formules de dérivations des fonctions à valeurs réelles. Qu'est-ce que ça peut donner ? $f'(x)=-\sin x+\mathrm{i}\cos x$, le lien avec $f(x)$ apparaît puisque $f'(x)=\mathrm{i}(\mathrm{i}\sin x+\cos x)=\mathrm{i} f(x)$\\ 
+
+Récapitulons : $f$ vérifie $f'=\mathrm{i} f$ avec $f(0)=1$. Ça ne vous rappelle rien~? 
+
+La fonction exponentielle ! Quand on avait $f'=kf$ et $f(0)=1$ alors on en concluait que $f(x)=\mathrm{e}^{kx}$. Donc vous ne  serez pas choqué si nous écrivons, par convention  d'écriture à notre niveau, que $f(x)=\exp(\mathrm{i} x)=\mathrm{e}^{\mathrm{i} x}$. 
+
+
+\begin{thm}[notation exponentielle]
+  On convient d'écrire, pour tout réel $x$ $$\exp^{\mathrm{i} x}=\cos x+\mathrm{i}\sin x$$
+\end{thm}
+
+\begin{thm}[Formules d'euler]
+Soit $z=e{i\theta}$ alors on a en faisant $\dfrac{z+\overline{z}}{2}$ et $\dfrac{z+\overline{z}}{2i}$, \\
+$$\cos \theta = \dfrac{e^{i \theta} +e^{-i \theta}} {2}$$
+$$\sin \theta = \dfrac{e^{i \theta} -e^{-i \theta}} {2i}$$
+\end{thm}
+
+
+Notez  au passage  que les  formules d'additions  sont  alors plus  faciles à  retrouver. En  effet,
+$\mathrm{e}^{\mathrm{i}(a+b)}=\mathrm{e}^{\mathrm{i} a}\mathrm{e}^{\mathrm{i} b}$, donc
+
+\begin{eqnarray*}
+  \cos(a+b)+\mathrm{i}\sin(a+b)&=&(\cos a+\mathrm{i}\sin a)(\cos b+\mathrm{i}\sin b)\\
+&=&(\cos a\cos b-\sin a\sin b)+\mathrm{i}(\cos a\sin b+\cos b\sin a)
+\end{eqnarray*}
+
+
+ Alors, par unicité de
+la forme algébrique d'un complexe, on obtient~:
+$$\cos(a+b)=\cos a\cos b-\sin a\sin b\quad \text{et} \quad \sin(a+b)=\cos a\sin b+\cos b\sin a$$
+
+Voici une illustration du côté extrêmement pratique de l'outil complexe.
+
+
+
+\section{Écriture complexe des transformations usuelles}
+
+\subsection{Translations}
+
+Considérons la translation de vecteur $\ve{v}$ d'affixe $b$ et les habituels points $M$ et $M'$ d'affixes $z$ et $z'$. Par
+définition, on  a $\ve{MM'}=\ve{v}$, à l'aide des nombres complexe on trouve
+$z_{\ve{MM'}}=z'-z=b$, i.e. $z'=z+b$. Ici on retrouve une expression du type $az+b$, donc c'est bien une
+similitude directe  de rapport $|a|=|1|=1$,  donc une isométrie.
+
+\begin{prop}[translation : version complexe]
+ La transformation complexe définie par  $$z\mapsto z+b$$ est la translation de vecteur d'affixe $b$
+\end{prop}
+
+
+\subsection{Rotations}
+
+\begin{prop}[rotation : version complexe]
+  La transformation complexe définie par $$z\mapsto ze^{i\al}+b$$ est une rotation d'angle $\al$ avec $\al\not\equiv0[2\pi]$
+\end{prop}
+
+
+\begin{center}
+\includegraphics{../Figures/simi.4}
+\end{center}
+
+\subsection{Homothéties}
+
+Avec les  notations habituelles, on obtient $\ve{CM'}=k\ve{CM}$, d'où $z'-c=k(z-c)$, i.e.
+$z'=kz+c(1-k)$. Ainsi une homothétie a une représentation complexe de la forme $z\mapsto kz+b$. l faut faire attention : on ne doit pas avoir $z=z+b$ qui nous fait retomber sur une translation, donc $k$ doit être différent de 1.
+
+
+\begin{prop}[homothéties : version complexe]
+  La transformation complexe définie par $$z\mapsto kz+b\quad \text{avec}\quad k\in\bbr\setminus\{0,1\}$$ est une homothétie
+de rapport $k$
+\end{prop}
+ 
+\end{document}
+

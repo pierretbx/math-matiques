@@ -1,0 +1,88 @@
+input latexmp;
+input repere;
+
+repere(-1,4,1cm,-1,5,1cm);
+vardef f(expr x)=(1/x)+1 enddef;
+path C_f,d[];
+numeric a;
+a=1.5;
+C_f=courbefonc(f,0.1,4,50);
+d1=droiteeq(0,1);
+d2=droiteeq(0,f(a));
+d3=droiteeq(0,2-f(a));
+draw axes.llft(0,10);
+draw d1 withpen pencircle scaled 1;
+draw d2 withpen pencircle scaled 1 dashed evenly;
+draw d3 withpen pencircle scaled 1 dashed evenly;
+draw C_f withpen pencircle scaled 1;
+draw _c(a,0)--_c(a,f(a)) withpen pencircle scaled 1 dashed evenly;
+draw intervalley.OO(2-f(a),f(a));
+draw intervallex.OO(a,5);
+label.ulft(textext("$\ell$"),_c(0,1));
+nomme.urt(C_f,0.5);
+fin;
+
+repere(-1,4,0.8cm,-1,5,0.8cm);
+vardef f(expr x)=exp(x) enddef;
+path C_f,d[];
+numeric a;
+a=1;
+C_f=courbefonc(f,-1,4,50);
+d1=droiteeq(a);
+d2=droiteeq(0,f(a));
+draw axes.llft(0,10);
+draw d1 withpen pencircle scaled 1 dashed evenly;
+draw d2 withpen pencircle scaled 1 dashed evenly;
+draw C_f withpen pencircle scaled 1;
+draw intervalley.OO(f(a),6);
+draw intervallex.OO(a,5);
+label.llft(textext("$M$"),_c(0,f(a)));
+nomme.lrt(C_f,1.5);
+fin;
+
+repere(-1,4,1cm,-1,5,1cm);
+vardef g(expr x)=1/(1-x)+0.5 enddef;
+vardef f(expr x)=1/(x-1) +1 enddef;
+path C_f,C_g,d[];
+C_f=courbefonc(f,1.1,4,50);
+C_g=courbefonc(g,-1,0.9,50);
+d1=droiteeq(1);
+d2=droiteeq(2);
+d3=droiteeq(1/3);
+d4=droiteeq(0,2);
+draw axes.llft(0,10);
+draw d1 withpen pencircle scaled 1;
+draw d2 withpen pencircle scaled 1 dashed evenly;
+draw d3 withpen pencircle scaled 1 dashed evenly;
+draw d4 withpen pencircle scaled 1 dashed evenly;
+draw C_f withpen pencircle scaled 1;
+draw C_g withpen pencircle scaled 1;
+draw intervalley.OO(2,6);
+draw intervallex.OO(1/3,2);
+label.llft(textext("$M$"),_c(0,2));
+label.llft(textext("$a$"),_c(1,0));
+nomme.llft(C_f,3);
+fin;
+
+repere(-2,5,0.8cm,-1,6,0.8cm);
+vardef f(expr x)=x+1+2/(x+2) enddef;
+path C_f,d;
+pair M,P;
+numeric a;
+a=3;
+M=_c(a,f(a));
+P=_c(a,a+1);
+C_f=courbefonc(f,-1.9,5,50);
+d=droiteeq(1,1);
+draw axes.llft(0,10);
+draw d withpen pencircle scaled 1;
+draw C_f withpen pencircle scaled 1;
+draw projectionaxes(M,textext("$x$"),textext("$f(x)$")) dashed evenly;
+draw projectiony.lft(P,textext("$ax+b$")) dashed evenly;
+nomme.top(M);
+nomme.lrt(P);
+nomme.ulft(C_f,4);
+fin;
+
+
+end

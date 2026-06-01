@@ -1,0 +1,60 @@
+input latexmp;
+input repere;
+
+vardef f(expr x)=e**x enddef;
+vardef g(expr x)=ln(x) enddef;
+
+repere(-5,5,1cm,-3,5,1cm);
+ path Cf; picture p; path Cg;
+ Cf:=courbefonc(f,-5,2.05,100);
+ Cg:=courbefonc(g,0.05,4.8,100);
+ %p:=tangente(Cf,0.5);
+ draw axes.llft(1,0);
+ draw Cf;
+ draw Cg;
+% draw p;
+ pair A,B,C,D,E,F,G,H,X,Y;
+ A:=_c(1,f(1));
+ B:=_c(0,0);
+ C:=_c(0,1);
+ D:=_c(1,2);
+ E:=_c(0,1);
+ F:=_c(-2,0.5);
+ G:=_c(4,1.5);
+ H:=_c(3.5,3.5);
+ X:=_c(4.75,-0.2);
+ Y:=_c(-0.2,5.75);
+ label.lft("1", E) ;
+ label.lft(btex $ C_{\exp} $ etex, F) ;
+  label.ulft(btex $C_{\ln} $ etex, G) ;
+  label.lrt(btex $y=x$ etex, H) ;
+ %   label.lft(btex $ T_0 $ etex, H) ;
+    label.lft(btex $x$ etex, X) ;
+    label.lft(btex $y$ etex, Y) ;
+ %label.lrt(btex$\sqrtx$ etex, (3,sqrt 3)*u);
+ %C:=_c(2.5,f(2.5));
+
+
+ %draw droite(A,C) dashed evenly;
+ %draw B withpen pencircle scaled 2bp;
+ %draw C withpen pencircle scaled 2bp;
+ draw projectionaxes(A,LaTeX("$1$"),LaTeX("$e$")) dashed evenly;
+ drawoptions (withcolor red) ;
+ % draw droite(A,B);
+  draw droite(B,H);
+ %draw projectionaxes(B,LaTeX("$a+h$"),LaTeX("$f(a+h)$")) dashed evenly;
+%drawoptions (withcolor red) ;
+ %draw droite(C,D); 
+ 
+fin;
+
+
+
+repere(-5,4.9,0.6cm,-3,2.9,0.6cm);
+ path p;
+ p:= _c(-5,-2).._c(-4,0).._c(-3,1){right}.._c(-1,-1){right}.._c(0,1).._c(1,2){right}.._c(2,1).._c(4,0);
+ draw axes.llft(1,0);
+ draw p;
+fin;
+
+end

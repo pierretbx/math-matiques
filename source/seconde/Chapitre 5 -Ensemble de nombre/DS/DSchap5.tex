@@ -1,0 +1,108 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\geometry{top=1cm, bottom=2cm, left=1cm, right=1cm}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+
+\begin{document}
+
+\centering\textbf{Devoir Surveill\'e de Math\'ematiques - Nombres et calculs}\\
+\vspace{0.5cm}
+
+\noindent\textbf{Nom :} \underline{\hspace{5cm}} \hfill \textbf{Pr\'enom :} \underline{\hspace{5cm}} \\
+\textbf{Classe :} \underline{\hspace{5cm}}\\
+\vspace{1cm}
+
+\centering\textit{\textbf{Calculatrice interdite. Toute r\'edaction ou justification pertinente sera valoris\'ee.}}
+
+\section*{Exercice 1 : Appartenance \`a un ensemble (3 points)}
+
+\begin{enumerate}
+    \item Compl\'eter par \(\in\), \(\notin\), \(\subset\) ou \(\not\subset\) :
+    \begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+    \begin{itemize}
+        \item \(3,5 \ldots \mathbb{N}\)\\[0.2cm]
+        \item \(\frac{2}{3} \ldots \mathbb{Q}\)\\[0.2cm]
+        \item \(\mathbb{Q} \ldots \mathbb{Z}\)\\[0.2cm]
+        \item \(-\sqrt{2} \ldots \mathbb{R}\)\\[0.2cm]
+        \item \(-\frac{1}{4} \ldots \mathbb{D}\)\\[0.2cm]
+        \item \(\mathbb{N} \ldots \mathbb{R}\)
+    \end{itemize}
+    \end{tcolorbox}
+
+    \item Donner la nature des nombres suivants :
+    \begin{tcolorbox}[colframe=black, colback=white, width=\linewidth]
+    \(\frac{25}{5}\in \ldots \), \( -67 \in \ldots \), \( \sqrt{49} \in \ldots \), \\
+    \( \frac{17}{23} \in \ldots \), \( 2\pi \in \ldots \), \( \frac{21}{14} \in \ldots \)
+    \end{tcolorbox}
+\end{enumerate}
+
+\section*{Exercice 2 : D\'ecimaux et d\'emonstration (2,5 points)}
+D\'emontrer que les nombres suivants appartiennent \`a \(\mathbb{D}\).
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=6cm]
+\textbf{1.} \(x = 2{,}25\) \\
+\textbf{2.} \(y = 2{,}3 \times 10^{-12}\) \\
+\textbf{3.} \(z = \frac{19}{50}\)
+\end{tcolorbox}
+
+\section*{Exercice 3 : Calculs de fractions (4 points)}
+\begin{multicols}{2}
+\begin{itemize}
+    \item \(A = \frac{4}{21} - \frac{2}{7} + \frac{11}{3}\)
+    \item \(B = 5 - 3 \times \frac{4}{11}\)
+    \item \(C = (-3) \times \frac{3}{4} + \frac{1}{6}\)
+    \item \(D = \frac{-25}{6} \div \frac{10}{3}\)
+\end{itemize}
+\end{multicols}
+\vspace{-0.5cm}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=8cm]
+\end{tcolorbox}
+
+\section*{Exercice 4 : Intervalles (5 points)}
+\begin{enumerate}
+    \item \textbf{Donner sous forme d'intervalles ou r\'eunion d'intervalles :}
+    \begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=4cm]
+    \begin{itemize}
+        \item les r\'eels strictement positifs : \\
+        \item les r\'eels \(\leq -2\) : \\
+        \item les r\'eels \(\geq -3\) et \(< 7\) : \\
+        \item les r\'eels \(>1\) ou \(\leq -4\) :
+    \end{itemize}
+    \end{tcolorbox}
+
+    \item \textbf{Repr\'esenter et calculer :} 
+    \begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=6cm]
+    a) \(I = [-3 ; 5],\ J = ]-4 ; 7[\) \\
+    b) \(I = ]-\infty ; 2[ ,\ J = ]-1 ; +\infty[\) \\
+    c) \(I = ]-3 ; 1[ ,\ J = [1 ; +\infty[\)
+    \end{tcolorbox}
+\end{enumerate}
+
+\section*{Exercice 5 : Encadrements (1 point)}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=4cm]
+\textbf{1.} Donner un encadrement d’amplitude \(10^{-1}\) de \(388{,}558\) \\
+\textbf{2.} Donner un encadrement d’amplitude \(10^{-2}\) de \(4{,}272\)
+\end{tcolorbox}
+
+\section*{Exercice 6 : Variables et algorithme (2 points)}
+\noindent On initialise : \(x = 5\), \(y = 4\)
+\begin{verbatim}
+z \leftarrow 2x - y
+y \leftarrow 2y - 3z
+x \leftarrow 5z + y - 4x
+\end{verbatim}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=3cm]
+\textbf{Valeurs finales :} \quad \(x = \ldots\) \quad \(y = \ldots\)
+\end{tcolorbox}
+
+\section*{Question Bonus : Raisonnement par l’absurde (1 point)}
+\begin{tcolorbox}[colframe=black, colback=white, width=\linewidth, height=5cm]
+\textbf{Montrer que \(\frac{\pi}{2}\) n’est pas rationnel si \(\pi\) ne l’est pas.}
+\end{tcolorbox}
+
+\end{document}

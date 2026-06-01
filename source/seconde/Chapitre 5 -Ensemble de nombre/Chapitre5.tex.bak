@@ -1,0 +1,386 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+\newcommand{\abs}[1]{$\vert #1 \vert$}
+
+\usepackage{mathrsfs}
+
+
+\usepackage{hyperxmp}
+%\usepackage[colorlinks=true,pdfstartview=FitV,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+%\pagestyle{fancy}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{pstricks}
+\usepackage{pst-all}
+\usepackage{pstricks-add}
+
+\usetikzlibrary{arrows}
+
+\begin{document}
+
+\chapter{Ensemble de nombre, inclusion, intervalle et distance}
+
+\section{Ensemble de nombre, inclusion}
+\subsection{Ensemble de nombre}
+
+\subsection*{Nombres entiers naturels $\N$}
+
+\begin{defn}
+L'ensemble des  entiers naturels, noté $\mathbb{N} = \{0;1;2;3;4;\dots\}$.
+C'est l'ensemble des nombres positifs  qui permettent de compter une collection d'objets.
+On note $\N^*$ ou $\N-\{0\}$ l'ensemble des entiers naturels non nuls.
+\end{defn}
+
+
+
+\medskip
+
+\underline{Exemples:}
+
+
+\[245 \in \N ;\qquad -5 \notin \N ;\qquad  2^5 \in \N ;\qquad \dfrac{3}{5} \notin\N; \qquad 0 \in\N; \qquad 0 \notin\N^*\] 
+La notation \og $x\in E$\fg{} signifie que l'élément $x$ \emph{appartient} à l'ensemble $E$.
+
+ La notation \og $x\notin E$\fg{} signifie que l'élément $x$ \emph{n'appartient pas} à l'ensemble $E$.
+ 
+\begin{comment}
+\subsubsection{notions d'arithmétique}
+
+Soient  $a$ et $b$ deux nombres entiers naturels.
+
+\begin{itemize}
+\item on dit que $b$ \emph{divise} $a$ lorsqu'il existe un entier naturel $q$ tel que $a=b\times q$. (on dit encore que $b$ est un \emph{diviseur} de $a$ ou que $a$ est un \emph{multiple} de $b$)
+\item Un entier naturel $p\geqslant 2$ est un \emph{nombre premier} lorsque ses seuls diviseurs sont $1$ et $p$.
+\end{itemize}
+\end{comment}
+
+\subsection*{Nombres entiers relatifs $\Z$}
+\begin{defn}
+L'ensemble des  nombres entiers relatifs  est $\Z=\{\dots;-2;-1;0;1;2;3;\dots\}$. Il est composé des nombres entiers naturels et de leurs opposés.
+
+En particulier, l'ensemble $\N$ est \emph{contenu} (ou inclus) dans $\Z$, ce que l'on note \og $\N\subset \Z$\fg.
+\end{defn}
+ 
+
+\medskip 
+La proposition \og Si $n \in \N $ alors $n\in\Z$ et $-n \in \Z $ \fg{} est vraie. 
+
+Par contre, la réciproque \og Si $n\in\Z$ et $-n\in\Z$  alors  $n\in\N$ \fg{} est fausse. (Il suffit de choisir $n=-1$)
+
+\underline{Exemple :}
+
+\[245 \in \Z ;\qquad -5 \in \Z ;\qquad  2^5 \in \Z ;\qquad \dfrac{3}{5} \notin\Z; \qquad 0 \in\N; \qquad 0 \notin\Z^*\] 
+
+\subsection*{Nombres décimaux $\D$}
+\begin{defn}
+Les nombres décimaux sont les nombres de la forme $\dfrac{a}{10^n}$, où $a$ est un entier et $n$ un entier naturel. 
+
+Ce sont les nombres dont l'écriture décimale n'a qu'un nombre \emph{fini} de chiffres après la virgule.
+
+L'ensemble des \emph{nombres décimaux} est noté  $\D$. 
+
+\end{defn}
+
+\medskip
+
+\underline{Exemple :} 
+
+\medskip
+
+$-13 \in \D$ ; \hfill  $0,3333 \in \D$ ; \hfill $\dfrac{1}{3} \notin \D$ ; \hfill $\dfrac{3}{4} \in \D$; \hfill  $3,1416 \in \D$ ; \hfill $\pi \notin \D$.
+
+\subsection*{Nombres rationnels $\Q$}
+\begin{defn}
+
+L'ensemble des  nombres rationnels  est $\Q=\left\{\dfrac{a}{b} \text{ où } a\in\Z,~b\in\Z^*\right\}$.
+
+C'est l'ensemble des nombres qui s'écrivent comme le quotient d'un entier par un entier non nul.
+\end{defn}
+
+\medskip
+\begin{itemize}
+\item La fraction $\dfrac{a}{b}$ avec $b \ne 0$ est dite \emph{irréductible} lorsque le numérateur et le dénominateur n'ont pas de facteurs communs (autres que $1$ ou $-1$).
+\item La partie décimale d'un nombre rationnel est infinie et périodique à partir d'un certain rang.
+\item La division par 0 est \textbf{interdite} : l'écriture  $\dfrac{a}{0}$ n'a aucun sens.
+\end{itemize}
+
+
+\medskip
+
+\underline{Exemple:}
+
+\medskip
+
+$-13 \in \Q$ ; \hfill  $0,5 \in \Q$ ; \hfill $-\dfrac{1}{3} \in \Q$ ; \hfill $\dfrac{22}{7} \in \Q$; \hfill  $\sqrt{2} \notin \Q$ ; \hfill $\pi \notin \Q$.
+
+\subsection*{Nombres réels $\R$}
+Dès l'antiquité, on avait découvert l'insuffisance des nombres rationnels. 
+
+Par exemple, il n'existe pas de rationnel $x$ tel que $x^2 =2$ on dit que $\sqrt{2}$ est un irrationnel.
+
+\underline{Exemple :}
+
+$-13 \in \R$ ; \hfill  $0,5 \in \R$ ; \hfill $-\dfrac{1}{3} \in \R$ ; \hfill $\dfrac{22}{7} \in \R$; \hfill  $\sqrt{2} \in \R$ ; \hfill $\pi \in \R$
+
+
+\medskip
+
+\begin{defn}
+L'ensemble de tous les nombres rationnels et irrationnels est l'ensemble des nombres réels noté $\R$
+\vspace{0.6cm}
+\end{defn}
+
+\medskip
+
+ Chaque nombre réel correspond à un unique point de la droite graduée. Réciproquement, à chaque point de la droite graduée correspond un unique réel, appelé \emph{abscisse} de ce point.
+ 
+ 
+\vspace{3cm} 
+
+\begin{center}
+\definecolor{qqzzff}{rgb}{0,0.6,1}
+\definecolor{zzccqq}{rgb}{0.6,0.8,0}
+\definecolor{ffzzqq}{rgb}{1,0.6,0}
+\begin{tikzpicture}[scale=2,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-4.019411648148072,-0.5) rectangle (4.148615211731987,0.5);
+\draw [line width=0.5pt,domain=-4.019411648148072:4.148615211731987] plot(\x,{(-0-0*\x)/4.848213562373095});
+\begin{scriptsize}
+\draw [fill=ffzzqq] (1.4142135623730951,0) circle (1.5pt);
+\draw[color=ffzzqq] (2.153088164022291,-0.2684388991540966) node {$A = \sqrt{2}$};
+\draw [fill=zzccqq] (0.3333333333333333,0) circle (1.5pt);
+\draw[color=zzccqq] (0.33333333,-0.2684388991540966) node {$B = \frac{1}{3}$};
+\draw [fill=qqzzff] (-3.434,0) circle (1.5pt);
+\draw[color=qqzzff] (-3.43,0.2684388991540966) node {$C = -3,43$};
+\draw [color=black] (0,0)-- ++(-2.5pt,0 pt) -- ++(5pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5pt);
+\draw[color=black] (0,0.36759552264277506) node {$O = 0$};
+\draw [color=black] (1,0)-- ++(-2.5pt,0 pt) -- ++(5pt,0 pt) ++(-2.5pt,-2.5pt) -- ++(0 pt,5pt);
+\draw[color=black] (1,0.2684388991540966) node {$U = 1$};
+\draw[color=black] (4.11,0) node {$>$};
+\draw[color=black] (4,-0.2) node {$\mathbb{R}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+
+
+\newpage
+\subsection{Inclusions}
+\begin{defn}
+Soient $A$,$B$ deux ensembles, on dit que $A$ est inclu dans $B$ (on notera $A \subset B$) si tous les éléments qui appartiennent à $A$ appartiennent aussi à $B$ \vspace{1mm}
+
+\end{defn}
+
+Ici on a donc: 
+$$\N\subset\Z\subset\D\subset\Q\subset\R$$
+
+
+\definecolor{cwrbqq}{rgb}{0.7764705882352941,0.10588235294117647,0}
+\definecolor{xfqqff}{rgb}{0.4980392156862745,0,1}
+\definecolor{qqwwzz}{rgb}{0,0.4,0.6}
+\definecolor{ttzzqq}{rgb}{0.2,0.6,0}
+\definecolor{ffcctt}{rgb}{1,0.8,0.2}
+\begin{center}
+\begin{tikzpicture}[scale=1,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-1.0852426111294717,-3.27217309615321) rectangle (13.535636833199093,6.453068116064266);
+\draw [rotate around={-7.031200777095108:(6.4418004174774985,1.3825493155858697)},line width=2pt,color=cwrbqq,fill=cwrbqq,fill opacity=0.83] (6.4418004174774985,1.3825493155858697) ellipse (7.093171561653718cm and 4.436774666300759cm);
+\draw [rotate around={-4.988899436588697:(5.324967336770669,1.6780180753745022)},line width=2pt,color=xfqqff,fill=xfqqff,fill opacity=0.49] (5.324967336770669,1.6780180753745022) ellipse (5.319029519842912cm and 2.9997357324987304cm);
+\draw [rotate around={-3.6040220349125778:(3.80067903794055,1.8803941990661)},line width=2pt,color=qqwwzz,fill=qqwwzz,fill opacity=0.56] (3.80067903794055,1.8803941990661) ellipse (3.7363154924506854cm and 2.4076118183254493cm);
+\draw [rotate around={-2.295253196636245:(3.2759884051784676,1.9667356955965696)},line width=2pt,color=ttzzqq,fill=ttzzqq,fill opacity=0.61] (3.2759884051784676,1.9667356955965696) ellipse (2.7205409136175795cm and 1.4065850757201457cm);
+\draw [rotate around={-2.295253196636245:(3.2759884051784676,1.9667356955965696)},line width=2pt,color=ttzzqq,fill=ttzzqq,fill opacity=0.61] (3.2759884051784676,1.9667356955965696) ellipse (2.7205409136175795cm and 1.4065850757201457cm);
+\draw [rotate around={-2.692027097027511:(2.5752852118151055,1.983538311480675)},line width=2pt,color=ffcctt,fill=ffcctt,fill opacity=0.3] (2.5752852118151055,1.983538311480675) ellipse (1.8296313805224764cm and 0.835103967296833cm);
+
+\draw (2.1361775768797574,2.163197833290756) node[scale=1,anchor=north west] {$\mathbb{N}$};
+\draw (3.4008314090388376,2.465145123109777) node[anchor=north west] {$2$};
+\draw (2.0636362684117455,2.7670924129287986) node[anchor=north west] {0};
+\draw (2.5381248666987783,2.5082804502267804) node[anchor=north west] {1000};
+\draw (4.824297203899936,1.6887092350037232) node[anchor=north west] {-3};
+\draw (5.622300755564491,1.0201116646901764) node[anchor=north west] {-0,333};
+\draw (6.053654026734521,2.120062506173753) node[anchor=north west] {0,132456};
+\draw (4.673323558990425,3.910178581529378) node[anchor=north west] {35};
+\draw (8.512367672403691,1.6259535341472396) node[anchor=north west] {$\frac{1}{3}$};
+\draw (4.026293652235381,3.090607366306321) node[anchor=north west] {1};
+\draw (5.039973839484951,2.4435774595512756) node[anchor=north west] {6};
+\draw (10.53972804690283,0.3299464308181282) node[anchor=north west] {$\sqrt{2}$};
+\draw (9.288803560509745,-0.7053014199899441) node[anchor=north west] {$\sqrt{\sqrt{2}}$};
+\draw (11.661246551944908,2.831795403604303) node[anchor=north west] {$\frac{1}{7}$};
+\draw (9.288803560509745,4.902291105220447) node[anchor=north west] {4};
+\draw (10.906378327397356,3.306284001891336) node[anchor=north west] {0,345};
+\draw (5.773274400474001,3.1984456840988287) node[anchor=north west] {-4};
+\draw (8.404529354611183,2.5729834409022847) node[anchor=north west] {0,456};
+\draw (7.628093466505129,3.6513666188273604) node[anchor=north west] {-5};
+\draw (6.894792905516079,4.233693534906901) node[anchor=north west] {8};
+\draw (3.422399072597339,1.273032599418708) node[scale=1.3,anchor=north west] {$\mathbb{Z}$};
+\draw (4.479214586963912,0.654086740146719) node[scale=1.5,anchor=north west] {$\mathbb{D}$};
+\draw (5.90164097275910045,-0.0511344681161101) node[scale=1.7,anchor=north west] {$\mathbb{Q}$};
+\draw (7.70849167361613,-1.058954386389351) node[scale=2,anchor=north west] {$\mathbb{R}$};
+\draw (10.280916084200813,4.276828862023904) node[anchor=north west] {-1};
+\draw (11.574975897710901,1.2789236273921945) node[anchor=north west] {$\pi$};
+\end{tikzpicture}
+\end{center}
+
+\begin{thm}
+$\frac{1}{3} \notin \D$
+\vspace{2mm}
+\end{thm}
+
+\begin{demo}
+Supposons, par l'absurde, que $\frac{1}{3} \in \D$, alors il existe $a \in \Z$ et $n \in \N$ tel que $$\frac{1}{3}=\frac{a}{10^n}$$
+ce qui est équivalent en multipliant l'équation précédente par $10^n$ et $3$ à l'équation 
+$$10^n=3a$$ or $10^n$ ne peut être un multiple de 3 puisque la somme totale des chiffres qui constituent $10^n$ est égale à $1$ qui n'est pas un multiple de 3.
+
+Donc $\frac{1}{3}$ ne peut pas appartenir à $\D$.
+\end{demo}
+
+\newpage
+
+\begin{thm}
+$\sqrt{2} \notin \Q$
+\vspace{2mm}
+\end{thm}
+
+\begin{demo}
+Supposons, par l'absurde, que $\sqrt{2} \in \Q$, alors il existe $a \in \Z$,$b \in \N$ tel que $\sqrt{2}=\frac{a}{b}$ on suppose que la fraction est déjà sous forme irréductible.\\
+
+Ainsi en passant au carré on a 
+$$2=\frac{a^2}{b^2}$$
+$$2b^2=a^2$$
+ainsi on a que $a$ est pair donc $a=2q_a$ et donc  $a^2=4q^2_a$.\\
+$$2b^2=4q^2_a$$
+$$b^2=2q^2_a$$
+ainsi on a aussi que $b$ est pair donc $b=2*q_b$ mais alors la fraction $\frac{a}{b}$ est réductible, ce qui est absurde, par hypothèse. 
+\end{demo}
+
+\section{Intervalle et distance}
+\subsection{Intervalle}
+
+\underline{Exemple :}
+\begin{itemize}
+
+\item[$\bullet$]$[-2;3]=\{ x\in \R \vert  -2 \leq x \leq 3 \}$
+\item[$\bullet$]$]-2;3]=\{ x\in \R \vert  -2 < x \leq 3 \}$
+\item[$\bullet$]$[-2;3[=\{ x\in \R \vert  -2 \leq x < 3 \}$
+\item[$\bullet$]$]-2;3[=\{ x\in \R \vert  -2 < x < 3 \}$
+
+\end{itemize}
+
+
+\begin{defn}
+On appelle intervalle réel un ensemble de nombres délimité par deux nombres réels constituant une borne inférieure et une borne supérieure. Un intervalle contient tous les nombres réels compris entre ces deux bornes.
+\end{defn}
+
+Comme on l'a remarqué précédement, il existe plusieurs types d'intervalle. 
+
+\underline{Types d'intervalle :}
+\begin{itemize}
+
+\item{Fermé:} $[a;b]=\{ x\in \R \vert  a \leq x \leq b \}$
+\item{Semi-ouvert à droite:} $]a;b]=\{ x\in \R \vert  a < x \leq b \}$
+\item{Semi-ouvert à gauche:} $[a;b[=\{ x\in \R \vert  a \leq x < b \}$
+\item{Ouvert:} $]a;b[=\{ x\in \R \vert  a < x < b \}$
+
+\end{itemize}
+
+
+\subsection*{La notation $- \infty$ et $+ \infty$}
+
+Pour traduire le fait que notre nombre peut prendre une valeur beaucoup plus petite que $0$ on prend la notation $- \infty$, inversement pour prendre une valeur beaucoup plus grande que $0$ on prend la notation $+ \infty$, cependant c'est une valeur "interdite" un nombre ne peut pas être égal à $- \infty$.\\
+
+
+Ainsi quand ils apparaitront dans un intervalle il sera nécssairement semi-ouvert là ou l'infini apparaît.\\
+
+\underline{Exemple :}\\
+
+$]- \infty;b]=\{ x\in \R \vert  - \infty < x \leq b \}$\\
+$]- \infty;0]=\R_-$ \\
+$]- \infty;0[=\R_{-}^{*}$ \\
+$[a;+ \infty[=\{ x\in \R \vert  a \leq x < + \infty \}$\\
+$[0;+ \infty[=\R_+$\\
+$]0;+ \infty[=\R_{+}^{*}$\\
+$]- \infty;+ \infty[=\R$ 
+%Determiner R*
+
+
+\
+
+\subsection{Distance}
+Pour s'intéresser à la notion de distance il faut avoir la notion de valeur absolue, ou encore de "distance à zéro".
+
+\subsection*{La notation $\vert a \vert$}
+
+
+La notation \abs{a} ce dit \emph{valeur absolue} de a. Soit $a \in \R$ on pose \abs{a}=-a si  $a<0$ et \abs{a}=a sinon.
+
+\underline{Exemple :}\\
+
+
+\abs{$-2$}=2
+\abs{$-5$}=5
+\abs{$0$}=0
+\abs{$1$}=1\\
+
+\abs{$-3$}=3=\abs{$3$} car ils ont la même distance à zéro.
+
+\subsubsection*{Distance entre deux nombres}
+
+
+\begin{defn}
+Soient $a,b \in \R$ on définit la distance entre $a$ et $b$ comme la valeur absolue de leur différence.
+C'est à dire \abs{b-a}. \\
+
+Remarque: la distance de $a$ à $b$ est égale à la distance de $b$ à $a$. La distance est dite \emph{symétrique}.
+\end{defn}
+
+\underline{Exemple :}\\
+
+La distance entre $4$ et $6$ est égale à \abs{$6-4$}=2.
+
+La distance entre $8$ et $7$ est égale à \abs{$7-8$}=1.
+
+La distance entre $7$ et $8$ est égale à \abs{$8-7$}=1.
+
+La distance entre $7$ et $-2$ est égale à \abs{$-2-7$}=9.
+
+La distance entre $-2$ et $-7$ est égale à \abs{$-7-(-2)$}=5.
+%Tracer le graphe de cette fonction
+
+%Pour mesurer la distance entre deux nombres $a$ et $b$, il suffit de ramener le problème en $0$, c'est à dire qua la distance de $a$ à $b$ est la même que la distance de $a-c$ à $b-c$ et ceux quelque soit $c$. ( Faire une animation ) Puisque cela marche pour n'importe quel $c$ on pose $c=a$, ainsi la distance de $a$ à $b$ est la même que la distance de $a-a$ à $b-a$ c'est à dire la distance à $0$ de $b-a$ soit \abs{$b-a$}.
+
+\subsubsection*{Inégalité et valeur absolue}
+Soit $r>0$, on peut aussi traduire l'inéquation suivante.
+\abs{a} $\leq r$ par l'inégalité $-r \leq a \leq r$.
+
+\subsubsection*{Interprétation d'une distance avec un intervalle}
+
+Ici on veut savoir décrire tous les nombres étant à une distance inférieur ou égale à $r$ (où $r > 0$) d'un certain nombre $a$
+c'est à dire qu'un nombre $x$ qui respecte cette propriété respecte l'inégalité suivante:
+$$a-r\leq x \leq a+r$$
+ce qui est équivalent, d'une part, à dire que $x \in [a-r;a+r]$; mais aussi en soustrayant l'inégalité par $a$ on obtient.
+$$-r\leq x-a \leq r$$
+qui se traduit par \abs{x-a} $\leq r$
+%encadrement d'un réel 
+\end{document}
+ 

@@ -1,0 +1,312 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+
+\setcounter{chapter}{12}
+\chapter{La symétrie axiale}
+
+\section{Figures symétriques}
+
+\begin{defn}
+Deux figures sont symétriques par rapport à une droite si elles se superposent par pliage le long de cette droite. 
+
+\medskip
+\noindent Cette droite est appelée \dotfill
+\end{defn}
+
+\begin{ex}
+
+\vspace{-3mm}
+\noindent \begin{minipage}{8.5cm}
+Les figures bleue et rouge se superposent par pliage le long de la droite $(d)$ donc elles sont symétriques par rapport à la droite $(d)$.
+
+\medskip
+\noindent On dit également que la figure rouge est le symétrique de la figure bleue dans la symétrie axiale d'axe $(d)$.
+
+\medskip
+\noindent Deux points sont symétriques par rapport à une droite s'ils se superposent par pliage le long de cette droite.
+
+\medskip
+\noindent Ici, les points $A$ et $M$ sont symétriques par rapport à la droite $(d)$.
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (1.5,3.5) grid (10.5,11.5);
+\clip(1.5,3.5) rectangle (10.5,11.5);
+\fill[line width=1.2pt,color=blue,fill=blue,fill opacity=0.2] (2.,10.) -- (5.,10.) -- (5.,9.) -- (3.,9.) -- (3.,8.) -- (4.,8.) -- (4.,7.) -- (3.,7.) -- (3.,5.) -- (2.,5.) -- cycle;
+\fill[line width=1.2pt,color=red,fill=red,fill opacity=0.15000000596046448] (7.,10.) -- (10.,10.) -- (10.,5.) -- (9.,5.) -- (9.,7.) -- (8.,7.) -- (8.,8.) -- (9.,8.) -- (9.,9.) -- (7.,9.) -- cycle;
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (6.424264068711929,10.) -- (6.424264068711929,10.424264068711928) -- (6.,10.424264068711928) -- (6.,10.) -- cycle; 
+\draw [line width=1.2pt,color=blue] (2.,10.)-- (5.,10.);
+\draw [line width=1.2pt,color=blue] (5.,10.)-- (5.,9.);
+\draw [line width=1.2pt,color=blue] (5.,9.)-- (3.,9.);
+\draw [line width=1.2pt,color=blue] (3.,9.)-- (3.,8.);
+\draw [line width=1.2pt,color=blue] (3.,8.)-- (4.,8.);
+\draw [line width=1.2pt,color=blue] (4.,8.)-- (4.,7.);
+\draw [line width=1.2pt,color=blue] (4.,7.)-- (3.,7.);
+\draw [line width=1.2pt,color=blue] (3.,7.)-- (3.,5.);
+\draw [line width=1.2pt,color=blue] (3.,5.)-- (2.,5.);
+\draw [line width=1.2pt,color=blue] (2.,5.)-- (2.,10.);
+\draw [line width=1.2pt,color=red] (7.,10.)-- (10.,10.);
+\draw [line width=1.2pt,color=red] (10.,10.)-- (10.,5.);
+\draw [line width=1.2pt,color=red] (10.,5.)-- (9.,5.);
+\draw [line width=1.2pt,color=red] (9.,5.)-- (9.,7.);
+\draw [line width=1.2pt,color=red] (9.,7.)-- (8.,7.);
+\draw [line width=1.2pt,color=red] (8.,7.)-- (8.,8.);
+\draw [line width=1.2pt,color=red] (8.,8.)-- (9.,8.);
+\draw [line width=1.2pt,color=red] (9.,8.)-- (9.,9.);
+\draw [line width=1.2pt,color=red] (9.,9.)-- (7.,9.);
+\draw [line width=1.2pt,color=red] (7.,9.)-- (7.,10.);
+\draw [line width=1pt] (6.,3.5) -- (6.,11.5);
+\draw [line width=1.pt] (5.45,10.12) -- (5.45,9.88);
+\draw [line width=1.pt] (5.55,10.12) -- (5.55,9.88);
+\draw [line width=1.pt] (7.,10.)-- (5.,10.);
+\draw [line width=1.pt] (6.55,9.88) -- (6.55,10.12);
+\draw [line width=1.pt] (6.45,9.88) -- (6.45,10.12);
+\begin{scriptsize}
+\draw [color=black] (5.,10.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (5.1,10.35) node {\large{$A$}};
+\draw [color=black] (7.,10.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (7.1,10.35) node {\large{$M$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\vspace{-0.5cm}
+\section{Symétrique d'un point}
+
+\begin{defn}
+Le symétrique d'un point A par rapport à une droite $(d)$ est le point $M$ tel que la droite $(d)$ soit la médiatrice du segment $[AM]$ (tel que $(d)$ soit la perpendiculaire au segment $[AM]$ en son milieu).
+\end{defn}
+
+\begin{rem}
+Si un point appartient à une droite alors son symétrique par rapport à cette droite est le point lui-même.
+\end{rem}
+
+\begin{ex}
+Construis le point $S$, symétrique du point $P$ par rapport à la droite $(d)$.
+
+\begin{enumerate}
+\item Dans un quadrillage
+
+\noindent\begin{minipage}{0.47\linewidth}
+\begin{center}
+Axe de symétrie horizontal ou vertical
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.72]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (2.5,8.5) grid (10.5,12.5);
+\clip(2.5,8.5) rectangle (10.5,12.5);
+\draw [line width=2.pt,color=red] (7.,8.5) -- (7.,12.5);
+\draw [shift={(9.5,10.)},line width=2.pt,color=blue]  plot[domain=3.141592653589793:6.283185307179586,variable=\t]({1.*0.5*cos(\t r)+0.*0.5*sin(\t r)},{0.*0.5*cos(\t r)+1.*0.5*sin(\t r)});
+\draw [shift={(8.5,10.)},line width=2.pt,color=blue]  plot[domain=3.141592653589793:6.283185307179586,variable=\t]({1.*0.5*cos(\t r)+0.*0.5*sin(\t r)},{0.*0.5*cos(\t r)+1.*0.5*sin(\t r)});
+\draw [shift={(7.5,10.)},line width=2.pt,color=blue]  plot[domain=3.141592653589793:6.283185307179586,variable=\t]({1.*0.5*cos(\t r)+0.*0.5*sin(\t r)},{0.*0.5*cos(\t r)+1.*0.5*sin(\t r)});
+\begin{scriptsize}
+\draw[color=red] (7.5,11.39) node {\Large{$(d)$}};
+\draw [color=black] (10.,10.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (10.14,10.45) node {\Large{$P$}};
+\draw[color=blue] (9.54,9.23) node {\Large{$1$}};
+\draw[color=blue] (8.54,9.25) node {\Large{$2$}};
+\draw[color=blue] (7.48,9.23) node {\Large{$3$}};
+\end{scriptsize}
+\end{tikzpicture}
+
+On part du point $P$ vers $(d)$. 
+
+Il faut \textcolor{blue}{$3$ carreaux} pour y arriver.
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\linewidth}
+\begin{center}
+Axe de symétrie en diagonale
+
+
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.72]
+\draw [color=lightgray,, xstep=1.0cm,ystep=1.0cm] (4.5,8.5) grid (11.5,12.5);
+\clip(4.5,8.5) rectangle (11.5,12.5);
+\draw [line width=2.pt,color=red,domain=4.5:11.5] plot(\x,{(-12.-6.*\x)/-6.});
+\draw [shift={(9.5,10.)},line width=2.pt,color=blue]  plot[domain=3.141592653589793:6.283185307179586,variable=\t]({1.*0.5*cos(\t r)+0.*0.5*sin(\t r)},{0.*0.5*cos(\t r)+1.*0.5*sin(\t r)});
+\draw [shift={(8.5,10.)},line width=2.pt,color=blue]  plot[domain=3.141592653589793:6.283185307179586,variable=\t]({1.*0.5*cos(\t r)+0.*0.5*sin(\t r)},{0.*0.5*cos(\t r)+1.*0.5*sin(\t r)});
+\begin{scriptsize}
+\draw[color=red] (10,11.2) node {\Large{$(d)$}};
+\draw [color=black] (10.,10.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (10.14,10.45) node {\Large{$P$}};
+\draw[color=blue] (9.54,9.23) node {\Large{$1$}};
+\draw[color=blue] (8.54,9.25) node {\Large{$2$}};
+\end{scriptsize}
+\end{tikzpicture}
+
+On part du point $P$ vers $(d)$. 
+
+Il faut \textcolor{blue}{$2$ carreaux} pour y arriver.
+\end{center}
+\end{minipage}
+
+\item Avec le compas
+
+\medskip
+\noindent{\footnotesize\renewcommand{\arraystretch}{1.12}\begin{tabular}{p{5cm}|p{5cm}|p{5cm}}
+\arrayrulecolor{white}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.34]
+\clip(1.5,3.5) rectangle (12.5,11.5);
+\draw [line width=1.2pt,color=red,domain=1.5:12.5] plot(\x,{(--66.-4.*\x)/6.});
+\draw [shift={(8.,9.)},line width=1.2pt,color=orange]  plot[domain=2.755129533827375:5.5605616990494635,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\draw [shift={(9.923076923076923,4.384615384615385)},line width=1.2pt,color=blue]  plot[domain=3.054787968479363:3.2195592874213355,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\draw [shift={(3.,9.)},line width=1.2pt,color=blue]  plot[domain=4.969097310818075:5.195925467410262,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\coordinate (A) at (8,9) ;
+\coordinate (B) at (1.73,5.5) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw[color=red] (2.5,11) node {\Large{$(d)$}};
+\draw [color=black] (8.,9.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (8.3,9.7) node {\Large{$P$}};
+%\draw [color=purple] (4.923076923076923,4.384615384615385)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=purple] (4.444245610375904,4.981959720679335) node {\Large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.34]
+\clip(1.5,3.5) rectangle (12.5,11.5);
+\draw [line width=1.2pt,color=red,domain=1.5:12.5] plot(\x,{(--66.-4.*\x)/6.});
+\draw [shift={(8.,9.)},line width=1.2pt,dash pattern=on 3pt off 3pt]  plot[domain=2.755129533827375:5.5605616990494635,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(9.923076923076923,4.384615384615385)},line width=1.2pt,color=blue]  plot[domain=3.054787968479363:3.2195592874213355,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(3.,9.)},line width=1.2pt,color=blue]  plot[domain=4.969097310818075:5.195925467410262,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\coordinate (A) at (3,9) ;
+\coordinate (B) at (5.5,2.2) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw[color=red] (2.5,11) node {\Large{$(d)$}};
+\draw [color=black] (8.,9.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (8.3,9.7) node {\Large{$P$}};
+%\draw [color=purple] (4.923076923076923,4.384615384615385)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=purple] (4.444245610375904,4.981959720679335) node {\Large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.34]
+\clip(1.5,3.5) rectangle (12.5,11.5);
+\draw [line width=1.2pt,color=red,domain=1.5:12.5] plot(\x,{(--66.-4.*\x)/6.});
+\draw [shift={(8.,9.)},line width=1.2pt,dash pattern=on 3pt off 3pt]  plot[domain=2.755129533827375:5.5605616990494635,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(9.923076923076923,4.384615384615385)},line width=1.2pt,color=blue]  plot[domain=3.054787968479363:3.2195592874213355,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(3.,9.)},line width=1.2pt,color=blue]  plot[domain=4.969097310818075:5.195925467410262,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\coordinate (A) at (6.66,4.12) ;
+%\coordinate (B) at (1.6,12.5) ;
+%\Compas{A}{B}
+\begin{scriptsize}
+\draw[color=red] (2.5,11) node {\Large{$(d)$}};
+\draw [color=black] (8.,9.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=black] (8.3,9.7) node {\Large{$P$}};
+\draw [color=purple] (4.923076923076923,4.384615384615385)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=purple] (4,4.981959720679335) node {\Large{$S$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}\\\arrayrulecolor{lightgray}
+On trace un \textcolor{orange}{arc de cercle de centre $P$} qui coupe l'axe en deux points. & De l'autre coté de la droite $(d)$, on trace \textcolor{blue}{deux arcs de cercle} de même rayon et de centres les deux points précédents. & Ces deux arcs se coupent en un point qui est le point \textcolor{purple}{$S$}.
+\end{tabular}}
+\end{enumerate}
+\end{ex}
+
+\section{Symétrique de figures usuelles et propriétés de la symétrie axiale}
+
+\begin{prop}
+Le symétrique d'une droite par rapport à un axe est une droite.
+
+\medskip
+\noindent La symétrie axiale conserve l'alignement.
+\end{prop}
+
+\begin{rem}
+Le symétrique du milieu d'un segment est le milieu du segment symétrique.
+\end{rem}
+
+\begin{prop}
+Le symétrique d'un cercle par rapport à un axe est un cercle de même rayon.
+
+\medskip
+\noindent Les centres des cercles sont symétriques par rapport à cet axe.
+\end{prop}
+
+\begin{prop}
+La symétrie axiale conserve les mesures des angles, les périmètres et les aires.
+\end{prop}
+
+\begin{ex}
+
+\begin{minipage}{9cm}
+\begin{center}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm,scale=0.8]
+\clip(4.,3.) rectangle (18.,8);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (6.746081804907528,6.660109502632125) -- (7.085972302275404,6.406191307539653) -- (7.339890497367875,6.746081804907528) -- (7.,7.) -- cycle; 
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (14.660109502632125,6.746081804907529) -- (14.914027697724597,6.406191307539654) -- (15.253918195092472,6.6601095026321255) -- (15.,7.) -- cycle; 
+\draw (7.,7.)-- (4.46,3.6);
+\draw (4.46,3.6)-- (9.150232947079203,5.39364950424083);
+\draw (7.,7.)-- (9.150232947079203,5.39364950424083);
+\draw [line width=1.6pt,color=qqqqff] (11.,3.) -- (11.,8);
+\draw [color=ffqqqq] (12.849767052920797,5.39364950424083)-- (15.,7.);
+\draw [color=ffqqqq] (15.,7.)-- (17.54,3.6);
+\draw [color=ffqqqq] (17.54,3.6)-- (12.849767052920797,5.39364950424083);
+\draw [dash pattern=on 1pt off 1pt on 1pt off 4pt,color=qqqqff] (9.150232947079203,5.39364950424083)-- (12.849767052920797,5.39364950424083);
+\draw [dash pattern=on 1pt off 1pt on 1pt off 4pt,color=qqqqff] (7.,7.)-- (15.,7.);
+\draw [dash pattern=on 1pt off 1pt on 1pt off 4pt,color=qqqqff] (4.46,3.6)-- (17.54,3.6);
+\begin{scriptsize}
+\draw [color=black] (4.46,3.6)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (4.5,3.97) node {\large{$C$}};
+\draw [color=black] (7.,7.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (7.14,7.37) node {\large{$A$}};
+\draw[color=qqwuqq] (7.34,6.13) node {\large{$90\textrm{\degre}$}};
+\draw [color=black] (9.150232947079203,5.39364950424083)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.3,5.77) node {\large{$B$}};
+\draw[color=qqqqff] (11.28,7.55) node {\large{$\Delta$}};
+\draw [color=black] (12.849767052920797,5.39364950424083)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (12.9,5.77) node {\large{$B'$}};
+\draw [color=black] (15.,7.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (15.25,7.42) node {\large{$A'$}};
+\draw [color=black] (17.54,3.6)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (17.8,3.97) node {\large{$C'$}};
+\draw[color=qqwuqq] (15.08,6.21) node {\large{$90\textrm{\degre}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm,scale=0.8]
+\clip(4.,3.) rectangle (18.,8);
+\draw [line width=1.6pt,color=qqqqff] (11.,3.) -- (11.,8);
+\draw [dash pattern=on 1pt off 1pt on 1pt off 4pt,color=qqqqff] (9.150232947079203,5.39364950424083)-- (12.849767052920797,5.39364950424083);
+\draw [shift={(9.150232947079203,5.39364950424083)},line width=1pt]  plot[domain=0:6.28,variable=\t]({1.*2.*cos(\t r)+0.*2.*sin(\t r)},{0.*2.*cos(\t r)+1.*2.*sin(\t r)});
+\draw [shift={(12.849767052920797,5.39364950424083)},line width=1pt,color=red]  plot[domain=0:6.28,variable=\t]({1.*2.*cos(\t r)+0.*2.*sin(\t r)},{0.*2.*cos(\t r)+1.*2.*sin(\t r)});
+\begin{scriptsize}
+\draw [color=black] (9.150232947079203,5.39364950424083)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.3,5.77) node {\large{$P$}};
+\draw[color=qqqqff] (11.28,7.55) node {\large{$\Delta$}};
+\draw [color=black] (12.849767052920797,5.39364950424083)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (12.9,5.77) node {\large{$P'$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+
+\begin{prop}
+Pour construire le symétrique d'une figure complexe, on la décompose en figures usuelles et on construit le symétrique de chacune d'elles.
+\end{prop}
+
+\end{document}

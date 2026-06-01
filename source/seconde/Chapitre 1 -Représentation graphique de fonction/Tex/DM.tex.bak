@@ -1,0 +1,347 @@
+\documentclass[french]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgf,pgfplots,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usepackage{multicol}
+\usepackage{lscape}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{arrows}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\geometry{hmargin=0.5cm,vmargin=0.5cm}
+\pagestyle{empty}
+\begin{document}
+\section*{Devoir à la maison I - Lecture graphique et Parité}
+\subsection*{Exercice 1 - Lecture graphique}
+Soient ici $f$ et $g$ deux fonctions tels que $D_f=D_g=[-2;2]$.
+
+\begin{center}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{ffxfqq}{rgb}{1,0.4980392156862745,0}
+\begin{tikzpicture}[scale=1.8,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-3.3818172976105854,
+xmax=3.840937489968124,
+ymin=-2.173471882862548,
+ymax=3.664651661805869,
+xtick={-3,-2,...,4},
+ytick={-2,-1.5,...,3.5},]
+\clip(-3.3818172976105854,-2.173471882862548) rectangle (3.840937489968124,3.664651661805869);
+\draw[line width=0.5pt,color=ffxfqq,smooth,samples=100,domain=-2:2] plot(\x,{0.7916666666666666*(\x)^(3)+0.125*(\x)^(2)-2.9166666666666665*(\x)+1});
+\draw[line width=0.5pt,color=qqqqff,smooth,samples=100,domain=-2:2] plot(\x,{0-0.75*(\x)^(3)-0.25*(\x)^(2)+3*(\x)+1});
+\begin{scriptsize}
+\draw[color=ffxfqq] (2.4,2) node {$C_{f}$};
+\draw[color=qqqqff] (-2.1,0.25) node {$C_{g}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+1)Donner l'image de -2; 0; 1 et de 2 par la fonction $f$.
+\vspace{2mm}
+
+2)Donner l'image de -2; 0; 1 et de 2 par la fonction $g$.
+\vspace{2mm}
+
+3)Donner un antécédent de 1 par $f$. 
+\vspace{2mm}
+
+4)Donner un antécédent de 0 par $g$.
+\vspace{2mm}
+
+5)Donner tous les antécédents de 1 par $f$.
+\vspace{2mm}
+
+6)Existe t-il un $x\in D_f$,\;$x\in D_g$ tel que $f(x)=g(x)$?
+\vspace{2mm}
+
+7)S'il existe, est-il unique?
+\vspace{2mm}
+
+8)Déterminer quand $f(x)\geq g(x)$.
+\vspace{2mm}
+
+9)Donner le minimum et le maximum de chaque fonction et déterminer en quel(s) nombre(s) de départ(s) ils sont atteints.
+\vspace{2mm}
+
+10)Résoudre graphiquement $f(x)\leq 0$ et $g(x)\geq 0$.
+\vspace{2mm}
+
+11)Dresser le tableau de signe de $f$ et de $g$.
+\vspace{2mm}
+
+12)Dresser le tableau de variation de $f$ et de $g$.
+\vspace{2mm}
+
+13)Placer les points suivants et dire si oui ou non ils appartiennent à une courbe. Si oui laquelle ou lesquelles.
+\vspace{2mm}
+
+$$A_1 =(-2,3);A_2 =(-2,1) ;A_3 =(0,1) ;A_4 =(1,0) ;A_5 =(1,-1) ;A_6 =(2,0) $$
+
+\newpage 
+
+\subsection*{Exercice 2 - Parité}
+
+Exemple de représentation graphique d'une fonction paire:
+\begin{center}
+\definecolor{qqqqff}{rgb}{0,0,1}
+\begin{tikzpicture}[scale=1,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=0.5cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-3.723589488771264,
+xmax=3.961343025816829,
+ymin=-0.1,
+ymax=9.513209959218328,
+xtick={-3,-2,...,3},
+ytick={0,1,...,9},]
+%\clip(-3.723589488771264,-1.35819046319715) rectangle (3.961343025816829,11.513209959218328);
+\draw[line width=1pt,color=qqqqff,smooth,samples=100,domain=-3:3] plot(\x,{(\x)^(2)});
+\begin{scriptsize}
+\draw[color=qqqqff] (2.5,4) node {$C_f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+1)Calculer l'image de $2$ et de $-2$ par la fonction $f$, que remarque t-on?
+\vspace{2mm}
+ 
+Exemple de représentation graphique d'une fonction impaire:
+\begin{center}
+\definecolor{ccqqqq}{rgb}{0.8,0,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=0.5cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-3.4195258558668225,
+xmax=3.88286115723924,
+ymin=-9.261524812639719,
+ymax=9.084494577910345,
+xtick={-3,-2,...,3},
+ytick={-8,-6,...,8},]
+\clip(-3.4195258558668225,-9.261524812639719) rectangle (3.88286115723924,9.084494577910345);
+\draw[line width=1pt,color=ccqqqq,smooth,samples=100,domain=-2:2] plot(\x,{(\x)^(3)});
+\begin{scriptsize}
+\draw[color=ccqqqq] (1.5,1.5) node {$C_f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+2)Calculer l'image de $2$ et de $-2$ par la fonction $f$, que remarque t'on?
+\vspace{2mm}
+
+3)Que peut t'on dire de $D_f$ si une fonction $f$ est paire ou impaire?
+
+
+
+\begin{defn} 
+Une fonction est dite \underline{paire} si pour n'importe quel $x \in D_f$ on est $f(-x)=f(x)$, ce qui ce traduit dans une représentation graphique par une symétrie \underline{axiale} de la courbe $C_f$ par rapport à l'axe des ordonnées.\\
+
+
+Une fonction est dite \underline{impaire} si pour n'importe quel $x \in D_f$ on est $f(-x)=-f(x)$, ce qui ce traduit dans une représentation graphique par une symétrie \underline{centrale} de la courbe $C_f$ par rapport à l'origine. 
+\end{defn}
+
+
+
+4)Dire si les quatres fonctions suivantes sont paires, impaires, ou ni l'un ni l'autre.
+
+\newpage
+
+\begin{landscape}
+\begin{multicols}{2}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-6.103403070030286,
+xmax=6.310069184196536,
+ymin=-2.54351248781676,
+ymax=1.8168371612344807,
+xtick={-6,-5,...,6},
+ytick={-2,-1,...,2},]
+\clip(-5.103403070030286,-2.54351248781676) rectangle (5.310069184196536,1.8168371612344807);
+\draw[line width=1pt,color=qqwuqq,smooth,samples=100,domain=-5:5] plot(\x,{cos(((\x)*3.141592653589793/3)*180/pi)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (-4,0.5355831478921148) node {$C_{f_{1}}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-6.103403070030286,
+xmax=6.310069184196536,
+ymin=-2.54351248781676,
+ymax=1.8168371612344807,
+xtick={-6,-5,...,6},
+ytick={-2,-1,...,2},]
+\clip(-5.103403070030286,-2.54351248781676) rectangle (5.310069184196536,1.8168371612344807);
+\draw[line width=1pt,color=qqwuqq,smooth,samples=100,domain=-5:5] plot(\x,{sin(((\x)*3.141592653589793/3)*180/pi)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (-3,0.57662578713111) node {$C_{f_{2}}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-5.103403070030286,
+xmax=5.1073225345085806,
+ymin=-4.087024975633534,
+ymax=4.6336743224689716,
+xtick={-4,-3,...,4},
+ytick={-4,-3,...,4},]
+%\clip(-5.103403070030286,-5.087024975633534) rectangle (1.1073225345085806,3.6336743224689716);
+\draw[line width=1pt,color=qqwuqq,smooth,samples=100,domain=-3:3] plot(\x,{(\x)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (2,1) node {$C_{f_{3}}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-3.103403070030286,
+xmax=3.310069184196536,
+ymin=-2.087024975633534,
+ymax=3.6336743224689716,
+xtick={-3,-2,...,3},
+ytick={-1,0,...,3},]
+\clip(-5.103403070030286,-5.087024975633534) rectangle (5.310069184196536,3.6336743224689716);
+\draw[line width=1pt,color=qqwuqq,smooth,samples=100,domain=-2.1:1.5] plot(\x,{((\x)+2)*(\x)*((\x)-1)});
+\begin{scriptsize}
+\draw[color=qqwuqq] (1,-1) node {$C_{f_{4}}$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{multicols}
+\end{landscape}
+\newpage
+
+$5_{bonus}$)Compléter le tableau suivant en indiquant la variation de la fonction sur $\mathbb{R}^{-}$: \\
+
+\begin{tabular}[scale=1.5]{|l|c|c|}
+\hline 
+%\backslashbox{Type}{Variation sur $\mathbb{R}^+$}
+   Type $\backslash$  Variation sur $\mathbb{R}^{+}$  & Croissante & Décroissante \\
+\hline
+   Paire &  est décroissante sur $\mathbb{R}^{-}$  &  \\
+\hline
+	Impaire &  & est décroissante sur $\mathbb{R}^{-}$   \\
+\hline
+\end{tabular}\\
+
+$6_{bonus}$)On suppose que $f$ est impaire et que $0\in D_f$, déterminer $f(0)$.
+
+$7_{bonus}$)Trouver une fonction définie sur $\mathbb{R}$ qui est paire et impaire.
+
+
+
+\begin{comment}
+\subsection*{Exercice 3 - Réciproque}
+Ici on prendra des fonctions définies sur $\mathbb{R}^{+}$
+le but ici sera de crée une fonction particulière à l'aide d'une représentation graphique d'une fonction de départ et d'une symétrie axiale. \\
+1) Tracer le symétrique de la courbe $C_f$ par rapport à la droite $\Delta$. On notera cette courbe $C_{f_{\Delta}}$.
+
+\definecolor{ffvvqq}{rgb}{1,0.3333333333333333,0}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=0,
+xmax=9,
+ymin=0,
+ymax=9,
+xtick={0,1,...,9},
+ytick={0,1,...,9},]
+%\clip(-0.46105549347162067,-0.29054818373362523) rectangle (5.01754610878537,4.297473561654228);
+\draw[line width=1pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,smooth,samples=100,domain=0:9] plot(\x,{(\x)});
+\draw[line width=1pt,color=ffvvqq,smooth,samples=100,domain=0:3] plot(\x,{(\x)^(2)});
+\begin{scriptsize}
+\draw[color=black] (1,0.5) node {$\Delta$};
+\draw[color=ffvvqq] (3,7) node {$C_f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+2) Déterminer graphiquement $f(1),f(2),f(3)$. 
+
+3) Déterminer graphiquement $f_{\Delta}(f(1))$, $f_{\Delta}(f(2))$, $f_{\Delta}(f(3))$. Que peux-t-on dire de $f_{\Delta}$ ?
+
+4) Est-ce que $f_{\Delta}$, le symétrique d'une courbe $C_f$ par réprésentant une fonction, définit toujours une fonction? Justifiez en trouvant un contre-exemple.
+
+5)(Bonus)Déterminer  $C_{f_{\Delta}}$ de la courbe $C_f$ suivante, qu'il y a t'il de remarquable? 
+
+\definecolor{zzttff}{rgb}{0.6,0.2,1}
+
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=0,
+xmax=10,
+ymin=0,
+ymax=10,
+xtick={0,1,...,10},
+ytick={0,1,...,10},]
+%\clip(-0.46105549347162067,-0.29054818373362523) rectangle (5.01754610878537,4.297473561654228);
+\draw[line width=1pt,dash pattern=on 1pt off 1pt on 1pt off 4pt,smooth,samples=100,domain=0:10] plot(\x,{(\x)});
+\draw[line width=1pt,color=zzttff,smooth,samples=100,domain=0.1:10] plot(\x,{1/(\x)});
+\begin{scriptsize}
+\draw[color=black] (2,3) node {$\Delta$};
+\draw[color=zzttff] (3,1) node {$C_f$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{comment}
+\end{document}

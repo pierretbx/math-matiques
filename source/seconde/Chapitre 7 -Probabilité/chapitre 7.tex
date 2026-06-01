@@ -1,0 +1,182 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+\pgfplotsset{compat=newest}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+
+\chapter{Probabilité}
+
+\textit{Les probabilités ont environ 500 ans d'existence, c'est un domaine récent des mathématiques (comparé aux autres domaines comme la géométrie ou l'algèbre par exemple) qui est en plein essor.}
+
+\textit{Elle consiste à nous donner de l'information sur des événements qui ne se sont pas encore réalisé.}\\ 
+
+\textit{Exemple: sauriez-vous exprimé la chance de faire un triple 6 avec trois dés en un seul lancé?}\\
+
+
+\underline{Ça a servi et ça sert à quoi? }\\
+
+\textit{En théorie des jeux ( comme au casino par exemple / dans la conception de jeu de société ). \\
+Dans le domaine médical ( IRM etc.)\\ 
+Dans le domaine des assurances ( pour pouvoir estimer un prix en fonction des personnalités )\\
+Dans le domaine de la météo ( puisqu’il y a toujours un pourcentage de risque/chance que la météo soit fausse )\\
+En chimie dans des réactions etc.}\\
+
+\underline{Comment ça fonctionne ? }\\
+
+\textit{La probabilité d'un événement est un nombre réel compris entre 0 et 1. Plus ce nombre est grand, plus le risque (ou la chance, selon le point de vue) que l'événement se produise est grand. Si on considère que la probabilité qu'un lancé de pièce donne pile est égale à $\frac{1}{2}$, cela signifie que, si on lance un très grand nombre de fois cette pièce, la fréquence des piles va très probablement tendre vers $\frac{1}{2}$.} 
+
+\section{Définitions et modélisation du hasard}
+
+Soit un lancer de dé à six faces numérotées $1,2,3,4,5 \; \textrm{et} \; 6$ et on s'intéresse au résultat obtenu sur la face supérieure.
+
+
+\begin{defn}
+Une \underline{expérience aléatoire} est une expérience dont on connait les issues possibles, mais dont on ne peut pas prévoir l'\underline{issue} avant la réalisation de l'expérience.
+\end{defn}
+
+Plusieurs issues sont possibles ici qui sont les suivantes, la face supérieure est soit
+ 1; 2; 3; 4; 5 ou 6. Il y a donc 6 issues possibles.
+
+\begin{defn}
+Pour une expérience aléatoire donnée, on appelle l'\underline{univers}, noté $\Omega$, l'\underline{ensemble} de toutes les issues possibles.
+ \vspace{4mm}
+\end{defn}
+
+Ainsi la situation précédente est une expérience aléatoire et on a $\Omega$ = \{ "La face supérieure est un 1"; "La face supérieure est un 2";"La face supérieure est un 3";"La face supérieure est un 4";"La face supérieure est un 5";"La face supérieure est un 6" \}\\
+
+
+
+\underline{Exemple :}
+\begin{itemize}
+\item Dans un jeu de carte classique ( 52 cartes ), on peut s'intéresser à savoir de quelle famille fait parti une carte tirée au hasard. 
+
+$\Omega$ = \{ "La carte tirée est un coeur";"La carte tirée est un trèfle";"La carte tirée est un pique";"La carte tirée est un carreau"  \}\\
+\item Si l'on prend un individu, on peut s'intéresser à savoir s'il est contaminé par la grippe. $\Omega$ = \{ "L'individu est infecté par la grippe";"L'individu n'est pas infecté par la grippe" \}\\
+\item Si l'on lance une pièce, on peut s'interesser au résultat de ce lancer.
+$\Omega$ = \{ "Le résultat du lancé est face";"Le résultat du lancé est pile" \}\\
+\end{itemize}
+
+
+%\begin{defn}
+%On appelle \underline{évènement} tout sous-ensemble de $\Omega$.
+%\vspace{4mm}
+%\end{defn}
+
+\section{Probabilité et loi de probabilité}
+Maintenant que l'on a presque tout le vocabulaire nécessaire on peut commencer à généraliser.
+
+\begin{defn}
+Soit une expérience aléatoire, on peut modaliser cette expérience aléatoire, c'est à dire définir les issues possibles, notées $e_1,e_2,...,e_n$   où  $n \in \mathbb{N}^*$.
+
+Puis pour chacune des issues $e_i$ on va lui attribuer un nombre réel $p_i \in [0;1]$, appelé \underline{probabilité}. 
+
+\underline{La somme de tous les $p_i$ doit être égale à 1}.
+\end{defn}
+
+\begin{defn}
+Soit une expérience aléatoire, attribuer les $p_i$ à chaque $e_i$, c'est donner la \underline{loi de probabilité} associée à cette expérience aléatoire.
+
+\textit{Il est possible de voir cela dans un tableau}.
+\end{defn}
+
+\section{Déterminer les probabilités $p_i$}
+
+Ici on verra deux situations : 
+\begin{itemize}
+\item Soit les $n$ issues de notre expérience sont  \underline{équiprobables} c'est à dire que les issues ont toutes la même chance de se réaliser et donc une issue parmis $n$ issues nous donne la probabilité $p_1=p_2=...=p_n=\frac{1}{n}$.
+\item Ou bien on estime la probabilité d'une issue à partir de \underline{fréquences observées} lors d'études statistiques.
+\end{itemize}
+
+\section{Événement et probabilité d'un événement}
+
+\begin{defn}
+Un événement est une partie de l'univers $\Omega$, ainsi un événement est soit \underline{une issue} soit \underline{la réunion de plusieurs issues}. 
+La probabilité que cet événement est la somme des probabilités des issues qui constituent la réunion.
+\end{defn}
+
+Exemple: on pose $A=\{ e_1 ; e_3 \}$  alors la probabilité de l'événement $A$ est $p_1+p_3$, on notera cela $\mathbb{P}(A)=p_1+p_3$.
+
+\begin{defn}
+\begin{itemize}
+
+
+\item Un événement est dit \underline{élémentaire} lorsqu'il est composé d'une seule issue.
+\item Un événement est dit \underline{certain} lorsqu'il est toujours réalisé. 
+
+Il contient donc toutes les issues possibles. Il est égal à $\Omega$. Sa probabilité est donc 1.
+\item Un événement est dit \underline{impossible} lorsqu'il n'est jamais réalisé. 
+
+Il ne contient aucune issue. Il est noté $\emptyset$.  Sa probabilité est donc 0.
+
+\end{itemize}
+\end{defn}
+
+\begin{prop}
+En cas d'\underline{équiprobabilité}, la probabilité $\mathbb{P}(A)$ d'un événement quelconque $A$ est: 
+
+$$\mathbb{P}(A)=\frac{\text{nombre d'issues qui constituent A}}{\text{nombre d'issues possibles}}$$
+
+ou encore,
+
+$$\mathbb{P}(A)=\frac{\text{nombre de cas favorables}}{\text{nombre de cas possibles}}$$
+\end{prop}
+
+\section{Opération sur les événements}
+Soit ici une expérience aléatoire d'univers $\Omega$ et $A$, $B$ deux événements de cette expérience.
+
+\begin{defn}
+\begin{itemize}
+\item \underline{L'événement contraire} de $A$, noté $\overline{A}$, est constitué des issues qui n'appartienent pas à $A$.
+\item \underline{L'intersection} des événements $A$ et $B$, notée $A \cap B$, est l'événement constitué des issues qui appartiennent à $A$ \underline{et} à $B$. C'est à dire que $A \cap B$ est réalisé lorsque $A$ \underline{et} $B$ sont réalisés.
+\item \underline{La réunion} des événements $A$ et $B$, notée $A \cup B$, est l'événement constitué des issues qui appartennent à $A$ \underline{ou} à $B$. C'est à dire que $A \cup B$ est réalisé lorsque $A$ \underline{ou} $B$ est réalisé.\\
+
+Attention, en mathématique, le \underline{ou} n'est pas exclusif !
+
+\end{itemize}
+\end{defn}
+
+\begin{defn}
+Deux événement $A$ et $B$ sont dits \underline{incompatible} lorsqu'ils ne peuvent pas être réalisé tous deux à la fois, c'est à dire que $A \cap B =\emptyset$
+\end{defn}
+
+
+\section{Probabilité et opération}
+
+\begin{prop}
+$$\mathbb{P}(A \cup B)=\mathbb{P}(A)+\mathbb{P}(B)-\mathbb{P}(A \cap B)$$
+$$\mathbb{P}(\overline{A})= 1-\mathbb{P}(A)$$
+\end{prop}
+
+\definecolor{ffdxqq}{rgb}{1,0.8431372549019608,0}
+\definecolor{qqccqq}{rgb}{0,0.8,0}
+\definecolor{wwccff}{rgb}{0.4,0.8,1}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-1.5,-3.7030289547945785) rectangle (7.4,2);
+\draw [rotate around={0.3390243244514486:(3.005937353439791,-0.8894544784529466)},line width=2pt,color=wwccff,fill=wwccff,fill opacity=0.66] (3.005937353439791,-0.8894544784529466) ellipse (4.377553768452528cm and 2.7970961768350877cm);
+\draw [rotate around={59.3262413216636:(1.9034228592814917,-0.9359460535078141)},line width=2pt,color=qqccqq,fill=qqccqq,fill opacity=0.41] (1.9034228592814917,-0.9359460535078141) ellipse (2.205601052831769cm and 1.5437266097980782cm);
+\draw [rotate around={-20.650644659511137:(3.616969482732338,-1.0754207786724166)},line width=2pt,color=ffdxqq,fill=ffdxqq,fill opacity=0.72] (3.616969482732338,-1.0754207786724166) ellipse (1.6572678526215228cm and 0.8669182315800986cm);
+\draw (5.1269825010755845,1.4187263799593892) node[anchor=north west] {$\Omega$};
+\draw (2.464473235351915,-0.38939558407682584) node[anchor=north west] {$A \cap B$};
+\draw (0.5172649663898283,-1.7206502169386546) node[anchor=north west] {$A$};
+\draw (4.411681504314002,-1.1046965808384055) node[anchor=north west] {$B$};
+\end{tikzpicture}
+\end{center}
+\end{document}
+

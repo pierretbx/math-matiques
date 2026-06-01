@@ -1,0 +1,577 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\definecolor{titlecolor}{rgb}{0.0, 0.48, 0.24}
+\newpage
+\setcounter{chapter}{5}
+\chapter{Les triangles}
+
+\section{Inégalité triangulaire}
+
+\begin{prop}
+Dans un triangle, la longueur de chaque côté est inférieure à la somme
+des longueurs des deux autres côtés.
+\end{prop}
+
+\begin{ex}
+\begin{minipage}{10.4cm}
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{minipage}
+\begin{minipage}{6.6cm}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+\clip(1,3.5) rectangle (10,10.2);
+\draw [line width=1.2pt] (2.,5.)-- (5.02,9.46);
+\draw [line width=1.2pt] (5.02,9.46)-- (9.,4.);
+\draw [line width=1.2pt] (2.,5.)-- (9.,4.);
+
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (1.6,5.37) node {\large{$A$}};
+\draw [color=black] (5.02,9.46)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.3,9.7) node {\large{$B$}};
+\draw [color=black] (9.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.5,4.37) node {\large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\vspace{-3mm}
+\begin{meth}[Vérifier qu'un triangle est constructible]
+
+\begin{enumerate}
+\item Je cherche le PLUS GRAND COTE : 
+\begin{center}
+Le plus grand côté du triangle est : \dots ~\dots ~\dots ~\dots
+\end{center}
+
+\item Je calcule la somme des deux autres côtés :
+\begin{center}
+La somme des deux autres côtés est : \dots ~\dots ~\dots ~\dots$ + $\dots ~\dots ~\dots ~\dots$ = $\dots ~\dots ~\dots ~\dots
+\end{center}
+
+\item Je compare les deux résultats : \quad $<$ \quad , \quad $>$ \quad ou \quad $=$ .
+\begin{center}
+On constate que : \dots ~\dots ~\dots ~\dots \quad \dots ~\dots \quad \dots ~\dots ~\dots ~\dots$ + $\dots ~\dots ~\dots ~\dots
+\end{center}
+
+\vspace{3mm}
+\begin{minipage}{5cm}
+Si c'est le symbole est $<$ :
+
+\medskip
+Alors le triangle
+existe, on va pouvoir
+le construire.
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5cm}
+Si c'est le symbole est $>$ :
+
+\medskip
+Alors le triangle
+n'existe pas, on ne
+peut pas le
+construire.
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{5cm}
+Si c'est le symbole est $=$ :
+
+\medskip
+Alors il s'agit d'un
+triangle aplati, on va
+placer le point sur le
+segment le plus grand.
+\end{minipage}
+\end{enumerate}
+\end{meth}
+
+\section{Construction d'un triangle}
+
+\begin{ex}
+
+Construis un triangle $KLM$ tel que \\$KL=6$ cm ;$LM=5$ cm et $KM=4,5$ cm.
+
+\vspace{-3cm}
+\medskip\noindent \renewcommand{\arraystretch}{1.5}\begin{tabular}{p{5cm}|p{5cm}|p{5.8cm}}
+\arrayrulecolor{white}
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,2.) rectangle (7.5,8.);
+%\draw [line width=2.pt,dash pattern=on 2pt off 2pt] (3.64,6.7)-- (7.,3.);
+\draw [line width=2.pt] (1.,3.)-- (7.,3.);
+%\draw [shift={(7.,3.)},line width=2.pt]  plot[domain=1.8303653941877245:2.6994086531711496,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\tkzSquare[width=4,height=2,angle=194.04,color=red!50]{0,1}
+\tkzRule[width=8,height=1,angle=0]{1,3}
+\begin{scriptsize}
+\draw [color=blue] (1.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.8,3.61) node {\Large{$K$}};;
+\draw [color=blue] (7.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (7.24,3.53) node {\Large{$L$}};;
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,2.) rectangle (7.5,8.);
+\draw [line width=1.2pt,dash pattern=on 3pt off 3pt] (3.64,6.7)-- (7.,3.);
+\draw [line width=1.2pt] (1.,3.)-- (7.,3.);
+\draw [shift={(7.,3.)},line width=2.pt]  plot[domain=2:2.6,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+%\tkzSquare[width=4,height=2,angle=194.04,color=red!50]{0,1}
+%\tkzRule[width=8,height=1,angle=0]{1,3}
+\coordinate (A) at (7,3) ;
+\coordinate (B) at (2.2,8.3) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw [color=blue] (1.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.8,3.61) node {\Large{$K$}};
+\draw [color=blue] (7.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (7.24,3.53) node {\Large{$L$}};
+\draw[color=black] (5.8,5.31) node {\large{$5$} cm};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}& 
+\begin{center}
+\definecolor{qqqqff}{rgb}{0.,0.,1.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.7]
+\clip(0.5,2.) rectangle (7.5,8.);
+\draw [line width=2.pt] (3.62,6.66)-- (7.,3.);
+\draw [line width=2.pt] (1.,3.)-- (7.,3.);
+\draw [shift={(7.,3.)},line width=1.2pt]  plot[domain=2:2.6,variable=\t]({1.*5.*cos(\t r)+0.*5.*sin(\t r)},{0.*5.*cos(\t r)+1.*5.*sin(\t r)});
+\draw [shift={(1.,3.)},line width=1.2pt]  plot[domain=0.25:1.42,variable=\t]({1.*4.5*cos(\t r)+0.*4.5*sin(\t r)},{0.*4.5*cos(\t r)+1.*4.5*sin(\t r)});
+\draw [line width=2.pt] (3.62,6.66)-- (1.,3.);
+\draw [line width=1.2pt,dash pattern=on 3pt off 3pt] (5.1,4.6)-- (1.,3.);
+\coordinate (A) at (1,3) ;
+\coordinate (B) at (7,5.3) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw [color=blue] (1.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.8,2.40) node {\Large{$K$}};
+\draw [color=blue] (7.,3.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (7.24,3.53) node {\Large{$L$}};
+\draw [color=blue] (3.62,6.66)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.62,7.3) node {\Large{$M$}};
+\draw[color=black] (4,3.5) node {\large{$4,5$} cm};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}\\\arrayrulecolor{lightgray}
+On trace un segment $[KL]$ de longueur $6$ cm & Le point $M$ est à $5$ cm du point $L$ : il appartient donc au cercle de centre $L$ et de rayon $5$ cm. & Le point $M$ est à $4,5$ cm du point $K$ : il appartient donc au cercle de centre $K$ et de rayon $4,5$cm.Le point $M$ est le point d'intersection des deux arcs.
+\end{tabular}
+\end{ex}
+
+\section{Triangles particuliers (rappels de sixième)}
+
+\subsection{Triangle isocèle}
+
+\noindent \begin{minipage}{14cm}
+\begin{dft}
+Un triangle isocèle est un triangle qui a deux côtés de même longueur.
+\end{dft}
+\end{minipage}
+
+\begin{rmq}
+\begin{enumerate}
+\item[•] Le sommet commun aux côtés de même longueur est appelé le sommet principal.
+\item[•] Le côté opposé au sommet principal est appelé la base.
+\end{enumerate} 
+\end{rmq}
+
+\begin{ex}
+Le triangle $ISO$ est isocèle en $S$. Quel est son sommet principal et quelle est sa base ?
+
+\vspace{-7cm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.8,0.8) rectangle (4.5,7.2);
+\draw [line width=1.2pt] (4.28,6.84)-- (4.,1.);
+\draw [line width=1.2pt] (4.2622568224444555,3.96419580710639) -- (4.022532196901438,3.9756894535365346);
+\draw [line width=1.2pt] (4.257467803098562,3.864310546463467) -- (4.017743177555544,3.8758041928936118);
+\draw [line width=1.2pt] (1.,2.)-- (4.,1.);
+\draw [line width=1.2pt] (4.28,6.84)-- (1.,2.);
+\draw [line width=1.2pt] (2.76738791460077,4.394070880970093) -- (2.5687120263082694,4.5287107391517845);
+\draw [line width=1.2pt] (2.711287973691731,4.311289260848217) -- (2.51261208539923,4.445929119029909);
+\begin{scriptsize}
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.24,1.53) node {\Large{$I$}};
+\draw [color=blue] (4.28,6.84)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.5,6.57) node {\Large{$S$}};
+\draw [color=blue] (4.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.64,1.67) node {\Large{$O$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{ex}
+
+\subsection{Triangle équilatéral}
+
+\noindent \begin{minipage}{14cm}
+\begin{dft}
+Un triangle équilatéral est un triangle qui a ses trois côtés de même longueur.
+\end{dft}
+\end{minipage}
+
+\vspace{-2.5cm}
+\begin{flushright}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.5,3.7) rectangle (3.2,6.5);
+\draw [line width=1.2pt] (0.7,4.24)-- (3.02,3.94);
+\draw [line width=1.2pt] (1.8331545476292763,4.194303986918101) -- (1.8075060262559715,3.995955421631222);
+\draw [line width=1.2pt] (1.9124939737440287,4.18404457836878) -- (1.8868454523707237,3.9856960130819012);
+\draw [line width=1.2pt] (3.02,3.94)-- (2.1198076211353323,6.099178936779897);
+\draw [line width=1.2pt] (2.4929966343659546,4.944188631201768) -- (2.677595791395238,5.021150642766417);
+\draw [line width=1.2pt] (2.462211829740095,5.018028294013481) -- (2.6468109867693785,5.094990305578132);
+\draw [line width=1.2pt] (2.1198076211353323,6.099178936779897)-- (0.7,4.24);
+\draw [line width=1.2pt] (1.5136564391401044,5.1406863186600305) -- (1.354705803484121,5.2620728723822605);
+\draw [line width=1.2pt] (1.4651018176512116,5.077106064397639) -- (1.3061511819952285,5.198492618119868);
+\begin{scriptsize}
+\draw [color=blue] (0.7,4.24)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (0.74,3.93) node {\Large{$A$}};
+\draw [color=blue] (3.02,3.94)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (3.06,4.55) node {\Large{$B$}};
+\draw [color=blue] (2.1198076211353323,6.099178936779897)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.48,6.13) node {\Large{$C$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{flushright}
+
+\vspace{-5mm}
+\subsection{Triangle rectangle}
+
+\begin{dft}
+Un triangle rectangle est un triangle qui a un angle droit.
+\end{dft}
+
+\begin{rmq}
+Le côté opposé à l'angle droit est appelé hypoténuse.
+\end{rmq}
+
+\begin{ex}
+Construis un triangle $KHI$ rectangle en \\$K$ tel que $KI=5$cm et $HI=7$cm.
+
+\vspace{-2.5cm}
+\medskip\noindent \renewcommand{\arraystretch}{1.5}\begin{tabular}{p{4cm}|p{4cm}|p{4cm}|p{4cm}}
+\arrayrulecolor{white}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(1.,3.7) rectangle (7.,11.);
+%\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (2.249626797129441,5.309519743512807) -- (2.3601070536166344,5.719146540642247) -- (1.9504802564871937,5.829626797129441) -- (1.84,5.42) -- cycle; 
+\draw [line width=1.2pt] (1.84,5.42)-- (6.66,4.12);
+%\draw [line width=1.2pt,domain=1.:7.] plot(\x,{(-1.8228--4.82*\x)/1.3});
+%\draw [shift={(6.66,4.12)},line width=1.2pt]  plot[domain=1.846756808779931:2.346134467404757,variable=\t]({1.*7.*cos(\t r)+0.*7.*sin(\t r)},{0.*7.*cos(\t r)+1.*7.*sin(\t r)});
+%\draw [line width=1.2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+%\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+%\coordinate (A) at (6.66,4.12) ;
+%\coordinate (B) at (1.6,12.5) ;
+%\Compas{A}{B}
+\tkzRule[width=7,height=1,angle=-15.2]{1.84,5.42}
+\begin{scriptsize}
+\draw [color=blue] (6.66,4.12)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.8,4.57) node {\Large{$I$}};
+\draw [color=blue] (1.84,5.42)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.32,5.53) node {\Large{$K$}};
+\draw[color=black] (4.2,13.49) node {$n$};
+%\draw [color=blue] (3.1177768597588362,10.157603433875071)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=blue] (2.68,10.69) node {\Large{$H$}};
+%\draw[color=black] (5.6,7.49) node {\large{$7$}cm};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(1.,3.7) rectangle (7.,11.);
+%\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (2.249626797129441,5.309519743512807) -- (2.3601070536166344,5.719146540642247) -- (1.9504802564871937,5.829626797129441) -- (1.84,5.42) -- cycle; 
+\draw [line width=1.2pt] (1.84,5.42)-- (6.66,4.12);
+\draw [line width=1.2pt,domain=1.84:7.] plot(\x,{(-1.8228--4.82*\x)/1.3});
+%\draw [shift={(6.66,4.12)},line width=1.2pt]  plot[domain=1.846756808779931:2.346134467404757,variable=\t]({1.*7.*cos(\t r)+0.*7.*sin(\t r)},{0.*7.*cos(\t r)+1.*7.*sin(\t r)});
+%\draw [line width=1.2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+%\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+%\coordinate (A) at (6.66,4.12) ;
+%\coordinate (B) at (1.6,12.5) ;
+%\Compas{A}{B}
+%\tkzRule[width=7,height=1,angle=-15.2]{1.84,5.42}
+\tkzSquare[width=5,height=6,angle=-15.2]{1.84,5.42}
+\begin{scriptsize}
+\draw [color=blue] (6.66,4.12)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.8,4.57) node {\Large{$I$}};
+\draw [color=blue] (1.84,5.42)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.32,5.53) node {\Large{$K$}};
+\draw[color=black] (4.2,13.49) node {$n$};
+%\draw [color=blue] (3.1177768597588362,10.157603433875071)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=blue] (2.68,10.69) node {\Large{$H$}};
+%\draw[color=black] (5.6,7.49) node {\large{$7$}cm};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}& 
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(1.,3.7) rectangle (7.,11.);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (2.249626797129441,5.309519743512807) -- (2.3601070536166344,5.719146540642247) -- (1.9504802564871937,5.829626797129441) -- (1.84,5.42) -- cycle; 
+\draw [line width=1.2pt] (1.84,5.42)-- (6.66,4.12);
+\draw [line width=1.2pt,domain=1.84:7.] plot(\x,{(-1.8228--4.82*\x)/1.3});
+\draw [shift={(6.66,4.12)},line width=1.2pt]  plot[domain=1.846756808779931:2.346134467404757,variable=\t]({1.*7.*cos(\t r)+0.*7.*sin(\t r)},{0.*7.*cos(\t r)+1.*7.*sin(\t r)});
+%\draw [line width=1.2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+\coordinate (A) at (6.66,4.12) ;
+\coordinate (B) at (1.6,12.5) ;
+\Compas{A}{B}
+\begin{scriptsize}
+\draw [color=blue] (6.66,4.12)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.8,4.57) node {\Large{$I$}};
+\draw [color=blue] (1.84,5.42)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.32,5.53) node {\Large{$K$}};
+\draw[color=black] (4.2,13.49) node {$n$};
+%\draw [color=blue] (3.1177768597588362,10.157603433875071)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+%\draw[color=blue] (2.68,10.69) node {\Large{$H$}};
+\draw[color=black] (5.6,7.49) node {\large{$7$}cm};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}&
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(1.,3.7) rectangle (7.,11.);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (2.249626797129441,5.309519743512807) -- (2.3601070536166344,5.719146540642247) -- (1.9504802564871937,5.829626797129441) -- (1.84,5.42) -- cycle; 
+\draw [line width=1.2pt] (1.84,5.42)-- (6.66,4.12);
+\draw [line width=1.2pt,domain=1.84:7.] plot(\x,{(-1.8228--4.82*\x)/1.3});
+\draw [shift={(6.66,4.12)},line width=1.2pt]  plot[domain=1.846756808779931:2.346134467404757,variable=\t]({1.*7.*cos(\t r)+0.*7.*sin(\t r)},{0.*7.*cos(\t r)+1.*7.*sin(\t r)});
+\draw [line width=1.2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+%\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (6.66,4.12)-- (3.1177768597588362,10.157603433875071);
+%\coordinate (A) at (6.66,4.12) ;
+%\coordinate (B) at (1.6,12.5) ;
+%\Compas{A}{B}
+\begin{scriptsize}
+\draw [color=blue] (6.66,4.12)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (6.8,4.57) node {\Large{$I$}};
+\draw [color=blue] (1.84,5.42)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.32,5.53) node {\Large{$K$}};
+\draw[color=black] (4.2,13.49) node {$n$};
+\draw [color=blue] (3.1177768597588362,10.157603433875071)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (2.68,10.69) node {\Large{$H$}};
+%\draw[color=black] (5.6,7.49) node {\large{$7$}cm};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}\\\arrayrulecolor{lightgray}
+On trace un segment $[KI]$ de longueur $5$ cm & On trace la droite perpendiculaire en $K$à $(KI)$ et on code l'angle droit & On trace un arc de cercle de centre $I$ et de rayon $7$ cm & Elle coupe la perpendiculaire en $H$. On trace la segment $[HI]$.
+\end{tabular}
+\end{ex}
+
+\section{Droites remarquables d'un triangle}
+
+Il existe plusieurs droites remarquables dans un triangle. En 5ème, nous allons en étudier deux d'entre elles : les médiatrices et les hauteurs.
+
+Dans un triangle, ces droites ont une signification mathématiques et vont nous aider à faire des calculs sur les triangles, comme par exemple calculer leur aire.
+
+\subsection{Les médiatrices}
+
+\subsubsection{La médiatrice d'un segment}
+
+\vspace{-10mm}
+\noindent \begin{minipage}{12cm}
+\begin{dft}
+
+La \textbf{médiatrice} du segment $[AB]$ est la droite coupant ce segment \\ perpendiculairement en son milieu.
+\end{dft}
+\end{minipage}
+\begin{minipage}{6cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,scale=0.6]
+\clip(0.5,-1.5) rectangle (6.,4.5);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (3.368296939640356,1.986976725061429) -- (2.951320214578927,2.0652736647017846) -- (2.873023274938572,1.6482969396403557) -- (3.29,1.57) -- cycle; 
+\draw [line width=1.2pt] (1.,2.)-- (5.58,1.14);
+\draw [line width=1.2pt] (7.22,3.88)-- (10.3,3.94);
+\draw [line width=1.2pt,domain=0.5:6.] plot(\x,{(--11.864443498038314-3.961156963188182*\x)/-0.7437980323890474});
+\draw [line width=1.2pt] (1.,2.)-- (3.29,1.57);
+\draw [line width=1.2pt] (2.1180045404716923,1.9121662107827997) -- (2.0737131028990134,1.6762885548724835);
+\draw [line width=1.2pt] (2.2162868971009893,1.8937114451275165) -- (2.171995459528311,1.6578337892172004);
+\draw [line width=1.2pt] (3.29,1.57)-- (5.58,1.14);
+\draw [line width=1.2pt] (4.408004540471691,1.4821662107827995) -- (4.3637131028990135,1.2462885548724836);
+\draw [line width=1.2pt] (4.506286897100989,1.4637114451275164) -- (4.4619954595283104,1.2278337892172004);
+\begin{scriptsize}
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.14,2.45) node {\large{$A$}};
+\draw [color=blue] (5.58,1.14)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.72,1.59) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\vspace{-5mm}
+\begin{ex}
+Traçons la médiatrice du segment $[AB]$ suivant :
+
+\noindent \begin{tabularx}{\linewidth}{>{\centering \arraybackslash}X|>{\centering \arraybackslash}X|>{\centering \arraybackslash}X}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.5,-1.5) rectangle (5.5,4.5);
+\draw [line width=1.2pt] (1.,2.)-- (5.,1.);
+\begin{scriptsize}
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.14,2.45) node {\large{$A$}};
+\draw [color=blue] (5.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.14,1.45) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}&
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.5,-1.5) rectangle (5.5,4.5);
+\draw [line width=1.2pt] (1.,2.)-- (5.,1.);
+\draw [shift={(5.,1.)},line width=1.2pt]  plot[domain=1.7098922682769682:2.374710892260354,variable=\t]({1.*3.0805843601498744*cos(\t r)+0.*3.0805843601498744*sin(\t r)},{0.*3.0805843601498744*cos(\t r)+1.*3.0805843601498744*sin(\t r)});
+\draw [shift={(1.,2.)},line width=1.2pt]  plot[domain=0.36953120804640144:0.8768851802689561,variable=\t]({1.*3.080584360149874*cos(\t r)+0.*3.080584360149874*sin(\t r)},{0.*3.080584360149874*cos(\t r)+1.*3.080584360149874*sin(\t r)});
+\draw [shift={(1.,2.)},line width=1.2pt]  plot[domain=4.922571567046859:5.47960732870916,variable=\t]({1.*3.080584360149874*cos(\t r)+0.*3.080584360149874*sin(\t r)},{0.*3.080584360149874*cos(\t r)+1.*3.080584360149874*sin(\t r)});
+\draw [shift={(5.,1.)},line width=1.2pt]  plot[domain=3.4448648186146484:4.009372747578932,variable=\t]({1.*3.080584360149874*cos(\t r)+0.*3.080584360149874*sin(\t r)},{0.*3.080584360149874*cos(\t r)+1.*3.080584360149874*sin(\t r)});
+\begin{scriptsize}
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.14,2.45) node {\large{$A$}};
+\draw [color=blue] (5.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.14,1.45) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}&
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(0.5,-1.5) rectangle (5.5,4.5);
+\draw[line width=1.2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (3.102899151085505,1.911596604342021) -- (2.6913025467434837,2.014495755427526) -- (2.5884033956579784,1.602899151085505) -- (3.,1.5) -- cycle; 
+\draw [line width=1.2pt] (1.,2.)-- (5.,1.);
+\draw [shift={(5.,1.)},line width=1.2pt]  plot[domain=1.7098922682769682:2.374710892260354,variable=\t]({1.*3.0805843601498744*cos(\t r)+0.*3.0805843601498744*sin(\t r)},{0.*3.0805843601498744*cos(\t r)+1.*3.0805843601498744*sin(\t r)});
+\draw [shift={(1.,2.)},line width=1.2pt]  plot[domain=0.36953120804640144:0.8768851802689561,variable=\t]({1.*3.080584360149874*cos(\t r)+0.*3.080584360149874*sin(\t r)},{0.*3.080584360149874*cos(\t r)+1.*3.080584360149874*sin(\t r)});
+\draw [shift={(1.,2.)},line width=1.2pt]  plot[domain=4.922571567046859:5.47960732870916,variable=\t]({1.*3.080584360149874*cos(\t r)+0.*3.080584360149874*sin(\t r)},{0.*3.080584360149874*cos(\t r)+1.*3.080584360149874*sin(\t r)});
+\draw [shift={(5.,1.)},line width=1.2pt]  plot[domain=3.4448648186146484:4.009372747578932,variable=\t]({1.*3.080584360149874*cos(\t r)+0.*3.080584360149874*sin(\t r)},{0.*3.080584360149874*cos(\t r)+1.*3.080584360149874*sin(\t r)});
+\draw [line width=2.pt,domain=0.5:5.5] plot(\x,{(--11.65897785853814-4.441515374681196*\x)/-1.1103788436702988});
+\begin{scriptsize}
+\draw [color=blue] (1.,2.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (1.14,2.45) node {\large{$A$}};
+\draw [color=blue] (5.,1.)-- ++(-3.5pt,0 pt) -- ++(7.0pt,0 pt) ++(-3.5pt,-3.5pt) -- ++(0 pt,7.0pt);
+\draw[color=blue] (5.14,1.45) node {\large{$B$}};
+\end{scriptsize}
+\end{tikzpicture}\\
+Tracé du segment $[AB]$ &
+Avec le compas, on construis deux points à égales distance de $A$ et $B$&
+On relie les deux points construis avec une règle.\\
+\end{tabularx}
+\end{ex}
+
+\begin{ex}
+Traçons un segment $[AB]$ de $6$cm, non horizontal, puis traçons la médiatrice de ce segment.
+
+\noindent\grandscarreaux{\linewidth}{7cm}
+\end{ex}
+
+\begin{prop}
+Si un point est sur la médiatrice d'un segment, il est à égale distance des extrémités de ce segment.
+Inversement, si un point est à égale distance des extrémités d'un segment, il appartient à la médiatrice de ce segment.
+\end{prop}
+
+
+\subsubsection{Les médiatrices d'un triangle}
+
+\begin{dft}
+Les médiatrices d'un triangle sont les médiatrices de chacun des côtés.
+\end{dft}
+
+\begin{rmq}
+
+\begin{minipage}{10cm}
+C'est aussi l'ensemble des points du plan équidistants de $A$ et de $B$. \\\medskip
+
+Les trois médiatrices sont concourantes en un point $O$ qui est le \textbf{centre du cercle circonscrit} à ce triangle.
+\end{minipage}
+\begin{minipage}{7cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+\clip(1,3.5) rectangle (10,10.2);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (5.92,4.44) -- (5.98,4.86) -- (5.56,4.92) -- (5.5,4.5) -- cycle; 
+\draw [line width=2.pt] (2.,5.)-- (5.02,9.46);
+\draw [line width=2.pt] (5.02,9.46)-- (9.,4.);
+\draw [line width=2.pt] (2.,5.)-- (9.,4.);
+\draw [line width=1.2pt,color=ffqqqq,domain=1.5:9.5] plot(\x,{(--8.846--3.98*\x)/5.46});
+\draw [line width=1.2pt,color=ffqqqq,domain=1.5:9.5] plot(\x,{(-34.--7.*\x)/1.});
+\draw [line width=1.2pt,color=ffqqqq,domain=1.5:9.5] plot(\x,{(-42.846--3.02*\x)/-4.46});
+\draw(5.680081775700934,5.760572429906543) circle (1.8789273733290017cm);
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (1.6,5.37) node {\large{$A$}};
+\draw [color=black] (5.02,9.46)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.3,9.7) node {\large{$B$}};
+\draw [color=black] (9.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (9.5,4.37) node {\large{$C$}};
+\draw [color=black] (5.5,4.5)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw [color=black] (7.01,6.73)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw [color=black] (3.51,7.23)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw [fill=uuuuuu] (5.680081775700934,5.760572429906543) circle (1.5pt);
+\draw[color=uuuuuu] (5.44,6.29) node {\large{$O$}};
+\draw[color=black] (3.28,9.15) node {\large{$\mathcal{C}$}};
+\draw[color=qqwuqq] (6.52,4.77) node {\large{$90\textrm{\degre}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{rmq}
+
+\subsection{Les hauteurs}
+
+\begin{dft} 
+   La \textbf{hauteur} issue de $A$ est la droite passant par $A$ et perpendiculaire au côté opposé $(BC)$.
+\end{dft}
+\medskip
+
+\begin{ex}
+Traçons le triangle $[ABC]$ tel que $[AB]=8$cm, $BC=7$cm et $AC=5cm$, puis traçons la hauteur issue de $B$.
+
+\noindent\grandscarreaux{\linewidth}{7cm}
+\end{ex}
+
+\begin{rmq}
+Une hauteur peut se trouver à l'extérieur d'un triangle
+\end{rmq}
+
+\begin{rmq}
+
+\vspace{-1cm}
+\begin{minipage}{10cm}
+   Les trois hauteurs d'un triangle sont concourantes en un point $H$ appelé \textbf{l'orthocentre} du triangle.
+\end{minipage}
+\begin{minipage}{8cm}
+\begin{center}
+\definecolor{qqwuqq}{rgb}{0.,0.39215686274509803,0.}
+\definecolor{ffqqqq}{rgb}{1.,0.,0.}
+\definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.5cm,y=0.5cm]
+\clip(1,3.5) rectangle (10,10.2);
+\draw[color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (5.752273676192104,7.735173851876294) -- (6.002187005600309,7.392327927612776) -- (6.345032929863827,7.642241257020982) -- (6.095119600455622,7.9850871812844995) -- cycle; 
+\draw [line width=2.pt] (2.,5.)-- (5.02,9.46);
+\draw [line width=2.pt] (5.02,9.46)-- (9.,4.);
+\draw [line width=2.pt] (2.,5.)-- (9.,4.);
+\draw [line width=1.2pt,color=ffqqqq,domain=1.5:9.5] plot(\x,{(-25.68--7.*\x)/1.});
+\draw [line width=1.2pt,color=ffqqqq,domain=1.5:9.5] plot(\x,{(-45.02--3.02*\x)/-4.46});
+\draw [line width=1.2pt,color=ffqqqq,domain=1.5:9.5] plot(\x,{(--19.34--3.98*\x)/5.46});
+\begin{scriptsize}
+\draw [color=black] (2.,5.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (1.78,5.55) node {\large{$A$}};
+\draw [color=black] (5.02,9.46)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (5.46,9.73) node {\large{$B$}};
+\draw [color=black] (9.,4.)-- ++(-2.5pt,-2.5pt) -- ++(5.0pt,5.0pt) ++(-5.0pt,0) -- ++(5.0pt,-5.0pt);
+\draw[color=black] (8.7,5.2) node {\large{$C$}};
+\draw [color=black] (4.65983644859813,6.938855140186914)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw[color=black] (4.92,6.37) node {\large{$H$}};
+\draw [color=black] (6.095119600455622,7.9850871812844995)-- ++(-1.5pt,-1.5pt) -- ++(3.0pt,3.0pt) ++(-3.0pt,0) -- ++(3.0pt,-3.0pt);
+\draw[color=qqwuqq] (6.22,7.21) node {\large{$90\textrm{\degre}$}};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{rmq}
+
+\vspace{-5mm}
+
+
+\end{document}

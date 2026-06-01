@@ -1,0 +1,35 @@
+verbatimtex
+%&latex
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage{color}
+\newcommand{\vect}[1]{\overrightarrow{#1\rule{0.1em}{0ex}}}\newcommand{\calc}{\mathscr{C}}
+\begin{document}
+etex
+picture latexmp_picture[];
+latexmp_picture[1]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[2]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[3]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[4]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[5]:= btex $x_1$ etex ;
+latexmp_picture[6]:= btex $x_2$ etex ;
+latexmp_picture[7]:= btex $x_0=-\frac{b}{2a}$ etex ;
+latexmp_picture[8]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[9]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[10]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[11]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[12]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[13]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[14]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[15]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[16]:= btex $x_1$ etex ;
+latexmp_picture[17]:= btex $x_2$ etex ;
+latexmp_picture[18]:= btex $x_0=-\frac{b}{2a}$ etex ;
+latexmp_picture[19]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[20]:= btex $P(-\frac{b}{2a})$ etex ;
+latexmp_picture[21]:= btex $-\frac{b}{2a}$ etex ;
+latexmp_picture[22]:= btex $P(-\frac{b}{2a})$ etex ;

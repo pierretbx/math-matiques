@@ -1,0 +1,392 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+
+
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+    \usepackage{stmaryrd}
+\usepackage{etex}
+%\usepackage{preambuleTrm}
+%\usepackage{enumitem}
+%\usepackage{tikz}
+%
+\usetikzlibrary{calc}
+%\usepackage[xcas]{pro-courbes}
+%\usepackage[autolanguage]{numprint}
+\usepackage[french,vlined]{algorithm2e}
+\usepackage{cclicenses}
+%\usepackage{cclicence}
+%\usepackage{docacompleter}
+
+\newcommand{\cacheb}[1]{#1}
+\newcommand{\cacheg}[1]{#1} 
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cachegg}[1]{#1} 
+
+% \newcommand{\cacheb}[1]{\dotfill\textcolor{white}{#1}\textcolor{white}{#1}}
+% \newcommand{\cacheg}[1]{\dotfill\textcolor{0.9white}{#1}\textcolor{0.9white}{#1}} 
+
+% \newcommand{\cachegg}[1]{\dots\dots\textcolor{0.8white}{#1}\textcolor{0.8white}{#1}} 
+\newcolumntype{A}{>{\arraybackslash}X}
+
+\usepackage{textcomp}
+\usepackage{mathtools}
+%\usepackage[xcas]{pro-statdiv}
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+\newcommand\binomialCoefficient[2]{%
+    % Store values 
+    \c@pgf@counta=#1% n
+    \c@pgf@countb=#2% k
+    %
+    % Take advantage of symmetry if k > n - k
+    \c@pgf@countc=\c@pgf@counta%
+    \advance\c@pgf@countc by-\c@pgf@countb%
+    \ifnum\c@pgf@countb>\c@pgf@countc%
+        \c@pgf@countb=\c@pgf@countc%
+    \fi%
+    %
+    % Recursively compute the coefficients
+    \c@pgf@countc=1% will hold the result
+    \c@pgf@countd=0% counter
+    \pgfmathloop% c -> c*(n-i)/(i+1) for i=0,...,k-1
+        \ifnum\c@pgf@countd<\c@pgf@countb%
+        \multiply\c@pgf@countc by\c@pgf@counta%
+        \advance\c@pgf@counta by-1%
+        \advance\c@pgf@countd by1%
+        \divide\c@pgf@countc by\c@pgf@countd%
+    \repeatpgfmathloop%
+    \the\c@pgf@countc%
+}
+\makeatother
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1 \rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\ssi}{\Longleftrightarrow}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+
+
+
+\chapter{Logarithme népérien}
+
+
+\section{Des fonctions vérifiant $f(a \times b)=f(a)+
+f(b)$}
+
+ Historiquement, le logarithme népérien a été pour la
+première fois mis en évidence par l'\'Ecossais John
+\textsc{Napier} (en français Jean Néper..) au tout début du
+$XVII^{e}$ siècle. Afin de faciliter la vie des astronomes,
+navigateurs, financiers de l'époque qui étaient confrontés à des
+calculs...astronomiques, John rechercha une fonction qui puisse
+transformer des produits très compliqués à calculer en sommes plus
+abordables. Il a donc été amené à résoudre une \textit{équation
+fonctionnelle}, $i.e.$ il a recherché les fonctions $f$ vérifiant
+$f(a\times b)=f(a)+f(b)$
+
+\begin{comment}
+Il a pu alors établir des Tables de logarithmes, complétées au fil
+des ans par des potes mathématiciens (nous verrons comment ils ont
+pu se débrouiller en exercice). À partir de deux nombres $a$ et
+$b$, on lit sur les Tables leurs logarithmes $\ln a$ et $\ln b$;
+on calcule facilement $\ln a+ \ln b$ qui est égal à $\ln ab$, puis
+on cherche sur les Tables le nombre qui admet pour logarithme $\ln
+ab$ et qui est bien sûr $ab$.
+
+\end{comment}
+\begin{comment}
+\subsection{Existe-t-il des primitives de x $\mapsto$ 1/x~?}
+
+Autre problème~: nous connaissons des primitives des fonctions qui
+à $x$ associent respectivement $x^2$, $x^1$, $x^0$, $x^{-2}$,
+$x^{-3}$, etc. Vous avez tout de suite remarqué que nous avons
+oublié quelqu'un~: quelles peuvent être les primitives de la
+fonction qui à $x$ associe $x^{-1}=1/x$~? Une rapide enquête
+mathématique nous conduit à trouver qu'il s'agit en fait de
+fonctions vérifiant l'équation fonctionnelle du copain John. Nous
+le verifierons là encore en exercice, et c'était l'approche au
+programme jusqu'à l'année dernière.
+
+\subsection{Quelle est la réciproque de la fonction
+exponentielle~?}
+
+
+Cette  année, comme  d'habitude, nous  roulons pour  le  nucléaire. Nous
+avons  déjà   défini  une  fonction   obéissant  à  la   \textsl{loi  de
+décomposition radioactive}, à savoir  la fonction exponentielle. Mais de
+nouveaux  problèmes  se posent  au  moment  de  construire de  nouvelles
+centrales~:  dans  combien  de   milliards  d'années  les  habitants  de
+Tchernobyl ne  risqueront plus d'attraper  un cancer de la  thyroïde en
+ingérant les légumes irradiés de  leurs potagers. Le Physicien est alors
+amené à résoudre  une équation d'inconnue $y$ du  type $e^y=32$ Quel est
+donc  ce  $y$  dont  l'exponentielle vaut  32~?  Fabrice  \textsc{Couenne},
+célèbre physicien du  $XXI^e$ siècle, vous a déjà  donné la réponse~: on
+l'appelle $\ln 32$.
+
+\end{comment}
+%Voici un extrait des tables de logarithmes publiées au début du XVII%\eme
+%siècle par John \textsc{Napier} himself :
+
+%\begin{center}
+%\vspace{-1cm}
+%\includegraphics[width=0.7\linewidth]{napier_logtable}
+%\end{center}
+
+
+% 
+
+%
+%Plus généralement, nous allons voir si le mécanisme qui à $e^y$
+%associe $y$ est une fonction et si oui découvrir ses propriétés
+%qui seront bien sûr celle du logarithme de John.
+%
+%
+%
+
+\vspace{0.5cm}
+\section{Fonction réciproque et théorème de la bijection}
+Survolons donc la notion de \textit{fonction réciproque}. La
+fonction exponentielle est continue et strictement croissante de
+$\mathbb{R}$ vers $]0,+\infty[$. Donc, d'après notre bon vieux
+\textsl{théorème de LA valeur intermédiaire} (appelé en d'autres
+temps théorème de la bijection),  pour tout $x\in]0,+\infty[$, il
+existe un unique réel $y$ tel que $\exp(y)=x$. Compte tenu de
+l'existence et de l'unicité de ce réel, on peut donc
+\textit{définir} une fonction qui à tout $x$ dans $]0,+\infty[$
+associe l'unique réel $y$ tel que $\exp(y)=x$.\\
+ 
+ C'est la fonction
+réciproque de la fonction exponentielle, on la note $ln$ (logarithme
+népérien)
+\begin{center}ln~:
+\begin{tabular}{l} $]0,+\infty[\to\mathbb{R}$\\
+$ x\mapsto \ln x$
+\end{tabular}
+\end{center}
+
+%Après ça, tout coule de source...
+
+
+
+
+
+
+
+\section{Construction du logarithme népérien}
+
+
+\begin{thm}[définition du logarithme népérien]
+    La fonction exponentielle admet une
+fonction réciproque défine sur $]0,+\infty[$ et à valeurs dans
+$\bbr$ appelée fonction logarithme népérien. On note $\ln x$
+l'image d'un réel strictement positif par cette fonction.
+Alors,
+\[\text{pour tout } x>0,\ e^{\ln x}=x \quad \text{et}\quad \text{pour tout réel }
+x,\ \ln e^x=x\] 
+    \end{thm}
+    
+
+\section{Conséquence sur la représentation graphique}
+\begin{center}
+\includegraphics{../Figures/expo.1}    
+\end{center}
+    
+\section{Variation du logarithme népérien}
+
+\begin{prop}[sens de variation]
+   La fonction ln est dérivable sur
+$]0,+\infty[$ et $\ln'(x)=\dfrac{1}{x}$ pour tout $x\in]0,+\infty[$. \\ On
+en déduit que la fonction ln est strictement croissante sur
+$]0,+\infty[$.
+    \end{prop}
+
+\begin{demo}
+Formellement, on a $f \circ f^{-1} (x) = x$, dérivons cette relation, 
+on obtient alors $(f^{-1})' (x) f'\circ f^{-1} (x)  =1 $ autrement dit, 
+$(f^{-1})'(x) =\dfrac{1}{f' \circ f^{-1} (x)}$.
+
+Posons $f(x)=e^x$ alors $f^{-1} (x) = ln x$ et $f'(x)=e^x$, par suite 
+$f'\circ f^{-1} (x)=e^{lnx}=x$ d'où $ln x ' =\dfrac{1}{x}$.
+
+Ainsi, si la fonction $ln$ est dérivable elle vaut nécéssairement $\dfrac{1}{x}$.
+
+\end{demo}
+
+
+\section{Propriétés du logarithme népérien}
+
+\begin{prop}[relation fondamentale]
+    Pour tout $a>0$ et tout $b>0$, on a
+$$\ln ab = \ln a+\ln b$$
+De plus $$\ln1=0$$
+    \end{prop}
+
+
+
+
+\begin{prop}[propriétés algébriques]
+    $$\ln (1/a)=-\ln a \qquad
+\quad\ln(a/b)=\ln a-\ln b\qquad \quad\ln a^p=p\ln a\quad
+\text{avec } p\in\mathbb{Q}$$
+    \end{prop}
+\section{Limites du logarithme népérien et croissances comparées}
+
+
+\begin{prop}[limite à l'infini]
+     $$\limpinf  \ln x=+\infty$$
+    \end{prop}
+
+
+\begin{prop}[croissances comparées]
+D'une part~:
+
+    $$\limpinf \dfrac{\ln x}{x}=0$$
+
+Plus généralement, pour tout entier naturel $n$ non nul $$\limpinf\fr{\ln x}{x^n}=0\quad \limpinf \fr{e^x}{x^n}=+\infty\quad
+\limite{0}x^n\ln x=0\quad \limite{-\infty}x^ne^x=0$$
+
+\end{prop}
+
+\begin{demo}[preuve de $ \limite{0} x ln(x)$ ]
+On sait que, $$ x ln(x) = \dfrac{1}{x} (- ln( \dfrac{1}{x} )) $$ 
+ainsi, 
+$$ \limite{0} x ln(x)= \limite{0} \dfrac{1}{x} (- ln( \dfrac{1}{x} ))$$
+En posant $t=\dfrac{1}{x}$   on a quand $x$ tend vers 0 \emph{(à droite)} $t$ qui tend vers $+ \infty$, d'où, 
+ $$ \limite{0} x ln(x)=\limite{0} \dfrac{1}{x} (- ln( \dfrac{1}{x} )) =- \limpinf \dfrac{ln(t)}{t} = 0^- $$ 
+ 
+ 
+\end{demo}
+
+\begin{prop}[limite en zéro et taux de variation]
+    $$\limite{0}\frac{\ln(x+1)}{x}=1$$
+    \end{prop}
+
+
+
+\section{Logarithmes et exponentielles d'autres bases}
+
+
+\begin{defn}[puissance réelle (exponentielles de base quelconque)]
+    Pour tout réel $a>0$ et pour tout réel $b$, on pose $a^b=e^{b\ln a}$
+    
+    \vspace{3mm}
+    \end{defn}
+  
+
+\begin{defn}[logarithme décimal]
+    La fonction $\log\ :\ x\mapsto \fr{\ln x}{\ln 10}$ définie pour $x>0$ est appelée \textbf{fonction logarithme décimal}
+    \end{defn}
+  
+  
+
+
+
+\end{document}

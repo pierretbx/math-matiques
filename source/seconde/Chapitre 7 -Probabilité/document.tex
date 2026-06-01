@@ -1,0 +1,282 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+
+
+\begin{center}
+\huge{ Devoir surveillé V}
+\end{center}
+
+\section*{Calcul de probabilités}
+   On tire au hasard une carte dans un jeu de 32 cartes.
+   \begin{enumerate}
+      \item Quelle est la probabilité de tirer un trèfle ?
+      \item Quelle est la probabilité de tirer une carte noire     ?
+      \item Quelle est la probabilité de ne pas tirer un carreau ?
+      \item Quelle est la probabilité de tirer une figure (roi, dame ou valet) ?
+      \item Quelle est la probabilité de tirer un as ?
+      \item Quelle est la probabilité de ne pas tirer un valet noir ? \\
+   \end{enumerate}
+
+\section*{Loi de probabilité}
+On lance deux dés cubiques équilibrés numérotés de 1 à 6.    On note alors le plus grand des deux numéros sortis.
+   \begin{enumerate}
+      \item Utiliser un tableau à double entrée pour modéliser la situation.
+      \item Quel est l'univers $\Omega$ de toutes les issues possibles ?
+      \item Établir la loi de probabilité de l'expérience.
+   \end{enumerate}
+
+\section*{Arbre pondéré}
+
+Une urne contient 5 boules indiscernables au toucher : deux bleues et trois rouges.
+On dispose également de deux sacs contenant des jetons : l'un est bleu et contient un jeton 
+bleu et trois jetons rouges, l’autre est rouge et contient deux jetons bleus et deux jetons rouge. \\
+
+On note l'événement:
+\begin{itemize}
+\item B :"Tirer une boule bleu"
+\item R :"Tirer une boule rouge"
+\item b :"Tirer un jeton bleu"
+\item r :"Tirer un jeton rouge"\\
+\end{itemize}
+
+On extrait une boule de l'urne, puis on tire un jeton dans le sac qui est de la même couleur que la boule tirée.
+
+\begin{enumerate}
+\item Combien y a-t-il d’issues possibles ?
+\item A l'aide d’un arbre pondéré, quel est la probabilité de chacune de ses issues.
+\item Quel est la probabilité de l'événement A : « la boule et le jeton extraits sont de la même
+couleur »
+\end{enumerate}
+
+
+\newpage
+
+
+\begin{center}
+\huge{ Devoir surveillé VI}
+\end{center}
+%\title{Devoir surveillé V}
+ 
+\vspace{1cm}
+\pagestyle{empty}
+
+Soit $(O,\overrightarrow{i},\overrightarrow{j})$ un repère orthonormé.
+
+\section*{Application du cours}
+
+\begin{enumerate}
+
+\item Dans ce repère, donner les coordonnées du vecteur $\overrightarrow{u}$.
+
+\item Représenter dans le repère les points A(-3 ;2) et B(-4;3).
+
+\item Déterminer les coordonnées  du vecteur $\overrightarrow{AB}$.
+
+\item Déterminer les coordonnées du vecteur $\overrightarrow{u} + \overrightarrow{AB} $
+
+\item Soit $k \in \mathbb{R}$, déterminer, en fonction de $k$, les coordonnées du vecteur $k\overrightarrow{AB}$. 
+
+\item On pose C(0;3) et D(2,0). Déterminer la distance entre C et D.
+
+\item Soit M le milieu du segment [CD], déterminer les coordonnées du point M.   
+
+\item Soit $\overrightarrow{EF} \left( \begin{array}{c}
+-4 \\
+6 
+\end{array} \right)$
+ Montrer que les droites $(EF)$ et $(DC)$ sont colinéaires.
+
+\end{enumerate}
+
+\section*{Problème}
+
+Soit L un point du plan. On note $\mathcal{C}$ le cercle de centre $L$ et de rayon $r$.\\
+
+On rappel que $\mathcal{C}$ est l’ensemble des points qui sont à une distance $r$ du point L. \\
+
+On pose L(3;5) et r=3. On souhaite qu’un point M appartiennent au $\mathcal{C}$. 
+
+Recopier et compléter l’assertion suivante :
+
+$$ M \in \mathcal{C} \Longleftrightarrow \vert \vert  \cdots \vert \vert =  .... $$
+
+On pose M$(x;y)$ avec $x,y \in \mathbb{R}$, calculer alors $\overrightarrow{LM}$.
+
+En déduire alors une équation qui traduit le fait que $M \in \mathcal{C}$.
+
+
+
+\newpage
+
+\begin{center}
+\huge{ Devoir surveillé VII}
+\end{center}
+%\title{Devoir surveillé V}
+ 
+\vspace{1cm}
+\pagestyle{empty}
+
+\section*{Résolution algébrique d’équation $f(x)=k$ et inéquation $f(x)>k$ }
+
+Résoudre algébriquement l’équation $f(x)=3$ avec : \\
+
+\begin{enumerate}
+\item $f(x)=x^2 $
+\item $f(x)=\dfrac{1}{x}$
+\item $f(x)=\sqrt{x}$
+\item $f(x)=-x+ \dfrac{2}{3} $
+\end{enumerate}
+
+Résoudre algébriquement l’inéquation $f(x)>2$ avec : \\
+
+\begin{enumerate}
+\item $f(x)=x^2 $
+\item $f(x)=\dfrac{1}{x}$
+\item $f(x)=\sqrt{x}$
+\item $f(x)=-x+ \dfrac{2}{3} $
+\end{enumerate}
+
+\section*{ Résolution graphique d’équation $f(x)=k$ et inéquation $f(x)>k$ }
+
+On représente la courbe de quatre fonctions notées respectivement $C_f,C_g,C_h$ et $C_k$.
+
+\begin{enumerate}
+\item Pour chaque courbe représentative, donner le nom de la fonction que la courbe représente.
+\item Dresser le tableau de variation de $f(x)$
+\item Résoudre graphiquement $f(x) \leq 1,5$
+\item Résoudre graphiquement $k(x) = 2$
+\item Résoudre graphiquement $h(x)<g(x)$
+\item Résoudre graphiquement $f(x)=h(x)$
+\end{enumerate}
+
+\newpage 
+
+
+\begin{center}
+\huge{ Devoir surveillé VIII}
+\end{center}
+%\title{Devoir surveillé V}
+
+\section*{Série statistique}
+
+\begin{enumerate}
+\item Donner une liste de 5 valeurs pour laquelle la médiane vaut 12 et la moyenne vaut 10.
+
+\item Donner une liste de 10 valeurs pour laquelle la médiane est identique au premier quartile.
+\item Donner deux séries distinctes comportant chacune 6 valeurs, ayant la même valeur médiane et les mêmes quartiles Q1 et Q3 mais dont l’une a 120 pour valeur maximale, alors que l’autre a 12 pour valeur maximale. \\
+\end{enumerate}
+ 
+\section*{Étude de salaire}
+
+On considère la série suivante qui correspond à la répartition des salaires mensuels en euros dans une entreprise.
+
+\begin{center}
+   \begin{tabular}{| l || c | c | c | c | c |}
+     \hline
+     Salaires mensuels & 1 000 & 1 200 & 1 300 & 1 500 &  5000 \\ \hline
+     Effectifs & 11 & 9 & 14 & 4 & 1 \\ 
+     \hline
+   \end{tabular}
+ \end{center}
+
+\begin{enumerate}
+\item Calculer le salaire moyen et le salaire médian au sein de cette entreprise.
+
+\item Déterminer les quartiles Q1 et Q3 en expliquant la démarche.
+Interpréter concrètement la valeur trouvée pour Q3.
+
+\item Pour vous recruter, le directeur de l’entreprise vous présente la valeur du salaire moyen. Est-ce un indicateur pertinent ici ? Expliquer.
+
+\end{enumerate}
+
+
+\section*{Extractions de données et interprétations}
+Dans une maternité, on a relevé les masses \textit{(en kg)} à la naissance de 103 bébés nés en avril 2019.
+
+
+\begin{center}
+   \begin{tabular}{| l || c | c | c | c | c |}
+     \hline
+     Masse & 2,5 & 2,6 & 3 & 3,1 & 5 \\ \hline
+     Effectif & 4 & 3 & 9 & 7 & 1 \\ \hline
+	  Effectif cumulés & & & & & \\ \hline
+	  Fréquence cumulées & & & & & \\
+ 
+     \hline
+   \end{tabular}
+ \end{center}
+
+\begin{enumerate}
+\item Recopier le tableau et complèter les cases vides.
+\item Par simple lecture ou calcul mental, combien de bébés pesaient moins de 3kg ? Plus de 3,1kg ? 
+\item Quelle est la fréquence des bébés ne dépassant pas 3,1 kg ?
+\item Quel est le pourcentage de bébés pesant plus de 2,5 kg et moins de 3,2 kg ? 
+\end{enumerate}
+
+\newpage
+
+\begin{center}
+\huge{ Devoir surveillé IX}
+\end{center}
+
+\section*{Vecteurs et coefficient directeur}
+\begin{enumerate}
+\item Soit une droite (AB) tel que A(0;2) et B(1;5). Déterminer un vecteur directeur à la droite (AB) puis le coefficient directeur.
+\item Soit une droite (OC) tel que son coefficient directeur soit $3,2$, décrire alors l'équation réduite de la droite.
+\end{enumerate}
+
+\section*{Appartenance d'un point à une droite}
+Les points suivant appartiennent-ils à la droite $\Delta$ d'équation réduite $y=3x-5$? À la droite $\Delta_2$ ayant une équation cartésienne $4y+4x-2=0$? \textit{ (Pour récapituler vos résultats vous pouvez faire un tableau à 4 ligne et 2 colonne) }
+
+\begin{enumerate}
+\item A(-2;11)
+\item B($\dfrac{3}{2}$;-1)
+\item C(1,67;0)
+\item D($\dfrac{7}{2}$;2)
+\end{enumerate}
+
+Pouvez vous donner le point d'intersection (si il existe) de la droite $\Delta$ et $\Delta_2$?
+
+\section*{Déterminer une équation de droite}
+Déterminer les équations de droite de: 
+\begin{enumerate}
+\item $\Delta_1$ dirigé par  $\overrightarrow{u} \left( \begin{array}{c} 2 \\ -2 \end{array} \right)$  Et passant par H(4;6)
+\end{enumerate}
+
+
+\section*{Associer une droite à l'équation d'une droite}
+\begin{enumerate}
+\item Donner une équation de droite est associée à $\Delta$
+\item Tracer la droite d'équation réduite $\Delta_1: \; y = x-2$
+\item Tracer la droite d'équation cartésienne  $\Delta_2: \; 2y+3x-1=0$
+\item Tracer la droite d'équation cartésienne $\Delta_3: \; y-3=0$
+\item Tracer la droite d'équation cartésienne $\Delta_4: \; x+5=0$
+\end{enumerate}
+
+\section*{Intersection de droite}
+\begin{enumerate}
+\item Soit deux droites $\Delta: \;  y=2x-1$ et $\Delta': \; y=3x+4$
+\item Justifier à l'aide du coefficient directeur que les droites $\Delta$ et $\Delta'$ sont sécantes.
+\item Déterminer alors le ou les point d'intersection de $\Delta$ et de $\Delta'$
+\item (Bonus) Donner deux équations de droites différentes mais qui représente la même droite.
+\end{enumerate}
+\end{document}

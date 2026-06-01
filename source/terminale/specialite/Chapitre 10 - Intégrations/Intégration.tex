@@ -1,0 +1,439 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+
+\usepackage{tkz-tab}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[all]{xy}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{hyperref}
+%  \usepackage[frenchb]{babel}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[latin1]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\usepackage{yhmath} 
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%\newcommand{\imath}{\overrightarrow{i}}
+%\newcommand{\jmath}{\overrightarrow{j}}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+\begin{document}
+\tableofcontents
+
+\chapter{Intégration}
+
+\section{Intégrale d'une fonction continue et positive sur un intervalle}
+
+\begin{defn}
+ Soit $f$ une fonction continue et positive sur un intervalle $[a;b]$ et $\mathcal{C}$ sa courbe représentative dans un repère $(O;\vec{i};\vec{j})$. ortogonal.
+On appelle \emph{intégrale} de $a$ à $b$ de la fonction $f$ la mesure de l'aire en unité d'aire de la partie $\mathcal{A}$ du plan délimitée par l'axe des abscisses, les droites d'équations $x=a$ et $x=b$ et la courbe $\mathcal{C}$.\\
+On note $\int_{a}^{b}f(t)dt$ cette aire.
+\end{defn}
+
+\begin{center}
+\includegraphics[scale=1.5]{../Figures/int.1}
+\end{center}
+
+\begin{rem}
+ \begin{itemize}
+  \item[$\bullet$] Pour toute fonction continue et positive sur $[a;b]$, on a $\int_{a}^{b}f(t)dt\geq 0$ ;
+  \item[$\bullet$] Si $b=a$, on a $\int_{a}^{a}f(t)dt=0$ ;
+ \end{itemize}
+\end{rem}
+\newpage
+\begin{prop}[Relation de Chasles]
+ Soit $f$ une fonction continue et positive sur un intervalle $I=[a;b]$ et $c$ un réel de $I$. Alors :
+$$\int_{a}^{c}f(x)\,dx+\int_{c}^{b}f(x)\,dx=\int_{a}^{b}f(x)\,dx$$
+\end{prop}
+
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/int.2}
+\end{center}
+
+
+\begin{prop}[Propriété de conservation de l'ordre]
+Soient $f$ et $g$ deux fonctions continues et positives sur $[a;b]$ telles que pour tout $x\in[a;b]$, $f(x)\leq g(x)$.\\
+Alors $\int_{a}^{b}f(x)\, dx\leq\int_{a}^{b}g(x)\, dx$
+\end{prop}
+
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/int.3}
+\end{center}
+
+\newpage
+
+\begin{defn}
+On appelle \emph{valeur moyenne} de $f$ sur $[a;b]$, le réel $$\mu=\frac{1}{b-a}\int_{a}^{b}f(x)\ dx$$
+\end{defn}
+
+\begin{center}
+\includegraphics[scale=1.3]{../Figures/int2.1}
+\end{center}
+
+
+\begin{rem}
+Si $f$ est positive sur $[a;b]$, la valeur moyenne s'interprète géométriquement comme la hauteur du rectangle de côté $b-a$ et de même aire que l'aire de la partie du plan comprise entre la courbe de la fonction, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$.
+\end{rem}
+
+
+\section{Primitives d'une fonction continue sur un intervalle}
+
+
+\begin{defn}
+Soit $f$ une fonction continue sur un intervalle $I$. Une fonction $F$ dérivable sur un intervalle $I$ et  de dérivée $F'=f$ est appelée \emph{primitive} de $f$ sur $I$.
+\end{defn}
+
+\begin{exemple}
+ $F:x\mapsto \frac{x^2}{2}$ est une primitive de $f:x\mapsto x$ car $F'(x)=x$ pour tout réel $x$.
+\end{exemple}
+
+
+\begin{prop}
+ Soit $f$ une fonction admettant une primitive $F$ sur un intervalle $I$. Alors $f$ admet une infinité de primitives : $G$ est une primitive de $f$ si et seulement si il existe un réel $k$ tel que pour tout réel $x$, $G(x)=F(x)+k$.
+\end{prop}
+
+\begin{demo}
+Si $F$ et $G$ sont deux primitives de $f$ sur $I$ alors $(F-G)'=F'-G'=f-f=0$ donc $F-G$ est une constante $k$.
+\end{demo}
+
+\begin{exemple}
+ $F_1:x\mapsto \frac{x^2}{2}-4$ et $F_2:x\mapsto \frac{x^2}{2}+2,5$ sont deux primitives de $x\mapsto x$.
+\end{exemple}
+
+
+
+\begin{prop}
+ Soit $f$ une fonction admettant une primitive $F$ sur un intervalle $I$. Soit $a$ appartenant à $I$ et $b$ un réel. Alors il existe une et une seule primitive $G$ telle que $G(a)=b$.
+\end{prop}
+
+\begin{demo}
+On a vu qu'il existe une constante $k$ telle que pour tout $x\in I$, $G(x)=F(x)+k$. D'où $G(a)=b$ si et seulement si $F(a)+k=b$ c'est à dire $k=b-F(a)$.
+\end{demo}
+
+
+\begin{exemple}
+ Il existe une unique primitive $F$ de $x\mapsto x$ sur $\mathbb{R}$ telle que $F(1)=2$. En effet, on a vu que les primitives sont de la forme $x\mapsto \frac{x^2}{2}+k$ où $k$ est un réel. $F(1)=2$ impose donc $\frac{1}{2}+k=2$ d'où $k=\frac{3}{2}$.
+\end{exemple}
+
+
+\begin{thm}
+ Toute fonction $f$ continue sur un intervalle $I$ admet des primitives sur $I$.
+\end{thm}
+
+\section{Calcul de primitives}
+
+\subsection{Primitives de fonctions de référence}
+
+\begin{exemple}
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+  \hline
+$f$ définie sur $I$ par & primitives $F$ de $f$ sur $I$  & intervalle $I$ \\
+\hline
+$0$ & $C\in \mathbb{R}$ & $\mathbb{R}$\\
+\hline
+$1$ & $x+C,\, C\in\mathbb{R}$ & $\mathbb{R}$\\
+\hline
+$x$ & $\frac{x^2}{2}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$x^2$ & $\frac{x^3}{3}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$x^n$, $n\in\mathbb{N^{*}}$ & $\frac{x^{n+1}}{n+1}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$\\
+\hline
+$\frac{1}{2\sqrt{x}}$ & $\sqrt{x}+C,\, C\in\mathbb{R}$ & $]0;+\infty[$ \\
+\hline
+$\frac{1}{x}$ & $\ln (x)+C,\, C\in\mathbb{R}$& $]0;+\infty[$ \\
+\hline
+$\frac{1}{x^2}$ & $-\frac{1}{x}+C,\, C\in\mathbb{R}$ & $]-\infty;0[$ ou $]0;+\infty[$\\
+\hline
+$\frac{1}{x^n}$, $n\in\mathbb{N}$ & $-\frac{1}{(n-1)x^{n-1}}+C, C\in\mathbb{R}$ & $]-\infty;0[$ ou $]0;+\infty[$ \\
+\hline
+$\sin (x)$  & $-\cos (x)+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$\cos (x)$ & $\sin (x)+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\ 
+\hline
+$e^{x}$ &  $e^{x}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{exemple}
+
+
+\subsection{Primitives de fonctions composées}
+
+\begin{exemple}
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+  \hline
+$f$ définie sur $I$ par & Primitives $F$ de $f$ sur $I$ & intervalle $I$ \\
+\hline
+$u'u$ & $\frac{1}{2}u^2+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$u'u^n, n\in\mathbb{N}$ & $\frac{1}{n+1}u^{n+1}+C,\, C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$\frac{u'}{u^2}$ & $-\frac{1}{u}+C,\, C\mathbb{R}$ & $I$ tel que $u$ ne s'annule pas sur $I$ \\
+\hline
+$\frac{u'}{u^n}$ & $-\frac{1}{(n-1)u^{n-1}}+C,\, C\in\mathbb{R}$ & $I$ tel que $u$ ne s'annule pas sur $I$ \\
+\hline
+$u'e^u$ & $e^u+C,\,C\in\mathbb{R}$ & $\mathbb{R}$ \\
+\hline
+$\frac{u'}{\sqrt{u}}$ & 2$\sqrt{u}+C,\, C\in\mathbb{R}$ & $I$ tel que $u>0$ \\
+\hline
+$\frac{u'}{u}$ & $\ln u+C,\, C\in \mathbb{R}$ & $I$ tel que $u>0$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{exemple}
+\subsection{Lien entre intégrale et primitives}
+
+
+\begin{thm}
+ Soit $f$ une fonction continue et positive sur un intervalle $[a;b]$. La fonction $F$ définie sur $[a;b]$ par $F(x)=\int_{a}^{x}f(t)dt$ est dérivable sur $[a;b]$ et a pour dérivée $f$. $F$ est donc l'unique primitive de $f$ qui s'annule en $a$.
+\end{thm}
+
+\begin{demo}[cas où $f$ est croissante]
+Pour tout $x_0\in [a;b]$, $F(x)$ est l'aire sous la courbe $\mathcal{C}$ entre $a$ et $x_0$. Soit $h>0$ tel que $x_0+h$ appartient à $[a;b]$. On a $F(x_0+h)=\int_{a}^{x_0+h}f(t)dt$.\\
+$F(x_0+h)-F(x_0)$ est l'aire sous la courbe comprise entre l'axe $(Ox)$ et les droites d'équation $x=x_0$ et $x=x_0+h$.\\
+Cette aire est comprise entre l'aire du rectangle de hauteur $f(x_0)$ et de largeur $h$ et l'aire du rectangle de hauteur $f(x_0+h)$ et de largeur $h$.\\
+D'où $$h\times f(x_0)\leq F(x_0+h)-F(x_0)\leq h\times f(x_0+h)$$
+et $$f(x_0)\leq\frac{F(x_0+h)-F(x_0)}{h}\leq f(x_0+h)$$.
+Or $f$ est continue en $x_0$ d'où $\lim_{h\rightarrow 0,h>0}f(x_0+h)=f(x_0)$ et d'après le théorème des gendarmes,
+$$\lim_{h\rightarrow 0,h>0}\frac{F(x_0+h)-F(x_0)}{h}=f(x_0)$$
+Par le même raisonnement on montre que $$\lim_{h\rightarrow 0,h<0}\frac{F(x_0+h)-F(x_0)}{h}=f(x_0)$$
+
+ce qui montre que $F$ est dérivable en $x_0$ de nombre dérivé $f(x_0)$ et ceci pour tout $x_0$ de $[a;b]$.
+\end{demo}
+
+\newpage
+
+
+\begin{prop}
+ Si $f$ est continue et positive sur un intervalle $[a;b]$ alors
+$$\int_{a}^{b}f(t)dt=F(b)-F(a)$$
+où $F$ est une primitive quelconque de $f$ sur $[a;b]$. On note alors :
+$$\int_{a}^{b}f(t)dt=[F(x)]_{a}^{b}$$
+\end{prop}
+
+
+\begin{exemple}
+$\int_{1}^{2}x^2dx=[\frac{x^3}{3}]_{1}^{2}=\frac{2^3}{3}-\frac{1}{3}=\frac{8}{3}-\frac{1}{3}=\frac{7}{3}$.
+\end{exemple}
+
+
+
+
+\section{Intégrale d'une fonction de signe quelconque}
+
+
+\begin{thm}
+Toute fonction continue sur un intervalle $I=[a;b]$ admet une primitive sur $I$.
+\end{thm}
+
+
+\begin{thm}[et définition]
+ Pour toute fonction $f$ continue sur un intervalle $I$ et pour tous les réels $a$ et $b$ de $I$, on définit l'intégrale de $a$ à $b$ de $f$ par $$\int_{a}^{b}f(t)dt=F(b)-F(a)$$
+ où $F$ est une primitive de $f$ sur $[a;b]$.
+\end{thm}
+
+\begin{demo}
+Soit $F_1$ et $F_2$ deux primitives de $f$. Alors il existe un réel $C$ tel que $F_2=F_1+C$. $F_2(b)-F_2(a)=F_1(b)+C-(F_1(a)+C)=F_1(b)-F_1(a)$.
+\end{demo}
+
+
+\begin{rem}
+On note aussi $\int_{a}^{b}f(x)dx=F(b)-F(a)=[F(x)]_{a}^{b}$.
+\end{rem}
+
+\begin{exemple}
+$\int_{0}^{1}\frac{-5x}{x^2+3}dx=\int_{0}^{1}\frac{-5}{2}\frac{2x}{x^2+3}dx=[\frac{-5}{2}\ln(x^2+3)]_0^{1}$\\
+$=\frac{-5}{2}\ln(1^2+3)-\frac{-5}{2}\ln(0^2+3)=\frac{-5}{2}\ln(4)-\frac{-5}{2}\ln(3)$
+$=\frac{-5}{2}\ln(\frac{4}{3})$
+\end{exemple}
+
+\newpage
+
+
+\begin{thm}
+ Soit $f$ une fonction continue sur un intervalle $[a;b]$. La fonction $F$ définie sur $[a;b]$ par $F(x)=\int_{a}^{x}f(t)dt$ est dérivable sur $[a;b]$ et a pour dérivée $f$.
+\end{thm}
+
+
+\begin{prop}{Relation de Chasles}
+ Soit $f$ une fonction continue sur $I$ et $a$, $b$ et $c$ trois réels de $I$. Alors :
+$$\int_{a}^{b}f(x)\,dx+\int_{b}^{c}f(x)\,dx=\int_{a}^{c}f(x)\,dx$$
+\end{prop}
+
+\begin{demo}
+ Soit $F$ une primitive de $f$. On a
+\begin{align*} \int_{a}^{b}f(x)\,dx+\int_{b}^{c}f(x)\,dx&=F(b)-F(a)+F(c)-F(b)\\
+ &=F(c)-F(a)\\
+ &=\int_{a}^{c}f(x)\,dx
+\end{align*}
+\end{demo}
+
+
+\begin{cor}[Conséquences]
+Avec les mêmes hypothèses que précédemment, 
+\begin{itemize}
+\item[$\bullet$] $\int_{a}^{a}f(x)\,dx=0$
+ \item[$\bullet$] $\int_{b}^{a}f(x)\,dx=-\int_{a}^{b}f(x)\,dx$
+
+ \end{itemize}
+\end{cor}
+
+\begin{demo}
+D'une part, $\int_{a}^{a}f(x)\,dx=F(a)-F(a)=0$ et d'autre part, 
+$\int_{a}^{b}f(x)\,dx+\int_{b}^{a}f(x)\,dx=\int_{a}^{a}f(x)\,dx$ d'où les deux résultats.
+\end{demo}
+
+
+
+\begin{prop}{Linéarité de l'intégrale}
+Soient $f$ et $g$ deux fonctions continues sur un intervalle $[a;b]$ et $k$ un réel. Alors
+$$\int_{a}^{b}(f(x)+g(x))\,dx=\int_{a}^{b}f(x)\,dx+\int_{a}^{b}g(x)\,dx$$
+et
+$$\int_{a}^{b}kf(x)\, dx=k\int_{a}^{b}f(x)\,dx$$
+\end{prop}
+
+\begin{demo}
+Soient $F$ et $G$ des primitives de $f$ et $g$ respectivement.\\
+Alors $F+G$ est une primitive de $f+g$ car $(F+G)'=F'+G'=f+g$\\
+et on a $\int_{a}^{b}(f(x)+g(x))\,dx=(F+G)(b)-(F+G)(a)=F(b)+G(b)-F(a)-G(a)=F(b)-F(a)+G(b)-G(a)=\int_{a}^{b}f(x)\,dx+\int_{a}^{b}g()x\,dx$.
+
+\noindent De même, $kF$ est une primitive de $kf$ et $\int_{a}^{b}kf(x)\,dx=kF(b)-kF(a)=k(F(b)-F(a))=k\int_{a}^{b}f(x)\,dx$
+\end{demo}
+
+
+
+
+\begin{prop}[Positivité de l'intégrale]
+Soit $f$ une fonction continue sur un intervalle $[a;b]$.
+\begin{itemize}
+ \item[$\bullet$] Si pour tout réel $x$ de $I$, $f(x)\geq 0$, alors $\int_{a}^{b}f(x)\,dx\geq 0$ ;
+\item[$\bullet$] si pour tout réel $x$ de $[a;b]$, $f(x)\leq g(x)$, alors $\int_{a}^{b}f(x)\,dx\leq \int_{a}^{b}g(x)\,dx$.
+\end{itemize}
+\end{prop}
+
+\begin{demo}
+\begin{itemize}
+\item[$\bullet$] Si $f$ est positive, alors, $\int_{a}^{b}f(x)\,dx$ est l'aire de la partie de plan comprise entre les droites d'équation $x=a$, $x=b$, $y=0$ et la courbe $\mathcal{C}_{f}$ donc est positive.
+\item[$\bullet$] Si pour tout $x$ réel de $[a;b]$, $f(x)\leq g(x)$ implique $g(x)-f(x)\geq 0$ c'est à dire que $g-f$ est positive. D'où $\int_{a}^{b}(g(x)-f(x))\,dx\geq 0$ d'après le point précédent ce qui s'écrit encore $\int_{a}^{b}g(x)\,dx\geq\int_{a}^{b}f(x)\,dx$.
+\end{itemize}
+\end{demo}
+
+
+
+\begin{prop}
+\begin{itemize}
+\item[$\bullet$] Si $f$ est continue sur $[a;b]$, l'aire exprimée en unités d'aire de la surface plane délimitée par la courbe $\mathcal{C}_f$, l'axe des abscisses et les droites d'équation $x=a$ et $x=b$ est égale à $-\int_{a}^{b}f(x)dx$.
+\item[$\bullet$] Si $f$ et $g$ sont deux fonctions continues positives sur $[a;b]$ telles que $f\leq g$, alors l'aire, exprimée en unités d'aire, de la surface comprise entre les deux courbes $\mathcal{C}_f$ et $\mathcal{C}_g$ et les droites d'équation $x=a$ et $x=b$ est égale à $\int_{a}^{b}g(x)-f(x)dx$.
+\end{itemize}
+\end{prop}
+
+%\begin{center}
+%\includegraphics[width=5cm]{integrationCoursFigAireTS.png}
+%\end{center}
+\section{Intégrations par parties} 
+
+
+\begin{prop}[Intégration par parties]
+  Si $u$ et $v$ sont deux fonction dérivables sur $[a,b]$ de dérivées $u'$ et $v'$ continues sur $[a,b]$, alors $(uv)'=u'v+uv'$ soit encore $u'v=(uv)'-uv'$  et donc
+
+$$ \ds\int_a^bu'(x)v(x)d x=[uv]_a^b-\int_a^bu(x)v'(x)d x $$
+\end{prop}
+
+\begin{demo}
+ Si $u$ et $v$ sont deux fonction dérivables sur $[a,b]$ de dérivées $u'$ et $v'$ alors la fonction $uv$ est dérivable et de dérivé 
+ $$(uv)'=u'v+v'u$$
+ qui est aussi équivalent à  l'équation $$ u'v=(uv)'-v'u $$
+En intégrant cette équation entre $a$ et $b$ on obtient le résultat voulu
+$$ \ds\int_a^bu'(x)v(x)d x=[uv]_a^b-\int_a^bu(x)v'(x)d x $$
+\end{demo}
+\end{document}

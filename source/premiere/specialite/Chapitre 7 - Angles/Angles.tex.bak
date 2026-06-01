@@ -1,0 +1,262 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[all]{xy}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{hyperref}
+%  \usepackage[frenchb]{babel}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\usepackage{yhmath} 
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Angles orientés}
+\section{Définitions}
+Une unité de longueur est choisie.
+\subsection{Cercle trigonométrique, mesures d'un arc}
+\begin{minipage}{10cm}
+\begin{defn}
+On appelle cercle trigonométrique un cercle de rayon 1, muni d'une origine et orienté dans le sens inverse des aiguilles d'une montre. Ce sens est appelé sens direct ou sens trigonométrique.
+\par Soit $\calc$ un cercle trigonométrique de centre $O$ et d'origine $A$. À tout réel $x$, on peut associer un unique point $M$ du cercle en \og enroulant\fg{} la droite des réels autour du cercle. On dit que $x$ est une mesure de l'arc orienté $\arc{AM}$.
+\end{defn}
+
+\begin{rem}
+Un point correspond à une infinité de réels.
+\end{rem}
+
+\begin{exemple}
+Le point $A$ est associé aux réels 0, $2\pi$, $4\pi$, $-2\pi$...
+Le point $B$ est associé aux réels $\dfrac{\pi}{2}$, $\dfrac{5\pi}{2}$, $-\dfrac{3\pi}{2}$...
+Le point $A'$ est associé aux réels $\pi$, $3\pi$, $-\pi$...
+\end{exemple}
+\end{minipage}
+\hfill
+\begin{minipage}{4.6cm}
+\psset{unit=1.3cm,PointSymbol=none}
+\begin{center}
+\begin{pspicture}(-2,-3)(1.5,3)
+\pstGeonode[PosAngle=-135]{O}
+\pstGeonode[PosAngle={0,90,180,-90},PointNameSep=0.5em](1,0){A}(0,1){B}(-1,0){A'}(0,-1){B'}
+\pscircle(0,0)1
+\pstLineAB{A'}{A}
+\pstLineAB{B'}{B}
+\pstGeonode[PointName=none](0.707,0.707){a}(-1.2,2.614){b}(-0.707,0.707){c}(-2,-0.586){d}
+\pstOrtSym[PointName=none]{A'}{A}{a,b,c,d}
+\psline{->}(1,-3)(1,3)
+%\psline[linestyle=dashed]{->}(1,-3)(1,3)
+\pstLineAB[linestyle=dashed]{->}{a}{b}
+\pstLineAB[linewidth=1.8\pslinewidth]{->}{c}{d}
+\pstLineAB[linestyle=dashed]{a'}{b'}
+\pstLineAB[linewidth=1.8\pslinewidth]{c'}{d'}
+\pstArcOAB[linewidth=1.8\pslinewidth]{O}{c'}{c}
+\pstGeonode[PointSymbol=|,dotangle=90,dotscale=1.3](1,2.094){x}
+\pstGeonode[PointSymbol=|,dotangle=90,dotscale=1.3,PointName=1](1,1){i}
+\pstGeonode[PointSymbol=|,dotangle=-45,dotscale=1.3,PointName=x,PosAngle=15](-0.218,1.633){x'}
+\pstGeonode[PointSymbol=|,dotangle=30,dotscale=1.3,PosAngle=150](-0.5,0.866){M}
+\ncarc[nodesep=3mm,arcangle=-30]{->}{x}{x'}
+\ncarc[nodesep=2mm,arcangle=-30]{->}{x'}{M}
+\end{pspicture}
+\end{center}
+\end{minipage}
+
+\subsection{Mesures d'un angle orienté de vecteurs}
+Étant donnés deux vecteurs non nuls $\vect{u}$ et $\vect{v}$ et un cercle trigonométrique $\calc$ de centre $O$, on appelle $A$ le point d'intersection de $\calc$ et de la droite $(O,\vect{u})$ et $B$ le point d'intersection de $\calc$ et de la droite $(O,\vect{v})$.
+
+\begin{minipage}{10.5cm}
+\begin{defn}
+On appelle mesure de l'angle orienté $(\vect{u},\vect{v})$ toute mesure de l'arc orienté $\arc{AB}$.
+
+Si $x$ est une de ces mesures, toute autre mesure s'écrit $y=x+2k\pi$ avec $k\in\Z$.
+
+On note (de façon abusive) : $(\vect{u},\vect{v})=x+k\times 2\pi, k\in\Z$.
+\end{defn}
+\end{minipage}
+\hfill
+\begin{minipage}{4cm}
+	\begin{center}
+	\includegraphics{CoursAnglesFigures.1}
+	\end{center}
+\end{minipage}
+
+% Remarque : Si $x$ est une mesure de $(\vect{u},\vect{v})$, toute autre mesure s'écrit $y=x+2k\pi$ avec $k\in\Z$. On note donc aussi $(\vect{u},\vect{v})=x+2k\pi, \; k\in\Z$.
+
+\begin{defn}
+On appelle mesure principale de $(\vect{u},\vect{v})$, l'unique mesure appartenant à $]-\pi ; \pi]$.
+
+\vspace{4mm}
+\end{defn}
+
+\begin{exemple}
+Déterminer la mesure principale d'un angle dont une mesure est $\dfrac{126\pi}{5}$
+\end{exemple}
+
+
+\[\dfrac{126\pi}{5} = \dfrac{12\times10\pi+6\pi}{5} = 12\times2\pi+\dfrac{6\pi}{5} = 12\times2\pi+2\pi-\dfrac{4\pi}{5} = -\dfrac{4\pi}{5}+13\times 2\pi\]
+La mesure principale de cet angle est donc $\dfrac{-4\pi}{5}$.
+
+
+\section{Propriétés}
+\subsection{Angles et colinéarité}
+\begin{prop}
+Soient $\vect{u}$ et $\vect{v}$ deux vecteurs non nuls.
+\par $\vect{u}$ et $\vect{v}$ sont colinéaires et de même sens si et seulement si $(\vect{u},\vect{v})=0+2k\pi$.
+\par $\vect{u}$ et $\vect{v}$ sont colinéaires et de sens contraires si et seulement si $(\vect{u},\vect{v})=\pi+2k\pi$.
+\end{prop}
+
+\begin{center}
+\includegraphics{CoursAnglesFigures.2}
+\hspace{3em}
+\includegraphics{CoursAnglesFigures.3}
+\end{center}
+
+
+\subsection{Relation de Chasles}
+\begin{minipage}{10cm}
+\begin{prop}
+Pour tous vecteurs non nuls $\vect{u}$, $\vect{v}$ et $\vect{w}$ : \[(\vect{u},\vect{v})+(\vect{v},\vect{w})=(\vect{u},\vect{w})+2k\pi\]
+\end{prop}
+\end{minipage}
+\hfill
+\begin{minipage}{4cm}
+\includegraphics{CoursAnglesFigures.4}
+\end{minipage}
+
+
+\begin{exemple}
+Dans la figure suivante, démontrer que les droites $(AB)$ et $(CD)$ sont parallèles.
+\end{exemple}
+
+\begin{minipage}{9.5cm}
+
+\begin{multline*}
+(\vect{AB},\vect{CD})=(\vect{AB},\vect{BC})+(\vect{BC},\vect{CD})+2k\pi\\
+=\dfrac{\pi}{3}+\dfrac{2\pi}{3}+2k\pi=\pi+2k\pi
+\end{multline*}
+\par Les vecteurs $\vect{AB}$ et $\vect{CD}$ sont donc colinéaires.
+\par \underline{Conclusion} : $(AB)$ et $(CD)$ sont parallèles.
+
+\end{minipage}
+\hfill
+\begin{minipage}{5cm}
+\begin{center}
+\includegraphics{CoursAnglesFigures.9}
+\end{center}
+\end{minipage}
+
+\newpage
+
+\begin{prop}
+\par Pour tous vecteurs non nuls $\vect{u}$ et $\vect{v}$ :
+
+\vspace{1ex}
+\begin{tabular}{ll@{\hspace{5em}}ll}
+$(\vect{v},\vect{u})=-(\vect{u},\vect{v})+2k\pi$ & $(1)$ & $(\vect{u},-\vect{v})=(\vect{u},\vect{v})+\pi+2k\pi$ & $(2)$ \\[1ex]
+$(-\vect{u},\vect{v})=(\vect{u},\vect{v})+\pi+2k\pi$ & $(3)$ & $(-\vect{u},-\vect{v})=(\vect{u},\vect{v})+2k\pi$ & $(4)$
+\end{tabular}
+\end{prop}
+
+\includegraphics{CoursAnglesFigures.5}
+\hfill
+\includegraphics{CoursAnglesFigures.6}
+\hfill
+\includegraphics{CoursAnglesFigures.7}
+\hfill
+\includegraphics{CoursAnglesFigures.8}
+
+\begin{demo}
+\par (1) : $(\vect{v},\vect{u})+(\vect{u},\vect{v})=(\vect{v},\vect{v})+2k\pi=2k\pi$ ainsi $(\vect{v},\vect{u})=-(\vect{u},\vect{v})+2k\pi$
+\par (2) : $(\vect{u},-\vect{v})=(\vect{u},\vect{v})+(\vect{v},-\vect{v})+2k\pi=(\vect{u},\vect{v})+\pi+2k\pi$
+\par (3) se démontre comme (2).
+
+\begin{tabbing}
+(4) : $(-\vect{u},-\vect{v})$ \= $=(-\vect{u},\vect{v})+\pi+2k\pi$ d'après (2)\\
+ \> $= (\vect{u},\vect{v})+\pi+\pi+2k\pi$ d'après (3)\\
+ainsi $(-\vect{u},-\vect{v})=(\vect{u},\vect{v})+2k\pi$
+\end{tabbing}
+\vspace{-1em}
+\end{demo}
+
+\end{document}

@@ -1,0 +1,243 @@
+\PassOptionsToPackage{margin=1.35cm}{geometry}
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{7}
+\chapter{Espace}
+
+\section{Formules d'aires}
+
+\begin{center}
+\includegraphics[width=0.94\linewidth]{08. Espace - Aires et volumes 1.png}
+\end{center}
+
+\section{Formules de volumes}
+
+\begin{center}
+\includegraphics[width=0.92\linewidth]{08. Espace - Aires et volumes 2.png}
+\end{center}
+
+\section{Exemples d'utilisation}
+
+\subsection{Calcul du volume d'une pyramide}
+
+\begin{meth}[Calcul du volume d'une pyramide]
+\noindent\begin{minipage}[t]{0.62\linewidth}
+$AB = 4$cm et $CH=5$cm.
+
+\medskip
+\noindent La hauteur de la pyramide est de $3,5$cm.
+
+\medskip
+\noindent Calculer son volume arrondi au centième en cm$^3$.
+
+\vspace{5mm}
+$$\mathcal{V} = \dfrac{1}{3} \times \pi \times R^2 \times \text{hauteur}$$
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.32\linewidth}
+\centering
+\includegraphics[width=0.95\linewidth]{08. Espace - Aires et volumes 3.png}
+\end{minipage}
+
+\begin{enumerate}
+\item Calcul de l'aire de la base : on déterminer l'aire du triangle $ABC$
+\begin{eqnarray*}
+\mathcal{A}_{ABC} &=& \dfrac{AB \times  CH}{2} \\
+&=& \dfrac{5 \times 4}{2} \\
+&=& 10 \text{ cm}^2
+\end{eqnarray*}
+
+\item Calcul du volume de la pyramide :
+\begin{eqnarray*}
+\mathcal{V}_{SABC} &=& \dfrac{1}{3} \times 10 \times 3,5 \\
+&=& \dfrac{35}{3} \text{ cm}^3\\
+&\approx& 11,67 \text{ cm}^3
+\end{eqnarray*}
+\end{enumerate}
+\end{meth}
+
+\subsection{Calcul du volume d'un cône}
+
+\begin{ex}
+Calculer la valeur exacte puis une valeur approchée à $0,01 \text{ cm}^3$ prés du volume d'un cône de révolution de hauteur $5cm$ et dont le rayon de la base est $2cm$.
+
+\begin{eqnarray*}
+\mathcal{V} &=& \dfrac{1}{3} \times \pi \times R^2 \times \text{hauteur}\\
+ &=& \dfrac{1}{3} \times \pi \times 2^2 \times 5\\
+ &=& \dfrac{20}{3} \times \pi \hspace{2.3cm} \text{valeur exacte}\\
+ &\approx & 20,94 \text{ cm}^3 \hspace{1.8cm} \text{valeur approchée au centième}
+\end{eqnarray*}
+\end{ex}
+
+\section{Sections de solides}
+
+\begin{defn}
+Lorsqu'un solide est coupé par un plan, la surface plane obtenue est appelée section.
+\end{defn}
+
+\subsection{Sections planes du pavé droit}
+
+\subsubsection*{Section par un plan parallèle à une face}
+
+\noindent \begin{minipage}[c]{0.72\linewidth}
+\begin{prop}
+La section d'un pavé droit par un plan parallèle à l'une de ses faces est un rectangle, qui a les mêmes dimensions que cette face.
+\end{prop}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.22\linewidth}
+\begin{center}
+\includegraphics[width=0.95\linewidth]{08. Espace - sections de solides 1.png}
+\end{center}
+\end{minipage}
+
+\subsubsection*{Section par un plan parallèle à une arête}
+
+\begin{prop}
+La section d'un pavé droit par un plan parallèle à une arête est un rectangle
+(dont l'une des dimensions est la longueur de l'arête).
+\end{prop}
+
+\begin{ex}
+On veut déterminer la longueur $ID$.
+
+\medskip
+\noindent On utilise le théorème de Pythagore.
+
+\medskip
+\noindent Dans le triangle $IDH$ rectangle en $H$, d'après le théorème de Pythagore, on a :
+
+\noindent \begin{minipage}[c]{0.52\linewidth}
+\begin{eqnarray*}
+ID^2 &=& IH^2 + HD^2\\
+&=& 3^2 + 2^2\\
+&=& 9 + 4 \quad = \quad 13 \\
+\\
+ID &=& \sqrt{13} \quad \approx \quad 3,6 \text{cm}
+\end{eqnarray*}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.42\linewidth}
+\begin{center}
+\includegraphics[width=0.9\linewidth]{08. Espace - sections de solides 2.png}
+\end{center}
+\end{minipage}
+La section est donc un rectangle de dimensions 4 cm et $\sqrt{13}$cm
+\end{ex}
+
+\subsection{Sections planes d’un cylindre de révolution}
+
+\subsubsection*{Section par un plan parallèle à une base}
+
+\noindent \begin{minipage}[c]{0.72\linewidth}
+\begin{prop}
+La section d'un cylindre par un plan parallèle à une base est un
+disque de mêmes dimensions que le disque de base.
+\end{prop}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.22\linewidth}
+\begin{center}
+\includegraphics[width=0.95\linewidth]{08. Espace - sections de solides 3.png}
+\end{center}
+\end{minipage}
+
+\subsubsection*{Section d’un cylindre par un plan parallèle à son axe}
+
+\noindent \begin{minipage}[c]{0.72\linewidth}
+\begin{prop}
+La section d'un cylindre par un plan parallèle à son axe est un
+rectangle. (dont une des dimensions est la hauteur du cylindre).
+\end{prop}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.22\linewidth}
+\begin{flushright}
+\includegraphics[width=0.95\linewidth]{08. Espace - sections de solides 4.png}
+\end{flushright}
+\end{minipage}
+
+\subsection{Sections d'une pyramide, d'un cône et d'une sphère}
+
+\subsubsection*{Pyramide}
+
+\begin{prop}
+La section d'une pyramide par un plan parallèle à sa base est un polygone,
+qui est une réduction du polygone de base.
+\end{prop}
+
+\begin{ex}
+\noindent \begin{minipage}[c]{0.64\linewidth}
+Sur le dessin ci-contre, la base de la pyramide est le carré $ABCD$.
+
+\medskip 
+La section par le plan $(\mathcal{P})$ parallèle à sa base est donc le carré $KLMN$, réduction du carré $ABCD$.
+
+\medskip 
+Le rapport de réduction est par exemple : $$\dfrac{SP}{SO} \quad \text{ où } \quad \dfrac{SK}{SA} \quad \text{ où } \quad \dfrac{KL}{AB}$$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.30\linewidth}
+\begin{center}
+\includegraphics[width=0.95\linewidth]{08. Espace - sections de solides 5.png}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\subsubsection*{Cône}
+
+\noindent \begin{minipage}[c]{0.72\linewidth}
+\begin{prop}
+La section d'un cône de révolution par un plan parallèle à sa base est un disque, qui est une réduction du disque de base.
+\end{prop}
+
+\medskip
+Le rapport de réduction est : $\dfrac{SI}{SO} \quad \text{ où } \quad \dfrac{SJ}{SA} \quad \text{ où } \quad \dfrac{JI}{AO}$
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.22\linewidth}
+\begin{flushright}
+\includegraphics[width=0.95\linewidth]{08. Espace - sections de solides 6.png}
+\end{flushright}
+\end{minipage}
+
+\subsubsection*{Sphère}
+
+\begin{prop}
+La section d'une sphère par un plan est un cercle.
+\end{prop}
+
+\begin{rem}
+Si le plan est tangent à la sphère, la section est réduite à un point. 
+
+Si le plan passe par le centre de la sphère, la section est un grand cercle.
+\end{rem}
+
+\begin{ex}
+
+
+\noindent \begin{minipage}[c]{0.70\linewidth}
+
+On considère une sphère de centre $O$ et de rayon $5$cm. Cette sphère est coupée par un plan, à $4$cm de son centre. Soit $H$ le centre du cercle de section. Calculons la longueur $HA$.
+
+\medskip
+\noindent Dans le triangle $HOA$ rectangle en $H$, d'après le théorème de Pythagore, on a :
+\begin{eqnarray*}
+OA^2 &=& OH^2 + HA^2\\
+HA^2 &=& OA^2 - OH^2\\
+&=& 5^2 - 4^2 \quad = \quad 25 -16 \quad = \quad 9 \\
+HA &=& \sqrt{9} \quad = \quad 3 \text{cm}
+\end{eqnarray*}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.24\linewidth}
+\begin{center}
+\includegraphics[width=0.95\linewidth]{08. Espace - sections de solides 7.png}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\end{document}

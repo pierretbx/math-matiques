@@ -1,0 +1,50 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{eurosym}
+\usepackage{tikz}
+\usepackage{scratch}
+\usetikzlibrary{arrows}
+\makeatletter
+\input{../../../../teach.sty}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\redefinecolor{defn}{title}{txtcolor}{white}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{prop}{title}{txtcolor}{white}
+\redefinecolor{rem}{title}{txtcolor}{black}
+\redefinecolor{exo}{title}{txtcolor}{black}
+\redefinecolor{exo}{rule}{color}{black}
+\redefinetitle{exo}{Application}
+\makeatother
+
+\tikzset{general/.style={line cap=round,line join=round}}
+
+\definecolor{titlecolor}{HTML}{2F5F8F}
+\definecolor{exer1}{HTML}{2F8F83}
+\definecolor{exer2}{HTML}{D08A32}
+\definecolor{exer3}{HTML}{8E5AA8}
+
+\providecommand{\degre}{\ensuremath{^\circ}}
+\providecommand{\edupythoninline}[1]{\texttt{#1}}
+\newenvironment{ex}[1][]{\begin{exo}[#1]}{\end{exo}}
+\newenvironment{meth}[1][]{
+  \par\medskip
+  {\fontfamily{lmss}\bfseries\selectfont\fcolorbox{meatbrown}{meatbrown}{\textcolor{white}{Méthode%
+  \if\relax\detokenize{#1}\relax\else~(#1)\fi\strut}}}
+  \begin{mdframed}[linewidth=0pt,backgroundcolor=meatbrown!12,skipabove=0.5pt,skipbelow=1em]
+}{\end{mdframed}}
+\providecommand{\grandscarreaux}[2]{%
+  \par\noindent
+  \begin{tikzpicture}
+    \draw[step=0.5cm,gray!35,very thin] (0,0) grid +(#1,#2);
+  \end{tikzpicture}%
+  \par
+}
+
+\setlength{\parindent}{0pt}

@@ -1,0 +1,240 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\cro}[1]{ \ds [#1]}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{pst-tree}
+\usepackage{pifont}
+%\usepackage[cp1252]{inputenc}
+
+
+
+\newcommand{\V}{\overrightarrow}
+\newcommand{\Rep}{(O;\V{i};\V{j})}
+%\newcommand{\Int}[2]{[\, #1 ; #2 \,]}
+%\newcommand{\Reel}{\mathfrak{Re}} 
+%\newcommand{\Ima}{\mathfrak{Im}} 
+%\renewcommand{\Abs}[1]{\left \lvert#1\right \rvert}
+\newcommand{\Cnp}{\begin{pmatrix} n\\p \end{pmatrix}}
+\newcommand{\C}[2]{\begin{pmatrix} #1\\#2 \end{pmatrix}}
+\newcommand{\Syst}[2]{\left\{\begin{array}{lcccc} #1 \\ #2 \end{array}\right.}
+\renewcommand{\arraystretch}{1.2} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1cm}}
+\newcommand{\dx}{dx}
+
+\begin{document}
+
+
+\tableofcontents
+
+
+
+\section{Généralités sur les lois de probabilités continues}
+
+\begin{rem}
+ On considère un univers $I$ de la forme $[a;b]$ où $a$ et $b$ sont deux réels tels que $a<b$ ou de la forme $[a;+\infty[$ avec $a$ réel. 
+On notera :
+\begin{itemize}
+ \item[$\bullet$] $\int_{I}f(x)\dx=\int_a^bf (x)\dx$ dans le premier cas ;
+  \item[$\bullet$] $\int_{I}f(x)\dx=\lim_{b\rightarrow +\infty}\int_{a}^{b}f(x)\dx$ dans le deuxième cas.
+\end{itemize}
+\end{rem}
+
+
+\begin{defn}
+Avec les notations précédentes :
+\begin{itemize}
+\item[$\bullet$] On appelle \emph{densité de probabilité} sur $I$, toute fonction $f$ continue et positive telle que 
+$$\int_{I}f(x)\dx=1$$
+\item[$\bullet$] On dit qu'une variable aléatoire $X$ à valeurs dans $I$ suit une loi de probabilité de densité $f$ sur $I$ si pour tout intervalle $J$ inclus dans I : 
+$$P(X\in J)=\int_{J}f(x)\dx$$
+\end{itemize}
+Une telle variable aléatoire est dite continue sur $I$.
+\end{defn}
+
+\begin{prop}
+ Soit $X$ une variable aléatoire suivant une loi de probabilité continuede densité $f$ sur $I$.
+\begin{itemize}
+ \item[$\bullet$] $P(X\in I)=1$ ;
+\item[$\bullet$] Pour tout réel $u$, $P(X=u)=\int_{u}^{u}f(x)\dx=0$ ;
+\item[$\bullet$] $P(X\in[a;b])=P(X\in]a;b])=P(X\in[a;b[)=P(X\in]a;b[)$ et $P(X\leq a))=P(X<a)$ pour tous les réels $a$ et $b$ avec $a<b$.
+\end{itemize}
+
+\end{prop}
+
+\begin{rem}
+ On note $P(a\leq x\leq b)=P(X\in [a;b])$.
+\end{rem}
+
+\begin{defn}
+Soit $X$ un variable aléatoire réelle suivant une loi de probabilité continue de densité $f$ définie sur un intervalle $I$, alors 
+
+$$E(X)= \int_{I}xf(x)\dx$$
+\end{defn}
+
+
+\section{Loi uniforme}
+
+\begin{defn}
+ Soit $[a;b]$ un intervalle avec $a$ et $b$ réels. On appelle \emph{loi uniforme} sur $[a;b]$ , la loi de probabilité dont la densité $f$ est :
+$$f(x)=\frac{1}{b-a}$$ pour tout réel $x\in[a;b]$.
+\end{defn}
+
+\begin{demo}
+ On a $f\geq 0$ et on vérifie que $\int_{a}^{b}f(x)\dx=1$.
+\end{demo}
+
+
+\begin{prop}
+ Soit $X$ une variable aléatoire suivant la loi uniforme sur $[a;b]$. ALors l'espérance $E(X)$ de $X$ est :
+$$E(X)=\int_{a}^{b}xf(x)\dx=\frac{a+b}{2}$$
+\end{prop}
+
+\begin{demo}
+$$\int_{a}^{b}xf(x)\dx=\int_{a}^{b}x\dfrac{1}{b-a}\dx = \cro{\dfrac{x^2}{2(b-a)}}_a^b$$
+$$= \dfrac{b^2-a^2}{2(b-a)}=\dfrac{(b-a)(b+a)}{2(b-a)}=\dfrac{b+a}{2}$$
+\end{demo}
+
+\begin{exemple}
+ La fonction \texttt{Alea()} du tableur donne des valeurs suivants la loi uniforme sur $[0;1]$.
+\end{exemple}
+
+
+\section{Loi exponentielle}
+
+\begin{defn}
+ Soit $\lambda$ un réel strictement positif. On appelle \emph{loi exponentielle} de paramètre $\lambda$ la loi de probabilité dont la densité $f$ est définie par :
+$$f(x)=\lambda e^{-\lambda x}$$
+pour tout réel $x\in [0;+\infty[$.
+\end{defn}
+
+\begin{demo}
+ On a $f\geq 0$ et $\lim_{b\rightarrow +\infty}\int_{0}^{b}f(x)\dx=1$. Effectivement
+ $\int_{0}^{b}f(x)\dx=\int_{0}^{b}\lambda e^{-\lambda x} \dx= \cro{-e^{-\lambda x}}_0^b=  \cro{e^{-\lambda x}}_b^0=1-e^{-\lambda b}$
+\end{demo}
+
+
+\begin{prop}
+ L'espérance d'une variable aléatoire $X$ qui suit la loi exponentielle de paramètre $p$ est $$E(X)=\frac{1}{\lambda}$$
+\end{prop}
+
+\begin{demo}
+On cherche ici à calculer $\int_{0}^{+ \infty}xf(x)\dx =  \lim_{b\rightarrow +\infty}\int_{0}^{b}xf(x)\dx$, cherchons donc une primitive de $xf(x)=x\lambda e^{-\lambda x}$ de la forme $(ax+b)e^{-\lambda x}$ .\\
+
+On sait que $((ax+b)e^{-\lambda x})'=ae^{-\lambda x}-\lambda(ax+b)e^{-\lambda x}=(a-a\lambda x-b\lambda)e^{-\lambda x}$ qui doit être égale à $xf(x)=x\lambda e^{-\lambda x}$ d'où $-a\lambda x=x\lambda$ et $a-b\lambda=0$, on déduit que $a=-1$ et $b=\dfrac{-1}{\lambda}$
+
+Ainsi une primitive de $xf(x)$ est $(-x-\dfrac{1}{\lambda})e^{-\lambda x}$. Donc $\int_{0}^{b}xf(x)\dx=\cro{(-x-\dfrac{-1}{\lambda})e^{-\lambda x}}_0^b=\cro{(x+\dfrac{1}{\lambda})e^{-\lambda x}}_b^0=\dfrac{1}{\lambda}-(b+\dfrac{1}{\lambda})e^{-\lambda b}$. \\
+
+d'où $\int_{0}^{+ \infty}xf(x)\dx =  \lim_{b\rightarrow +\infty}\int_{0}^{b}xf(x)\dx=\dfrac{1}{\lambda}$
+ 
+
+\end{demo}
+
+\end{document}

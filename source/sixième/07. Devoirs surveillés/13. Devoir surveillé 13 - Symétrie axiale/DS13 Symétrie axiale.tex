@@ -1,0 +1,84 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\pagestyle{empty}
+\noindent NOM, Prénom et classe : \dotfill
+
+\section*{Devoir surveillé 13 - Symétrie axiale}
+\noindent\textit{Les constructions doivent être précises. Tu peux utiliser règle, équerre et compas.} \hfill \textit{Durée : 45 minutes}
+
+\medskip
+\paragraph*{Exercice 1} \hfill \textbf{4 points}
+
+\noindent Construis les symétriques des points $A$, $B$, $C$ et $D$ par rapport à la droite $(d)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[red,line width=1.4pt] (0,-3)--(0,3);
+\node[red,anchor=west] at (0,2.7) {$(d)$};
+\foreach \p/\x/\y in {A/-4/2,B/-2/-1,C/3/1,D/1/-2}
+  {\fill[blue] (\x,\y) circle (2pt) node[above right,black] {$\p$};}
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\paragraph*{Exercice 2} \hfill \textbf{5 points}
+
+\noindent Construis le symétrique de la figure par rapport à la droite $(d)$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.68,line cap=round,line join=round]
+\draw[lightgray] (-6,-4) grid (6,4);
+\draw[red,line width=1.4pt] (0,-4)--(0,4);
+\node[red,anchor=west] at (0,3.6) {$(d)$};
+\draw[blue,line width=1.2pt] (-5,-2)--(-3,2)--(-1,1)--(-2,-1)--cycle;
+\draw[blue,line width=1.2pt] (-3,2)--(-2,3);
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\paragraph*{Exercice 3} \hfill \textbf{5 points}
+
+\noindent Les deux figures sont-elles symétriques par rapport à la droite rouge ? Justifie.
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-4,-3) grid (4,3);
+\draw[red,line width=1.3pt] (0,-3)--(0,3);
+\draw[blue,line width=1.2pt] (-3,-1)--(-2,2)--(-1,0)--cycle;
+\draw[blue,line width=1.2pt] (3,-1)--(2,2)--(1,0)--cycle;
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-4,-3) grid (4,3);
+\draw[red,line width=1.3pt] (0,-3)--(0,3);
+\draw[blue,line width=1.2pt] (-3,-1)--(-2,2)--(-1,0)--cycle;
+\draw[blue,line width=1.2pt] (3,-1)--(1,2)--(1,0)--cycle;
+\end{tikzpicture}
+\\
+Figure 1 & Figure 2
+\end{tabular}
+\end{center}
+
+\medskip\noindent\grandscarreaux{\linewidth}{3cm}
+
+\medskip
+\paragraph*{Exercice 4} \hfill \textbf{6 points}
+
+\noindent Place les points $A'$, $B'$ et $C'$, symétriques de $A$, $B$ et $C$ par rapport à $(d)$, puis trace le triangle $A'B'C'$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[red,line width=1.3pt] (-5,0)--(5,0);
+\node[red,anchor=south west] at (-4.8,0) {$(d)$};
+\fill[blue] (-3,2) circle (2pt) node[above] {$A$};
+\fill[blue] (-1,1) circle (2pt) node[above] {$B$};
+\fill[blue] (2,2) circle (2pt) node[above] {$C$};
+\draw[blue,line width=1.1pt] (-3,2)--(-1,1)--(2,2)--cycle;
+\end{tikzpicture}
+\end{center}
+
+\end{document}

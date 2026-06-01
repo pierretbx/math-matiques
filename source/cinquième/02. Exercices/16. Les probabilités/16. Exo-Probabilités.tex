@@ -1,0 +1,221 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+\pagestyle{empty}
+\newpage
+\section*{Probabilités}
+\addcontentsline{toc}{section}{Probabilités}
+
+\vspace{-4mm}
+\begin{ex}
+Pour chacun des événements suivants, indique s'il relève du hasard et si oui, place le sur l'échelle ci dessous comme dans l'exemple.
+
+\noindent \begin{minipage}{9cm}
+\begin{enumerate}[font=\color{exer1}]
+\item Obtenir pile au jeu de pile ou face
+\item La fête nationale aura lieu le $14$ juillet.
+\item Un élève aura un tee shirt blanc demain.
+\item Obtenir $6$ avec un dé à $6$ faces.
+\item Trouver la bonne combinaison au loto.
+\item Demain il fera beau.
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{8cm}
+\includegraphics[scale=0.3]{16. Exo-Probabilité 1.png}
+\end{minipage}
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+Une roue de loterie est partagée en huit \\ secteurs identiques numérotés de $1$ à $8$.
+
+\noindent Gradue l'échelle ci-dessous et place-y les événements \\suivants.
+
+\vspace{-1.5cm}
+\noindent \begin{minipage}{9cm}
+\vspace{1.5cm}
+\begin{enumerate}[font=\color{exer1}]
+\item \og Obtenir $2$ \fg{} 
+\item \og Obtenir un multiple de $2$ \fg{} 
+\item \og Obtenir un nombre supérieur à $4$ \fg{} 
+\end{enumerate}
+\end{minipage}
+\hspace{5mm}
+\begin{minipage}{8cm}
+\includegraphics[scale=0.3]{16. Exo-Probabilité 2.png}
+\end{minipage}
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+On tire au hasard un jeton parmi vingt-six jetons marqués chacun d'une lettre différente de l'alphabet. Gradue l'axe ci-dessous et place-y les probabilités des événements suivants
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\def\xY{-5};
+\def\yY{-1};
+\def\xZ{20};
+\def\yZ{1};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);
+\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray ,thin] (Y) grid (Z);
+\draw[ ->,line width=1.7pt,exer1] (\xY, 0) -- (\xZ, 0);
+%\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\end{tikzpicture}
+\end{center}
+
+\vspace{-3mm}
+\begin{enumerate}[font=\color{exer1}]
+\begin{tabularx}{\linewidth}{*{3}{>{\arraybackslash}X}}
+\item \og Obtenir un Z \fg{} &
+\item \og Obtenir une consonne \fg{} &
+\item \og Obtenir une voyelle \fg{} \\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+On lance un dé non truqué à six faces.
+
+\noindent Pour chacun des événements aléatoires ci-dessous, indique s'il est impossible, improbable, peu probable, probable, très probable, certain.
+
+\vspace{-2mm}
+\begin{enumerate}[font=\color{exer1}]
+\begin{tabularx}{\linewidth}{*{2}{>{\arraybackslash}X}}
+\item \og Obtenir un nombre inférieur a $6$ \fg{} &
+\item \og Obtenir deux \fg{} \\
+\item \og Obtenir un multiple de $3$ \fg{} &
+\item \og Obtenir un multiple de $7$ \fg{} \\
+\item \og Obtenir un diviseur de $7$ \fg{} &
+\item \og Obtenir un diviseur de $60$ \fg{} \\
+\end{tabularx}
+\end{enumerate}
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+Trois personnes, Aline, Bernard et Claude, ont chacune un sac contenant des billes.
+
+\noindent Chacune tire au hasard une bille de son sac. Le contenu des sacs est le suivant :
+
+\medskip
+\noindent \begin{minipage}{4.5cm}
+\begin{center}
+Sac d'Aline
+
+\medskip
+\boxed{\text{5 billes rouges}}
+\end{center}
+\end{minipage}
+\begin{minipage}{5cm}
+\begin{center}
+Sac de Bernard
+
+\medskip
+\boxed{\text{10 billes rouges et 30 billes noires}}
+\end{center}
+\end{minipage}
+\hspace{1.5cm}
+\begin{minipage}{5cm}
+\begin{center}
+Sac de Claude
+
+\medskip
+\boxed{\text{100 billes rouges et 3 billes noires}}
+\end{center}
+\end{minipage}
+
+\medskip 
+\noindent Laquelle de ces trois personnes a-t-elle la plus grande probabilité de tirer une bille rouge ?
+\end{ex}
+
+\vspace{-1mm}
+\begin{ex}
+On écrit sur les faces d'un dés équilibré à six faces chacune des lettres suivantes : \textbf{NOTOUS}.
+
+\noindent On lance le dé et on regarde la lettre inscrite sur la face supérieure.
+
+\begin{enumerate}[font=\color{exer2}]
+\item Quelles sont les issues de cette expérience ? 
+\end{enumerate}
+Détermine la probabilité de chacun des événements :
+
+\noindent \begin{minipage}{7.5cm}
+\begin{enumerate}[font=\color{exer2}]
+\setcounter{enumi}{1}
+\item $E_1$ : \og On obtient la lettre $O$ \fg{} 
+\item $E_2$ est l'événement contraire de  $E_1$. 
+
+Décris $E_2$ et calcule sa probabilités.
+\item $E_3$ : \og On obtient une consonne \fg{} 
+\end{enumerate}
+\end{minipage}
+\begin{minipage}{7.5cm}
+\begin{enumerate}[font=\color{exer2}]
+\setcounter{enumi}{4}
+\item $E_4$ : \og On obtient une lettre du mot KIWI \fg{} 
+\item $E_5$ : \og On obtient une lettre du mot CAGOUS \fg{} 
+\item Gradue l'axe ci-dessous et place-y les probabilités des événements précédents.
+\end{enumerate}
+\end{minipage}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\def\xY{-5};
+\def\yY{-1};
+\def\xZ{20};
+\def\yZ{1};
+\coordinate (Y) at (\xY,\yY);
+\coordinate (Z) at (\xZ,\yZ);
+\draw[step=0.5cm, lightgray, very thin] (Y) grid (Z);
+\draw[step=1cm, gray ,thin] (Y) grid (Z);
+\draw[ ->,line width=1.7pt,exer2] (\xY, 0) -- (\xZ, 0);
+%\foreach \x in {0,1}	\draw[very thick](\x,0.2cm)--(\x,-0.2cm) node[below,fill=white]{\footnotesize \x};
+\end{tikzpicture}
+\end{center}
+\end{ex}
+
+\begin{ex}
+Une urne contient $4$ boules rouges et $6$ boules vertes, toutes indiscernables au toucher. On tire une boule au hasard. Réponds par vrai ou faux.
+
+\begin{enumerate}[font=\color{exer1}]
+\item Il y a autant de chances d'avoir une boule verte qu'une boule rouge.
+\item Il y a quatre chances sur $10$ d'obtenir une boule verte. 
+\item Il y a $6$ chances sur $4$ d'obtenir une boule verte.
+\item La probabilité de tirer une boule rouge est de $\dfrac{2}{5}$
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+On tire une carte au hasard dans un jeu de $32$ cartes. On considère les événements suivants :
+\begin{enumerate}
+\item[•] A : \og On obtient un roi. \fg{} 
+\item[•] B : \og On obtient un as. \fg{} 
+\item[•] C : \og On obtient un trèfle. \fg{} 
+\end{enumerate}
+
+\begin{enumerate}[font=\color{exer2}]
+\item Les événements $A$ et $B$ sont-ils compatibles ? et les événements B et C ? Justifie.
+\item Décris par une phrase sans négation l'événement contraire de l'événement C.
+\item Propose un événement $D$ compatible avec l'événement $C$.
+\item Détermine les probabilités des événements $A$, $B$, $C$ et $D$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Un sac opaques contient des bonbons bleus, rouges ou verts, tous indiscernables au toucher.
+
+\noindent Quand on tire un bonbon au hasard, on a deux chances sur conque de prendre un bonbon rouges et une chance sur deux de prendre un bonbon bleu.
+
+\begin{enumerate}[font=\color{exer2}]
+\item Quelle est la probabilité d'obtenir un bonbon rouge ou un bonbon bleu ?
+\item Déduis-en la probabilité d'obtenir un bonbon vert.
+\item Peux-tu estimer le nombre de bonbons dans le sac ?
+\end{enumerate}
+\end{ex}
+
+\end{document}

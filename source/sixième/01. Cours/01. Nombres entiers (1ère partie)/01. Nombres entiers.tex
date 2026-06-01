@@ -1,0 +1,227 @@
+\documentclass[a4paper,10pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\makeatletter
+\def\input@path{{../../../../}}
+\makeatother
+\usepackage[fancyhdr]{teach}
+\graphicspath{{../../../../}}
+
+\usetikzlibrary{arrows}
+\pgfplotsset{compat=1.18}
+\newcolumntype{S}{p{0pt}}
+
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+
+\redefinetitle{ex}{Application}
+\redefinetitle{rem}{Remarque}
+\redefinetitle{memento}{Règle}
+
+\newlength{\blociconewidth}
+\setlength{\blociconewidth}{8mm}
+\newcommand{\teachblocicon}[1]{\raisebox{-2mm}{\includegraphics[width=6mm]{#1}}}
+
+\makeatletter
+\renewenvironment{memento}[1][]
+{%
+\ifx\hfuzz#1\hfuzz
+\renewcommand\teach@title{\teach@title@memento}
+\else
+\renewcommand\teach@title{\teach@title@memento~(#1)}
+\fi
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-\blociconewidth-\arrayhspace-\arrayvertrulewidth-2\tabcolsep}
+\color{\teach@thm@body@txtcolor}
+}
+{
+\end{minipage}
+\end{lrbox}
+\vspace{1em}
+\begin{tabular}{@{}p{\blociconewidth}@{\color{\teach@memento@title@txtcolor}\hspace*{1mm}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}p{\dimexpr\linewidth-\blociconewidth-\arrayhspace-\arrayvertrulewidth-2\tabcolsep}@{}}
+\teachblocicon{memento.png} & \raisebox{1mm}{\fontfamily{lmss}\bfseries\selectfont\textcolor{\teach@memento@title@txtcolor}{\teach@title}}\\[-1pt]
+ & \usebox{\teach@box}
+\end{tabular}
+\vspace{1em}
+}
+
+\renewenvironment{attention}[1][]
+{%
+\ifx\hfuzz#1\hfuzz
+\renewcommand\teach@title{\teach@title@attention}
+\else
+\renewcommand\teach@title{\teach@title@attention~(#1)}
+\fi
+\begin{lrbox}{\teach@box}
+\begin{minipage}{\dimexpr\linewidth-\blociconewidth-\arrayhspace-\arrayvertrulewidth-2\tabcolsep}
+\color{\teach@thm@body@txtcolor}
+}
+{
+\end{minipage}
+\end{lrbox}
+\vspace{1em}
+\begin{tabular}{@{}p{\blociconewidth}@{\color{\teach@attention@title@txtcolor}\hspace*{1mm}\vrule width \arrayvertrulewidth\hspace*{\arrayhspace}}p{\dimexpr\linewidth-\blociconewidth-\arrayhspace-\arrayvertrulewidth-2\tabcolsep}@{}}
+\teachblocicon{attention_img.png} & \raisebox{1mm}{\fontfamily{lmss}\bfseries\selectfont\textcolor{\teach@attention@title@txtcolor}{\teach@title}}\\[-1pt]
+ & \usebox{\teach@box}
+\end{tabular}
+\vspace{1em}
+}
+\makeatother
+
+\newcommand{\grandscarreaux}[2]{%
+  \begin{tikzpicture}
+    \draw[step=0.8cm,gray!45,very thin] (0,0) grid (#1,#2);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+\newpage
+\setcounter{chapter}{0}
+\chapter{Nombres entiers}
+
+\section{Décomposition, nom des chiffres}
+
+\begin{memento}
+0, 1, 2, 3, 4, 5, 6, 7, 8 et 9 sont des chiffres qui permettent d'écrire tous les nombres entiers, de même que les lettres de A à Z permettent d'écrire tous les mots.
+\end{memento}
+
+\begin{ex}
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\end{ex}
+
+\begin{memento}
+Pour pouvoir lire les grands nombres entiers facilement, on regroupe les chiffres par  \dotfill
+\end{memento}
+
+\begin{ex}
+
+\medskip On s'intéresse au nombre $1048774912$.
+\begin{enumerate}
+\item Réécris ce nombre en appliquant la règle précédente.
+\item Écris ce nombre en toutes lettres.
+\item Décompose ce nombre
+\item Donne le nom des chiffres 8 et 9.
+\item Quel est le nombre des millions de ce nombre ?
+\end{enumerate} 
+\noindent\grandscarreaux{\linewidth}{6.4cm}
+\end{ex}
+
+\section{Repérage sur une demi-droite graduée}
+
+\begin{defn}
+Une demi-droite graduée est une demi-droite sur laquelle on a reporté une unité de longueur régulièrement (souvent le centimètre) à partir de son origine.
+\end{defn}
+
+\begin{prop}
+Sur une demi-droite graduée, un point est repéré par un nombre appelé son \dotfill
+
+\medskip \noindent L'origine est repéré par le nombre \dots \dots .
+\end{prop}
+
+\begin{ex}
+\medskip
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.045cm,y=1.0cm]
+\begin{axis}[x=0.045cm,y=1.0cm,axis lines=middle,ymajorgrids=true,xmajorgrids=true,
+xmin=-1.0,xmax=345.0,ymin=-0.1,ymax=0.1,xtick={0.0,20.0,...,340.0},ytick={-0.0,20.0,...,0.0},]
+\clip(-1.,-1) rectangle (345.,1);
+\begin{scriptsize}
+\draw [color=blue] (60.,0.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (62.67583814733487,1) node {$A$};
+\draw [color=blue] (110.,0.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (112.6420565791818,1) node {$B$};
+\draw [color=blue] (310.,0.)-- ++(-3.5pt,-3.5pt) -- ++(7.0pt,7.0pt) ++(-7.0pt,0) -- ++(7.0pt,-7.0pt);
+\draw[color=blue] (312.76014081402155,1) node {$C$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\noindent\grandscarreaux{\linewidth}{2.8cm}
+\end{ex}
+
+\section{Comparaison et rangement}
+
+\begin{defn}
+Comparer deux nombres, c'est \dotfill
+
+\medskip\noindent\dotfill
+\end{defn}
+
+\begin{defn}
+Ranger des nombres dans l'ordre croissant signifie \dotfill
+
+\medskip\noindent\dotfill
+\end{defn}
+
+\begin{defn}
+Ranger des nombres dans l'ordre décroissant signifie \dotfill
+
+\medskip\noindent\dotfill
+\end{defn}
+
+\begin{ex}
+Range les nombres 25 342 ; 253 420 ; 25 243 ; 235 420 ; 25 324 dans l'ordre croissant.
+
+\medskip\noindent\grandscarreaux{\linewidth}{2.8cm}
+\end{ex}
+
+\section{Addition}
+
+\begin{defn}
+Les nombres que l'on additionne s'appellent les \dotfill
+
+\medskip \noindent Le résultat d'une addition s'appelle la \dotfill
+\end{defn}
+
+\begin{ex}
+Pose et calcule 1 856 + 525.
+
+\medskip\noindent\grandscarreaux{\linewidth}{2.6cm}
+\end{ex}
+
+\begin{prop}
+Dans une addition, on a le droit de :
+\begin{enumerate}
+\item regrouper les termes ;
+\item changer des termes de place.
+\end{enumerate} 
+\end{prop}
+
+\begin{ex}
+Calcule astucieusement 46 + 37 + 54 + 63.
+
+\medskip\noindent\grandscarreaux{\linewidth}{2cm}
+\end{ex}
+
+\section{Soustraction}
+
+\begin{defn}
+Les nombres que l'on soustrait s'appellent les \dotfill
+
+\medskip \noindent Le résultat d'une soustraction s'appelle la \dotfill
+\end{defn}
+
+\begin{ex}
+Pose et calcule 233-67.
+
+\medskip\noindent\grandscarreaux{\linewidth}{2.6cm}
+\end{ex}
+
+\begin{attention}
+On ne peut pas changer les termes de place dans une soustraction.
+\end{attention}
+
+\end{document}

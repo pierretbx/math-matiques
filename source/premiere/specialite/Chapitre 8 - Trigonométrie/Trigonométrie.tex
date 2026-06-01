@@ -1,0 +1,327 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+\usepackage{fancyhdr}
+\usepackage{pstricks}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{multicol}
+\setlength{\multicolsep}{3pt}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+\usepackage[all]{xy}
+\usepackage{fancybox}
+\usepackage{color}
+\usepackage{hyperref}
+%  \usepackage[frenchb]{babel}
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\usepackage{yhmath} 
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\arc}[1]{\wideparen{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%\newcommand{\imath}{\overrightarrow{i}}
+%\newcommand{\jmath}{\overrightarrow{j}}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+\begin{document}
+\tableofcontents
+\chapter{Trigonom\'etrie}
+\section{Lignes trigonom\'etriques}
+
+\subsection{Cosinus et Sinus}
+\subsubsection*{Rappels}
+\begin{minipage}{10cm}
+Soit $\oij$ un rep\`ere orthonormal direct (c'est-à-dire tel que $(\vect{\imath},\vect{\jmath})=\frac{\pi}{2}+2k\pi$), $\calc$ le cercle trigonom\'etrique de centre $O$.
+\par $A$ et $B$ sont les points tels que $\vect{OA}=\vect{\imath}$ et $\vect{OB}=\vect{\jmath}$.
+
+\vspace{1ex}
+\begin{defn}
+Pour tout r\'eel $x$, il existe un unique point $M$ de $\calc$ tel que $x$ soit une mesure de l'angle $(\vect{\imath},\vect{OM})$.
+\par $\cos x$ est l'abscisse de $M$ dans $\oij$.
+\par $\sin x$ est l'ordonn\'ee de $M$ dans $\oij$.
+\end{defn}
+\end{minipage}
+\hfill
+\begin{minipage}{4cm}
+\includegraphics[scale=1.3]{CoursTrigoFigures.1}
+\end{minipage}
+
+\subsubsection*{Propri\'et\'es imm\'ediates}
+\begin{prop}
+Pour tout $x\in\R$ :
+
+\begin{tabular}{*{3}{m{0.3\linewidth}}}
+$-1\ie \cos x \ie 1$ \par $-1\ie \sin x \ie 1$ & $\cos(x+2k\pi)=\cos x$ \par $\sin(x+2k\pi)=\sin x$ & $\cos^2 x+\sin²x=1$
+\end{tabular}
+\end{prop}
+
+\subsubsection*{Cosinus et sinus d'un angle orient\'e de vecteurs}
+Soit $(\vect{u},\vect{v})$ un angle orient\'e et $x$ une de ses mesures. Les autres mesures de $(\vect{u},\vect{v})$ sont donc de la forme $x+2k\pi$. Or $\cos(x+2k\pi)=\cos x$ et $\sin(x+2k\pi)=\sin x$. On a donc la d\'efinition suivante :
+
+\vspace{1ex}
+\begin{defn}
+Le cosinus (resp. le sinus) d'un angle orient\'e de vecteurs est le cosinus (resp. le sinus) d'une quelconque de ses mesures.
+\end{defn}
+
+\newpage%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Angles associ\'es}
+L'utilisation de sym\'etries dans le cercle trigonom\'etrique permet d'\'etablir :% les relations suivantes :
+
+\vspace{1ex}
+\begin{prop}
+Pour tout r\'eel $x$,
+
+\vspace{1ex}
+$\sysd{\cos(-x)=\cos x}{\sin(-x)=-\sin x}$ \hfill $\sysd{\cos(x+\pi)=-\cos x}{\sin(x+\pi)=-\sin x}$ \hfill $\sysd{\cos(\pi-x)=-\cos x}{\sin(\pi-x)=\sin x}$
+
+\hfill $\sysd{\cos\left(\dfrac{\pi}{2}-x\right)=\sin x}{\sin\left(\dfrac{\pi}{2}-x\right)=\cos x}$ \hfill $\sysd{\cos\left(\dfrac{\pi}{2}+x\right)=-\sin x}{\sin\left(\dfrac{\pi}{2}+x\right)=\cos x}$ \hfill\phantom{.}
+
+\end{prop}
+
+\includegraphics{CoursTrigoFigures.2} \hfill \includegraphics{CoursTrigoFigures.3}
+
+\subsection{Valeurs particuli\`eres}
+À l'aide de consid\'erations g\'eom\'etriques, on peut obtenir les valeurs suivantes :
+
+\renewcommand{\arraystretch}{3}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+$x$ & 0 & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ & $\pi$ \\ \hline
+$\cos(x)$ & 1 & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & 0 & -1 \\ \hline
+$\sin(x)$ & 0 & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ & 1 & 0 \\ \hline
+\end{tabular}
+\end{center}
+\renewcommand{\arraystretch}{1}
+\subsection{Formules d'addition}
+\begin{prop}
+Quels que soient les nombres r\'eels $a$ et $b$,\\
+
+\vspace{-1ex}
+\begin{minipage}{0.48\linewidth}
+\begin{equation}
+\cos(a-b)=\cos a \cos b + \sin a \sin b
+\end{equation}
+\begin{equation}
+\cos(a+b)=\cos a \cos b - \sin a \sin b
+\end{equation}
+\end{minipage}
+\begin{minipage}{0.48\linewidth}
+\begin{equation}
+\sin(a-b)=\sin a \cos b - \cos a \sin b
+\end{equation}
+\begin{equation}
+\sin(a+b)=\sin a \cos b + \cos a \sin b
+\end{equation}
+\end{minipage}
+\end{prop}
+
+\begin{demo}
+\underline{\'equation (1.1)}: Soit $\oij$ un rep\`ere orthonormal, $\calc$ le cercle trigonom\'etrique de centre $O$ et $A$ et $B$ les points de $\calc$ tels que $(\vect{\imath},\vect{OA})=a$ et $(\vect{\imath},\vect{OB})=b$. 
+
+\par Calculons de deux façons diff\'erentes le produit scalaire $\vect{OA}.\vect{OB}$\\
+
+\begin{itemize}
+\item $\vect{OA}.\vect{OB}=OA\times OB\times\cos(\vect{OA},\vect{OB})$
+\par Or $(\vect{OA},\vect{OB})=(\vect{OA},\vect{\imath})+(\vect{\imath},\vect{OB})+2k\pi=-a+b+2k\pi$ et $OA=OB=1$
+\par Ainsi $\vect{OA}.\vect{OB}=1\times1\times\cos(b-a)=\cos(a-b)$
+\item Les coordonn\'ees de $\vect{OA}$ sont $\cp{\cos a}{\sin a}$ et les coordonn\'ees de $\vect{OB}$ sont $\cp{\cos b}{\sin b}$
+\par On a donc : $\vect{OA}.\vect{OB}=\cos a \cos b + \sin a \sin b$
+\end{itemize}
+
+\underline{Conclusion }: $\cos(a-b)=\cos a \cos b + \sin a \sin b$\\
+
+\underline{\'equation (1.2)}: $\cos(a+b)=\cos(a-(-b))=\cos a \cos (-b) + \sin a \sin (-b)=\cos a \cos b - \sin a \sin b$\\
+
+\underline{\'equation (1.3) }: $\sin(a-b)=\cos\left( \dfrac{\pi}{2}-(a-b) \right)=\cos\left( \left(\dfrac{\pi}{2}-a \right)+b\right) = \cos\left(\dfrac{\pi}{2}-a \right)\cos b-\sin\left(\dfrac{\pi}{2}-a \right)\sin b = \sin a \cos b - \cos a \sin b$ \\
+
+\underline{\'equation (1.4) }: $\sin(a+b)=\sin(a-(-b))=\sin a \cos (-b) - \cos a \sin (-b) = \sin a \cos b + \cos a \sin b$
+\end{demo}
+
+
+%%%%%%%%%%%%%%%%%%AJOUT AVRIL 2008%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Formules de duplication}
+\begin{prop}
+Quel que soit le r\'eel $x$,
+\begin{align}
+ \cos(2x)&=\cos^2x-\sin^2x=2\cos^2x-1=1-2\sin^2x\label{cos2x} \\
+ \sin(2x)&=2\sin x\cos x\label{sin2x}
+\end{align}
+\end{prop}
+
+\begin{demo}
+(\ref{cos2x}) : Quel que soit le r\'eel $x$,
+ \[\cos(2x)=\cos(x+x)=\cos x\cos x-\sin x\sin x=\cos^2x-\sin^2x\]
+En utilisant les relations $\sin^2x=1-\cos^2x$ et $\cos^2x=1-\sin^2x$, on obtient successivement :
+\[\cos(2x)=2\cos^2x-1\quad\text{puis}\quad\cos(2x)=1-2\sin^2x\]
+(\ref{sin2x}) : Quel que soit le r\'eel $x$,
+ \[\sin(2x)=\sin(x+x)=\sin x\cos x+\cos x\sin x=2\sin x\cos x\]
+
+\end{demo}
+
+\section{R\'esolution d'\'equations}
+\begin{prop}
+Quels que soient les r\'eels $a$ et $b$,
+
+%\begin{equation*}
+ $\cos a=\cos b \Leftrightarrow
+   \left|\text{ou }
+     \begin{array}{@{}l}
+	 a=b+k\times2\pi \\
+	 a=-b+k\times2\pi
+     \end{array}
+   \right.$
+     \hfill et\hfill
+ $\sin a=\sin b \Leftrightarrow
+   \left|\text{ou }
+     \begin{array}{@{}l}
+	 a=b+k\times2\pi \\
+	 a=\pi-b+k\times2\pi
+     \end{array}
+   \right.$
+%\end{equation*}
+\end{prop}
+
+\begin{exemple}
+R\'esoudre dans $]-\pi~;~\pi[$ l'\'equation $\sin\left(x-\frac{\pi}{3}\right)=\frac{1}{2}$
+\end{exemple}
+\begin{align*}
+\sin\left(x+\frac{\pi}{3}\right)=\frac{1}{2} &\Leftrightarrow \sin\left(x-\frac{\pi}{3}\right)=\sin \frac{\pi}{6}\\
+&\Leftrightarrow
+    \left|\text{ou }
+     \begin{array}{@{}l}
+	 x-\frac{\pi}{3}=\frac{\pi}{6}+k\times2\pi \\
+	 x-\frac{\pi}{3}=\pi-\frac{\pi}{6}+k\times2\pi
+     \end{array}
+   \right.\\
+&\Leftrightarrow
+    \left|\text{ou }
+     \begin{array}{@{}l}
+	 x=\frac{\pi}{2}+k\times2\pi \\
+	 x=\frac{7\pi}{6}+k\times2\pi
+     \end{array}
+   \right.
+\end{align*}
+Sur l'intervalle $]-\pi~;~\pi[$, on a $\cals=\{\frac{\pi}{2};-\frac{5\pi}{6}\}$
+
+%%%%%%%%%%%%%%%%%%FIN AJOUT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Rep\'erage polaire}
+\subsection{Coordonn\'ees polaires d'un point}
+\begin{minipage}{11cm}
+Soit $\oij$ un rep\`ere orthonormal direct. Si $M$ est un point distinct du point $O$ alors $M$ peut-\^etre rep\'er\'e par l'angle $\theta=(\vect{\imath},\vect{OM})$ et la longueur $r=OM$.
+\par R\'eciproquement, la donn\'ee d'un couple $(r;\theta)$ avec $r>0$ et $\theta\in\R$ d\'etermine un seul point $M$ tel que $\theta=(\vect{\imath},\vect{OM})$ et $r=OM$.
+\end{minipage}
+\hfill
+\begin{minipage}{3.2cm}
+\includegraphics[scale=1.3]{CoursTrigoFigures.4}
+\end{minipage}
+
+%\vspace{1ex}
+\begin{defn}
+Pour tout point $M$ distinct de $O$, un couple $(r;\theta)$ tel que $\theta=(\vect{\imath},\vect{OM})$ et $r=OM$ est appel\'e couple de coordonn\'ees polaires de $M$ dans le rep\`ere polaire $(O,\vect{\imath})$.
+\end{defn}
+
+
+\subsection{Lien entre coordonn\'ees cart\'esiennes et polaires}
+Soit $\oij$ un rep\`ere orthonormal direct.
+
+\begin{prop}
+Si $M$ est un point ayant pour coordonn\'ees cart\'esiennes $(x;y)$ dans le rep\`ere $\oij$ et pour coordonn\'ees polaires $(r;\theta)$ alors :
+\begin{center}
+$r=\sqrt{x^{2}+y^{2}}$ \qquad  ; \qquad $x=r\cos \theta$ \qquad ; \qquad $y=r\sin \theta$
+\end{center}
+\end{prop}
+
+\begin{demo}
+Notons $\calc$ le cercle trigonom\'etrique de centre $O$. La demi-droite $[OM)$ coupe $\calc$ en $N$. On a donc $\vect{OM}=r\vect{ON}$.
+\par $N\in\calc$ donc ses coordonn\'ees cart\'esiennes sont $(\cos \theta ; \sin \theta)$. Celles de $M$ sont donc $(r\cos \theta ; r\sin \theta)$.
+\par Par unicit\'e des coordonnées, $x=r\cos \theta$ et $y=r\sin \theta$.
+
+De plus $OM^{2}=x^{2}+y^{2}$ et $OM=r$ donc $r^{2}=x^{2}+y^{2}$.
+\end{demo}
+
+
+
+
+
+\end{document}

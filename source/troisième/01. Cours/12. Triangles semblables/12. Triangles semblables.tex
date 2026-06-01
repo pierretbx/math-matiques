@@ -1,0 +1,81 @@
+\PassOptionsToPackage{margin=1.1cm}{geometry}
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\newpage
+\setcounter{chapter}{11}
+\chapter{Triangles semblables}
+
+\small
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+
+\section{Triangles semblables et angles}
+
+\begin{defn}
+On appelle triangles semblables des triangles qui ont leurs angles deux à deux de même mesure
+\end{defn}
+
+\begin{defn}
+Lorsque deux triangles sont semblables, deux angles, deux sommets ou côtés superposables sont dits
+homologues.
+\end{defn}
+
+\begin{ex}
+
+\vspace{-5mm}
+\noindent \begin{minipage}{8cm}
+Les triangles $ABC$ et $DEF$ sont semblables, en effet : \medskip
+
+\begin{enumerate}
+\item[•] \textcolor{red}{$\widehat{ABC}=\widehat{DFE}$}\medskip
+\definecolor{armygreen}{rgb}{0.29, 0.33, 0.13}
+\item[•] \textcolor{armygreen}{$\widehat{BAC}=\widehat{EDF}$}\medskip
+\item[•] \textcolor{blue}{$\widehat{ACB}=\widehat{DEF}$}
+\end{enumerate}
+\end{minipage}
+\hspace{3mm}
+\begin{minipage}{8cm}
+\includegraphics[scale=0.42]{12. Triangles semblables 1.png}
+\end{minipage}
+\end{ex}
+
+\vspace{-5mm}
+\begin{meth}
+Pour montrer que deux triangles sont semblables, il suffit de s'assurer que deux couples d'angles sont égaux deux à deux. En effet, d'après la règle des $180$ \degre, le dernier couple d'angles le sera également.
+\end{meth}
+
+\vspace{-3mm}
+\section{Triangles semblables et longueurs}
+
+\begin{prop}
+Deux triangles semblables ont les longueurs de leurs côtés deux à deux proportionnelles.
+\end{prop}
+
+\begin{ex}
+
+\vspace{-5mm}
+\begin{center}
+\boxed{\includegraphics[scale=0.38]{12. Triangles semblables 2.png}}
+\end{center}
+
+\begin{center}
+\renewcommand{\arraystretch}{2}
+\begin{tabularx}{\linewidth}{|>{\centering\columncolor{gray!20}}p{6cm}|*{3}{>{\centering \arraybackslash}X|}}
+\hline
+Longueurs des côtés de $ABC$ & $0,8$ & $1,2$ & $1 ,6$ \\\hline
+Longueurs des côtés de $A’B’C’$ & $2$ & $3$ & $4$ \\\hline
+\end{tabularx}
+\end{center}
+
+\noindent On a : \quad \quad$\dfrac{2}{0,8} = 2,5$ \quad \quad $\dfrac{3}{1,2} = 2,5$ \quad \quad $\dfrac{4}{1.6} = 2,5$ \quad \quad donc le tableau est proportionnel.
+
+\medskip
+\noindent donc les triangles $ABC$ et $A’B’C’$ sont semblables.
+
+\medskip
+\noindent Le coefficient de proportionnalité pour passer des longueurs du triangle $ABC$ aux longueurs du triangle$ A’B’C’$ est donc $2,5$. On peut dire que $A’B’C’$ est un agrandissement de $ABC$ de rapport $2,5$.
+\end{ex}
+\end{document}

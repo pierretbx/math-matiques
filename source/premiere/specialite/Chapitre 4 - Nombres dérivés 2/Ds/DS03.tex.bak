@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+
+\usepackage[a4paper, hmargin=2cm, vmargin=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pstricks,pst-plot,pst-node}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{Devoir n\textsuperscript{o} 3 : Nombre dérivé (55 min)}\\[2mm]
+\large 1\textsuperscript{re} spécialité
+\end{center}
+
+\medskip
+
+\emph{Tout doit être justifié avec clarté sauf mention explicite contraire. La calculatrice n'est pas autorisée.}
+
+\setlength{\columnseprule}{.5pt}
+\setlength{\columnsep}{30pt}
+
+\setcounter{section}{0}
+\setcounter{equation}{0}
+
+%==================== Exercice 1 ====================
+\noindent\textbf{Exercice 1 }
+
+Sur le graphique ci-dessous, les droites $\Gamma_{f;0}$ et $\Gamma_{f;3}$ sont les tangentes à la courbe $\mathcal{C}_f$ aux points d'abscisses $0$ et $3$.
+
+\begin{center}
+\psset{algebraic=true, plotpoints=500, linewidth=1.2pt}
+\begin{pspicture}(-3,-4)(6,6)
+  % Grille et axes
+  \psgrid[subgriddiv=1,gridlabels=7pt,gridcolor=lightgray](-3,-4)(6,6)
+  \psaxes[labels=all,ticks=all,dx=1,dy=1,linewidth=1.1pt]{->}(0,0)(-3,-4)(6,6)
+
+  %--- Début du "clipping" (découpe) ---
+  \psclip{\psframe(-3,-4)(6,6)}
+
+    % Courbe : f(x) = -(2/27)x^3 + x + 1
+    \psplot[linecolor=blue]{-3}{6}{-(2.0/27.0)*x^3 + x + 1}
+
+    % Tangentes
+    \psplot[linecolor=red,linewidth=1.2pt]{-3}{6}{x + 1}          % pente +1
+    \psplot[linecolor=orange,linewidth=1.2pt]{-3}{6}{-x + 5}       % pente -1
+
+  \endpsclip
+  %--- Fin du "clipping" ---
+
+  % Points et étiquettes
+  \psdots[dotsize=3pt](0,1)
+  \uput[225](0,1){\footnotesize $(0;1)$}
+  \psdots[dotsize=3pt](3,2)
+  \uput[45](3,2){\footnotesize $(3;2)$}
+
+  \uput[180](-2.2,1){\color{blue}\small $\mathcal{C}_f$}
+  \uput[45](2,3.5){\color{red}\footnotesize $\Gamma_{f;0}$}
+  \uput[135](4.3,1.5){\color{black}\footnotesize $\Gamma_{f;3}$}
+
+  % Petits segments de pente (repères)
+  \psline[linecolor=red,linestyle=dashed](0,1)(1,2)
+  \psline[linecolor=orange,linestyle=dashed](3,2)(4,1)
+
+  % Cadre
+  \psframe[linewidth=1pt](-3,-4)(6,6)
+\end{pspicture}
+\end{center}
+
+\begin{enumerate}
+\item Compléter par lecture graphique et \textbf{sans justifier} :
+  \begin{enumerate}[label=$\bullet$,itemsep=10pt]
+    \item $f(0)=\,$\dotfill
+    \item $f(3)=\,$\dotfill
+    \item $f'(0)=\,$\dotfill
+    \item $f'(3)=\,$\dotfill
+  \end{enumerate}
+
+\item Déterminer les équations réduites de $\Gamma_{f;0}$ et de $\Gamma_{f;3}$
+
+\end{enumerate}
+
+\bigskip
+
+%==================== Exercice 2 ====================
+\noindent\textbf{Exercice 2 }
+
+Soit $f$ la fonction définie sur $\mathbb{R}$ par $f(x)=2x^2-3x$.
+
+\begin{enumerate}
+\item Soit $h$ un réel non nul. Calculer et simplifier le taux d'accroissement
+\[ \tau_{f;3;3+h}=\frac{f(3+h)-f(3)}{h}. \]
+
+\item Déterminer $\displaystyle \lim_{h\to 0} \tau_{f;3;3+h}$. Que peut-on conclure ?
+
+\item On admet que $f'(2)=5$. Déterminer l'équation de la tangente $\mathcal{D}$ à la courbe $\mathcal{C}_f$ au point $A(2;f(2))$.
+
+\item Le point $K(3;7)$ est-il un point de $\mathcal{D}$ ?
+
+\item Le point $R(-2;-10)$ est-il un point de $\mathcal{D}$ ?
+\end{enumerate}
+
+\newpage
+
+%==================== Exercice 3 ====================
+\noindent\textbf{Exercice 3 }
+
+Soit $f(x)=\dfrac{1}{x}$, la fonction inverse, définie pour $x > 0$. Soit $a>0$ et $h\neq 0$ tel que $a+h>0$ .
+
+\begin{enumerate}
+\item Écrire et simplifier le taux d'accroissement $\tau_{f;a;a+h}$. Montrer que
+\[
+\tau_{f;a;a+h}=-\frac{1}{a(a+h)}.
+\]
+
+\item En déduire que $f$ est dérivable en $a$ et donner le nombre dérivé de $f$ en $a$.
+
+\item En déduire les nombres dérivés $f'(1)$; $f'(2)$;$f'(10)$. 
+\end{enumerate}
+
+\end{document}

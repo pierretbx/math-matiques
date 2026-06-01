@@ -1,0 +1,380 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+
+\newpage
+\section*{Nombres entiers}
+\addcontentsline{toc}{section}{Nombres entiers}
+
+\subsection*{Décomposition, noms des chiffres}
+\addcontentsline{toc}{subsection}{Décomposition, noms des chiffres}
+
+\begin{ex}
+Écris les nombres suivants en respectant les espaces entre les classes.
+
+\begin{enumerate}
+\begin{tabular}{m{5cm}m{5cm}m{5cm}}
+\item $2514$&
+\item $20135$&
+\item $180208$\\
+\item $1453346$&
+\item $50070572$&
+\item $9578412535$\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Écris en chiffre les nombres suivants.
+\begin{enumerate}
+\item Quatre-vingt trois mille neuf cent cinquante.
+\item Huit millions trois cent mille cinq cents
+\item Cent trente six millions huit cent quatre vengt treize mille sept cent quarante cinq.
+\item Neuf milliards cent neuf millions trois cent douze mille quatre cent vingt sept.
+\end{enumerate}
+\end{ex}
+
+\begin{prop}
+$20$ et $100$ s'accordent quand ils sont multipliés par un nombre sans être suivis par un autre nombre.
+
+\medskip
+\noindent Mille est toujours invariable
+
+\medskip
+\noindent Un est invariable en nombre mais pas en genre
+
+\medskip
+\noindent Millier, million et milliard sont des noms et non des adjectifs.Ils ne font pas vraiment partie du nombre et laissent place à l'accord 
+\end{prop}
+
+\begin{ex}
+Écris en toute lettres les nombres suivants :
+
+\begin{enumerate}
+\begin{tabular}{m{5cm}m{5cm}m{5cm}}
+\item $\np{1096}$&
+\item $\np{5893}$&
+\item $\np{13184}$\\
+\item $\np{70000000}$&
+\item $\np{1219275200}$&
+\item $\np{132854780}$\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Recopie le texte suivant sur ton cahier, en écrivant chaque nombre en toutes lettres.
+
+\begin{quotation}
+En 1953, Edmond Hillary, alors âgé de $34$ ans est le premier alpiniste à parvenir au sommet de l'Everest.
+
+L'altitude de ce sommet est établie à $\np{8 848}$ m. L'Everest est un des sommets de l'Himalata, chaîne de montagne dont la superficie est de $\np{600000}$ km$^2$.
+\end{quotation}
+\end{ex}
+
+\begin{ex}
+Pour le nombre $\np{234591687}$, quel est \dots
+
+\begin{enumerate}
+\begin{tabular}{m{7cm}m{7cm}}
+\item le chiffre des centaines de mille ?&
+\item le chiffre des unités ?\\
+\item le chiffre des dizaines de millions ?&
+\item le chiffre des centaines de millions ?\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Pour le nombre $9345762$, quel est \dots
+
+\begin{enumerate}
+\begin{tabular}{m{7cm}m{7cm}}
+\item le chiffre des unités de mille ?&
+\item le nombre d'unités de mille ?\\
+\item le chiffre des centaines de mille ?&
+\item le nombre de centaines ?\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Écris en chiffre les nombres suivants.
+\begin{enumerate}
+\begin{tabular}{m{7cm}m{7cm}}
+\item $15$ dizaines et 9 unités&
+\item $12$ centaines et $23$ dizaines\\
+\item $15$ milliers et $1234$ unités&
+\item $2$ millions d'unités et $2$ millions de centaines\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Je suis un nombre strictement inférieur à $\np{1000}$. 
+
+\medskip
+\noindent La somme de mes chiffres est $21$. 
+
+\medskip
+\noindent Mon chiffre des unités est le double de mon chiffre des centaines. 
+
+\medskip
+\noindent Qui suis-je ?
+\end{ex}
+
+\newpage
+\subsection*{Repérage sur une demi-droite graduée}
+\addcontentsline{toc}{subsection}{Repérage sur une demi-droite graduée}
+
+\begin{ex}
+Recopie et complète toutes les graduations des axes ci-dessous.
+
+\begin{enumerate}
+\item 
+\begin{tikzpicture}[x=0.01cm]  
+    % Axes
+    \draw[thick,->] (0,0) -- (1050,0);
+    \foreach \x in {0,100}
+	\draw[shift={(\x,0)},color=black] (0pt,6pt) -- (0pt,-6pt) node [below] {\x};
+	\foreach \x in {200,300,400,500,600,700,800,900,1000,}	
+	\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+
+\item
+\begin{tikzpicture}[x=0.5cm]  
+    % Axes
+    \draw[thick,->] (0,0) -- (21,0);
+    \foreach \x in {0,10}
+	\draw[shift={(\x,0)},color=black] (0pt,6pt) -- (0pt,-6pt) node [below] {\x};
+	\foreach \x in {2,4,6,8,12,14,16,18,20}	
+	\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+
+\item
+\begin{tikzpicture}[x=0.02cm]  
+    % Axes
+    \draw[thick,->] (700,0) -- (1225,0);
+    \foreach \x in {900,1000}
+	\draw[shift={(\x,0)},color=black] (0pt,6pt) -- (0pt,-6pt) node [below] {\x};
+	\foreach \x in {750,800,850,950,1050,1100,1150,1200}	
+	\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+
+\item
+\begin{tikzpicture}[x=0.005cm]  
+    % Axes
+    \draw[thick,->] (12000,0) -- (14050,0);
+    \foreach \x in {12000,13000}
+	\draw[shift={(\x,0)},color=black] (0pt,6pt) -- (0pt,-6pt) node [below] {\x};
+	\foreach \x in {12200,12400,12600,12800,13200,13400,13600,13800,14000}	
+	\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt) ;
+\end{tikzpicture}
+
+\item Puis placer sur l'axe gradué \textbf{1.} les points suivants : $90$ ; $140$ ; $360$.
+
+\item Placer sur l'axe gradué \textbf{2.} les points suivants : $12$; $13$ ; $15$.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}[\bccrayon Devoir maison \bccrayon ]
+
+\vspace{-2.2mm} \hspace{5cm}Construis une frise chronologique d'origine $0$, en prenant $1$cm pour $100$ ans.
+\begin{enumerate}
+\item Recherche puis place le plus précisément possible les dates des événements suivants sur ta frise.
+
+A : \og Naissance de Clara Wieck \fg{}
+
+B : \og Mort de Catherine de Medicis \fg{}
+
+C : \og Bataille de Marignan \fg{}
+
+D : \og Fin de l'empire romain \fg{}
+
+E : \og Chute du mur de Berlin \fg{}
+
+\item Range ces dates dans l'ordre croissant.
+\end{enumerate}
+\end{ex}
+
+\subsection*{Comparaison et rangement}
+\addcontentsline{toc}{subsection}{Comparaison et rangement}
+
+\begin{ex}
+Complète avec : $<$ (plus petit que), $>$ (plus grand que) ou $=$.
+
+\begin{enumerate}
+\begin{tabular}{m{4cm}m{4cm}m{4cm}m{4cm}}
+\item $25$ \dots\dots  $14$&
+\item $0$ \dots\dots  $43$&
+\item $\np{0765}$ \dots\dots  $765$&
+\item $547$ \dots\dots  $745$\\
+\item $\np{997}$ \dots\dots  $\np{1 001}$&
+\item $\np{9 909}$ \dots\dots  $\np{9 099}$&
+\item $\np{136754}$ \dots\dots  $\np{256231}$&\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Trouve chacun des nombres ci-dessous.
+
+\begin{enumerate}
+\item Je suis le plus petit nombre de quatre chiffres différents non nuls.
+\item Je suis le plus grand entier strictement inférieur à 1 000 dizaines.
+\item Je suis le plus grand nombre pair strictement inférieur à un million.
+\end{enumerate}
+\end{ex}
+
+\subsection*{Opérations avec les nombres entiers}
+\addcontentsline{toc}{subsection}{Opérations avec les nombres entiers}
+
+\begin{ex}
+On considère l'opération $396+438$.
+\begin{enumerate}
+\item Décompose chaque nombre sous la forme :
+
+ \dots centaines + \dots dizaines + \dots unités puis aide-toi de cette décomposition pour trouver le résultat de l'addition.
+\item Arnaud remarque que $396=400-4$. En quoi cela aide-t-il à calculer de tête ?
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Pose et effectue les additions suivantes.
+
+\begin{enumerate}
+\begin{tabular}{m{4cm}m{4cm}m{4cm}m{4cm}}
+\item $549 + 892$&
+\item $13 184 + 39$&
+\item $54 + 799 + 238$&
+\item $\np{1 084} + 39 + \np{2 508}$\\
+\item $\np{55 057} + \np{6 995}$&
+\item $\np{987} + 98 + 7$&
+\item $\np{1 005 987} + \np{3 998}$&
+\item $\np{999 875} + \np{100 057}$\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Effectue les opérations suivantes.
+\begin{enumerate}
+\item La somme de douze-mille-neuf-cent-trente-quatre et de quatre-millions-dix-sept.
+\item La somme de neuf-mille-trente-trois et de trente-deux centaines.
+\item La somme de soixante-trois centaines et de quinze milliers.
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Quel nombre doit-on ajouter aux nombres suivants pour obtenir cent-mille ?
+\begin{enumerate}
+\begin{tabular}{m{4cm}m{4cm}m{4cm}m{4cm}}
+\item $\np{98 000}$&
+\item Cinquante-trois-mille&
+\item Quatre-vingt-douze&
+\item 7 centaines\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Pose et effectue les soustractions suivantes :
+\begin{enumerate}
+\begin{tabular}{m{4cm}m{4cm}m{4cm}m{4cm}}
+\item $\np{997}$ – $\np{892}$&
+\item $\np{1 000 878}$ – $\np{558 001}$&
+\item $\np{6 589}$ – $\np{29}$&
+\item $\np{7 011 000}$ – $\np{11 700}$\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Complète les opérations à trou suivantes.
+\begin{enumerate}
+\begin{tabular}{m{4cm}m{4cm}m{4cm}m{4cm}}
+\item $78 +$ \dots\dots  $= 345$&
+\item \dots\dots  $+ 199 = 238$&
+\item \dots\dots  $+ 14 + 39 = 555$&
+\item $76 +$ \dots\dots  $+ 24 = 658$\\
+\end{tabular}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Luc résout des petits problèmes mais il se retrouve avec plusieurs solutions à chaque fois. Aide-le à choisir la solution la plus plausible.
+
+\begin{enumerate}
+\item Le score d'un candidat qui a gagné l'élection :
+
+\vspace{-8mm}
+\begin{flushright}
+\begin{tabular}{m{2cm}m{2cm}m{2cm}}
+$5 \%$ & $103 \%$ & $55 \%$\\
+\end{tabular}
+\end{flushright}
+\item La hauteur d'une maison :
+
+\vspace{-8mm}
+\begin{flushright}
+\begin{tabular}{m{2cm}m{2cm}m{2cm}}
+$1$m & $7$m & $27$m\\
+\end{tabular}
+\end{flushright}
+\item La durée d'un film :
+
+\vspace{-8mm}
+\begin{flushright}
+\begin{tabular}{m{2cm}m{2cm}m{2cm}}
+$108$ min & $360$ min & $504$ min\\
+\end{tabular}
+\end{flushright}
+\item La masse d'un cheval :
+
+\vspace{-8mm}
+\begin{flushright}
+\begin{tabular}{m{2cm}m{2cm}m{2cm}}
+$670$ kg & $670$ g & $670$ hg\\
+\end{tabular}
+\end{flushright}
+\item La longueur d'une table :
+
+\vspace{-8mm}
+\begin{flushright}
+\begin{tabular}{m{2cm}m{2cm}m{2cm}}
+$2 500$ mm & $2 500$ dm & $2 500$ cm\\
+\end{tabular}
+\end{flushright}
+\item Le prix d'une maison :
+
+\vspace{-8mm}
+\begin{flushright}
+\begin{tabular}{m{2cm}m{2cm}m{2cm}}
+$\np{5 300}$ \euro & $\np{205 000}$ \euro & $\np{34 500 000}$ \euro\\
+\end{tabular}
+\end{flushright}
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Le point culminant de la Tour Eiffel est à $324$ m de haut. Le $1^{er}$ étage est $266$ m plus bas. Le $2^e$ étage est $58$ m plus haut que le $1^{er}$ étage. Le $3^e$ étage est à $276$ m de haut.
+\begin{enumerate}
+\item Quelle est la hauteur du $1^{er}$ étage ?
+\item Quelle est la hauteur du $2^e$ étage ?
+\item Quelle distance sépare le $3^e$ étage du point culminant ?
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Pour chacune des affirmations, dis si elle est vraie ou fausse. Si elle est fausse, corrige-la.
+\begin{enumerate}
+\item Il existe cinq nombres à deux chiffres dont la somme est égale à cinq.
+\item Dans le nombre trois-millions-trois-cent-trois-mille-trois, le chiffre des milliers et le chiffre des millions sont identiques.
+\item Dans 1 650 352, il y a 165 milliers.
+\item Un-milliard vaut 1 000 millions.
+\item 15 centaines + 13 dizaines = 1 513 dizaines.
+\end{enumerate}
+\end{ex}
+
+\end{document}

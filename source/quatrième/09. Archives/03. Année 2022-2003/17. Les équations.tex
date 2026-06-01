@@ -1,0 +1,123 @@
+\documentclass[a4paper,10pt]{report}\input{../0.Préambule/Préambule_cours_prof}\begin{document}
+
+\newpage
+\setcounter{chapter}{16}
+\chapter{Les équations}
+
+\section{Résolution algébrique d'une équation}
+
+\subsection{Généralités sur les équations}
+
+\begin{dft}
+Une équation est une égalité dans laquelle se trouvent des lettres (des variables) qui représentent des nombres (expression littérale).
+
+\noindent Une équation est soit vraie, soit fausse, suivant les valeurs choisies pour remplacer les lettres.
+
+\noindent Résoudre une équation c'est trouver toutes les valeurs qui rendent l'équation vraie.
+\end{dft}
+
+\medskip
+Il n'y a pas une unique méthode de résolution des équations. Il y a presque autant de méthodes que d'équations.
+
+\noindent Nous apprendrons certaines de ces méthodes.
+
+\begin{prop}
+On ne modifie pas les solutions d'une équation en additionnant, en soustrayant, en multipliant, ou en divisant par un même nombre non nul des deux côtés de l'égalité.
+\end{prop}
+ 
+\begin{rmq}
+\begin{enumerate}
+\item[•] Attention lorsque vous divisez, de vérifier que vous ne divisez pas par zéro.
+%\item[•] On ne peut multiplier par zéro sans modifier les résultats de l'équation. Le pouvoir absorbant du zéro fait disparaître l'information contenue dans l'équation.
+\item[•] Ce résultat constitue une boîte à outils. Il indique des transformations autorisées sur une équation pour en trouver les solutions.
+\item[•] Il faut beaucoup s'entraîner pour savoir quelles transformations utiliser pour résoudre telle ou telle équation.
+\end{enumerate}
+\end{rmq}
+
+\subsection{Équation polynomiale de degré 1}
+
+\begin{dft}
+Une équation polynomiale de degré $1$ (ou équation linéaire) est une équation de la forme \[ ax+b=0 \]
+avec $a$ et $b$ des nombres fixés et $x$ un nombre variable.
+\end{dft}
+
+\medskip
+\begin{ex}
+Résolvons dans $\R$ l'équation $E_1 : 2x-13=0$.
+
+\begin{enumerate}
+\begin{minipage}{7cm}
+\item On \og isole le $x$ \fg{} ;
+\begin{align*}
+2x-13 &=0\\
+2x-13 {\color{titlecolor}+13} &= 0{\color{titlecolor}+13}\\
+2x &=13\\
+\frac{2x}{{\color{titlecolor}2}} &= \frac{13}{{\color{titlecolor}2}} \text{, car $2 \neq 0$}\\
+x &= \frac{13}{2}
+\end{align*}
+\end{minipage}
+
+\item La conclusion : La solution de l'équation $2x-13=0$ est $\dfrac{13}{2}$.
+\end{enumerate}
+\end{ex}
+
+\medskip
+\begin{ex}
+Résolvons dans $\R$ l'équation $E_2 : 2x-13=-3x+2$.
+
+\begin{enumerate}
+\begin{minipage}{8cm}
+\item On se ramène à une égalité à 0:
+\begin{align*}
+2x-13&=-3x+2\\
+2x-13 {\color{titlecolor} + 3x -2}&=-3x+2 {\color{titlecolor} + 3x -2}\\
+5x-15 &=0\\
+\end{align*}
+\end{minipage}
+\hspace{5mm}
+\vline
+\hspace{10mm}
+\begin{minipage}{7cm}
+\item On \og isole le $x$ \fg{} ;
+\begin{align*}
+5x-15 &= 0\\
+5x-15 {\color{titlecolor}+15} &= 0{\color{titlecolor}+15}\\
+5x &=15\\
+\frac{5x}{{\color{titlecolor}5}} &= \frac{15}{{\color{titlecolor}5}} \text{, car $5 \neq 0$}\\
+x &= \frac{15}{5} = 3
+\end{align*}
+\end{minipage}
+
+\item La conclusion : La solution de l'équation $2x-13=-3x+2$ est $3$.
+\end{enumerate}
+\end{ex}
+
+\section{Mise en équation}
+
+\begin{meth}[\href{https://www.youtube.com/watch?v=q3ijSWk1iF8}{Mettre en équation}]
+Une carte d'abonnement pour le cinéma couté $20$\euro . Avec cette carte, le prix d'une entrée est de $8$ \euro .
+
+\begin{enumerate}
+\item Calculons le prix a payer pour $12$, $3$, puis $10$ entrées.
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{2.4cm}
+\item Soit $x$ le nombre d'entrées. Exprimer en fonction de $x$ le prix a payer : 
+\begin{enumerate}
+\item Sans compter l'abonnement.
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\item en comptant l'abonnement.
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{enumerate}
+\item Avec la carte d'abonnement, un client du cinéma a payé $60$\euro en tout. Combien d'entrées a-t-il achetées ?
+
+\medskip
+\noindent\grandscarreaux{\linewidth}{3.2cm}
+\end{enumerate}
+\end{meth}
+
+\end{document}

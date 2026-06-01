@@ -1,0 +1,181 @@
+\documentclass{article}
+\usepackage{fontspec}
+\usepackage{siunitx,esvect}
+\usepackage{luamplib}
+\mplibnumbersystem{decimal} %Si besoin
+\everymplib{verbatimtex
+\leavevmode
+etex;
+input repere;}
+\begin{document}
+Mon texte, mon texte, mon texte
+
+\begin{mplibcode}
+repere(-4,5.5,2cm,-1,8,2cm);
+draw axex(1,1);
+draw axey(1,1);
+draw quadrillage(1,1) dashed evenly;
+path G;
+vardef d(expr x)=(1.5)**x enddef;
+G= courbefonc(d)(-4,10);
+draw G withpen pencircle scaled 1 withcolor pourpre;
+label("$\mathcal{C}_f: y=1,5^x$" ,(3,5)) withcolor pourpre;
+label("$x$",(4.8,-0.2));
+label("$y$",(-0.2,7.8));
+
+vardef u(expr n)=(1.5)**n enddef; 
+taillepoint:=4;
+draw suite(u,0,5) withcolor 0.5blue;
+
+fin;
+\end{mplibcode}
+
+\begin{mplibcode}
+repere(-4,5.5,1cm,-1,8,1cm);
+draw axex(1,1);
+draw axey(1,1);
+draw quadrillage(1,1) dashed evenly;
+path G,H;
+vardef d(expr x)=(1.5)**x enddef;
+vardef e(expr x)=(0.7)**x enddef;
+G= courbefonc(d)(-4,10);
+H= courbefonc(e)(-4,10);
+draw G withpen pencircle scaled 1 withcolor pourpre;
+draw H withpen pencircle scaled 1 dashed evenly withcolor olive;
+label("$\mathcal{C}_f: y=1,5^x$" ,(3,5)) withcolor pourpre;
+label("$\mathcal{C}_g: y=0.7^x$" ,(-2.5,3.2)) withcolor olive;
+label("$x$",(4.8,-0.2));
+label("$y$",(-0.2,7.8));
+vardef u(expr n)=(1.5)**n enddef; 
+taillepoint:=4;
+draw suite(u,0,5) withcolor 0.5blue;
+fin;
+\end{mplibcode}
+
+
+\begin{mplibcode}
+repere(-1,10,1cm,-1,10,1cm);
+draw axex.llft(1,1);
+draw axey.llft(1,1);
+draw papiermillimetre;
+%draw quadrillage(0.5,0.5) dashed evenly;
+path G,H;
+vardef d(expr x)=10*((0.8)**x) enddef;
+vardef e(expr x)=(1.3)**x-1 enddef;
+G= courbefonc(d)(0,10);
+H= courbefonc(e)(0,10);
+draw G withpen pencircle scaled 1 withcolor 0.8red;
+draw H withpen pencircle scaled 1 dashed evenly withcolor 0.9blue;
+
+label("$x$",(9.8,0.2));
+label("$y$",(0.3,9.8));
+fin;
+\end{mplibcode}
+
+
+\begin{mplibcode}
+repere(-3,3,2cm,-1,4,2cm);
+draw axex.llft(1,1);
+draw axey.llft(1,1);
+draw quadrillage(0.5,0.5) dashed evenly;
+path G;
+vardef d(expr x)=2*(3**x) enddef;
+G= courbefonc(d)(-3,3);
+draw G withpen pencircle scaled 1 withcolor 0.8red;
+label("$x$",(2.8,0.1));
+label("$y$",(0.1,3.8));
+label("$\mathcal{C}_f$",(0.5,2.6)) withcolor 0.8red;
+fin;
+\end{mplibcode}
+
+
+
+
+\begin{mplibcode}
+repere(-0.5,9,1.5cm,-10,200,0.8mm);
+draw axex(1,1);
+draw axey(10,20);
+draw cadre;
+pair A,B,C,D,E,F;
+A=(1,80);B=(2,60);C=(3,100);D=(4,120);E=(5,100);F=(6,150);
+marquepoints(A,B,C,D,E,F);
+path G;
+vardef d(expr x)=14*x+52.66 enddef;
+G= courbefonc(d)();
+label("$\mathcal{D}_2: y=14x+52,66$",(7,130)) withcolor pourpre;
+draw G withpen pencircle scaled 1 withcolor pourpre;
+draw projetex(D)--D--projetey(D) dashed evenly;
+draw A--(1,d(1)) dashed evenly;
+draw B--(2,d(2)) dashed evenly;
+draw C--(3,d(3)) dashed evenly;
+%draw D--(4,d(4)) dashed evenly;
+draw E--(5,d(5)) dashed evenly;
+draw F--(6,d(6)) dashed evenly;
+label.urt("$x_4$",(4,0));
+label.urt("$y_4$",(0,120));
+label.urt("$M_4$",D);
+pair Q;
+Q=(4,d(4));
+marquepoint(Q) withcolor pourpre;
+label.lrt("$Q_4$",Q) withcolor pourpre;
+draw Q--projetey(Q) dashed evenly withcolor pourpre;
+label.urt("$ax_4+b$",projetey(Q)) withcolor pourpre;
+fin;
+\end{mplibcode}
+
+\begin{mplibcode}
+repere(-0.5,9,1.5cm,-10,310,0.5mm);
+draw axex(1,1);
+draw axey(10,20);
+draw quadrillage(1,10) dashed evenly;
+draw cadre;
+pair A,B,C,D,E,F;
+A=(1,70);B=(2,90);C=(3,115);D=(4,140);E=(5,170);F=(6,220);
+marquepoints(A,B,C,D,E,F);
+fin;
+\end{mplibcode}
+
+
+
+\begin{mplibcode}
+repere(-0.5,9,1.5cm,-10,310,0.5mm);
+draw axex(1,1);
+draw axey(10,20);
+draw quadrillage(1,10) dashed evenly;
+setquad(0,9,0,300);
+draw cadre;
+pair A,B,C,D,E,F;
+A=(1,70);B=(2,90);C=(3,115);D=(4,140);E=(5,170);F=(6,220);
+marquepoints(A,B,C,D,E,F);
+path Cc;
+vardef c(expr x)=29x+32.7 enddef;
+Cc= courbefonc(c)();
+pair H;
+H=(8,250);
+label("$\mathcal{D}_2$",H) withcolor red;
+draw Cc withpen pencircle scaled 1 withcolor red;
+fin;
+\end{mplibcode}
+
+\begin{mplibcode}
+repere(-0.5,9,1.5cm,-10,310,0.5mm);
+draw axex(1,1);
+draw axey(10,20);
+draw quadrillage(1,10) dashed evenly;
+setquad(0,9,0,300);
+draw cadre;
+pair A,B,C,D,E,F;
+A=(1,70);B=(2,90);C=(3,115);D=(4,140);E=(5,170);F=(6,220);
+marquepoints(A,B,C,D,E,F);
+path Ce;
+vardef e(expr x)=57.111*((1.251)**x) enddef;
+Ce= courbefonc(e)();
+pair I;
+I=(7.5,290);
+label("$\mathcal{C}_e$",I) withcolor violet;
+draw Ce withpen pencircle scaled 1 withcolor violet;
+fin;
+\end{mplibcode}
+
+Mon texte, mon texte, mon texte
+\end{document}

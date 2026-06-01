@@ -1,0 +1,461 @@
+input latexmp;
+%input geometriesyr16;
+%input repere;
+input courbes;
+input couleur;
+input geo;
+
+
+verbatimtex
+%&latex 
+\documentclass[12pt]{article} 
+\usepackage{mathrsfs} 
+\usepackage{amsmath,amsfonts,amssymb}
+\newcommand{\PR}{\mathscr{P}}
+\newcommand{\DR}{\mathscr{D}}
+%\usepackage{preambule}
+\begin{document} 
+etex 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%
+%
+%   I N T E G    F O N C T I O N     D e     L A       B O R N E                       S U P
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+
+beginfig(1);
+
+path t;
+
+t:=(0,-.1cm)--(0,.1cm);
+
+drawarrow  (-5cm,0)--(5cm,0);
+
+label.bot(btex $\mathbb{R}$ etex, (4.7cm,0));
+
+draw t shifted (1cm,0) withcolor bleu_f ;
+draw t shifted (1.5cm,0) withcolor bleu_f ;
+draw t shifted (3.6cm,0) withcolor bleu_f;
+draw t shifted (-1.414cm,0) withcolor bleu_f ;
+draw t shifted (-.6666667cm,0) withcolor bleu_f ;
+draw t shifted (-3cm,0) withcolor bleu_f ;
+
+label.bot(btex $\displaystyle 3 \over 2$ etex, (1.5cm,-.1cm)) withcolor bleu_f;
+label.bot(btex $\sqrt{13}$ etex, (3.6cm,-.1cm)) withcolor bleu_f;
+label.bot(btex $-\sqrt{2}$ etex, (-1.414cm,-.1cm)) withcolor bleu_f;
+label.bot(btex $\displaystyle -2 \over 3$ etex, (-.6666667cm,-.1cm)) withcolor bleu_f;
+label.bot(btex $-3$ etex, (-3cm,-.1cm)) withcolor bleu_f;
+
+pickup pencircle scaled 1bp;
+
+draw t withcolor red;
+draw t shifted (1cm,0) withcolor red ;
+
+label.bot(btex $0$ etex, (0,-.1cm)) withcolor red;
+label.bot(btex $1$ etex, (1cm,-.1cm)) withcolor red;
+
+endfig;
+
+
+beginfig(2);
+
+drawarrow (-5cm,0)--(5cm,0) withcolor bleu_m withpen pencircle scaled 1bp;
+drawarrow (0,-1.5cm)--(0,2.5cm)  withcolor bleu_f withpen pencircle scaled 1bp ;
+
+label.urt(btex $M(a,b)$ etex, (3cm,1.5cm))withcolor 0.6white dashed evenly;
+draw (3cm,-0.2cm)--(3cm,0.2cm)withcolor 0.6white;
+draw (-0.2cm,1.5cm)--(0.2cm,1.5cm) withcolor 0.6white;
+dotlabel.urt(btex $ $ etex, (3cm,1.5cm));
+
+
+
+
+%draw (0cm,-0.2cm)--(0cm,0.2cm);
+draw (0,1.5cm)--(3cm,1.5cm)--(3cm,0) withcolor 0.6white dashed withdots withpen pencircle scaled 1bp;
+
+drawarrow (0,0)--(1cm,0) withcolor bleu_m withpen pencircle scaled 1.2bp;
+drawarrow (0,0)--(0,1cm) withcolor bleu_f withpen pencircle scaled 1.2bp;
+label.bot(btex $\overrightarrow{e_1}$ etex,(0.5cm,-0.2cm));
+label.lft(btex $\overrightarrow{e_2}$ etex,(-0.2cm,0.5cm));
+drawarrow (0,0)--(3cm,1.5cm) withcolor 0.6white withpen pencircle scaled 1bp;
+label.bot(btex $a$ etex,(3cm,-0.2cm));
+label.lft(btex $b$ etex,(-0.2cm,1.5cm)) ;
+label.llft(btex $0$ etex,(-0.2cm,-0.2cm));
+label.bot(btex \textbf{axe r\'eel} etex,(5cm,-0.2cm))withcolor bleu_m withpen pencircle scaled 1bp;
+label.lft(btex \textbf{axe imaginaire} etex,(0cm,2.5cm))withcolor bleu_f withpen pencircle scaled 1bp;
+label.ulft(btex $\overrightarrow{u}$ etex, (1.5cm,0.75cm));
+
+endfig;
+
+
+beginfig(3);
+
+drawarrow (-5cm,0)--(5cm,0) withcolor bleu_m withpen pencircle scaled 1bp;
+drawarrow (0,-1.5cm)--(0,2.5cm)  withcolor bleu_f withpen pencircle scaled 1bp ;
+
+label.urt(btex $M(z)$ etex, (3cm,1.5cm))withcolor 0.6white dashed evenly;
+dotlabel.urt(btex $ $ etex, (3cm,1.5cm));
+label.urt(btex $M( \displaystyle \overline{z})$ etex, (3cm,-1.5cm))withcolor 0.6white dashed evenly;
+dotlabel.urt(btex $ $ etex, (3cm,-1.5cm));
+
+draw(3cm,1.5cm)--(3cm,-1.5cm) withcolor 0.6white dashed evenly;
+
+%draw (3cm,-0.2cm)--(3cm,0.2cm)withcolor rose;
+%draw (-0.2cm,1.5cm)--(0.2cm,1.5cm) withcolor rose;
+
+%draw (0cm,-0.2cm)--(0cm,0.2cm);
+%draw (0,1.5cm)--(3cm,1.5cm)--(3cm,0) withcolor rose dashed withdots withpen pencircle scaled 1bp;
+
+drawarrow (0,0)--(1cm,0) withcolor bleu_m withpen pencircle scaled 1.2bp;
+drawarrow (0,0)--(0,1cm) withcolor bleu_f withpen pencircle scaled 1.2bp;
+label.bot(btex $\overrightarrow{e_1}$ etex,(0.5cm,-0.2cm));
+label.lft(btex $\overrightarrow{e_2}$ etex,(-0.2cm,0.5cm)) ;
+drawarrow (0,0)--(3cm,1.5cm) withcolor 0.6white withpen pencircle scaled 1bp;
+drawarrow (0,0)--(3cm,-1.5cm) withcolor 0.6white withpen pencircle scaled 1bp;
+
+%label.bot(btex $a$ etex,(3cm,-0.2cm))withcolor bleu_m;
+%label.lft(btex $b$ etex,(-0.2cm,1.5cm)) withcolor vert_fonce dashed evenly;
+label.llft(btex $0$ etex,(-0.2cm,-0.2cm));
+label.bot(btex \textbf{axe r\'eel} etex,(5cm,-0.2cm))withcolor bleu_m withpen pencircle scaled 1bp;
+label.lft(btex \textbf{axe imaginaire} etex,(0cm,2.5cm))withcolor bleu_f withpen pencircle scaled 1bp;
+%label.ulft(btex \boldmath$\overrightarrow{u}$\unboldmath etex, (1.5cm,0.75cm))withcolor rose;
+
+endfig;
+
+beginfig(4);
+
+drawarrow (-2cm,0)--(7cm,0) withcolor bleu_m withpen pencircle scaled 1bp;
+drawarrow (0,-1.5cm)--(0,2.5cm)  withcolor bleu_f withpen pencircle scaled 1bp ;
+
+label.urt(btex $M(a+ib)$ etex, (4cm,2cm))withcolor 0.6white dashed evenly;
+dotlabel.urt(btex $ $ etex, (4cm,2cm));
+
+
+draw (4cm,-0.2cm)--(4cm,0.2cm)withcolor 0.6white;
+draw (-0.2cm,2cm)--(0.2cm,2cm) withcolor 0.6white;
+
+%draw (0cm,-0.2cm)--(0cm,0.2cm);
+draw (0,2cm)--(4cm,2cm)--(4cm,0) withcolor 0.6white dashed withdots withpen pencircle scaled 1bp;
+
+drawarrow (0,0)--(1cm,0) withcolor bleu_m withpen pencircle scaled 1.2bp;
+drawarrow (0,0)--(0,1cm) withcolor bleu_f withpen pencircle scaled 1.2bp;
+label.bot(btex $\overrightarrow{e_1}$ etex,(0.5cm,-0.2cm));
+label.lft(btex $\overrightarrow{e_2}$ etex,(-0.2cm,0.5cm));
+drawarrow (0,0)--(4cm,2cm) withcolor 0.6white withpen pencircle scaled 1bp;
+label.bot(btex $a$ etex,(4cm,-0.2cm));
+label.lft(btex $b$ etex,(-0.2cm,2cm));
+label.llft(btex $0$ etex,(-0.2cm,-0.2cm));
+label.bot(btex \textbf{axe r\'eel} etex,(5cm,-0.2cm))withcolor bleu_m withpen pencircle scaled 1bp;
+label.lft(btex \textbf{axe imaginaire} etex,(0cm,2.5cm))withcolor bleu_f withpen pencircle scaled 1bp;
+label.ulft(btex $\sqrt{a^2+b^2}$ etex, (2cm,0.85cm))withcolor 0.6white;
+
+endfig;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% COORDONNEES POLAIRES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+beginfig(5);
+
+pair b,bb;
+b:=(4cm,0);
+bb:=b rotated 30;
+
+drawarrow (-2cm,0)--(7cm,0) withcolor bleu_m withpen pencircle scaled 1bp;
+drawarrow (0,-1.5cm)--(0,2.5cm)  withcolor bleu_f withpen pencircle scaled 1bp ;
+
+label.urt(btex $M(z)$ etex, bb)withcolor 0.6white dashed evenly;
+dotlabel.urt(btex $ $ etex, bb);
+
+pair bx,by; %projetés
+
+bx:= bb yscaled 0;
+by:= bb xscaled 0;
+
+draw by--bb--bx withcolor 0.6white dashed withdots withpen pencircle scaled 1bp;
+
+drawarrow (0,0)--(1cm,0) withcolor bleu_m withpen pencircle scaled 1.2bp;
+drawarrow (0,0)--(0,1cm) withcolor bleu_f withpen pencircle scaled 1.2bp;
+label.bot(btex $\overrightarrow{e_1}$ etex,(0.5cm,-0.2cm));
+label.lft(btex $\overrightarrow{e_2}$ etex,(-0.2cm,0.5cm));
+drawarrow (0,0)--bb withcolor 0.6white withpen pencircle scaled 1bp;
+label.bot(btex $r\,\cos\theta$ etex,bx);
+label.lft(btex $r\,\sin\theta$ etex,by);
+label.llft(btex $0$ etex,(-0.2cm,-0.2cm));
+%label.bot(btex \textbf{axe r\'eel} etex,(5cm,-0.2cm))withcolor bleu_m withpen pencircle scaled 1bp;
+%label.lft(btex \textbf{axe imaginaire} etex,(0cm,2.5cm))withcolor vert_fonce withpen pencircle scaled 1bp;
+label.ulft(btex $r$ etex, 0.5*bb)withcolor 0.6white;
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%Tracé de la flèche arrondie
+%%%%%%%%%%%%%%%%%%%%%%
+%pair b; %axe des x
+pair C; % point de départ de la flèche
+pair D; % point d'arrivée de la flèche
+
+
+C=1/3(origin+b);
+D=C rotated 30;
+
+drawarrow C{dir(90+angle (C))}..{dir(90+angle (D))}D;
+
+label.rt(btex $\theta$ etex,C rotated 15);
+
+endfig;
+
+
+beginfig(6);
+numeric u;
+u=2.5cm ;
+drawarrow (-1.2*u,0)--(1.2*u,0);
+drawarrow (0,-1.2*u)--(0,1.2*u);
+draw fullcircle scaled 5cm;
+draw (0,0)--(u,(sind(45)/cosd(45))*u)withcolor 0.4white withpen pencircle scaled 1bp ;
+%draw (0,sind(45)*u)--(cosd(45)*u,sind(45)*u) dashed evenly;
+draw (cosd(45)*u,0)--(cosd(45)*u,sind(45)*u) dashed evenly withcolor bleu_f withpen pencircle scaled 1bp ;
+draw (u,-1.3*u)--(u,1.3*u) withcolor bleu_m withpen pencircle scaled 1bp ;draw((cosd45)*u,sind(45)*u)--(u,0);
+drawarrow (0.22*u,0)..(0.22*cosd(45)*u,0.22*sind(45)*u);
+dotlabel.llft(btex $0$ etex, (0,0));
+dotlabel.lrt(btex $I$ etex, (u,0));
+%dotlabel.ulft(btex $J$ etex, (0,u));
+%dotlabel.lft(btex $\sin x$ etex, (0,sind(45)*u));
+dotlabel.bot(btex $C$ etex, (cosd(45)*u,0));
+dotlabel.rt(btex $T$ etex , (u,(sind(45)/cosd(45))*u));
+
+dotlabel.top(btex $ $ etex,(cosd(45)*u,sind(45)*u));label.top(btex $M$ etex,(cosd(45)*u,sind(45)*1.1*u));
+endfig;
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%    QUADRILATERES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%@AUTEUR: Claudy Diguet
+numeric u;
+u = 1cm;
+
+
+
+beginfig(7);
+
+draw (1.5,0)*u--(2,0)*u withpen pencircle scaled 1.5pt;
+
+draw (2,7)*u--(2,-7)*u withpen pencircle scaled 1.5pt;
+
+drawarrow (2,7)*u--(16.3,7)*u withpen pencircle scaled 1.5pt;
+
+drawarrow (2,5)*u--(6.5,5)*u withpen pencircle scaled 1.5pt;
+drawarrow (2,3)*u--(6.5,3)*u withpen pencircle scaled 1.5pt;
+drawarrow (2,1)*u--(6.5,1)*u withpen pencircle scaled 1.5pt;
+drawarrow (2,-5)*u--(6.5,-5)*u withpen pencircle scaled 1.5pt;
+drawarrow (2,-3)*u--(6.5,-3)*u withpen pencircle scaled 1.5pt;
+drawarrow (2,-1)*u--(6.5,-1)*u withpen pencircle scaled 1.5pt;
+
+drawarrow (2,-7)*u--(16.3,-7)*u withpen pencircle scaled 1.5pt;
+
+draw (6.5,5)*u--(6.5,-5)*u withpen pencircle scaled 1.5pt;
+
+draw (6.5,0)*u--(7,0)*u withpen pencircle scaled 1.5pt;
+
+draw (11,0)*u--(11.5,0)*u withpen pencircle scaled 1.5pt;
+
+draw (11.5,5)*u--(11.5,-5)*u withpen pencircle scaled 1.5pt;
+
+drawarrow (11.5,5)*u--(16.3,5)*u withpen pencircle scaled 1.5pt;
+drawarrow (11.5,3)*u--(16.3,3)*u withpen pencircle scaled 1.5pt;
+
+draw (16.3,7)*u--(16.3,3)*u withpen pencircle scaled 1.5pt;
+
+draw (16.3,5)*u--(16.8,5)*u withpen pencircle scaled 1.5pt;
+
+draw (19.2,5)*u--(20,5)*u withpen pencircle scaled 1.5pt;
+
+draw (20,5)*u--(20,1)*u withpen pencircle scaled 1.5pt;
+
+drawarrow (20,3)*u--(24.5,3)*u withpen pencircle scaled 1.5pt;
+drawarrow (20,1)*u--(24.5,1)*u withpen pencircle scaled 1.5pt;
+
+
+
+drawarrow (11.5,-5)*u--(16.3,-5)*u withpen pencircle scaled 1.5pt;
+drawarrow (11.5,-3)*u--(16.3,-3)*u withpen pencircle scaled 1.5pt;
+
+draw (16.3,-7)*u--(16.3,-3)*u withpen pencircle scaled 1.5pt;
+
+draw (16.3,-5)*u--(16.8,-5)*u withpen pencircle scaled 1.5pt;
+
+draw (19.2,-5)*u--(20,-5)*u withpen pencircle scaled 1.5pt;
+
+draw (20,-5)*u--(20,-1)*u withpen pencircle scaled 1.5pt;
+
+drawarrow (20,-3)*u--(24.5,-3)*u withpen pencircle scaled 1.5pt;
+drawarrow (20,-1)*u--(24.5,-1)*u withpen pencircle scaled 1.5pt;
+
+
+draw (24.5,3)*u--(24.5,-3)*u withpen pencircle scaled 1.5pt;
+
+draw (24.5,0)*u--(25,0)*u withpen pencircle scaled 1.5pt;
+
+
+
+
+
+
+
+
+
+
+label.top(btex $ qui~a~ses~diagonales~qui $ etex,(4.25,5)*u);
+label.bot(btex $ se~coupent~en~leur~milieu $ etex,(4.25,5)*u);
+
+label.top(btex $ qui~a~tous~ses~c\hat{o}t\acute{e}s~oppos\acute{e}s $ etex,(4.25,3)*u);
+label.bot(btex $ parall\grave{e}les $ etex,(4.25,3)*u);
+
+label.top(btex $ qui~a~tous~ses~c\hat{o}t\acute{e}s~oppos\acute{e}s $ etex,(4.25,1)*u);
+label.bot(btex $ de~m\hat{e}me~longueur $ etex,(4.25,1)*u);
+
+label.top(btex $ qui~a~\underline{deux}~c\hat{o}t\acute{e}s~parall\grave{e}les $ etex,(4.25,-1)*u);
+label.bot(btex $ et~de~m\hat{e}me~longueur $ etex,(4.25,-1)*u);
+
+label.top(btex $ qui~a~tous~ses~angles $ etex,(4.25,-3)*u);
+label.bot(btex $ oppos\acute{e}s~de~m\hat{e}me~mesure $ etex,(4.25,-3)*u);
+
+label.top(btex $ qui~a~ses~angles $ etex,(4.25,-5)*u);
+label.bot(btex $ cons\acute{e}cutifs~suppl\acute{e}mentaires $ etex,(4.3,-5)*u);
+
+
+
+
+label.top(btex $ qui~a~3~angles~droits $ etex,(9,7)*u);
+
+label.top(btex $ qui~a~un~angle $ etex,(13.9,5)*u);
+label.bot(btex $ droit $ etex,(13.9,5)*u);
+
+label.top(btex $ qui~a~ses~diagonales $ etex,(13.9,3)*u);
+label.bot(btex $ de~m\hat{e}me~longueur $ etex,(13.9,3)*u);
+
+
+
+
+label.top(btex $ qui~a~4~c\hat{o}t\acute{e}s~de~m\hat{e}me~longueur $ etex,(9,-7)*u);
+
+
+label.top(btex $ qui~a~deux~c\hat{o}t\acute{e}s~cons\acute{e}cutifs $ etex,(13.9,-3)*u);
+label.bot(btex $ de~m\hat{e}me~longueur $ etex,(13.9,-3)*u);
+
+label.top(btex $ qui~a~ses~diagonales $ etex,(13.9,-5)*u);
+label.bot(btex $ perpendiculaires $ etex,(13.9,-5)*u);
+
+
+
+
+
+label.top(btex $ qui~a~deux~c\hat{o}t\acute{e}s~cons\acute{e}cutifs $ etex,(22.25,3)*u);
+label.bot(btex $ de~m\hat{e}me~longueur $ etex,(22.25,3)*u);
+
+label.top(btex $ qui~a~ses~diagonales $ etex,(22.25,1)*u);
+label.bot(btex $ perpendiculaires $ etex,(22.25,1)*u);
+
+
+label.top(btex $ qui~a~un~angle $ etex,(22.25,-3)*u);
+label.bot(btex $ droit $ etex,(22.25,-3)*u);
+
+label.top(btex $ qui~a~ses~diagonales $ etex,(22.25,-1)*u);
+label.bot(btex $ de~m\hat{e}me~longueur $ etex,(22.25,-1)*u);
+
+
+
+label(btex $ Quadrilat\grave{e}re $ etex,(0,0)*u);
+draw (1.5,-1)*u--(1.5,1)*u withpen pencircle scaled 1.5pt;
+draw (-1.5,1.5)*u--(1.5,1)*u withpen pencircle scaled 1.5pt;
+draw (-1.5,1.5)*u--(-2,-2)*u withpen pencircle scaled 1.5pt;
+draw (-2,-2)*u--(1.5,-1)*u withpen pencircle scaled 1.5pt;
+
+
+
+
+label(btex $ Parall\acute{e}logramme $ etex,(9,0)*u);
+draw (7.25,0.7)*u--(11.25,0.7)*u withpen pencircle scaled 1.5pt;
+draw (6.75,-0.7)*u--(10.75,-0.7)*u withpen pencircle scaled 1.5pt;
+draw (6.75,-0.7)*u--(7.25,0.7)*u withpen pencircle scaled 1.5pt;
+draw (11.25,0.7)*u--(10.75,-0.7)*u withpen pencircle scaled 1.5pt;
+
+
+
+
+label(btex $ Rectangle $ etex,(18,5)*u);
+draw (16.8,5.7)*u--(19.2,5.7)*u--(19.2,4.3)*u--(16.8,4.3)*u--cycle withpen pencircle scaled 1.5pt;
+
+
+
+label(btex $ Losange $ etex,(18,-5)*u);
+draw (16.8,-5)*u--(18,-6)*u--(19.2,-5)*u--(18,-4)*u--cycle withpen pencircle scaled 1.5pt;
+
+
+
+label(btex $ Carr\acute{e} $ etex,(26.5,0)*u);
+draw (25,1.5)*u--(28,1.5)*u--(28,-1.5)*u--(25,-1.5)*u--cycle withpen pencircle scaled 1.5pt;
+
+
+
+
+
+
+endfig;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% MULTIPLICATION PAR i
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+beginfig(8);
+
+drawarrow (-5cm,0)--(5cm,0);
+drawarrow(0,-4cm)--(0,4cm);
+drawarrow(0,0)--(3cm,2cm) withpen pencircle scaled 1bp;
+drawarrow(0,0)--(0,1cm);
+drawarrow(0,0)--(1cm,0);
+drawarrow(0,0)--(-3cm,-2cm) withpen pencircle scaled 1bp dashed evenly  withcolor bleu_m;
+drawarrow(0,0)--(-2cm,3cm) withpen pencircle scaled 1bp dashed withdots scaled 0.5 withcolor red;
+
+%
+%
+%label.rt(btex Imaginaires etex,(0,4cm));
+%label.top(btex r\'eels etex,(5cm,0cm));
+label.llft(btex 0 etex,(0,-0.2cm));
+label.urt(btex $M(3\ ,\ 2)$ etex,(3cm,2cm));
+label.bot(btex $\overrightarrow{e_1}$ etex,(0.5cm,0));
+label.ulft(btex $\overrightarrow{e_2}$ etex,(0,0.7cm));
+label.llft(btex $M'(-3\ ,\ -2)$ etex,(-3cm,-2cm));
+label.top(btex $M''(-2\ ,\ 3)$ etex,(-2cm,3cm));
+draw fullcircle scaled 7.212cm dashed evenly ;
+mark_rt_angle((3,2),(0,0),(-2,3))
+
+
+
+endfig;
+
+
+
+
+end

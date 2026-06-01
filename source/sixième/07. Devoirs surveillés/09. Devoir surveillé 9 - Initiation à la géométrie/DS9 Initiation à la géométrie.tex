@@ -1,0 +1,76 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\pagestyle{empty}
+\noindent NOM, Prénom et classe : \dotfill
+
+\section*{Devoir surveillé 9 - Initiation à la géométrie}
+\noindent\textit{Le soin des tracés et le codage des figures seront pris en compte.} \hfill \textit{Durée : 45 minutes}
+
+\medskip
+\paragraph{Exercice 1} \hfill \textbf{4 points}
+
+\noindent Observe la figure puis complète avec les symboles $\in$ ou $\notin$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,line cap=round,line join=round]
+\draw[line width=1.2pt] (-4,-1)--(4,2);
+\node[anchor=south] at (4,2) {$(d)$};
+\fill (-2.4,-0.4) circle (2pt) node[below] {$A$};
+\fill (0,0.5) circle (2pt) node[below] {$B$};
+\fill (2.4,1.4) circle (2pt) node[above] {$C$};
+\fill (-1,1.8) circle (2pt) node[above] {$D$};
+\end{tikzpicture}
+\end{center}
+
+\[
+A \dots (d) \qquad B \dots (d) \qquad C \dots (d) \qquad D \dots (d)
+\]
+
+\medskip
+\paragraph{Exercice 2} \hfill \textbf{4 points}
+
+\noindent Complète les phrases avec les mots : \textit{droite, segment, demi-droite, extrémité, appartient}.
+\begin{enumerate}
+\item $[AB]$ désigne le \dotfill d'extrémités $A$ et $B$.
+\item $(AB)$ désigne la \dotfill passant par $A$ et $B$.
+\item $[AB)$ désigne la \dotfill d'origine $A$ passant par $B$.
+\item Si un point est sur une droite, on dit qu'il \dotfill à cette droite.
+\end{enumerate}
+
+\medskip
+\paragraph{Exercice 3} \hfill \textbf{6 points}
+
+\noindent Sur le quadrillage ci-dessous :
+\begin{enumerate}
+\item Place trois points $A$, $B$ et $C$ non alignés.
+\item Trace la droite $(AB)$.
+\item Trace le segment $[BC]$.
+\item Trace la demi-droite $[CA)$.
+\end{enumerate}
+
+\medskip\noindent\grandscarreaux{\linewidth}{7cm}
+
+\medskip
+\paragraph{Exercice 4} \hfill \textbf{6 points}
+
+\noindent Reproduis la figure à droite en respectant les longueurs sur le quadrillage.
+
+\begin{center}
+\begin{tabular}{cc}
+\begin{tikzpicture}[scale=0.65,line cap=round,line join=round]
+\draw[lightgray] (0,0) grid (6,5);
+\draw[line width=1.2pt] (1,1)--(5,1)--(4,4)--(2,3)--cycle;
+\fill (1,1) circle (2pt) node[below left] {$A$};
+\fill (5,1) circle (2pt) node[below right] {$B$};
+\fill (4,4) circle (2pt) node[above right] {$C$};
+\fill (2,3) circle (2pt) node[above left] {$D$};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.65]
+\draw[lightgray] (0,0) grid (8,5);
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+
+\end{document}

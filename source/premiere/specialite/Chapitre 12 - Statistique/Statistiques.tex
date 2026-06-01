@@ -1,0 +1,462 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\usepackage{yhmath} 
+\usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+
+\newcommand{\arc}[1]{\wideparen{#1}}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+\newcommand{\sysd}[2]{%
+       \left\{
+       \begin{aligned}
+          #1\\
+          #2\\
+       \end{aligned}
+       \right.%
+       }
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+%\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\barre}[1]{\overline{#1}}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+
+\begin{document}
+\tableofcontents
+\chapter{Statistiques}
+\section{G\'en\'eralit\'es}
+Une \'etude statistique descriptive s'effectue sur une population (des personnes, des villes, des objets...) dont les \'el\'ements sont des individus et consiste à observer et \'etudier un m\^eme aspect sur chaque individu, nomm\'e caract\`ere (taille, nombre d'habitants, consommation...).
+
+Il existe deux types de caract\`eres :
+\begin{enumerate}
+\item[$\bullet$]   \textit{quantitatif} : c'est un caract\`ere auquel on peut associer un nombre c'est-à-dire, pour simplifier, que l'on peut mesurer. On distingue alors deux types de caract\`eres quantitatifs :
+ \begin{itemize}
+ \item   \textit{discret} : c'est un caract\`ere quantitatif qui ne prend qu'un nombre fini de valeurs. Par exemple le nombre d'enfants d'un couple.
+ \item  \textit{continu} : c'est un caract\`ere quantitatif qui, th\'eoriquement, peut prendre toutes les valeurs d'un intervalle de l'ensemble des nombres r\'eels. Ses valeurs sont alors regroup\'ees en classes. Par exemple la taille d'un individu, le nombre d'heures pass\'ees devant la t\'el\'evision.
+ \end{itemize}
+\item[$\bullet$]  \textit{qualitatif} : comme la profession, la couleur des yeux, la nationalit\'e. Dans ce dernier cas, \og nationalit\'e française \fg, \og nationalit\'e allemande \fg{} etc. sont les modalit\'es du caract\`ere.
+\end{enumerate}
+En g\'en\'eral une s\'erie statistique à caract\`ere discret se pr\'esente sous la forme :
+	\begin{center}
+	\begin{tabular}{|c|c|c|p{2cm}|c|}
+			\hline
+			Valeurs & $x_{1}$ & $x_{2}$ & $\ldots\ldots\ldots\ldots$ & $x_{p}$  \\
+			\hline
+			Effectifs & $n_{1}$ & $n_{2}$ & $\ldots\ldots\ldots\ldots$ & $n_{p}$  \\
+			\hline
+			Fr\'equences & $f_{1}$ & $f_{2}$ & $\ldots\ldots\ldots\ldots$ & $f_{p}$  \\
+			\hline
+	\end{tabular}
+	\end{center}
+On \'ecrira souvent : la s\'erie $(x_{i},n_{i})$. (On n'indique pas le nombre de valeurs lorsqu'il n'y a pas d'ambiguït\'e). Souvent on notera $N$ l'effectif total de cette s\'erie donc $N=n_{1}+n_{2}+ \cdots +n_{p}$.
+
+Lorsqu'une s\'erie comporte un grand nombre de valeurs, on cherche à la r\'esumer, si possible, à l'aide de quelques nombres significatifs appel\'es param\`etres.
+
+La suite du cours pr\'esente quelques param\`etres permettant de r\'esumer des s\'eries à caract\`ere quantitatif qui seront illustr\'es à l'aide des exemples suivants :\\
+
+\textbf{\textit{S\'erie 1}}
+
+Une \'etude sur le nombre d'employ\'es dans les commerces du centre d'une petite ville a donn\'e les r\'esultats suivants :
+
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}\hline
+Nombre d'employ\'es & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 \\ \hline
+Effectif & 11 & 18 & 20 & 24 & 16 & 14 & 11 & 6 \\ \hline
+\end{tabular}
+\end{center}
+
+\textbf{\textit{S\'erie 2}}
+
+Une \'etude sur la dur\'ee de vie en heures de 200 ampoules \'electriques a donn\'e les r\'esultats suivants :
+
+\begin{center}
+\begin{tabular}{|m{3cm}|c|c|c|c|c|}\hline
+Dur\'ee de vie en centaine d'heures & [12 ; 13[ & [13 ; 14[ & [14 ; 15[ & [15 ; 16[ & [16 ; 17[ \\ \hline
+Effectif & 28 & 46 & 65 & 32 & 29 \\ \hline
+\end{tabular}
+\end{center}
+
+
+
+\section{Param\`etres de position}
+\subsection{Param\`etres de position de tendance centrale}
+\subsubsection*{Mode - Classe modale}
+\begin{defn}
+Le mode d'une s\'erie statistique est la valeur du caract\`ere qui correspond au plus grand effectif.
+
+Dans le cas d'une s\'erie à caract\`ere quantitatif continu dont les valeurs sont regroup\'ees en classes, la classe modale est la classe de plus grand effectif.
+\end{defn}
+
+\begin{rem}
+Il peut y avoir plusieurs modes ou classes modales.
+\end{rem}
+
+\begin{exemple}
+D\'eterminer le mode et la classe modale des s\'eries 1 et 2.
+\end{exemple}
+
+
+Pour la s\'erie 1, le mode est 4.
+
+Pour la s\'erie 2, la classe modale est l'intervalle $[14;15[$.
+
+
+\subsubsection*{M\'ediane}
+\begin{defn}
+La m\'ediane d'une s\'erie statistique est un r\'eel not\'e $M_e$ tel que au moins 50\% des valeurs sont inf\'erieures ou \'egales à $M_e$ et au moins 50\% des valeurs sont sup\'erieures ou \'egales à $M_e$.
+\end{defn}
+
+Dans le cas d'une s\'erie à caract\`ere discret, la m\'ediane s'obtient en ordonnant les valeurs dans l'ordre croissant et en prenant la valeur centrale si $N$ est impair et la moyenne des valeurs centrales si $N$ est pair.
+
+Dans le cas d'une s\'erie à caract\`ere continu, la m\'ediane peut s'obtenir de mani\`ere graphique en prenant la valeur correspondant à $0,5$ sur le polygone des fr\'equences cumul\'ees croissantes.
+
+\begin{exemple}
+D\'eterminer la m\'ediane de la s\'erie 1 et la classe m\'ediane de la s\'erie 2.
+\end{exemple}
+
+
+La m\'ediane de la s\'erie 1 est 4 qui correspond à la moyenne de la soixanti\`eme et de la soixante et uni\`eme valeur.
+
+La centi\`eme valeur de la s\'erie 2 appartient à l'intervalle $[14;15[$ qui est donc la classe m\'ediane.
+
+\newpage
+\subsubsection*{Moyenne}
+\begin{defn}
+La moyenne d'une s\'erie statistique $(x_i,n_i)$ est le r\'eel, not\'e $\bar{x}$ d\'efini par :
+\[
+\bar{x}= \frac{n_1 x_1+n_2 x_2+\cdots+ n_px_p}{N}=\frac{\ds\sum_{i=1}^{p}n_i x_i}{N}
+\]
+Dans le cas d'une s\'erie à caract\`ere quantitatif continu dont les valeurs sont regroup\'ees en classes, $x_i$ d\'esigne le centre de chaque classe.
+\end{defn}
+
+%\ifthenelse{\value{version}>0}{}{\newpage}
+\begin{exemple}
+D\'eterminer la moyenne des s\'eries 1 et 2.
+\end{exemple}
+
+
+\begin{align*}
+\bar{x}_1&=\dfrac{11\times1+18\times2+20\times3+24\times4+16\times5+14\times6+11\times7+6\times8}{11+18+20+24+16+14+11+6}=4,1\\
+\bar{x}_2&=\dfrac{28\times12,5+46\times13,5+65\times14,5+32\times15,5+29\times16,5}{28+46+65+32+29}=14,44
+\end{align*}
+
+
+\subsection{Param\`etres de position non centrale}
+\subsubsection*{Quartiles}
+\begin{defn}
+Le premier quartile $Q_{1}$ est la plus petite valeur du caract\`ere telle qu'au moins $25\%$ des termes de la s\'erie aient une valeur qui lui soit inf\'erieure ou \'egale.
+
+Le troisi\`eme quartile $Q_{3}$ est la plus petite valeur du caract\`ere telle qu'au moins $75\%$ des termes de la s\'erie aient une valeur qui lui soit inf\'erieure ou \'egale.
+\end{defn}
+
+Dans le cas d'une s\'erie à caract\`ere discret, les quartiles s'obtiennent en ordonnant les valeurs dans l'ordre croissant puis :
+\begin{itemize}
+\item Si $N$ est multiple de 4 alors $Q_1$ est la valeur de rang $\frac{N}{4}$ et $Q_3$ est la valeur de rang $\frac{3N}{4}$.
+\item Si $N$ n'est pas multiple de 4 alors $Q_1$ est la valeur de rang imm\'ediatement sup\'erieur à $\frac{N}{4}$ et $Q_3$ est la valeur de rang imm\'ediatement sup\'erieur à $\frac{3N}{4}$.
+\end{itemize}
+\begin{exemple}
+D\'eterminer les quartiles de la s\'erie 1
+\end{exemple}
+
+
+Le nombre de donn\'ees est multiple de 4 : 120. Le premier quartile est donc la 30\up{e} valeur et le troisi\`eme quartile la 90\up{e} valeur.
+\par On a ainsi : $Q_1=3$ et $Q_3=6$.
+
+
+Dans le cas d'une s\'erie à caract\`ere continu, les quartiles peuvent s'obtenir à partir du polygone des fr\'equences cumul\'ees croissantes où $Q_{1}$ est la valeur correspondant à la fr\'equence cumul\'ee croissante \'egale $0,25$ et  $Q_{3}$ est la valeur correspondant à la fr\'equence cumul\'ee croissante \'egale $0,75$.
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{exemple}
+Repr\'esenter le polygone des fr\'equences cumul\'ees croissantes de la s\'erie 2. D\'eterminer graphiquement la m\'ediane et les quartiles.
+\end{exemple}
+\begin{center}
+%\ifthenelse{\value{version}=0}%
+           \includegraphics{CoursStatistiquesFigures.2}
+           %{\ifthenelse{\value{version}=1}%
+          %             {\includegraphics{CoursStatistiquesFigures.3}}%
+%                       {\includegraphics{CoursStatistiquesFigures.4}}}
+\end{center}
+
+
+On obtient $Q_1\simeq13,5$, $M_e=14,4$ et $Q_3\simeq15,3$
+
+
+\begin{exemple}
+Retrouver ces r\'esultats par le calcul.
+\end{exemple}
+
+
+Le premier quartile est dans la classe $[13;14[$. En posant $A(13;14)$ et $B(14;37)$, $Q_1$ est le point de $(AB)$ d'ordonn\'ee 25.
+
+Le coefficient directeur de $(AB)$ est \'egal à $\dfrac{37-14}{14-13}=23$ et l'ordonn\'ee à l'origine se calcule en utilisant, par exemple, les coordonn\'ees de $A$.
+
+On obtient l'\'equation suivante : $(AB) : y=23x-285$
+
+$Q_1$ \'etant le point de $(AB)$ d'ordonn\'ee 25, il est solution de l'\'equation $25=23Q_1-285$. On obtient $Q_1=\dfrac{310}{23}\simeq13,5$
+
+Avec des raisonnements analogues, on obtient $M_e=14,4$ et $Q_3\simeq15,3$
+
+\newpage
+\section{Param\`etres de dispersion}
+\subsection{\'Etendue}
+\begin{defn}
+L'\'etendue est la diff\'erence entre la plus grande valeur du caract\`ere et la plus petite.
+\end{defn}
+
+\begin{rem}
+L'\'etendue est tr\`es sensible aux valeurs extr\^emes.
+\end{rem}
+
+\begin{exemple}
+D\'eterminer l'\'etendue des s\'eries 1 et 2
+\end{exemple}
+
+
+L'\'etendue de la s\'erie 1 est $8-1=7$.
+
+L'\'etendue de la s\'erie 2 est $17-12=5$.
+
+
+\subsection{\'Ecart interquartile}
+\begin{defn}
+L'intervalle interquartile est l'intervalle $[Q_{1};Q_{3}]$.
+
+L'\'ecart interquartile est le nombre $Q_{3}-Q_{1}$. C'est la longueur de l'intervalle interquartile.
+\end{defn}
+
+\begin{rem}
+Contrairement à l'\'etendue, l'\'ecart interquartile \'elimine les valeurs extr\^emes, ce peut \^etre un avantage. En revanche il ne prend en compte que $50\%$ de l'effectif, ce peut \^etre un inconv\'enient.
+\end{rem}
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{exemple}
+D\'eterminer l'intervalle interquartile et l'\'ecart interquartile des s\'eries 1 et 2.
+\end{exemple}
+
+
+Pour la s\'erie 1 : l'intervalle interquartile est $[3;6]$. L'\'ecart interquartile est donc 3.
+
+Pour la s\'erie 2 : l'intervalle interquartile est $[13,5;15,3]$. L'\'ecart interquartile est donc 1,8.
+
+
+\subsection{Diagramme en bo\^ite}
+On construit un diagramme en bo\^ite de la façon suivante :
+\begin{itemize}
+\item[$\bullet$]  les valeurs du caract\`ere sont repr\'esent\'ees sur un axe (vertical ou horizontal) ;
+\item [$\bullet$] on place sur cet axe, le minimum, le maximum, les quartiles et la m\'ediane de la s\'erie ;
+\item[$\bullet$]  on construit alors un rectangle parall\`element à l'axe, dont la longueur est l'interquartile et la largeur arbitraire.
+\end{itemize}
+\begin{center}
+	\includegraphics{CoursStatistiquesFigures.1}
+\end{center}
+
+\begin{rem}
+Ce diagramme permet non seulement de visualiser la dispersion d'une s\'erie mais aussi de comparer plusieurs s\'eries entre elles.
+\end{rem}
+
+\begin{exemple}
+Construire le diagramme en boîte de la s\'erie 1
+\end{exemple}
+
+
+\begin{center}
+%	\ifthenelse{\value{version}>0}%
+%	   {\ifthenelse{\value{version}=1}%
+	\includegraphics{CoursStatistiquesFigures.5}
+	   %   {\phantom{\includegraphics{CoursStatistiquesFigures.6}}}}%
+	   %{\includegraphics{CoursStatistiquesFigures.5}}
+\end{center}
+
+
+\subsection{Variance et \'ecart-type}
+Pour mesurer la dispersion d'une s\'erie, on peut s'int\'eresser à la moyenne des distances des valeurs à la moyenne. On utilise plutôt les carr\'es des distances qui facilitent les calculs.
+
+\begin{defn}
+On appelle variance d'une s\'erie quelconque à caract\`ere quantitatif discret le nombre :
+\[
+V=\frac{1}{N}\sum_{i=1}^{p}n_{i}(x_{i}-\bar{x})^{2}=\sum_{i=1}^{p}f_{i}(x_{i}-\bar{x})^{2}
+\]
+On appelle \'ecart-type de cette s\'erie le nombre $\sigma=\sqrt{V}$.
+\end{defn}
+
+Dans le cas d'une s\'erie à caract\`ere quantitatif continu dont les valeurs sont regroup\'ees en classes, $x_i$ d\'esigne le centre de chaque classe.
+
+\vspace{2ex}
+\begin{prop}
+On peut calculer la variance de la façon suivante :
+\[V=\frac{1}{N}\sum_{i=1}^{n}n_{i}x_{i}^{2}-\bar{x}^{2}\]
+\end{prop}
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+\begin{demo}
+\begin{align*}
+V&=\frac{1}{N}\sum_{i=1}^{p}n_{i}(x_{i}-\bar{x})^{2}
+= \frac{1}{N}\sum_{i=1}^{p}n_{i}x_{i}^{2}-2n_{i}x_{i}\bar{x}+n_{i}\bar{x}^{2}\\
+&= \frac{1}{N}\sum_{i=1}^{p}n_{i}x_{i}^{2} - 2\bar{x}\times\frac{1}{N}\sum_{i=1}^{n}n_{i}x_{i} + \bar{x}^{2}\times\frac{1}{N}\sum_{i=1}^{n}n_{i}
+= \frac{1}{N}\sum_{i=1}^{p}n_{i}x_{i}^{2}-2\bar{x}^2+\bar{x}^{2}\\
+&= \frac{1}{N}\sum_{i=1}^{n}n_{i}x_{i}^{2}-\bar{x}^{2}
+\end{align*}
+\end{demo}
+
+\begin{exemple}
+D\'eterminer les variances et \'ecart-types des s\'eries 1 et 2.
+\end{exemple}
+
+
+Pour la s\'erie 1 : $V_1=\dfrac{571}{150}\simeq3,8$ et $\sigma_1=\sqrt{V_1}\simeq1,95$
+
+Pour la s\'erie 2 : $V_2=1,5264$ et $\sigma_1=\sqrt{V_2}\simeq1,24$
+
+
+\vspace{2ex}
+\begin{prop}
+La fonction $\ds g~: t \longmapsto  \frac{1}{N}\sum_{i=1}^{p} n_{i}(x_{i}-t)^{2}$ admet un minimum atteint en $t=\bar{x}$ (la moyenne de la s\'erie) et ce minimum vaut $V$ (la variance de la s\'erie).
+\end{prop}
+
+\begin{demo}
+Pour tout $t\in\R$ :
+\begin{multline*}
+g(t)=\frac{1}{N}\sum_{i=1}^{p} n_{i}(x_{i}-t)^{2}
+= \frac{1}{N}\sum_{i=1}^{p}n_{i}x_{i}^{2}-2n_{i}x_{i}t+n_{i}t^{2}\\
+= \left( \frac{1}{N}\sum_{i=1}^{p}n_{i} \right)t^{2} - 2\times\left(\frac{1}{N}\sum_{i=1}^{n}n_{i}x_{i} \right)t + \frac{1}{N}\sum_{i=1}^{p}n_{i}x_{i}^{2}
+= t^{2}-2\bar{x}t+\frac{1}{N}\sum_{i=1}^{p}n_{i}x_{i}^{2}
+\end{multline*}
+$g$ est un polynôme du second degr\'e qui atteint son minimum en $\dfrac{2\bar{x}}{2}=\bar{x}$. Ce minimum est $g(\bar{x})=\frac{1}{N}\sum_{i=1}^{p} n_{i}(x_{i}-\bar{x})^{2}=V$
+\vspace{-1ex}
+\end{demo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Influence d'une transformation affine}
+\begin{prop}
+Soit $(x_i,n_i)$  une s\'erie statistique de m\'ediane $M_x$, de quartiles $Q_{1x}$ et $Q_{3x}$, de moyenne $\bar{x}$, de variance $V_x$ et d'\'ecart-type $\sigma_x$.
+
+Si, pour tout $i$, $y_i=ax_i+b$, où $a$ et $b$ sont des r\'eels, alors les param\`etres de la s\'erie $(y_i,n_i)$ sont :
+\begin{itemize}
+\item M\'ediane : $M_y=aM_x+b$
+\item Quartiles : Si $a>0$, $Q_{1y}=aQ_{1x}+b$ et $Q_{3y}=aQ_{3x}+b$
+\item Moyenne : $\bar{y}=a\bar{x}+b$
+\item Variance : $V_y=a^2V_x$
+\item \'ecart-type : $\sigma_y=|a|\sigma_x$
+\end{itemize}
+\end{prop}
+
+%\ifthenelse{\value{version}>0}{\newpage}{}
+
+\begin{exemple}
+D\'eterminer les param\`etres de la s\'erie 2 où la dur\'ee de vie est exprim\'ee en minutes au delà de 12 heures.
+\end{exemple}
+
+
+Les nouvelles valeurs de la s\'erie sont obtenues en appliquant aux valeurs de d\'epart la transformation affine $x \mapsto 60x-720$.
+
+On obtient alors :
+
+$M_y=60M_x-720=60\times14,4-720=144$
+
+$Q_{1y}=60Q_{1x}-720=60\times\dfrac{310}{23}-720\simeq 88,7$ \quad et \quad $Q_{3y}=60Q_{3x}-720=60\times\dfrac{245,5}{16}-720\simeq200,6$
+
+$\bar{y}=60\bar{x}-720=146,4$
+
+$V_y=60^2V_x=5495,04$
+
+$\sigma_y=60\sigma_x\simeq74,13$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{R\'esum\'e d'une s\'erie statistique}
+On r\'esume souvent une s\'erie statistique par une mesure de tendance centrale associ\'ee à une mesure de dispersion. les plus utilis\'ees sont les suivantes :
+\begin{itemize}
+\item[$\bullet$] Le couple \textit{m\'ediane ; \'ecart interquartile}.
+
+Il est insensible aux valeurs extr\^emes et permet de comparer rapidement deux s\'eries (par exemple grâce au diagramme en boîte) mais sa d\'etermination n'est pas toujours pratique car il faut classer les donn\'ees et il n'est pas possible d'obtenir la m\'ediane d'un regroupement de s\'eries.
+\item[$\bullet$] Le couple \textit{moyenne ; \'ecart-type}.
+
+Il est sensible aux valeurs extr\^emes mais se pr\^ete mieux aux calculs. On peut notamment obtenir la moyenne et l'\'ecart-type d'un regroupement de s\'eries connaissant la moyenne et l'\'ecart-type des s\'eries de d\'epart.
+\end{itemize}
+\end{document}

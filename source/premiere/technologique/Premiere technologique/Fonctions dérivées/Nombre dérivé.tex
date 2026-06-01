@@ -1,0 +1,285 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\ds}{\displaystyle}
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+\newcommand{\poly}[1][a]{#1_0+#1_1x+\cdots+#1_nx^n}
+
+%%% Lecon creuse/pleine
+\usepackage{dashundergaps}
+\TeacherModeOff
+%\TeacherModeOn
+\setcounter{chapter}{5}
+
+\begin{document}
+%\tableofcontents
+\chapter{Dérivation des fonctions}
+\section{Généralités}
+\subsection{Taux de variation}
+\begin{defn}
+Soit $f$ une fonction définie sur un intervalle $I$, et $a,b \in I$ alors on note 
+$$\tau_f(a,b)=\dfrac{f(b)-f(a)}{b-a}$$
+Le \gap*{taux de variation} est aussi défini par le coefficient directeur, appelé parfois pente, de la droite passant par les points $A(a ; f (a))$ et $B (b ; f (b))$.
+\end{defn}
+
+\begin{exemple}
+Soit la fonction $f(x) = 2x^2 + 3x - 5$, le taux de variation de cette fonction entre $x=2$ et $x=5$ est donné par :
+
+$$\tau_f(2,5)= \frac{f(5) - f(2)}{5 - 2} = \frac{(2 \times 5^2 + 3 \times 5 - 5) - (2 \times 2^2 + 3 \times 2 - 5)}{5 - 2} = \frac{57}{3} = 19 $$
+
+Donc le taux de variation de la fonction entre $x=2$ et $x=5$ est de $19$.
+
+\end{exemple}
+\subsection{Limite en 0}
+\begin{defn}
+Soit $f$ une fonction définie sur un intervalle $I$ contenant 0 et $L \in \R$.
+
+On dit que $f(x)$ \gap*{tend vers} $L$ quand $x$ \gap*{tend vers} 0 si on peut rendre $f(x)$ aussi \gap*{proche} de $L$ que l'on veut pour $x$ suffisamment proche de zéro. On note : $\limo[h] f(x)=L$
+\end{defn}
+
+\begin{exemple}
+$\ds \limo[x]x^{2}=0$ \hspace{1em} $\ds \limo[x]x+1=1$
+\end{exemple}
+%
+
+\subsection{Tangentes et interprétation graphique}
+\begin{defn}
+Soit $f$ une fonction définie sur $I$ et $C_{f}$ sa représentation graphique dans un repère. Soit $a\in I$ et $A(a;f(a))$. 
+
+
+\begin{minipage}{9cm}
+\underline{Illustration :} soit $A(a;f(a))\in C_{f}$.\par Soit $h \neq 0$ et $M(a+h;f(a+h))\in C_{f}$.
+
+Le quotient $\dfrac{f(a+h)-f(a)}{h}$ représente $\tau_f(a,a+h)$ \gap*{le coefficient directeur de la droite} $(AM)$. Lorsque $h$ tend vers 0, $M$ se rapproche de $A$ et la droite $(AM)$ tend vers une droite appelée \gap*{tangente} à $C_{f}$ en $A$.
+\end{minipage}
+\hfill
+\begin{minipage}{5.6cm}
+\begin{center}
+\includegraphics{Figures/CoursDerivationFigures.1}
+\end{center}
+\end{minipage}
+
+\end{defn}
+
+
+\subsection{Nombres dérivés}
+\begin{defn}
+Soit $f$ une fonction définie sur un intervalle $I$. Soit $a \in I$ et $h \neq 0$ tel que $a+h \in I$.\\
+
+On dit que $f$ est dérivable en $a$ si, lorsque $h$ tend vers 0, $\tau_f(a,a+h)$ tend vers un réel $L$ autrement dit si $$\ds \lim_{h\rightarrow 0}\dfrac{f(a+h)-f(a)}{h}=L$$
+
+Ce réel $L$ est appelé \gap*{nombre dérivé} de $f$ en $a$ et se note $f'(a)$.
+\end{defn}
+
+\begin{exemple}
+Démontrer que la fonction $f : x \longmapsto x^{2}$ est dérivable en 2 et calculer $f'(2)$.\\
+
+Pour tout $h\neq 0$, $\dfrac{f(2+h)-f(2)}{h}=\dfrac{(2+h)^{2}-4}{h}=\dfrac{h^{2}+4h}{h}=h+4$
+Ainsi $\ds \limo[h]\dfrac{f(2+h)-f(2)}{h}=4$.\\
+$f$ est donc dérivable en 2 et $f'(2)=4$.
+\end{exemple}
+
+
+\begin{thm}
+Soit $f$ une fonction définie sur un intervalle $I$ avec $a\in I$ et $A(a;f(a))$. On note $\Gamma_{f,a}$ la tangente à la courbe $\mathcal{C}_f$ au point d'abscisse $x=a$. 
+L'équation de $\Gamma_{f,a}$ à pour \gap*{équation réduite} $$\Gamma_{f,a}: y=f'(a)(x-a)+f(a)$$
+\end{thm}
+
+\begin{demo}
+Soit $\Gamma_{f,a}$ la tangente à la courbe $\mathcal{C}_f$ au point $A$.
+Son coefficient directeur est $f'(a)$ donc l'équation réduite de $\Gamma_{f,a}$ est de la forme 
+$$\Gamma_{f,a}: y=f'(a)x+b, \qquad b \in \R $$
+De plus, $A\in \Gamma_{f,a}$ donc $f(a)=f'(a)a+b$ d'où $b=f(a)-af'(a)$.
+L'équation de $\Gamma_{f,a}$ est donc $y=f'(a)x+f(a)-af'(a)$, ou encore $$y=f'(a)(x-a)+f(a)$$.
+\end{demo}
+
+\section{Calculs de dérivées}
+\subsection{Fonctions dérivées}
+\begin{defn}
+Soit $f$ une fonction défine sur un intervalle $I$.
+\begin{itemize}
+\item Si, pour tout $x$ de $I$, $f$ est dérivable en $x$, on dit que $f$ est dérivable sur $I$.
+\item La fonction définie sur $I$ par $x \longmapsto f'(x)$ est appelée \gap*{fonction dérivée} de $f$. Cette fonction est notée $f'$.
+\end{itemize}
+\end{defn}
+
+\subsection{Dérivées usuelles}
+\subsubsection*{Fonctions constantes}
+\begin{prop}
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=k$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=0$.
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a$ et $h\neq 0$, 
+\[\dfrac{f(a+h)-f(a)}{h}=\dfrac{k-k}{h}=0\]
+$f$ est donc dérivable en $a$ et $f'(a)=0$.
+\end{demo}
+
+\subsubsection*{Fonctions affines}
+\begin{prop}
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=mx+p$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=m$.
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a$ et $h\neq 0$,
+\[\dfrac{f(a+h)-f(a)}{h}=\dfrac{m(a+h)+p-ma-p}{h}=\dfrac{mh}{h}=m\]
+$f$ est donc dérivable en $a$ et $f'(a)=m$
+\end{demo}
+
+\subsubsection*{Fonction carré}
+\begin{prop}
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=x^{2}$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=2x$.
+\end{prop}
+
+\begin{demo}
+Pour tout réel $a$ et $h\neq 0$,
+\[\dfrac{f(a+h)-f(a)}{h}=\dfrac{(a+h)^{2}-a^{2}}{h}=\dfrac{2ah+h^{2}}{h}=2a+h\]
+De plus, $2a+h$ tend vers $2a$ lorsque $h$ tend vers 0.
+$f$ est donc dérivable en $a$ et $f'(a)=2a$.
+\end{demo}
+
+\subsubsection*{Fonction cube}
+
+\begin{prop}
+Si $f$ est la fonction définie sur $\R$ par :  $f(x)=x^{3}$ \\
+alors $f$ est dérivable sur $\R$ et pour tout réel $x$ :  $f'(x)=3x^{2}$.
+\end{prop}
+
+\subsubsection*{Dérivée d'une somme de fonction}
+\begin{prop}
+Soit $u$ et $v$ deux fonctions dérivable sur $I$ alors $u+v$ est une fonction dérivable sur $I$ et de plus $$(u+v)'=u'+v'$$
+\end{prop}
+
+\subsubsection*{Dérivée d'un produit de fonction par un réel}
+
+\begin{prop}
+Soit $u$ dérivable sur $I$, et $k \in \R$  alors $ku$ est une fonction dérivable sur $I$ et de plus $$(ku)'=ku'$$
+\end{prop}
+
+\subsection*{Dérivée d'un polynôme de degré inférieur ou égal à 3}
+
+\begin{prop}
+Soit $P$ un polynôme tel que $$P(x)=ax^3+bx^2+cx+d$$ avec $a,b,c,d \in \mathbb{R}$. D'après ce qui précède, $P$ est une fonction dérivable sur $\R$ et de plus $$P'(x)=3ax^3+2bx+c$$.
+\end{prop}
+
+\section{Applications de la dérivation}
+\subsection{Fonctions dérivées $\rightleftharpoons$ Variations de fonction}
+\begin{thm}
+Soit $f$ une fonction dérivable sur un intervalle $I$.
+\begin{itemize}
+\item $f$ est \gap*{croissante} sur $I$ si et seulement si pour tout $x$ de $I$, $f'(x)\se 0$.
+\item $f$ est \gap*{constante} sur $I$ si et seulement si pour tout $x$ de $I$, $f'(x)=0$.
+\item $f$ est \gap*{décroissante} sur $I$ si et seulement si pour tout $x$ de $I$, $f'(x)\ie 0$.
+\end{itemize}
+\end{thm}
+
+\begin{rem}
+on utilise souvent les résultats suivants.
+\begin{itemize}
+\item Si, pour tout $x$ de $I$, $f'(x)>0$ alors $f$ est \gap*{strictement croissante} sur $I$.
+\item Si, pour tout $x$ de $I$, $f'(x)<0$ alors $f$ est \gap*{strictement décroissante} sur $I$.
+\end{itemize}
+\end{rem}
+
+\begin{exemple}
+Étudier les variations de la fonction $f$ définie sur $\R$ par $f(x)=x^{3}+2x$.\\
+
+$f$ est dérivable sur $\R$ et pour tout $x\in \R$, $f'(x)=3x^{2}+2>0$.
+La fonction $f$ est donc strictement croissante sur $\R$.
+\end{exemple}
+
+
+\end{document}

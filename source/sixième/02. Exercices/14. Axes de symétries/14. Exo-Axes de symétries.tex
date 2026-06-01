@@ -1,0 +1,101 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\redefinetitle{ex}{Exercice}
+\pagestyle{empty}
+
+\section*{Axes de symétries}
+
+\begin{ex}
+Pour chaque figure, trace en rouge tous les axes de symétrie lorsqu'ils existent.
+
+\medskip
+\begin{center}
+\begin{tabular}{ccc}
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (-1.5,-1) rectangle (1.5,1);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (0,1.6)--(1.6,0)--(0,-1.6)--(-1.6,0)--cycle;
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (-1.3,-1.2)--(1.5,-1)--(-0.2,1.5)--cycle;
+\end{tikzpicture}
+\\[8mm]
+Rectangle & Losange & Triangle quelconque\\[3mm]
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (-1.4,-1.4) rectangle (1.4,1.4);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (0,0) circle (1.45);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.75,line cap=round,line join=round]
+\draw[lightgray] (-2,-2) grid (2,2);
+\draw[line width=1.2pt] (-1.5,-1.2)--(1.5,-1.2)--(0,1.5)--cycle;
+\draw[line width=1pt] (-0.8,0.15)--(-0.65,0.25);
+\draw[line width=1pt] (0.8,0.15)--(0.65,0.25);
+\end{tikzpicture}
+\\[8mm]
+Carré & Cercle & Triangle isocèle
+\end{tabular}
+\end{center}
+\end{ex}
+
+\begin{ex}
+Complète chaque figure pour que la droite rouge soit un axe de symétrie.
+
+\medskip
+\begin{center}
+\begin{tabular}{cc}
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[red,line width=1.3pt] (0,-3)--(0,3);
+\node[red,anchor=west] at (0,2.7) {$(d)$};
+\draw[blue,line width=1.2pt] (-4,-2)--(-2,1)--(-1,0)--(-1,-2)--cycle;
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.62,line cap=round,line join=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[red,line width=1.3pt] (-5,0)--(5,0);
+\node[red,anchor=south west] at (-4.8,0) {$(d)$};
+\draw[blue,line width=1.2pt] (-3,1)--(-1,2)--(2,1)--(1,3);
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+\end{ex}
+
+\begin{ex}
+Observe la figure puis réponds aux questions.
+
+\medskip
+\begin{center}
+\begin{tikzpicture}[scale=0.65,line cap=round,line join=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[red,line width=1.3pt] (0,-3)--(0,3);
+\node[red,anchor=west] at (0,2.7) {$(d)$};
+\fill[blue] (-3,2) circle (2pt) node[above left,black] {$A$};
+\fill[blue] (-1,-1) circle (2pt) node[below left,black] {$B$};
+\fill[blue] (3,2) circle (2pt) node[above right,black] {$A'$};
+\fill[blue] (1,-1) circle (2pt) node[below right,black] {$B'$};
+\draw[blue,line width=1.1pt] (-3,2)--(-1,-1);
+\draw[blue,line width=1.1pt] (3,2)--(1,-1);
+\end{tikzpicture}
+\end{center}
+
+\begin{enumerate}
+\item Les points $A$ et $A'$ sont-ils symétriques par rapport à $(d)$ ? Justifie.
+\item Les points $B$ et $B'$ sont-ils symétriques par rapport à $(d)$ ? Justifie.
+\item Quelle propriété permet de vérifier ta réponse ?
+\end{enumerate}
+\end{ex}
+
+\end{document}

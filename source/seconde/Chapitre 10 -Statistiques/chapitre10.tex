@@ -1,0 +1,123 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots,pgfkeys}
+
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+\pgfplotsset{compat=newest}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+ \setcounter{chapter}{9}
+\chapter{Statistique}
+\textit{Les statistiques ont pris une grande place dans les applications des mathématiques. Notament en médecine grâce au développement de l'outil informatique, ce qui permet de traiter de nombreuses données. Florence Nightingale (1810- 1910) est une des premières infirmière à utiliser la stastistique dans le domaine médical. Elle a étudié les causes de mortalité des soldats pendant la guerre de Crimée, ce qui a permis d'améliorer les conditions sanitaires de l'époque. } \\
+
+
+\section{Série statistique et moyenne pondérée}
+\subsection{Série statistique}
+\begin{defn}
+On appelle \underline{série statistique} la donnée d'une suite de valeurs différentes $x_1,x_2,x_3,...,x_p$ ainsi que l'effectifs $n_1,n_2,n_3,...,n_p$ correspondants aux $x_i$, c'est à dire que la valeur $x_i$ apparait $n_i$ fois.\\
+
+On regroupe, en général, les données d'une série dans un \underline{tableau d'effectifs} :\\
+
+\begin{center}
+
+
+\begin{tabular}{|l|c|c|c|c|}
+  \hline
+  Valeurs $x_i$ & $x_1$ & $x_2$ & ... & $x_p$ \\
+  \hline
+ Effectifs $n_i$ & $n_1$ & $n_2$ & ... & $n_p$ \\
+  \hline
+\end{tabular} 
+\end{center}
+On appel \underline{effectif total} le nombre $N=n_1+n_2+ \cdots + n_p$
+\end{defn}
+
+\subsection{Moyenne pondérée}
+Dans la suite de ce cours on se donnera une telle série.
+
+\begin{defn}
+La \underline{moyenne} de la série est un réel $m=\frac{n_1\times x_1 + n_2 \times x_2 + \cdots + n_p \times x_p }{N}$, il est parfois noté $\overline{x}$.
+\end{defn}
+
+\underline{Rappel :} on note $f_i$, la fréquence de $x_i$, qui est égale à $\frac{n_i}{N}$.
+
+\begin{prop}
+$m=f_1 \times x_1 + f_2 \times x_2 + \cdots +f_p \times x_p$
+\end{prop}
+
+
+\begin{prop}
+\begin{itemize}
+\item[1)] Si l'on \underline{ajoute} un réel $k$ à toutes les valeurs d'une série de moyenne $m$ alors la moyenne devient $m+k$.
+\item[2)] Si l'on \underline{multiplie} par un réel $k$ à toutes les valeurs d'une série de moyenne $m$ alors la moyenne devient $k \times m$.
+\item[3)] Dans un calcul de moyenne, on peut \underline{remplacer} un ensemble de valeurs par leur moyenne \underline{pondérée par la somme de leurs effectifs}.
+
+\end{itemize}
+\end{prop}
+
+\section{Mesurer la dispersion, variance et écart-type}
+Soit un effectif fixé N, il est tout à fait courant d'avoir des valeurs non proche de la moyenne. Pour mesurer cette différence entre les valeurs prises et la moyenne on utilise deux indicateurs, la variance et l'écart-type.
+
+\subsection{Variance}
+\begin{defn}
+La \underline{variance d'une série} notée $V$, est la moyenne des carrés des écarts de chaque valeur à la moyenne $m$ de la série.
+
+$$V=\frac{n_1(x_1-m)^2+n_2(x_2-m)^2+\cdots+n_p(x_p-m)^2}{N}$$
+
+On dit que la variance mesure la \underline{dispersion quadratique} de la série autour de la moyenne.
+\end{defn}
+ 
+\begin{prop}
+Dans le cas où on connait les fréquences $f_i$ de la valeur $x_i$ et la moyenne on peut aussi calculer la variance.
+
+$$V=f_1 \times (x_1 - m)^2 +f_2 \times (x_2 - m)^2 +\cdots+ f_p \times (x_p - m)^2$$
+\end{prop}
+
+\subsection{Écart-type}
+
+\begin{defn}
+L'\underline{écart-type} d'une série est le nombre, noté $\sigma$, défini par $\sigma=\sqrt{V}$, où $V$ est la variance de la série.\\
+
+On dit que l'écart type mesure la \underline{dispersion} de la série autour de la moyenne.
+\end{defn}
+
+
+\section{Médiane et quartiles}
+On considère une série \underline{ordonnée  dans l'ordre croissant}.\\
+
+\begin{defn}
+On appelle \underline{médiane}, notée Me, \underline{une valeur de la série} telle qu'au moins la moitié des valeurs de la série soient inférieures ou égales à cette valeur et au moins la moitié des valeurs soient superieures ou égales.
+\end{defn}
+
+\begin{defn}
+On appelle \underline{premier quartile}, noté $Q_1$, la plus petite valeur de la série telle qu'au moins $25\% $ ou encore $\frac{1}{4}$ des valeurs de la séries soient inférieures ou égales à $Q_1$.\\
+
+On appelle \underline{troisième quartile}, noté $Q_3$, la plus petite valeur de la série telle qu'au moins $75\% $ ou encore $\frac{3}{4}$ des valeurs de la séries soient inférieures ou égales à $Q_3$.
+\end{defn}
+
+\underline{Remarque}: On peut définir $Q_2$ mais attention il ne coÏncide pas toujours avec la médiane.\\
+
+\section{Écart et intervalle interquartiles}
+
+\begin{defn}
+L'intervalle $[Q_1;Q_3]$ est appelé \underline{intervalle interquartile}.\\
+La différence $Q_3-Q_1$ est appelée \underline{écart interquartile}
+\end{defn}
+
+\underline{Remarque} : on retiendra qu'il y a approximativement un quart de la population de la série en dessous du premier quartile $Q_1$, un quart au dessus du troisième quartile $Q_3$ et la moitié de la population entre $Q_1$ et $Q_3$. 
+
+\end{document}

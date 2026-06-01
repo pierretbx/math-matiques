@@ -1,0 +1,351 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+
+\chapter{Calcul littéral}
+\section{Puissances}
+\begin{defn}
+Soient $a\in\mathbb{R}$ un nombre réel et $n\in \mathbb{N}^{*}$. On définit la puissance de la manière suivante:
+
+\begin{itemize}
+\item[$\bullet$]$a^n=\underbrace{a\times a \times ... \times a}_{n \, \rm fois}$
+\item[$\bullet$] Si $a \neq 0$, $a^{-n}=\frac{1}{a^n}=\frac{1}{a\times a \times ... \times a}$. 
+\item[$\bullet$] Si $a\neq 0$, $a^0=1$.
+\end{itemize}
+\end{defn}
+
+\underline{Exemple:}
+\begin{itemize}
+\item[$\bullet$]$2^{-3}=\frac{1}{2^3}=\frac{1}{2\times 2 \times 2}=\frac{1}{8}$
+\item[$\bullet$] Le nombre $\frac{1}{5}$ peut s'écrire $5^{-1}$. C'est l'inverse de $5$.
+
+\item[$\bullet$] La décomposition de 4200 en produit de nombre premiers peut s'écrire:
+$4200=2\times2\times2\times3\times5\times5\times7=2^3\times3\times5^2\times7$
+\end{itemize}
+
+\begin{prop}
+\begin{itemize}
+\item[$\bullet$] $a^m \times a^n = a^{m+n} $
+\item[$\bullet$] $\frac{a^m}{a^n}= a^{m-n} $
+\item[$\bullet$] $(a^m)^n=a^{m\times n}$
+\item[$\bullet$] $a^m \times b^m = (ab)^m $
+\item[$\bullet$] $\frac{a^m}{b^m}=(\frac{a}{b})^m$
+\end{itemize}
+\end{prop}
+
+\underline{Exemple :}
+\begin{itemize}
+\item[$\bullet$]$(-3)^4 \times (-3)^2= (-3)^{4+2}=(-3)^6$
+\item[$\bullet$]$\frac{2^7}{2^5}=2^{7-5}=2^2$
+\item[$\bullet$]$(5^4)^3=5^{3 \times 4}=5^{12}$
+\item[$\bullet$]$10^5\times 6^5=(10\times 6)^5=60^5$
+\item[$\bullet$]$\frac{(-8)^3}{2^3}=(\frac{-8}{2})^3=(-4)^3$
+\end{itemize}
+
+\begin{defn}
+Soit $x \in \mathbb{D}^*$. On dit que l'écriture scientifique de $x$ est $a \times 10^n$ où $n \in \mathbb{N}$ et $a\in\mathbb{D}$ tel que $1\leq \vert a \vert < 10$.  \vspace{4mm}
+\end{defn}
+ 
+\underline{Exemple :}
+L'écriture scientifique de $0,000\,45$ est $4,5 \times 10^{-4}$.
+
+\subsection{La racine carrée}
+\begin{defn}
+La racine carrée d'un nombre $a\in\mathbb{R}_+$ est l'unique réel positif dont le carré vaut $a$. La racine carrée de $a$ se note $\sqrt{a}$ et $\sqrt{a}\in \mathbb{R}_+$.
+\end{defn}
+
+\begin{prop}
+Soit $x\in\mathbb{R}$, on a $\sqrt{x^2}=\vert x \vert$.
+Soient $a$ et $b$ deux réels positifs. On a $\sqrt{ab}=\sqrt{a}\times \sqrt{b}$, et si $b\neq0$, $\sqrt{\frac{a}{b}}=\frac{\sqrt{a}}{\sqrt{b}}$
+\end{prop}
+
+\begin{demo}
+Soient $a,b \in \mathbb{R}_+$, on sait d'une part que:
+$$\sqrt{ab} \times \sqrt{ab} = \vert ab \vert = ab $$
+d'autre part on a aussi que:
+$$\sqrt{a} \sqrt{b} \times \sqrt{a} \sqrt{b}= \sqrt{a} \sqrt{a} \times \sqrt{b} \sqrt{b}= a \times b = ab$$
+par unicité de la racine carré on a:
+$$\sqrt{ab}=\sqrt{a} \sqrt{b}$$
+\end{demo}
+
+\underline{Remarque :}
+si $a$ et $b$ sont non nuls alors $\sqrt{a+b} \neq \sqrt{a} + \sqrt{b}$
+
+\begin{thm}
+Soit $a,b \in \mathbb{R}^{*}_{+}$ alors on a $\sqrt{a+b} < \sqrt{a} + \sqrt{b}$.
+\end{thm}
+
+\begin{demo}
+La distance la plus courte entre deux points $B$ et $C$ du plan est toujours la longueur du segment $[BC]$,  ainsi tout autre chemin allant de $B$ à $C$ a une longueur nécessairement plus grande que la longueur du segment $[BC]$, par suite on place $A$ un point du plan tel que $CAB$ soit un triangle rectangle non applati. \\
+
+On pose $CA=\sqrt{a} \; (>0)$ et $AB=\sqrt{b} \; (>0)$. Par le théorème de Pythagore on obtient que $BC=\sqrt{a+b}$ or $BC$ étant la distance la plus courte elle sera strictement plus petite que la longueur du chemin allant de $B$ à $C$ formé par $CA$ et $AB$ qui est égale à $\sqrt{a}+\sqrt{b}$.  D'où le résultat.
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{center}
+\begin{tikzpicture}[scale=1.1,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-9.008933262993455,-1.975143952375375) rectangle (-4.622531938487147,2.377750846179176);
+\draw[line width=1pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (-4.967049946429461,-1.5227455665703808) -- (-5.10229116463362,-1.5239460261329616) -- (-5.101090705071039,-1.6591872443371203) -- (-4.9658494868668805,-1.6579867847745395) -- cycle; 
+\draw [line width=1pt] (-4.997255209576774,1.88011506410132)-- (-4.9658494868668805,-1.6579867847745395);
+\draw [line width=1pt] (-4.9658494868668805,-1.6579867847745395)-- (-8.503951335742741,-1.6893925074844327);
+\draw [line width=1pt] (-8.503951335742741,-1.6893925074844327)-- (-4.997255209576774,1.88011506410132);
+\begin{scriptsize}
+\draw [fill=ududff] (-4.9658494868668805,-1.6579867847745395) circle (1pt);
+\draw[color=ududff] (-4.704804104666275,-1.654805604039167) node {$A$};
+\draw [fill=ududff] (-4.997255209576774,1.88011506410132) circle (1pt);
+\draw[color=ududff] (-4.947686687832818,2.0175303885707385) node {$B$};
+\draw [fill=ududff] (-8.503951335742741,-1.6893925074844327) circle (1pt);
+\draw[color=ududff] (-8.556266847237717,-1.5272939376291008) node {$C$};
+\draw[color=qqwuqq] (-5.434587937255469,-1.342402021334505) node {$\alpha = 90\textrm{\degre}$};
+\draw[color=black] (-4.80043604897215,0.1558600589837726) node {$\sqrt{b}$};
+\draw[color=black] (-6.6818453510097315,-1.85823172704492332) node {$\sqrt{a}$};
+\draw[color=black] (-7.1371017111879,0.29612289203484543) node {$\sqrt{a+b}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\end{demo}
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{comment}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-6.766033237937672,-5.384367780089153) rectangle (4.358412086886164,5.644271381623621);
+\draw[line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (3.0971469769010596,0.33546194894073955) -- (2.713832503981273,0.33229406073479095) -- (2.717000392187222,-0.05102041218499551) -- (3.1003148651070083,-0.04785252397904695) -- cycle; 
+\draw [line width=2pt] (-1.2726819131655425,-0.08399299322096865)-- (3.0641743958650864,4.325144254293504);
+\draw [line width=2pt] (3.1003148651070083,-0.04785252397904695)-- (-1.2726819131655425,-0.08399299322096865);
+\draw [line width=2pt] (3.1003148651070083,-0.04785252397904695)-- (3.0641743958650864,4.325144254293504);
+\begin{scriptsize}
+\draw [fill=ududff] (-1.2726819131655425,-0.08399299322096865) circle (2.5pt);
+\draw[color=ududff] (-1.128120036197855,0.3045170511296897) node {$A$};
+\draw [fill=ududff] (3.1003148651070083,-0.04785252397904695) circle (2.5pt);
+\draw[color=ududff] (3.3894386190423833,-0.25566022212009676) node {$B$};
+\draw [fill=ududff] (3.0641743958650864,4.325144254293504) circle (2.5pt);
+\draw[color=ududff] (3.281017211316618,4.713654298644138) node {$C$};
+\draw[color=qqwuqq] (2.529261345792594,0.8104836205165936) node {$\alpha = 90$};
+\draw[color=black] (0.20907732575325563,2.3090856748869137) node {$\sqrt{a+b}$};
+\draw[color=black] (0.7511843643820844,-0.31951975287817505) node {$\sqrt{a}$};
+\draw[color=black] (3.6424219037358365,2.1657512170886575) node {$\sqrt{b}$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{comment}
+
+\newpage
+\section{Expressions algébriques}
+
+\subsection{Développer, Factoriser}
+\begin{prop}
+Soient $a,b,c,d,k \in \mathbb{R}$ des nombres réels, alors on a: 
+\begin{itemize}
+\item[$\bullet$] $k(a+b)=ka+kb$
+\item[$\bullet$] $(a+b)(c+d)=ac+ad+bc+bd$
+\end{itemize}
+\end{prop}
+
+\underline{Exemple :}
+
+$$2(x+3)=2x+2\times3=2x+6$$
+$$(2+x)(4-x)=2\times4-2\times x + x \times 4 - x \times x$$
+On calcule en ordonnant nombres puis inconnues dans cet ordre
+$$(2+x)(4-x)=8-2x+4x-x^2$$
+on termine en réduisant et en réordonnant les termes, dans l'ordre décroissant des exposants de l'inconnue.
+$$(2+x)(4-x)=-x^2+2x+8$$
+
+\subsection{Identités remarquables}
+
+Voici ici trois expressions algébriques à connaitre parfaitement.
+
+\begin{prop}
+Soient $a,b \in \mathbb{R}$ des nombres réels, alors on a: 
+\begin{itemize}
+\item[$\bullet$] $(a+b)^2=a^2+2ab+b^2$
+\item[$\bullet$] $(a-b)^2=a^2-2ab+b^2$
+\item[$\bullet$] $(a-b)(a+b)=a^2-b^2$
+\end{itemize}
+\end{prop}
+
+
+\definecolor{qqzzcc}{rgb}{0,0.6,0.8}
+\definecolor{ffzzqq}{rgb}{1,0.6,0}
+\definecolor{yqqqqq}{rgb}{0.5019607843137255,0,0}
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{ttqqqq}{rgb}{0.2,0,0}
+\begin{center}
+
+\begin{tikzpicture}[scale=1.8,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-0.7,-0.9) rectangle (5,4.2);
+\fill[line width=2pt,color=white] (-0.38794762556557366,-0.8496045569773465) -- (4.457924829196802,-0.8361728794074994) -- (4.444493151626955,4.009699575354875) -- (-0.40137930313542025,3.996267897785029) -- cycle;
+\fill[line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.7] (-0.40137930313542025,3.996267897785029) -- (2.9901382143185278,4.005668427863396) -- (2.999538744396895,0.6141509104094485) -- (-0.3919787730570524,0.6047503803310805) -- cycle;
+\fill[line width=2pt,color=yqqqqq,fill=yqqqqq,fill opacity=0.7] (-0.3919787730570524,0.6047503803310805) -- (2.999538744396895,0.6141509104094485) -- (3.0035698918883735,-0.8402040268989782) -- (-0.38794762556557366,-0.8496045569773465) -- cycle;
+\fill[line width=2pt,color=ffzzqq,fill=ffzzqq,fill opacity=0.6] (2.999538744396895,0.6141509104094485) -- (4.453893681705324,0.6181820579009272) -- (4.457924829196802,-0.8361728794074994) -- (3.0035698918883735,-0.8402040268989782) -- cycle;
+\fill[line width=2pt,color=qqzzcc,fill=qqzzcc,fill opacity=0.6] (2.999538744396895,0.6141509104094485) -- (2.9901382143185278,4.005668427863396) -- (4.444493151626955,4.009699575354875) -- (4.453893681705324,0.6181820579009272) -- cycle;
+\draw [line width=2pt] (-0.40137930313542025,3.996267897785029)-- (-0.3919787730570524,0.6047503803310805);
+\draw [line width=2pt] (-0.3412131460999479,2.3006628781389677) -- (-0.45214493009252477,2.300355399977141);
+\draw [line width=2pt,color=qqwuqq] (-0.40137930313542025,3.996267897785029)-- (2.9901382143185278,4.005668427863396);
+\draw [line width=2pt,color=qqwuqq] (1.2942257165106406,4.0564340548205005) -- (1.2945331946724672,3.945502270827924);
+\draw [line width=2pt,color=qqwuqq] (2.9901382143185278,4.005668427863396)-- (2.999538744396895,0.6141509104094485);
+\draw [line width=2pt,color=qqwuqq] (3.0503043713539997,2.310063408217336) -- (2.9393725873614236,2.309755930055509);
+\draw [line width=2pt,color=qqwuqq] (2.999538744396895,0.6141509104094485)-- (-0.3919787730570524,0.6047503803310805);
+\draw [line width=2pt,color=qqwuqq] (1.303933724750835,0.5539847533739759) -- (1.303626246589008,0.6649165373665527);
+\draw [line width=2pt,color=qqwuqq] (-0.3919787730570524,0.6047503803310805)-- (-0.40137930313542025,3.996267897785029);
+\draw [line width=2pt,color=yqqqqq] (-0.3919787730570524,0.6047503803310805)-- (2.999538744396895,0.6141509104094485);
+\draw [line width=2pt,color=yqqqqq] (2.999538744396895,0.6141509104094485)-- (3.0035698918883735,-0.8402040268989782);
+\draw [line width=2pt,color=yqqqqq] (3.0569561521885427,-0.08976203083206524) -- (2.9460243681959666,-0.09006950899389195);
+\draw [line width=2pt,color=yqqqqq] (3.0570842680893033,-0.13598360749563845) -- (2.946152484096727,-0.13629108565746514);
+\draw [line width=2pt,color=yqqqqq] (3.0035698918883735,-0.8402040268989782)-- (-0.38794762556557366,-0.8496045569773465);
+\draw [line width=2pt,color=yqqqqq] (1.3079648722423132,-0.9003701839344501) -- (1.3076573940804865,-0.7894383999418744);
+\draw [line width=2pt,color=yqqqqq] (-0.38794762556557366,-0.8496045569773465)-- (-0.3919787730570524,0.6047503803310805);
+\draw [line width=2pt,color=yqqqqq] (-0.4453650333572209,-0.14569161573583325) -- (-0.3344332493646441,-0.14538413757400656);
+\draw [line width=2pt,color=yqqqqq] (-0.44549314925798206,-0.09947003907226006) -- (-0.3345613652654052,-0.09916256091043334);
+\draw [line width=2pt,color=ffzzqq] (2.999538744396895,0.6141509104094485)-- (4.453893681705324,0.6181820579009272);
+\draw [line width=2pt,color=ffzzqq] (3.7034516856384094,0.6715683182010961) -- (3.7037591638002363,0.5606365342085193);
+\draw [line width=2pt,color=ffzzqq] (3.749673262301983,0.6716964341018566) -- (3.7499807404638097,0.5607646501092799);
+\draw [line width=2pt,color=ffzzqq] (4.453893681705324,0.6181820579009272)-- (4.457924829196802,-0.8361728794074994);
+\draw [line width=2pt,color=ffzzqq] (4.511311089496972,-0.08573088334058582) -- (4.400379305504395,-0.08603836150241252);
+\draw [line width=2pt,color=ffzzqq] (4.511439205397732,-0.13195246000415903) -- (4.400507421405156,-0.13225993816598572);
+\draw [line width=2pt,color=ffzzqq] (4.457924829196802,-0.8361728794074994)-- (3.0035698918883735,-0.8402040268989782);
+\draw [line width=2pt,color=ffzzqq] (3.754011887955288,-0.8935902871991455) -- (3.7537044097934613,-0.7826585032065698);
+\draw [line width=2pt,color=ffzzqq] (3.7077903112917148,-0.8937184030999061) -- (3.707482833129888,-0.7827866191073304);
+\draw [line width=2pt,color=ffzzqq] (3.0035698918883735,-0.8402040268989782)-- (2.999538744396895,0.6141509104094485);
+\draw [line width=2pt,color=qqzzcc] (2.999538744396895,0.6141509104094485)-- (2.9901382143185278,4.005668427863396);
+\draw [line width=2pt,color=qqzzcc] (2.9901382143185278,4.005668427863396)-- (4.444493151626955,4.009699575354875);
+\draw [line width=2pt,color=qqzzcc] (3.6940511555600413,4.063085835655043) -- (3.694358633721868,3.952154051662467);
+\draw [line width=2pt,color=qqzzcc] (3.7402727322236147,4.063213951555804) -- (3.7405802103854415,3.9522821675632276);
+\draw [line width=2pt,color=qqzzcc] (4.444493151626955,4.009699575354875)-- (4.453893681705324,0.6181820579009272);
+\draw [line width=2pt,color=qqzzcc] (4.504659308662427,2.314094555708814) -- (4.393727524669851,2.3137870775469875);
+\draw [line width=2pt,color=qqzzcc] (4.453893681705324,0.6181820579009272)-- (2.999538744396895,0.6141509104094485);
+\draw [line width=2pt] (-0.3919787730570524,0.6047503803310805)-- (-0.38794762556557366,-0.8496045569773465);
+\draw [line width=2pt] (-0.40137930313542025,3.996267897785029)-- (2.9901382143185278,4.005668427863396);
+\draw [line width=2pt] (2.9901382143185278,4.005668427863396)-- (4.444493151626955,4.009699575354875);
+\draw [line width=2pt] (-0.3919787730570524,0.6047503803310805)-- (2.999538744396895,0.6141509104094485);
+\draw [line width=2pt] (2.999538744396895,0.6141509104094485)-- (2.9901382143185278,4.005668427863396);
+\draw [line width=2pt] (2.999538744396895,0.6141509104094485)-- (4.453893681705324,0.6181820579009272);
+\draw [line width=2pt] (2.999538744396895,0.6141509104094485)-- (3.0035698918883735,-0.8402040268989782);
+\draw [line width=2pt] (4.453893681705324,0.6181820579009272)-- (4.457924829196802,-0.8361728794074994);
+\draw [line width=2pt] (3.0035698918883735,-0.8402040268989782)-- (4.457924829196802,-0.8361728794074994);
+\draw [line width=2pt] (4.444493151626955,4.009699575354875)-- (4.453893681705324,0.6181820579009272);
+\draw [line width=2pt] (4.453893681705324,0.6181820579009272)-- (4.457924829196802,-0.8361728794074994);
+\draw [line width=2pt] (-0.38794762556557366,-0.8496045569773465)-- (3.0035698918883735,-0.8402040268989782);
+\draw [line width=2pt] (4.457924829196802,-0.8361728794074994)-- (3.0035698918883735,-0.8402040268989782);
+\begin{scriptsize}
+\draw[color=black] (-0.59935765995896,2.382056519208632) node {$a$};
+\draw[color=qqwuqq] (1.323467315492491,2.419033922582698) node {$A_1$};
+\draw[color=yqqqqq] (1.3142229646489745,0.024747054111914135) node {$A_2$};
+\draw[color=yqqqqq] (-0.5716246074284103,-0.06769645432325125) node {$b$};
+\draw[color=ffzzqq] (3.699265482276255,-0.02147470010566857) node {$A_4$};
+\draw[color=qqzzcc] (3.7177541839632884,2.437522624269731) node {$A_3$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+
+\section{Équations, inéquations}
+\subsection{Équations}
+\begin{defn}
+Une équation $E$ est une égalité mathématique qui peut faire intervenir des variables et qui n'est pas nécessairement vraie. \\
+
+\underline{Résoudre une équation}, c'est trouver \underline{toutes} les valeurs des variables possibles telles que l'égalité devient vraie. Si l'on met \underline{toutes} ces valeurs dans un même ensemble on obtient alors \underline{l'ensemble des solutions} associé à l'équation $E$, que l'on notera $S$. 
+\end{defn}
+
+\subsubsection{Équation du premier degré}
+Ici on se donne une variable réelle que l'on note $x$, une équation du premier degré est une égalité du type: 
+$$(E) \; ax+b=0 $$ 
+où $a\in \mathbb{R}^{*}$ et $b\in \mathbb{R}$.
+
+Notre but est de résoudre ce type d'équation, dans une équation du premier degré on peut décrire directement l'ensemble des solutions $S$.
+
+$$S=\{ - \frac{b}{a}\}$$
+On remarque que ce type d'équation admet toujours une \underline{unique} solution.\\
+
+
+\underline{Exemple}: On souhaite résoudre l'équation suivante, $(E) \; 4x+3=0$, cette équation n'est pas vraie par exemple pour $x=0$ ou encore pour $x=2$.
+
+Il nous faut donc trouver l'ensemble des solutions $S$ pour savoir pour quelle valeur de $x$ l'équation $E$ est vraie. Ici $S=\{-\frac{3}{4}\}$, donc l'équation $E$ est vraie si et seulement si $x\in S$ ou encore ici, si $x=-\frac{3}{4}$.
+
+\subsubsection{Équation produit}
+On peut être confronté aussi à résoudre des équations du type $(E) \; (4x+3)(2x+1)=0$ appelé encore équation produit, pour cela on utilise un théorème déjà vu au collège
+
+\begin{thm}
+Un produit de facteur est nul \underline{si et seulement si} l'un des facteurs \underline{(au moins)} est nul. Autrement dit:
+
+$$A \times B = 0 \Longleftrightarrow A=0 \;\; \textrm{ou} \;\; B=0$$
+
+\end{thm}
+
+Ainsi résoudre une équation produit revient à résoudre plusieurs équations.
+$$(E) \; (4x+3)(2x+1)=0$$
+$$(E) \; (4x+3)=0 \;\;  \textrm{ou} \;\; (2x+1)=0$$
+$$(E) \; 4x=-3 \;\;  \textrm{ou} \;\; 2x=-1$$
+$$(E) \; x=-\frac{3}{4} \;\;  \textrm{ou} \;\; x=-\frac{1}{2}$$
+$$ S = \{  -\frac{3}{4} ; -\frac{1}{2} \} $$
+
+\subsection{Inéquations}
+\begin{defn}
+Une inéquation $I$ est une inégalité mathématique qui peut faire intervenir des variables et qui n'est pas nécessairement vraie. \\
+
+\underline{Résoudre une inéquation}, c'est trouver \underline{toutes} les valeurs des variables possibles tel que l'inégalité soit vraie. Si l'on met \underline{toutes} ces valeurs dans un même ensemble on obtient alors \underline{l'ensemble des solutions} associé à l'inéquation $I$, que l'on notera aussi $S$. 
+\end{defn}
+
+\subsubsection{Inéquation du premier degré}
+
+Une différence notable entre la résolution d'inéquation et la résolution d'équations se trouve dans le  \underline{signe des nombres}, qui doit être prise en compte dans les inéquations contrairement au équations donc il n'y aura pas de méthode générale ici.\\
+
+
+\underline{Exemple}: Résolvons l'inéquation suivante:
+$$(I) \; -3x+2\leq 0$$
+$$(I) \; -3x\leq -2$$
+$$(I) \; x \geq \frac{2}{3}$$
+
+Ainsi on a $S=[\frac{2}{3};+\infty]$. On remarque le changement de signe entre la deuxième ligne et la troisième ligne qui est dû au fait que $-3$ soit négatif.
+
+\subsubsection{Tableau de signe}
+De manière analogue au tableau de variation on peut dresser le tableau de signe d'une expression mathématique ce qui nous permettra de connaitre simplement le signe d'expressions parfois plus complexe.
+
+Voici un tableau de signe en reprenant l'exemple précédant:
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $-3x+2$ / 1}{$-\infty$, $0$, $\frac{2}{3}$, $+\infty$}
+   \tkzTabLine{, , +, , z, -, }
+\end{tikzpicture}
+\end{center}
+
+L'intérêt de cet outil réside dans la résolution d'inéquations plus complexe telles que 
+
+$$(I) \;  (-3x+2)(4x+3)\geq 0$$
+
+Pour cela on rappelle quelques règles mnémotechniques: $"+ \times + donne +"$, $"- \times - donne +"$, $"- \times + donne -"$ et $"+ \times - donne -"$.  
+
+\begin{center}
+\begin{tikzpicture}
+   \tkzTabInit{$x$ / 1 , $-3x+2$ / 1, $4x+3$ /1 , $(-3x+2)(4x+3)$ /1}{$-\infty$, -$\frac{3}{4}$ ,$0$, $\frac{2}{3}$, $+\infty$}
+   \tkzTabLine{,+, , , +, , z , -, }
+   \tkzTabLine{,-,z, , +, ,  , +, }
+   \tkzTabLine{,-,z, , +, , z , -, }
+\end{tikzpicture}
+\end{center}
+
+Ainsi l'ensemble des solutions est 
+$ S= [-\frac{3}{4}; \frac{2}{3}] $.
+
+
+\end{document}

@@ -1,0 +1,81 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\pagestyle{empty}
+\noindent NOM, Prénom et classe : \dotfill
+
+\section*{Devoir surveillé 12 - Gestion de données}
+\noindent\textit{Lis attentivement les tableaux et soigne les représentations graphiques.} \hfill \textit{Durée : 45 minutes}
+
+\medskip
+\paragraph{Exercice 1} \hfill \textbf{6 points}
+
+\noindent Voici les sports préférés des élèves d'une classe.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Sport & Football & Danse & Basket & Natation & Tennis\\\hline
+Effectif & 8 & 5 & 6 & 4 & 2\\\hline
+\end{tabular}
+\end{center}
+
+\begin{enumerate}
+\item Combien d'élèves ont été interrogés ?
+\item Quel est le sport le plus choisi ?
+\item Combien d'élèves ont choisi un sport d'eau ou de raquette ?
+\item Quelle fraction des élèves a choisi le basket ?
+\end{enumerate}
+
+\medskip
+\paragraph{Exercice 2} \hfill \textbf{6 points}
+
+\noindent Construis un diagramme en bâtons représentant le tableau de l'exercice 1.
+
+\medskip
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[->] (0,0)--(0,9);
+\draw[->] (0,0)--(12,0);
+\foreach \y in {0,1,...,8}{\draw (-0.1,\y)--(0.1,\y); \node[left] at (-0.1,\y) {\small \y};}
+\foreach \x/\n in {1/Football,3/Danse,5/Basket,7/Natation,9/Tennis}
+  {\node[rotate=35,anchor=east] at (\x,-0.25) {\small \n};}
+\draw[lightgray] (0,0) grid[xstep=1,ystep=1] (10,8);
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\paragraph{Exercice 3} \hfill \textbf{4 points}
+
+\noindent On a relevé les températures à midi pendant une semaine :
+\[
+12^\circ C,\quad 15^\circ C,\quad 14^\circ C,\quad 16^\circ C,\quad 15^\circ C,\quad 13^\circ C,\quad 17^\circ C.
+\]
+\begin{enumerate}
+\item Quelle est la plus petite température ?
+\item Quelle est la plus grande température ?
+\item Calcule la température moyenne de la semaine.
+\end{enumerate}
+
+\medskip\noindent\grandscarreaux{\linewidth}{3cm}
+
+\medskip
+\paragraph{Exercice 4} \hfill \textbf{4 points}
+
+\noindent Dans un diagramme circulaire, la moitié du disque représente les élèves qui viennent en bus. Un quart représente ceux qui viennent à pied. Le reste vient en voiture.
+\begin{enumerate}
+\item Quelle fraction du disque représente les élèves qui viennent en voiture ?
+\item Complète le diagramme circulaire.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\draw[line width=1.1pt] (0,0) circle (2);
+\draw[line width=1.1pt] (0,0)--(2,0);
+\draw[line width=1.1pt] (0,0)--(-2,0);
+\draw[line width=1.1pt] (0,0)--(0,2);
+\end{tikzpicture}
+\end{center}
+
+\end{document}

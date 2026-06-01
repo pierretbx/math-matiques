@@ -1,0 +1,114 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{pgf,tikz,tkz-tab}
+
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\begin{document}
+\pagestyle{empty}
+\section*{Devoir à la maison}
+L'objectif de ce devoir est de comprendre et d'observer l'impact qu'on les opérations appliquées à une fonction sur une représentation graphique. Tout le long de ce devoir il est demandé d'être sur le site desmos.com pour représenter les fonctions plus rapidement. 
+\subsection*{Niveau 1 - Fonction affine et droite}
+
+\begin{defn}
+Une fonction affine est une fonction $f$ définie par $f(x)=ax+b$, où $a,b\in\mathbb{R}$.
+\vspace{5mm}
+\end{defn}
+
+\subsubsection*{Exemple}
+Soit $f$ la fonction définie par $f(x)=-2x+3$
+\begin{enumerate}
+\item Déterminer $D_f$, faire un tableau de valeurs avec au moins 5 valeurs distinctes et donner la représentation graphique de $f$ dans un repère orthonormée
+\item Dresser le tableau de variation et le tableau de signe de $f$.
+\end{enumerate}
+
+\subsubsection*{Conjecture}
+\begin{enumerate}
+\item Rentrer dans desmos $f(x)=ax+b$ en ajoutant les curseurs $a,b$ sur desmos puis faite varier $a$ et $b$. 
+\item Que peut-on dire des variations de $f$ en fonction de $a$? et de $b$?
+\end{enumerate}
+
+\subsubsection*{Preuve}
+\begin{enumerate}
+\item Soit $x<y$ deux réels, montrer que si $a>0$ alors $f(x)<f(y)$ (c'est à dire que $f$ est strictement croissante sur $\mathbb{R}$).
+\item Soit $x<y$ deux réels, montrer que si $a<0$ alors $f(x)>f(y)$ (c'est à dire que $f$ est strictement décroissante sur $\mathbb{R}$).
+\end{enumerate}
+
+\subsection*{Niveau 2 - Fonction du second degré et parabole}
+
+
+\begin{defn}
+Une fonction du second degré est une fonction définie par  $f(x)=ax^2+bx+c$, où $a\in \mathbb{R}^*$ et $b,c\in\mathbb{R}$.
+\vspace{5mm}
+\end{defn}
+
+
+\subsubsection*{Exemple}
+Soit $f$ la fonction définie par $f(x)=(-2x+3)^2-1$
+\begin{enumerate}
+\item Montrer que $f$ est une fonction du second degré.
+\item Déterminer $D_f$, faire un tableau de valeurs avec au moins 5 valeurs distinctes et donner la représentation graphique de $f$ dans un repère orthonormée.
+\item Résoudre algébriquement $f(x)=0$
+\item Dresser le tableau de variation et le tableau de signe de $f$ à l'aide de la représentation graphique de $f$ sur desmos.
+\end{enumerate}
+
+\subsubsection*{Conjecture}
+\begin{enumerate}
+\item Rentrer dans desmos $f(x)=a(x-b)^2+c$ en ajoutant les curseurs $a,b,c$ sur desmos puis faite varier $a,b$ et $c$. 
+\item Soit $a>0$, que peut-on dire du nombre de solution à l'équation $f(x)=0$ en fonction de $c$?
+\item Quelle influence à $b$ sur le placement de la courbe représentative de $f$? Même question pour $c$.
+
+\end{enumerate}
+
+\subsubsection*{Preuve}
+\begin{enumerate}
+\item Soit $a>0$ et $c<0$ exprimer les solutions de $f(x)=0$ en fonction de $a,b$ et $c$. 
+\item Soit $g(x)=x^2-7x+12$ déterminer $a,b$ et $c$ tel que $f(x)=g(x)$, puis résoudre $g(x)=0$ 
+\end{enumerate}
+
+\subsection*{Niveau 3 - Fonction homographique et hyperbole}
+
+
+\begin{defn}
+Une fonction homographique est une fonction définie par  $f(x)=\dfrac{ax+b}{cx+d}$, où $a,b,c,d\in\mathbb{R}$ et tel que $ad-bc \neq 0$.
+\vspace{5mm}
+\end{defn}
+
+
+\subsubsection*{Exemple}
+Soit $f$ la fonction définie par $f(x)=\dfrac{-2x+3}{x-4}$
+\begin{enumerate}
+\item Déterminer $D_f$, faire un tableau de valeurs avec au moins 5 valeurs distinctes et donner la représentation graphique de $f$ dans un repère orthonormée.
+\item Résoudre algébriquement $f(x)=0$
+\item Dresser le tableau de variation à l'aide de la représentation graphique de $f$ sur desmos et le tableau de signe sans l'aide de desmos.
+\end{enumerate}
+
+\subsubsection*{Conjecture}
+\begin{enumerate}
+\item Rentrer dans desmos $f(x)=\dfrac{a}{x-b}+c$ en ajoutant les curseurs $a,b,c$ sur desmos puis faite varier $a,b$ et $c$. 
+\item Soit $a>0$, que peut-on dire des variation de $f$?
+\item Quelle influence à $b$ sur le placement de la courbe représentative de $f$? Même question pour $c$.
+
+\end{enumerate}
+
+\subsubsection*{Preuve}
+\begin{enumerate}
+\item Montrer que si $a>0$, alors $f$ est strictement décroissante.
+\item Soit $g(x)=\dfrac{-2x+3}{x-4}$ déterminer $a,b$ et $c$ tel que $f(x)=g(x)$.
+\end{enumerate}
+
+\end{document}

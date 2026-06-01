@@ -1,0 +1,49 @@
+%!PS
+%%BoundingBox: -21 -12 331 306 
+%%Creator: MetaPost
+%%CreationDate: 2006.11.25:1841
+%%Pages: 1
+%%EndProlog
+%%Page: 1 1
+ 1 0 0 setrgbcolor 0 0.5 dtransform truncate idtransform setlinewidth pop
+ [3 3 ] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath -20.00237 -11.66573 moveto
+229.99763 -11.66573 lineto
+229.99763 238.33427 lineto
+-20.00237 238.33427 lineto stroke
+newpath -20.00237 238.33427 moveto
+79.99992 304.99992 lineto
+329.99992 304.99992 lineto
+229.99763 238.33427 lineto stroke
+newpath 229.99763 -11.66573 moveto
+329.99992 54.99992 lineto
+329.99992 304.99992 lineto stroke
+newpath 79.99992 304.99992 moveto
+79.99992 54.99992 lineto
+-20.00237 -11.66573 lineto stroke
+newpath 79.99992 54.99992 moveto
+329.99992 54.99992 lineto stroke
+ 0 0 0.9 setrgbcolor
+newpath -20.00237 -11.66573 moveto
+229.99763 238.33427 lineto
+79.99992 304.99992 lineto
+ closepath fill
+ 0 0 0.8 setrgbcolor
+newpath -20.00237 -11.66573 moveto
+229.99763 238.33427 lineto
+329.99992 54.99992 lineto
+ closepath fill
+ 0 setgray [] 0 setdash
+newpath -20.00237 -11.66573 moveto
+229.99763 238.33427 lineto
+79.99992 304.99992 lineto
+ closepath stroke
+newpath 329.99992 54.99992 moveto
+229.99763 238.33427 lineto
+-20.00237 -11.66573 lineto
+ closepath stroke
+ [3 3 ] 0 setdash
+newpath 329.99992 54.99992 moveto
+79.99992 304.99992 lineto stroke
+showpage
+%%EOF

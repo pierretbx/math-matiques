@@ -1,0 +1,127 @@
+\documentclass[french]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{pstricks}
+\pgfplotsset{compat=newest}
+\usepackage{geometry}
+\geometry{hmargin=1cm,vmargin=2cm}
+
+
+\begin{document}
+%\twocolumn
+\begin{center}
+\underline{\textbf{Géométrie et optimisation}}
+\end{center}
+
+\section{Configurations planes}
+\section*{Exercice 1}
+Indiquer si chaque affirmation est vraie ou fausse. Justifer.
+\begin{enumerate}
+\item Tout rectangle a ses quatres sommets sur une même cercle.
+\item Tout parallélogramme a ses quatres sommets sur un même cercle.
+\item A,B et C sont des point quelconques du plan. Si ABC est un triangle non applati, alors $AB+BC>AC$
+\item Si ABC est une triangle rectangle en $A$, alors A est le point d'intersection des hauteurs.
+\end{enumerate}
+
+\section*{Exercice 2}
+
+Entre deux tours vecticales, l'une de 30 mètres de haut et l'autre de 40 mètres de haut et distante de 50 mètres, se trouve une fontaine. Des sommets des tours, deux oiseaux volant en direction de la fontiane et y arrivent en même temps. 
+
+\definecolor{qqqqff}{rgb}{0,0,1}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-1.1764303850011397,0.3271729764230654) rectangle (5.3303968789509355,5.369603417113168);
+\draw [line width=1pt] (-0.4145142398826411,3.7464197198752967)-- (-0.40123093272410737,0.9170752951076291);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (-0.4145142398826411,3.7464197198752967)-- (2.343935062039697,0.9299633983694311);
+\draw [line width=0.8pt,dash pattern=on 1pt off 1pt,color=qqqqff] (4.625383165226522,4.553893475906507)-- (2.343935062039697,0.9299633983694311);
+\draw [line width=1pt] (-0.40123093272410737,0.9170752951076291)-- (4.642387745527593,0.9319178717784146);
+\draw [line width=1pt] (4.625383165226522,4.553893475906507)-- (4.642387745527593,0.9319178717784146);
+\draw (-1.2652450700950774,2.6572230942240704) node[anchor=west] {30m};
+\draw (2.199617463701267,0.7960685109650627) node[anchor=north west] {50m};
+\draw (4.531653350228073,3.0972635189480995) node[anchor=north west] {40m};
+\begin{scriptsize}
+\draw [fill=ududff] (-0.4145142398826411,3.7464197198752967) circle (1.5pt);
+\draw[color=ududff] (-0.35405975518901495,3.901599705123988) node {$A$};
+\draw [fill=ududff] (-0.40123093272410737,0.9170752951076291) circle (1.5pt);
+\draw[color=ududff] (-0.3468459777345226,1.0737989429630155) node {$B$};
+\draw [fill=ududff] (4.642387745527593,0.9319178717784146) circle (1.5pt);
+\draw[color=ududff] (4.702798240410103,1.088226497872) node {$C$};
+\draw [fill=xdxdff] (4.625383165226522,4.553893475906507) circle (1.5pt);
+\draw[color=xdxdff] (4.681156908046626,4.709542780027124) node {$D$};
+\draw [fill=xdxdff] (2.343935062039697,0.9299633983694311) circle (1.5pt);
+\draw[color=xdxdff] (2.30061034806416,1.3407087087792298) node {$F$};
+\end{scriptsize}
+\end{tikzpicture}
+
+Sur le schéma ci-contre, les segments $[AB]$ et $[DC]$, perpendiculaire à $(BC)$, représentent les tours et F, la fontaine. À quelle distance de la plus haute tour se situe la fontaine ?
+
+\section*{Exercice 3}
+Soit ABC un triangle rectangle en A, Démontrer que $tan (\widehat{ABC}) = \dfrac{sin(\widehat{ABC})}{cos(\widehat{ABC})}$
+
+\section{Projeté orthogonaux}
+\section*{Exercice 4}
+ABC est un triangle rectangle en A tel que AB=5cm et AC=7cm. On appelle H le projeté orthogonal de A sur la droite (BC). En exprimant de deux manière l'aire du triangle ABC, calculer la distance de $A$ à la droite (BC).
+
+\section*{Exercice 5}
+\begin{enumerate}
+\item Sur une droite, placer deux points $A$ et $H$ tels que AH=4cm.
+\item Déterminer et représenter le(s) point(s) M tel(s) que H soit le projeté orthogonal de M sur d et AM= 5cm
+
+ \item Déterminer et représenter le(s) point(s) P tel(s) quele projeté orthogonale de P sur $d$ soit le milieu I de [AH].
+\end{enumerate} 
+
+\section{Optimisation}
+\section*{Exercice 6}
+Dans le commerce, les boîtes de conserve cylindrique de même contenance ont toutes les mêmes dimensions. Comment ces dimensions ont-elles été choisies ? 
+\begin{enumerate}
+\item Exprimer le volume $V$ d'un cylindre de hauteur $h$ et dont le rayon de la base est $r$.
+\item En déduire une expression de $h$ en fonction de $V$ et de $r$.
+\item Exprimer l'aire $A$ de ce cylindre en fonction de $h$ et de $r$ .
+\item En remplaçant $h$ par l'expression trouvée précédemment, exprimer $A$ en fonction de $V$ et $r$.
+   
+   
+Dans le commerce , on trouve des boîtes de conserve de 212$cm^3$ , 425$cm^3$ , 850$cm^3$. 
+
+\item Donner l'expression des trois fonctions qui , au rayon de la base de la boîte de conserve, associent l'aire de la boîte pour les trois volumes proposés. 
+Les nommer $A_{212}$ , $A_{425}$, $A_{850}$. 
+\item  Utiliser la calculatrice ou un tableur pour tracer dans un même repère ces trois fonctions. 
+\item Déterminer le minimum pour chacune des trois fonctions au dixième près. ( si besoin dresser un tableau de valeur pertinent). 
+\item En reprenant l'expression de  h en fonction de r et V de la partie A , calculer la hauteur correspondante pour chacun des trois volumes étudiés et des trois rayons déterminés. 
+\item À votre avis, quels objectifs ont sous-tendu le choix des dimensions des boîtes de conserve cylindrique? 
+
+\end{enumerate}
+
+\section*{Exercice 7}
+
+On considère un carré $ABCD$ de côté 4.
+On place un point $M$, variable sur la diagonale $]AC[$ à une distance $x$ du point $A$, et par $M$ on trace deux parallèles aux côtés du grand carré qui le partagent en deux carrés et deux rectangles, on construit alors les carrés $ANMP$ et $MRCQ$.
+
+Il s'agit de déterminer la longueur $x$ du segment $AM$ sur le segment $[AC]$ pour que la somme des aires des petits carrés ($ANMP$ et $MRCQ$) soit minimale.
+
+\begin{enumerate}
+\item Réprésenter la figure géométrique associer au problème.
+\item Donner l'ensemble de nombre auquel $x$ doit appartenir.
+\item Calculer la longueur du coté $AN$ et $CQ$ en fonction de $x$.
+\item En déduire l'aire de $ANMP$ et $MRCQ$ en fonction de $x$ puis la somme des aires des petits carrés, on appelle $A(x)$ cette fonction.
+\item Déterminer la longueur $x$ du segment $AM$ pour que la somme des aires des petits carrés ($ANMP$ et $MRCQ$) soit minimale. À quoi équivaut cette phrase en recherche mathématique avec $A(x)$ ? 
+\item Le minimum/maximum d'une parabole du type $ax^2+bx+c$ avec $a\neq0$ est atteint quand $x=\dfrac{-b}{2a}$. En déduire alors pour quel(s) valeur(s) de $x$ pour laquelle $A(x)$ est minimale. Conclure.
+\end{enumerate}
+
+\section*{Exercice 8}
+
+Soit $ABCD$ un rectangle tel que $AB=5$ et $BC=3$ on place les points $M \in [AB],N \in [BC], P \in [CD], Q \in [DA]$ tels que $AM=BN=CP=DQ$ on appelle $x$ la longueur des segments   $[AM]=[BN]=[CP]=[DQ]$
+
+\begin{enumerate}
+\item À quel intervalle appartient $x$ ?
+\item Démontrer que l'aire de MNPQ est égale à $2x^2-8x+15$. 
+\item Le minimum/maximum d'une parabole du type $ax^2+bx+c$ avec $a\neq0$ est atteint quand $x=\dfrac{-b}{2a}$. En déduire alors pour quel(s) valeur(s) de $x$ pour laquelle l'aire de MNPQ est minimale.
+\end{enumerate}
+
+\end{document}

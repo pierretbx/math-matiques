@@ -1,0 +1,185 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+
+\setcounter{chapter}{13}
+\chapter{Axes de symétries}
+
+\section{Axe de symétrie d'une figure}
+
+\begin{defn}
+Une droite est un axe de symétrie d'une figure si les deux parties de la figure se superposent par pliage le long de cette droite.
+\end{defn}
+
+\begin{rem}
+Une figure peut avoir aucun axe de symétrie, un seul axe de symétrie ou plusieurs axes de symétrie.
+\end{rem}
+
+\begin{ex}
+Parmi les droites tracées en rouge, repasse en vert celles qui sont des axes de symétrie.
+
+\smallskip
+\noindent\begin{minipage}{0.58\linewidth}
+\grandscarreaux{\linewidth}{2.35cm}
+\end{minipage}
+\hfill
+\begin{minipage}{0.36\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.63,line cap=round,line join=round]
+\draw[lightgray] (-3,-2.3) grid (3,2.3);
+\fill[blue!15,draw=blue,line width=1.2pt] (0,2) -- (2,0) -- (0,-2) -- (-2,0) -- cycle;
+\draw[red,line width=1.2pt] (0,-2.3) -- (0,2.3);
+\draw[red,line width=1.2pt,dashed] (-2.8,0) -- (2.8,0);
+\draw[red,line width=1.2pt,dashed] (-2.2,-2.2) -- (2.2,2.2);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{ex}
+
+\begin{prop}
+Pour vérifier qu'une droite est un axe de symétrie, on peut imaginer un pliage : chaque point de la figure doit se superposer avec un point de la même figure.
+\end{prop}
+
+\begin{ex}
+Complète la figure pour que la droite $(d)$ soit un axe de symétrie.
+
+\smallskip
+\noindent\begin{minipage}{0.48\linewidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.56,line cap=round,line join=round]
+\draw[lightgray] (-4,-3) grid (4,3);
+\draw[red,line width=1.4pt] (0,-3) -- (0,3);
+\node[red,anchor=west] at (0,2.6) {$(d)$};
+\fill[blue!20,draw=blue,line width=1.2pt] (-3,2) -- (-1,2) -- (-1,1) -- (-2,1) -- (-2,-1) -- (-3,-1) -- cycle;
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\linewidth}
+\grandscarreaux{\linewidth}{3.35cm}
+\end{minipage}
+\end{ex}
+
+\section{Axes de symétrie des figures usuelles}
+
+\subsection{Figures sans axe ou avec un axe}
+\enlargethispage{4cm}
+
+\begin{prop}
+\begin{enumerate}
+\item[•] Un triangle quelconque n'a pas d'axe de symétrie en général.
+\item[•] Un triangle isocèle possède un axe de symétrie.
+\item[•] Un angle possède un axe de symétrie : sa bissectrice.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+Trace l'axe de symétrie de chaque figure lorsqu'il existe.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{ccc}
+\begin{tikzpicture}[scale=0.72,line cap=round,line join=round]
+\draw[lightgray] (-2,-1.5) grid (2,2.5);
+\draw[line width=1.2pt] (-1.5,-1) -- (1.7,-0.8) -- (-0.4,2) -- cycle;
+\node at (0,-1.8) {Triangle quelconque};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.72,line cap=round,line join=round]
+\draw[lightgray] (-2,-1.5) grid (2,2.5);
+\draw[line width=1.2pt] (-1.6,-1) -- (1.6,-1) -- (0,2) -- cycle;
+\draw[line width=1pt] (-0.9,0.45)--(-0.75,0.55);
+\draw[line width=1pt] (0.9,0.45)--(0.75,0.55);
+\node at (0,-1.8) {Triangle isocèle};
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.72,line cap=round,line join=round]
+\draw[lightgray] (-2,-1.5) grid (2,2.5);
+\draw[line width=1.2pt] (-1.7,-1) -- (0,0) -- (1.8,1.4);
+\draw[green!50!black,line width=1pt] (-0.45,-0.25) arc (210:38:0.52);
+\node at (0,-1.8) {Angle};
+\end{tikzpicture}
+\end{tabular}
+\end{center}
+\end{ex}
+
+\subsection{Quadrilatères et cercle}
+
+\begin{prop}
+\begin{enumerate}
+\item[•] Un rectangle possède deux axes de symétrie.
+\item[•] Un losange possède deux axes de symétrie.
+\item[•] Un carré possède quatre axes de symétrie.
+\item[•] Un cercle possède une infinité d'axes de symétrie : toutes les droites passant par son centre.
+\end{enumerate}
+\end{prop}
+
+\begin{ex}
+Complète le tableau.
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.6}
+\begin{tabularx}{\linewidth}{|>{\cellcolor{titlecolor!30}\centering\arraybackslash}p{3cm}|*{4}{>{\centering\arraybackslash}X|}}
+\hline
+Figure & Rectangle & Losange & Carré & Cercle\\\hline
+Nombre d'axes & & & & \\\hline
+Représentation &
+\begin{tikzpicture}[scale=0.5,line cap=round,line join=round]
+\draw[line width=1.2pt] (-2,-1) rectangle (2,1);
+\draw[red,dashed,line width=1pt] (-2.4,0)--(2.4,0);
+\draw[red,dashed,line width=1pt] (0,-1.4)--(0,1.4);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.5,line cap=round,line join=round]
+\draw[line width=1.2pt] (0,1.7)--(2,0)--(0,-1.7)--(-2,0)--cycle;
+\draw[red,dashed,line width=1pt] (-2.3,0)--(2.3,0);
+\draw[red,dashed,line width=1pt] (0,-2)--(0,2);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.5,line cap=round,line join=round]
+\draw[line width=1.2pt] (-1.4,-1.4) rectangle (1.4,1.4);
+\draw[red,dashed,line width=1pt] (-1.8,0)--(1.8,0);
+\draw[red,dashed,line width=1pt] (0,-1.8)--(0,1.8);
+\draw[red,dashed,line width=1pt] (-1.7,-1.7)--(1.7,1.7);
+\draw[red,dashed,line width=1pt] (-1.7,1.7)--(1.7,-1.7);
+\end{tikzpicture}
+&
+\begin{tikzpicture}[scale=0.5,line cap=round,line join=round]
+\draw[line width=1.2pt] (0,0) circle (1.6);
+\fill (0,0) circle (1.6pt);
+\draw[red,dashed,line width=1pt] (-1.9,0)--(1.9,0);
+\draw[red,dashed,line width=1pt] (-1.35,-1.35)--(1.35,1.35);
+\end{tikzpicture}
+\\\hline
+\end{tabularx}
+\end{center}
+\end{ex}
+
+\section{Utiliser les axes de symétrie}
+
+\begin{prop}
+Si une figure possède un axe de symétrie, alors les points symétriques sont à la même distance de cet axe.
+\end{prop}
+
+\begin{ex}
+La droite $(d)$ est un axe de symétrie de la figure. Place les points $B'$ et $C'$, symétriques des points $B$ et $C$ par rapport à $(d)$, puis termine la figure.
+
+\smallskip
+\begin{center}
+\begin{tikzpicture}[scale=0.57,line cap=round,line join=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[red,line width=1.3pt] (0,-3) -- (0,3);
+\node[red,anchor=west] at (0,2.65) {$(d)$};
+\draw[blue,line width=1.2pt] (-4,-2)--(-2,1)--(-1,0);
+\fill[blue] (-4,-2) circle (2pt) node[below left,black] {$A$};
+\fill[blue] (-2,1) circle (2pt) node[above left,black] {$B$};
+\fill[blue] (-1,0) circle (2pt) node[below left,black] {$C$};
+\draw[dashed,blue] (-4,-2)--(4,-2);
+\fill[blue] (4,-2) circle (2pt) node[below right,black] {$A'$};
+\end{tikzpicture}
+\end{center}
+\end{ex}
+
+\end{document}

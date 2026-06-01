@@ -1,0 +1,46 @@
+input latexmp;
+input repere;
+
+repere(0,10.5,1cm,-0.5,3,1cm);
+draw axex(0,0);
+draw boitemoustache(1,2,5,6,10);
+draw projboitemoustache.bot() dashed evenly;
+fin;
+
+repere(11.5,17.5,1.3cm,-10,110,0.05cm);
+ interaxes(12,0);
+ settout(12,17.5,0,110);
+ draw axex(1,1);
+ draw axey(10,10);
+ pair A,B,C,D,O,E,q[][];
+ string tt[];
+ path p;
+ O:=_c(12,0);
+ A:=_c(13,14);
+ B:=_c(14,37);
+ C:=_c(15,69.5);
+ D:=_c(16,85.5);
+ E:=_c(17,100);
+ p=O--A--B--C--D--E;
+ draw p;
+ nomme.ulft(A);
+ nomme.ulft(B);
+ pointe(O,C,D,E);
+ tt[1]="$Q_1$";tt[2]="$M_e$";
+ tt[3]="$Q_3$";
+ for i=1 upto 3:
+   ptantecedents(q[i],25*i,p);
+   draw projectionaxes(q[i][1],textext(tt[i])) dashed evenly;
+ endfor
+fin;
+
+for i=1 upto 2:
+repere(0,9.5,1cm,-1,3,1cm);
+ if i=2: drawoptions(withcolor blue) fi;
+ draw axexn(1,1);
+ draw boitemoustache(1,3,4,6,8);
+ draw projboitemoustache(0) dashed evenly;
+fin;
+endfor
+
+end

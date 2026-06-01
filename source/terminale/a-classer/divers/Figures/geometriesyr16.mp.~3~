@@ -1,0 +1,951 @@
+%%===============================================
+%% GEOMETRIESYR.MP
+%% christophe.poulain@melusine.eu.org
+%% Création : 19 Février 2003
+%% Dernière modification : 16 Janvier 2006
+%%===============================================
+%------------------------------------------------
+% Appel fichier
+%------------------------------------------------
+input constantes;
+input papiers2;
+input donymodule;
+%------------------------------------------------
+% La figure (début et fin) JMS/CP
+%------------------------------------------------
+path feuillet;
+numeric _tfig,_nfig;
+pair coinbg,coinbd,coinhd,coinhg;
+_nfig:=0;
+
+string typetrace;
+typetrace="normal";
+
+def feuille(expr xa,ya,xb,yb) =
+  feuillet := (xa,ya)--(xa,yb)--(xb,yb)--(xb,ya)--cycle;
+  coinbg := (xa,ya);
+  coinbd := (xb,ya);
+  coinhd := (xb,yb);
+  coinhg := (xa,yb);
+  %modifié le 29.09.04
+  z.so=(xpart(coinbg/1cm),ypart(coinbg/1cm));
+  z.ne=(xpart(coinhd/1cm),ypart(coinhd/1cm));
+  %fin modification
+  extra_endfig := "clip currentpicture to feuillet;" & extra_endfig;
+enddef;
+def figure(expr xa,ya,xb,yb) =
+  _nfig:=_nfig+1;
+    beginfig(_nfig);
+    feuille(xa,ya,xb,yb);
+    _tfig:= if (xb-xa)>(yb-ya): xb-xa else: yb-ya fi;
+    _tfig:=2*_tfig;
+  enddef;
+
+def figuremainlevee(expr xa,ya,xb,yb) =
+  _nfig:=_nfig+1;
+  typetrace:="mainlevee";
+  beginfig(_nfig);
+    feuille(xa,ya,xb,yb);
+    _tfig:= if (xb-xa)>(yb-ya): xb-xa else: yb-ya fi;
+    _tfig:=2*_tfig;
+  enddef;
+  
+def figureespace(expr xa,ya,xb,yb) =
+  _nfig:=_nfig+1;
+  typetrace:="3D";
+  beginfig(_nfig);
+    feuille(xa,ya,xb,yb);
+    _tfig:= if (xb-xa)>(yb-ya): xb-xa else: yb-ya fi;
+        _tfig:=2*_tfig;
+enddef;  
+
+def fin=
+  endfig;
+enddef;
+
+def finmainlevee=
+endfig;
+typetrace:="normal";
+enddef;
+def finespace=
+endfig;
+typetrace:="normal";
+enddef;
+  
+%%-----------------------------------------------
+%% Les marques (JMS)
+%%-----------------------------------------------
+string marque_p;
+marque_p := "non";
+marque_r := 20;
+marque_a := 20;
+%------------------------------------------------
+% Les tables
+%------------------------------------------------
+numeric _tn;
+_tn:=0;
+pair _t[];
+color _T[];
+%%-----------------------------------------------
+%% Procédures d'affichage
+%%-----------------------------------------------
+def MarquePoint(expr p)=
+  if typetrace="3D":
+    %JMS
+    if marque_p = "plein":
+      fill fullcircle scaled (marque_r/5) shifted Projette(p);
+    elseif marque_p = "creux":
+      fill fullcircle scaled (marque_r/5) shifted (Projette(p)) withcolor white;
+      draw fullcircle scaled (marque_r/5) shifted (Projette(p));
+        %fin JMS
+    elseif marque_p = "croix":
+      draw (Projette(p) shifted (-u/10,u/10))--(Projette(p) shifted (u/10,-u/10));
+      draw (Projette(p) shifted (-u/10,-u/10))--(Projette(p) shifted (u/10,u/10));
+    elseif marque_p = "tiretv":
+      draw (Projette(p) shifted (0,u/10))--(Projette(p) shifted(0,-u/10));
+    fi;
+  else:
+    if marque_p = "plein":
+      fill fullcircle scaled (marque_r/5) shifted p;
+    elseif marque_p = "creux":
+      fill fullcircle scaled (marque_r/5) shifted p withcolor white;
+      draw fullcircle scaled (marque_r/5) shifted p;
+    elseif marque_p = "croix":
+      draw (p shifted (-u/10,u/10))--(p shifted (u/10,-u/10));
+      draw (p shifted (-u/10,-u/10))--(p shifted (u/10,u/10));
+    elseif marque_p = "tiretv":
+      draw (p shifted (0,u/10))--(p shifted(0,-u/10));
+    fi;
+  fi;
+enddef;
+vardef pointe(text t) =
+  for p_ = t: if (pair p_) or (color p_): MarquePoint(p_); fi endfor;
+enddef;
+vardef nomme@#(suffix p)=
+  MarquePoint(p);
+  if typetrace="3D":
+    label.@#(str p ,Projette(p));
+  else:
+    label.@#(str p,p);
+  fi;
+enddef;
+def trace expr o =
+    if path o: draw o else: draw o fi
+enddef;
+def remplis expr o =
+    if path o: fill o else: fill o fi
+enddef;
+vardef triangle(expr aa,bb,cc)=
+  if typetrace="mainlevee":
+    save $;
+    picture $;
+    $=image(
+      trace aa{dir(angle(bb-aa)+5)}..bb{dir(angle(bb-aa)+5)};
+      trace cc{dir(angle(bb-cc)+5)}..bb{dir(angle(bb-cc)+5)};
+      trace aa{dir(angle(cc-aa)+5)}..cc{dir(angle(cc-aa)+5)};
+      );
+  else:
+    save $;
+    path $;
+    $=aa--bb--cc--cycle;
+  fi;
+  $
+enddef;
+%fin JMS
+vardef bary(expr a,b,c,d)=
+  save $;
+  pair $;
+  numeric t[];
+  t1=uniformdeviate(1);
+  t2=uniformdeviate(1);
+  t3=uniformdeviate(1);
+  t4=uniformdeviate(1);
+  $=(1/(t1+t2+t3+t4))*(t1*a+t2*b+t3*c+t4*d);
+  $
+enddef;
+vardef triangleqcq(text t)=
+  save $;numeric j;
+  pair pointchoisi[];
+  pointchoisi1:=.5bary(coinbg,1/4[coinbg,coinbd],iso(coinbg,iso(coinhg,coinhd)),iso(coinhg,coinbg));
+  pointchoisi2:=.5bary(coinbd,3/4[coinbg,coinbd],iso(coinbd,iso(coinhg,coinhd)),iso(coinhd,coinbd));
+  test:=uniformdeviate(1);
+  choix:=43+uniformdeviate(4);
+  ecart:=abs(45-choix);
+  relation:=60-(ecart/2)+uniformdeviate(ecart);
+  if test<0.5 :
+    pointchoisi3:=.5(droite(pointchoisi1,rotation(pointchoisi2,pointchoisi1,choix)) intersectionpoint droite(pointchoisi2,rotation(pointchoisi1,pointchoisi2,-relation)));
+  else :
+    pointchoisi3:=.5(droite(pointchoisi2,rotation(pointchoisi1,pointchoisi2,-choix)) intersectionpoint droite(pointchoisi1,rotation(pointchoisi2,pointchoisi1,relation)));
+  fi
+  j:=1;
+  for p_=t:
+    p_=pointchoisi[j];
+    j:=j+1;
+  endfor;
+  if typetrace="mainlevee":
+    picture $;
+  else:
+    path $;
+  fi;
+  $=polygone(pointchoisi1,pointchoisi2,pointchoisi3);
+  $
+enddef;
+
+vardef polygone(text t)=
+  pair aaa[];
+  j:=0;
+  for p_=t: if pair p_:
+      j:=j+1;
+      aaa[j]=p_;
+    elseif color p_:
+      j:=j+1;
+      aaa[j]=Projette(p_);
+    fi;
+  endfor;
+  aaa[j+1]:=aaa[1];
+  if typetrace="mainlevee":
+    save $;
+    picture $;
+    $=image(
+      for k=1 upto j:
+	trace segment(aaa[k],aaa[k+1]);
+      endfor;
+      );
+  else:
+    save $;
+    path $;
+    $=aaa1--
+    for k=2 upto j:
+      aaa[k]--
+    endfor
+    cycle;
+  fi;
+  $
+enddef;
+
+vardef chemin(text t)=
+  pair aaa[];
+  j:=0;
+  for p_=t: if pair p_:
+      j:=j+1;
+      aaa[j]=p_;
+    elseif color p_:
+      j:=j+1;
+      aaa[j]=Projette(p_);
+    fi;
+  endfor;
+  if typetrace="mainlevee":
+    save $;
+    picture $;
+    $=image(
+      for k=1 upto (j-1):
+	trace segment(aaa[k],aaa[k+1]);
+      endfor;
+      );
+  else:
+    save $;
+    path $;
+    $=aaa1
+    for k=2 upto j:
+      --aaa[k]
+    endfor;
+  fi;
+  $
+enddef;
+
+%------------------------------------------------
+% Procédures de codage
+%------------------------------------------------
+%Codage de l'angle droit de sommet B
+vardef codeperp(expr aa,bb,cc,m)=%normalement m=5
+  save codep;
+  path codep;
+  if typetrace="3D":
+    codep=(Projette(bb)+m*unitvector(Projette(aa)-Projette(bb)))--(Projette(bb)+m*unitvector(Projette(aa)-Projette(bb))+m*unitvector(Projette(cc)-Projette(bb)))--(Projette(bb)+m*unitvector(Projette(cc)-Projette(bb)));
+  else:
+    codep=(bb+m*unitvector(aa-bb))--(bb+m*unitvector(aa-bb)+m*unitvector(cc-bb))--(bb+m*unitvector(cc-bb));
+  fi;
+  codep
+enddef;
+
+%Codage d'un milieu
+vardef codemil(expr AA,BB, n) =%extrêmités-angle de codage
+  save $,a,b,c,d;
+  path $;
+  pair a,b,c,d;
+  a=1/2[AA,BB];
+  b=(a+2*unitvector(BB-AA))-(a-2*unitvector(BB-AA));
+  c=b rotated n shifted a;
+  d=2[c,a];
+  $=c--d;
+  $
+enddef;
+%Codage de deux segments égaux
+vardef codesegments(expr aa,bb,cc,dd,n)=%extrémités des segments(4)-type de codage
+  save $,v,w;
+  picture $;
+  pair AA,BB,CC,DD;
+  $=image(
+    if typetrace="3D":
+      AA=Projette(aa);      BB=Projette(bb);      CC=Projette(cc);      DD=Projette(dd);
+    else:
+      AA=aa;BB=bb;CC=cc;DD=dd;
+    fi;
+    if n=5 :
+      draw fullcircle scaled 0.1cm shifted (1/2[AA,BB]);
+      draw fullcircle scaled 0.1cm shifted (1/2[CC,DD]);
+    elseif n=4 :
+      pair v,w;
+      v=1/2[AA,BB];
+      w=1/2[CC,DD];
+      draw codemil(AA,BB,60);
+      draw codemil(AA,BB,120);
+      draw codemil(CC,DD,60);
+      draw codemil(CC,DD,120);
+    elseif n=3 :
+      draw codemil(AA,BB,60);
+      draw codemil(AA,BB,60) shifted (2*unitvector(AA-BB));
+      draw codemil(AA,BB,60) shifted (2*unitvector(BB-AA));
+      draw codemil(CC,DD,60);
+      draw codemil(CC,DD,60) shifted (2*unitvector(CC-DD));
+      draw codemil(CC,DD,60) shifted (2*unitvector(DD-CC));
+    elseif n=2 :
+      draw codemil(AA,BB,60) shifted unitvector(AA-BB);
+      draw codemil(AA,BB,60) shifted unitvector(BB-AA);
+      draw codemil(CC,DD,60) shifted unitvector(CC-DD);
+      draw codemil(CC,DD,60) shifted unitvector(DD-CC);
+    elseif n=1 :
+      draw codemil(AA,BB,60);
+      draw codemil(CC,DD,60);
+    fi;
+    );
+    $
+  enddef;
+
+%Codage de plusieurs segments de même longueur
+  vardef Codelongueur(text t)=
+  save result;
+  picture result;
+  pair tt[];
+  k:=0;
+  for p_=t:
+    if pair p_:
+      k:=k+1;
+      tt[k]=p_;
+    elseif color p_:
+      k:=k+1;
+      tt[k]=Projette(p_);
+    elseif numeric p_:
+      co:=p_;
+    fi;
+  endfor;
+  result=image(
+    if co=5:
+      for j=1 upto (k div 2):
+	draw fullcircle scaled 0.1cm shifted (1/2[tt[2*j-1],tt[2*j]]);
+      endfor;
+    elseif co=4:
+      for j=1 upto (k div 2):
+	draw codemil(tt[2*j-1],tt[2*j],60);
+	draw codemil(tt[2*j-1],tt[2*j],120);
+      endfor;
+    elseif co=3:
+      for j=1 upto (k div 2):
+	draw codemil(tt[2*j-1],tt[2*j],60);
+	draw codemil(tt[2*j-1],tt[2*j],60) shifted (2*unitvector(tt[2*j-1]-tt[2*j]));
+	draw codemil(tt[2*j-1],tt[2*j],60) shifted (2*unitvector(tt[2*j]-tt[2*j-1]));
+      endfor;
+    elseif co=2:
+      for j=1 upto (k div 2):
+	draw codemil(tt[2*j-1],tt[2*j],60) shifted unitvector(tt[2*j-1]-tt[2*j]);
+	draw codemil(tt[2*j-1],tt[2*j],60) shifted unitvector(tt[2*j]-tt[2*j-1]);
+      endfor;
+    elseif co=1:
+      for j=1 upto (k div 2):
+	draw codemil(tt[2*j-1],tt[2*j],60);
+      endfor;
+    fi;
+    );
+  result
+enddef;
+
+%Codage de l'angle abc non orienté (mais donné dans le sens direct) n fois avec des mesures différentes
+vardef codeangle@#(expr aa,bb,cc,nb,nom)=
+  save s,p,$;
+  path p;
+  picture $;
+  $=image(
+    trace marqueangle(aa,bb,cc,nb);
+    label.@#(nom,w);
+    );
+  $
+enddef;
+
+vardef Marqueangle(expr aa,bb,mark)=%codage d'un angle formé par les demi-droites aa et bb dans le sens direct avec la marque mark
+  save $;
+  picture $;
+  path conf,rr;
+  pair w,tangent;
+  numeric t,tt;
+  conf=fullcircle scaled (2*marque_a) shifted (aa intersectionpoint bb);
+  numeric te;
+  te=angle((conf intersectionpoint aa)-(aa intersectionpoint bb));
+  rr=(conf intersectionpoint aa){dir(90+angle((conf intersectionpoint aa)-(aa intersectionpoint bb)))}..(conf intersectionpoint bb);
+  t=length rr/2;
+  w=point(t) of rr;
+  tangent=unitvector(direction t of rr);
+  $=image(
+    trace rr;
+    if mark=1:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+    elseif mark=2:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted tangent;
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(-tangent);
+    elseif mark=3:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(1.5*tangent);
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(-1.5*tangent);
+    elseif mark=4:
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,45);
+      trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,-45);
+    fi;
+    );
+  $
+enddef;
+
+vardef marqueangle(expr aa,bb,cc,mark)=%codage d'un angle de sommet bb dans le sens direct par la marque mark.
+  save $;
+  picture $;
+  path conf,rr;
+  pair w,tangent;
+  numeric t;
+    if typetrace="mainlevee":
+    conf=fullcircle scaled (2*marque_a) shifted bb;
+    rr=(conf intersectionpoint demidroite(bb,aa)){dir(90+angle(aa-bb))}..(conf intersectionpoint demidroite(bb,cc));
+    w=rr intersectionpoint droite(bb,CentreCercleI(aa,bb,cc));
+    t=length rr/2;
+    tangent=unitvector(direction t of rr);
+    $=image(
+      trace rr;
+      if mark=1:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+      elseif mark=2:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted tangent;
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(-tangent);
+      elseif mark=3:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(1.5*tangent);
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(-1.5*tangent);
+      elseif mark=4:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,45);
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,-45);
+      fi;
+      );
+  else:
+    rr=arccercle(bb+marque_a*unitvector(aa-bb),bb+marque_a*unitvector(cc-bb),bb);
+    w=rr intersectionpoint droite(bb,CentreCercleI(aa,bb,cc));
+    t=length rr/2;
+    tangent=unitvector(direction t of rr);
+    $=image(
+      if mark=5:
+	drawarrow rr;
+      else:
+	trace rr;
+      fi;
+      if mark=1:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+      elseif mark=2:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted tangent;
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(-tangent);
+      elseif mark=3:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90);
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(1.5*tangent);
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,90) shifted(-1.5*tangent);
+      elseif mark=4:
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,45);
+	trace rotation((w shifted(5*tangent))--(w shifted(-5*tangent)),w,-45);
+      fi;
+      );
+  fi;
+  $
+enddef;
+
+
+
+
+
+
+
+
+
+vardef coloreangle(expr aa,bb,cc)=arccercle(bb+marque_a*unitvector(aa-bb),bb+marque_a*unitvector(cc-bb),bb)--bb--cycle
+enddef;
+
+vardef Codeangle(expr aa,bb,cc,nb,nom)=
+  save s,p,$;
+  path p;
+  picture $;
+  $=image(
+    trace marqueangle(aa,bb,cc,nb);
+    label(nom,w shifted(10*unitvector(w-bb)));
+    );
+  $
+enddef;
+
+vardef marque_para(expr dd,ee,pa)=
+  save im;
+  picture im;
+  pair kk,ll,mn,mo;
+  kk=point(pa*length dd) of dd;
+  ll=projection(kk,point(0.25*length ee) of ee,point(0.5*length ee) of ee);
+  mn=iso(kk,ll);
+  mo=(mn--kk) intersectionpoint cercles(mn,3mm);
+  im=image(
+    drawarrow mo--kk;
+    drawarrow symetrie(mo,mn)--ll;
+    label(btex $//$ etex,mn);
+    );
+  im
+enddef;
+
+vardef marquesegment(expr aa,bb)=
+  save tr;
+  picture tr;
+  tr=image(
+    trace rotation(segment(aa-5*unitvector(bb-aa),aa+5*unitvector(bb-aa)),aa,90);
+    trace rotation(segment(bb-5*unitvector(bb-aa),bb+5*unitvector(bb-aa)),bb,90);
+    );
+  tr
+enddef;
+
+vardef marquedemidroite(expr aa,bb)=
+  save tr;
+  picture tr;
+  tr=image(
+    trace rotation(segment(aa-5*unitvector(bb-aa),aa+5*unitvector(bb-aa)),aa,90);
+    );
+  tr
+enddef;
+
+%------------------------------------------------
+% Points
+%------------------------------------------------
+%JMS
+vardef iso(text t) =
+  save s,n; numeric n;
+  if typetrace="3D":
+    color s; s := (0,0,0) ; n := 0;
+    for p_ = t: s := s + p_; n := n + 1 ; endfor;
+  else:
+    pair s; s := (0,0) ; n := 0;
+    for p_ = t: s := s + p_; n := n + 1 ; endfor;
+  fi;
+  if n>0: (1/n)*s fi
+enddef;
+
+vardef milieu(expr AA,BB)=
+  save $;
+  pair $;
+  if typetrace="mainlevee":
+    $=point((length segment(AA,BB))*(1/2+(-1+uniformdeviate(2))/10)) of segment(AA,BB)
+  else:
+    $=iso(AA,BB)
+  fi;
+  $
+enddef;
+    
+% -- projection de m sur (a,b)
+vardef projection(expr m,a,b) =
+    save h; pair h;
+    h - m = whatever * (b-a) rotated 90;
+    h = whatever [a,b];
+    if typetrace="mainlevee":
+      h:=h shifted((-2+uniformdeviate(4))*unitvector(a-b))
+    fi;
+    h
+enddef;
+% -- centre du cercle circonscrit
+vardef CentreCercleC(expr a, b ,c) =
+    save o; pair o;
+    o - .5[a,b] = whatever * (b-a) rotated 90;
+    o - .5[b,c] = whatever * (c-b) rotated 90;
+    o
+enddef;
+% -- orthocentre
+vardef Orthocentre(expr a, b, c) =
+  save h; pair h;
+  h - a = whatever * (c-b) rotated 90;
+  h - b = whatever * (a-c) rotated 90;
+  h
+enddef;
+%fin JMS
+vardef CentreCercleI(expr aa,bb,cc)=
+  save $,a,c;
+  pair $;
+  numeric a,c;
+  a=(angle(aa-cc)-angle(bb-cc))/2;
+  c=(angle(cc-bb)-angle(aa-bb))/2;
+  ($-cc) rotated a shifted cc=whatever[aa,cc];
+  ($-bb) rotated c shifted bb=whatever[bb,cc];
+  $
+enddef;
+%------------------------------------------------
+% Cercles
+%------------------------------------------------
+%Cercle connaissant le centre A et le rayon q
+vardef cercle(expr aa, q)=fullcircle scaled (2*q) shifted aa
+enddef;
+%Cercle de centre A et passant par B
+vardef cerclepoint(expr aa,bb)=fullcircle scaled (2*abs(aa-bb)) shifted aa
+enddef;
+%Cercle connaissant le diamètre [AB]
+vardef cercledia(expr aa,bb)=cercles(iso(aa,bb),bb)
+  %fullcircle scaled (2*abs(1/2[aa,bb]-bb)) shifted (1/2[aa,bb])
+enddef;
+%Cercles complets
+vardef cercles(text t)=
+  save Cer;
+  save n;
+  n:=0;
+  for p_=t:
+    if pair p_:
+      n:=n+1;
+      _t[n]:=p_;
+    fi
+    if numeric p_:
+      rayon:=p_;
+    fi;
+    if color p_:
+      n:=n+1;
+      _T[n]:=p_;
+    fi;
+  endfor;
+  if typetrace="mainlevee":
+    path Cer;
+    path dep;
+    pair ct;
+    if n=1 : dep=fullcircle scaled (2*rayon) shifted _t[1];
+      ct=_t[1];
+    elseif n=2 : dep=fullcircle scaled (2*abs(_t[1]-_t[2])) shifted _t[1];
+      ct=_t[1];
+    elseif n=3 :
+      dep=fullcircle scaled (2*abs(CentreCercleC(_t[1],_t[2],_t[3])-_t[1])) shifted CentreCercleC(_t[1],_t[2],_t[3]);
+      ct=CentreCercleC(_t[1],_t[2],_t[3]);
+    fi
+    path ess;
+    ess=pointarc(dep,0){dir(80+uniformdeviate(5))}..pointarc(dep,90){dir(170+uniformdeviate(20))}..pointarc(dep,90){dir(185+uniformdeviate(5))}..pointarc(dep,180){dir(-80-uniformdeviate(20))}..pointarc(dep,180){dir(-100+uniformdeviate(20))}..pointarc(dep,270){dir(-10+uniformdeviate(20))}..pointarc(dep,270){dir(uniformdeviate(10))}..pointarc(dep,360){dir(80+uniformdeviate(20))};
+    Cer=ess;
+  elseif typetrace="3D":%centre aa passant par bb dans le plan (ccddee) généralement aa=cc
+    path Cer;
+    color ptcer[];
+    for k=0 step 5 until 360 :
+      ptcer[k div 5]-_T[1]=Distance(_T[1],_T[2])*((_T[4]-_T[3])*cosd(k)/Distance(_T[3],_T[4])+(_T[5]-_T[3])*sind(k)/Distance(_T[3],_T[5]));
+    endfor;
+    Cer=Projette(ptcer0)
+    for k=0 step 5 until 360 :
+      ..Projette(ptcer[k div 5])
+    endfor
+    ..cycle;
+  else:
+    path Cer;
+    if n=1 : Cer=fullcircle scaled (2*rayon) shifted _t[1];
+    elseif n=2 : Cer=fullcircle scaled (2*abs(_t[1]-_t[2])) shifted _t[1];
+    elseif n=3 : Cer=cercles(CentreCercleC(_t[1],_t[2],_t[3]),_t[1]);
+    fi
+  fi
+  Cer
+enddef;
+
+%Point particulier sur le cercle
+vardef pointarc(expr cercla,angle)=
+  point(arctime((angle/360)*arclength cercla) of cercla) of cercla
+enddef;
+%Arc de cercle AB de centre 0(dans le sens direct) : les points A et B doivent être sur le cercle.
+vardef arccercle(expr aa,bb,oo)=
+  path tempo;
+  path arc;
+  tempo=fullcircle scaled (2*abs(aa-oo)) shifted oo;
+  if (angle(aa-oo)=0) or (angle(aa-oo)>0) :
+    if (angle(bb-oo)=0) or (angle(bb-oo)>0):
+      if (angle(aa-oo)<angle(bb-oo)):
+	arc=subpath(angle(aa-oo)*(length tempo)/360,angle(bb-oo)*(length tempo)/360) of tempo;
+      else:
+	arc=subpath(angle(aa-oo)*(length tempo)/360,(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+      fi;
+    elseif (angle(bb-oo)<0):
+      arc=subpath(angle(aa-oo)*(length tempo)/360,(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+    fi;
+  elseif (angle(aa-oo)<0):
+    if (angle(bb-oo)=0) or (angle(bb-oo)>0):
+      arc=subpath(length tempo+angle(aa-oo)*(length tempo)/360,length tempo+angle(bb-oo)*(length tempo)/360) of tempo;
+    elseif (angle(bb-oo)<0):
+      if (angle(aa-oo)=angle(bb-oo)) or (angle(aa-oo)<angle(bb-oo)):
+	arc=subpath((length tempo)+angle(aa-oo)*(length tempo)/360,(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+      else:
+	arc=subpath((length tempo)+angle(aa-oo)*(length tempo)/360,2*(length tempo)+angle(bb-oo)*(length tempo)/360) of tempo;
+      fi;
+    fi;
+  fi;
+  arc
+enddef;
+
+vardef coupdecompas(expr ab,ac,ad)=arccercle(pointarc(cercles(ab,ac),angle(ac-ab)-ad),pointarc(cercles(ab,ac),angle(ac-ab)+ad),ab)
+enddef;
+
+%------------------------------------------------
+% Droites
+%------------------------------------------------
+vardef segment(expr aa,bb)=
+  save Seg;
+  path Seg;
+  if typetrace="mainlevee":
+    Seg=aa{dir(angle(bb-aa)+5)}..bb{dir(angle(bb-aa)+5)}
+  elseif typetrace="3D":
+    Seg=Projette(aa)--Projette(bb)
+  else:
+    Seg=aa--bb
+  fi;
+  Seg
+enddef;
+
+vardef droite(expr AA,BB)=
+  save Dro;
+  path Dro;
+  if typetrace="mainlevee":
+    Dro=(_tfig/abs(AA-BB))[BB,AA]{dir(angle(BB-AA)+10)}..segment(AA,BB)..(_tfig/abs(AA-BB))[AA,BB]{dir(angle(BB-AA)+10)}
+  elseif typetrace="3D":
+    Dro=(_tfig/abs(Projette(AA)-Projette(BB)))[Projette(BB),Projette(AA)]--(_tfig/abs(Projette(AA)-Projette(BB)))[Projette(AA),Projette(BB)]
+  else:
+    Dro=(_tfig/abs(AA-BB))[BB,AA]--(_tfig/abs(AA-BB))[AA,BB]
+  fi;
+  Dro
+enddef;
+vardef demidroite(expr AA,BB)=
+  save Dem;
+  path Dem;
+  if typetrace="mainlevee":
+    Dem=segment(AA,BB)..(_tfig/abs(AA-BB))[AA,BB]{dir(angle(BB-AA)+10)}
+  elseif typetrace="3D":
+    Dem=Projette(AA)--(_tfig/abs(Projette(AA)-Projette(BB)))[Projette(AA),Projette(BB)]
+  else:
+    Dem=AA--(_tfig/abs(AA-BB))[AA,BB]
+  fi;
+  Dem
+enddef;
+
+vardef bissectrice(expr AA,BB,CC)=
+  save $;
+  path $;
+  if typetrace="mainlevee":
+    $=rotation(demidroite(BB,CentreCercleI(AA,BB,CC)),BB,-5+uniformdeviate(10))
+  else:
+    $=demidroite(BB,CentreCercleI(AA,BB,CC))
+  fi;
+  $
+enddef;
+
+vardef mediatrice(expr AA,BB)=droite(iso(AA,BB),rotation(BB,iso(AA,BB),90))
+enddef;
+%main levee : passer par la perpendiculaire passant par le milieu.
+vardef perpendiculaire(expr AA,BB,II)=droite(iso(AA,BB),rotation(BB,iso(AA,BB),90)) shifted (II-iso(AA,BB))
+enddef;
+vardef parallele(expr AA,BB,II)=droite(AA,BB) shifted (II-(projection(II,AA,BB)))
+enddef;
+%------------------------------------------------
+% Transformations
+%------------------------------------------------
+vardef rotation(expr p,c,a)=
+  p rotatedaround(c,a)
+enddef;
+vardef symetrie(expr x)(text t)=
+  save n;
+  n:=0;
+  for p_=t: if pair p_:
+      n:=n+1;
+      _t[n]:=p_;
+    elseif color p_:
+      n:=n+1;
+      _T[n]:=p_;
+    fi;
+  endfor;
+  if n=1:
+    if typetrace="3D":
+      2[x,_T[1]]
+    else:
+      rotation(x,_t[1],180)
+    fi
+  elseif n=2:
+    x reflectedabout(_t[1],_t[2])
+  elseif n=3:%Par rapport à un plan
+    2[x,ProjectionsurPlan(x,_T[1],_T[2],_T[3])]
+  fi
+enddef;
+%------------------------------------------------
+%Sucres
+%------------------------------------------------
+vardef hachurage(expr chemin, angle, ecart, trace)=
+  save $;
+  picture $;
+  path support;
+  support=((u*(-37,0))--(u*(37,0))) rotated angle;
+  if trace=1:
+    drawoptions(dashed evenly);
+  elseif trace=2:
+    drawoptions(dashed dashpattern(on12bp off6bp on3bp off6bp));
+  fi;
+  $ = image(
+    for j=-200 upto 200:
+      if ((support shifted (ecart*j*(u,0))) intersectiontimes chemin)<>(-1,-1):
+	draw support shifted (ecart*j*(u,0));
+      fi
+    endfor;
+    );
+  clip $ to chemin;
+  drawoptions();
+  $
+enddef;
+%flèche pour coter un segment [AB] (Jacques Marot)
+vardef cotation(expr aa,bb,ecart,decalage,cote)=
+  pair m[] ;
+  save $;
+  picture $;
+  m3=unitvector(bb-aa) rotated 90;
+  m1=aa+ecart*m3;
+  m2=bb+ecart*m3;
+  $=image(
+    pickup pencircle scaled 0.2bp;
+    drawdblarrow m1--m2 ;
+    draw aa--m1 dashed evenly;
+    draw bb--m2 dashed evenly;
+    label(cote rotated angle(m2-m1),(m1+m2)/2+decalage*m3);
+    );
+  $
+enddef;
+
+vardef appelation(expr aa,bb,decalage,cote)=
+  save $;
+  pair m[],AA,BB;
+  if color aa:
+    AA=Projette(aa);
+  else:
+    AA=aa;
+  fi;
+  if color bb:
+    BB=Projette(bb);
+  else:
+    BB=bb;
+  fi;
+  m3=unitvector(BB-AA) rotated 90;
+  picture $;
+  $=image(
+    label(cote rotated angle(BB-AA),(BB+AA)/2+decalage*m3);
+    );
+  $
+enddef;
+
+vardef cotationmil(expr aa,bb,ecart,decalage,cote)= %Christophe
+  pair m[],AA,BB;
+  save $;
+  picture cot;
+   if color aa:
+    AA=Projette(aa)
+  else:
+    AA=aa
+  fi;
+  if color bb:
+    BB=Projette(bb)
+  else:
+    BB=bb
+  fi;
+  m3=unitvector(BB-AA) rotated 90;
+  m1=AA+ecart*m3;
+  m2=BB+ecart*m3;
+  cot=image(
+    pickup pencircle scaled 0.2bp;
+    drawarrow (1/2[m1,m2]+decalage*unitvector(m1-m2))--m1;
+    drawarrow (1/2[m1,m2]-decalage*unitvector(m1-m2))--m2;
+    draw AA--m1 dashed evenly;
+    draw BB--m2 dashed evenly;
+    label(cote rotated angle(m2-m1),(m1+m2)/2);
+    );
+  cot
+enddef;
+
+vardef cotationmilrap(expr aa,bb,ecart,decalage,cote)= %Christophe
+  pair m[] ;
+  save $;
+  picture $;
+  m3=unitvector(bb-aa) rotated 90;
+  m1=aa+ecart*m3;
+  m2=bb+ecart*m3;
+  $=image(
+    pickup pencircle scaled 0.2bp;
+    draw (1/2[m1,m2]+decalage*unitvector(m1-m2))--9/10[m2,m1];
+    draw (1/2[m1,m2]-decalage*unitvector(m1-m2))--m2;
+    label(cote rotated angle(m2-m1),(m1+m2)/2);
+    );
+  $
+enddef;
+
+%%Transparence fait par Anthony Pham
+picture alphapict_; alphapict_=nullpicture;
+color fillcolor; fillcolor=gris;
+fgalpha := 0.5; % usual alpha parameter
+bgalpha:= 1; % alpha parameter with respect to the background
+
+vardef transparence expr c =
+  alphapict_ := nullpicture;
+  alphafill_(currentpicture, c);
+  addto currentpicture also alphapict_;
+enddef;
+
+def alphafill_(expr p, c) =
+  begingroup
+    save p_, xmax_, xmin_, ymax_, ymin_; picture p_;
+    p_ = nullpicture;
+    (xmin_, ymin_) = llcorner c; (xmax_, ymax_) = urcorner c;
+    addto p_ contour c withcolor bgalpha[background, fillcolor];
+    for p__ within p:
+      numeric xmin__, xmax__, ymin__, ymax__;
+      (xmin__, ymin__) = llcorner p__; (xmax__, ymax__) = urcorner p__;
+      if (xmax__<= xmin_) or (xmin__ >= xmax_):
+      else:
+        if (ymax__<= ymin_) or (ymin__ >= ymax_):
+        else:
+          if (not clipped p__) and (not bounded p__):
+            addto p_ also p__ withcolor
+            fgalpha[(redpart p__, greenpart p__, bluepart p__),
+            fillcolor];
+          else:
+            begingroup save alphapict_;
+              picture alphapict_; alphapict_ = nullpicture;
+              alphafill_(p__, pathpart p__);
+              addto p_ also alphapict_;
+            endgroup;
+          fi
+        fi
+      fi
+    endfor
+    clip p_ to c;
+    addto alphapict_ also p_;
+  endgroup;
+enddef;
+endinput;
+
+
+
+
+
+
+
+
+vardef ProjectionsurDroite(expr aa,bb,cc)=%de aa sur (bbcc)
+   save vc;
+   %color vd;
+pair vd;   
+numeric vc,vcc;
+   vc=Module(Normal(bb,aa,cc))/Module(cc-bb);
+   vcc=Module(bb-aa);
+   vd=bb+sqrt(vcc**2-vc**2)*(cc-bb);
+   vd
+ enddef;

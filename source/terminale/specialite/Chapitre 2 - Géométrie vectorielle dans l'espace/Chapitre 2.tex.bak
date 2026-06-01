@@ -1,0 +1,812 @@
+\documentclass[french]{book}
+\usepackage{teach}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{mwe}
+\RequirePackage{graphicx}
+\RequirePackage{ifpdf}
+ \ifpdf
+   \DeclareGraphicsRule{*}{mps}{*}{}
+ \fi
+
+
+
+
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+
+  \usepackage{fancyhdr}
+
+  \usepackage{amsmath}
+  \usepackage{amssymb}
+  \usepackage{amsfonts}
+  \usepackage{amsthm}
+  \usepackage{mathrsfs}
+
+  \usepackage{array}
+  \usepackage{multicol}
+  \setlength{\multicolsep}{3pt}
+
+  \usepackage{graphicx}
+  \graphicspath{{Figures/}}
+  \usepackage{pstricks,pst-plot,pst-text,pst-tree,pst-eucl}
+  \usepackage[all]{xy}
+
+  \usepackage{fancybox}
+  \usepackage{color}
+    \usepackage{stmaryrd}
+\usepackage{etex}
+%\usepackage{preambuleTrm}
+%\usepackage{enumitem}
+%\usepackage{tikz}
+%
+\usetikzlibrary{calc}
+%\usepackage[xcas]{pro-courbes}
+%\usepackage[autolanguage]{numprint}
+\usepackage[french,vlined]{algorithm2e}
+\usepackage{cclicenses}
+%\usepackage{cclicence}
+%\usepackage{docacompleter}
+
+\newcommand{\cacheb}[1]{#1}
+\newcommand{\cacheg}[1]{#1} 
+\newcommand{\cacher}[1]{#1}
+\newcommand{\cachegg}[1]{#1} 
+
+% \newcommand{\cacheb}[1]{\dotfill\textcolor{white}{#1}\textcolor{white}{#1}}
+% \newcommand{\cacheg}[1]{\dotfill\textcolor{0.9white}{#1}\textcolor{0.9white}{#1}} 
+
+% \newcommand{\cachegg}[1]{\dots\dots\textcolor{0.8white}{#1}\textcolor{0.8white}{#1}} 
+\newcolumntype{A}{>{\arraybackslash}X}
+
+\usepackage{textcomp}
+\usepackage{mathtools}
+%\usepackage[xcas]{pro-statdiv}
+%  \usepackage[frenchb]{babel}
+  \usepackage{hyperref}
+
+\usepackage{subfig}
+\pgfplotsset{compat=newest}
+\usepackage[all]{xy}
+%\usepackage{geometry}
+%\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\redefinecolor{thm}{title}{bgcolor}{alizarin}
+\redefinecolor{prop}{title}{bgcolor}{meatbrown}
+\redefinecolor{defn}{title}{bgcolor}{olivine}
+\definecolor{alizarin}{rgb}{0.82, 0.1, 0.26}
+\definecolor{meatbrown}{rgb}{0.9, 0.72, 0.23}
+\definecolor{olivine}{rgb}{0.6, 0.73, 0.45}
+\usepackage{mathrsfs}
+%%
+\newcommand{\R}{\mathbb {R}}
+%\newcommand{\C}{\mathds {C}}
+\newcommand{\N}{\mathbb {N}}
+\newcommand{\Z}{\mathbb {Z}}
+\newcommand{\Q}{\mathbb {Q}}
+\newcommand{\D}{\mathbb {D}}
+%%
+\newcommand{\se}{\geq}
+\newcommand{\ie}{\leq}
+\newcommand{\tm}{\times}
+\newcommand\binomialCoefficient[2]{%
+    % Store values 
+    \c@pgf@counta=#1% n
+    \c@pgf@countb=#2% k
+    %
+    % Take advantage of symmetry if k > n - k
+    \c@pgf@countc=\c@pgf@counta%
+    \advance\c@pgf@countc by-\c@pgf@countb%
+    \ifnum\c@pgf@countb>\c@pgf@countc%
+        \c@pgf@countb=\c@pgf@countc%
+    \fi%
+    %
+    % Recursively compute the coefficients
+    \c@pgf@countc=1% will hold the result
+    \c@pgf@countd=0% counter
+    \pgfmathloop% c -> c*(n-i)/(i+1) for i=0,...,k-1
+        \ifnum\c@pgf@countd<\c@pgf@countb%
+        \multiply\c@pgf@countc by\c@pgf@counta%
+        \advance\c@pgf@counta by-1%
+        \advance\c@pgf@countd by1%
+        \divide\c@pgf@countc by\c@pgf@countd%
+    \repeatpgfmathloop%
+    \the\c@pgf@countc%
+}
+\makeatother
+%\newcommand{\ell}{l}
+%\newcommand{\ell'}{l'}
+%%
+\newcommand{\limn}{\lim_{n\rightarrow +\infty}}
+\newcommand{\limo}[1][x]{\ds\lim_{#1\rightarrow 0}}
+\newcommand{\limite}[2][x]{\ds\lim_{#1\rightarrow #2}}
+\newcommand{\limpinf}[1][x]{\ds\lim_{#1\rightarrow +\infty}}
+\newcommand{\limminf}[1][x]{\ds\lim_{#1\rightarrow -\infty}}
+\newcommand{\limiteg}[2][x]{\ds\lim_{#1\xrightarrow{<}#2}}
+\newcommand{\limited}[2][x]{\ds\lim_{#1\xrightarrow{>}#2}}
+\newcommand{\anglevec}[2]{(\overrightarrow{#1};\overrightarrow{#2})}
+\newcommand{\co}[2]{C_#2^#1}
+\newcommand{\ssi}{\Longleftrightarrow}
+%%
+\newcommand{\vect}[1]{\overrightarrow{#1}}
+\newcommand{\oij}{(\textit{O},{\overrightarrow{i}},{\overrightarrow{j}})}
+%
+\newcommand{\cp}[2]{%
+        \begin{pmatrix}
+        #1\\
+        #2
+        \end{pmatrix}%
+        }
+%
+\newcommand{\calb}{\mathscr{B}}
+\newcommand{\calc}{\mathscr{C}}
+\newcommand{\cald}{\mathscr{D}}
+\newcommand{\cale}{\mathscr{E}}
+\newcommand{\calf}{\mathscr{F}}
+\newcommand{\calp}{\mathscr{P}}
+\newcommand{\fr}[2]{\dfrac{#1}{#2}}
+\newcommand{\cals}{\mathscr{S}}
+\newcommand{\calt}{\mathscr{T}}
+\newcommand{\ve}[1]{\overrightarrow{#1}}
+\newcommand{\pa}[1]{(#1)}
+\newcommand{\ps}[2]{\overrightarrow{#1}.\overrightarrow{#2}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\al}{\alpha}
+\newcommand{\la}{\lambda}
+\newcommand{\DR}{\cald}
+\newcommand{\PR}{\calp}
+\newcommand{\nor}[1]{ \Vert #1 \Vert}
+\newcommand{\abv}[1]{\vert #1 \vert}
+\newcommand{\coordpp}[3]{\begin{pmatrix}
+#1\\
+#2\\
+#3
+\end{pmatrix}}
+%
+\newcommand{\suite}[1][u]{\left( #1_{n} \right)_{n\in\N}}
+\newcommand{\suitep}[1][u]{\left( #1_{n} \right)_{n\in\N^{*}}}
+\usetikzlibrary{arrows}
+
+
+\begin{document}
+\tableofcontents
+%Nous  allons développer  dans cette  leçon une  des grandes
+%nouveautés  de terminale  : le  lien  entre algèbre  et géométrie,  deux
+%domaines jusqu'ici  étrangers. L'outil central sera  le produit scalaire
+%qui  sera  donc étudié  avec  attention.  Vous  verrez (peut-être)  l'an
+%prochain qu'un \og 
+%ensemble  de  vecteurs\fg{}  dans  lequel  on peut  définir  un  produit
+%scalaire est appelé espace euclidien. 
+
+        \chapter{Géométrie euclidienne} 
+
+
+
+
+\section{Construisons le produit scalaire}\label{ps}\index{produit scalaire |( }
+
+\subsection{À la recherche d'une définition}
+
+Vous avez remarqué au moment de l'étude de la fonction exponentielle que
+son  mode de  construction  n'était  pas unique  :  certains partent  de
+l'équation différentielle  $y'=y$, d'autres de  l'équation fonctionnelle
+$f(x+y)=f(x)\times f(y)$, etc.
+\begin{comment}  d'autres encore de la suite  de terme général
+$(1+\fr{x}{n})^n$               ou               même              de
+$\sum_{n=0}^{+\infty}\fr{x^n}{n!}$...
+\end{comment}
+
+Pourtant, tous construisent la même
+fonction,  car  ces définitions  s'avèrent  équivalentes.  La nature  du
+problème  étudié,  le  niveau  d'enseignement,  etc. incitent  alors  à
+préférer l'une ou l'autre des définitions. \\
+
+C'est encore le cas pour le produit scalaire. Nous choisirons la méthode
+la  plus adaptée  au  programme  de terminale  et  n'utiliserons que  le
+théorème de  Pythagore en  admettant que l'on  peut munir  l'Espace d'un
+repère orthonormé. 
+
+\begin{defn}[ Produit scalaire dans l'Espace]
+ Soient $\ve{u}$ et $\ve{v}$ de coordonnées
+respectives $(x,y,z)$ et $(x', y', z')$  dans un repère orthonormé
+de l'Espace.\\
+
+On appelle produit scalaire de $\ve{u}$ et $\ve{v}$  que l'on note
+$\ve{u}\cdot\ve{v}$ le réel
+
+$$\ve{u}\cdot\ve{v} = xx'+yy'+zz'$$
+
+\end{defn}
+
+
+Cette définition est déroutante : elle dépend du choix d'un repère : y aurait-il un produit scalaire par repère, ce qui pourrait s'avérer fort gênant~! Nous allons en fait nous assurer que cette définition en est bien une, c'est à dire qu'elle ne dépend pas du choix du repère.\\
+
+Tout d'abord, un petit dessin :
+
+\begin{center}
+\includegraphics{../Figures/geo3d.1} 
+\end{center}
+
+Soit $\ve{OM}$ un représentant du vecteur $\ve{u}$. Nous pouvons
+calculer  $OM^2$, c'est à dire le carré de  la norme du vecteur
+$\ve{u}$ en fonction de $x$, $y$ et $z$.\\
+
+D'après le  théorème de Pythagore :\\
+
+$OM^2=OM'^2+z^2$ et d'autre part, $OM'^2=x^2+y^2$. Finalement on
+obtient que $OM^2=x^2+y^2+z^2$.
+
+Cette formule permet surtout de
+prouver, avec un minimum de sens de l'observation, que
+
+
+
+\begin{prop}[ Norme et produit
+scalaire]
+$$\ve{u}\cdot\ve{u}=\nor{\ve{u}}^2$$
+\end{prop}
+
+
+
+Vous aurez remarqué qu'il n'est pas fait mention de repère dans
+cette propriété et qu'elle est donc indépendante du repère choisi.
+
+Intéressons-nous maintenant à $\nor{\ve{u}+\ve{v}}^2$
+
+\begin{eqnarray*}
+\nor{\ve{u}+\ve{v}}^2 &=& (x+x')^2+(y+y')^2+(z+z')^2\\
+                    &=&
+                    x^2+y^2+z^2+x'^2+y'^2+z'^2+2(xx'+yy'+zz')\\
+                    &=&
+                    \nor{\ve{u}}^2+\nor{\ve{v}}^2+2(\ve{u}\cdot\ve{v})
+\end{eqnarray*}
+
+Je vous laisse le soin d'obtenir une formule similaire en
+remplaçant $\ve{v}$ par son opposé.
+
+
+
+\begin{prop}[Expression du produit scalaire en fonction de la norme]\label{psnorme}
+  \begin{eqnarray*} \ve{u}\cdot\ve{v} &=&
+\fr{1}{2}\pa{\nor{\ve{u}+\ve{v}}^2-\nor{\ve{u}}^2-\nor{\ve{v}}^2}\\
+&=& \fr{1}{2}\pa{\nor{\ve{u}}^2+\nor{\ve{v}}^2-\nor{\ve{u}-\ve{v}}^2}
+\end{eqnarray*}
+\end{prop}
+
+
+
+
+Ces expressions peuvent paraître déroutantes car très compliquées, voire
+inexploitables. \\
+ Cependant, elles  offrent  \textbf{ un énorme  avantage} :  elles
+prouvent que le  produit scalaire ne dépend pas  des coordonnées et donc
+de  la  base  choisie.  Nous  pouvons  donc  utiliser  sans  retenue  la
+définition qui  en est  bien une finalement.
+
+Notez de  plus que cette dernière  formulation est valable  dans le Plan
+comme  dans  l'Espace  car  la  démonstration  est  indépendante  de  la
+\og dimension\fg{}    choisie,  ce   qui  améliore   encore   son  \og champs
+d'action\fg{} .  
+
+
+
+Toujours  grâce  à  cette   propriété,  nous  pouvons  prouver  que  les
+propriétés suivantes sont vraies quelque soit la base choisie 
+
+\begin{prop}[Propriétés de bilinéarité et de
+symétrie]
+\begin{itemize}
+\item $\ve{u}\cdot\ve{v}=\ve{v}\cdot\ve{u}$ 
+\item $(\pa{\alpha\ve{u}}\cdot\ve{v}=\ve{u}\cdot\pa{\al\ve{v}}=\al\pa{\ve{u}\cdot\ve{v}}\qquad\text{avec
+}\quad \al\in\bbr$
+\item $\ve{u}\cdot\pa{\ve{v}+\ve{w}}=\ve{u}\cdot\ve{v}+\ve{u}\cdot\ve{w}$
+\end{itemize}
+\end{prop}
+
+
+\newpage
+
+\subsection{Produit scalaire et cosinus}
+
+Nous   allons   maintenant   interpréter  géométriquement   le   produit
+scalaire.   Considérons   deux   vecteurs   $\ve{u}$  et   $\ve{v}$   de
+représentants $\ve{OA}$ et $\ve{OB}$ 
+
+
+
+\begin{center}
+\includegraphics{../Figures/geo3d.2} 
+\end{center}
+
+
+Nous  allons   essayer  de  prouver   le  résultat  vu  en   première  :
+$\ps{u}{v}=OH\times OB$ à partir de la propriété sur les normes. \\
+
+Le thèorème de Pythagore permet d'écrire d'une part que $OH^2+AH^2=OA^2$ et d'autre part que $(OB-OH)^2+AH^2=AB^2$. \\ 
+
+On élimine $AH^2$ pour obtenir 
+$$                                                               OB\times
+OH=\fr{1}{2}\pa{OA^2+OB^2-AB^2}=\fr{1}{2}\pa{\nor{\ve{u}}^2+\nor{\ve{v}}^2-\nor{\ve{u}-\ve{v}}^2}=\ve{u}\cdot\ve{v} $$ 
+
+\textit{(On obtiendrait d'ailleurs un résultat similaire si $H$ était \og de
+l'autre côté\fg{}  de $O$, en transformant $OH$ en $-OH$, puisque
+dans ce cas $HB=OB+OH$.)}\\
+
+
+
+
+Ici un problème se pose : on sait que $OB=\nor{\ve{v}}$ mais comment
+interpréter $OH$  ? On a  envie d'écrire que  $OH=\nor{\ve{u}}\times \cos
+\theta$ comme  au collège, mais  qu'est-ce que $\theta$ ? \emph{(Pour rappel nous somme dans l'Espace et non plus dans le Plan)}. Qu'est-ce que $\cos\theta$~?  \\
+
+
+Nous allons trancher dans le vif. Considérons deux vecteurs non nuls $\ve{u}$ et $\ve{v}$. Notons 
+$$ \cos\anglevec{u}{v}=\fr{\ps{u}{v}}{\nor{\ve{u}}\times\nor{\ve{v}}} $$
+
+La définition du produit scalaire à partir des normes étant la
+même dans le Plan et l'Espace, on va pouvoir \textbf{étendre} la notion d'angle et parler de l'angle entre deux vecteurs de l'espace à partir de la même formule.\\
+
+On peut noter que deux vecteurs définissant un plan \emph{(vectoriel)},
+il est naturel d'étendre la notion d'angle de vecteurs du Plan à
+l'Espace.\\
+
+Demeure un dernier problème : le Plan était \underline{orienté}, or nous
+n'avons pas parlé d'orientation de l'Espace (et nous ne le ferons
+pas cette année). Les angles de vecteurs de l'Espace seront donc
+définis \underline{au signe près} et mesurés dans $[0,\pi]$, ce qui rejoint la
+notion d'angle géométrique vu au Collège.
+
+
+
+\begin{thm}[Produit scalaire et cosinus]\label{pscos}
+  Soient $\ve{u}$ et $\ve{v}$ deux vecteurs non nuls de l'Espace. On a
+$$ \cos\anglevec{u}{v}=\fr{\ps{u}{v}}{\nor{\ve{u}}\times\nor{\ve{v}}} $$
+avec $ \anglevec{u}{v}$ l'unique antécédent de
+$\fr{\ps{u}{v}}{\nor{\ve{u}}\times\nor{\ve{v}}}  $ par la
+fonction cosinus dans $[0,\pi]$.
+\end{thm}
+
+On retrouve de cette manière la formule bien connue $\ps{u}{v}=\nor{\ve{u}}\times\nor{\ve{v}}\times\cos\theta$.
+
+
+\subsection{Produit scalaire et orthogonalité}\index{orthogonalité}
+
+Nous allons maintenant aborder la notion qui a motivé
+l'introduction du produit scalaire en Terminale, à savoir
+\underline{l'orthogonalité de deux vecteurs}.
+%, et nous allons, par la même
+%occasion, être confrontés une nouvelle fois au problème de la
+%poule et de l'\oe uf.
+
+
+ Considérons la figure suivante :
+
+\begin{center}
+\includegraphics{../Figures/geo3d.3} 
+\end{center}
+
+
+Si $(AB)\bot(BC)$, alors le théorème de Pythagore assure que
+$\nor{\ve{u}+\ve{v}}^2=\nor{\ve{u}}^2+\nor{\ve{v}}^2$.\\
+
+Or $\ve{u}\cdot\ve{v} =
+\fr{1}{2}\pa{\nor{\ve{u}+\ve{v}}^2-\nor{\ve{u}}-\nor{\ve{v}}}$, donc
+$\ve{u}\cdot\ve{v}=0$.\\
+
+
+
+Inversement, si $\ve{u}\cdot\ve{v}=0$, alors
+$\nor{\ve{u}+\ve{v}}^2=\nor{\ve{u}}^2+\nor{\ve{v}}^2$ et la réciproque
+du théorème de Pythagore assure que $(AB)\bot (AC)$.\\
+
+Finalement on a le théorème suivant:
+
+
+\begin{thm}[Produit scalaire et orthogonalité]
+  Soient deux vecteurs $\ve{u}$ et $\ve{v}$ non nuls et trois points
+$O$, $A$ et $B$ tels que $\ve{u}=\ve{OA}$ et $\ve{v}=\ve{OB}$. Les
+trois propositions suivantes sont équivalentes :
+
+\begin{itemize}
+\item[$\bullet$] $(OA)$ et $(OB)$ sont perpendiculaires
+\item[$\bullet$] $\ve{u}\cdot\ve{v}=0$
+\item[$\bullet$] $\ve{u}$ et $\ve{v}$ sont orthogonaux. On notera $\ve{u}\bot\ve{v}$.
+\end{itemize}
+
+Par souci de cohérence, on dira que le vecteur nul est orthogonal
+à tout vecteur.
+\end{thm}
+
+
+Vous noterez que ces résultats sont cohérents avec la définition
+du cosinus.
+
+%\index{produit scalaire |) }
+\section{Applications du produit scalaire}
+
+\begin{comment}
+\subsection{Affine $ \leftrightharpoons $ Vectoriel}
+
+Avant  d'aller plus  loin, commençons  par parler  des limites  de notre
+exposé. Dans  l'enseignement secondaire, vous n'avez  travaillé que dans
+des  espaces \textsl{affines},  c'est  à dire,  grossièrement, avec  des
+ensembles  de  points~:~droites, cercles,  segments  de droites,  angles
+géométriques,  etc. Or  vous découvrirez  l'an prochain  la  géométrie à
+partir d'espaces \textsl{vectoriels},  c'est à dire, grossièrement, avec
+des  ensembles stables  par  combinaison linéaire  comme l'ensemble  des
+vecteurs du Plan~:~si $\ve{u}$ et  $\ve{v}$ sont des vecteurs du Plan et
+$\la$  et $\mu$  des réels,  alors $\la\ve{u}+\mu\ve{v}$  est  encore un
+vecteur du  plan. Ensuite, vous  définirez les espaces affines  à partir
+des  espaces vectoriels\footnote{Ces  structures dépassent  largement la
+  Géométrie~:~vous découvrirez par  exemple que l'ensemble des solutions
+  d'une  équation différentielle  linéaire du  second ordre  sans second
+  membre a une structure d'espace vectoriel de dimension 2 et l'ensemble
+  des solutions  d'une équation différentielle linéaire  du second ordre
+  avec  second membre  a une  structure d'espace  affine de  dimension 2
+  comme un plan dans l'Espace \og géométrique\fg{}  du lycée.} 
+
+Nous ne pouvons bien sûr  pas suivre ce cheminement. Nous nous appuirons
+donc  sur les  résultats \og affines\fg{}   vus au  lycée et  au  collège et
+n'évoquerons les espaces vectoriels qu'à titre d'exercice. 
+
+Il est malgré  tout très important de bien  distinguer ces deux domaines
+et  nous  ferons souvent  des  appels  intuitifs  à ces  notions.   Ayez
+cependant bien  en tête que  nous travaillerons principalement  dans des
+espaces affines  et que le recours  aux outils vectoriels  doit se faire
+avec prudence. 
+
+\end{comment}
+
+\subsection{Droites orthogonales}
+
+\begin{defn}[Droites orthogonales]
+  Soit $\DR$ une droite de vecteur directeur $\ve{u}$ et $\Delta$ une droite de vecteur directeur $\ve{v}$. \\
+On dira que les droites  $\DR$ et $\Delta$ sont \textbf{orthogonales} et
+on notera $\DR\bot\Delta$ si  et seulement si $\ve{u}\bot\ve{v}$ c'est à
+dire si et seulement si $\ps{u}{v}=0$
+\end{defn}
+
+\begin{center}
+\includegraphics{../Figures/geo3z.1} 
+\end{center}
+
+
+
+
+\subsection{Droites et plans orthogonaux}
+
+
+\begin{defn}[Orthogonalité d'une droite et d'un plan]
+  Soit $\DR$ une droite de vecteur directeur $\ve{u}$ et $\PR$ un plan de vecteurs directeurs $\ve{v_1}$ et $\ve{v_2}$.\\
+On dira que $\DR$ et $\PR$ sont orthogonaux et on notera $\DR\bot\PR$ si et seulement si $\ve{u}\bot\ve{v_1}$ et $\ve{u}\bot\ve{v_2}$ c'est à dire si et seulement si $\ps{u}{v_1}=0$ et $\ps{u}{v_2}=0$
+\end{defn}
+
+\begin{center}
+\includegraphics{../Figures/geo3z.2} 
+\end{center}
+
+Notez bien  que, comme dans le  cas des droites,  l'orthogonalité est en
+fait  une  propriété  vectorielle.  On  peut  néanmoins  en  donner  une
+formulation équivalente en faisant intervenir des points~: 
+
+\begin{prop}[]
+  $\DR\bot\PR$ si et  seulement si, pour tous points M  et N de $\PR$
+  on a $\ps{u}{MN}=0$
+\end{prop}
+
+En  effet, $\ve{v_1}$  et $\ve{v_2}$  étant des  vecteurs  directeurs de
+$\PR$,    il    existe   deux    réels    $x$    et    $y$   tels    que
+$\ve{MN}~=~x~\ve{v_1}~+~y~\ve{v_2}$ et donc 
+$$ \ps{u}{MN}=\ve{u}\cdot\pa{x\ve{v_1}+y\ve{v_2}}=x\ps{u}{v_1}+y\ps{u}{v_2}=0 $$
+
+Notez qu'on  retrouve la  définition 3 en  prenant $x=1$ et  $y=0$, puis
+$x=0$ et $y=1$. 
+
+\subsection{Vecteur normal à un plan}\index{vecteur normal} 
+
+La direction d'une droite est  déterminée par la donnée d'un vecteur. Le
+problème pour un  plan, c'est qu'on a besoin a  priori de deux vecteurs,
+ce qui  est doublement plus compliqué  et qui gène  le mathématicien qui
+vise  toujours la  simplicité. 
+C'est  ici  que l'intuition vectorielle vient  nous sauver~:~si  un plan a  deux directions,  il n'a
+\textbf{qu'une seule  \og direction orthogonale\fg{}} et  donc la direction  du plan
+sera \textbf{entièrement determinée}  par la donnée d'un vecteur  orthogonal à la
+direction du plan, qu'on appelera \textbf{vecteur normal} au plan.  
+
+%Nous ne nous  lancerons pas dans une preuve  artificielle à notre niveau
+%et qui sera  simple avec les outils que  vous découvrirez l'an prochain,
+%mais nous nous contenterons de cette approche intuitive. 
+
+\begin{defn}[Vecteur  normal à un plan]
+  \'Etant donné  un plan $\PR$, on
+  appelera \textbf{vecteur normal} à  $\PR$ tout vecteur directeur d'une
+  droite orthogonale à $\PR$
+\end{defn}
+
+%je n'ai toujours pas retrouvé mon ordinateur portable
+
+
+
+
+
+
+\begin{center}
+\includegraphics{../Figures/geo3z.3} 
+\end{center}
+
+
+Nous admettrons alors les résultats suivants :
+
+
+\begin{thm}[Détermination d'un plan à l'aide d'un vecteur normal]
+  Soit $\PR$ un plan, A un point de $\PR$ et $\ve{n}$ un vecteur normal à $\PR$, alors le point M appartient à $\PR$ si et seulement si $\ps{AM}{n}=0$.\\
+
+
+Réciproquement, si A est un point quelqconque et $\ve{n}$ un vecteur non nul, alors l'ensemble des points M tels que $\ps{AM}{n}=0$ est un plan.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+\subsection{Distance d'un point à un plan}
+
+\begin{defn}[Distance d'un point à  un plan]
+  Soit M un  point, $\PR$ un
+  plan.  On appelle distance  de M  à $\PR$  la distance  MH, avec  H le
+  projeté orthogonal de M sur $\PR$
+\end{defn}
+
+
+%Vous pouvez  commencer, pour vous  échauffer, par montrer à  l'aide d'un
+%dessin  et d'un petit  raisonnement utilisant  un théorème  connu depuis
+%fort  longtemps,  que  MH est  en  fait  le  minimum des  distances  MN,
+%$N\in\PR$. 
+
+
+
+Il reste à exprimer cette distance MH. On suppose connu le plan $\PR$ et
+donc  un point  quelconque A  de  $\PR$ et  un de  ses vecteurs  normaux
+$\ve{n}$. 
+
+%\break
+
+Aidons-nous alors du dessin suivant :
+
+\begin{center}
+\includegraphics{../Figures/geo3z.4} 
+\end{center}
+
+
+Cela  doit   maintenant  devenir  un   réflexe  :  qui   dit  projection
+orthogonale, dit  produit scalaire, donc la distance  MH devrait pouvoir
+s'exprimer en fonction de $\ps{AM}{n}$. 
+
+Or on obtient successivement
+
+\begin{align*}
+\ps{AM}{n}&= \pa{\ve{AH}+\ve{HM}}\cdot\ve{n}\\
+                   &= \ps{AH}{n}+\ps{HM}{n}\\
+                   &=\ps{HM}{n}\\
+                   &=\pm d(M,\PR)\times \nor{\ve{n}}
+\end{align*}
+
+Le signe étant choisis selon les sens respectifs de $\ve{HM}$ et $\ve{n}$ \emph{(positif s'il est dans le même sens et négatif sinon) }. Le problème, c'est qu'on ne les connait pas a priori. Mais ce n'est plus un problème si on cache les signes sous une valeur absolue, puisque c'est la distance \emph{ donc positive } qui nous intéresse.
+
+
+
+Ainsi, $\abv{\ps{AM}{n}}=d(M,\PR)\times \nor{\ve{n}}$ et donc 
+
+
+\begin{thm}[Calcul de la distance d'un point à un plan]
+  Soit $\PR$ un plan passant par le point A et de vecteur normal $\ve{n}$ et soit M un point quelconque. Alors
+$$ d(M,\PR)=\fr{\abv{\ps{AM}{n}}}{\nor{\ve{n}}} $$
+\end{thm}
+
+
+\subsection{Plans parallèles}
+
+Voici une utilisation bien pratique de la notion de vecteur normal~:
+
+\begin{prop}[Plans parallèles]
+  Deux plans sont parallèles si et seulement si leurs vecteurs normaux sont colinéaires.
+\end{prop}
+
+
+\begin{center}
+\includegraphics{../Figures/geo3z.5} 
+\end{center}
+
+
+\subsection{Plans perpendiculaires}
+
+En voici une autre souvent utile en exercice~:
+
+
+\begin{prop}[Plans perpendiculaires]
+  Deux plans sont perpendiculaires si et seulement si leurs vecteurs normaux sont orthogonaux.
+\end{prop}
+
+
+
+
+
+\begin{center}
+\includegraphics{../Figures/geo3z.6} 
+\end{center}
+Remarquez en particulier que $\ve{n_1}$ et un vecteur directeur de $\PR_2$ et $\ve{n_2}$ un vecteur directeur de~$\PR_1$.
+
+%\break
+\newpage
+\section{Géométrie analytique}
+
+\subsection{Représentation paramétrique d'un plan}
+
+Soit $\PR$ un plan passant  par $A$ de coordonnées $(x_A,y_A,z_A)$ et de
+vecteurs       directeurs       $\ve{u}      \coordpp{a}{b}{c}$       et
+$\ve{u'}\coordpp{a'}{b'}{c'}$. Alors un point M de coordonnées $(x,y,z)$
+appartient  à $\PR$ si,  et seulement  s'il existe  deux réels  $\la$ et
+$\mu$ tels que $$ \ve{AM}=\la\ve{u}+\mu\ve{v} $$ 
+c'est à dire, en appliquant cette relation  aux coordonnées
+
+\begin{center}
+$$\begin{cases}
+x =x_A+\la a+\mu a'\\
+y =y_A+\la b+\mu b'\\
+z =z_A+\la c+\mu c'
+\end{cases}$$
+\end{center}
+
+C'est ce qu'on appelle une représentation paramétrique du plan $\PR$. Il
+est également  utile de retrouver les éléments  caractéristiques du plan
+(~un   point  et   deux  vecteurs   directeurs~)  à   partir   de  cette
+représentation. 
+
+
+
+\subsection{\'Equation cartésienne d'un plan}
+
+On utilise plus  couramment une équation cartésienne de  plan. En effet,
+nous avons vu qu'un plan  était entièrement déterminé par la donnée d'un
+point et d'un vecteur normal.  
+
+Soit donc $\PR$  un plan passant par $A$  de coordonnées $(x_A,y_A,z_A)$
+et de vecteur normal $\ve{n}\coordpp{a}{b}{c}$.  
+Alors M de coordonnées $(x,y,z)$  appartient à $\PR$ si, et seulement si
+$\ve{AM}\bot\ve{n}$, c'est à dire 
+
+\begin{center}
+\begin{align*}
+\ps{AM}{n}&=a(x-x_A)+b(y-y_A)+c(z-z_A)\\
+                    &=ax+by+cz-(ax_A+by_A+cy_A)\\
+                    &=0
+\end{align*}
+\end{center}
+
+C'est à dire encore, en posant $d=ax_A+by_A+cz_A$
+
+
+\begin{prop}[Équation cartésienne d'un plan]
+  $$M(x,y,z)\in\PR \ssi ax+by+cz=d \text{ avec  } \ve{n}\coordpp{a}{b}{c}
+\text{ un vecteur normal à } \PR $$
+\end{prop}
+
+
+
+
+
+
+\newpage
+
+\subsection{Représentation paramétrique d'une droite}
+
+Quant aux droites, nous n'avons guère le choix~:~un point M appartient à
+la  droite $\DR$  passant par  A  de coordonnées  $(x_A,y_A,z_A)$ et  de
+vecteur  directeur $\ve{u}$  de coordonnées  $\coordpp{a}{b}{c}$  si, et
+seulement s'il existe un réel $\la$ tel que 
+
+$$ \ve{AM}=\la\ve{u} $$
+
+c'est à dire si, et seulement si
+
+\begin{center}
+$ \begin{cases}
+x =x_A+\la a\\
+y =y_A+\la b\\
+z =z_A+\la c
+\end{cases}$
+\end{center}
+
+Notez  bien que  $\la$  est  le paramètre  de  la représentation  (~d'où
+l'appellation~), mais aurait pu porter tout autre nom. 
+
+
+
+
+
+
+
+\subsection{Sphères}
+
+
+\begin{defn}[Sphère]
+  
+Une sphère de centre $C$ et de  rayon $r$ est l'ensemble des points M de
+l'espace vérifiant~:
+
+$$\Vert \ve{CM} \Vert =r$$
+\end{defn}
+
+
+
+Analytiquement, dans un repère orthonormé, nous écrirons~:
+
+
+$$(x-x_C)^2+(y-y_C)^2+(z-z_C)^2=r^2$$
+
+
+
+
+
+\section{Barycentres}
+
+\subsection{Quelques rappels}
+
+
+
+
+\begin{defn}[Barycentre]
+  Soient $A_1,\ A_2\,...,\,A_n$ $n$ points distincts du plan ou de l'espace. Soient $\al_1,\ \al_2\,...,\,\al_n$ $n$ réels tels que $\al_1+\al_2+\cdots+\al_n\neq 0$, alors on appelle barycentre des points $A_1,\ A_2\,...,\,A_n$ affectés des coefficients $\al_1,\ \al_2\,...,\,\al_n$ le point G défini par 
+$$\al_1\ve{GA_1}+\al_2\ve{GA_2}+\cdots+\al_n\ve{GA_n}=\ve{0}$$
+\end{defn}
+
+
+\c Ca, vous connaissez par c\oe ur. Il est maintenant utile de connaître la manipulation suivante:\\
+ pour exprimer G en fonction de points connus. Soit donc M un tel point (en général O, l'origine du repère), alors
+
+$$\al_1\pa{\ve{GM}+\ve{MA_1}}+\al_2\pa{\ve{GM}+\ve{MA_2}}+\cdots+\al_n\pa{\ve{GM}+\ve{MA_n}}=\ve{0}$$
+ puis, finalement, en regroupant astucieusement les termes, on obtient~:
+
+
+ \begin{thm}[Fonction vectorielle de Leibniz]
+   $$\ve{MG}=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1\ve{GA_1}+\al_2\ve{GA_2}+\cdots+
+\al_n\ve{GA_n}}$$
+ \end{thm}
+
+
+En particulier, en prenant $M=O$, on obtient 
+$$\begin{cases}x_G=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1 x_{A_1}+\al_2x_{A_2}+\cdots+\al_nx_{A_n}}\\
+y_G=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1 y_{A_1}+\al_2y_{A_2}+\cdots+\al_n y_{A_n}}\\
+z_G=\fr{1}{\al_1+\al_2+\cdots+\al_n}\pa{\al_1 z_{A_1}+\al_2z_{A_2}+\cdots+\al_nz_{A_n}}
+\end{cases}$$
+
+
+\subsection{Quelques nouveautés}
+
+%Nous commenterons en classe les résultats suivants~:
+
+
+\begin{thm}[Caractérisations barycentriques des droites et des plans]
+  \begin{itemize}
+  \item[$\bullet$]  La droite (AB) est l'ensemble des barycentres des points A et B.
+\item[$\bullet$] Le segment $[A;B]$ est l'ensemble des barycentres de A et B affectés de coefficients positifs.
+\item[$\bullet$] Soient A, B et C trois points non alignés. Le plan (ABC) est l'ensemble des barycentres des points A, B et C
+  \end{itemize}
+\end{thm}
+
+
+
+Ce chapitre  est assez riche en  cours, mais surtout  en applications de
+ces résultats~:~les  exercices qui suivent peuvent  donc être considérés
+comme faisant partie intégrante du cours. 
+
+
+\end{document}

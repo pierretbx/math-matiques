@@ -1,0 +1,107 @@
+\documentclass[french]{article}
+\usepackage{verbatim}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{pgfplots}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{pgf,tikz,tkz-tab}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage{pstricks}
+\pgfplotsset{compat=newest}
+\usepackage{geometry}
+\geometry{hmargin=1cm,vmargin=2cm}
+
+
+\begin{document}
+\begin{center}
+\underline{\textbf{Un problème de l'université d'Oxford}}
+\end{center}
+
+\section{Un stylo qui glisse}
+
+On prend un stylo posé à la verticale contre un mur, ce stylo glisse contre le mur jusqu'à être sur le sol. On s'intéresse à la trajectoire du milieu du stylo que l'on représentera par un point noté M  qui aura pour coordonnée $(x;y)$.
+On suppose que le stylo est de longueur $L$.  
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{tikzpicture}[scale=1,line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-5.866379805052241,
+xmax=13.547501529625054,
+ymin=-2.956904761844938,
+ymax=13.301132633899238,
+xtick={-4,-2,...,12},
+ytick={-2,0,...,12},]
+\clip(-5.866379805052241,-2.956904761844938) rectangle (13.547501529625054,13.301132633899238);
+\draw[line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (3.437229331043156,0) -- (3.437229331043156,0.4616935137074414) -- (2.9755358173357145,0.4616935137074414) -- (2.9755358173357145,0) -- cycle; 
+\draw [line width=2pt] (6,0)-- (-0.04892836532857103,10.363902046580883);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt] (2.9755358173357145,5.181951023290441)-- (0,5.181951023290441);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt] (2.9755358173357145,5.181951023290441)-- (2.9755358173357145,0);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (6,0) circle (2pt);
+\draw[color=uuuuuu] (6.169356044809355,0.42746580714866256) node {$B$};
+\draw [fill=xdxdff] (-0.04892836532857103,10.363902046580883) circle (2.5pt);
+\draw[color=xdxdff] (0.11884145844131944,10.830868585148284) node {$A$};
+\draw [fill=uuuuuu] (2.9755358173357145,5.181951023290441) circle (2pt);
+\draw[color=uuuuuu] (3.1440987516253376,5.607402755190314) node {$M$};
+\draw [fill=uuuuuu] (4.487767908667857,2.5909755116452207) circle (2pt);
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+\begin{enumerate}
+\item Compléter les longueurs sur la figure.
+\item À l'aide du théorème de Pythagore, en déduire une équation entre $x$,$y$ et $L$.
+\item On admet que l'équation cartésienne d'un cercle de centre O et de rayon $r$ est $x^2+y^2=r^2$, quel est la trajectoire du point M ? 
+\end{enumerate}
+\newpage
+\section{Un stylo qui tombe}
+
+On prend un stylo posé à la verticale contre un mur, ce stylo tombe du mur jusqu'à être sur le sol. On s'intéresse à la trajectoire du milieu du stylo que l'on représentera par un point noté M  qui aura pour coordonnée $(x;y)$.
+On suppose que le stylo est de longueur $L$.  
+
+\definecolor{qqwuqq}{rgb}{0,0.39215686274509803,0}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+xmin=-1.111718637385122,
+xmax=17.160076230940884,
+ymin=-2.25503775190276,
+ymax=13.046566246571869,
+xtick={0,2,...,16},
+ytick={-2,0,...,12},]
+\clip(-1.111718637385122,-2.25503775190276) rectangle (17.160076230940884,13.046566246571869);
+\draw[line width=2pt,color=qqwuqq,fill=qqwuqq,fill opacity=0.10000000149011612] (4.059422363593717,0.434532849411756) -- (3.6248895141819615,0.4345328494117561) -- (3.6248895141819615,0) -- (4.059422363593717,0) -- cycle; 
+\draw [line width=2pt] (0,0)-- (8.118844727187435,8.836535536952296);
+\draw [line width=2pt,dash pattern=on 1pt off 1pt on 1pt off 4pt] (4.059422363593717,4.418267768476148)-- (4.059422363593717,0);
+\begin{scriptsize}
+\draw [fill=uuuuuu] (0,0) circle (2pt);
+\draw[color=uuuuuu] (0.15829401041332236,0.39764995599879893) node {$B$};
+\draw [fill=xdxdff] (8.118844727187435,8.836535536952296) circle (2.5pt);
+\draw[color=xdxdff] (8.290471771316264,9.267254415623317) node {$A$};
+\draw [fill=uuuuuu] (4.059422363593717,4.418267768476148) circle (2pt);
+\draw[color=uuuuuu] (3.6405867543767982,4.904146448186775) node {$M$};
+\draw [fill=uuuuuu] (4.059422363593717,0) circle (2pt);
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+
+\begin{enumerate}
+\item Compléter les longueurs sur la figure.
+\item À l'aide du théorème de Pythagore, en déduire une équation entre $x$,$y$ et $L$.
+\item On admet que l'équation cartésienne d'un cercle de centre O et de rayon $r$ est $x^2+y^2=r^2$, quel est la trajectoire du point M ? 
+\item Que remarque t-on entre le milieu du stylo qui tombe et le milieu du stylo qui glisse?
+\end{enumerate}
+
+\section{Simulation dynamique}
+Pour une animation, rendez-vous sur:
+https://www.desmos.com/calculator/86hptwtqwb
+
+\end{document}

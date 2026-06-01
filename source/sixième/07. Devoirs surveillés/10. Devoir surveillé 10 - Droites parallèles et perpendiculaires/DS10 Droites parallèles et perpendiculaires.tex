@@ -1,0 +1,71 @@
+\documentclass[a4paper,10pt]{report}
+\input{../../../../teach_sixieme_preamble}
+\begin{document}
+\pagestyle{empty}
+\noindent NOM, Prénom et classe : \dotfill
+
+\section*{Devoir surveillé 10 - Droites parallèles et perpendiculaires}
+\noindent\textit{Les instruments de géométrie sont autorisés et nécessaires.} \hfill \textit{Durée : 45 minutes}
+
+\medskip
+\paragraph{Exercice 1} \hfill \textbf{5 points}
+
+\noindent Complète avec $\parallel$, $\perp$ ou ni l'un ni l'autre.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,line cap=round]
+\draw[line width=1.1pt] (-4,0)--(4,0) node[right] {$(d_1)$};
+\draw[line width=1.1pt] (-4,1.2)--(4,1.2) node[right] {$(d_2)$};
+\draw[line width=1.1pt] (-2,-1.5)--(-2,2.5) node[above] {$(d_3)$};
+\draw[line width=1.1pt] (1.5,-1.4)--(3.5,2.4) node[above] {$(d_4)$};
+\end{tikzpicture}
+\end{center}
+
+\[
+(d_1)\dots(d_2)\qquad (d_1)\dots(d_3)\qquad (d_2)\dots(d_3)\qquad (d_1)\dots(d_4)
+\]
+
+\medskip
+\paragraph{Exercice 2} \hfill \textbf{5 points}
+
+\noindent Sur la figure ci-dessous, trace :
+\begin{enumerate}
+\item la droite perpendiculaire à $(d)$ passant par $A$ ;
+\item la droite parallèle à $(d)$ passant par $B$.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75,line cap=round]
+\draw[lightgray] (-5,-3) grid (5,3);
+\draw[line width=1.2pt] (-4,-1)--(4,1) node[right] {$(d)$};
+\fill (-2,2) circle (2pt) node[above] {$A$};
+\fill (2,-2) circle (2pt) node[below] {$B$};
+\end{tikzpicture}
+\end{center}
+
+\medskip
+\paragraph{Exercice 3} \hfill \textbf{4 points}
+
+\noindent Vrai ou faux ? Justifie chaque réponse.
+\begin{enumerate}
+\item Si deux droites sont perpendiculaires à une même droite, alors elles sont parallèles.
+\item Si deux droites sont parallèles, alors elles se coupent en un point.
+\item Si deux droites sont parallèles et qu'une troisième est perpendiculaire à l'une, alors elle est perpendiculaire à l'autre.
+\end{enumerate}
+
+\medskip\noindent\grandscarreaux{\linewidth}{4cm}
+
+\medskip
+\paragraph{Exercice 4} \hfill \textbf{6 points}
+
+\noindent Programme de construction :
+\begin{enumerate}
+\item Trace une droite $(d)$.
+\item Place un point $M$ qui n'appartient pas à $(d)$.
+\item Trace la droite $(p)$ perpendiculaire à $(d)$ passant par $M$.
+\item Trace la droite $(q)$ parallèle à $(d)$ passant par $M$.
+\end{enumerate}
+
+\medskip\noindent\grandscarreaux{\linewidth}{6cm}
+
+\end{document}
