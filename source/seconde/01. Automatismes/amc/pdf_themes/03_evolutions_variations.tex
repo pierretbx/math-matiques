@@ -1,0 +1,32 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=1.5cm}
+\usepackage[box]{automultiplechoice}
+
+\input{../themes/03_evolutions_variations.tex}
+
+\begin{document}
+\AMCrandomseed{20260601}
+\onecopy{1}{
+\begin{center}
+{\Large Automatismes - Évolutions et variations}\\[2mm]
+{\small 70 questions, une seule bonne reponse par question.}
+\end{center}
+
+\noindent Nom : \dotfill \hfill Classe : \dotfill
+
+\medskip
+\noindent Pour chaque question, cocher une seule reponse.
+
+\shufflegroup{evolutions}
+\insertgroup{evolutions}
+
+\AMCcleardoublepage
+\AMCformBegin
+\AMCform
+}
+\end{document}

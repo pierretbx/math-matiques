@@ -1,0 +1,326 @@
+
+\exo
+
+\begin{enumerate}
+\item Justifier que $98$ est un multiple de $14$.
+\item Traduire cette phrase en utilisant les expressions \og est diviseur de \fg{}, \og a pour diviseur \fg{},\\ \og est divisible par \fg{}, \og a pour multiple \fg{}.
+\end{enumerate}
+
+\exo
+
+Recopier les phrases suivantes en les complétant avec les mots \og diviseur \fg{} ou \og multiple \fg{} :
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0.2pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $350$ est un \dots{} de $50$.
+\item $13$ est un \dots{} de $260$.
+\item $0$ est un \dots{} de $89$.
+\item $1$ est un \dots{} de $16$.
+\item $42$ est un \dots{} de $42$.
+\item $3$ est un \dots{} de $0$.
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+\begin{enumerate}
+\item Donner cinq diviseurs de $24$.
+\item Donner tous les diviseurs positifs de $11$.
+\item Donner tous les diviseurs positifs de $21$.
+\item Donner tous les multiples de $9$, compris entre $-20$ et $30$.
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Comment s'écrivent tous les multiples de $17$ ?
+\item Combien y a-t-il de multiples de $17$ compris entre $1$ et $100$ ?
+\item Combien y en a-t-il entre $0$ et \np{2000} ?
+\end{enumerate}
+
+\exo
+
+Soient $a$ et $b$ deux entiers non nuls.
+
+Dans chacun des cas suivants, écrire une égalité traduisant la phrase proposée.
+\begin{enumerate}
+\item La somme de $a$ et $b$ est un multiple de $6$.
+\item La différence de $a$ et $b$ est un diviseur de $2020$.
+\item La somme du double de $a$ et du triple de $b$ est un diviseur de $46$.
+\item Le produit de $a$ et $b$ divise $84$.
+\end{enumerate}
+
+
+
+\exo
+
+\begin{enumerate}
+\item Vérifier que la somme $22+23+24$ est un multiple de $3$.
+\item Plus généralement, la somme de trois entiers consécutifs est-elle toujours un multiple de $3$ ?
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Écrire la division euclidienne de $521$ par $12$.
+\item On range $521$ chocolats dans des paquets de $12$.
+
+Combien de sachets seront remplis ? Combien restera-t-il de chocolats ?
+\item Les organisateurs d'une course achètent des dossards par paquets de $12$ pour les distribuer aux $521$ participants.
+
+Combien de paquets doivent-ils acheter ? Combien de dossards resteront inutilisés ?
+\end{enumerate}
+
+\exo
+
+En 2016-2017, Thomas Pesquet a passé \np{283310} minutes dans l'espace. Exprimer cette durée en jours, heures et minutes.
+
+\exo
+
+\begin{enumerate}
+\item En s'inspirant de la démonstration vu en cours, démontrer la proposition :
+\begin{center}
+\og Si $n$ et $p$ sont des multiples de $11$, alors $n+p$ est un multiple de $11$. \fg{} 
+\end{center}
+\item Énoncer cette propriété en termes de diviseurs.
+\item Écrire la réciproque de la proposition donnée à la question \textbf{1}. Cette réciproque est-elle vraie ?
+\end{enumerate}
+
+\exo
+
+Soit $a$ un entier multiple de $6$ et $b$ un entier multiple de $15$.
+\begin{enumerate}
+\item Montrer que $a+b$ est un multiple de $3$.
+\item Montrer que $a\times b$ est un multiple de $90$.
+\end{enumerate}
+
+\exo
+
+Soient $a$ et $b$ deux entiers.
+\begin{enumerate}
+\item Montrer que si $a$ est un diviseur de $a+b$, alors $a$ est un diviseur de $b$.
+\item Montrer que si $a$ est un diviseur de $b$, alors $a^2$ est un diviseur de $b^2$.
+\end{enumerate}
+
+\exo
+
+Chacune des affirmations suivantes est-elle vraie ou fausse ? Justifier.
+\begin{enumerate}
+\item La somme de deux nombres impairs est un nombre impair.
+\item La somme de deux nombres pairs est un nombre pair.
+\item La somme de trois nombres impairs est un nombre impair.
+\item La somme de deux entiers consécutifs est un nombre impair.
+\item La somme de deux nombres impairs consécutifs est un multiple de $4$.
+\end{enumerate}
+
+\exo
+
+Chacune des affirmations suivantes est-elle vraie ou fausse ? Justifier.
+\begin{enumerate}
+\item Le produit de deux entiers consécutifs est un nombre pair.
+\item Le produit de deux nombres pairs est un multiple de $4$.
+\item Le produit de trois nombres pairs est un multiple de $8$.
+\item Le produit de trois entiers consécutifs est un multiple de $6$.
+\end{enumerate}
+
+\exo
+
+Montrer que si $n$ est impair, alors $n^2-1$ est un multiple de $4$.
+
+\exo
+
+On note $n$ un entier relatif.
+\begin{enumerate}
+\item Simplifier l'expression $(n+1)^2-n^2$.
+\item En déduire que tout nombre impair est égal à la différence des carrés de deux entiers consécutifs.
+\item Écrire $49$ comme différence des carrés de deux entiers consécutifs.
+\end{enumerate}
+
+\exo
+
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0.2pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item Déterminer si les nombres suivants sont premiers :
+\[18 \qpvq 37 \qpvq 41 \qpvq 89 \qpvq 101.\]
+\item Même question avec les nombres :
+\[579 \qpvq 911 \qpvq \np{1021} \qpvq \np{5743} \qpvq \np{8191}.\]
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+\begin{enumerate}
+\item Le nombre $111$ est-il premier ?
+\item Justifier que le nombre $11\dots{}111$ (écrit avec $111$ fois le chiffre $1$) n'est pas premier.
+\end{enumerate}
+
+\exo
+
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0.2pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item Décomposer en produit de facteurs premiers les nombres :
+\[792 \qpvq \np{30250} \qpvq 6\times 49 \qpvq 6^2\times 4.\]
+\item Même question avec les nombres :
+\[112 \qpvq 360 \qpvq 490 \qpvq 495 \qpvq \np{1140}.\]
+\end{enumerate}
+\end{multicols}
+
+\exo 
+
+On sait que $264=2^3\times 3\times 11$.
+
+En déduire la décomposition en produit de facteurs premiers de $132$, puis de $132^2$.
+
+\exo
+
+\begin{enumerate}
+\item Décomposer en produit de facteurs premiers les nombres $16$, $72$ et $12$.
+\item En déduire que $16\times 72\times 12$ est le cube d'un nombre entier.
+\end{enumerate}
+
+\exo
+
+Dresser la liste des diviseurs positifs des nombres suivants :
+\[27 \epve 20 \epve 2^{5}.\]
+
+\exo
+
+Le tableau suivant est constitué de tous les entiers de $1$ à $100$ :
+
+\begin{center}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1}
+\begin{tabular}{
+*{10}{|>{\centering\arraybackslash}m{0.6cm}}|}
+\hline
+1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ \hline
+11 & 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 & 20 \\ \hline
+21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 \\ \hline
+31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 \\ \hline
+41 & 42 & 43 & 44 & 45 & 46 & 47 & 48 & 49 & 50 \\ \hline
+51 & 52 & 53 & 54 & 55 & 56 & 57 & 58 & 59 & 60 \\ \hline
+61 & 62 & 63 & 64 & 65 & 66 & 67 & 68 & 69 & 70 \\ \hline
+71 & 72 & 73 & 74 & 75 & 76 & 77 & 78 & 79 & 80 \\ \hline
+81 & 82 & 83 & 84 & 85 & 86 & 87 & 88 & 89 & 90 \\ \hline
+91 & 92 & 93 & 94 & 95 & 96 & 97 & 98 & 99 & 100 \\ \hline
+\end{tabular} 
+\end{center}
+\begin{enumerate}
+\item Dans ce tableau, on barre $1$ car il n'est pas premier.
+\item On entoure $2$ (qui est premier) et on barre tous les multiples de $2$ (qui ne sont pas premiers), puis on entoure $3$ et on barre tous les multiples de $3$, etc.
+\item À partir de quel nombre est-on sûr qu'il ne reste que des nombres premiers dans le tableau ?
+\item Conclure en entourant tous les nombres premiers inférieurs à $100$.
+\end{enumerate}
+
+\exo
+
+Les \emph{diviseurs stricts} d'un entier naturel sont ses diviseurs positifs autres que lui-même.
+
+Deux entiers naturels sont dits \emph{amicaux} si chacun est égal à la somme des diviseurs stricts de l'autre.
+\begin{enumerate}
+\item Montrer que $220$ et $284$ sont amicaux.
+\item Montrer que 1184 et $1210$ sont amicaux.
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Donner deux entiers consécutifs premiers.
+\item Peut-on trouver trois entiers consécutifs premiers ?
+\end{enumerate}
+
+\exo
+
+Chacune des affirmations suivantes est-elle vraie ou fausse ? Justifier.
+\begin{enumerate}
+\item Si $n$ est premier, alors $n+1$ n'est pas premier.
+\item Si $n$ n'est pas premier, alors $n+1$ est premier.
+\end{enumerate}
+
+\exo
+
+Soient $a$ et $b$ deux entier naturels, avec $a>b$.
+\begin{enumerate}
+\item Montrer que, si $a^2-b^2$ est premier, alors $a$ et $b$ sont des entiers consécutifs.
+\item Énoncer la réciproque de l'implication précédente.
+
+Cette réciproque est-elle vraie ?
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Compléter le tableau suivant :
+\begin{center}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{
+>{\centering\arraybackslash}m{2.5cm}
+*{11}{>{\centering\arraybackslash}m{1cm}}}
+\hline 
+$n$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & $8$ & $9$ & $10$ \\ 
+\hline
+$n^2-n+11$ & $11$ & $11$ & $13$ & & & & & & & & \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\item Le nombre $n^2-n+11$ est-il premier pour tout entier naturel $n$ ?
+\end{enumerate}
+
+\exo
+
+Un \og nombre chanceux d'Euler \fg{} est un entier $c$ (supérieur ou égal à $2$) tel que, pour tout entier $n$ compris entre $0$ et $c-2$, le nombre $n^2+n+c$ soit premier.
+
+Par exemple, $5$ est un nombre chanceux d'Euler car :
+\[0^2+0+5=5,\quad 1^2+1+5=7,\quad 2^2+2+5=11,\quad 3^2+3+5=17,\]
+et ces nombres sont tous premiers.
+
+\begin{enumerate}
+\item Déterminer tous les nombres chanceux d'Euler compris entre $2$ et $11$.
+\item Alice affirme : \og Si $c$ est un nombre chanceux d'Euler, alors $c$ est premier \fg{}.
+
+Cette affirmation est-elle vraie ? Justifier.
+\item Énoncer la réciproque de l'implication précédente.
+
+Cette réciproque est-elle vraie ?
+\item Il a été prouvé en 1967 qu'il existe exactement six nombres chanceux d'Euler.
+
+Sachant que le plus grand est $41$, quels sont ces six nombres ?
+\end{enumerate}
+
+\exo
+
+On considère un nombre premier $p$ supérieur ou égal à $6$.
+
+En effectuant la division euclidienne de $p$ par $6$, on obtient :
+\begin{center}
+$p=6q+r$,\quad où $q$ et $r$ sont des entiers tels que $\left\{\setlength\arraycolsep{2pt}\begin{array}{l}
+q\geqslant 1 \\
+0\leqslant r\leqslant 5
+\end{array}\right.$
+\end{center}
+\begin{enumerate}
+\item Justifier que $r$ ne peut pas être égal à $0$, $2$, $3$ ou $4$.
+\item Comment s'écrivent les nombres premiers supérieurs ou égaux à $6$ ?
+\item Les entiers de la forme $6q+1$ ou $6q+5$ sont-ils tous des nombres premiers ?
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Choisir un nombre entier naturel $A$ à deux chiffres.
+
+Écrire l'entier $B$ obtenu en échangeant les chiffres de $A$, puis additionner $A$ et $B$.
+
+Quels sont les diviseurs premiers de la somme obtenue ?
+\item Reprendre la question \textbf{1} avec d'autres valeurs de $A$. Que peut-on conjecturer ?
+\item Démontrer cette conjecture.
+
+\textbf{Aide : } si on note $u$ le chiffre des unités et $d$ le chiffres des dizaines de $A$, alors $A=10d+u$.
+\end{enumerate}
+

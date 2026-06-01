@@ -1,0 +1,947 @@
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+On a représenté ci-contre deux parallélogrammes $ABCD$ et $CDEF$.
+
+Les affirmations suivantes sont-elles vraies ou fausses ? Justifier.
+\begin{enumerate}
+\item Par la translation de vecteur $\vect{CB}$, l'image du point $D$ est le point $A$.
+\item Les vecteurs $\vect{FC}$ et $\vect{DE}$ ont la même direction.
+\item Les vecteurs $\vect{FC}$ et $\vect{DE}$ sont égaux.
+\item Les vecteurs $\vect{AC}$ et $\vect{DB}$ ont la même norme.
+\item Les vecteurs $\vect{AC}$ et $\vect{DB}$ sont égaux.
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-0.5}
+\def\xmax{7.5}
+\def\ymin{-0.5}
+\def\ymax{4.5}
+\def\xunite{0.8cm}
+\def\yunite{0.8cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,1)(2,0)(3,3)(1,4)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](2,0)(6,1)(7,4)(3,3)
+\begin{footnotesize}
+\uput{3pt}[180](0,1){$A$}
+\uput{3pt}[090](1,4){$B$}
+\uput{3pt}[090](3,3){$C$}
+\uput{3pt}[270](2,0){$D$}
+\uput{3pt}[270](6,1){$E$}
+\uput{3pt}[090](7,4){$F$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Parmi les vecteurs représentés ci-contre, citer ceux qui ont :
+\begin{enumerate}
+\item la même direction ;
+\item la même direction et le même sens ;
+\item la même norme.
+\end{enumerate}
+\begin{center}
+\def\xmin{0}
+\def\xmax{9}
+\def\ymin{0}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](2,4)(6,4)
+\psline[arrows=->](3,3)(6,3)
+\psline[arrows=->](2,1)(7,2)
+\psline[arrows=->](1,4)(1,1)
+\psline[arrows=->](8,1)(8,3)
+\psdots(2,4)(3,3)(2,1)(1,4)(8,1)
+\begin{footnotesize}
+\uput{5pt}[135](2,4){$A$}
+\uput{5pt}[045](6,4){$B$}
+\uput{5pt}[135](3,3){$C$}
+\uput{5pt}[045](6,3){$D$}
+\uput{5pt}[135](2,1){$E$}
+\uput{5pt}[045](7,2){$F$}
+\uput{5pt}[135](1,4){$G$}
+\uput{5pt}[225](1,1){$H$}
+\uput{5pt}[315](8,1){$I$}
+\uput{5pt}[045](8,3){$J$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+$EFGH$ est un parallélogramme de centre $I$.
+\begin{enumerate}
+\item Donner un vecteur égal à :
+\[\vect{EF}\qpvq\vect{GH}\qpvq\vect{EH}\qpvq\vect{GF}.\]
+\item Recopier et compléter les égalités :
+\[\vect{EI}=\vect{I\dots{}}\qpvq\vect{HI}=\vect{I\dots{}}\qpvq\vect{FI}=\vect{I\dots{}}.\]
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-0.5}
+\def\xmax{4.5}
+\def\ymin{-0.5}
+\def\ymax{2.5}
+\def\xunite{1cm}
+\def\yunite{1cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(3,0)(4,2)(1,2)
+\psline(0,0)(4,2)
+\psline(3,0)(1,2)
+\begin{footnotesize}
+\uput{4pt}[225](0,0){$E$}
+\uput{4pt}[315](3,0){$F$}
+\uput{4pt}[045](4,2){$G$}
+\uput{4pt}[135](1,2){$H$}
+\uput{5pt}[090](2,1){$I$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item Sur la figure ci-contre, construire les représentants d'origine $C$ et $D$ du vecteur $\vect{AB}$.
+\item Construire le point $M$ tel que $\vect{EM}=\vect{AB}$.
+\end{enumerate}
+\begin{center}
+\def\xmin{0}
+\def\xmax{9}
+\def\ymin{0}
+\def\ymax{3}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](3,1)(5,2)
+\psdots(3,1)(5,2)(1,2)(6,2)(7,1)
+\begin{footnotesize}
+\uput{4pt}[270](3,1){$A$}
+\uput{4pt}[090](5,2){$B$}
+\uput{4pt}[090](6,2){$C$}
+\uput{4pt}[270](7,1){$D$}
+\uput{4pt}[180](1,2){$E$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+Soit $FGH$ un triangle. Construire les points $M$, $N$ et $P$ définis par :
+\[\vect{FM}=\vect{GH} \vq \vect{GN}=\vect{HF} \qetq \vect{HP}=\vect{FG}.\]
+
+\exo
+
+Soit $ABC$ un triangle. Construire les points $M$, $N$ et $P$ définis par :
+\[\vect{BM}=\vect{CA} \vq \vect{CN}=\vect{AB} \qetq \vect{DP}=\vect{BD}.\]
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Soit $RLMU$ un rectangle de centre $O$. Dans chaque cas, dire si les deux vecteurs ont la même direction, le même sens, la même norme.
+
+\vspace{-6pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\vect{RM}$ et $\vect{OM}$
+\item $\vect{RL}$ et $\vect{MU}$
+\item $\vect{RM}$ et $\vect{LU}$
+\item $\vect{UR}$ et $\vect{ML}$
+\item $\vect{LO}$ et $\vect{UO}$
+\item $\vect{UO}$ et $\vect{MO}$
+\end{enumerate}
+\end{multicols}
+\begin{center}
+\def\xmin{-0.5}
+\def\xmax{5.5}
+\def\ymin{-0.2}
+\def\ymax{2.2}
+\def\xunite{1.0cm}
+\def\yunite{1.0cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(5,0)(5,2)(0,2)
+\psline(0,0)(5,2)
+\psline(5,0)(0,2)
+\begin{footnotesize}
+\uput{4pt}[180](0,0){$U$}
+\uput{4pt}[000](5,0){$M$}
+\uput{4pt}[000](5,2){$L$}
+\uput{4pt}[180](0,2){$R$}
+\uput{4pt}[090](2.5,1){$O$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Soient $ABCD$ et $EDGF$ des losanges, les points $G$ et $E$ étant les symétriques respectifs des points $A$ et $C$ par rapport à $D$.
+\begin{enumerate}
+\item En justifiant, donner trois vecteurs égaux au vecteur $\vect{AD}$, puis au vecteur $\vect{ED}$.
+\item Quel est le représentant d'origine $G$ du vecteur $\vect{CD}$ ? Et du vecteur $\vect{DA}$ ?
+\item Quel est le représentant d'extrémité $E$ du vecteur $\vect{CB}$ ? Et du vecteur $\vect{BA}$ ?
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-3.5}
+\def\xmax{3.5}
+\def\ymin{-2.5}
+\def\ymax{2.5}
+\def\xunite{0.8cm}
+\def\yunite{0.8cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(3,1)(0,2)(-3,1)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(3,-1)(0,-2)(-3,-1)
+\begin{footnotesize}
+\uput{4pt}[000](3,1){$A$}
+\uput{4pt}[090](0,2){$B$}
+\uput{4pt}[180](-3,1){$C$}
+\uput{4pt}[090](0,0){$D$}
+\uput{4pt}[000](3,-1){$E$}
+\uput{4pt}[270](0,-2){$F$}
+\uput{4pt}[180](-3,-1){$G$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+On reprend la figure de l'exercice précédent. Citer :
+\begin{enumerate}
+\item Un vecteur qui n'a pas la même direction que $\vect{BA}$, mais qui a la même norme.
+\item Un vecteur qui a la même direction que $\vect{BC}$, mais qui n'a pas le même sens.
+\item Un vecteur qui a la même direction et le même sens que $\vect{BA}$, mais qui n'a pas la même norme.
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Dire, en justifiant, si la proposition suivante est vraie pour tous points $A$, $B$, $C$ et $D$ :
+\begin{center}
+\og Si $\vect{AB}=\vect{CD}$, alors $\norme{\vect{AB}}=\norme{\vect{CD}}$. \fg{} 
+\end{center}
+\item
+\begin{enumerate}
+\item Énoncer la proposition réciproque.
+\item Cette nouvelle proposition est-elle vraie ou fausse ? Justifier.
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Soient $ABCD$ et $ABEF$ deux parallélogrammes.
+\begin{enumerate}
+\item En justifiant, donner deux vecteurs égaux au vecteur $\vect{AB}$.
+\item Montrer que le quadrilatère $FECD$ est un parallélogramme.
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-0.5}
+\def\xmax{6.5}
+\def\ymin{-1.2}
+\def\ymax{3.2}
+\def\xunite{0.8cm}
+\def\yunite{0.8cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(3,1)(3,3)(0,2)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(6,-1)(6,1)(0,2)
+\begin{footnotesize}
+\uput{4pt}[180](0,0){$A$}
+\uput{4pt}[180](0,2){$B$}
+\uput{4pt}[000](3,3){$C$}
+\uput{4pt}[000](3,1){$D$}
+\uput{4pt}[000](6,1){$E$}
+\uput{4pt}[000](6,-1){$F$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-18pt}
+
+\exo
+
+On considère un parallélogramme $EFGH$.
+\begin{enumerate}
+\item Faire une figure.
+\item Construire le point $J$ tel que $EFHJ$ soit un parallélogramme.
+\item Démontrer que $H$ est le milieu du segment $[GJ]$.
+\end{enumerate}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+On considère un triangle $ADC$ isocèle en $A$.
+
+On note $B$ le point tel que $ABCD$ soit un parallélogramme, $E$ et $F$ les symétriques respectifs de $C$ et $B$ par rapport à $A$.
+\begin{enumerate}
+\item Justifier que le quadrilatère $EFCB$ est un parallélogramme.
+\item
+\begin{enumerate}
+\item Justifier que $\vect{AD}=\vect{EF}$.
+\item Montrer que $ADFE$ est un losange.
+\end{enumerate}
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-0.5}
+\def\xmax{8.5}
+\def\ymin{-0.2}
+\def\ymax{5.2}
+\def\xunite{0.7cm}
+\def\yunite{0.7cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](4,3)(7,2)(3,0)
+\psline(0,1)(8,5)(7,2)
+\psline(1,4)(4,3)
+\psdots(4,3)(7,2)(3,0)(0,1)(8,5)(1,4)
+\begin{footnotesize}
+\uput{4pt}[090](4,3){$A$}
+\uput{4pt}[000](8,5){$B$}
+\uput{4pt}[000](7,2){$C$}
+\uput{4pt}[180](3,0){$D$}
+\uput{4pt}[090](1,4){$E$}
+\uput{4pt}[180](0,1){$F$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Sur la figure ci-contre, construire :
+\begin{enumerate}
+\item Le représentant d'origine $A$ du vecteur $\vecu+\vecv$.
+\item Le représentant d'origine $B$ du vecteur $\vect{m}+\vect{n}$.
+\item Le représentant d'origine $C$ du vecteur $\vect{a}+\vect{b}$.
+\end{enumerate}
+\begin{center}
+\def\xmin{0}
+\def\xmax{12}
+\def\ymin{0}
+\def\ymax{6}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](2,1)(4,2)
+\psline[arrows=->](4,2)(1,4)
+\psline[arrows=->](4,4)(7,5)
+\psline[arrows=->](7,5)(8,3)
+\psline[arrows=->](10,5)(9,4)
+\psline[arrows=->](10,5)(11,2)
+\psdots(2,1)(4,4)(10,5)
+\begin{footnotesize}
+\uput{4pt}[270](2,1){$A$}
+\uput{4pt}[135](4,4){$B$}
+\uput{4pt}[090](10,5){$C$}
+\uput{4pt}[300](3,1.5){$\vecu$}
+\uput{4pt}[60](2.5,3){$\vecv$}
+\uput{4pt}[120](5.5,4.5){$\vect{m}$}
+\uput{4pt}[030](7.5,4){$\vect{n}$}
+\uput{4pt}[020](10.5,3.5){$\vect{a}$}
+\uput{4pt}[135](9.5,4.5){$\vect{b}$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Sur la figure ci-contre, construire :
+\begin{enumerate}
+\item Le représentant d'origine $A$ des vecteurs \\$\vecu+\vecv$ et $\vecu+\vecw$.
+\item Le représentant d'origine $B$ du vecteur $\vecv+\vecw$.
+\item Un représentant du vecteur $\vecu+\vecv+\vecw$
+\end{enumerate}
+\begin{center}
+\def\xmin{0}
+\def\xmax{12}
+\def\ymin{0}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](3,1)(4,4)
+\psline[arrows=->](8,3)(11,4)
+\psline[arrows=->](8,3)(8,1)
+\psdots(1,1)(8,3)
+\begin{footnotesize}
+\uput{3pt}[135](1,1){$A$}
+\uput{3pt}[135](8,3){$B$}
+\uput{3pt}[160](3.5,2.5){$\vecu$}
+\uput{3pt}[110](9.5,3.5){$\vecv$}
+\uput{3pt}[180](8,2){$\vecw$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Construire les points $E$, $F$ et $G$ définis par :
+\begin{align*}
+\vect{AE}&=\vecu+\vecw \\
+\vect{BF}&=\vecv+\vecu \\
+\vect{BG}&=\vecu+\vecw
+\end{align*}
+~
+\begin{center}
+\def\xmin{0}
+\def\xmax{12}
+\def\ymin{0}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](4,1)(1,3)
+\psline[arrows=->](4,1)(6,1)
+\psline[arrows=->](11,3)(9,1)
+\psdots(4,1)(11,3)
+\begin{footnotesize}
+\uput{3pt}[270](4,1){$A$}
+\uput{3pt}[045](11,3){$B$}
+\uput{3pt}[060](2.5,2){$\vecu$}
+\uput{3pt}[135](10,2){$\vecv$}
+\uput{3pt}[090](5,1){$\vecw$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item Construire le représentant d'origine $A$ des vecteurs $\vecu+\vecv$ et $\vecu-\vecv$.
+\item Construire les points $E$ et $F$ définis par :
+\[\vect{BE}=\vecu+\vecw \qetq \vect{BF}=\vecv+\vecw.\]
+~
+\end{enumerate}
+\begin{center}
+\def\xmin{0}
+\def\xmax{12}
+\def\ymin{0}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](11,2)(9,4)
+\psline[arrows=->](6,1)(8,2)
+\psline[arrows=->](5,4)(5,1)
+\psdots(4,1)(2,3)
+\begin{footnotesize}
+\uput{3pt}[270](4,1){$A$}
+\uput{3pt}[135](2,3){$B$}
+\uput{3pt}[045](10,3){$\vecu$}
+\uput{3pt}[300](7,1.5){$\vecv$}
+\uput{3pt}[180](5,2.5){$\vecw$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Soit $ABC$ un triangle. Construire les points $M$, $N$, $P$ et $Q$ définis par :
+\[
+\vect{BM}=\vect{BA}+\vect{BC}\vq
+\vect{CN}=\vect{AC}+\vect{BC}\vq
+\vect{AP}=\vect{BC}+\vect{BA}\qetq
+\vect{AQ}=\vect{CB}-\vect{BA}.
+\]
+
+\exo
+
+Soient $A$, $B$ et $C$ trois points.
+
+Recopier et compléter les égalités suivantes, en utilisant la relation de Chasles :
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\vect{BA}+\vect{\dots{}C}=\vect{BC}$
+
+\smallskip
+\item $\vect{AB}+\vect{B\dots{}}=\vect{AC}$
+
+\smallskip
+\item $\vect{C\dots{}}+\vect{BA}=\vect{CA}$
+
+\item $\vect{\dots{}C}+\vect{\dots{}A}=\vect{BA}$
+
+\smallskip
+\item $\vect{\dots{}B}+\vect{B\dots{}}=\vect{AC}$
+
+\smallskip
+\item $\vect{A\dots{}}+\vect{\dots{}B}=\vect{AB}$
+
+\item $\vect{AB}-\vect{CB}=\dots{}$
+
+\smallskip
+\item $-\vect{CA}+\vect{CB}=\dots{}$
+
+\smallskip
+\item $-\vect{AC}-\vect{BA}=\dots{}$
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Sur la figure ci-contre, $HAB$, $HBC$ et $HCD$ sont des triangles équilatéraux.
+\begin{enumerate}
+\item Quelle est la nature des quadrilatères $HBCD$ et $HABC$ ?
+\item 
+\begin{enumerate}
+\item Justifier que $\vect{AB}=\vect{HC}$.
+\item En déduire que $\vect{AB}+\vect{CB}=\vect{HB}$.
+\end{enumerate}
+\item Écrire chacune des sommes suivantes sous forme d'un unique vecteur :
+\[\vect{HC}+\vect{HA}\vq\vect{DH}+\vect{AB}\vq \vect{BH}+\vect{AB}.\]
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-0.8}
+\def\xmax{1.2}
+\def\ymin{-1.1}
+\def\ymax{1.1}
+\def\xunite{2.2cm}
+\def\yunite{2.2cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(1;-60)(1;0)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(1;0)(1;60)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(1;60)(1;120)
+\begin{footnotesize}
+\uput{4pt}[210](0,0){$H$}
+\uput{4pt}[270](1;-60){$A$}
+\uput{4pt}[000](1;0){$B$}
+\uput{4pt}[060](1;60){$C$}
+\uput{4pt}[120](1;120){$D$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+On considère deux cercles $\cC$ et $\cC'$, de même rayon et de centres respectifs $A$ et $B$.
+
+Ces deux cercles sont sécants en $C$ et $D$.
+
+Les segments $[CF]$ et $[DE]$ sont des diamètres du cercle $\cC$, et $[CG]$ et $[DH]$ des diamètres de $\cC'$.
+
+\medskip
+Montrer que le point $C$ est le milieu du segment $[EH]$.
+\vspace{\fill}
+
+\begin{center}
+\def\xmin{-2.5}
+\def\xmax{5.5}
+\def\ymin{-1.2}
+\def\ymax{4.4}
+\def\xunite{0.85cm}
+\def\yunite{0.85cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pscircle(0,1){2}
+\pscircle(3,2){2}
+\psline(-1.89,1.66)(1.89,0.34)(4.11,3.66)
+\psline(-1.11,-0.66)(1.11,2.66)(4.89,1.34)
+\psdots(0,1)(3,2)(-1.89,1.66)(1.89,0.34)(4.11,3.66)(-1.11,-0.66)(1.11,2.66)(4.89,1.34)
+\begin{footnotesize}
+\uput{6pt}[100](0,1){$A$}
+\uput{6pt}[100](3,2){$B$}
+\uput{6pt}[105](1.11,2.66){$C$}
+\uput{6pt}[285](1.89,0.34){$D$}
+\uput{4pt}[145](-1.89,1.66){$E$}
+\uput{4pt}[235](-1.11,-0.66){$F$}
+\uput{4pt}[325](4.89,1.34){$G$}
+\uput{4pt}[055](4.11,3.66){$H$}
+\uput{4pt}[100](-1,2.73){$\cC$}
+\uput{4pt}[100](2,3.73){$\cC'$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+On a tracé ci-contre un parallélogramme. À côté de chaque vecteur, indiquer son expression en fonction de $\vecu$ et $\vecv$.
+
+\vfill
+\columnbreak
+\begin{center}
+\def\xmin{-0.1}
+\def\xmax{4.1}
+\def\ymin{-0.1}
+\def\ymax{2.1}
+\def\xunite{2cm}
+\def\yunite{1.5cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(3,0)(4,2)(1,2)
+\psline[linewidth=1.6pt,arrows=->](2,1)(3.5,1)
+\psline[arrows=->](2,1)(4,2)
+\psline[linewidth=1.6pt,arrows=->](2,1)(2.5,2)
+\psline[arrows=->](2,1)(1,2)
+\psline[arrows=->](2,1)(0.5,1)
+\psline[arrows=->](2,1)(0,0)
+\psline[arrows=->](2,1)(1.5,0)
+\psline[arrows=->](2,1)(3,0)
+\begin{footnotesize}
+\uput{3pt}[270](2.75,1){$\vecu$}
+\uput{3pt}[180](2.25,1.5){$\vecv$}
+\uput{3pt}[300](3,1.5){$\vecu+\vecv$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+On considère un triangle $ABC$, et les vecteurs :
+\[\vecu=\vect{AC}, \quad \vecv=\vect{BA} \qetq \vecw=\vect{CB}.\]
+\begin{enumerate}
+\item Faire une figure.
+\item Démontrer que $\vecu+\vecv+\vecw=\vecnul$.
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Tracer un parallélogramme $ABCD$, et construire le point $E$ tel que :
+\[\vect{AE}=\vect{AC}+\vect{DB}.\]
+\item Que semble représenter le point $E$ par rapport aux points $A$ et $B$ ?
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Préciser la nature du quadrilatère $BECD$ (justifier).
+\item En déduire que $\vect{AB}=\vect{BE}$, puis interpréter cette égalité.
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+Soient $A$, $B$ et $C$ trois points.
+\begin{enumerate}
+\item Construire deux points $A'$ et $B'$ tels que $\vect{AA'}=\vect{BB'}$.
+\item Démontrer que $\vect{A'B'}+\vect{BC}=\vect{AC}$.
+\end{enumerate}
+
+\exo
+
+Soient $A$, $B$, $C$, $D$ et $E$ cinq points tels que $\vect{EA}+\vect{EB}=\vect{EC}+\vect{ED}$.
+
+Montrer que $ADBC$ est un parallélogramme.
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+On considère les vecteurs représentés ci-contre.
+
+Compléter les égalités :
+\[
+\vecu=\dots{}\vect{a}
+\qpvq
+\vecv=\dots{}\vect{a}
+\qpvq
+\vecw=\dots{}\vect{a}.
+\]
+\begin{center}
+\def\xmin{0}
+\def\xmax{13}
+\def\ymin{0}
+\def\ymax{3}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](1,2)(3,2)
+\psline[arrows=->](8,1)(12,1)
+\psline[arrows=->](3,1)(6,1)
+\psline[arrows=->](10,2)(4,2)
+\begin{footnotesize}
+\uput{3pt}[090](2,2){$\vect{a}$}
+\uput{3pt}[270](10,1){$\vecu$}
+\uput{3pt}[090](7,2){$\vecv$}
+\uput{3pt}[270](5,1){$\vecw$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Sur la figure ci-contre, représenter les vecteurs :
+\[-3\vecu\qpvq \tfrac{1}{2}\vecu \qpvq -\tfrac{3}{2}\vecu.\]
+\columnbreak
+\begin{center}
+\def\xmin{-6}
+\def\xmax{7}
+\def\ymin{-1}
+\def\ymax{2}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](0,0)(2,0)
+\begin{footnotesize}
+\uput{3pt}[090](0.5,0){$\vecu$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+On considère un triangle $ABC$.
+
+Construire les points $M$, $N$ et $P$ définis par :
+\[
+\vect{AM}=2\vect{AB}
+\qpvq
+\vect{BN}=\tfrac{1}{2}\vect{BC}
+\qpvq
+\vect{CP}=\tfrac{3}{2}\vect{AC}.
+\]
+
+\exo
+
+Sur la figure ci-dessous, les points sont alignés et régulièrement espacés :
+\begin{center}
+\def\xmin{-1}
+\def\xmax{5}
+\def\ymin{-0.1}
+\def\ymax{0.8}
+\def\xunite{2cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline(\xmin,0)(\xmax,0)
+\psdots(0,0)(1,0)(2,0)(3,0)(4,0)
+\begin{footnotesize}
+\uput{5pt}[090](0,0){$R$}
+\uput{5pt}[090](1,0){$A$}
+\uput{5pt}[090](2,0){$S$}
+\uput{5pt}[090](3,0){$B$}
+\uput{5pt}[090](4,0){$T$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\begin{enumerate}
+\item Exprimer les vecteurs $\vect{AR}$, $\vect{AT}$, $\vect{BR}$ et $\vect{BT}$ en fonction du vecteur $\vect{AB}$.
+\item Exprimer les vecteurs $\vect{RA}$, $\vect{RS}$, $\vect{RT}$ et $\vect{BA}$ en fonction du vecteur $\vect{RB}$.
+\end{enumerate}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Sur la figure ci-contre, construire les points $E$, $F$ et $G$ définis par :
+\begin{align*}
+\vect{AE}&=\vecu+2\vecv \\
+\vect{AF}&=2\vecu-\tfrac{1}{2}\vecv \\
+\vect{AG}&=\tfrac{1}{2}\vecu-\tfrac{3}{2}\vecv.
+\end{align*}
+\begin{center}
+\def\xmin{0}
+\def\xmax{13}
+\def\ymin{0}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline[arrows=->](3,2)(1,4)
+\psline[arrows=->](4,1)(8,3)
+\psdot(9,1)
+\begin{footnotesize}
+\uput{3pt}[045](2,3){$\vecu$}
+\uput{3pt}[120](6,2){$\vecv$}
+\uput{3pt}[045](9,1){$A$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+\vspace{-12pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+Sur la figure ci-contre, $ABCD$ est un parallélogramme, $E$ et $F$ sont les points définis par :
+\[
+\vect{AE}=\tfrac{1}{4}\vect{AB}
+\qetq
+\vect{DF}=\tfrac{3}{4}\vect{DC}.
+\]
+Montrer que $AECF$ est un parallélogramme.
+
+\begin{center}
+\def\xmin{0}
+\def\xmax{13}
+\def\ymin{0}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+%\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](5,0.5)(9,0.5)(7,4.5)(3,4.5)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](5,1)(9,1)(7,4)(3,4)
+\psline(5,1)(6,4)
+\psline(6,1)(7,4)
+\begin{footnotesize}
+\uput{3pt}[270](5,1){$A$}
+\uput{3pt}[270](9,1){$B$}
+\uput{3pt}[090](7,4){$C$}
+\uput{3pt}[090](3,4){$D$}
+\uput{3pt}[270](6,1){$E$}
+\uput{3pt}[090](6,4){$F$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-12pt}
+

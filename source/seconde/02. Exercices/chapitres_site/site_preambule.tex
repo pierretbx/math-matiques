@@ -1,0 +1,21 @@
+\makeatletter
+\def\input@path{{../recueil/}{../recueil/preambules/}}
+\makeatother
+
+\input{../recueil/recueil_preambule.tex}
+
+\makeatletter
+\renewcommand{\chapitreRecueil}[3]{%
+  \chapter{#2}%
+  \if\relax\detokenize{#3}\relax\else
+    \begin{center}
+      \small\itshape #3
+    \end{center}
+    \medskip
+  \fi
+  \sourcefile{Manu}{../recueil/chapitres/#1/manu.tex}%
+  \sourcefile{Thierry}{../recueil/chapitres/#1/thierry.tex}%
+  \sourcefile{Virginie}{../recueil/chapitres/#1/virginie.tex}%
+  \sourcefile{Pierre}{../recueil/chapitres/#1/pierre.tex}%
+}
+\makeatother

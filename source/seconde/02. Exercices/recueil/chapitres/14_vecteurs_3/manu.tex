@@ -1,0 +1,299 @@
+
+\exo
+
+Dans chacun des cas suivants, déterminer si les vecteurs $\vecu$ et $\vecv$ sont colinéaires.
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $\vecu\couple{2}{3}$\; et \; $\vecv\couple{4}{6}$.$\hphantom{\frac{b}{q}}$
+\medskip
+\item $\vecu\couple{-3}{5}$\; et \; $\vecv\couple{9}{-15}$.$\hphantom{\frac{b}{q}}$
+\medskip
+\item $\vecu\couple{-3}{21}$\; et \; $\vecv\couple{4}{-28}$.$\hphantom{\frac{b}{q}}$
+\medskip
+\item $\vecu\couple{3}{12}$\; et \; $\vecv\couple{12}{3}$.$\hphantom{\frac{b}{q}}$
+\item $\vecu\couple{\frac{7}{4}}{\frac{2}{7}}$\; et \; $\vecv\couple{\frac{1}{2}}{4}$.$\hphantom{\frac{b}{q}}$
+\medskip
+\item $\vecu\couple{\frac{2}{3}}{2}$\; et \; $\vecv\couple{\frac{1}{5}}{\frac{3}{5}}$.$\hphantom{\frac{b}{q}}$
+\medskip
+\item $\vecu\couple{-10}{4}$\; et \; $\vecv\couple{15}{-6}$.$\hphantom{\frac{b}{q}}$
+\medskip
+\item $\vecu\couple{\frac{3}{2}}{2}$\; et \; $\vecv\couple{21}{28}$.$\hphantom{\frac{b}{q}}$
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\raggedcolumns
+On note $\couple{x_1}{y_1}$ et $\couple{x_2}{y_2}$ les coordonnées de deux vecteurs $\vecu$ et $\vecv$.
+
+Compléter la fonction Python ci-contre, de sorte qu'elle indique \pythoninline{Oui} si les vecteurs $\vecu$ et $\vecv$ sont colinéaires, et \pythoninline{Non} dans le cas contraire.
+
+\columnbreak
+\begin{pythoncodenumligne}
+def colineaires(x1, y1, x2, y2):
+    determinant = ................
+    if determinant == ...........:
+        return "Oui"
+    else:
+        ..........................
+\end{pythoncodenumligne}
+\end{multicols}
+\vspace{-12pt}
+
+\exo
+
+Dans chacun des cas suivants, déterminer le nombre $z$ de sorte que les vecteurs $\vecu$ et $\vecv$ soient colinéaires.
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $\vecu\couple{-3}{5}$\; et \; $\vecv\couple{z}{2}$.$\hphantom{\frac{b}{q}}$
+\item $\vecu\couple{5}{z}$\; et \; $\vecv\couple{2}{\frac{1}{3}}$.$\hphantom{\frac{b}{q}}$
+\item $\vecu\couple{-3}{7}$\; et \; $\vecv\couple{4}{z}$.$\hphantom{\frac{b}{q}}$
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+On considère les points $A\couple{0}{4}$,\; $B\couple{2}{7}$,\; $C\couple{8}{17}$ et $D\couple{16}{29}$.
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Déterminer les coordonnées des vecteurs $\vect{AB}$ et $\vect{CD}$.
+\item Montrer que les vecteurs $\vect{AB}$ et $\vect{CD}$ sont colinéaires.
+\end{enumerate}
+\item Les vecteurs $\vect{AB}$ et $\vect{AC}$ sont-ils colinéaires ?
+\end{enumerate}
+
+\exo
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\raggedcolumns
+On a schématisé les rebonds d'une boule de billard. La boule est initialement au point $A\couple{2}{2,5}$, puis elle rebondit en $B\couple{4}{4}$, puis en $C\couple{8}{1}$, avant d'arriver au point $D$ d'ordonnée~$0$. On admet que le vecteur $\vect{CD}$ est colinéaire au vecteur $\vect{AB}$.
+
+Calculer l'abscisse du point $D$.
+\columnbreak
+\begin{center}
+\def\xmin{-1}
+\def\xmax{9}
+\def\ymin{-1}
+\def\ymax{5}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(8,0)(8,4)(0,4)
+\psdot(2,2.5)
+\psline[arrows=->,linewidth=1.2pt](2,2.5)(4,4)
+\psline[arrows=->,linewidth=1.2pt](4,4)(8,1)
+\psline[arrows=->,linewidth=1.2pt](8,1)(6.66,0)
+\begin{footnotesize}
+\uput{4pt}[180](2,2.5){$A$}
+\uput{4pt}[090](4,4){$B$}
+\uput{4pt}[000](8,1){$C$}
+\uput{4pt}[270](6.66,0){$D$}
+\uput{3pt}[270](1,0){$1$}
+\uput{3pt}[180](0,1){$1$}
+\uput{4pt}[225](0,0){$0$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+
+\exo
+
+Dans chacun des cas suivants, déterminer si les points $A$, $B$ et $C$ sont alignés.
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A\couple{2}{13}$, $B\couple{-2}{-7}$ et $C\couple{11}{58}$.
+\item $A\couple{9}{20}$, $B\couple{2}{-1}$ et $C\couple{25}{71}$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Dans chacun des cas suivants, déterminer si le point $C$ appartient à la droite $(AB)$.
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A\couple{5}{-3}$, $B\couple{-3}{3}$ et $C\couple{15}{-9}$.
+\item $A\couple{0}{-7}$, $B\couple{1}{0}$ et $C\couple{2}{7}$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Dans chacun des cas suivants, déterminer si les droites $(AB)$ et $(CD)$ sont parallèles.
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A\couple{1}{2}$, $B\couple{5}{8}$, $C\couple{0}{-1}$ et $D\couple{5}{6}$.
+\item $A\couple{3}{-10}$, $B\couple{15}{5}$, $C\couple{1}{1}$ et $D\couple{17}{21}$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+On note $y$ un réel, et on considère les points :
+\[
+A\couple{5}{-1}\qpvq B\couple{-1}{4}\qpvq C\couple{7}{2}\qpvq D\couple{1}{y}.
+\]
+\begin{enumerate}
+\item Déterminer la valeur de $y$ de sorte que le point $D$ appartienne à la droite $(BC)$.
+\item Déterminer la valeur de $y$ de sorte que les droites $(AB)$ et $(CD)$ soient parallèles.
+\end{enumerate}
+
+\exo
+
+On considère les points :
+\[
+A\couple{4}{0}\qpvq B\couple{0}{7}\qpvq C\couple{-6}{-5}.
+\]
+\begin{enumerate}
+\item Calculer les coordonnées du point $P$, milieu du segment $[AB]$.
+\item Calculer les coordonnées des points $S$ et $T$ définis par :
+\[
+\vect{BS}=\tfrac{1}{3}\vect{BC}
+\qetq
+5\vect{CT}=4\vect{CA}.
+\]
+\item Le point $P$ appartient-il à la droite $(ST)$ ? Justifier par un calcul.
+\end{enumerate}
+
+\exo
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\raggedcolumns
+Dans un repère, on considère les points :
+\begin{center}
+$M\couple{7}{3}$, $N\couple{-3}{1}$, $C\couple{0}{5}$, $D\couple{5}{6}$ et $E\couple{3}{9}$.
+\end{center}
+\begin{enumerate}
+\item Montrer que le quadrilatère $MNCD$ est un trapèze.
+\item Montrer que $E$ est le point d'intersection des droites $(MD)$ et $(NC)$.
+\item Calculer les coordonnées des points $J$ et $K$, milieux respectifs de $[MN]$ et $[CD]$.
+\item Montrer que les points $E$, $J$ et $K$ sont alignés.
+\end{enumerate}
+\begin{center}
+\def\xmin{-4.99}
+\def\xmax{8}
+\def\ymin{-0.99}
+\def\ymax{10}
+\def\xunite{0.5cm}
+\def\yunite{0.5cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psdots(7,3)(-3,1)(0,5)(5,6)(3,9)(2,2)(2.5,5.5)
+\psline[linestyle=dashed, dash=2pt 2pt](7,3)(-3,1)
+\psline[linestyle=dashed, dash=2pt 2pt](0,5)(5,6)
+\psplot[linewidth=1.2pt, plotpoints=200]{\xmin}{\xmax}{1.33*x+5}
+\psplot[linewidth=1.2pt, plotpoints=200]{\xmin}{\xmax}{-1.5*(x-3)+9}
+\begin{footnotesize}
+\uput{4pt}[040](7,3){$M$}
+\uput{4pt}[040](5,6){$D$}
+\uput{4pt}[150](0,5){$C$}
+\uput{4pt}[150](-3,1){$N$}
+\uput{4pt}[280](2,2){$J$}
+\uput{4pt}[280](2.5,5.5){$K$}
+\uput{4pt}[180](3,9){$E$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\uput{5pt}[225](0,0){$0$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\raggedcolumns
+Dans un repère, on considère les points :
+\begin{center}
+$A\couple{3}{4}$, $B\couple{1}{1}$, $C\couple{6}{-2}$ et $D\couple{8}{1}$.
+\end{center}
+Les points $I$, $E$ et $F$ sont tels que :
+\[\vect{BI}=\tfrac{1}{2}\vect{BC},~\vect{AE}=\tfrac{1}{3}\vect{AC}\qetq \vect{CF}=\tfrac{1}{3}\vect{CA}.\]
+\begin{enumerate}
+\item Calculer les coordonnées des points $I$, $E$ et $F$.
+\item 
+\begin{enumerate}
+\item Les vecteurs $\vect{BE}$ et $\vect{IF}$ sont-ils colinéaires ?
+\item Que peut-on en déduire concernant les droites $(IE)$ et $(BF)$ ?
+\end{enumerate}
+\item Montrer que le quadrilatère $ABCD$ est un parallélogramme.
+\item
+\begin{enumerate}
+\item Calculer la distance $AC$.
+\item $ABCD$ est-il un rectangle ?
+\end{enumerate}
+\item Les points $I$, $F$ et $D$ sont-ils alignés ?
+\end{enumerate}
+\columnbreak
+\begin{center}
+\def\xmin{-1.99}
+\def\xmax{9}
+\def\ymin{-2.99}
+\def\ymax{6}
+\def\xunite{0.59cm}
+\def\yunite{0.59cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillstyle=solid, fillcolor=lightgray,opacity=0.1](3,4)(1,1)(6,-2)
+\psdots(3,4)(1,1)(6,-2)(8,1)(3.5,-0.5)(5,0)(4,2)
+\begin{footnotesize}
+\uput{4pt}[090](3,4){$A$}
+\uput{4pt}[180](1,1){$B$}
+\uput{4pt}[270](6,-2){$C$}
+\uput{4pt}[090](8,1){$D$}
+\uput{4pt}[050](4,2){$E$}
+\uput{4pt}[050](5,0){$F$}
+\uput{4pt}[240](3.5,-0.5){$I$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\uput{5pt}[225](0,0){$0$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\end{multicols}

@@ -1,0 +1,54 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=1.6cm}
+\usepackage[box]{automultiplechoice}
+
+% Nombre de questions tirees dans chaque groupe.
+\newcommand{\nbCalcul}{8}
+\newcommand{\nbProportions}{5}
+\newcommand{\nbEvolutions}{4}
+\newcommand{\nbFonctions}{5}
+\newcommand{\nbGeometrie}{5}
+\newcommand{\nbStatsProbas}{6}
+
+\input{themes/01_calcul_numerique_algebrique.tex}
+\input{themes/02_proportions_pourcentages.tex}
+\input{themes/03_evolutions_variations.tex}
+\input{themes/04_fonctions_representations.tex}
+\input{themes/05_geometrie.tex}
+\input{themes/06_statistiques_probabilites.tex}
+
+\begin{document}
+\AMCrandomseed{20260601}
+
+\onecopy{1}{
+\begin{center}
+{\Large Automatismes de seconde}\\[2mm]
+{\small Questions issues des automatismes attendus du programme.}
+\end{center}
+
+\noindent Nom : \dotfill \hfill Classe : \dotfill
+
+\medskip
+\noindent Pour chaque question, cocher une seule reponse.
+
+\cleargroup{copie}
+\copygroup[\nbCalcul]{calcul}{copie}
+\copygroup[\nbProportions]{proportions}{copie}
+\copygroup[\nbEvolutions]{evolutions}{copie}
+\copygroup[\nbFonctions]{fonctions}{copie}
+\copygroup[\nbGeometrie]{geometrie}{copie}
+\copygroup[\nbStatsProbas]{statsprobas}{copie}
+\shufflegroup{copie}
+
+\insertgroup{copie}
+
+\AMCcleardoublepage
+\AMCformBegin
+\AMCform
+}
+\end{document}

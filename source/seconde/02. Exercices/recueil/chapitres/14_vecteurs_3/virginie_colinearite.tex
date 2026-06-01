@@ -1,0 +1,125 @@
+\exo \textit{[calculer, Raisonner]}
+
+Dans un repère, on donne les vecteurs :
+$\overrightarrow{AB}(1;3)$ ; $\overrightarrow{CD}(-2;4)$ et $\overrightarrow{EF}(0;10)$.
+
+\begin{enumerate}
+\item Déterminer les coordonnées des vecteurs $\vec{u}=\overrightarrow{AB}+\overrightarrow{CD}$ et $\vec{v}=\overrightarrow{EF}+\overrightarrow{BA}$.
+\item Qu'en déduisez-vous?
+\end{enumerate}
+
+
+
+\exo \textit{[Représenter]}
+
+\begin{enumerate}
+\item Reproduire la figure de l'exercice LS 42 p 208 puis représenter une base de vecteurs ($\vec{i}$ ; $\vec{j}$) bien choisie. 
+\item Lire les coordonnées du vecteur $\vec{u}$ dans cette base ($\vec{i}$ ; $\vec{j}$).
+\item Calculer les coordonnées des vecteurs  $\dfrac{1}{4}\vec{u}$ et $-\dfrac{3}{2}\vec{u}$ puis répondre à la question du manuel.
+
+\end{enumerate}
+
+
+
+\exo \textit{[Représenter]}
+
+On considère les vecteurs ci-dessous dans la base ($\vec{i}$ ; $\vec{j}$).
+
+\begin{minipage}{0.6\linewidth}
+Dans chaque cas, donner les coordonnées des vecteurs dans la base ($\vec{i}$ ; $\vec{j}$) et en déduire la relation de colinéarité.
+
+\begin{enumerate}[label=\alph*)]
+\item $\vec{m}(....;....)$ et $\vec{n}(....;....)$ donc $\vec{n}=....\vec{m}$.
+\item $\vec{m}(....;....)$ et $\vec{p}(....;....)$ donc $\vec{m}=....\vec{p}$.
+\item $\vec{j}(....;....)$ et $\vec{b}(....;....)$ donc $\vec{b}=....\vec{j}$.
+\item $\vec{i}(....;....)$ et $\vec{a}(....;....)$ donc $\vec{i}=....\vec{a}$.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}{0.4\linewidth}
+
+
+\medskip
+
+\begin{center}
+\newrgbcolor{wqwqwq}{0.3764705882352941 0.3764705882352941 0.3764705882352941}
+\psset{xunit=0.7cm,yunit=0.7cm,algebraic=true,dimen=middle,dotstyle=o,dotsize=5pt 0,linewidth=2pt,arrowsize=3pt 2,arrowinset=0.25}
+\begin{pspicture*}(-2.5,-1.5)(5.5,4.5)
+\multips(0,-1)(0,1){6}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=wqwqwq]{c-c}(-2.5,0)(5.5,0)}
+\multips(-2,0)(1,0){8}{\psline[linestyle=dashed,linecap=1,dash=1.5pt 1.5pt,linewidth=0.4pt,linecolor=wqwqwq]{c-c}(0,-1.5)(0,4.5)}
+\psline[linewidth=2pt]{->}(0,0)(1,0)
+\psline[linewidth=2pt]{->}(0,0)(0,1)
+\rput[tl](0.24,-0.18){$\vec{i}$}
+\rput[tl](-0.54,0.5){$\vec{j}$}
+\psline[linewidth=2pt]{->}(1,1)(5,1)
+\psline[linewidth=2pt]{->}(-2,3)(-2,0)
+\psline[linewidth=2pt]{->}(-1,2)(0,3)
+\psline[linewidth=2pt]{->}(1,2)(3,4)
+\psline[linewidth=2pt]{->}(4,2)(1,-1)
+\psline[linewidth=2pt]{->}(1,2)(3,4)
+\rput[tl](-2.4,2.1){$\vec{b}$}
+\rput[tl](-0.9,3.1){$\vec{m}$}
+\rput[tl](1.82,3.7){$\vec{n}$}
+\rput[tl](2.46,0.25){$\vec{p}$}
+\rput[tl](2.34,1.7){$\vec{a}$}
+\end{pspicture*}
+\end{center}
+\end{minipage}
+
+
+\exo \textit{[Calculer]}
+
+\begin{enumerate}
+\item Que fait la fonction suivante?
+
+\begin{center}
+\begin{minipage}{0.64\linewidth}
+\begin{pythoncodenumligne}
+def Vect(x_A, y_A, x_B, y_B, x_C, y_C):
+    x_AB = x_B - x_A
+    y_AB = y_B - y_A
+    x_AC = x_C - x_A
+    y_AC = y_C - y_A
+    return (x_AB, y_AB, x_AC, y_AC)
+\end{pythoncodenumligne}
+\end{minipage}
+\end{center}
+
+
+\item Modifier la fonction précédente pour qu'elle renvoie VRAI lorsque les points A, B et C sont alignés et FAUX dans le cas contraire.
+\item Tester votre fonction en utilisant les points de l'exercice LS 64 p 211 et CE 4 p 48.
+\end{enumerate}
+
+
+
+\exo \textit{[Calculer, Raisonner]}
+
+\begin{enumerate}
+\item Faire l'exercice CE 4 p 45.
+\item Placer le point M sur la figure et le point D$(8~;~2)$.
+\item Montrer que les points C, D et M sont alignés.
+\end{enumerate}
+
+
+\medskip
+
+\exo \textit{[Calculer, Raisonner]}
+
+Dans un repère, on donne les points : A$(3~;~4)$ ; B$(2~;~1)$ et C$(6~;~1)$.
+
+D est le point tel que $\overrightarrow{AD}=2\overrightarrow{AB}-\overrightarrow{BC}$ et E est le symétrique de C par rapport à B.
+
+\begin{enumerate}
+\item Calculer les coordonnées des vecteurs $\overrightarrow{AB}$ et $\overrightarrow{BC}$.
+\item En déduire les coordonnées du point D.
+\item Faire la figure. Que pouvez-vous conjecturer pour les droites (AB) et (DE)?
+\item Prouver votre conjecture.
+\end{enumerate}
+
+
+
+
+
+
+
+

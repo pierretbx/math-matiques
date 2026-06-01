@@ -1,0 +1,438 @@
+
+\exo
+
+On lance un dé à $6$ faces deux fois de suite et on note, dans l'ordre, les deux chiffres obtenus.
+
+Pour chacune des affirmations suivantes, préciser si elle est vraie ou fausse. Justifier.
+\begin{enumerate}
+\item L'univers associé à cette expérience aléatoire est constitué de $36$ issues.
+\item L'événement \og on obtient au moins un $6$ \fg{} est un événement élémentaire.
+\item L'événement \og on obtient deux $6$ \fg{} est un événement élémentaire.
+\end{enumerate}
+
+\exo
+
+Le tableau ci-dessous donne la probabilité de sortie de chaque face d'un dé cubique :
+\begin{center}
+\begin{tabular}{
+>{\raggedright\arraybackslash}m{1.9cm}
+*{6}{>{\centering\arraybackslash}m{1.1cm}}}
+\hline
+Issue & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\ 
+\hline
+Probabilité & $0,25$ & $0,10$ & $x$ & $0,3$ & $0,2$ & $2x$ \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Le dé est-il équilibré ? Pourquoi ?
+\item Calculer la valeur de $x$.
+\end{enumerate}
+\item Calculer la probabilité des événements suivants :
+\begin{enumerate}
+\item $A$ : \og On obtient un résultat pair. \fg{} 
+\item $B$ : \og On obtient une valeur supérieure ou égale à $2$. \fg{} 
+\item $C$ : \og On n'obtient pas plus de $3$. \fg{} 
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+On considère un dé cubique dont les faces sont numérotées de $1$ à $6$. Dans chacun des cas suivants, déterminer l'univers de l'expérience aléatoire décrite.
+\begin{enumerate}
+\item On lance le dé et on note le résultat obtenu.
+\item On lance deux fois de suite le dé et on note la somme des résultats obtenus.
+\item On lance deux fois de suite le dé et on note l'écart entre le résultat le plus grand et le plus petit.
+\item On lance deux fois de suite le dé et on note le maximum des résultats obtenus.
+\end{enumerate}
+
+\exo
+
+On a écrit sur des cartes les lettres suivantes : \clavier{L}~\clavier{I}~\clavier{E}~\clavier{G}~\clavier{E}~\clavier{A}~\clavier{R}~\clavier{D}.
+
+Après avoir retourné les cartes, on en choisit une au hasard.
+\begin{enumerate}
+\item Établir la loi de probabilité de cette expérience aléatoire.
+\item Calculer la probabilité d'obtenir une voyelle.
+\item Calculer la probabilité d'obtenir une lettre qui n'apparaît qu'une fois dans le mot \textsc{LIEGEARD}.
+\end{enumerate}
+
+\exo
+
+\begin{minipage}[t]{12cm}
+Le tableau ci-contre donne la répartition des élèves d'une classe de Seconde. On choisit au hasard un élève de la classe et on s'intéresse aux événements :
+\begin{itemize}
+\item $G$ : \og l'élève choisi est un garçon. \fg{}
+\item $E$ : \og l'élève choisi est externe. \fg{}
+\end{itemize}
+Combien d'issues possèdent les événements suivants ?
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $G\cap E$.
+\item $G\cup E$.
+\item $\Gbarre \cap \Ebarre$.
+\item $G\cup \Gbarre$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{5.5cm}
+~
+
+\vspace{-12pt}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{
+>{\raggedright\arraybackslash}m{1.8cm}
+*{2}{>{\centering\arraybackslash}m{1.3cm}}}
+& Filles & Garçons \\ 
+\hline
+Externes & $5$ & $7$ \\ 
+\hline 
+Internes & $11$ & $12$ \\ 
+\hline 
+\end{tabular} 
+\end{minipage}
+
+\exo
+
+\begin{minipage}[t]{12cm}
+Sur le diagramme ci-contre, $\Omega$ est l'univers d'une expérience aléatoire, $A$ et $B$ sont deux événements. Chaque nombre indique le nombre d'issues pour la zone du diagramme correspondante.
+\begin{enumerate}
+\item Combien d'issues l'univers $\Omega$ possède-t-il ?
+\item Combien d'issues possèdent les événements suivants ?
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $A$.
+\item $B$.
+\item $\Abarre$.
+\item $\Bbarre$.
+\item $A\cap B$.
+\item $A\cup B$.
+\item $\overline{A\cap B}$.
+\item $\overline{A\cup B}$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{5cm}
+~
+
+\vspace{-12pt}
+\def\xmin{0}
+\def\xmax{5}
+\def\ymin{0}
+\def\ymax{4}
+\def\xunite{0.9cm}
+\def\yunite{0.9cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon(0,0)(4,0)(4,3)(0,3)
+\psellipse(2.5,1.5)(1,0.5)
+\pscircle(1.5,1.5){1}
+\psline(3.5,3)(3.5,3.5)
+\psline(1.5,2.5)(1.5,3.5)
+\psline(3.5,1.5)(4.5,1.5)
+\begin{footnotesize}
+\uput{3pt}[090](3.5,3.5){$\Omega$}
+\uput{3pt}[090](1.5,3.5){$A$}
+\uput{3pt}[000](4.5,1.5){$B$}
+\rput(1,1.5){$24$}
+\rput(2,1.5){$15$}
+\rput(3,1.5){$30$}
+\rput(3,0.5){$20$}
+\end{footnotesize}
+\end{pspicture*}
+\end{minipage}
+
+\exo
+
+Parmi les élèves de Première d'un lycée, \SI[retain-explicit-plus]{80}{\percent} suivent la spécialité Mathématiques, \SI[retain-explicit-plus]{40}{\percent} suivent la spécialité SES, et \SI[retain-explicit-plus]{30}{\percent} suivent les spécialités Mathématiques et SES.
+
+On choisit au hasard un élève de Première, et on considère les événements $M$ : \og l'élève choisi suit la spécialité Mathématiques \fg{} et $S$ : \og l'élève choisi suit la spécialité SES \fg{}.
+\begin{enumerate}
+\item Comment est noté l'événement : \og l'élève choisi suit les spécialités Mathématiques et SES \fg{} ?
+
+Quelle est sa probabilité ?
+\item Décrire par une phrase l'événement $M\cup S$.
+
+Quelle est sa probabilité ?
+\end{enumerate}
+
+\exo
+
+Dans cet exercice, $A$ et $B$ désignent deux événements associés à une même expérience aléatoire.
+\medskip
+\begin{enumerate}
+\item On sait que :
+\[p(A)=0,1\qpvq p(\Bbarre)=0,6\qpvq p(A\cup B)=0,35.\]
+Calculer $p(B)$ et $p(A\cap B)$.
+\item On sait que :
+\[p(A)=0,2\qpvq p(B)=0,5\qpvq p(A\cap B)=0,1.\]
+Calculer $p(\overline{A\cup B})$.
+\item On sait que :
+\[p(\Abarre)=0,6\qpvq p(\Bbarre)=0,7\qpvq p(A\cup B)=0,55.\]
+Calculer $p(\overline{A\cap B})$.
+\item On sait que :
+\[p(\Abarre)+p(\Bbarre)=0,9\qpvq p(A\cup B)=0,75.\]
+Calculer $p(A\cap B)$.
+\item On sait que :
+\[p(A\cup B)=p(\overline{A\cap B})=0,85\qpvq p(A)=2\times p(B).\]
+Calculer $p(A)$ et $p(B)$.
+\end{enumerate}
+
+\exo
+
+Un jeu de $32$ cartes possède quatre \og couleurs \fg{} (c\oe{}ur, carreau, trèfle, pique). On tire successivement et avec remise deux cartes de ce jeu et on note, dans l'ordre, les couleurs obtenues.
+\begin{enumerate}
+\item Dénombrer les issues de cette expérience aléatoire (on pourra imaginer un arbre).
+\item Calculer la probabilité de $A$ : \og on obtient deux trèfles \fg{}.
+\item Calculer la probabilité de $B$ : \og on obtient deux cartes de même couleur \fg{}.
+\item Calculer la probabilité de $C$ : \og on obtient au moins un carreau \fg{}.
+\item Calculer la probabilité de $D$ : \og on obtient au plus un pique \fg{}.
+\end{enumerate}
+
+\exo
+
+Le digicode d'une porte d'entrée est composé de $4$ chiffres allant de $0$ à $9$. On saisit au hasard un code à $4$ chiffres sur ce digicode.
+\begin{enumerate}
+\item Combien d'issues possède cette expérience ?
+\item On considère les événements suivants :
+\begin{itemize}
+\item $A$ : \og Le code saisi commence par $5$. \fg{}
+\item $B$ : \og Le code saisi ne contient pas de $0$. \fg{}
+\end{itemize}
+Donner deux issues réalisant chacun des événements suivants :
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $A$.
+\item $B$.
+\item $\Abarre$.
+\item $\Bbarre$.
+\item $A\cap B$.
+\item $A\cup B$.
+\item $\Abarre\cap\Bbarre$.
+\item $\Abarre\cup\Bbarre$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+\end{enumerate}
+
+\exo
+
+Une boîte contient un jeton bleu, un jeton jaune et un jeton rouge.
+
+On tire un premier jeton, on note sa couleur, on le remet dans le sac puis on en tire un deuxième. Chaque jeton bleu rapporte 2 points, chaque jeton jaune rapporte $1$ point et chaque jeton rouge fait perdre $2$ points.
+\begin{enumerate}
+\item En utilisant un tableau à double entrée, déterminer les gains possibles à ce jeu (positifs ou négatifs).
+\item À l'aide de ce tableau :
+\begin{enumerate}
+\item Déterminer le nombre de façons d'obtenir un gain nul.
+\item Déterminer le nombre de façons d'obtenir un gain égal à $3$.
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+Le code d'ouverture d'une porte d'immeuble est constitué d'une lettre (choisie parmi A et B) suivie de deux chiffres (choisis parmi $2$, $3$ et $4$). Un code possible est B33.
+\begin{enumerate}
+\item À l'aide d'un arbre, dénombrer tous les codes possibles.
+\item Dénombrer les codes ne comportant pas de chiffre pair.
+\item Dénombrer les codes se terminant par un chiffre pair.
+\item Quelle est la probabilité qu'un code choisi au hasard fasse apparaître deux fois le même chiffre ?
+\end{enumerate}
+
+\exo
+
+On lance deux dés (un rouge et un bleu) dont les faces sont numérotées de $1$ à $6$. On note $r$ et $b$ les numéros des faces obtenues respectivement sur le dé rouge et sur le dé bleu.
+
+La règle du jeu est la suivante :
+\begin{itemize}
+\item si $r$ est pair, on gagne $b$ euros ;
+\item si $r$ vaut $1$ ou $3$, on gagne $b+1$ euros ;
+\item si $r$ vaut $5$, on gagne $b+2$ euros.
+\end{itemize}
+\begin{enumerate}
+\item Construire un tableau permettant de connaître le gain (en euros) selon les valeurs de $r$ et $b$.
+\item Déterminer le nombre façons d'obtenir $8$ euros, puis la probabilité d'obtenir $8$ euros.
+\item Déterminer la probabilité d'obtenir $4$ euros.
+\end{enumerate}
+
+\exo
+
+Un sac contient deux jetons noirs ($N_1$ et $N_2$) et un jeton blanc ($B$), indiscernables au toucher.
+
+On tire au hasard, successivement et avec remise, deux jetons du sac.
+\begin{enumerate}
+\item À l'aide d'un arbre, déterminer le nombre d'issues de cette expérience aléatoire.
+\item On considère les événements $A$ : \og le premier jeton est blanc \fg{} et $B$ : \og le deuxième jeton est noir \fg{} .
+\begin{enumerate}
+\item Écrire $A$ et $B$ sous forme d'ensembles.
+
+Combien d'issues réalisent chacun des événements $A$ et $B$ ?
+\item Les événements $A$ et $B$ sont-ils incompatibles ?
+\item Écrire sous forme d'ensembles les événements : \quad $\Abarre\qpvq \Bbarre \qpvq A\cup B\qpvq\Abarre\cap B$.
+\end{enumerate}
+\end{enumerate}
+
+\exo 
+
+Un jeu consiste à lancer deux dés tétraédriques équilibrés, dont les faces sont numérotées de $1$ à $4$. On gagne si la somme des deux valeurs obtenues est égale à $4$.
+
+Ce jeu est simulé par la fonction Python ci-dessous :
+\begin{pythoncodenumligne}
+from math import randint
+def jeu():
+    a = ............
+    b = ............
+    if ..................:
+        return "Gagné"
+    else:
+        return "Perdu"
+\end{pythoncodenumligne}
+
+\begin{enumerate}
+\item Compléter la fontion \pythoninline{jeu}.
+\item
+\begin{enumerate}
+\item Alice a joué \np{50} parties et gagné $13$ fois. Bob  a joué \np{1000} parties et gagné $178$ fois.
+
+Quelle est la fréquence de victoire pour chacun d'eux ?
+\item À l'aide d'un tableau à double entrée, montrer que ce jeu possède $16$ issues équiprobables, et déterminer la probabilité de gagner.
+\item Commenter les résultats obtenus aux questions précédentes.
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+Une agence de voyage a effectué une enquête de satisfaction parmi \np{2500} clients, selon leur destination.
+
+Les résultats sont résumés ci-dessous :
+\begin{center}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{
+>{\raggedright\arraybackslash}m{4.5cm}
+*{3}{>{\centering\arraybackslash}m{3cm}}}
+
+&\textbf{À l'étranger} & \textbf{En France} & \textbf{Total} \\ 
+\hline
+\textbf{Clients satisfaits} & \np{1209} & \np{779} & \np{1988}\\ 
+\hline 
+\textbf{Clients non satisfaits} & \np{341} & \np{171} & \np{512}\\ 
+\hline 
+\textbf{Total} & \np{1550} & \np{950} & \np{2500}\\ 
+\hline 
+\end{tabular} 
+\end{center}
+On choisit au hasard un client de cette agence.
+\begin{enumerate}
+\item Déterminer la probabilité que le client soit satisfait.
+\item Déterminer la probabilité que le client ne soit pas satisfait et qu'il ait voyagé en France.
+\item On choisit un client ayant voyagé à l'étranger. Quelle est la probabilité qu'il ne soit pas satisfait ?
+\item On choisit un client satisfait. Quelle est la probabilité qu'il ait voyagé en France ?
+\end{enumerate}
+
+\exo
+
+On dispose d'un cube de bois dont l'arête mesure \SI{3}{\cm}.
+
+On le peint en rouge, puis on le découpe en petits cubes dont les arêtes mesurent \SI{1}{\cm} :
+\begin{center}
+\psset{xunit=0.3cm,yunit=0.3cm,algebraic=true,dimen=middle,dotstyle=*,dotsize=2pt 0,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+\newcommand \xmin{-7}
+\newcommand \xmax{4}
+\newcommand \ymin{-0.5}
+\newcommand \ymax{9.5}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=1.0cm,yunit=1.0cm,subgriddiv=0,gridlabels=0,gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle,xAxis=true,yAxis=true,Dx=1,Dy=1,ticksize=-2pt 0,subticks=2]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psline(-6.,7.)(0.,6.)
+\psline(0.,6.)(3.,8.)
+\psline(3.,8.)(-3.,9.)
+\psline(-3.,9.)(-6.,7.)
+\psline(-6.,7.)(-6.,1.)
+\psline(3.,8.)(3.,2.)
+\psline(-4.,6.6666)(-1.,8.6666)
+\psline(-2.,6.3333)(1.,8.3333)
+\psline(-5.,7.666)(1.,6.666)
+\psline(-4.,8.3333)(2.,7.3333)
+\psline(2.,7.3333)(2.,1.3333)
+\psline(1.,6.666)(1.,0.6666)
+\psline(0.,2.)(3.,4.)
+\psline(0.,4.)(3.,6.)
+\psline(0.,4.)(-6.,5.)
+\psline(-6.,3.)(0.,2.)
+\psline(-2.,0.3333)(-2.,6.3333)
+\psline(-4.,6.6666)(-4.,0.6666)
+\psline(-6.,1.)(0.,0.)
+\psline(0.,0.)(3.,2.)
+\psline(0.,0.)(0.,6.)
+\end{pspicture*}
+\end{center}
+
+\begin{enumerate}
+\item Combien de petits cubes obtient-on ainsi ?
+\item On place tous ces petits cubes dans un sac, puis on en choisit un au hasard.
+
+En justifiant soigneusement les réponses, déterminer les probabilités des événements suivants :
+\begin{itemize}
+\item $A$ : \og le petit cube choisi n'a aucune face peinte \fg{} ;
+\item $B$ : \og le petit cube choisi a exactement une face peinte \fg{} ;
+\item $C$ : \og le petit cube choisi a exactement quatre faces peintes \fg{} ;
+\item $D$ : \og le petit cube choisi a au moins deux faces peintes \fg{}.
+\end{itemize}
+\end{enumerate}
+
+\exo
+
+Une puce est placée sur une droite graduée au point d'abscisse $0$. Chaque seconde, elle se déplace aléatoirement d'une unité vers la droite ou vers la gauche.
+\begin{center}
+\def\xmin{-4.5}
+\def\xmax{4.5}
+\def\ymin{-0.3}
+\def\ymax{0.5}
+\def\xunite{1.5cm}
+\def\yunite{1.5cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=false, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psdot[dotsize=5pt](0,0.2)
+\psarc[arrows=<-](0.5,-0.4){0.8}{55}{120}
+\end{pspicture*}
+\end{center}
+
+\begin{enumerate}
+\item La puce effectue trois sauts.
+\begin{enumerate}
+\item Montrer que la puce ne peut pas finir en $+2$.
+\item Calculer la probabilité qu'elle finisse en $+1$.
+\end{enumerate}
+\item La puce effectue quatre sauts.
+
+Calculer la probabilité qu'elle effectue au plus trois sauts vers la droite.
+\end{enumerate}
+
+\exo
+
+On choisit au hasard un jeton dans un sac contenant $20$ jetons blancs, $10$ jetons noirs et $n$ jetons rouges. 
+
+Déterminer la valeur minimale de l'entier naturel $n$, de sorte que la probabilité de choisir un jeton rouge dépasse $0,99$.
+

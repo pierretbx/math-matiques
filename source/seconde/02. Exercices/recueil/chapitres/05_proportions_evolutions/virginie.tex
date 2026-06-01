@@ -1,0 +1,49 @@
+\exo \textit{[Calculer]}
+
+\begin{enumerate}
+\item Soit $V_d=48$. Déterminer $V_f$ après une hausse de 37~\%.
+\item Soit $V_f=91$. Déterminer $V_d$ après une baisse de 11~\%.
+\end{enumerate}
+
+\exo \textit{[Calculer]}
+
+Pour chacun des coefficients multiplicateurs suivants, déterminer le taux d'évolution associé.
+
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}[label=\arabic*.]
+\item CM = 1,63; 
+\item CM = 0,453;
+\item CM = 0,9832;
+\item CM = 2,45.
+\end{enumerate}
+\end{multicols}
+
+\exo \textit{[Modéliser, calculer]}
+
+Le programme ci-dessous, écrit en Python, permet de calculer le pourcentage d'évolution global, connaissant les deux pourcentages d'évolutions successives $p_1$ et $p_2$.
+
+\medskip
+
+\begin{center}
+\begin{minipage}{0.78\linewidth}
+\begin{pythoncodenumligne}
+p1 = int(input("Entrer le premier pourcentage d'evolution : "))
+p2 = int(input("Entrer le deuxieme pourcentage d'evolution : "))
+CM1 = 1 + p1/100
+CM2 = 1 + p2/100
+CM = ...
+p = ...
+print(p)
+\end{pythoncodenumligne}
+\end{minipage}
+\end{center}
+
+
+\begin{enumerate}
+\item Que faudrait-il modifier pour pouvoir saisir la valeur $p_1=+7,8$ ?  
+\item Recopier l'algorithme et compléter les lignes 5 et 6.
+\item Quelle est la valeur de $p$ avec $p_1=24$ et $p_2=-35$?
+\end{enumerate}
+
+

@@ -1,0 +1,337 @@
+
+\exo
+
+Sans calcul, justifier les inégalités suivantes :
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $0,5^2 < 0,75^2$.
+\medskip
+\item $\big(\frac{1}{3}\big)^2 > \big(\frac{1}{4}\big)^2$.
+\item $(-3)^2 > (-1)^2$.
+\medskip
+\item $(-0,1)^2 < (-0,2)^2$.
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+Soit $x$ un nombre réel. Que peut-on dire de $x^2$, dans chacun des cas suivants ?
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $x\geqslant 5$.
+\medskip
+\item $x> 3$.
+\medskip
+\item $x\leqslant -2$.
+\item $x< -7$.
+\medskip
+\item $1<x<100$.
+\medskip
+\item $-5<x<-2$.
+\item $-10\leqslant x\leqslant 0$.
+\medskip
+\item $-5\leqslant x\leqslant 2$.
+\medskip
+\item $-5<x<5$.
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+\begin{minipage}[t]{11.5cm}
+Alice a remarqué que, sur le dessin ci-contre, les côtés des trois carrés mesurent tous entre $13,4$ et $13,6$ centimètres.
+
+\begin{enumerate}
+\item Déterminer un encadrement de l'aire d'un carré.
+\item En déduire un encadrement de la somme des aires de ces trois carrés.
+\item Alice souhaite agrandir son dessin, en multipliant toutes les longueurs par $10$. Elle sait qu'une bombe de peinture lui permet de couvrir environ \SI[retain-explicit-plus]{2}{\m^2}.
+
+Combien de bombes de peinture lui faudra-t-il ?
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{5.5cm}
+~
+
+\vspace{-12pt}
+\def\xmin{-1}
+\def\xmax{2.5}
+\def\ymin{-0.1}
+\def\ymax{2.5}
+\def\xunite{1.5cm}
+\def\yunite{1.5cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(1,0)(1,1)(0,1)
+\psrotate(1,1.2){-20}{\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](1,1.2)(2,1.2)(2,2.2)(1,2.2)}
+\psrotate(-0.1,1.1){30}{\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](-0.1,1.1)(0.9,1.1)(0.9,2.1)(-0.1,2.1)}
+\end{pspicture*}
+\end{minipage}
+
+\exo
+
+\begin{minipage}[t]{11.5cm}
+Un styliste imagine un foulard carré, dont le côté est compris entre $45$ et $50$ centimètres.
+
+Il souhaite que les quatre carrés colorés aient la même aire, et que la surface colorée représente \SI[retain-explicit-plus]{80}{\percent} de la surface totale.
+
+Déterminer un encadrement de la longueur des côtés des carrés.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{5.5cm}
+~
+
+\vspace{-12pt}
+\def\xmin{-1}
+\def\xmax{3}
+\def\ymin{-0.1}
+\def\ymax{2.5}
+\def\xunite{1.2cm}
+\def\yunite{1.2cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,0)(1,0)(1,1)(0,1)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](1.5,0)(2.5,0)(2.5,1)(1.5,1)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](0,1.5)(1,1.5)(1,2.5)(0,2.5)
+\pspolygon[fillcolor=black,fillstyle=solid,opacity=0.1](1.5,1.5)(2.5,1.5)(2.5,2.5)(1.5,2.5)
+\pspolygon(0,0)(2.5,0)(2.5,2.5)(0,2.5)
+\end{pspicture*}
+\end{minipage}
+
+\exo
+
+Vrai ou Faux ? Justifier la réponse.
+
+\begin{enumerate}
+\item Les nombres $7$ et $-7$ ont la même image par la fonction carré.
+\smallskip
+\item Le nombre $\sqrt{3}$ est le seul antécédent de $3$ par la fonction carré.
+\smallskip
+\item Le nombre $-2$ est un antécédent de $-4$ par la fonction carré.
+\end{enumerate}
+
+\exo
+
+\begin{minipage}[t]{11.5cm}
+La courbe $\cC$ représente la fonction carré sur l'intervalle $\intff{-2}{2}$ et la droite $d$ est constituée des points d'ordonnée $1$.
+\begin{enumerate}
+\item
+\begin{enumerate}
+\item Donner les abscisses des points d'intersection de $\cC$ et $d$.
+\item En déduire les solutions de l'équation $x^2=1$ dans l'intervalle $\intff{-2}{2}$ ?
+\end{enumerate}
+\item
+\begin{enumerate}
+\item Repasser en couleur la partie de $\cC$ située \og en-dessous \fg{} de la droite $d$.
+\item En déduire les solutions dans $\intff{-2}{2}$ de l'inéquation $x^2<1$.
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{5.5cm}
+~
+
+\vspace{-12pt}
+\def\xmin{-3}
+\def\xmax{3}
+\def\ymin{-1}
+\def\ymax{5}
+\def\xunite{0.8cm}
+\def\yunite{0.7cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(-2.99,-0.99)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psplot[linewidth=1.2pt, plotpoints=200]{-2}{2}{x*x}
+\psplot[linewidth=1.2pt, plotpoints=200]{\xmin}{\xmax}{1}
+\begin{footnotesize}
+\uput{4pt}[000](2,4){$\cC$}
+\uput{4pt}[090](2.5,1){$d$}
+\end{footnotesize}
+\end{pspicture*}
+\end{minipage}
+
+\exo
+
+On note $a$ et $b$ deux réels, et on considère la proposition : \og Si $a<b$, alors $a^2<b^2$ \fg{}.
+\begin{enumerate}
+\item Cette proposition est-elle vraie ou fausse ? Justifier.
+\item Énoncer la proposition réciproque. Est-elle vraie ou fausse ? Justifier.
+\end{enumerate}
+
+\exo
+
+Reprendre l'exercice précédent avec la proposition : \og Si $x^2=4$, alors $x=2$ \fg{}.
+
+\exo
+
+Résoudre dans $\R$ les équations et inéquations :
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $x^2=5$.
+\medskip
+\item $x^2<5$.
+\medskip
+\item $x^2\geqslant 5$.
+\item $x^2=2$.
+\medskip
+\item $x^2\leqslant 2$.
+\medskip
+\item $x^2>2$.
+\item $x^2=-3$.
+\medskip
+\item $x^2<-3$.
+\medskip
+\item $x^2\geqslant -3$.
+\item $x^2\leqslant 8$.
+\medskip
+\item $x^2\geqslant 4$.
+\medskip
+\item $x^2>2$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Construire le tableau de signe des expressions suivantes :
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $P(x)=(x-1)(x-2)$.
+\medskip
+\item $P(x)=(x-4)(2-x)$.
+\medskip
+\item $P(x)=(-x+5)(2x+1)$.
+\medskip
+\item $P(x)=(7-x)(10-x)$.
+\medskip
+\item $P(x)=x(x-1)(2x-1)$.
+\medskip
+\item $P(x)=x^2(x+3)$.
+\medskip
+\item $P(x)=(x^2+1)(5-10x)$.
+\medskip
+\item $P(x)=(-2x+6)(4x-8)$.
+\medskip
+\item $P(x)=(x^2-7)(3x+9)$.
+\medskip
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Résoudre dans $\R$ les inéquations suivantes :
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $(x-1)(x-2)>0$.
+\medskip
+\item $(x-4)(2-x)\leqslant 0$.
+\medskip
+\item $(-x+5)(2x+1)>0$.
+\item $(7-x)(10-x)<0$.
+\medskip
+\item $x(x-1)(2x-1)\geqslant 0$.
+\medskip
+\item $x^2(x+3)\leqslant 0$.
+\item $(x^2+1)(5-10x)>0$.
+\medskip
+\item $(-2x+6)(4x-8)>0$.
+\medskip
+\item $(x^2-7)(3x+9)\leqslant 0$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Résoudre dans $\R$ les équations et inéquations suivantes :
+
+\vspace{-6pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{4}
+\begin{enumerate}
+\item $5x^2\geqslant 2x$.
+\item $-8x^2> 2x$.
+\item $-2x^2\geqslant 10x$.
+\item $7x^3< 3x$.
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+On étudie la fonction $d$ qui, à la vitesse $v$ d'un véhicule (exprimée en \si[per-mode=symbol]{\m\per\s}) associe la distance de freinage $d(v)$ (exprimée en \si{\m}). Cette fonction est définie sur $\intfo{0}{+\infty}$ par $d(v)=k\times v^2$, où $k$ est un coefficient qui dépend notamment de l'état de la route.
+
+\begin{enumerate}
+\item Sur route sèche, la valeur de $k$ est égale à $0,08$.
+\begin{enumerate}
+\item Montrer qu'une vitesse de \SI[per-mode=symbol]{80}{\km\per\hour} est environ égale à \SI[per-mode=symbol]{22,22}{\m\per\s}.
+
+En déduire la distance de freinage sur route sèche pour une vitesse égale à \SI[per-mode=symbol]{80}{\km\per\hour}.
+\item À partir de quelle vitesse (en \si[per-mode=symbol]{\km\per\hour}) la distance de freinage sur route sèche dépasse-t-elle \SI{45}{\m} ?
+\end{enumerate}
+\end{enumerate}
+\begin{minipage}[t]{10.5cm}
+\begin{enumerate}[start=2]
+\item Sur route mouillée, la valeur de $k$ est différente de $0,08$.
+
+La représentation graphique ci-contre donne la distance de freinage sur route mouillée en fonction de la vitesse.
+\begin{enumerate}
+\item En utilisant cette représentation, déterminer la vitesse (en \si[per-mode=symbol]{\km\per\hour}) pour laquelle la distance de freinage sur route mouillée est égale \SI{100}{\m}.
+\item Déterminer la valeur de $k$ sur route mouillée.
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{6.5cm}
+~
+
+%\vspace{-6pt}
+\def\xmin{-5}
+\def\xmax{35}
+\def\ymin{-15}
+\def\ymax{160}
+\def\xunite{0.15cm}
+\def\yunite{0.035cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=4pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\multido{\n=0+5}{8}{\psline[linecolor=lightgray](\n,0)(\n,\ymax)}
+\multido{\n=0+20}{9}{\psline[linecolor=lightgray](0,\n)(\xmax,\n)}
+%\psgrid[xunit=\xunite, yunit=\yunite, Dx=5, Dy=20, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=5, Dy=20, ticksize=-2pt 0, subticks=1]{->}(0,0)(0,0)(\xmax,\ymax)[{\footnotesize Vitesse (en \si[per-mode=symbol]{\m\per\s})},135][{\footnotesize Distance (en \si{\m})},-45]
+\psplot[linewidth=1.2pt, plotpoints=200]{0}{30}{0.16*x^2}
+\psplot[plotstyle=dots,plotpoints=7]{0}{30}{0.16*x^2}
+%\begin{footnotesize}
+%\uput{3pt}[315](1.4,2){$\cP$}
+%\uput{3pt}[90](2.7,5){$\Delta$}
+%\uput{3pt}[270](1,0){$1$}
+%\uput{3pt}[180](0,1){$1$}
+%\end{footnotesize}
+\end{pspicture*}
+\end{minipage}
+

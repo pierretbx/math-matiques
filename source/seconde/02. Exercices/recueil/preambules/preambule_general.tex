@@ -1,0 +1,371 @@
+%\usepackage{etex} %% suppression le 04/01/2024 j'ai l'impression qu'il ne sert plus à rien
+
+\usepackage[utf8]{inputenc} 
+%\usepackage[latin1]{inputenc} 
+
+%\usepackage[T1]{fontenc} 	%apparence classique
+\usepackage{fourier} 		%apparence Apmep
+
+\usepackage[lmargin=1.5cm,rmargin=1.5cm,tmargin=1cm,bmargin=1.5cm]{geometry}
+\usepackage{pstricks,pst-all,pst-plot,pst-text,pst-tree,pst-eps,pst-fill,pst-node,pst-math,pst-func,pst-solides3d,pst-3dplot,pstricks-add}
+\usepackage{tikz,tkz-tab,tkz-linknodes}
+\usetikzlibrary{lindenmayersystems}
+\usetikzlibrary{calc,3d,shapes,backgrounds}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,makeidx}
+\usepackage{animate}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{cancel}
+%\usepackage[DVIps, leftbars]{changebar}\setlength{\changebarsep}{5mm}
+\usepackage{coollist}
+\usepackage{cprotect}
+\usepackage{diagbox} % remplace slashbox
+	% \diagbox[innerwidth=1.9cm, innerleftsep=0.4cm, innerrightsep=0.4cm]{$n$}{$k$}
+\usepackage[b]{esvect}
+\usepackage{eurosym}
+\usepackage{fancybox}
+\usepackage{fancyhdr}
+\usepackage{fp}
+%\usepackage{xfp}
+\usepackage{framed}
+\usepackage{graphicx} 
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lastpage}
+\usepackage{lipsum}
+\usepackage{longtable}
+\usepackage{needspace}
+\usepackage[version=3]{mhchem}
+\usepackage{multicol}
+\usepackage{multido}
+\usepackage{multirow}
+\usepackage[np]{numprint}
+\usepackage{qrcode}
+\usepackage{scratch3}
+\usepackage{setspace}
+\usepackage{siunitx}
+%\sisetup{load-configurations = abbreviations}
+\sisetup{locale = FR,detect-all,}
+\usepackage{systeme}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{tabto}
+\usepackage{upgreek}
+\usepackage{wrapfig}
+\usepackage{xcolor,colortbl}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand\headrulewidth{0pt}
+
+\setlength{\parindent}{0mm}
+\definecolor{xlightgray}{gray}{0.9}
+
+\newcommand*{\vect}[1]{\vv{\vphantom{k}#1}}
+\newcommand*{\scal}[2]{\vect{#1}\cdot{}\vect{#2}}
+\newcommand*{\veci}{\vect{\imath}}
+\newcommand*{\vecj}{\vect{\jmath}}
+\newcommand*{\vecn}{\vect{n}}
+\newcommand*{\veck}{\vect{k}}
+\newcommand*{\vecu}{\vect{u}}
+\newcommand*{\vecv}{\vect{v}}
+\newcommand*{\vecw}{\vect{w}}
+\newcommand*{\veca}{\vect{a}}
+\newcommand*{\vecb}{\vect{b}}
+\newcommand*{\vecnul}{\vect{0}}
+\newcommand*{\barre}[1]{\overline{\mathstrut#1\,}}
+\newcommand*{\abs}[1]{\left\lvert\mathstrut#1\right\rvert}
+\newcommand*{\norme}[1]{\lVert#1\rVert}
+\newcommand*{\bignorme}[1]{\big\lVert#1\big\rVert}
+\newcommand*{\lrnorme}[1]{\left\lVert\mathstrut#1\right\rVert}
+\newcommand*{\intoo}[2]{\left] \, #1 \, ; \, #2 \, \right[}
+\newcommand*{\intff}[2]{\left[ \, #1 \, ; \, #2 \, \right]}
+\newcommand*{\intof}[2]{\left] \, #1 \, ; \, #2 \, \right]}
+\newcommand*{\intfo}[2]{\left[ \, #1 \, ; \, #2 \, \right[}
+\newcommand*{\intentier}[2]{\llbracket \, #1 \, ; \, #2 \, \rrbracket}
+\newcommand*{\couple}[2]{\left( \, #1 \, ; \, #2 \, \right)}
+\newcommand*{\triplet}[3]{\left( \, #1 \, ; \, #2 \, ; \, #3 \, \right)}
+\newcommand*{\singleton}[1]{\left\lbrace \; #1 \; \right\rbrace}
+\newcommand*{\paire}[2]{\left\lbrace \; #1 \; ; \; #2 \; \right\rbrace}
+\newcommand*{\ensemble}[1]{%
+	\begingroup%
+		\newcommand{\pv}{\ensuremath{\; ; \;}}\left\lbrace \; #1 \;\right\rbrace%
+	\endgroup}
+	%% $A=\ensemble{1\pv 2\pv 3}$
+\newcommand*{\uplet}[1]{%
+	\begingroup%
+		\newcommand{\pv}{\ensuremath{\, ; \,}}\left( \, #1 \,\right)%
+	\endgroup}
+\newcommand*{\anglevec}[2]{( \, \vect{#1} \, ; \, \vect{#2} \, )}
+\newcommand*{\determinant}[2]{\det( \, \vect{#1} \, ; \, \vect{#2} \, )}
+\newcommand*{\ii}{\text{i}}
+\newcommand*{\jj}{\text{j}}
+\newcommand*{\re}{\text{Re}}
+\newcommand*{\im}{\text{Im}}
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\N}{\mathbb{N}}
+\newcommand*{\D}{\mathbb{D}}
+\newcommand*{\Z}{\mathbb{Z}}
+\newcommand*{\Q}{\mathbb{Q}}
+\newcommand*{\C}{\mathbb{C}}
+\newcommand*{\U}{\mathbb{U}}
+\newcommand*{\cA}{\mathcal{A}}
+\newcommand*{\cB}{\mathcal{B}}
+\newcommand*{\cC}{\mathcal{C}}
+\newcommand*{\cD}{\mathcal{D}}
+\newcommand*{\cE}{\mathcal{E}}
+\newcommand*{\cF}{\mathcal{F}}
+\newcommand*{\cG}{\mathcal{G}}
+\newcommand*{\cH}{\mathcal{H}}
+\newcommand*{\cI}{\mathcal{I}}
+\newcommand*{\cJ}{\mathcal{J}}
+\newcommand*{\cK}{\mathcal{K}}
+\newcommand*{\cL}{\mathcal{L}}
+\newcommand*{\cM}{\mathcal{M}}
+\newcommand*{\cN}{\mathcal{N}}
+\newcommand*{\cO}{\mathcal{O}}
+\newcommand*{\cP}{\mathcal{P}}
+\newcommand*{\cQ}{\mathcal{Q}}
+\newcommand*{\cR}{\mathcal{R}}
+\newcommand*{\cS}{\mathcal{S}}
+\newcommand*{\cT}{\mathcal{T}}
+\newcommand*{\cU}{\mathcal{U}}
+\newcommand*{\cV}{\mathcal{V}}
+\newcommand*{\cW}{\mathcal{W}}
+\newcommand*{\cX}{\mathcal{X}}
+\newcommand*{\cY}{\mathcal{Y}}
+\newcommand*{\cZ}{\mathcal{Z}}
+\newcommand*{\Abarre}{\overline{A}}
+\newcommand*{\Bbarre}{\overline{B}}
+\newcommand*{\Cbarre}{\overline{C}}
+\newcommand*{\Dbarre}{\overline{D}}
+\newcommand*{\Ebarre}{\overline{E}}
+\newcommand*{\Fbarre}{\overline{F}}
+\newcommand*{\Gbarre}{\overline{G}}
+\newcommand*{\Hbarre}{\overline{H}}
+\newcommand*{\Ibarre}{\overline{I}}
+\newcommand*{\Jbarre}{\overline{J}}
+\newcommand*{\Kbarre}{\overline{K}}
+\newcommand*{\Lbarre}{\overline{L}}
+\newcommand*{\Mbarre}{\overline{M}}
+\newcommand*{\Nbarre}{\overline{N}}
+\newcommand*{\Obarre}{\overline{O}}
+\newcommand*{\Pbarre}{\overline{P}}
+\newcommand*{\Qbarre}{\overline{Q}}
+\newcommand*{\Rbarre}{\overline{R}}
+\newcommand*{\Sbarre}{\overline{S}}
+\newcommand*{\Tbarre}{\overline{T}}
+\newcommand*{\Ubarre}{\overline{U}}
+\newcommand*{\Vbarre}{\overline{V}}
+\newcommand*{\Wbarre}{\overline{W}}
+\newcommand*{\Xbarre}{\overline{X}}
+\newcommand*{\Ybarre}{\overline{Y}}
+\newcommand*{\Zbarre}{\overline{Z}}
+
+\newcommand*{\baseij}{(\, \veci \, , \, \vecj \,)}
+\newcommand*{\baseijk}{(\, \veci \, , \, \vecj \, , \, \veck \,)}
+\newcommand*{\baseuv}{(\, \vecu \, , \, \vecv \,)}
+\newcommand*{\baseuvw}{(\, \vecu \, , \, \vecv \, , \, \vecw \,)}
+\newcommand*{\Oij} {(\, O \, ; \, \veci , \vecj \,)}
+\newcommand*{\Oijk}{(\, O \, ; \, \veci , \vecj , \veck \,)}
+\newcommand*{\Ouv} {(\, O \, ; \, \vecu , \vecv \, )}
+\newcommand*{\OIJ}{\triplet{O}{I}{J}}
+\newcommand*{\repereplan}[3]{(\, #1 \, ; \, \vect{#2} \, , \, \vect{#3} \,)}
+\newcommand*{\repereespace}[4]{(\, #1 \, ; \, \vect{#2} \, , \, \vect{#3} \, , \, \vect{#4} \, )}
+\newcommand*{\baseplan}[2]  {(\, \vect{#1} \, , \, \vect{#2} \,)}
+\newcommand*{\baseespace}[3]{(\,\vect{#1} \, , \,\vect{#2} \, ,\,\vect{#3}\,)}
+
+\renewcommand*{\alpha}{\upalpha}
+\newcommand*{\e}{\textrm{e}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{ \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\newcommand*{\grilleencadree}[2]{
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+	\draw[color=lightgray,dash pattern=on 3pt off 3pt, xstep=0.75cm,ystep=0.75cm](0,0) grid (#1*0.75,#2*0.75);
+	\draw[color=black](0,0) rectangle (#1*0.75,#2*0.75);
+	\clip(0,0) rectangle (#1*0.75,#2*0.75);
+	\end{tikzpicture}}
+\newcommand*{\dotrule}[1]{%
+   \parbox[t]{#1}{\dotfill}}   
+\newcommand*{\asterism}{%
+	\raisebox{-.5ex}{\setlength{\tabcolsep}{-.3pt}
+	\begin{tabular}{cc}
+	\multicolumn2c *\\[-2ex]*&*%
+	\end{tabular}}}	
+\newcommand*\clavier[1]{%
+	\tikz[align=center, baseline={([yshift=-0.3ex]key.base)}]
+ 	\node[draw,
+ 	fill=white,
+% 	drop shadow={shadow xshift=0.2ex,shadow yshift=-0.2ex,fill=black,opacity=0.2},
+ 	rectangle,
+ 	rounded corners=1.5pt,
+ 	inner sep=1pt,
+ 	line width=0.5pt,
+ 	font=\scriptsize\sffamily,
+ 	minimum width=1.6em]
+ 	(key){~#1~\strut};}
+\newcommand*{\epve}{\; ; \;}
+\newcommand*{\qpvq}{\quad ; \quad}
+\newcommand*{\vq}{, \quad}
+\newcommand*{\qetq}{\quad\textrm{et}\quad}
+\newcommand*{\qouq}{\quad\textrm{ou}\quad}
+\newcommand*{\qdouq}{\quad\textrm{d'où}\quad}
+\newcommand*{\qsoitq}{\quad\textrm{soit}\quad}
+\newcommand*{\qdoncq}{\quad\textrm{donc}\quad}
+\newcommand*{\qeqq}{\quad\Longleftrightarrow\quad}
+
+\newcommand*{\card}[1]{%
+	\textrm{Card}(#1)}
+\newcommand*{\tq}{%
+	\;\mid\;}
+
+%%% Exemple, remarque, exercices et problèmes numérotés
+\newcommand*{\xmpl}{\textbf{Exemple}}
+\newcommand*{\xmpls}{\textbf{Exemples}}
+\newcommand*{\rmq}{\textbf{Remarque}}
+\newcommand*{\rmqs}{\textbf{Remarques}}
+\newcommand*{\demo}{\textbf{Démonstration}}
+\newcommand*{\demos}{\textbf{Démonstrations}}
+\newcommand*{\demoprg}{\textbf{Démonstration (au programme)}}
+
+\newcounter{numexo}
+\makeatletter
+\newcommand{\exo}[1][\@nil]{%
+	\def\tmp{#1}%
+	\ifx\tmp\@nnil
+		{\addtocounter{numexo}{1}\par\Needspace{7\baselineskip}\medskip\noindent\textbf{\underline{Exercice \arabic{numexo}}}\par\nopagebreak\smallskip}
+	\else
+		{\par\Needspace{7\baselineskip}\medskip\noindent\textbf{\underline{\smash{Exercice #1}}}\par\nopagebreak\smallskip}
+	\fi}
+\makeatother
+
+\newcommand{\deuxchiffres}[1]{\ifnum#1<10 0\fi #1}
+
+\newcounter{numpbl}
+\makeatletter
+\newcommand{\pbl}[1][\@nil]{%
+	\def\tmp{#1}%
+	\ifx\tmp\@nnil
+		{\addtocounter{numpbl}{1}\medskip\noindent\textbf{\underline{Problème \arabic{numpbl}}}}
+	\else
+		{\medskip\noindent\textbf{\underline{\smash{Problème #1}}}}
+	\fi}
+\makeatother
+
+%%% Théorème, définition
+\newtheoremstyle{break}
+	{0pt}		%Space before theorem
+	{0pt}		%Space after theorem
+	{\normalfont}			%Body font
+	{}			%Indent amount (empty = no indent, \parindent = para indent)
+	{\bfseries}	%Thm head font   
+	{ -- }		%Punctuation after thm head
+	{0pt}			%Space after thm head (\newline = linebreak)
+	{}
+\theoremstyle{break}
+\newtheorem*{fthme}{Théorème}
+\newtheorem*{fthmeadmis}{Théorème (admis)}
+\newtheorem*{fdfnt}{Définition}
+\newtheorem*{fdfnts}{Définitions}
+\newtheorem*{fppte}{Propriété}
+\newtheorem*{fcorol}{Corollaire}
+\newtheorem*{fppteadmise}{Propriété (admise)}
+\newtheorem*{fpptes}{Propriétés}
+\newtheorem*{flem}{Lemme}
+\newtheorem*{fmeth}{Méthode}
+\newtheorem*{fboa}{Boîte à outils}
+\newenvironment{thme}{\begin{framed}\begin{fthme}}{\end{fthme}\end{framed}}
+\newenvironment{thmeadmis}{\begin{framed}\begin{fthmeadmis}}{\end{fthmeadmis}\end{framed}}
+\newenvironment{dfnt}{\begin{framed}\begin{fdfnt}}{\end{fdfnt}\end{framed}}
+\newenvironment{dfnts}{\begin{framed}\begin{fdfnts}}{\end{fdfnts}\end{framed}}
+\newenvironment{ppte}{\begin{framed}\begin{fppte}}{\end{fppte}\end{framed}}
+\newenvironment{corol}{\begin{framed}\begin{fcorol}}{\end{fcorol}\end{framed}}
+\newenvironment{ppteadmise}{\begin{framed}\begin{fppteadmise}}{\end{fppteadmise}\end{framed}}
+\newenvironment{pptes}{\begin{framed}\begin{fpptes}}{\end{fpptes}\end{framed}}
+\newenvironment{lem}{\begin{framed}\begin{flem}}{\end{flem}\end{framed}}
+\newenvironment{meth}{\begin{framed}\begin{fmeth}}{\end{fmeth}\end{framed}}
+\newenvironment{boa}{\begin{framed}\begin{fboa}}{\end{fboa}\end{framed}}
+
+\usepackage[english,french]{babel}
+\DecimalMathComma
+\frenchbsetup{StandardLists = true}
+
+\usepackage{titlesec}
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}.}
+\titlespacing*{\section}		{0cm}	{2.0em plus 1.0em minus 0.2em}	{1.0em plus .2em}
+\titlespacing*{\subsection}		{0.6cm}	{1.5em plus 0.5em minus 0.2em}	{0.5em plus .2em}
+\titlespacing*{\subsubsection}	{1.2cm}	{1.0em plus 0.5em minus 0.2em}	{0.5em plus .2em}
+
+%\usepackage{enumerate}
+%\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+%\renewcommand{\theenumii}{\textbf{\alph{enumii}}}\renewcommand{\theenumiii}{\textit{\roman{enumiii}}}
+%\renewcommand{\labelenumi}{\theenumi.}
+%\renewcommand{\labelenumii}{\theenumii.}
+%\renewcommand{\labelenumiii}{(\theenumiii)}
+%\setlength\leftmargini{0.6cm} 	% 1er  niveau
+%\setlength\leftmarginii{0.6cm} 	% 2ème niveau
+%\setlength\leftmarginiii{0.6cm} % 3ème niveau
+%\setlength\leftmarginiv{0.6cm} 	% 4ème niveau
+
+\usepackage{titletoc}
+\dottedcontents{section}%
+  [15mm]		% espacement bord de page-titre
+  {\bfseries}	
+  {9mm}			% label width
+  {3mm}			% leader width - espacement des points
+\dottedcontents{subsection}%
+  [21mm]
+  {}
+  {6mm}
+  {3mm}
+
+\usepackage{enumitem} % doit rester à la fin
+\setlist[itemize]{
+	topsep=-\parskip,
+	partopsep=\parskip,
+	parsep=0pt,
+	itemsep=0pt,
+	leftmargin=6mm,
+	itemindent=0pt}	% OK
+\setlist[enumerate]{
+	topsep=-\parskip,
+	partopsep=\parskip,
+	parsep=0pt,
+	itemsep=1.5pt, %	itemsep=0pt,
+	labelwidth=0pt,
+	leftmargin=6mm,
+	itemindent=0pt} % OK
+\setlist[enumerate,1]{
+	label=\textbf{\arabic*.}}
+\setlist[enumerate,2]{
+	label=\textbf{\alph*.}}
+\setlist[enumerate,3]{
+	label=(\textit{\roman*\,})}
+
+\newcommand{\titre}{
+\boxput*(0.75,-1)
+{\setlength{\fboxsep}{3pt}
+\mbox{\includegraphics[height=0.8cm]{\logo}}} {%
+\boxput*(-0.8,-1)
+{\setlength{\fboxsep}{3pt}
+\fcolorbox{white}{white}{\begin{LARGE}\type~\textbf{\num}\end{LARGE}}}
+{\setlength{\fboxsep}{8pt}
+\fcolorbox{black}{white}{
+\begin{minipage}{0.97\linewidth}
+\begin{center}\begin{LARGE}\textbf{\nom}\end{LARGE}\end{center}
+\end{minipage}}
+}}\vspace{1.6cm}}
+
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+
+\newcommand*{\ds}{\displaystyle}
+
+\newlength{\lgChaine}
+\newcommand*{\tabcentretexte}[1]{%
+	\settowidth{\lgChaine}{#1}%
+	\tabto{\dimexpr 0.5\textwidth - 0.5\lgChaine} #1}
+\newcommand*{\tabcentrepage}[1]{%
+	\settowidth{\lgChaine}{#1}%
+	\tabto{\dimexpr 0.5\linewidth - 0.5\lgChaine} #1}

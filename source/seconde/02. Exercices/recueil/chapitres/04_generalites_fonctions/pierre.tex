@@ -1,0 +1,208 @@
+\newcommand{\reperePierreFonctions}[6]{%
+  \begin{center}
+  \psset{xunit=#5,yunit=#6,algebraic=true,arrowsize=2.5pt 2,dotstyle=*,dotsize=3.5pt 0}
+  \begin{pspicture*}(#1,#2)(#3,#4)
+    \psgrid[subgriddiv=0,gridlabels=0pt,gridcolor=lightgray](0,0)(#1,#2)(#3,#4)
+    \psaxes[labelFontSize=\scriptstyle,Dx=1,Dy=1,ticksize=-2pt 0]{->}(0,0)(#1,#2)(#3,#4)
+}
+\newcommand{\finReperePierreFonctions}{%
+  \end{pspicture*}
+  \end{center}
+}
+
+\exo
+On considère une fonction $f$ représentée par la courbe ci-contre.
+
+\begin{minipage}[t]{0.53\linewidth}
+\begin{enumerate}
+\item Donner l'ensemble de définition de $f$.
+\item Lire les images de $-3$, $0$, $2$ et $5$.
+\item Déterminer les antécédents de $1$ par $f$.
+\item Résoudre graphiquement l'équation $f(x)=0$.
+\item Encadrer le plus précisément possible les valeurs de $f(x)$ lorsque $x$ appartient à $[-3;5]$.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\reperePierreFonctions{-4}{-3}{6}{4}{0.48cm}{0.48cm}
+  \pscurve[linecolor=blue,linewidth=1.7pt](-3,2)(-2,0)(0,-2)(2,1)(3,3)(5,-1)
+  \psdots[linecolor=blue](-3,2)(5,-1)
+  \rput(4.35,2.25){\textcolor{blue}{$C_f$}}
+\finReperePierreFonctions
+\end{minipage}
+
+\exo
+La courbe ci-contre est la représentation graphique d'une fonction $f$ définie sur $[-5;5]$.
+
+\begin{minipage}[t]{0.53\linewidth}
+\begin{enumerate}
+\item Compléter le tableau de valeurs suivant.
+\[
+\begin{array}{|c|c|c|c|c|c|c|}
+\hline
+x&-5&-3&-1&1&3&5\\
+\hline
+f(x)&&&&&&\\
+\hline
+\end{array}
+\]
+\item Le point $A(2;1)$ appartient-il à $C_f$ ? Justifier.
+\item Le point $B(-4;0)$ appartient-il à $C_f$ ? Justifier.
+\item Traduire l'information graphique $(-1;2)\in C_f$ par une égalité faisant intervenir $f$.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.43\linewidth}
+\reperePierreFonctions{-6}{-2}{6}{4}{0.42cm}{0.55cm}
+  \psline[linecolor=red!75!black,linewidth=1.7pt](-5,-1)(-3,0)(-1,2)(1,3)(3,1)(5,2)
+  \psdots[linecolor=red!75!black](-5,-1)(-3,0)(-1,2)(1,3)(3,1)(5,2)
+  \rput(4.35,3.15){\textcolor{red!75!black}{$C_f$}}
+\finReperePierreFonctions
+\end{minipage}
+
+\exo
+On a représenté ci-contre une fonction $f$ définie sur $[-4;6]$.
+
+\begin{minipage}[t]{0.52\linewidth}
+\begin{enumerate}
+\item Résoudre graphiquement $f(x)=2$.
+\item Résoudre graphiquement $f(x)=-1$.
+\item Résoudre graphiquement $f(x)>0$.
+\item Résoudre graphiquement $f(x)\leq 2$.
+\item En déduire le tableau de signes de $f$ sur son ensemble de définition.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\reperePierreFonctions{-5}{-3}{7}{4}{0.42cm}{0.48cm}
+  \pscurve[linecolor=green!45!black,linewidth=1.7pt](-4,-2)(-3,0)(-1,3)(1,1)(3,-1)(4,0)(6,2)
+  \psdots[linecolor=green!45!black](-4,-2)(6,2)
+  \rput(5.2,2.8){\textcolor{green!45!black}{$C_f$}}
+\finReperePierreFonctions
+\end{minipage}
+
+\exo
+La courbe ci-contre représente une fonction $f$ définie sur $[-2;8]$.
+
+\begin{minipage}[t]{0.52\linewidth}
+\begin{enumerate}
+\item Donner les valeurs de $x$ pour lesquelles $f$ atteint un maximum local ou un minimum local.
+\item Dresser le tableau de variations de $f$.
+\item Comparer, sans calcul, $f(1)$ et $f(3)$.
+\item Comparer, sans calcul, $f(6)$ et $f(7)$.
+\item Peut-on comparer $f(0)$ et $f(6)$ en utilisant seulement le sens de variation ? Justifier.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\reperePierreFonctions{-3}{-2}{9}{5}{0.42cm}{0.48cm}
+  \psline[linecolor=purple,linewidth=1.7pt](-2,1)(0,4)(3,-1)(5,2)(8,0)
+  \psdots[linecolor=purple](-2,1)(0,4)(3,-1)(5,2)(8,0)
+  \rput(6.9,2.55){\textcolor{purple}{$C_f$}}
+\finReperePierreFonctions
+\end{minipage}
+
+\exo
+Un élève a commencé à tracer la courbe représentative d'une fonction $f$ définie sur $[-4;5]$.
+
+\begin{minipage}[t]{0.52\linewidth}
+\begin{enumerate}
+\item Donner l'image de chaque point marqué sur la courbe.
+\item Déterminer les antécédents de $2$ par $f$.
+\item Ajouter sur le graphique un point $M$ de la courbe tel que $f(1)=3$.
+\item Ajouter sur le graphique un point $N$ de la courbe tel que $N(4;-1)$.
+\item Expliquer pourquoi une courbe de fonction ne peut pas contenir deux points distincts ayant la même abscisse.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\reperePierreFonctions{-5}{-3}{6}{4}{0.43cm}{0.48cm}
+  \psline[linecolor=teal,linewidth=1.7pt](-4,1)(-2,2)(0,0)(2,2)(5,1)
+  \psdots[linecolor=teal](-4,1)(-2,2)(0,0)(2,2)(5,1)
+  \rput(4,2.45){\textcolor{teal}{$C_f$}}
+\finReperePierreFonctions
+\end{minipage}
+
+\exo
+On considère la fonction $f$ représentée ci-dessous.
+
+\begin{center}
+\reperePierreFonctions{-7}{-4}{7}{5}{0.55cm}{0.45cm}
+  \pscurve[linecolor=blue!65!black,linewidth=1.8pt](-6,3)(-5,1)(-3,-2)(-1,-3)(1,0)(2,2)(4,3)(6,-1)
+  \psdots[linecolor=blue!65!black](-6,3)(6,-1)
+  \rput(5.2,2.45){\textcolor{blue!65!black}{$C_f$}}
+\finReperePierreFonctions
+\end{center}
+
+\begin{enumerate}
+\item Donner l'ensemble de définition de $f$.
+\item Donner un encadrement de $f(x)$ sur cet ensemble.
+\item Déterminer le maximum de $f$ et préciser pour quelles valeurs de $x$ il est atteint.
+\item Déterminer le minimum de $f$ et préciser pour quelle valeur de $x$ il est atteint.
+\item Résoudre graphiquement $f(x)\geq 2$.
+\end{enumerate}
+
+\exo
+Tracer, dans chaque cas, une courbe possible. Les réponses ne sont pas uniques.
+
+\begin{enumerate}
+\item La fonction $f$ est définie sur $[-3;4]$, elle est croissante sur $[-3;1]$, décroissante sur $[1;4]$, et son maximum vaut $3$.
+\item La fonction $g$ est définie sur $[0;8]$, vérifie $g(0)=2$, $g(3)=-1$, $g(8)=1$, et le nombre $0$ possède exactement deux antécédents.
+\end{enumerate}
+
+\begin{center}
+\begin{minipage}{0.47\linewidth}
+\reperePierreFonctions{-4}{-3}{5}{4}{0.48cm}{0.48cm}
+\finReperePierreFonctions
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\linewidth}
+\reperePierreFonctions{-1}{-3}{9}{4}{0.43cm}{0.48cm}
+\finReperePierreFonctions
+\end{minipage}
+\end{center}
+
+\exo
+Les courbes ci-dessous représentent deux fonctions $f$ et $g$ définies sur $[-4;5]$.
+
+\begin{minipage}[t]{0.52\linewidth}
+\begin{enumerate}
+\item Résoudre graphiquement $f(x)=g(x)$.
+\item Résoudre graphiquement $f(x)>g(x)$.
+\item Résoudre graphiquement $f(x)\leq g(x)$.
+\item Donner un intervalle sur lequel $f$ est croissante.
+\item Donner un intervalle sur lequel $g$ est décroissante.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\reperePierreFonctions{-5}{-3}{6}{5}{0.43cm}{0.45cm}
+  \psline[linecolor=red,linewidth=1.7pt](-4,-1)(-2,2)(0,3)(2,1)(5,4)
+  \psline[linecolor=blue,linestyle=dashed,linewidth=1.7pt](-4,3)(-2,2)(0,0)(2,1)(5,-2)
+  \psdots[linecolor=red](-4,-1)(-2,2)(0,3)(2,1)(5,4)
+  \psdots[linecolor=blue](-4,3)(-2,2)(0,0)(2,1)(5,-2)
+  \rput(4.05,4.35){\textcolor{red}{$C_f$}}
+  \rput(4.05,-1.35){\textcolor{blue}{$C_g$}}
+\finReperePierreFonctions
+\end{minipage}
+
+\exo
+La fonction $f$ est définie sur $[-2;7]$ par la courbe ci-dessous.
+
+\begin{minipage}[t]{0.52\linewidth}
+\begin{enumerate}
+\item Dresser le tableau de signes de $f$.
+\item Résoudre graphiquement $f(x)<0$.
+\item Résoudre graphiquement $f(x)\geq 1$.
+\item Comparer $f(-1)$, $f(2)$ et $f(6)$.
+\item Rédiger une phrase qui décrit les variations de $f$ sur $[-2;7]$.
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.44\linewidth}
+\reperePierreFonctions{-3}{-3}{8}{4}{0.43cm}{0.48cm}
+  \pscurve[linecolor=orange!85!black,linewidth=1.7pt](-2,-1)(-1,0)(1,2)(3,0)(5,-2)(7,3)
+  \psdots[linecolor=orange!85!black](-2,-1)(7,3)
+  \rput(6.1,2.3){\textcolor{orange!85!black}{$C_f$}}
+\finReperePierreFonctions
+\end{minipage}

@@ -1,0 +1,549 @@
+
+\exo
+
+Parmi les fonctions définies par les expressions suivantes, reconnaître celles qui sont affines et préciser les valeurs de $m$ et $p$ :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $f(x)=-2x+1$
+\smallskip
+\item $f(x)=\dfrac{2x}{3}$
+\item $f(x)=(2+x)(2x-1)$
+\smallskip
+\item $f(x)=\dfrac{1-2x}{3}$
+\item $f(x)=x-(2x+1)$
+\smallskip
+\item $f(x)=\dfrac{2}{3x}$
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+\begin{enumerate}
+\item Écrire l'expression de la fonction $f$ qui, à un prix $x$, associe le prix $f(x)$ après une hausse de \SI[retain-explicit-plus]{20}{\percent}.
+\item Reprendre cette question dans le cas où la hausse est de $t\;\%$.
+\end{enumerate}
+
+\exo
+
+Représenter, dans un même repère, les fonctions affines suivantes :
+\[
+f:x\mapsto -2x+3
+\qpvq
+g:x\mapsto \frac{1}{2}x-4
+\qpvq
+h:x\mapsto 2-x
+\qpvq
+k:x\mapsto 3x-3.\]
+
+\exo
+
+Associer chaque droite à la fonction qu'elle représente :
+\begin{center}
+\def\xmin{-4}
+\def\xmax{4}
+\def\ymin{-4}
+\def\ymax{4}
+\def\xunite{0.5cm}
+\def\yunite{0.5cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{3*x-2}
+\psdots(0,-2)(1,1)(2,4)
+\begin{footnotesize}
+\uput{3pt}[090](-3,5.75){$d_1$}
+\uput{5pt}[225](0,0){$0$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\end{footnotesize}
+\end{pspicture*}
+\quad
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{-2*x+3}
+\psdots(0,3)(1,1)(2,-1)(3,-3)
+\begin{footnotesize}
+\uput{3pt}[090](-3,5.75){$d_1$}
+\uput{5pt}[225](0,0){$0$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\end{footnotesize}
+\end{pspicture*}
+\quad
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{0.667-0.333*x}
+\psdots(-1,1)(2,0)(-4,2)
+\begin{footnotesize}
+\uput{3pt}[090](-3,5.75){$d_1$}
+\uput{5pt}[225](0,0){$0$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\end{footnotesize}
+\end{pspicture*}
+\end{center}
+\vspace{-6pt}
+\[
+f(x)= 3-2x
+\qpvq
+g(x)= 3x-2
+\qpvq
+h(x)=-\frac{1}{3}x+\frac{2}{3}.
+\qpvq
+k(x)=\frac{2}{3}x-\frac{1}{3}.
+\]
+
+\exo
+
+En observant le graphique ci-dessous, compléter le tableau :
+\vspace{-6pt}
+
+\begin{center}
+\begin{minipage}[t]{7.9cm}
+~
+
+\vspace{-6pt}
+\def\xmin{-4}
+\def\xmax{9}
+\def\ymin{-6}
+\def\ymax{7}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{5-0.25*x}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{-3+2*x}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{0.75*x}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{1-x}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{-3-0.25*x}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{3}
+\begin{footnotesize}
+\uput{3pt}[090](-3,5.75){$d_1$}
+\uput{3pt}[180](-1,-5){$d_2$}
+\uput{3pt}[135](8,6){$d_3$}
+\uput{3pt}[045](-3,4){$d_4$}
+\uput{3pt}[080](8,-5){$d_5$}
+\uput{3pt}[270](-3.5,3){$d_6$}
+\uput{5pt}[225](0,0){$0$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\end{footnotesize}
+\end{pspicture*}
+\end{minipage}
+\quad
+\begin{minipage}[t]{8.9cm}
+~
+
+\vspace{-6pt}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+|>{\centering\arraybackslash}m{1.5cm}
+|>{\centering\arraybackslash}m{2.0cm}
+|>{\centering\arraybackslash}m{2.0cm}
+|>{\centering\arraybackslash}m{3.0cm}|}
+\hline 
+\textbf{Droite} & \textbf{Coefficient directeur} & \textbf{Ordonnée à l'origine} & \textbf{Fonction associée} \\ 
+\hline
+$d_1$ &  &  &  \\
+\hline
+$d_2$ & $2$ & $-3$ & $x\mapsto 2x-3$ \\
+\hline 
+$d_3$ &  &  &  \\
+\hline 
+$d_4$ &  &  &  \\
+\hline 
+$d_5$ &  &  &  \\
+\hline 
+$d_6$ &  &  &  \\
+\hline 
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\exo
+
+Vrai ou faux ? Justifier la réponse choisie.
+\begin{enumerate}
+\item Toute fonction linéaire est affine.
+\item Toute fonction affine est linéaire.
+\item Toute fonction constante est affine.
+\item Toute fonction affine est représentée dans un repère par une droite.
+\item Dans un repère, toute droite est la représentation d'une fonction affine.
+\item Si une fonction $f$ est telle que $f(2)=3$ et $f(4)=6$, alors $f$ est linéaire.
+\end{enumerate}
+
+\exo
+
+Dans chaque cas, déterminer la fonction affine $f$ à partir des informations données :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $f(0)=2$ et $f(2)=4$
+\smallskip
+\item $f(3)=2$ et $f(0)=-1$
+\item $f(-2)=1$ et $f(6)=3$
+\smallskip
+\item $f(-1)=4$ et $f(1)=2$
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Déterminer le sens de variation des fonctions affines définies sur $\R$ par :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $f(x)=2x+3$
+\smallskip
+\item $f(x)=-4x+5\vphantom{\dfrac{2}{7}}$
+\item $f(x)=x+7$
+\smallskip
+\item $f(x)=8-x\vphantom{\dfrac{2}{7}}$
+\item $f(x)=\sqrt{3}\;(x-2)$
+\smallskip
+\item $f(x)=\dfrac{3-2x}{7}$
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+\begin{enumerate}
+\item La fonction affine $f$ est telle que $f(2)=5$ et $f(6)=3$.
+
+La fonction $f$ est-elle strictement croissante ou strictement décroissante sur $\R$ ?
+\item Reprendre la question précédente avec la fonction $g$ telle que $g(-1)=3$ et $g(2)=6$.
+\end{enumerate}
+
+\exo
+
+On considère une fonction affine $f$, et on note $d$ sa droite représentative.
+
+Parmi les situations suivantes, lesquelles sont impossibles ?
+\begin{enumerate}
+\item $f$ est strictement croissante sur $\R$, $d$ a pour ordonnée à l'origine $3$ et $f(2)=1$.
+\item $f$ est strictement décroissante sur $\R$, $d$ a pour coefficient directeur $1$ et $f(2)=0$.
+\item $f$ est strictement croissante sur $\R$, $d$ a pour ordonnée à l'origine $12$ et $f(7)=13$.
+\item $f$ est strictement décroissante sur $\R$, $d$ a pour ordonnée à l'origine $0$ et $f(-3)=-3$.
+\end{enumerate}
+
+\exo
+
+On considère une fonction affine $f$ pour laquelle on dispose du tableau de valeurs suivant :
+\begin{center}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{
+|>{\centering\arraybackslash}m{2cm}
+*{7}{|>{\centering\arraybackslash}m{1.5cm}}|}
+\hline 
+$x$ & & $-1$ & $0$ & $\frac{1}{3}$ & $3$ & & $47$ \\
+\hline
+$f(x)$ & $20$ & $6$ & & & $-2$ & $-13$ & \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\begin{enumerate}
+\item Quel est le sens de variation de $f$ ?
+\item Déterminer l'expression $f(x)$, puis compléter le tableau.
+\end{enumerate}
+
+\exo
+
+\begin{minipage}[t]{9.2cm}
+Sur le graphique ci-contre, les droites $\cD_f$, $\cD_g$ et $\cD_h$ représentent des fonctions affines $f$, $g$ et $h$.
+
+Après lecture graphique, construire le tableau de signe de chaque fonction.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{7.3cm}
+~
+
+\vspace{-12pt}
+\def\xmin{-6}
+\def\xmax{6}
+\def\ymin{-3}
+\def\ymax{4}
+\def\xunite{0.6cm}
+\def\yunite{0.6cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{2*x/3+2}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{-4*x/3+8/3}
+\psplot[linewidth=1pt, plotpoints=200]{\xmin}{\xmax}{-1.5}
+\psdots(-3,0)(2,0)
+\begin{footnotesize}
+\uput{3pt}[325](2.25,3.5){$\cD_f$}
+\uput{3pt}[215](-0.6,3.5){$\cD_g$}
+\uput{3pt}[270](-1.5,-1.5){$\cD_h$}
+\uput{3pt}[135](-3,0){$A$}
+\uput{3pt}[045](2,0){$B$}
+\uput{5pt}[225](0,0){$0$}
+\uput{4pt}[270](1,0){$1$}
+\uput{4pt}[180](0,1){$1$}
+\end{footnotesize}
+\end{pspicture*}
+\end{minipage}
+
+\exo
+
+Pour chacune des fonctions définies ci-dessous :
+\begin{itemize}
+\item construire son tableau de signe ;
+\item donner un réel $x_1$ dont l'image est positive, et un réel $x_2$ dont l'image est négative.
+\end{itemize}
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $f(x)=2x+3\vphantom{\dfrac{h}{p}}$
+\item $f(x)=3x-6\vphantom{\dfrac{h}{p}}$
+\item $f(x)=-4x+5\vphantom{\dfrac{h}{p}}$
+\item $f(x)=x+7\vphantom{\dfrac{h}{p}}$
+\item $f(x)=4-5x\vphantom{\dfrac{h}{p}}$
+\item $f(x)=8-x\vphantom{\dfrac{h}{p}}$
+\item $f(x)=2x-3\vphantom{\dfrac{h}{p}}$
+\item $f(x)=\sqrt{3}\;(x-2)\vphantom{\dfrac{h}{p}}$
+\item $f(x)=\dfrac{3-2x}{7}\vphantom{\dfrac{h}{p}}$
+\item $f(x)=-\dfrac{4}{3}x+8\vphantom{\dfrac{h}{p}}$
+\item $f(x)=-2x+\dfrac{1}{2}\vphantom{\dfrac{h}{p}}$
+\item $f(x)=\dfrac{x+3}{4}\vphantom{\dfrac{h}{p}}$
+
+\end{enumerate}
+\end{multicols}
+\vspace{-6pt}
+
+\exo
+
+Résoudre dans $\R$ les inéquations suivantes :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $2x-2\geqslant 0$
+\item $3x-5<0$
+\item $4x-3>0$
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+Une entreprise vend des coques de protection de téléphone.
+
+Le résultat comptable de l'entreprise (bénéfice ou déficit) est donné, en euros, par $R(x)=9x-\np{2583}$, où $x$ est le nombre de coques vendues.
+\begin{enumerate}
+\item Calculer $R(0)$, et en donner l'interprétation.
+\item Construire le tableau de signe de la fonction $R$.
+\item Quel est le nombre minimal de coques que l'entreprise doit vendre pour être bénéficiaire ?
+\end{enumerate}
+
+\exo
+
+Un congélateur est débranché : sa température intérieure est \SI[retain-explicit-plus]{20}{\celsius}. À $14$ heures, on le branche et sa température diminue alors de \SI[retain-explicit-plus]{1}{\celsius} toutes les $10$ minutes.
+\begin{enumerate}
+\item Exprimer la température $f(t)$ de l'intérieur du congélateur, où $t$ est la durée (en minutes) écoulée à partir de l'instant du branchement.
+\item Construire le tableau de signe de la fonction $f$.
+\item À quelle heure la température devient-elle négative ?
+\end{enumerate}
+
+\exo
+
+Résoudre dans $\R$ les inéquations suivantes :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $3x-5\leqslant 7\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $2x+5\geqslant -3\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $\dfrac{1}{2}x-2\leqslant 6\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-\dfrac{1}{3}x+5\geqslant -4\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $\dfrac{4}{3}x-1<\dfrac{1}{3}\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-\dfrac{7}{5}x+2>3\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $\dfrac{1}{2}x+4>5\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-\dfrac{1}{5}x+\dfrac{1}{5}\leqslant 0\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-\dfrac{1}{3}x+5\geqslant -4\vphantom{\dfrac{h}{p}}$
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+Résoudre dans $\R$ les inéquations suivantes :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $3x+2\leqslant x-14\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-2x-5>4x+31\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-x+19\leqslant -x+51\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $-3x+5<-x+17\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $4x+\dfrac{1}{3}>2x-\dfrac{1}{3}\vphantom{\dfrac{h}{p}}$
+\smallskip
+\item $\dfrac{7}{4}x+2>\dfrac{9}{4}x-1\vphantom{\dfrac{h}{p}}$
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+Résoudre dans $\R$ les inéquations suivantes :
+
+\vspace{-8pt}
+\setlength{\columnsep}{1cm}
+\setlength{\columnseprule}{0pt}
+\begin{multicols}{3}
+\begin{enumerate}
+\item $2(x+1)-7x>5-x$
+\item $4x+5\leqslant 3(x-1)+3$
+\item $3(x+4)>x-7$
+\end{enumerate}
+\end{multicols}
+
+\exo
+
+Un musée propose deux tarifs :
+\begin{itemize}
+\item Tarif \textbf{A} : chaque entrée coûte $6$ \euro{} ;
+\item Tarif \textbf{B} : après avoir payé un abonnement de $16$ \euro{}, chaque entrée coûte $4$ \euro{}.
+\end{itemize}
+\begin{enumerate}
+\item Alice pense aller cinq fois au musée cette année : quel tarif a-t-elle intérêt à choisir ?
+\item
+\begin{enumerate}
+\item Donner les expressions $A(x)$ et $B(x)$ qui indiquent respectivement le prix total à payer pour $x$ entrées, selon que l'on choisit le tarif \textbf{A} ou le tarif \textbf{B}.
+\item Résoudre l'inéquation $A(x)>B(x)$.
+\item Quelle interprétation peut-on donner du résultat obtenu à la question précédente ?
+\end{enumerate}
+\end{enumerate}
+
+\exo
+
+Bob a acheté des graines de tomates à $2,90$ \euro{} pour les semer dans son potager.
+
+Il pense revendre des tomates à ses amis au prix de $1,50$ \euro{} le kilogramme, et cherche connaître la quantité $x$ de tomates à revendre pour faire un bénéfice d'au moins $25$ \euro{}.
+\begin{enumerate}
+\item Modéliser le problème par une inéquation.
+\item Résoudre cette inéquation, et répondre au problème de Bob.
+\end{enumerate}
+
+\exo
+
+Alice a gagné un concours télévisé. Elle a le choix entre deux lots :
+\begin{itemize}
+\item une somme de \np{100000} euros{}, puis \np{1400} \euro{} par mois, à vie.
+\item une somme de \np{5000} euros{}, puis \np{2000} \euro{} par mois, à vie.
+\end{itemize}
+Après combien de mois la deuxième offre devient-elle plus intéressante que la première ?
+
+\exo
+
+\begin{minipage}[t]{9.2cm}
+Sur la figure ci-contre, les longueurs sont exprimées en centimètres.
+
+Déterminer les valeurs de $x$ pour lesquelles l'aire du domaine coloré dépasse \SI[retain-explicit-plus]{50}{\cm^2}.
+\end{minipage}
+\hfill
+\begin{minipage}[t]{7.3cm}
+~
+
+\vspace{-12pt}
+\def\xmin{-1}
+\def\xmax{9}
+\def\ymin{-2.1}
+\def\ymax{4.1}
+\def\xunite{0.5cm}
+\def\yunite{0.5cm}
+\psset{unit=\xunite, xunit=\xunite, yunit=\yunite, algebraic=true, dimen=middle, dotstyle=*, dotsize=3pt 0, linewidth=0.8pt, arrowsize=3pt 2, arrowinset=0.25, comma=true}
+\begin{pspicture*}(\xmin,\ymin)(\xmax,\ymax)
+%\psgrid[xunit=\xunite, yunit=\yunite, subgriddiv=0, gridlabels=0, gridcolor=lightgray](0,0)(\xmin,\ymin)(\xmax,\ymax)
+%\psaxes[labels=none,labelFontSize=\scriptstyle, xAxis=true, yAxis=true, Dx=1, Dy=1, ticksize=-2pt 0, subticks=1]{->}(0,0)(\xmin,\ymin)(\xmax,\ymax)[{\footnotesize $x$},135][{\footnotesize $y$},-45]
+\pspolygon[fillcolor=lightgray!50, fillstyle=solid](0,0)(2,0)(2,4)(0,4)
+\pspolygon[fillcolor=lightgray!50, fillstyle=solid](0,0)(2,0)(2,-2)(0,-2)
+\pspolygon[fillcolor=lightgray!50, fillstyle=solid](2,0)(8,2)(2,4)
+\psline(2,2)(8,2)
+\begin{footnotesize}
+\uput{5pt}[180](0,2){$x$}
+\uput{5pt}[180](0,-1){$2$}
+\uput{5pt}[090](4,2){$6$}
+\uput{5pt}[090](1,0){$2$}
+\end{footnotesize}
+\end{pspicture*}
+\end{minipage}
+
+\exo
+
+Il existe différentes unités permettant de mesurer les températures : le degré Celsius (\si{\celsius}), le degré\\ Fahrenheit (\si{\degree}F) utilisé en particulier aux États-Unis, le Kelvin (\si{\kelvin}) utilisé par les physiciens.
+
+Le tableau suivant donne quelques équivalences entre ces unités :
+\begin{center}
+\setlength{\tabcolsep}{0.1cm}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{
+>{\centering\arraybackslash}m{5cm}
+*{3}{>{\centering\arraybackslash}m{2cm}}}
+\hline
+zéro absolu & \SI{-273}{\celsius} &  & \SI{0}{\kelvin} \\ 
+\hline 
+fusion de l'eau & \SI{0}{\celsius} & \SI{32}{\degree}F & \SI{273}{\kelvin} \\ 
+\hline 
+vaporisation de l'eau & \SI{100}{\celsius} & \SI{212}{\degree}F & \\ 
+\hline
+\end{tabular} 
+\end{center}
+D'autre part, ces trois échelles sont liées par des relations affines.
+\begin{enumerate}
+\item Si $x$ est une température exprimée en \si{\celsius}, quelle est sa valeur $a(x)$ en \si{\degree}F ?
+\item Si $x$ est une température exprimée en \si{\degree}F, quelle est sa valeur $b(x)$ en \si{\celsius} ?
+\item Si $x$ est une température exprimée en \si{\degree}F, quelle est sa valeur $c(x)$ en \si{\kelvin} ?
+\end{enumerate}
+
+\exo
+
+\begin{enumerate}
+\item Tracer dans un repère la représentation graphique de la fonction $f$ définie sur $\R$ par :
+\[f(x)=
+\begin{cases}
+2x+5 & \textrm{si }x\leqslant -2 \\
+-x-1 & \textrm{si }-2<x\leqslant 4 \\
+2x-13 & \textrm{si }x>4 
+\end{cases}\]
+\item Écrire une fonction Python qui prend en argument un réel $x$, et renvoie son image par la fonction $f$.
+\end{enumerate}
+
